@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dx="http://www.metabolomicscentre.ca/nmr/nmrml" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.metabolomicscentre.ca/nmr/nmrml" version="0.1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="nmrMLType">
+    <xs:annotation>
+      <xs:documentation>This is the root element for the Metabolomics Standards Initiative (MSI) nmrML schema, which is intended to capture the use of a NMR spectrometer, the data generated, and the initial processing of that data (to the level of the peak list).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cvList" type="dx:CVListType" />
+      <xs:element name="fileDescription" type="dx:FileDescriptionType" />
+      <xs:element minOccurs="0" name="referenceableParamGroupList" type="dx:ReferenceableParamGroupListType" />
+      <xs:element minOccurs="0" name="sampleList" type="dx:SampleListType" />
+      <xs:element name="softwareList" type="dx:SoftwareListType" />
+      <xs:element minOccurs="0" name="scanSettingsList" type="dx:ScanSettingsListType" />
+      <xs:element name="instrumentConfigurationList" type="dx:InstrumentConfigurationListType" />
+      <xs:element name="dataProcessingList" type="dx:DataProcessingListType" />
+      <xs:element name="run" type="dx:RunType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CVListType">
+    <xs:annotation>
+      <xs:documentation>Container for one or more controlled vocabulary definitions.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="cv" type="dx:CVType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of CV definitions in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="CVType">
+    <xs:annotation>
+      <xs:documentation>Information about an ontology or CV source and a short 'lookup' tag to refer to.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="id" type="xs:ID" use="required">
+      <xs:annotation>
+        <xs:documentation>The short label to be used as a reference tag with which to refer to this particular Controlled Vocabulary source description (e.g., from the cvLabel attribute, in CVParamType elements).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="fullName" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The usual name for the resource (e.g. The MSI-NMR Controlled Vocabulary).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="version" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>The version of the CV from which the referred-to terms are drawn.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="URI" type="xs:anyURI" use="required">
+      <xs:annotation>
+        <xs:documentation>The URI for the resource.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="FileDescriptionType">
+    <xs:annotation>
+      <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="fileContent" type="dx:ParamGroupType">
+        <xs:annotation>
+          <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it. It should also describe the nativeID format used in the file by referring to an appropriate CV term.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="sourceFileList" type="dx:SourceFileListType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contact" type="dx:ParamGroupType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParamGroupType">
+    <xs:annotation>
+      <xs:documentation>Structure allowing the use of a controlled (cvParam) or uncontrolled vocabulary (userParam), or a reference to a predefined set of these in this nmrML file (paramGroupRef).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="referenceableParamGroupRef" type="dx:ReferenceableParamGroupRefType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cvParam" type="dx:CVParamType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="userParam" type="dx:UserParamType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReferenceableParamGroupRefType">
+    <xs:annotation>
+      <xs:documentation>A reference to a previously defined ParamGroup, which is a reusable container of one or more cvParams.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="ref" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>Reference to the id attribute in a referenceableParamGroup.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="CVParamType">
+    <xs:annotation>
+      <xs:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="cvRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="accession" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="value" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitAccession" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitName" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="UserParamType">
+    <xs:annotation>
+      <xs:documentation>Uncontrolled user parameters (essentially allowing free text). Before using these, one should verify whether there is an appropriate CV term available, and if so, use the CV term instead</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The name for the parameter.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="type" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>The datatype of the parameter, where appropriate (e.g.: xsd:float).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="value" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>The value for the parameter, where appropriate.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitAccession" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitName" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SourceFileListType">
+    <xs:annotation>
+      <xs:documentation>List and descriptions of the source files this nmrML document was generated or derived from</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="sourceFile" type="dx:SourceFileType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of source files used in generating the instance document.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SourceFileType">
+    <xs:annotation>
+      <xs:documentation>Description of the source file, including location and type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:attribute name="id" type="xs:ID" use="required">
+          <xs:annotation>
+            <xs:documentation>An identifier for this file.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Name of the source file, without reference to location (either URI or local path).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="location" type="xs:anyURI" use="required">
+          <xs:annotation>
+            <xs:documentation>URI-formatted location where the file was retrieved.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReferenceableParamGroupListType">
+    <xs:annotation>
+      <xs:documentation>Container for a list of referenceableParamGroups</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="referenceableParamGroup" type="dx:ReferenceableParamGroupType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of ParamGroups defined in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="ReferenceableParamGroupType">
+    <xs:annotation>
+      <xs:documentation>A collection of CVParam and UserParam elements that can be referenced from elsewhere in this nmrML document by using the 'paramGroupRef' element in that location to reference the 'id' attribute value of this element.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cvParam" type="dx:CVParamType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="userParam" type="dx:UserParamType" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required">
+      <xs:annotation>
+        <xs:documentation>The identifier with which to reference this ReferenceableParamGroup.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SampleListType">
+    <xs:annotation>
+      <xs:documentation>List and descriptions of samples.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="sample" type="dx:SampleType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of Samples defined in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SampleType">
+    <xs:annotation>
+      <xs:documentation>Expansible description of the sample used to generate the dataset, named in sampleName.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:attribute name="id" type="xs:ID" use="required">
+          <xs:annotation>
+            <xs:documentation>A unique identifier across the samples with which to reference this sample description.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>An optional name for the sample description, mostly intended as a quick mnemonic.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SoftwareListType">
+    <xs:annotation>
+      <xs:documentation>List and descriptions of software used to acquire and/or process the data in this nmrML file.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="software" type="dx:SoftwareType">
+        <xs:annotation>
+          <xs:documentation>A piece of software.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of softwares defined in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SoftwareType">
+    <xs:annotation>
+      <xs:documentation>Software information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:attribute name="id" type="xs:ID" use="required">
+          <xs:annotation>
+            <xs:documentation>An identifier for this software that is unique across all SoftwareTypes.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="version" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>The software version.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ScanSettingsListType">
+    <xs:annotation>
+      <xs:documentation>List with the descriptions of the acquisition settings applied prior to the start of data acquisition.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="scanSettings" type="dx:ScanSettingsType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of AcquisitionType elements in this list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="ScanSettingsType">
+    <xs:annotation>
+      <xs:documentation>Description of the acquisition settings of the instrument prior to the start of the run.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="sourceFileRefList" type="dx:SourceFileRefListType">
+            <xs:annotation>
+              <xs:documentation>List with the source files containing the acquisition settings.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="targetList" type="dx:TargetListType">
+            <xs:annotation>
+              <xs:documentation>Target list (or 'inclusion list') configured prior to the run.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required">
+          <xs:annotation>
+            <xs:documentation>A unique identifier for this acquisition setting.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SourceFileRefListType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="sourceFileRef" type="dx:SourceFileRefType">
+        <xs:annotation>
+          <xs:documentation>Reference to a previously defined sourceFile.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>This number of source files referenced in this list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SourceFileRefType">
+    <xs:attribute name="ref" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>This attribute must reference the 'id' of the appropriate sourceFile.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TargetListType">
+    <xs:annotation>
+      <xs:documentation>Target list (or 'inclusion list') configured prior to the run.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="target" type="dx:ParamGroupType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of TargetType elements in this list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="InstrumentConfigurationListType">
+    <xs:annotation>
+      <xs:documentation>List and descriptions of instrument configurations. At least one instrument configuration must be specified, even if it is only to specify that the instrument is unknown. In that case, the "instrument model" term is used to indicate the unknown instrument in the instrumentConfiguration.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="instrumentConfiguration" type="dx:InstrumentConfigurationType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of instrument configurations present in this list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="InstrumentConfigurationType">
+    <xs:annotation>
+      <xs:documentation>Description of a particular hardware configuration of a NMR spectrometer. For software configuration, use a ReferenceableParamGroup element.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="componentList" type="dx:ComponentListType" />
+          <xs:element minOccurs="0" name="softwareRef" type="dx:SoftwareRefType" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required">
+          <xs:annotation>
+            <xs:documentation>An identifier for this instrument configuration.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="scanSettingsRef" type="xs:IDREF" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ComponentListType">
+    <xs:annotation>
+      <xs:documentation>List with the different components used in the NMR spectrometer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of components in this list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SoftwareRefType">
+    <xs:annotation>
+      <xs:documentation>Reference to a previously defined software element</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="ref" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>This attribute must be used to reference the 'id' attribute of a software element.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DataProcessingListType">
+    <xs:annotation>
+      <xs:documentation>List and descriptions of data processing applied to this data.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="dataProcessing" type="dx:DataProcessingType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of DataProcessingTypes in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DataProcessingType">
+    <xs:annotation>
+      <xs:documentation>Description of the way in which a particular software was used.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="processingMethod" type="dx:ProcessingMethodType">
+        <xs:annotation>
+          <xs:documentation>Description of the default peak processing method. This element describes the base method used in the generation of a particular nmrML file. Variable methods should be described in the appropriate acquisition section - if no acquisition-specific details are found, then this information serves as the default.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required">
+      <xs:annotation>
+        <xs:documentation>A unique identifier for this data processing that is unique across all DataProcessingTypes.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="ProcessingMethodType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:attribute name="order" type="xs:nonNegativeInteger" use="required">
+          <xs:annotation>
+            <xs:documentation>This attributes allows a series of consecutive steps to be placed in the correct order.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="softwareRef" type="xs:IDREF" use="required">
+          <xs:annotation>
+            <xs:documentation>This attribute must reference the 'id' of the appropriate SoftwareType.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RunType">
+    <xs:annotation>
+      <xs:documentation>A run in nmrML should correspond to a single, consecutive and coherent set of scans on an instrument.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="spectrumList" type="dx:SpectrumListType">
+            <xs:annotation>
+              <xs:documentation>All NMR spectra and the acquisitions underlying them are described and attached here. Subsidiary data arrays are also both described and attached here.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required">
+          <xs:annotation>
+            <xs:documentation>A unique identifier for this run.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="defaultInstrumentConfigurationRef" type="xs:IDREF" use="required">
+          <xs:annotation>
+            <xs:documentation>This attribute must reference the 'id' of the default instrument configuration. If a scan does not reference an instrument configuration, it implicitly refers to this configuration.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="defaultSourceFileRef" type="xs:IDREF" use="optional">
+          <xs:annotation>
+            <xs:documentation>This attribute can optionally reference the 'id' of the default source file. If a spectrum or scan does not reference a source file and this attribute is set, then it implicitly refers to this source file.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="sampleRef" type="xs:IDREF" use="optional">
+          <xs:annotation>
+            <xs:documentation>This attribute must reference the 'id' of the appropriate sample.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="startTimeStamp" type="xs:dateTime" use="optional">
+          <xs:annotation>
+            <xs:documentation>The optional start timestamp of the run, in UT.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SpectrumListType">
+    <xs:annotation>
+      <xs:documentation>List and descriptions of spectra.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spectrum" type="dx:SpectrumType" />
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of spectra defined in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>This attribute MUST reference the 'id' of the default data processing for the spectrum list. If an acquisition does not reference any data processing, it implicitly refers to this data processing. This attribute is required because the minimum amount of data processing that any format will undergo is "conversion to nmrML".</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SpectrumType">
+    <xs:annotation>
+      <xs:documentation>The structure that captures the generation of a peak list (including the underlying acquisitions). Also describes some of the parameters for the NMR spectrometer for a given acquisition (or list of acquisitions).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="binList" type="dx:BinListType" />
+          <xs:element minOccurs="0" name="metaboliteConcentrationList" type="dx:MetaboliteConcentrationListType" />
+        </xs:sequence>
+        <xs:attribute name="id" use="required">
+          <xs:annotation>
+            <xs:documentation>The native identifier for a spectrum. For unmerged native spectra or spectra from older open file formats, the format of the identifier is defined in the PSI-MS CV and referred to in the nmrML header. External documents may use this identifier together with the nmrML filename or accession to reference a particular spectrum.</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="\S+=\S+( \S+=\S+)*" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="index" type="xs:nonNegativeInteger" use="required">
+          <xs:annotation>
+            <xs:documentation>The zero-based, consecutive index of  the spectrum in the SpectrumList.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
+          <xs:annotation>
+            <xs:documentation>This attribute can optionally reference the 'id' of the appropriate dataProcessing.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="sourceFileRef" type="xs:IDREF" use="optional">
+          <xs:annotation>
+            <xs:documentation>This attribute can optionally reference the 'id' of the appropriate sourceFile.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BinListType">
+    <xs:annotation>
+      <xs:documentation>List and descriptions of bins.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="bin" type="dx:ParamGroupType">
+            <xs:annotation>
+              <xs:documentation>A single bin.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+          <xs:annotation>
+            <xs:documentation>the number of bins defined in this list.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MetaboliteConcentrationListType">
+    <xs:annotation>
+      <xs:documentation>List and identified and quantified metabolites.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="metaboliteConcentration" type="dx:ParamGroupType">
+            <xs:annotation>
+              <xs:documentation>A single metabolite concentration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+          <xs:annotation>
+            <xs:documentation>the number of metabolite concentrations defined in this list.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
