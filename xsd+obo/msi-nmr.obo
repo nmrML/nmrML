@@ -1,0 +1,848 @@
+format-version: 1.2
+date: 22:02:2012 13:11
+saved-by: joseph
+auto-generated-by: OBO-Edit 2.1
+import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
+default-namespace: NMR
+
+[Typedef]
+id: has_regexp
+name: has regexp
+
+[Typedef]
+id: has_units
+name: has_units
+
+[Typedef]
+id: part_of
+name: part_of
+is_transitive: true
+
+[Term]
+id: NMR:0000000
+name: Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+def: "Metabolomics Standards Initiative NMR Spectrometry Vocabularies." [MSI:NMR]
+creation_date: 2012-02-22T12:44:54Z
+
+[Term]
+id: NMR:1000001
+name: sample number
+def: "A reference number relevant to the sample under study." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000548 ! sample attribute
+
+[Term]
+id: NMR:1000003
+name: sample state
+def: "The chemical phase of a pure sample, or the state of a mixed sample." [MSI:NMR]
+is_a: NMR:1000548 ! sample attribute
+
+[Term]
+id: NMR:1000004
+name: sample mass
+def: "Total mass of sample used." [MSI:NMR]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: NMR:1000548 ! sample attribute
+relationship: has_units UO:0000021 ! gram
+
+[Term]
+id: NMR:1000005
+name: sample volume
+def: "Total volume of solution used." [MSI:NMR]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: NMR:1000548 ! sample attribute
+relationship: has_units UO:0000098 ! milliliter
+
+[Term]
+id: NMR:1000006
+name: sample concentration
+def: "Concentration of sample in picomol/ul, femtomol/ul or attomol/ul solution used." [MSI:NMR]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: NMR:1000548 ! sample attribute
+relationship: has_units UO:0000175 ! gram per liter
+
+[Term]
+id: NMR:1000031
+name: instrument model
+def: "Instrument model name not including the vendor's name." [MSI:NMR]
+relationship: part_of NMR:1000463 ! instrument
+
+[Term]
+id: NMR:1000032
+name: customization
+def: "Free text description of a single customization made to the instrument; for several modifications, use several entries." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000496 ! instrument attribute
+
+[Term]
+id: NMR:1000047
+name: emulsion
+def: "State if the sample is in emulsion form." [MSI:NMR]
+is_a: NMR:1000003 ! sample state
+
+[Term]
+id: NMR:1000048
+name: gas
+def: "State if the sample is in gaseous form." [MSI:NMR]
+is_a: NMR:1000003 ! sample state
+
+[Term]
+id: NMR:1000049
+name: liquid
+def: "State if the sample is in liquid form." [MSI:NMR]
+is_a: NMR:1000003 ! sample state
+
+[Term]
+id: NMR:1000050
+name: solid
+def: "State if the sample is in solid form." [MSI:NMR]
+is_a: NMR:1000003 ! sample state
+
+[Term]
+id: NMR:1000051
+name: solution
+def: "State if the sample is in solution form." [MSI:NMR]
+is_a: NMR:1000003 ! sample state
+
+[Term]
+id: NMR:1000052
+name: suspension
+def: "State if the sample is in suspension form." [MSI:NMR]
+is_a: NMR:1000003 ! sample state
+
+[Term]
+id: NMR:1000053
+name: sample batch
+def: "Sample batch lot identifier." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000548 ! sample attribute
+
+[Term]
+id: NMR:1000122
+name: Bruker instrument model
+def: "Bruker instrument model." [MSI:NMR]
+is_a: NMR:1000031 ! instrument model
+
+[Term]
+id: NMR:1000231
+name: peak
+def: "" [MSI:NMR]
+relationship: part_of NMR:1000442 ! spectrum
+
+[Term]
+id: NMR:1000442
+name: spectrum
+def: "A nmr spectrum is a set of chemical shifts representing a chemical analysis." [MSI:NMR]
+relationship: part_of NMR:1001458 ! spectrum generation information
+
+[Term]
+id: NMR:1000452
+name: data transformation
+def: "Terms used to describe types of data processing." [MSI:NMR]
+synonym: "data processing" EXACT []
+relationship: part_of NMR:1001458 ! spectrum generation information
+
+[Term]
+id: NMR:1000457
+name: sample
+def: "Terms to describe the sample." [MSI:NMR]
+relationship: part_of NMR:1001458 ! spectrum generation information
+
+[Term]
+id: NMR:1000463
+name: instrument
+def: "Description of the instrument or the mass spectrometer." [MSI:NMR]
+synonym: "instrument configuration" EXACT []
+relationship: part_of NMR:1001458 ! spectrum generation information
+
+[Term]
+id: NMR:1000489
+name: Varian instrument model
+def: "Varian instrument model." [MSI:NMR]
+is_a: NMR:1000031 ! instrument model
+
+[Term]
+id: NMR:1000496
+name: instrument attribute
+def: "Instrument properties that are associated with a value." [MSI:NMR]
+is_a: NMR:1000547 ! object attribute
+relationship: part_of NMR:1000463 ! instrument
+
+[Term]
+id: NMR:1000524
+name: data file content
+def: "Describes the data content on the file." [MSI:NMR]
+relationship: part_of NMR:1000577 ! raw data file
+
+[Term]
+id: NMR:1000529
+name: instrument serial number
+def: "Serial Number of the instrument." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000496 ! instrument attribute
+
+[Term]
+id: NMR:1000530
+name: file format conversion
+def: "Conversion of one file format to another." [MSI:NMR]
+is_a: NMR:1000452 ! data transformation
+
+[Term]
+id: NMR:1000531
+name: software
+def: "Software related to the recording or transformation of spectra." [MSI:NMR]
+relationship: part_of NMR:0000000 ! Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+
+[Term]
+id: NMR:1000547
+name: object attribute
+def: "Object Attribute." [MSI:NMR]
+relationship: part_of NMR:1001458 ! spectrum generation information
+
+[Term]
+id: NMR:1000548
+name: sample attribute
+def: "Sample properties that are associated with a value." [MSI:NMR]
+is_a: NMR:1000547 ! object attribute
+relationship: part_of NMR:1000457 ! sample
+
+[Term]
+id: NMR:1000559
+name: spectrum type
+def: "Spectrum type." [MSI:NMR]
+relationship: part_of NMR:1000442 ! spectrum
+
+[Term]
+id: NMR:1000561
+name: data file checksum type
+def: "Checksum is a form of redundancy check, a simple way to protect the integrity of data by detecting errors in data." [MSI:NMR]
+relationship: part_of NMR:1000577 ! raw data file
+
+[Term]
+id: NMR:1000568
+name: MD5
+def: "MD5 (Message-Digest algorithm 5) is a cryptographic hash function with a 128-bit hash value used to check the integrity of files." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000561 ! data file checksum type
+
+[Term]
+id: NMR:1000569
+name: SHA-1
+def: "SHA-1 (Secure Hash Algorithm-1) is a cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is also used to verify file integrity." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000561 ! data file checksum type
+
+[Term]
+id: NMR:1000577
+name: raw data file
+def: "Describes the type of file and its content." [MSI:NMR]
+synonym: "source file" EXACT []
+relationship: part_of NMR:1001458 ! spectrum generation information
+
+[Term]
+id: NMR:1000585
+name: contact attribute
+def: "Details about a person or organization to contact in case of concern or discussion about the file." [MSI:NMR]
+is_a: NMR:1000547 ! object attribute
+relationship: part_of NMR:0000000 ! Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+
+[Term]
+id: NMR:1000586
+name: contact name
+def: "Name of the contact person or organization." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1000587
+name: contact address
+def: "Postal address of the contact person or organization." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1000588
+name: contact URL
+def: "Uniform Resource Locator related to the contact person or organization." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1000589
+name: contact email
+def: "Email address of the contact person or organization." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1000590
+name: contact organization
+def: "Home institution of the contact person." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1000630
+name: data processing parameter
+def: "Data processing parameter used in the data processing performed on the data file." [MSI:NMR]
+relationship: part_of NMR:1001458 ! spectrum generation information
+
+[Term]
+id: NMR:1000747
+name: completion time
+def: "The time that a data processing action was finished." [MSI:NMR]
+xref: value-type:xsd\:date "The allowed value-type for this CV term."
+is_a: NMR:1000630 ! data processing parameter
+
+[Term]
+id: NMR:1000767
+name: native spectrum identifier format
+def: "Describes how the native spectrum identifiers are formated." [MSI:NMR]
+synonym: "nativeID format" EXACT []
+relationship: part_of NMR:1000577 ! raw data file
+
+[Term]
+id: NMR:1000773
+name: Bruker FID nativeID format
+def: "file=xsd:IDREF." [MSI:NMR]
+comment: The nativeID must be the same as the source file ID.
+is_a: NMR:1000767 ! native spectrum identifier format
+
+[Term]
+id: NMR:1000799
+name: custom unreleased software tool
+def: "A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the MSI-NMR working group in order to have another CV term added." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000531 ! software
+
+[Term]
+id: NMR:1000831
+name: sample preparation
+def: "Properties of the preparation steps which took place before the measurement was performed." [MSI:NMR]
+is_a: NMR:1000547 ! object attribute
+relationship: part_of NMR:1000548 ! sample attribute
+
+[Term]
+id: NMR:1000857
+name: run attribute
+def: "Properties of the described run." [MSI:NMR]
+is_a: NMR:1000547 ! object attribute
+
+[Term]
+id: NMR:1000859
+name: molecule
+def: "A molecules is a fundamental component of a chemical compound that is the smallest part of the compound that can participate in a chemical reaction." [MSI:NMR]
+relationship: part_of NMR:1000881 ! chemical compound
+
+[Term]
+id: NMR:1000860
+name: peptide
+def: "A compound of low molecular weight that is composed of two or more amino acids." [MSI:NMR]
+is_a: NMR:1000881 ! chemical compound
+
+[Term]
+id: NMR:1000861
+name: chemical compound attribute
+def: "A describable property of a chemical compound." [MSI:NMR]
+relationship: part_of NMR:1000881 ! chemical compound
+
+[Term]
+id: NMR:1000862
+name: isoelectric point
+def: "The pH of a solution at which a charged molecule does not migrate in an electric field." [MSI:NMR]
+synonym: "pI" EXACT []
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: NMR:1000861 ! chemical compound attribute
+
+[Term]
+id: NMR:1000863
+name: predicted isoelectric point
+def: "The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm." [MSI:NMR]
+synonym: "predicted pI" EXACT []
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: NMR:1000862 ! isoelectric point
+
+[Term]
+id: NMR:1000864
+name: chemical compound formula
+def: "A combination of symbols used to express the chemical composition of a compound." [MSI:NMR]
+relationship: part_of NMR:1000881 ! chemical compound
+
+[Term]
+id: NMR:1000865
+name: empirical formula
+def: "A chemical formula which expresses the proportions of the elements present in a substance." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000864 ! chemical compound formula
+
+[Term]
+id: NMR:1000866
+name: molecular formula
+def: "A chemical compound formula expressing the number of atoms of each element present in a compound, without indicating how they are linked." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000864 ! chemical compound formula
+
+[Term]
+id: NMR:1000867
+name: structural formula
+def: "A chemical formula showing the number of atoms of each element in a molecule, their spatial arrangement, and their linkage to each other." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000864 ! chemical compound formula
+
+[Term]
+id: NMR:1000868
+name: SMILES string
+def: "The simplified molecular input line entry specification or SMILES is a specification for unambiguously describing the structure of a chemical compound using a short ASCII string." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000864 ! chemical compound formula
+
+[Term]
+id: NMR:1000878
+name: external reference identifier
+def: "An identifier/accession number to an external reference database." [MSI:NMR]
+relationship: part_of NMR:0000000 ! Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+
+[Term]
+id: NMR:1000879
+name: PubMed identifier
+def: "A unique identifier for a publication in the PubMed database (MIR:00000015)." [MSI:NMR]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: NMR:1000878 ! external reference identifier
+
+[Term]
+id: NMR:1000881
+name: chemical compound
+def: "A substance formed by chemical union of two or more elements or ingredients in definite proportion by weight." [MSI:NMR]
+relationship: part_of NMR:0000000 ! Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+
+[Term]
+id: NMR:1000882
+name: protein
+def: "A compound composed of one or more chains of amino acids in a specific order determined by the base sequence of nucleotides in the DNA coding for the protein." [MSI:NMR]
+is_a: NMR:1000881 ! chemical compound
+
+[Term]
+id: NMR:1000883
+name: protein short name
+def: "A short name or symbol of a protein (e.g., HSF 1 or HSF1_HUMAN)." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000884 ! protein attribute
+
+[Term]
+id: NMR:1000884
+name: protein attribute
+def: "An nonphysical attribute describing a specific protein." [MSI:NMR]
+relationship: part_of NMR:1000882 ! protein
+
+[Term]
+id: NMR:1000885
+name: protein accession
+def: "Accession number for a specific protein in a database." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000884 ! protein attribute
+
+[Term]
+id: NMR:1000886
+name: protein name
+def: "A long name describing the function of the protein." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000884 ! protein attribute
+
+[Term]
+id: NMR:1000887
+name: peptide attribute
+def: "An nonphysical attribute that can be used to describe a peptide." [MSI:NMR]
+relationship: part_of NMR:1000860 ! peptide
+
+[Term]
+id: NMR:1000888
+name: unmodified peptide sequence
+def: "A sequence of letter symbols denoting the order of amino acids that compose the peptide, without encoding any amino acid mass modifications that might be present." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000887 ! peptide attribute
+
+[Term]
+id: NMR:1000889
+name: modified peptide sequence
+def: "A sequence of letter symbols denoting the order of amino acids that compose the peptide plus the encoding any amino acid mass modifications that are present using the notation where the total mass of the modified amino acid is specified in square bracketed numbers following the letter (e.g. R[162.10111] indicates an arginine whose final modified mass is 162.10111 amu)." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000887 ! peptide attribute
+
+[Term]
+id: NMR:1000890
+name: peptide labeling state
+def: "A state description of how a peptide might be isotopically or isobarically labelled." [MSI:NMR]
+is_a: NMR:1000887 ! peptide attribute
+
+[Term]
+id: NMR:1000891
+name: heavy labeled peptide
+def: "A peptide that has been created or labeled with some heavier-than-usual isotopes." [MSI:NMR]
+is_a: NMR:1000890 ! peptide labeling state
+
+[Term]
+id: NMR:1000892
+name: unlabeled peptide
+def: "A peptide that has not been labeled with heavier-than-usual isotopes. This is often referred to as \"light\" to distinguish from \"heavy\"." [MSI:NMR]
+synonym: "light labeled peptide" EXACT []
+is_a: NMR:1000890 ! peptide labeling state
+
+[Term]
+id: NMR:1000893
+name: peptide group label
+def: "An arbitrary string label used to mark a set of peptides that belong together in a set, whereby the members are differentiated by different isotopic labels. For example, the heavy and light forms of the same peptide will both be assigned the same peptide group label." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000887 ! peptide attribute
+
+[Term]
+id: NMR:1000898
+name: standard
+def: "Something, such as a practice or a product, that is widely recognized or employed, especially because of its excellence." [MSI:NMR]
+relationship: part_of NMR:0000000 ! Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+
+[Term]
+id: NMR:1000899
+name: de facto standard
+def: "A practice or product that has become a standard not because it has been approved by a standards organization but because it is widely used and recognized by the industry as being standard." [MSI:NMR]
+is_a: NMR:1000898 ! standard
+
+[Term]
+id: NMR:1000900
+name: minimum information standard
+def: "A specification of a minimum amount of information needed to reproduce or fully interpret a scientific result." [MSI:NMR]
+is_a: NMR:1000898 ! standard
+
+[Term]
+id: NMR:1000914
+name: tab delimited text file
+def: "A file that has two or more columns of tabular data where each column is separated by a TAB character." [MSI:NMR]
+is_a: NMR:1001459 ! file format
+
+[Term]
+id: NMR:1000934
+name: gene name
+def: "Name of the gene from which the protein is translated." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000884 ! protein attribute
+
+[Term]
+id: NMR:1000933
+name: protein modifications
+def: "Encoding of modifications of the protein sequence from the specified accession, written in PEFF notation." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000884 ! protein attribute
+
+[Term]
+id: NMR:1001000
+name: spectrum interpretation
+def: "Collection of terms from the MSI Metabolomics Informatics standards describing the interpretation of spectra." [MSI:MI]
+relationship: part_of NMR:0000000 ! Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+
+[Term]
+id: NMR:1001040
+name: intermediate analysis format
+def: "Type of the source file, the nmrIdentML was created from." [MSI:MI]
+is_a: NMR:1001459 ! file format
+
+[Term]
+id: NMR:1001044
+name: cleavage agent details
+def: "Details of cleavage agent (enzyme)." [MSI:MI]
+is_a: NMR:1001249 ! search input details
+
+[Term]
+id: NMR:1001107
+name: data stored in database
+def: "Source file for this nmrIdentML was a data set in a database." [MSI:MI]
+is_a: NMR:1001040 ! intermediate analysis format
+
+[Term]
+id: NMR:1001176
+name: (?<=[KR])(?\!P)
+is_a: NMR:1001180 ! Cleavage agent regular expression
+
+[Term]
+id: NMR:1001180
+name: Cleavage agent regular expression
+def: "Branch containing regular expressions for cleavage enzymes." [MSI:MI]
+relationship: part_of NMR:1001044 ! cleavage agent details
+
+[Term]
+id: NMR:1001249
+name: search input details
+relationship: part_of NMR:1001000 ! spectrum interpretation
+
+[Term]
+id: NMR:1001266
+name: role type
+def: "Role of a Person or Organization." [MSI:MI]
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1001267
+name: software vendor
+is_a: NMR:1001266 ! role type
+
+[Term]
+id: NMR:1001268
+name: programmer
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1001266 ! role type
+
+[Term]
+id: NMR:1001269
+name: instrument vendor
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1001266 ! role type
+
+[Term]
+id: NMR:1001270
+name: lab personnel
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1001266 ! role type
+
+[Term]
+id: NMR:1001271
+name: researcher
+is_a: NMR:1001266 ! role type
+
+[Term]
+id: NMR:1001456
+name: analysis software
+def: "Analysis software." [MSI:NMR]
+is_a: NMR:1000531 ! software
+
+[Term]
+id: NMR:1001457
+name: data processing software
+def: "Conversion software." [MSI:NMR]
+is_a: NMR:1000531 ! software
+
+[Term]
+id: NMR:1001458
+name: spectrum generation information
+def: "Vocabularies describing the spectrum generation information." [MSI:NMR]
+relationship: part_of NMR:0000000 ! Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+
+[Term]
+id: NMR:1001459
+name: file format
+def: "Format of data files." [MSI:NMR]
+relationship: part_of NMR:0000000 ! Metabolomics Standards Initiative NMR Spectrometry Vocabularies
+
+[Term]
+id: NMR:1001755
+name: contact phone number
+def: "Phone number of the contact person or organization." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1001756
+name: contact fax number
+def: "Fax number for the contact person or organization." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1001757
+name: contact toll-free phone number
+def: "Toll-free phone number of the contact person or organization." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000585 ! contact attribute
+
+[Term]
+id: NMR:1001922
+name: Digital Object Identifier (DOI)
+def: "DOI unique identifier." [MSI:MI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000878 ! external reference identifier
+relationship: has_regexp NMR:1001176 ! (10\.(\d)+(\.(\d)*)?/[^\*].+)
+
+[Term]
+id: NMR:1001923
+name: external reference keyword
+def: "Free text attribute that can enrich the information about an entity." [MSI:MI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000878 ! external reference identifier
+
+[Term]
+id: NMR:1001924
+name: journal article keyword
+def: "Keyword present in a scientific publication." [MSI:MI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1001923 ! external reference keyword
+
+[Term]
+id: NMR:1001925
+name: submitter keyword
+def: "Keyword assigned by the data submitter." [MSI:MI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1001923 ! external reference keyword
+
+[Term]
+id: NMR:1001926
+name: curator keyword
+def: "Keyword assigned by a data curator." [MSI:MI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1001923 ! external reference keyword
+
+[Term]
+id: NMR:1001954
+name: acquisition parameter
+def: "Parameters used in the nmr spectrometry acquisition." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of NMR:1001458 ! spectrum generation information
+
+[Term]
+id: NMR:1002000
+name: HMDB identifier
+def: "A unique identifier for a metabolite in the HMDB database (HMDB00001)." [MSI:NMR]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: NMR:1000878 ! external reference identifier
+
+[Term]
+id: NMR:1002001
+name: Chenomx software
+def: "Chenomx software for data acquisition and analysis." [MSI:NMR]
+is_a: NMR:1000531 ! software
+
+[Term]
+id: NMR:1002002
+name: NMR Suite
+def: "Chenomx software for data analysis." [MSI:NMR]
+is_a: NMR:1002001 ! Chenomx software
+is_a: NMR:1001456 ! analysis software
+is_a: NMR:1001457 ! data processing software
+
+[Term]
+id: NMR:1002003
+name: Varian FID nativeID format
+def: "file=xsd:IDREF." [MSI:NMR]
+comment: The nativeID must be the same as the source file ID.
+is_a: NMR:1000767 ! native spectrum identifier format
+
+[Term]
+id: NMR:1002004
+name: nmr spectrometer file format
+def: "The format of the file being used. This could be a instrument or vendor specific proprietary file format or a converted open file format." [MSI:NMR]
+is_a: NMR:1001459 ! file format
+
+[Term]
+id: NMR:1002005
+name: text file
+def: "Simple text file of peaks." [MSI:PI]
+is_a: NMR:1002004 ! nmr spectrometer file format
+
+[Term]
+id: NMR:1002006
+name: parameter file
+def: "Parameter file used to configure the acquisition of raw data on the instrument." [MSI:NMR]
+is_a: NMR:1002004 ! nmr spectrometer file format
+
+[Term]
+id: NMR:1002007
+name: nmr spectrum
+def: "" [MSI:NMR]
+is_a: NMR:1000524 ! data file content
+is_a: NMR:1000559 ! spectrum type
+
+[Term]
+id: NMR:1002008
+name: Conversion to nmrML
+def: "Conversion of a file format to Metabolomics Standards Initiative nmrData file format." [MSI:NMR]
+is_a: NMR:1000530 ! file format conversion
+
+[Term]
+id: NMR:1002009
+name: Conversion to JCAMP-DX
+def: "Conversion of a file format to JCAMP-DX file format." [MSI:NMR]
+is_a: NMR:1000530 ! file format conversion
+
+[Term]
+id: NMR:1002010
+name: solvent
+def: "Solvent." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000857 ! run attribute
+
+[Term]
+id: NMR:1002011
+name: pH
+def: "pH." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000857 ! run attribute
+
+[Term]
+id: NMR:1002012
+name: temperature
+def: "Temperature." [MSI:NMR]
+xref: value-type:xsd\:decimal "The allowed value-type for this CV term."
+is_a: NMR:1000857 ! run attribute
+relationship: has_units UO:0000027 ! degree celsius
+
+[Term]
+id: NMR:1002013
+name: chemical shift reference
+def: "Chemical shift reference." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1000857 ! run attribute
+
+[Term]
+id: NMR:1002014
+name: spectrum bin
+def: "A bin for a spectrum." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of NMR:1000442 ! spectrum
+
+[Term]
+id: NMR:1002015
+name: bin label
+def: "Bin label." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1002014 ! spectrum bin
+
+[Term]
+id: NMR:1002016
+name: bin start
+def: "Bin start." [MSI:NMR]
+xref: value-type:xsd\:decimal "The allowed value-type for this CV term."
+is_a: NMR:1002014 ! spectrum bin
+relationship: has_units UO:0000169 ! parts per million
+
+[Term]
+id: NMR:1002017
+name: bin end
+def: "Bin end." [MSI:NMR]
+xref: value-type:xsd\:decimal "The allowed value-type for this CV term."
+is_a: NMR:1002014 ! spectrum bin
+relationship: has_units UO:0000169 ! parts per million
+
+[Term]
+id: NMR:1002018
+name: bin area
+def: "Bin area." [MSI:NMR]
+xref: value-type:xsd\:decimal "The allowed value-type for this CV term."
+is_a: NMR:1002014 ! spectrum bin
+
+[Term]
+id: NMR:1002019
+name: metabolite concentrations
+def: "Identified and quantified metabolites." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of NMR:1000442 ! spectrum
+
+[Term]
+id: NMR:1002020
+name: metabolite name
+def: "Name of metabolite." [MSI:NMR]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: NMR:1002018 ! metabolite concentrations
+
+[Term]
+id: NMR:1002021
+name: metabolite concentration
+def: "Bin start." [MSI:NMR]
+xref: value-type:xsd\:decimal "The allowed value-type for this CV term."
+is_a: NMR:1002018 ! metabolite concentrations
+relationship: has_units UO:0000064 ! micromolar
