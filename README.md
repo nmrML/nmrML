@@ -12,12 +12,14 @@
 
 ## Development Partners
 
-** [The Metabolomics Innovation Centre](http://www.metabolomicscentre.ca/exchangeformats) **
+[**The Metabolomics Innovation Centre**](http://www.metabolomicscentre.ca/exchangeformats)
+
 The Metabolomics Innovation Centre (TMIC) is a Canadian-funded core facility that has a unique combination of infrastructure and personnel to perform a wide range of cutting-edge metabolomic studies for clinical trials research, biomedical studies, bioproducts studies, nutrient profiling and environmental testing.
 
 The platform is led by Dr. David Wishart (University of Alberta), Dr. Christoph Borchers (University of Victoria) and Dr. Liang Li (University of Alberta).
 
-** [COSMOS - COordination Of Standards In MetabOlomicS](http://cosmos-fp7.eu/) **
+[**COSMOS - COordination Of Standards In MetabOlomicS**](http://cosmos-fp7.eu/)
+
 COSMOS is a global effort to enable free and open sharing of metabolomics data. Coordinated by Dr Christoph Steinbeck of the EMBL-European Bioinformatics Institute, COSMOS (Coordination of Standards in Metabolomics) brings together European data providers to set and promote community standards that will make it easier to disseminate metabolomics data through life science e-infrastructures. This Coordination Action has been financed with €2 million by the European Commission's Seventh Framework Programme. 
 
 ## Contibuting
