@@ -5,7 +5,7 @@ MINOR   := $(shell echo $(VERSION) | cut -f2 -d'.' )
 BUILD   := $(shell echo $(VERSION) | cut -f3 -d'.' )
 
 .PHONY: docs docs_clean docs_rebuild tidy undo_tag show_tags \
-	show_tags bump_build bump_minor bump_major prepare_build
+	show_tags bump_build bump_minor bump_major prepare
 
 # Build the docs if they don't exist
 docs: docs/schema.html
@@ -49,7 +49,7 @@ bump_minor:
 bump_major:
 	echo $(shell expr $(MAJOR) + 1 ).0.0 > VERSION
 
-prepare_build: tidy bump_build docs_rebuild
+prepare: tidy docs_rebuild
 	git add AUTHORS VERSION docs
 
 show_version:
