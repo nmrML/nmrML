@@ -33,32 +33,20 @@ Follow these intructions to create release a tagged version:
 1. Commit changes in your working directory that you want in this release. It is a good idea to push these changes to GitHub before continuing. Make sure the changes you want in this release are merged with master.
 2. Make sure the [HISTORY.md](https://github.com/NMR-ML/NMR-ML/blob/master/HISTORY.md) file is updated with the changes in this release. Follow the format in the file.
 3. Bump the version, rebuild the docs, tag the release and push the release to Github with one of the following commands:
-
-* For a major release:
-
-		make release_major
-
-* For a minor release:
-
-		make release_minor
-
-* For a build release:
-
-		make release_build
-
-4. Now you can push the release with:
-
+	* For a major release: `make release_major`
+	* For a minor release: `make release_minor`	
+	* For a build release: `make release_build`
+4. Now you can push the release with: 
 	git push --tags
-
 
 ## Directory Structure
 
-* docs - The docs generated from the schema and ontology files
-* example
-** vendor - Useful example files from other software and data formats
-** nmr-ml - Example files for different use cases of NMR-ML
-* lib - Scripts/code used for generating docs, etc.
-* mappings - Files that map variable names in other formats to variable names
+* [docs](https://github.com/NMR-ML/NMR-ML/tree/master/docs) - The docs generated from the schema and ontology files
+* [examples](https://github.com/NMR-ML/NMR-ML/tree/master/examples)
+    * [vendor](https://github.com/NMR-ML/NMR-ML/tree/master/examples/vendor) - Useful example files from other software and data formats
+    * [nmr-ml]((https://github.com/NMR-ML/NMR-ML/tree/master/examples/nmr-ml) - Example files for different use cases of NMR-ML
+* [lib](https://github.com/NMR-ML/NMR-ML/tree/master/lib) - Scripts/code used for generating docs, etc.
+* [mappings](https://github.com/NMR-ML/NMR-ML/tree/master/mappings) - Files that map variable names in other formats to variable names
 in NMR-ML. Used by conversion software.
-* tools - Example software using NMR-ML
+* [tools](https://github.com/NMR-ML/NMR-ML/tree/master/tools) - Example software using NMR-ML
 
