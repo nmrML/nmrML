@@ -4,6 +4,9 @@ MAJOR   := $(shell echo $(VERSION) | cut -f1 -d'.' )
 MINOR   := $(shell echo $(VERSION) | cut -f2 -d'.' )
 BUILD   := $(shell echo $(VERSION) | cut -f3 -d'.' )
 
+.PHONY: docs docs_clean docs_rebuild tidy undo_tag show_tags \
+	show_tags bump_build bump_minor bump_major prepare_build
+
 # Build the docs if they don't exist
 docs: docs/schema.html
 
@@ -15,8 +18,8 @@ docs_clean:
 docs_rebuild: docs_clean docs
 
 # Build the html file explaining the schema from the xsd file
-docs/schema.html: schemas/nmr-ml.xsd
-	xsltproc --stringparam title "NMR-ML v$(VERSION)" \
+docs/schema.html: schemas/nmr-ml.xsd tidy
+	xsltproc --stringparam title "NMR-ML v$(shell cat VERSION)" \
          lib/xs3p.xsl schemas/nmr-ml.xsd > docs/schema.html
 
 # Tidy up the files to prepare for pushingn changes
@@ -47,6 +50,7 @@ bump_major:
 	echo $(shell expr $(MAJOR) + 1 ).0.0 > VERSION
 
 prepare_build: tidy bump_build docs_rebuild
+	git add AUTHORS VERSION docs
 
 show_version:
 	@echo "version:   $(VERSION)"
