@@ -5,7 +5,8 @@ MINOR   := $(shell echo $(VERSION) | cut -f2 -d'.' )
 BUILD   := $(shell echo $(VERSION) | cut -f3 -d'.' )
 
 .PHONY: docs docs_clean docs_rebuild tidy undo_tag show_tags \
-	show_tags bump_build bump_minor bump_major prepare
+	show_tags bump_build bump_minor bump_major prepare_release \
+	release_major release_minor release_build
 
 # Build the docs if they don't exist
 docs: docs/schema.html
@@ -28,7 +29,7 @@ docs/schema.html: schemas/nmr-ml.xsd tidy
 tidy:
 	sed -i ".tmp" -e '/^$$/d' VERSION && rm VERSION.tmp
 	sed '/^$$/d' AUTHORS  | sort -o AUTHORS
-
+	
 # Tag the current version
 tag: tidy
 	git tag -a v$$(cat VERSION) 
@@ -49,8 +50,15 @@ bump_minor:
 bump_major:
 	echo $(shell expr $(MAJOR) + 1 ).0.0 > VERSION
 
-prepare: tidy docs_rebuild
+prepare_release: tidy docs_rebuild
 	git add AUTHORS VERSION docs
+	git commit -m "Release $$(cat VERSION)"
+
+release_build: bump_build prepare_release
+
+release_minor: bump_minor prepare_release
+
+release_major: bump_major prepare_release
 
 show_version:
 	@echo "version:   $(VERSION)"
