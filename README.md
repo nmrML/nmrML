@@ -48,5 +48,7 @@ Follow these intructions to create release a tagged version:
 * [lib](https://github.com/NMR-ML/NMR-ML/tree/master/lib) - Scripts/code used for generating docs, etc.
 * [mappings](https://github.com/NMR-ML/NMR-ML/tree/master/mappings) - Files that map variable names in other formats to variable names
 in NMR-ML. Used by conversion software.
+* [ontologies](https://github.com/NMR-ML/NMR-ML/tree/master/ontologies) - The ontology files describing the controlled vocabulary
+* [schemas](https://github.com/NMR-ML/NMR-ML/tree/master/schemas) - The .xsd files describing the NMR-ML schema
 * [tools](https://github.com/NMR-ML/NMR-ML/tree/master/tools) - Example software using NMR-ML
 
