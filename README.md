@@ -23,6 +23,7 @@ The TMIC platform is led by Dr. David Wishart (University of Alberta), Dr. Chris
 
 The IPB is a non-university research centre of the Leibniz Association (www.wgl.de), It investigates in a multidisciplinary style structure and function of natural products from plants and fungi, analyse interactions of plants with pathogenic and symbiotic microorganisms and study molecular interactions as part of complex biological processes. At the IPB, plant metabolomics has been an important area of research for many years.
 The IPB leads the standards development workpackage within the COSMOS project.
+
 [...]
 
 ### Versioning
