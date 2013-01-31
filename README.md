@@ -22,7 +22,7 @@ The platform is led by Dr. David Wishart (University of Alberta), Dr. Christoph 
 
 COSMOS is a global effort to enable free and open sharing of metabolomics data. Coordinated by Dr Christoph Steinbeck of the EMBL-European Bioinformatics Institute, COSMOS (Coordination of Standards in Metabolomics) brings together European data providers to set and promote community standards that will make it easier to disseminate metabolomics data through life science e-infrastructures. This Coordination Action has been financed with €2 million by the European Commission's Seventh Framework Programme. 
 
-## Contibuting
+## Contributing
 
 ### Versioning
 
