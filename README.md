@@ -1,6 +1,8 @@
 #  [NMR-ML](http://nmr-ml.org/)
 
 [NMR-ML](http://nmr-ml.org/) is an open mark-up language for NMR data. It is currently under heavy development and is not yet ready for public use.
+The development of this standard is coordinated by Workpackage 2 of the [**COSMOS - COordination Of Standards In MetabOlomicS**](http://cosmos-fp7.eu/) Project. COSMOS is a global effort to enable free and open sharing of metabolomics data. Coordinated by Dr Christoph Steinbeck of the EMBL-European Bioinformatics Institute, COSMOS brings together European data providers to set and promote community standards that will make it easier to disseminate metabolomics data through life science e-infrastructures. This Coordination Action has been financed with €2 million by the European Commission's Seventh Framework Programme. 
+The NMR-ML data standard will be approved by the Metabolomics standards Initiative and was derived from an earlier NMR-ML that was developed by the Metabolomics Innovation Centre (TMIC).
 
 ## NMR-ML links
 
@@ -18,9 +20,7 @@ The Metabolomics Innovation Centre (TMIC) is a Canadian-funded core facility tha
 
 The platform is led by Dr. David Wishart (University of Alberta), Dr. Christoph Borchers (University of Victoria) and Dr. Liang Li (University of Alberta).
 
-[**COSMOS - COordination Of Standards In MetabOlomicS**](http://cosmos-fp7.eu/)
-
-COSMOS is a global effort to enable free and open sharing of metabolomics data. Coordinated by Dr Christoph Steinbeck of the EMBL-European Bioinformatics Institute, COSMOS (Coordination of Standards in Metabolomics) brings together European data providers to set and promote community standards that will make it easier to disseminate metabolomics data through life science e-infrastructures. This Coordination Action has been financed with €2 million by the European Commission's Seventh Framework Programme. 
+[...]
 
 ## Contributing
 
