@@ -12,17 +12,18 @@ The NMR-ML data standard will be approved by the Metabolomics standards Initiati
 * [NMR-ML at COSMOS](http://cosmos-fp7.eu/nmrML/index.php?title=Main_Page)
 * [News Feed](https://github.com/organizations/NMR-ML)
 
-## Development Partners
+## Development Partners & Contributions
 
 [**The Metabolomics Innovation Centre**](http://www.metabolomicscentre.ca/exchangeformats)
 
 The Metabolomics Innovation Centre (TMIC) is a Canadian-funded core facility that has a unique combination of infrastructure and personnel to perform a wide range of cutting-edge metabolomic studies for clinical trials research, biomedical studies, bioproducts studies, nutrient profiling and environmental testing.
+The TMIC platform is led by Dr. David Wishart (University of Alberta), Dr. Christoph Borchers (University of Victoria) and Dr. Liang Li (University of Alberta). This group devivered the NMR-ML predecessor that is amended and extended in the COSMOS Project.
 
-The platform is led by Dr. David Wishart (University of Alberta), Dr. Christoph Borchers (University of Victoria) and Dr. Liang Li (University of Alberta).
+[**Leibniz-Institute of Plant Biochemistry (IPB)**](http://www.ipb-halle.de/en/)
 
+The IPB is a non-university research centre of the Leibniz Association (www.wgl.de), It investigates in a multidisciplinary style structure and function of natural products from plants and fungi, analyse interactions of plants with pathogenic and symbiotic microorganisms and study molecular interactions as part of complex biological processes. At the IPB, plant metabolomics has been an important area of research for many years.
+The IPB leads the standards development workpackage within the COSMOS project.
 [...]
-
-## Contributing
 
 ### Versioning
 
