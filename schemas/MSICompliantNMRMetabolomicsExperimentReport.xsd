@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>XML schema for the reporting of NMR metabolomics experiments compliant with MSI recomendations / Universities of Aberystwyth, Birmingham and Cambridge reporting requirements document.</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="pHUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="concentrationUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="moles"/>
+			<xs:enumeration value="millimoles"/>
+			<xs:enumeration value="%"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="fieldStrengthUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gauss"/>
+			<xs:enumeration value="tesla"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="volumeUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="millilitres"/>
+			<xs:enumeration value="microlitres"/>
+			<xs:enumeration value="millimetres"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="temperatureUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="centigrade"/>
+			<xs:enumeration value="kelvin"/>
+			<xs:enumeration value="fahrenheit"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="frequencyUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="hertz"/>
+			<xs:enumeration value="kilohertz"/>
+			<xs:enumeration value="megahertz"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="timeUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="seconds"/>
+			<xs:enumeration value="milliseconds"/>
+			<xs:enumeration value="microseconds"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="phaseUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="degrees"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="referenceShiftUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ppm"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="concentrationStandardType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="internal"/>
+			<xs:enumeration value="external"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sampleIntroductionMethodType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="tube"/>
+			<xs:enumeration value="MAS"/>
+			<xs:enumeration value="flow probe"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="waterSuppressionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Presat"/>
+			<xs:enumeration value="NOESY-Presat"/>
+			<xs:enumeration value="Watergate"/>
+			<xs:enumeration value="WET"/>
+			<xs:enumeration value="excitation sculpting"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="pulseSequenceNameType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1D"/>
+			<xs:enumeration value="1D CPMG"/>
+			<xs:enumeration value="2D J-resolved"/>
+			<xs:enumeration value="2D TOCSY"/>
+			<xs:enumeration value="2D Hadamard TOCSY"/>
+			<xs:enumeration value="1D Diffusion Edited"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="encodingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TPPI"/>
+			<xs:enumeration value="States"/>
+			<xs:enumeration value="States-TPPI"/>
+			<xs:enumeration value="Quadrature filter"/>
+			<xs:enumeration value="Hadamard"/>
+			<xs:enumeration value="Radon"/>
+			<xs:enumeration value="GFT"/>
+			<xs:enumeration value="Frydman"/>
+			<xs:enumeration value="Echo/Anti-Echo"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="postAcquisitionWaterSuppressionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="convolution"/>
+			<xs:enumeration value="polynomial fitting"/>
+			<xs:enumeration value="WaveWat"/>
+			<xs:enumeration value="HSVD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="transformationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fourier transformation"/>
+			<xs:enumeration value="non-fourier transformation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="windowFunctionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="exponential multiplication"/>
+			<xs:enumeration value="gaussian broadening"/>
+			<xs:enumeration value="sine"/>
+			<xs:enumeration value="sine2"/>
+			<xs:enumeration value="sinc"/>
+			<xs:enumeration value="sem"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="windowFunctionParameterType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="line broadening"/>
+			<xs:enumeration value="line sharpening"/>
+			<xs:enumeration value="sine bell length"/>
+			<xs:enumeration value="sine bell shift"/>
+			<xs:enumeration value="gaussian broadening"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="methodOfSpectralProjectionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="maximum intensity"/>
+			<xs:enumeration value="summation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="spectralProjectionAxisType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="f1"/>
+			<xs:enumeration value="f2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="spectralQuantitationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="peak picking"/>
+			<xs:enumeration value="bucketing"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="xAxisUnitFIDType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="seconds"/>
+			<xs:enumeration value="milliseconds"/>
+			<xs:enumeration value="microseconds"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="xAxisUnitSpectrumType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="hertz"/>
+			<xs:enumeration value="kilohertz"/>
+			<xs:enumeration value="megahertz"/>
+			<xs:enumeration value="ppm"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="additionalAxisUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="seconds"/>
+			<xs:enumeration value="milliseconds"/>
+			<xs:enumeration value="microseconds"/>
+			<xs:enumeration value="hertz"/>
+			<xs:enumeration value="kilohertz"/>
+			<xs:enumeration value="megahertz"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yAxisValueType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="power"/>
+			<xs:enumeration value="magnitude"/>
+			<xs:enumeration value="real"/>
+			<xs:enumeration value="imaginary"/>
+			<xs:enumeration value="complex"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="peakPickedDataPointType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="singlet"/>
+			<xs:enumeration value="doublet"/>
+			<xs:enumeration value="triplet"/>
+			<xs:enumeration value="quadruplet"/>
+			<xs:enumeration value="multiplet"/>
+			<xs:enumeration value="unassigned"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="MSICompliantNMRMetabolomicsExperimentReport">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element maxOccurs="1" minOccurs="1" name="Analysis">
+					<xs:complexType>
+						<xs:sequence maxOccurs="1" minOccurs="1">
+							<xs:element maxOccurs="1" minOccurs="1" name="NMRSample">
+								<xs:complexType>
+									<xs:sequence maxOccurs="1" minOccurs="1">
+										<xs:element maxOccurs="1" minOccurs="0" name="originalBiologicalSamplepH">
+											<xs:complexType>
+												<xs:attribute name="pH" type="xs:float" use="required"/>
+												<xs:attribute name="pHUnit" type="pHUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="0" name="postBufferpH">
+											<xs:complexType>
+												<xs:attribute name="pH" type="xs:float" use="required"/>
+												<xs:attribute name="pHUnit" type="pHUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="1" name="Buffer">
+											<xs:complexType>
+												<xs:attribute name="bufferName" type="xs:string" use="required"/>
+												<xs:attribute name="bufferpH" type="xs:float" use="required"/>
+												<xs:attribute name="bufferpHUnit" type="pHUnitType" use="required"/>
+												<xs:attribute name="concentrationInSample" type="xs:float" use="required"/>
+												<xs:attribute name="concentrationInSampleUnit" type="concentrationUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="1" name="FieldFrequencyLock">
+											<xs:complexType>
+												<xs:attribute name="fieldFrequencyLockName" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="AdditionalSolute">
+											<xs:complexType>
+												<xs:attribute name="soluteName" type="xs:string" use="required"/>
+												<xs:attribute name="concentrationInSample" type="xs:float" use="required"/>
+												<xs:attribute name="concentrationInSampleUnit" type="concentrationUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="1" name="ChemicalShiftStandard">
+											<xs:complexType>
+												<xs:attribute name="chemicalShiftStdName" type="xs:string" use="required"/>
+												<xs:attribute name="concentrationInSample" type="xs:float" use="required"/>
+												<xs:attribute name="concentrationInSampleUnit" type="concentrationUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="1" name="Solvent">
+											<xs:complexType>
+												<xs:attribute name="solventName" type="xs:string" use="required"/>
+												<xs:attribute name="concentrationInSample" type="xs:float" use="required"/>
+												<xs:attribute name="concentrationInSampleUnit" type="concentrationUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="0" name="ConcentrationStandard">
+											<xs:complexType>
+												<xs:attribute name="concentrationStdName" type="xs:string" use="required"/>
+												<xs:attribute name="concentrationStdType" type="concentrationStandardType" use="required"/>
+												<xs:attribute name="concentrationInSample" type="xs:float" use="required"/>
+												<xs:attribute name="concentrationInSampleUnit" type="concentrationUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="originalBiologicalSampleReference" type="xs:anyURI" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="1" minOccurs="1" name="Instrument">
+								<xs:complexType>
+									<xs:sequence maxOccurs="1" minOccurs="1">
+										<xs:element maxOccurs="1" minOccurs="1" name="Magnet">
+											<xs:complexType>
+												<xs:sequence maxOccurs="1" minOccurs="1">
+													<xs:element maxOccurs="1" minOccurs="1" name="fieldStrength">
+														<xs:complexType>
+															<xs:attribute name="fieldStrength" type="xs:float" use="required"/>
+															<xs:attribute name="fieldStrengthUnit" type="fieldStrengthUnitType" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="serialNo" type="xs:string" use="optional"/>
+												<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+												<xs:attribute name="model" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="1" name="Probe">
+											<xs:complexType>
+												<xs:sequence maxOccurs="1" minOccurs="1">
+													<xs:element maxOccurs="1" minOccurs="0" name="gradientStrength">
+														<xs:complexType>
+															<xs:attribute name="gradientStrength" type="xs:float" use="required"/>
+															<xs:attribute name="gradientStrengthUnit" type="fieldStrengthUnitType" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="serialNo" type="xs:string" use="optional"/>
+												<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+												<xs:attribute name="model" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="1" name="Console">
+											<xs:complexType>
+												<xs:attribute name="serialNo" type="xs:string" use="optional"/>
+												<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+												<xs:attribute name="model" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="1" name="AcquisitionComputer">
+											<xs:complexType>
+												<xs:sequence maxOccurs="1" minOccurs="1">
+													<xs:element maxOccurs="1" minOccurs="1" name="operatingSystemSoftware">
+														<xs:complexType>
+															<xs:attribute name="software" type="xs:string" use="required"/>
+															<xs:attribute name="version" type="xs:string" use="required"/>
+															<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element maxOccurs="1" minOccurs="1" name="acquisitionSoftware">
+														<xs:complexType>
+															<xs:attribute name="software" type="xs:string" use="required"/>
+															<xs:attribute name="version" type="xs:string" use="required"/>
+															<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="serialNo" type="xs:string" use="optional"/>
+												<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+												<xs:attribute name="model" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="0" name="Autosampler">
+											<xs:complexType>
+												<xs:sequence maxOccurs="1" minOccurs="1">
+													<xs:element maxOccurs="1" minOccurs="1" name="applicationSoftware">
+														<xs:complexType>
+															<xs:attribute name="software" type="xs:string" use="required"/>
+															<xs:attribute name="version" type="xs:string" use="required"/>
+															<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="serialNo" type="xs:string" use="optional"/>
+												<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+												<xs:attribute name="model" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="name" type="xs:string" use="required"/>
+									<xs:attribute name="institution" type="xs:string" use="required"/>
+									<xs:attribute name="location" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="1" minOccurs="0" name="QualityControl">
+								<xs:complexType>
+									<xs:sequence maxOccurs="1" minOccurs="1">
+										<xs:element maxOccurs="1" minOccurs="1" name="linewidth">
+											<xs:complexType>
+												<xs:attribute name="linewidth" type="xs:float" use="required"/>
+												<xs:attribute name="linewidthUnit" type="frequencyUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="1" minOccurs="1" name="linewidthAt5PercentIntensity">
+											<xs:complexType>
+												<xs:attribute name="linewidthAt5PercentIntensity" type="xs:float" use="required"/>
+												<xs:attribute name="linewidthAt5PercentIntensityUnit" type="frequencyUnitType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="signal" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:choice maxOccurs="1" minOccurs="1">
+								<xs:element maxOccurs="1" minOccurs="1" name="Experiment1D">
+									<xs:complexType>
+										<xs:sequence maxOccurs="1" minOccurs="1">
+											<xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParameterSet">
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="unbounded" minOccurs="0" name="shapedPulseParameters">
+															<xs:complexType>
+																<xs:attribute name="shapedPulseFileRef" type="xs:anyURI" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="sampleIntroductionMethodSize">
+															<xs:complexType>
+																<xs:attribute name="size" type="xs:float" use="required"/>
+																<xs:attribute name="sizeUnit" type="volumeUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="0" name="sampleTemperatureInAutosampler">
+															<xs:complexType>
+																<xs:attribute name="temperature" type="xs:float" use="required"/>
+																<xs:attribute name="temperatureUnit" type="temperatureUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="sampleTemperatureInMagnet">
+															<xs:complexType>
+																<xs:attribute name="temperature" type="xs:float" use="required"/>
+																<xs:attribute name="temperatureUnit" type="temperatureUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="spinningRate">
+															<xs:complexType>
+																<xs:attribute name="rate" type="xs:float" use="required"/>
+																<xs:attribute name="rateUnit" type="frequencyUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="relaxationDelay">
+															<xs:complexType>
+																<xs:attribute name="delay" type="xs:float" use="required"/>
+																<xs:attribute name="delayUnit" type="timeUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FirstDimAcquisitionParameters">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParametersForEachDimension">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
+																					<xs:complexType>
+																						<xs:attribute name="frequency" type="xs:float" use="required"/>
+																						<xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
+																					<xs:complexType>
+																						<xs:attribute name="width" type="xs:float" use="required"/>
+																						<xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
+																					<xs:complexType>
+																						<xs:attribute name="width" type="xs:float" use="required"/>
+																						<xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
+																			<xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
+																			<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="decoupled" type="xs:boolean" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="sampleIntroductionMethod" type="sampleIntroductionMethodType" use="required"/>
+													<xs:attribute name="waterSuppression" type="waterSuppressionType" use="required"/>
+													<xs:attribute name="pulseSequence" type="pulseSequenceNameType" use="required"/>
+													<xs:attribute name="pulseSequenceFileRef" type="xs:anyURI" use="required"/>
+													<xs:attribute name="pulseSequenceLiteratureRef" type="xs:anyURI" use="required"/>
+													<xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
+													<xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:choice maxOccurs="1" minOccurs="1">
+												<xs:element maxOccurs="1" minOccurs="1" name="FIDFileReference">
+													<xs:complexType>
+														<xs:attribute name="fidFileRef" type="xs:anyURI" use="required"/>
+													</xs:complexType>
+												</xs:element>
+												<xs:element maxOccurs="1" minOccurs="1" name="FID1D">
+													<xs:annotation>
+														<xs:documentation>1D experiments only.</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence maxOccurs="1" minOccurs="1">
+															<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+																<xs:annotation>
+																	<xs:documentation>The 1D FID is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+																</xs:annotation>
+																<xs:complexType>
+																	<xs:sequence maxOccurs="1" minOccurs="1">
+																		<xs:element maxOccurs="unbounded" minOccurs="1" name="DataPoint">
+																			<xs:annotation>
+																				<xs:documentation>Data points should either be "x value and y value" pair, or y values only if x axis is evenly divided.</xs:documentation>
+																			</xs:annotation>
+																			<xs:complexType>
+																				<xs:attribute name="xValue" type="xs:float" use="optional"/>
+																				<xs:attribute name="rValue" type="xs:float" use="optional"/>
+																				<xs:attribute name="iValue" type="xs:float" use="optional"/>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+														<xs:attribute name="xAxisUnits" type="xAxisUnitFIDType" use="required"/>
+														<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+														<xs:attribute name="xStartValue" type="xs:float" use="required"/>
+														<xs:attribute name="xEndValue" type="xs:float" use="required"/>
+														<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="Spectrum1D">
+												<xs:annotation>
+													<xs:documentation>1D experiments only.</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+															<xs:annotation>
+																<xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="DataPoint">
+																		<xs:complexType>
+																			<xs:attribute name="xValue" type="xs:float" use="optional"/>
+																			<xs:attribute name="rValue" type="xs:float" use="optional"/>
+																			<xs:attribute name="iValue" type="xs:float" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FIDAndSpectralProcParams">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="FirstDimPreProcParams">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="postAcquisitionWaterSuppression" type="postAcquisitionWaterSuppressionType" use="optional"/>
+																<xs:attribute name="transformationType" type="transformationType" use="required"/>
+																<xs:attribute name="calibrationCompound" type="xs:string" use="required"/>
+																<xs:attribute name="analyser" type="xs:string" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+													<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+													<xs:attribute name="xStartValue" type="xs:float" use="required"/>
+													<xs:attribute name="xEndValue" type="xs:float" use="required"/>
+													<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="BucketedSpectrum">
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+															<xs:annotation>
+																<xs:documentation>The data matrix for the spectrum. The points in the data matrix comprise (the starting x-axis value for the bucket, the ending x-axis value for the bucket, the x-axis value at the centre of the bucket, the y-axis value).</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="BucketDataPoint">
+																		<xs:complexType>
+																			<xs:attribute name="bucketXStart" type="xs:float" use="required"/>
+																			<xs:attribute name="bucketXEnd" type="xs:float" use="required"/>
+																			<xs:attribute name="bucketXCentre" type="xs:float" use="required"/>
+																			<xs:attribute name="yValue" type="xs:float" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="SpectralQuantitationParameters">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="spectralQuantitationType" type="spectralQuantitationType" use="required"/>
+																<xs:attribute name="spectralQuantitationAlgorithm" type="xs:string" use="required"/>
+																<xs:attribute name="spectralQuantitationParameters" type="xs:string" use="optional"/>
+																<xs:attribute name="manualSpectralQuantitation" type="xs:string" use="optional"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FIDAndSpectralProcParams">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="FirstDimPreProcParams">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="postAcquisitionWaterSuppression" type="postAcquisitionWaterSuppressionType" use="optional"/>
+																<xs:attribute name="transformationType" type="transformationType" use="required"/>
+																<xs:attribute name="calibrationCompound" type="xs:string" use="required"/>
+																<xs:attribute name="analyser" type="xs:string" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+													<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+													<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="PeakPickedSpectrum">
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+															<xs:annotation>
+																<xs:documentation>The data matrix for the spectrum. The points in the data matrix comprise (the x-axis value for the peak, the y-axis value for the peak, the type of the peak).</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="PeakDataPoint">
+																		<xs:complexType>
+																			<xs:attribute name="xValue" type="xs:float" use="required"/>
+																			<xs:attribute name="yValue" type="xs:float" use="required"/>
+																			<xs:attribute name="type" type="peakPickedDataPointType" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="SpectralQuantitationParameters">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="spectralQuantitationType" type="spectralQuantitationType" use="required"/>
+																<xs:attribute name="spectralQuantitationAlgorithm" type="xs:string" use="required"/>
+																<xs:attribute name="spectralQuantitationParameters" type="xs:string" use="optional"/>
+																<xs:attribute name="manualSpectralQuantitation" type="xs:string" use="optional"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FIDAndSpectralProcParams">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="FirstDimPreProcParams">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="postAcquisitionWaterSuppression" type="postAcquisitionWaterSuppressionType" use="optional"/>
+																<xs:attribute name="transformationType" type="transformationType" use="required"/>
+																<xs:attribute name="calibrationCompound" type="xs:string" use="required"/>
+																<xs:attribute name="analyser" type="xs:string" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+													<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+													<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element maxOccurs="1" minOccurs="1" name="Experiment2D">
+									<xs:complexType>
+										<xs:sequence maxOccurs="1" minOccurs="1">
+											<xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParameterSet">
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="unbounded" minOccurs="0" name="shapedPulseParameters">
+															<xs:complexType>
+																<xs:attribute name="shapedPulseFileRef" type="xs:anyURI" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="sampleIntroductionMethodSize">
+															<xs:complexType>
+																<xs:attribute name="size" type="xs:float" use="required"/>
+																<xs:attribute name="sizeUnit" type="volumeUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="0" name="sampleTemperatureInAutosampler">
+															<xs:complexType>
+																<xs:attribute name="temperature" type="xs:float" use="required"/>
+																<xs:attribute name="temperatureUnit" type="temperatureUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="sampleTemperatureInMagnet">
+															<xs:complexType>
+																<xs:attribute name="temperature" type="xs:float" use="required"/>
+																<xs:attribute name="temperatureUnit" type="temperatureUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="spinningRate">
+															<xs:complexType>
+																<xs:attribute name="rate" type="xs:float" use="required"/>
+																<xs:attribute name="rateUnit" type="frequencyUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="relaxationDelay">
+															<xs:complexType>
+																<xs:attribute name="delay" type="xs:float" use="required"/>
+																<xs:attribute name="delayUnit" type="timeUnitType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FirstDimAcquisitionParameters">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParametersForEachDimension">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
+																					<xs:complexType>
+																						<xs:attribute name="frequency" type="xs:float" use="required"/>
+																						<xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
+																					<xs:complexType>
+																						<xs:attribute name="width" type="xs:float" use="required"/>
+																						<xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
+																					<xs:complexType>
+																						<xs:attribute name="width" type="xs:float" use="required"/>
+																						<xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
+																			<xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
+																			<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="decoupled" type="xs:boolean" use="required"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="HigherDimAcquisitionParameters">
+															<xs:annotation>
+																<xs:documentation>Only required if experiment is 2D.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParametersForEachDimension">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
+																					<xs:complexType>
+																						<xs:attribute name="frequency" type="xs:float" use="required"/>
+																						<xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
+																					<xs:complexType>
+																						<xs:attribute name="width" type="xs:float" use="required"/>
+																						<xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
+																					<xs:complexType>
+																						<xs:attribute name="width" type="xs:float" use="required"/>
+																						<xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
+																			<xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
+																			<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="unbounded" minOccurs="0" name="HadamardParameters">
+																		<xs:annotation>
+																			<xs:documentation>Required if and only if the encoding type is Hadamard.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:attribute name="frequency" type="xs:float" use="required"/>
+																			<xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="encoding" type="encodingType" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="sampleIntroductionMethod" type="sampleIntroductionMethodType" use="required"/>
+													<xs:attribute name="waterSuppression" type="waterSuppressionType" use="required"/>
+													<xs:attribute name="pulseSequence" type="pulseSequenceNameType" use="required"/>
+													<xs:attribute name="pulseSequenceFileRef" type="xs:anyURI" use="required"/>
+													<xs:attribute name="pulseSequenceLiteratureRef" type="xs:anyURI" use="required"/>
+													<xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
+													<xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:choice maxOccurs="1" minOccurs="1">
+												<xs:element maxOccurs="1" minOccurs="1" name="FIDFileReference">
+													<xs:complexType>
+														<xs:attribute name="fidFileRef" type="xs:anyURI" use="required"/>
+													</xs:complexType>
+												</xs:element>
+												<xs:element maxOccurs="1" minOccurs="1" name="FID2D">
+													<xs:annotation>
+														<xs:documentation>2D experiments only.</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+																<xs:annotation>
+																	<xs:documentation>The data matrix for the FID which comprises multiple 1D FIDs each annotated with a value for the second dimension axis. Each 1D FID is represented as either a set of y-axis values (real or real and imaginary) at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+																</xs:annotation>
+																<xs:complexType>
+																	<xs:sequence maxOccurs="1" minOccurs="1">
+																		<xs:element maxOccurs="unbounded" minOccurs="1" name="AdditionalAxis">
+																			<xs:complexType>
+																				<xs:sequence maxOccurs="1" minOccurs="1">
+																					<xs:element maxOccurs="unbounded" minOccurs="1" name="DataPoint">
+																						<xs:annotation>
+																							<xs:documentation>Data points should either be "x value and y value" pair, or y values only if x axis is evenly divided.</xs:documentation>
+																						</xs:annotation>
+																						<xs:complexType>
+																							<xs:attribute name="xValue" type="xs:float" use="optional"/>
+																							<xs:attribute name="rValue" type="xs:float" use="optional"/>
+																							<xs:attribute name="iValue" type="xs:float" use="optional"/>
+																						</xs:complexType>
+																					</xs:element>
+																				</xs:sequence>
+																				<xs:attribute name="value" type="xs:float" use="required"/>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+														<xs:attribute name="additionalAxisUnits" type="additionalAxisUnitType" use="required"/>
+														<xs:attribute name="xAxisUnits" type="xAxisUnitFIDType" use="required"/>
+														<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+														<xs:attribute name="xStartValue" type="xs:float" use="required"/>
+														<xs:attribute name="xEndValue" type="xs:float" use="required"/>
+														<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="Spectrum2D">
+												<xs:annotation>
+													<xs:documentation>2D experiments only.</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+															<xs:annotation>
+																<xs:documentation>The data matrix for the spectrum which comprises multiple 1D spectra each annotated with a value for the second dimension axis. Each 1D spectrum is represented as either a set of y-axis (real) values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="AdditionalAxis">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="DataPoint">
+																					<xs:complexType>
+																						<xs:attribute name="xValue" type="xs:float" use="optional"/>
+																						<xs:attribute name="rValue" type="xs:float" use="optional"/>
+																						<xs:attribute name="iValue" type="xs:float" use="optional"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="value" type="xs:float" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FIDAndSpectralProcParams">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="FirstDimPreProcParams">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="SecondDimPreProcParams">
+																		<xs:annotation>
+																			<xs:documentation>Only required for 2D.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="JResolvedParameters">
+																					<xs:annotation>
+																						<xs:documentation>Only if experiment is J-Res.</xs:documentation>
+																					</xs:annotation>
+																					<xs:complexType>
+																						<xs:attribute name="rotate45Deg" type="xs:boolean" use="required"/>
+																						<xs:attribute name="symmetrise" type="xs:boolean" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="postAcquisitionWaterSuppression" type="postAcquisitionWaterSuppressionType" use="optional"/>
+																<xs:attribute name="transformationType" type="transformationType" use="required"/>
+																<xs:attribute name="calibrationCompound" type="xs:string" use="required"/>
+																<xs:attribute name="analyser" type="xs:string" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="additionalAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+													<xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+													<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+													<xs:attribute name="xStartValue" type="xs:float" use="required"/>
+													<xs:attribute name="xEndValue" type="xs:float" use="required"/>
+													<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="ProjectedSpectrum">
+												<xs:annotation>
+													<xs:documentation>2D experiments only.</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+															<xs:annotation>
+																<xs:documentation>The projected spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="DataPoint">
+																		<xs:complexType>
+																			<xs:attribute name="xValue" type="xs:float" use="optional"/>
+																			<xs:attribute name="rValue" type="xs:float" use="optional"/>
+																			<xs:attribute name="iValue" type="xs:float" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FIDAndSpectralProcParams">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="SpectralProjectionParameters">
+																		<xs:annotation>
+																			<xs:documentation>Only required for 2D.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:attribute name="projectionMethod" type="methodOfSpectralProjectionType" use="required"/>
+																			<xs:attribute name="projectionAxis" type="spectralProjectionAxisType" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="FirstDimPreProcParams">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="SecondDimPreProcParams">
+																		<xs:annotation>
+																			<xs:documentation>Only required for 2D.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="JResolvedParameters">
+																					<xs:complexType>
+																						<xs:attribute name="rotate45Deg" type="xs:boolean" use="required"/>
+																						<xs:attribute name="symmetrise" type="xs:boolean" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="postAcquisitionWaterSuppression" type="postAcquisitionWaterSuppressionType" use="optional"/>
+																<xs:attribute name="transformationType" type="transformationType" use="required"/>
+																<xs:attribute name="calibrationCompound" type="xs:string" use="required"/>
+																<xs:attribute name="analyser" type="xs:string" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+													<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+													<xs:attribute name="xStartValue" type="xs:float" use="required"/>
+													<xs:attribute name="xEndValue" type="xs:float" use="required"/>
+													<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="BucketedSpectrum">
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+															<xs:annotation>
+																<xs:documentation>The data matrix for the spectrum. The points in the data matrix comprise (the starting x-axis value for the bucket, the ending x-axis value for the bucket, the x-axis value at the centre of the bucket, the y-axis value).</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="BucketDataPoint">
+																		<xs:complexType>
+																			<xs:attribute name="bucketXStart" type="xs:float" use="required"/>
+																			<xs:attribute name="bucketXEnd" type="xs:float" use="required"/>
+																			<xs:attribute name="bucketXCentre" type="xs:float" use="required"/>
+																			<xs:attribute name="yValue" type="xs:float" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="SpectralQuantitationParameters">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="spectralQuantitationType" type="spectralQuantitationType" use="required"/>
+																<xs:attribute name="spectralQuantitationAlgorithm" type="xs:string" use="required"/>
+																<xs:attribute name="spectralQuantitationParameters" type="xs:string" use="optional"/>
+																<xs:attribute name="manualSpectralQuantitation" type="xs:string" use="optional"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FIDAndSpectralProcParams">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="0" name="SpectralProjectionParameters">
+																		<xs:annotation>
+																			<xs:documentation>Only required for 2D.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:attribute name="projectionMethod" type="methodOfSpectralProjectionType" use="required"/>
+																			<xs:attribute name="projectionAxis" type="spectralProjectionAxisType" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="FirstDimPreProcParams">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="SecondDimPreProcParams">
+																		<xs:annotation>
+																			<xs:documentation>Only required for 2D.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="JResolvedParameters">
+																					<xs:complexType>
+																						<xs:attribute name="rotate45Deg" type="xs:boolean" use="required"/>
+																						<xs:attribute name="symmetrise" type="xs:boolean" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="postAcquisitionWaterSuppression" type="postAcquisitionWaterSuppressionType" use="optional"/>
+																<xs:attribute name="transformationType" type="transformationType" use="required"/>
+																<xs:attribute name="calibrationCompound" type="xs:string" use="required"/>
+																<xs:attribute name="analyser" type="xs:string" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+													<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+													<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element maxOccurs="unbounded" minOccurs="0" name="PeakPickedSpectrum">
+												<xs:complexType>
+													<xs:sequence maxOccurs="1" minOccurs="1">
+														<xs:element maxOccurs="1" minOccurs="1" name="dataMatrix">
+															<xs:annotation>
+																<xs:documentation>The data matrix for the spectrum. The points in the data matrix comprise (the x-axis value for the peak, the y-axis value for the peak, the type of the peak).</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="PeakDataPoint">
+																		<xs:complexType>
+																			<xs:attribute name="xValue" type="xs:float" use="required"/>
+																			<xs:attribute name="yValue" type="xs:float" use="required"/>
+																			<xs:attribute name="type" type="peakPickedDataPointType" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="SpectralQuantitationParameters">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="spectralQuantitationType" type="spectralQuantitationType" use="required"/>
+																<xs:attribute name="spectralQuantitationAlgorithm" type="xs:string" use="required"/>
+																<xs:attribute name="spectralQuantitationParameters" type="xs:string" use="optional"/>
+																<xs:attribute name="manualSpectralQuantitation" type="xs:string" use="optional"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element maxOccurs="1" minOccurs="1" name="FIDAndSpectralProcParams">
+															<xs:complexType>
+																<xs:sequence maxOccurs="1" minOccurs="1">
+																	<xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters">
+																		<xs:complexType>
+																			<xs:attribute name="processingSoftware" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareVersion" type="xs:string" use="required"/>
+																			<xs:attribute name="processingSoftwareManufacturer" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="0" name="SpectralProjectionParameters">
+																		<xs:annotation>
+																			<xs:documentation>Only required for 2D.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:attribute name="projectionMethod" type="methodOfSpectralProjectionType" use="required"/>
+																			<xs:attribute name="projectionAxis" type="spectralProjectionAxisType" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="FirstDimPreProcParams">
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element maxOccurs="1" minOccurs="1" name="SecondDimPreProcParams">
+																		<xs:annotation>
+																			<xs:documentation>Only required for 2D.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:sequence maxOccurs="1" minOccurs="1">
+																				<xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+																					<xs:complexType>
+																						<xs:attribute name="correction" type="xs:float" use="required"/>
+																						<xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+																					<xs:complexType>
+																						<xs:attribute name="shift" type="xs:float" use="required"/>
+																						<xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+																					<xs:complexType>
+																						<xs:sequence maxOccurs="1" minOccurs="1">
+																							<xs:element maxOccurs="unbounded" minOccurs="1" name="ParameterToWindowFunction">
+																								<xs:complexType>
+																									<xs:attribute name="windowFunctionParameter" type="windowFunctionParameterType" use="required"/>
+																									<xs:attribute name="parameterValue" type="xs:string" use="required"/>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																						<xs:attribute name="windowFunction" type="windowFunctionType" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																				<xs:element maxOccurs="1" minOccurs="0" name="JResolvedParameters">
+																					<xs:complexType>
+																						<xs:attribute name="rotate45Deg" type="xs:boolean" use="required"/>
+																						<xs:attribute name="symmetrise" type="xs:boolean" use="required"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+																			<xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+																			<xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+																			<xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="postAcquisitionWaterSuppression" type="postAcquisitionWaterSuppressionType" use="optional"/>
+																<xs:attribute name="transformationType" type="transformationType" use="required"/>
+																<xs:attribute name="calibrationCompound" type="xs:string" use="required"/>
+																<xs:attribute name="analyser" type="xs:string" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+													<xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+													<xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+						</xs:sequence>
+						<xs:attribute name="dateAndTimeOfDataAcquisition" type="xs:dateTime" use="required"/>
+						<xs:attribute name="institution" type="xs:string" use="required"/>
+						<xs:attribute name="supervisor" type="xs:string" use="required"/>
+						<xs:attribute name="operator" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
