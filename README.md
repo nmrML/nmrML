@@ -1,14 +1,14 @@
-#  [NMR-ML](http://nmr-ml.org/)
+#  [nmrML](http://nmrml.org/)
 
-[NMR-ML](http://nmr-ml.org/) is an open mark-up language for NMR data. It is currently under heavy development and is not yet ready for public use.
+[nmrML](http://nmrml.org/) is an open mark-up language for NMR data. It is currently under heavy development and is not yet ready for public use.
 
-## NMR-ML links
+## nmrML links
 
 * [Official Website](http://nmr-ml.org/)
-* [NMR-ML on Google-Groups](https://groups.google.com/group/nmrml/subscribe?note=1&hl=en&noredirect=true&pli=1)
-* [NMR-ML wiki](https://github.com/NMR-ML/NMR-ML/wiki)
-* [NMR-ML at COSMOS](http://cosmos-fp7.eu/nmrML/index.php?title=Main_Page)
-* [News Feed](https://github.com/organizations/NMR-ML)
+* [nmrML on Google-Groups](https://groups.google.com/group/nmrml/subscribe?note=1&hl=en&noredirect=true&pli=1)
+* [nmrML wiki](https://github.com/nmrML/nmrML/wiki)
+* [nmrML at COSMOS](http://cosmos-fp7.eu/nmrML/index.php?title=Main_Page)
+* [News Feed](https://github.com/organizations/nmrML)
 
 ## Development Partners
 
@@ -24,12 +24,12 @@ COSMOS is a global effort to enable free and open sharing of metabolomics data. 
 
 ### Versioning
 
-The versioning follow the [Major].[Minor].[Build], the version number is tracked inthe [VERSION](https://github.com/NMR-ML/NMR-ML/blob/master/VERSION) file in the root of the NMR-ML directory. Versioning is tracked using the taggin feature of git. All previous versions can be viewed [here](https://github.com/NMR-ML/NMR-ML/tags).
+The versioning follow the [Major].[Minor].[Build], the version number is tracked inthe [VERSION](https://github.com/nmrML/nmrML/blob/master/VERSION) file in the root of the nmrML directory. Versioning is tracked using the taggin feature of git. All previous versions can be viewed [here](https://github.com/nmrML/nmrML/tags).
 
 Follow these intructions to create release a tagged version: 
 
 1. Commit changes in your working directory that you want in this release. It is a good idea to push these changes to GitHub before continuing. Make sure the changes you want in this release are merged with master.
-2. Make sure the [HISTORY.md](https://github.com/NMR-ML/NMR-ML/blob/master/HISTORY.md) file is updated with the changes in this release. Follow the format in the file.
+2. Make sure the [HISTORY.md](https://github.com/nmrML/nmrML/blob/master/HISTORY.md) file is updated with the changes in this release. Follow the format in the file.
 3. Bump the version, rebuild the docs, tag the release and push the release to Github with one of the following commands:
 
 * For a major release:
@@ -54,9 +54,9 @@ Follow these intructions to create release a tagged version:
 * docs - The docs generated from the schema and ontology files
 * example
 ** vendor - Useful example files from other software and data formats
-** nmr-ml - Example files for different use cases of NMR-ML
+** nmr-ml - Example files for different use cases of nmrML
 * lib - Scripts/code used for generating docs, etc.
 * mappings - Files that map variable names in other formats to variable names
-in NMR-ML. Used by conversion software.
-* tools - Example software using NMR-ML
+in nmrML. Used by conversion software.
+* tools - Example software using nmrML
 
