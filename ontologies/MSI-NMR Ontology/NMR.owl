@@ -1,0 +1,2314 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://msi-ontology.sourceforge.net/ontology/NMR.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:obi="http://obi.sourceforge.net/ontology/OBI.owl#"
+  xml:base="http://msi-ontology.sourceforge.net/ontology/NMR.owl">
+  <owl:Ontology rdf:about="">
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >13.10.2006</dc:date>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR</rdfs:label>
+    <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >en</protege:defaultLanguage>
+    <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >msi-owg, http://msi-ontology.sourceforge.net/</dc:publisher>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Daniel Schober, Susanna-Assunta Sansone
+ Contact via MSI OWG mailing list (mailto:msi-workgroups-ontology@lists.sourceforge.net)</dc:creator>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is the initial draft of the msi-nmr-ontology binned under 'webimported' OBI and BFO classes. This is a primary discussion- and test-version to encourage nmr term development. As a secondary role this ontology serves as a testbed to evaluate the BFO top level ontology , modularization and the owl-import and referencing mechanism.
+The nmr ontology is developed by the ontology working group (http://msi-ontology.sourceforge.net/) of the msi-metabolomicssociety (msi-workgroups.sf.net).</rdfs:comment>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Andy Tseng (Human Serum Metabolome Project, Un of Manchester, UK)
+Bertram Ludaescher (UCDavis Genome Center, US)
+Chris Taylor (EBI and HUPO-PSI)
+Daniel Schober (EBI)
+Dennis Rubtsov (Un of Cambridge, UK)
+Helen Jenkins (Un of Wales, Aberystwyth, UK)
+Irena Spasic (Center for Integrative Systems Biology, Manchester, UK)
+Larissa Soldatova (University of Wales, Aberystwyth, UK)
+Lori Querengasser (Un of Alberta)
+Martin Scholz (UCDavis Genome Center, US)
+Matej Oresic (VTT Technical Research Centre of Finland)
+Oliver Fiehn (UCDavis Genome Center, US), MSI Oversight Committee Chair
+Philippe Rocca-Serra (EBI and MGED Society)
+Ricardo Pietrobon (Duke University) , MSI OWG co-Chair
+Susanna-Assunta Sansone (EBI)</dc:contributor>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.1</owl:versionInfo>
+    <dc:coverage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This controlled vocabular (taxonomy) contains mainly Descriptors relevant to the experimental conditions of the Nuclear Magnetic Resonance (NMR) component  in a metabolomics investigation.</dc:coverage>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR-instrument specific component of metabolomics investigations</dc:title>
+  </owl:Ontology>
+  <owl:Class rdf:ID="MSI_400137">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >peak_picking</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400136"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400233">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400232"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CapNMR_Probe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400118">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >acquisition_parameter_set_file_reference</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A reference to the file of acquisition parameters produced by a machine.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400267"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400040">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400042"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data_pre-processing</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400255">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400254"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_vendor</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400109">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hankel_singular_value_decomposition</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400108"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: This Method removes the residual water and its side lobes, thereby reducing the baseline for the metabolites of interest and allowing subsequent data analysis using more sophisticated nonlinear least squares algorithms.
+synonym: HSVD</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400223">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400231"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >high_resolution_probe</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def:BRUKER BIOSPIN's experienced Research &amp; Development group not only delivers top-performance probes for the more common experiments, but also a wealth of special probes for almost any application. For high resolution (HR) NMR we offer probes with a variety of important characteristics and features.
+defprov: Bruker website
+synonym: HR Probe</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400128">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400127"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_sample</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A sample that has been prepared for chemical analysis by NMR. NMR samples are usually liquid solutions contained in glass tubes. NMR solution sample volume ranges from 50ul to 5ml depending on the NMR probe. Sample concentrations of solute for 1H NMR are usually in the range of 100ug to 5g, with 10 to 50mg being typical. NMR is not a chemical trace analysis technique. The NMR signal of solids and gases can be recorded but to measure solid-state NMR additional specialized hardware is required.
+synonym: NMR sample</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400167">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400037"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A modification of Carr-Purcell RF pulse sequence with 90° phase shift in the rotating frame of reference between the 90° pulse and the subsequent 180° pulses to reduce accumulating effects of imperfections in the 180° pulses. Suppression of effects of pulse error accumulation can alternatively be achieved by alternating phases of the 180° pulses by 180°.
+defprov: Daniel Schober
+synonym: 1D_CPMG</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >one_dimensional_carr_purcell_meiboom_gill_pulse_sequence</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400204">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_47"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_tube_washing_system</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400265">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Wilmad</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400147">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flip-back_watergate</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400143"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400280">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400014"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >direct_detection_probe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400203">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_Case</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The NMR Case is an economical NMR sample changer for laboratories with modest automation needs. It expands the maximum number of samples your spectrometer can process during unattended operation to 24. The NMR Case consists of multiple components. The NMR Case exchange module installed atop your cryostat. The two front legs are adjustable, making the NMR Case compatible with many different cryostats.
+defprov: Bruker website</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400209"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400187">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UltraShield</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400186"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400312">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ThermoNicolet</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400080">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >first_order_phase_correction</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400043"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400324">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >27Al</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400083"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400322">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >acdlabs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400138">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400136"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A post-processing method that divides a pre-processed NMR spectrum into a series of buckets (or bins) along the x-axis, and then integrates the spectral intensity within each bucket. 
+altdef: A type of automated integration which occurs across pre-defined regions for a spectrum.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bucketing</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400294">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_DX</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="NMR_400285"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400213">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_10"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_software</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400232">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_NMR_probe</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400014"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400108">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400066"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >post-acquisition_water_suppression_method</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A data processing technique used to suppress the water peak in a spectrum in order to get clearer results.
+defprov: Daniel Schober</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400254">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vendor</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: Belongs in Ref Ontol.</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400041">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_data_pre-processing</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The process of producing a spectrum from raw data.
+synonym: NMR data pre-processing</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400040"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400119">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A reference to a file containing the raw FID.
+synonym: FID_file_reference</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400267"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >free_induction_decay_file_reference</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400168">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >two_dimensional_total_correlation_spectroscopy_pulse_sequence</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: Total Correlation Spectroscopy. A 2D homonuclear correlation experiment used to analyse scalar (J) coupling networks between protons. TOCSY is able to relay magnetisation between spins, A-B-C-D.., and can therefore show correlations amongst spins that are not directly coupled (eg A-C and A-D) but exist within the same spin system.
+defprov: Daniel Schober
+synonym:2D_TOCSY</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400037"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400129">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sample_introduction_parameter</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A sample introduction parameter is a parameter that describes the particular method of introducing the sample under investigation into the nmr instrument.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400264">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Doty_Scientific</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400148">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A jump and return pulse sequence method is a water suppression method that uses a defined pulse sequences to make fast exchanging protons visible.
+synonym: jump and return pulse sequence</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jump_and_return</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400066"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400149">
+    <rdfs:subClassOf rdf:resource="#MSI_400148"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A jump and return 1-1 pulse sequence method is a jump and return method that uses one 90 degree pulse and one 90 degree return puls to make fast exchanging protons visible, first described by  Plateau,P. and Gueron,M. (1982) J. Am. Chem. Soc., 104, 7310–7311. Compared to the 1-3-3-1 method it has a lower receiver gain and the dispersive tail of water interferes with the signals of interest.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jump_and_return_1-1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400202">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: What is the differrence to NMR instrument?</owl:versionInfo>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_plattform</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_50"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400295">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_EX</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400281">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >indirect_detection_probe</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400014"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400311">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Waters</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400081">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >symmetrise</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400043"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400188">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400186"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ultrastabilized</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400321">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_WIN_NMR</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400139">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >water_suppression_parameter</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400061">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The list of parameters that describe the instrument settings used for the acquisition of a spectrum.
+altdef: The set of variables dependent on a given pulse sequence that will be optimised in order to acquire a spectrum.
+synonym: NMR instrument acquisition parameter set</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400196"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_instrument_acquisition_parameter_set</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400212">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_sample_holder</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400011"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A NMR sample holder is the part of an NMR instrument, which carries the nmr probe,sample  tube and  the nmr sample.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400235">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400234"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MERCURY</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400021">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >calibration_reference_shift</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The parts-per-million value of the peak used to reference a spectrum.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400116">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400182"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_quality_check</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The process of ensuring the quality of the raw data that results from an NMR analysis.
+synonym: NMR quality check</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400253">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >magnetic_field_strength</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400027"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400216">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400214"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_Suite</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400135">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A software artifact used during spectral post-processing.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spectrum_post-processing_software</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_10"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400221">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400214"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AMIX_VIEWER_&amp;_AMIX-TOOLS</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400169">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >one_dimensional_pulse_sequence</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: One dimensional (referring to a FID, pre-processed spectrum, or post-processed spectrum).
+synonym: 1D</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400037"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400267">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400117"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >file_reference</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400310">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >micromass</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400201">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400198"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Capillary_LC-NMR</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400189">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >??? How to model "hoch 2"?</owl:versionInfo>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400186"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >US_2</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400001">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Part of an NMR instrument which is not cardinally important and hence optional / facultative for the proper intended function of the instrument.
+synonym: optional part of NMR instrument
+clsdel: ontologically there is no such universal which characteristic is a possible (!) state of being a part of something...</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: Discuss "obligatory_part_of".</owl:versionInfo>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >optional_part_of_NMR_instrument</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_47"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400292">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_AL95</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400199">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >For metabolism studies, and analysis of complex mixtures.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Metabolic_Profiler</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400200"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400115">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A quality control method is a method, which is applied to ensure or to verify for a good quality outcome.
+defprov: Daniel Schober</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400063"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >quality_control_method</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400020">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The axis onto which the spectrum was projected.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >projection_axis</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400117">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >reference</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A reference is a label which refers to data elsewhere, as opposed to containing the data itself. Accessing the value that a reference refers to is called dereferencing it. References are fundamental in constructing many data structures and in exchanging information between different parts of programs and databases.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400234">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400059"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Varian_NMR_instrument</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400215">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TopSpin_1.3</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400214"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400136">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400043"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spectrum_post-processing</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400220">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AUREMOL</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400214"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400266">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JS_Research</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400283">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Continuous wave NMR spectrometers are similar in principle to optical spectrometers. The sample is held in a strong magnetic field, and the frequency of the source is slowly scanned (in some instruments, the source frequency is held constant, and the field is scanned).
+Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >continuous_wave_NMR_instrument</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400059"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400200">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400198"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR Instruments using hyphenated analytical techniques combining mass spectrometry and chromatograph.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hyphenated_NMR_instrument</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400214">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: May need no definition.</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_NMR_software</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400213"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400163">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >one_dimensional_NMR_configuration</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: Definition depends on sprcls.</owl:versionInfo>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400184"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: The process of configuring an NMR instrument for 1D NMR analysis.
+defprov: Daniel Schober
+synonym: 1D NMR configuration</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400013">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A Computer used for NMR, can be divided into central processing unit (CPU), consisting of instruction, interpretation and arithmetic unit plus fast access memory, and peripheral devices such as bulk data storage and input and output devices (including, via the interface, the spectrometer). Under software control, the computer controls the RF pulses and gradients necessary to acquire data, and process the data to produce spectra or images. Note that devices such as the spectrometer may themselves incorporate small computers.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400011"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >acquisition_computer</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400090">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The delay between repeat scans to allow nuclei to relax back to their steady state.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >relaxation_delay</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400251">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400250"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CAT</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400023">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dwell_time</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A digital sampling interval.
+alsprcls: time_interval</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400027">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The intensity of an electric, magnetic, or other field.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >field_strength</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400238">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VXR</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400234"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400113">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400101"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pre-processing_parameter_set</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400278">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SPE-NMR</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Solid Phase Extraction (SPE) system provides an interface between liquid chromatography (LC) and NMR. For the process of LC-SPE™ NMR a chromatographic separation is done and the peaks of interest are trapped on an individual SPE cartridge after the column. The peak selection is done either by UV detection or by evaluation of the on-line registered MS or MSn spectra.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400200"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400290">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jeol_Delta</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400028">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spinning_rate</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The rate at which an item of analysis material is spun.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400079">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zero_order_phase_correction</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A parameter used to mix real and imaginary part of an NMR spectrum that the real part of the spectrum is in pure absorption mode. 
+altdef: The number of degrees that a central peak must be moved in order to achieve an absorptive mode line width.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400043"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400064">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A strategy for normalising a data set.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400043"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >normalisation_strategy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400050">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400048"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: Quantum Moment/Field Gradient interaction or relaxation mechanism.
+defprov: Daniel Schober
+synonym: QF</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >quantum_momentum_field_gradient</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400228">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400226"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ECA</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400123">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >processing_parameter_set_file_reference</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A reference to a file of data pre-processing parameters produced by the machine.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400267"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400190">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400186"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UltraShield_Plus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400164">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >two_dimensional_NMR_configuration</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400184"/>
+    </rdfs:subClassOf>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO:  depends on superclass view.</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: The process  of configuring an NMR instrument for 2D NMR analysis.
+defprov: Daniel Schober
+synonym: 2D NMR configuration</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400250">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tecmag_NMR_instrument</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400059"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400260">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tecmag</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400091">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >x-axis_unit</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The units of measure for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum. 
+altdef: The units used to represent either time domain (for a FID) or the frequency domain (for a spectrum).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400236">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >INOVA</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400234"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400026">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The frequency of the RF radiation used to irradiate an NMR sample.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >irradiation_frequency</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400022">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The duration of the excitation pulse needed to rotate the magnetisation vector by 90 degrees.
+synonym: 90 degree pulse duration</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ninety_degree_pulse_duration</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400237">
+    <rdfs:subClassOf rdf:resource="#MSI_400234"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UNITY</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400279">
+    <rdfs:subClassOf rdf:resource="#MSI_400200"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Capillary LC-NMR is a hyphenated technique coupling capillary liquid chromatography and NMR, which increases sensitivity dramatically through the use of miniaturization of the chromatographic techniques and NMR detection volume.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Capillary LC-NMR</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400114">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_data_pre-processing_parameter_set</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400113"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: NMR data pre-processing parameter set</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400291">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_Generic</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400051">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >time_proportional_phase incrementation</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400048"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: TPPI</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400065">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sample_introduction_method</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400063"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A method of introduction of an NMR sample to an NMR instrument.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400124">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_sample_reference</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400117"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A reference to information on the provenance of the NMR sample.
+synonym: NMR sample reference</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400227">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ECX</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400226"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400165">
+    <rdfs:subClassOf rdf:resource="#MSI_400061"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: 1D NMR acquisition parameter set</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >one_dimensional_NMR_acquisition_parameter_set</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400011">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cardinal_part_of_NMR_instrument</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A part of an NMR instrument which is cardinally important and hence obligatory and compulsatory for the proper intended function of the instrument.
+synonym: cardinal part of NMR instrument</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_47"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400309">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Agilent_Technologies</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400225">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >micro_imaging_probe</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400231"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400092">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >y-axis_unit</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400025">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sample_temperature_in_magnet</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400262"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The temperature of an NMR sample whilst in the magnet of an NMR instrument.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400150">
+    <rdfs:subClassOf rdf:resource="#MSI_400148"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef:A jump and return 1-3-3-1 pulse sequence method is a jump and return method that uses a 1-3-3-1 pulse sequence to make fast exchanging protons visible. Compared to the 1-1 method it has better water suppression (higher receiver gain) capabilities, but with offset-dependent phase distortion (unsuitable for 2D).</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jump_and_return_1-3-3-1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400300">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JCAMP</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400211">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The Bruker Multiple Adjustable Tube Clamp Holder MATCH™ system is a holder for 100 mm long NMR sample tubes with diameters ranging from micro tubes up to 5 mm NMR tubes. The MATCH insert fits into a standard 10 mm Bruker spinner and is suitable for all non-spinning applications.
+The MATCH system provides an easy and cost efficient means of optimizing the signal-to-noise ratio of each sample. By matching the NMR tube diameter to the size of the sample, most of the sample can be placed in the active column of the NMR coil. This leads to an enhanced signal detection compared to diluting the same sample quantity in a larger tube.
+defprov: Bruker website
+synonym: Bruker Multiple Adjustable Tube Clamp Holder</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_MATCH</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400212"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400111">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >polynomial_fitting</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400108"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400276">
+    <rdfs:subClassOf rdf:resource="#MSI_400200"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LC-NMR</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400320">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_UXNMR/XWIN-NMR</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400062">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >instrument_configuration</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: An instrument configuration is the description for the setting of an instrument or a machine in order to archive a certain intended goal or task.
+altdef: An instrument configuration is the process of setting the possible parameters of an instrument in order to archive a certain intended goal.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400226">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_NMR_instrument</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400059"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400125">
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#RealizableEntity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >?result</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+clsdel: was under study_report</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400052">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >states</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400048"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400262">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sample_temperature</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: In some cases, it is necessary or advisable to control the temperature of the sample at some value other than ambient. The sample may be only slightly solubility at room temperatures, or it may be desirable to control some aspect of the dynamics of the system. In such cases, a default temperature, or some means of selecting this parameter, can be built into the experiment.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400166">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: 2D NMR acquisition parameter set</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >two_dimensional_NMR_acquisition_parameter_set</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400061"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400127">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A sample is a role that is played by an object of interest in an investigation used to obtain generalizable information about the sample source.
+defprov: Daniel Schober</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#Role"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sample</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400010">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400183"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >peak-picked_spectrum</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: has spectral post processing parameter.</owl:versionInfo>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400224">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >high_resolution_probe_with_ATM</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The ATM option for AVANCE spectrometers is available for:
+Double resonance probes in fixed-frequency and broadband tunable configurations with either direct or indirect detection. Thus, for multinuclear operation, as often required for applications in inorganic chemistry, ATM facilitates the accurate setting of 90° pulsewidths on both observe and decoupling channels for each chosen nucleus and each individual sample - even with full automation. Triple resonance probes in fixed-frequency configurations, as typically used for inverse detection with high-field systems.
+defprov: Bruker website
+synonym: High Resolution Probes with Automatic Tuning and Matching, HR_probe_with_ATM</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400223"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400038">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400042"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Automatic or manual procedures performed upon pre-processed NMR data sets that aim to summarise them or annotate them with speculative values.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data_post-processing</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400093">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The unit of measurement of the second dimension of a 2D NMR dataset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >additional_axis_unit</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400024">
+    <rdfs:subClassOf rdf:resource="#MSI_400262"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sample_temperature_in_autosampler</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The temperature of an item of analysis material whilst in an autosampler.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400110">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >convolution</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400108"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400063">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >altspcls: process ???</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >method</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#RealizableEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400053">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400048"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >states-time_proportional_phase incrementation</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A method for quadrature detection.
+synonym: S-TPPI</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400239">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GEMINI</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400234"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400277">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Includes the connection to a high-resolution TOF-LC-MS system.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LC-NMR/MS</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400200"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400112">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A computational method that archieves water suppression via wavlet multi resolution analysis.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400108"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WaveWat</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400210">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The Bruker Automatic Sample Changer (B-ACS 60/120), used in conjunction with Bruker DISNMR, UXNMR or XWIN-NMR software, provides dialog-guided facilities which allow the user to easily and effectively perform automatic (continuous) experiments. Features include a 60 or 120 sample capacity, random accessing of samples, positive sample identification with the optional bar code reader, and temperature control of individual samples with the optional sample heater unit.
+defprov: Bruker website</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400209"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >B-ACS</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400029">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: An indication of whether the nucleus being studied is the acquitsition nucleus.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >decoupled_nucleus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400039">
+    <rdfs:subClassOf rdf:resource="#MSI_400038"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_spectral_post-processing</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The process of producing an annotated spectrum from a pre-processed spectrum.
+synonym: NMR spectral post processing</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400126">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_quality_check_result</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A result of an NMR quality check.
+synonym: NMR quality check result</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400181"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400132">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tube</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: The sample-tube holds the nmr sample and sits in the nmr probe. It is usually a glass tube of 5-20mm diameter.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400011"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400193">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400231"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Magic angle spinning, nowadays a routine technique for solids NMR, still offers the capability of innovation. The high mechanical performance of MAS probes in conjunction with efficient rf pulse techniques open new exciting fields in solids NMR of biological samples and in the field of quadrupolar nuclei.
+defprov: Bruker website
+synonym: solid_MAS_probe</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >solid_magic_angle_spinning_probe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400075">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A method of spectral projection.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >projection_method</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400048"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400068">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A function applied to a FID to increase the signal-to-noise ratio or the resolution.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400063"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >window_function_method</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400089">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A scheme for producing a numerical representation of the environment of an atom.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >atom_environment_encoding</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400122">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pulse_sequence_file_reference</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A reference to a file containing a specification of a pulse sequence.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400267"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400100">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400096"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tenpdef: A function used to multiply a FID by to produce a desired amount of line broadening and spectral resolution.
+defprov: Daniel Schober
+synonym: ssb</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shifted_sine_bell</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400289">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_Alpha</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400054">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hadamard_encoding</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400048"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400095">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >x_end_value</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: The end value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400317">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TX</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400142">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400066"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: The presat for an nuclear overhauser and exchange spectroscopy experiment. A 2D method used to map NOE correlations between protons within a molecule.  The nuclear Overhauser effect (NOE) causes changes in peak areas, as a secondary effect of decoupling.
+defprov: Daniel Schober
+synonym: NOESY-presat</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nuclear_overhauser_and_exchange_spectroscopy-presat</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400034">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The compound that produced a peak that is measured to assess the quality of a data set.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#Role"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >quality_check_compound_signal</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400014">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_probe</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Part of an NMR instrument that detects the signals emitted from a sample. No single probe can perform the full range of experiments, and probes that are designed to perform more than one type of measurement usually suffer from performance compromises. The probe represents a rather fragile “single point of failure” that can render an NMR system completely unusable if the probe is dropped or otherwise damaged. Probes are usually characterised by Sample diameter and Frequency.
+altdef: The instrument that transmits and recieves radiofrequency to and from the NMR sample.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400011"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400004">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: An algorithm for achieving a post-processed spectrum.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >post-processing_algorithm</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400003"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400307">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FOSS</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400048">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A data processing method which compresses a data file for a specific purpose.
+defprov: Daniel Schober</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400042"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >encoding_method</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400152">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2H</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: Do we need definitions here?</owl:versionInfo>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400083"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400069">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >exponential_multiplication</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400068"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The exponential function used to multiply a FID by to produce a desitred amount of line broadening.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400194">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Over the past few years there has been a significantly growing demand for miniaturization in all areas ofmodern research and development. Evoked by many exciting applications, there is a need for analytical methods which require less amounts of sample. Bruker BioSpin meets this challenge with a revolutionary NMR probe design: The 1mm MicroProbe. It operates with disposable 1mm capillary sample tubes and the sample volume of 5 microliters enables the use of lowest amounts of sample to run all high resolution NMR experiments with outstanding sensitivity and up to 16 times faster measurements. Due to the TXI-type probe design, the z-gradient coil and the automatic matching and tuning accessory, the 1mm MicroProbe can be used for a wide variety of NMR experiments. The key advantages of this probe include:
+up to 4 times higher mass sensitivity than 5mm conventional probes (with respect to the same sample amount)
+excellent solvent suppression properties
+virtually no salt effect
+discrete samples in tubes that can be sealed and stored
+automation accessory for sample preparation and handling available
+defprov: Bruker website</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400231"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1mm_MicroProbe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400006">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_analysis</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The analysis of one NMR sample at one time by NMR producing one raw dataset (a FID).
+synonym: NMR analysis</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400005"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400131">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400129"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flow_probe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400074">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400043"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A method of flattening the baseline of a spectrum.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >baseline_correction</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400121">
+    <rdfs:subClassOf rdf:resource="#MSI_400267"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A reference to a file containing a specfication of the shape of an excitation pulse.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shaped_pulse_file_reference</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400088">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >number_of_steady_state_scans</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The number of scans whose data is not summed to create the data set for an NMR sample, but that are carried out to establish the steady-state of relaxation for the nuclei.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400288">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_Lambda</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400055">
+    <rdfs:subClassOf rdf:resource="#MSI_400048"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >radon_encoding</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400035">
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#Role"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_solvent</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A compound added to a sample to an NMR sample to align the spectrometer frequency.
+synonym: NMR solvent</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400094">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >x_start_value</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The starting value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.
+altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400141">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >water_suppression_enhanced_through_T1_effects</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400066"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: An improved water-suppression technique called WET (water suppression enhanced through T1 effects), developed from a Bloch equation analysis of the longitudinal magnetization over the T1 and B1 ranges of interest, achieves T1- and B1-insensitive suppression with four RF pulses, each having a numerically optimized flip angle. Once flip angles have been optimized for a given sequence, time-consuming flip-angle adjustments during clinical examinations are eliminated.
+defprov: Daniel Schober
+synonym: WET</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400151">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400083"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">def: The nucleus of the element Hydrogen, a proton. 
+rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1H</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400160">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400007"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Having been excited by the RF pulse, the nuclei turn back ("relax") to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
+synonym: 2D_FID</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >two_dimensional_free_induction_decay</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400318">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Net_CDF</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400015">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: same as or part of acquisition computer?</owl:versionInfo>
+    <rdfs:subClassOf rdf:resource="#MSI_400011"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >console</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A component of an NMR instrument that controls the activities of the other components.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400308">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jasco</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400005">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: An investigation of the component parts of a whole and their relations in making up the whole.
+defprov: Google define
+altdef: A systematic approach to problem solving. Complex problems are made simpler by separating them into more understandable elements. This involves the identification of purposes and facts, the statement of defensible assumptions, and the formulation of conclusions.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >analysis</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400063"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400049">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef:GFT NMR allows for rapid multidimensional FT NMR spectral information gathering, avoiding sampling limitations without compromising on the precision of chemicalshift.
+defprov: ttp://www.nsm.buffalo.edu/Research/GFT/szyperski_publications_1st_page/Szyperski%2067.pdf
+synonym: GFT-projection</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >G_matrix_fourier_transform_projection</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400075"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400077">
+    <rdfs:subClassOf rdf:resource="#MSI_400075"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: .A projection method that sums the intensities of a pre-processed 2D J-resolved NMR spectrum to obtain a projected spectrum. 
+altdef: The adding of spectra together to produce a composite avergaed spectrum.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >summation_projection</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400066">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >water_suppression_method</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A technique used to suppress the water peak in a spectrum. Suppression of the strong solvent signal is necessary in order to obtain high signal to noise for the peaks of the sample under investiogation, e.g. protein peaks.
+defprov: Daniel Schober</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400063"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400134">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data_pre-processing_software</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_10"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A software artifact used during data pre-processing.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400191">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CryoProbe</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The Bruker BioSpin CryoProbe is a high-performance cryogenically cooled probe developed for high-resolution applications. It has improved signal/noise (S/N) ratios obtained by reducing the operating temperature of the coil and the pre-amplifier. As a result, the efficiency of the coil is improved and the noise of the coil and the pre-amplifier are reduced.The dramatic increase in the S/N ratio by a factor of 3-4, as compared to conventional probes, leads to a possible reduction in experiment time of up to 16 or a reduction in required sample concentration by a factor of up to 4. The CryoProbes possess key characteristics for NMR analysis:
+Significant S/N gains (with moderately salty samples also)
+Short pulse widths
+Short ring down times
+Linear behavior in power response
+Gradient capability
+CryoProbes are available as Triple Resonance, Dual, Selective X Detection, MicroImaging, and Quad Nucleus Probes configurations at 400 MHz and higher
+All high resolution probes have a lock circuit
+All high resolution probes have Z-gradient
+defprov: Bruker website</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400231"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400056">
+    <rdfs:subClassOf rdf:resource="#MSI_400048"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Frydman_encoding</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400249">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >APOLLO_console</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400246"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400181">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >quality_check_result</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400125"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A quality check result is the usefull outcome of a quality check.
+defprov: Daniel Schober</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400268">
+    <rdfs:subClassOf rdf:resource="#MSI_400117"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >literature_reference</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400087">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >number_of_scans</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The number of repeat scans performed and summed to create the data set for an NMR sample.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400017">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: The number of data points in a data set.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >number_of_data_points</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: Def not aristotelian.</owl:versionInfo>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400120">
+    <rdfs:subClassOf rdf:resource="#MSI_400117"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pulse_sequence_literature_reference</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A reference to a description of a pulse sequence in the literature.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400319">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NMR_400285"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_DISNMR</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400161">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: 1D spectrum</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400183"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >one_dimensional_spectrum</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400036">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A complex datatype (or complex value) is a datatype that is not a primitive one (like string or integer) and that references to more primitive values. Often, these are called reference data types. Complex datatypes can belong to the object data type. Data types that define sets of complex values include Array, Date, Error, Function, and XML and others.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >complex_datatype</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_43"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400140">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >presat</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: presaturation</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400066"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400171">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: 2D_hadamard_TOCSY</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400037"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >two_dimensional_hadamard_total_correlation_spectroscopy_pulse_sequence</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400305">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >multiplet_analysis</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400006"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >J-coupler</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400154">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400083"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >13C</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400097">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400096"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >line_broadening</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400002">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_47"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >autosampler</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: An optional  part of an NMR instrument used to hold samples prior to NMR analysis and that sequentially loads these samples into the analytical part of the NMR instrument. 
+altdef: The autosampler is an automatic sample changer.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400076">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maximum_intensity_projection</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400075"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400229">
+    <rdfs:subClassOf rdf:resource="#MSI_400213"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL_NMR_software</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400192">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >high_resolution_magic_angle_spin_probe</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Samples that are neither solid nor liquid, being of biological, chemical, and/or pharmaceutical interest, reveal highly resolved spectra when magic angle spinning is applied. The correct solution is a gradient, such that the field varies along the spinner axis. This so-called Magic Angle Gradient is employed in Bruker’s high resolution Magic Angle Spinning (hr-MAS) probes, and is implemented in such a way that it is compatible with the stator and does not interfere with the sample eject/insert. Bruker BioSpin has developed a series of dedicated probes for standard bore magnets to accommodate the rapidly expanding field of hr-MAS. These probes are available in double (e.g. 1H and 13C) and triple resonance (e.g., 1H, 13C, 15N) modes and come equipped with a deuterium lock channel. The probes have automatic sample ejection and insertion capability, with the availability of an optional sample changer, enabling fully automated sample runs. Probes can be equipped with an optional B0 gradient, directed along the magic angle, so that gradient spectroscopy can be done used.
+defprov: Bruker website
+altdef: High resolution MAS (hr-MAS) provides an easy means of obtaining high resolution spectra for a variety of samples that would otherwise result in poorly resolved spectra. The addition of an hr-MAS probe and a MAS pneumatic unit to a standard high resolution spectrometer is all that is needed to open the gate to the world of hr-MAS spectroscopy and gain access to a vast amount of highly interesting samples.
+synonyms: High resolution MAS, hr-MAS</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400223"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400101">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_11"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >parameter_set</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400018">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The ratio of the mass or volume of a solute to the mass or volume of the solution or solvent.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >concentration</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400057">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >echo_anti-echo</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400048"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400086">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A feature of a peak that is measured to assess the quality of a data set.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >quality_check_peak_feature</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400182">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A quality check is a quality control method, which is applied to data after they have been processed. It is applied to get information about the quality of the data processing methods.
+defprov: Daniel Schober</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >quality_check</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400115"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400162">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: 2D spectrum</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >two_dimensional_spectrum</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400183"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400037">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pulse_sequence</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A sequence of excitation pulses.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400047"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400096">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >window_function_parameter</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A parameter to a window function.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400153">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >11B</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400083"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400047">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A data set that was generated within, from or for an NMR experiment.
+synonym: NMR data set</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400036"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_data_set</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400172">
+    <rdfs:subClassOf rdf:resource="#MSI_400037"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: 1D diffusion edited</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >one_dimensional_diffusion_edited_pulse_sequence</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400306">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ThermoMattson</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400003">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >algorithm</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400063"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: An algorithm is a procedure (a finite set of well-defined instructions) for accomplishing some task which, given an initial state, will terminate in a defined end-state.
+defprov:wiki</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400209">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_autosampler</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400002"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400197">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: May need no definition</owl:versionInfo>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AVANCE_II_spectrometer</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400198"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#NMR_400285">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_data_format</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_187"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400019">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hadamard_frequency</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A frequency used during Hadamard encoding.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_3"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400071">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400068"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sine</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400183">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_spectrum</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or 'lines'.
+synonym: NMR spectrum</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400007"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400313">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Perkin_Elmer</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400104">
+    <rdfs:subClassOf rdf:resource="#MSI_400101"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The list of parameters that describe the settings used to process a 2D J-resolved NMR spectrum. altdeft: The set of variables associated with adjusting the spectrum in the frequency domain to phase, baseline correct and integrate a spectrum.
+synonym: NMR 2D J-resolved processing parameter set</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_two_dimensional_J-resolved_processing_parameter_set</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400299">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Felix</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400085">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tilt</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_20"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400009">
+    <rdfs:subClassOf rdf:resource="#MSI_400183"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: has spectral post processing parameter</owl:versionInfo>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bucketed_spectrum</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A post-processed NMR spectrum in which the y-values of the datapoints have been summed based on periodic ranges of the x-axis values.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400030">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chemical_compound</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A chemical compound is a small object which reacts chemically and is usually a molecule or composed out of molecules.
+defprov: Daniel Schober</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#Object"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: May be imported from other Ontology.</owl:versionInfo>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400230">
+    <rdfs:subClassOf rdf:resource="#MSI_400229"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Delta</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400044">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400043"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fourier_transformation</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: An integral data transformation that re-expresses a function in terms of sinusoidal basis functions, i.e. as a sum or integral of sinusoidal functions multiplied by some coefficients ("amplitudes").
+defprov: Daniel Schober</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400156">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >19F</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400083"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400208">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SampleJet</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400209"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Bruker BioSpin introduces the SampleJet, a robot for NMR tube automation. The SampleJet has been consciously designed to meet the growing customer demand for simplicity, versatility and higher throughput in NMR sample tube automation.
+The SampleJet utilizes the modern-day industry standard for sample arrangements—the 96 well plate array. Therefore, the samples may be handled by standard lab automation devices before or after the NMR measurement.
+defprov: Bruker website</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400099">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shifted_bell</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: sb</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400096"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400256">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: May not need definition due to its instance character.</owl:versionInfo>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400303">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MACNMR</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400105">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_spectral_projection_parameter_set</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400101"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The data processing parameters that describe a method of translating a 2D NMR pre-processed spectrum into a 1D NMR spectrum.
+synonym: NMR spectral projection parameter set</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400218">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Paravision</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400214"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400246">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tecmag_console</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400015"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400240">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400198"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AMX</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400146">
+    <rdfs:subClassOf rdf:resource="#MSI_400066"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >coherence_pathway_rejection</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A water suppression method which is used to suppress the natural water signal in a gradient selection experiment (e.g. echo/antiecho), where the water coherence is not "refocused" by the refocus gradient (therefore, is not selected).
+defprov: Daniel Schober</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400184">
+    <rdfs:subClassOf rdf:resource="#MSI_400062"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The configuration of an NMR Instrument.
+synonym: NMR_instrument_configuration</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_instrument_configuration</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400198">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_NMR_instrument</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400059"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400059">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: An Instrument which is used to carry out a NMR analysis of some sample.
+synonym: NMR instrument</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_47"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_instrument</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400284">
+    <rdfs:subClassOf rdf:resource="#MSI_400059"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fourier_transformation_NMR_instrument</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >In FT-NMR, all frequencies in a spectrum are irradiated simultaneously with a radio frequency pulse. Following the pulse, the nuclei return to thermal equilibrium. A time domain emission signal is recorded by the instrument as the nuclei relax. A frequency domain spectrum is obtained by Fourier transformation.
+Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400248">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MSI_400243"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tecmag_EAGLE_probe</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The Eagle™ is a 4 mm 1H/X solid-state MAS probe with a top spinning speed of 18 kHz. Its simple design is robust, reliable and easy to spin. Configurations are available for 200 to 600 MHz widebore magnets on Tecmag, Bruker, Chemagnetics, JEOL and Varian spectrometers.
+defprov: website</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400103">
+    <rdfs:subClassOf rdf:resource="#MSI_400113"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The set of variables dependent on a given pulse sequence for a given dimension that will be optimised in order to acquire a spectrum.
+synonym: NMR data pre-processing parameter set by dimension</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_data_pre-processing_parameter_set_by_dimension</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400070">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400068"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gaussian_broadening</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400298">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Galactic</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400270">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Acorn_NMR_Inc</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400231">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_NMR_probe</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: May need no definition.</owl:versionInfo>
+    <rdfs:subClassOf rdf:resource="#MSI_400014"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400045">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO:Exclusion guided definition.</owl:versionInfo>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >non-fourier_transformation</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400043"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A non FT based method for converting from the time to the frequency domain.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400098">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400096"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >line_sharpening</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400304">
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nicolet_GE/QE-300</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400170">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: In one dimensional NMR, as the multiplets from different chemically shifted nuclei overlap, spectral assignments become too difficult. In order to resolve the chemical shift and spin-spin coupling parameters along the different axis, 2D and 3D J-resolved NMR spectroscopies are used.
+defprov: Daniel Schober
+synonym: 2D J-resolved</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >two_dimensional_J-resolved_pulse_sequence</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400037"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400207">
+    <rdfs:subClassOf rdf:resource="http://obi.sourceforge.net/ontology/OBI.owl#OBI_47"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SampleRail</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: This system automatically prepares an NMR sample, inserts it into an NMR magnet, performs NMR experiments on the sample, and transports it back to the preparation system.
+The SampleRail fulfills the transporting tasks from the preparation system into the NMR magnet and back
+defprov: website</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400155">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400083"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >17O</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400257">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Varian</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400159">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >one_dimensional_free_induction_decay</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Having been excited by the RF pulse, the nuclei turn back ("relax") to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
+synonym: 1D_FID</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400007"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400314">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OceanOptics</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400247">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DISCOVERY_console</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The Discovery™ is a Windows XP Professional-based, integrated console designed especially for Solid-State NMR. The console includes everything needed to interface to any magnet and solids probe - from computer to cables to duplexing network
+defprov: tecmag website</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400246"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400217">
+    <rdfs:subClassOf rdf:resource="#MSI_400214"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SampleTrack</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400031">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A compound added to a sample to alter its pH value.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#Role"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >buffer</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400241">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AC</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400198"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400073">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MSI_400043"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A method for eliminating or reducing the noise in a spectrum.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spectral_denoising</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400287">
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GE_Omega</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400185">
+    <rdfs:subClassOf rdf:resource="#MSI_400011"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A magnet which induces a certain frequency (MHz) and which has a certain bore diameter.
+altdef: The NMR signal is a natural physical property of the certain atomic nuclei but it can only be detected with an external magnetic field. A magnet is a fundamental part of an NMR instrument which induces an electromagnetic force field (RF pulse) and by this excites and aligns the spins of the electrons of the nmr acquisition nucleus. It is usually a big (superconducting) electromagnet which is cooled by liquid helium and can be adjusted to a frequency between 200 and 950 MHz. The magnetic field strength is measured in Tesla or Gauss.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_magnet</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400195">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: Hyphenated analytical techniques combining mass spectrometry and chromatography are well-established laboratory tools. The combination of chromatography and NMR has also made its way into the analytical laboratory. Further developments even combine all three techniques into an LC-NMR/NMR-MS system. The use of solid phase extraction provides an efficient interface between chromatography and NMR with demands for special type of flow probes.
+defprov: Bruker website
+synonym: flow_HR-probe</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400223"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flow_high_resolution_probe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400083">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >acquisition_nucleus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#Role"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400007">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cardinal_part_of_NMR_data_set</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400036"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: An immanent important, non-obligatory part of any NMR data set.
+defprov: Daniel Schober
+synonym: cardinal part of NMR data set</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400297">
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Varian_VNMR</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400130">
+    <rdfs:subClassOf rdf:resource="#MSI_400129"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed
+synonym: MAS_rotor</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >magic_angle_spinning_rotor</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400301">
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lybrics</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400259">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MR_Resources</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400258">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JEOL</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400206">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The introduction of biological screening and combinatorial chemistry for chemical synthesis has also introduced new requirements for NMR automation, e.g., the use of well plates for sample input, increased demands on throughput, and the need for quick and simple interpretation of the acquired NMR data.
+defprov: Bruker website
+synonym: Bruker Efficient Sample Transfer NMR</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_BEST_NMR</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400209"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400158">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >31P</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400083"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400042">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data_processing_method</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A method or algorithm that converts an input data set into an output data set in a tracable and useful manner.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400063"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400032">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >calibration_compound</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#Role"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: The compound that produced the peak used to reference a spectrum during data pre-processing.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400242">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liquid_NMR_probe</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400014"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400144">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A specific technique used to suppress the solvent signal in a spectrum. 
+altdef:: A type of pulse sequence (or part of it) used to suppress a frequency (most commonly solvent).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400066"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >excitation_sculpting</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400107">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: A nuclear magnetic resonance spectroscopy quality check parameter set is a parameter set used for the quality check method for an NMR analysis
+synonym: NMR quality check parameter set</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400101"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_quality_check_parameter_set</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400315">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ThermoFinnigan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400244">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400014"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_imaging_probe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400286">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ChemMagnetics</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400072">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sine_squared</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400068"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400196">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_instrument_parameter_set</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400101"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400008">
+    <rdfs:subClassOf rdf:resource="#MSI_400183"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempdef: The data matrix a spectrum consists of can be projected from a higher dimension onto a lower dimension, e.g. a 3D NMR spectrum can be converted (projected) into a 2D NMR spectrum.
+defprov: Daniel Schober</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >projected_spectrum</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400296">
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TecMag</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400186">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_NMR_magnet</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400185"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400302">
+    <rdfs:subClassOf rdf:resource="#NMR_400285"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nuts</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400205">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: In today's fast-paced research environment, NMR tubes are often used once and discarded, creating needless waste. With the Bruker BioSpin Autoclean™ system you can now recycle 5mm, 3mm, or 5mm/3mm step-down (Wilmad 520-1B) NMR tubes. AutoClean NMR Tube Washing System is a simple way to recoup the substantial investment your organization makes in quality NMR tubes, and cut back on needless waste material.
+defprov: Bruker website</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruker_AutoClean</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400204"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400043">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A method for transforming the time-based acquisition data into frequency-based data.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MSI_400042"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data_transformation</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400157">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >29Si</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400083"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400243">
+    <rdfs:subClassOf rdf:resource="#MSI_400014"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >solid_NMR_probe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400219">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AURELIA</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MSI_400214"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400033">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chemical_shift_standard</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A compound that is added to an NMR sample to enable the alignment of spectra. The power of NMR is that for most nuclei the NMR frequency changes very slightly with different molecular environment or chemical bonding. These shifts are very small, on the order of 1 part in 10+9.  This is referred to as "Chemical Shift." Tables of chemical shifts are tabulated and used to determine molecular structure. Combining NMR chemical shift information with other NMR information such as peak integration, coupling constants and Nuclear Overhauser Enhancement (NOE) can result in complete three-dimensional molecular structures of molecules in solution without using X-ray crystallography.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.0/snap#Role"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMR_400316">
+    <rdfs:subClassOf rdf:resource="#MSI_400255"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Applied_Biosystems</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MSI_400143">
+    <rdfs:subClassOf rdf:resource="#MSI_400066"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >defneed</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >watergate</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MSI_400106">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >def: A description of the post-processing strategy used to convert a pre-processed NMR spectrum into a suitable data format for chemometric analysis.
+synonym: NMR spectrum post-processing parameter set</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NMR_spectrum_post-processing_parameter_set</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO: altsprcls: process, not clear wether set is plural (list) or process.</owl:versionInfo>
+    <rdfs:subClassOf rdf:resource="#MSI_400101"/>
+  </owl:Class>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.6, Build 613)  http://protege.stanford.edu -->

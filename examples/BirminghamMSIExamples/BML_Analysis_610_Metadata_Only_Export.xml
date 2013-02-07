@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MSICompliantNMRMetabolomicsExperimentReport
+    xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="http://www.bml-nmr.org/MSICompliantNMRMetabolomicsExperimentReport.xsd">
+    <Analysis dateAndTimeOfDataAcquisition="2008-06-07T04:33:30"
+        institution="University of Birmingham"
+        operator="Birmingham Metabolite Library" supervisor="Birmingham Metabolite Library">
+        <NMRSample originalBiologicalSampleReference="info:inchi/InChI=1/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)/t9-/m0/s1">
+            <postBufferpH pH="7.0" pHUnit="pH"/>
+            <Buffer
+                bufferName="Sodium Phosphate 100mM (90:10 H2O:D2O) pH 7.0"
+                bufferpH="7.0" bufferpHUnit="pH"
+                concentrationInSample="100.0" concentrationInSampleUnit="millimoles"/>
+            <FieldFrequencyLock fieldFrequencyLockName="Heavy water (D2O)"/>
+            <AdditionalSolute concentrationInSample="0.2"
+                concentrationInSampleUnit="%" soluteName="Sodium azide"/>
+            <AdditionalSolute concentrationInSample="5.27163"
+                concentrationInSampleUnit="millimoles" soluteName="L-Tryptophan"/>
+            <ChemicalShiftStandard chemicalShiftStdName="TMSP"
+                concentrationInSample="1.0" concentrationInSampleUnit="millimoles"/>
+            <Solvent concentrationInSample="10"
+                concentrationInSampleUnit="%" solventName="Heavy water (D2O)"/>
+            <Solvent concentrationInSample="90"
+                concentrationInSampleUnit="%" solventName="Water"/>
+            <ConcentrationStandard concentrationInSample="1"
+                concentrationInSampleUnit="millimoles"
+                concentrationStdName="TMSP" concentrationStdType="internal"/>
+        </NMRSample>
+        <Instrument institution="University of Birmingham"
+            location="Henry Wellcome Building" name="Bruker 500">
+            <Magnet manufacturer="Oxford Instruments" model="AVANCE 500" serialNo="98752">
+                <fieldStrength fieldStrength="11.7" fieldStrengthUnit="tesla"/>
+            </Magnet>
+            <Probe manufacturer="Bruker BioSpin Limited"
+                model="CPTX150052 H-C/N-D-05 Z" serialNo="Z44861/0039">
+                <gradientStrength gradientStrength="5.0" gradientStrengthUnit="gauss"/>
+            </Probe>
+            <Console manufacturer="Bruker BioSpin Limited"
+                model="AV Double Bay" serialNo="1944"/>
+            <AcquisitionComputer manufacturer="Hewlett-Packard"
+                model="XW4600 Workstation" serialNo="CZC81447F7">
+                <operatingSystemSoftware manufacturer="Red Hat"
+                    software="Red Hat Linux" version="3.4.6"/>
+                <acquisitionSoftware
+                    manufacturer="Bruker BioSpin Limited"
+                    software="TopSpin" version="2.1"/>
+            </AcquisitionComputer>
+            <Autosampler manufacturer="Bruker BioSpin Limited"
+                model="B-ACS 60" serialNo="H41080/031">
+                <applicationSoftware
+                    manufacturer="Bruker BioSpin Limited"
+                    software="ICON-NMR" version="4.2.2"/>
+            </Autosampler>
+        </Instrument>
+        <Experiment1D>
+            <AcquisitionParameterSet numberOfScans="16"
+                numberOfSteadyStateScans="8" pulseSequence="1D"
+                pulseSequenceFileRef="file:///opt/topspin/exp/stan/nmr/lists/pp/zgesgp.cl"
+                pulseSequenceLiteratureRef="http://dx.doi.org/10.1006/jmra.1995.1047"
+                sampleIntroductionMethod="tube" waterSuppression="excitation sculpting">
+                <shapedPulseParameters shapedPulseFileRef="file:///opt/topspin/exp/stan/nmr/lists/wave/gauss"/>
+                <shapedPulseParameters shapedPulseFileRef="file:///opt/topspin/exp/stan/nmr/lists/wave/Gaus1.1000"/>
+                <sampleIntroductionMethodSize size="5.0" sizeUnit="millimetres"/>
+                <sampleTemperatureInAutosampler temperature="298.0" temperatureUnit="kelvin"/>
+                <sampleTemperatureInMagnet temperature="303.0" temperatureUnit="kelvin"/>
+                <spinningRate rate="0.0" rateUnit="hertz"/>
+                <relaxationDelay delay="3.0" delayUnit="seconds"/>
+                <FirstDimAcquisitionParameters decoupled="false">
+                    <AcquisitionParametersForEachDimension
+                        acquisitionNucleus="1H"
+                        acquisitionParamsFileRef="http://www.bml-nmr.org/BML/acquisitionParametersForDimension/769/acquisitionParamsFile" numberOfDataPoints="16384">
+                        <irradiationFrequency frequency="500.182" frequencyUnit="hertz"/>
+                        <hardPulseWidth width="8.8" widthUnit="microseconds"/>
+                        <sweepWidth width="6009.62" widthUnit="hertz"/>
+                    </AcquisitionParametersForEachDimension>
+                </FirstDimAcquisitionParameters>
+            </AcquisitionParameterSet>
+            <FIDFileReference fidFileRef="http://www.bml-nmr.org/BML/1DFIDFile/458/1DFIDFile"/>
+        </Experiment1D>
+    </Analysis>
+</MSICompliantNMRMetabolomicsExperimentReport>
