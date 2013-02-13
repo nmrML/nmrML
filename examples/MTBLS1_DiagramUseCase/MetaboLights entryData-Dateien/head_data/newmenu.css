@@ -1,0 +1,175 @@
+
+#menucontainer{
+	background: #404040  url(http://www.ebi.ac.uk/inc/images/menu1.jpg) repeat-x top left;
+	color: #000000; /* added css warn */
+	width: 100%;
+	padding: 0;
+	margin:0;
+	position: absolute;	
+	left: 0;
+	white-space: nowrap;
+}
+
+.menuzoom{
+	font-size: 13pt; /* sets height of menu bar firefox */
+}
+
+#nav{
+	list-style: none; 
+	white-space: normal;
+	 /*width: 770px; added to stop IE wrap */
+}
+
+#nav ul { 
+	padding: 0;
+	margin:0;
+	list-style: none;
+    width:11em;
+    z-index:99;
+    position:relative;
+    overflow:visible; 
+}
+ 
+#nav ul ul ul,  #nav ul ul, #nav ul {
+  overflow:visible;  
+}
+
+#nav ul{
+  position: absolute;
+  top: 18px;
+}
+
+#nav li { 
+    position: relative; 
+    float:left;
+	width: 12em;
+    border:0;
+    display:block;
+	margin-right: 0; 
+	margin-top: 0; 
+	margin-bottom: 0; 
+	/*margin-left: -3em;*/
+	margin-left: -5em;
+	height: 18px; 
+	/*overflow: show; css error - visible */
+}
+
+#nav li li{ 
+    margin:0;   
+    position: relative; 
+    float:left;
+	width: 12em;
+    border:0;
+    display:block;
+    height:auto;
+}
+
+#tab_02, #tab_03, #tab_04, #tab_05, #tab_06, #tab_07, #tab_08 {
+	background: #404040 url(http://www.ebi.ac.uk/inc/images/menuspacer.jpg) top left no-repeat;
+	color: #000000;
+}
+
+#tab_01, #tab_02, #tab_03, #tab_04, #tab_05, #tab_06, #tab_07, #tab_08 {
+	padding-left: 2px;
+}	
+	
+#nav  li a {
+	color: #ffffff;
+	background-color: #404040; 
+}
+
+#nav  li li{  
+	background-color:#e0e0e0;
+	border: 1px solid #000000;
+	color: #000000;
+}
+
+#nav  li li a {
+	color: #000000;
+	background-color: #e0e0e0; 
+	padding-left: 2px;
+}
+
+#nav ul li{ 
+	border-width:1px 1px 0 1px ;
+	margin-top: -1px; /* for early netscapes.....*/
+}
+
+#nav ul ul li{ 
+	border-width:1px 1px 0 1px;
+}
+
+#nav ul ul li:last-child{
+	border-width:1px;
+}
+ 
+#nav ul  li:last-child{
+	border-width:1px;
+}
+ 
+#nav a {
+    text-decoration:none; 
+    display:block;
+    padding: 0.2em;   
+    width:11.6em; 
+	height:auto;
+	margin: 0;
+}
+
+#nav li li a:hover{ 
+	background-color:#a1a1a1;
+	color: #000000; 
+}
+
+#nav  li  li a:hover{ 
+	display: block;
+}
+
+#nav ul{
+    display:none;
+}
+
+/*all see this */
+#nav ul ul, #nav ul ul ul{
+    display:none; 
+    position:absolute; 
+    margin-top:-18px; 
+    margin-left:12em;
+}
+
+#nav ul{
+	overflow: visible;
+}
+
+#nav li.clickhover:hover ul ul, #nav li.clickhover:hover ul ul ul, #nav li.clickhover:hover ul ul ul ul, #nav li.clickhover:hover ul ul ul ul ul{
+    display:none; 
+}
+
+#nav li.clickhover:hover ul, #nav ul li.clickhover:hover ul, #nav ul ul li.clickhover:hover ul, #nav ul ul ul li.clickhover:hover ul, #nav ul ul ul ul li.clickhover:hover ul{
+    display:block;
+}
+
+.mainmenu{
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left:20px;
+	margin-top: 0.2em;
+	min-width: 84em;
+}
+
+li>ul { 
+	top: auto;
+	left: auto;
+}
+
+a.arrow {
+	background: url(http://www.ebi.ac.uk/inc/images/rightarrow.gif) no-repeat top right;
+}
+
+
+
+
+
+
+
+

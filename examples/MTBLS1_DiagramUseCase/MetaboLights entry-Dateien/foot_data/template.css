@@ -1,0 +1,521 @@
+body {
+	width:100%;
+	padding:0;
+	margin:0;
+	overflow: hidden;
+}
+
+
+.footer{
+	padding-top: 4px; 
+	padding-left: 0; 
+	padding-right: 0; 
+	padding-bottom: 5px; 
+	margin:0; 
+	position: absolute;
+	left: 0;
+	right: 0;
+	font-size: 8pt;
+	color: #000000;
+	text-align: left;
+	width:99.8%;
+	background-color: #dedede; /* test */
+	height: 17px; 
+	white-space: nowrap;
+}
+
+
+/* START HEADER */
+
+.headerlayer{
+	position:absolute;
+	left:0px;
+	top:0px;
+	padding:0px;
+	margin:0px;
+	width:100%;
+	height:800px;
+	border: 0;
+	clear: both;
+}
+
+.header{
+	background: #dedede url(http://www.ebi.ac.uk/inc/images/embl_green.gif) repeat top left; 
+	color: #000000;
+	position:absolute;
+	left:0px;
+	top:0px;
+	padding:0px;
+	margin:0px;
+	width:100%;
+	border: 0;
+	clear: both;
+	height:57px;
+}
+
+.headerleft{
+	position:absolute;
+	left:0px;
+	top:0px;
+	padding:0px;
+	margin:0px;
+	width:126px;
+	height:35px;
+	float:left;
+	border:0px;
+}
+
+.headerleft img{
+	border:0px;
+	width: 120px;
+	height:32px;
+	margin: 0;
+	padding-right: 0; padding-left: 0;
+	padding-top: 2px;
+	padding-bottom: 1px;
+}
+
+.headerright{
+	position:absolute;
+	left:0px;
+	top:0px;
+	padding:0px;
+	margin:0px;
+	height:35px;
+	right: 0px;
+}
+
+.headerbotrow {
+	position:absolute;
+	left:0px;
+	top: 20px;
+	padding-bottom:0px; 
+	padding-left:0px; 
+	padding-right:0px;
+	margin:0px;
+	right: 0px;
+	height: 20px;	
+	padding-top: 0px;	
+}
+
+.headertoprow{
+	position: relative;
+	left: 0px;
+	top: 0px;
+	padding:0px;
+	margin:0px;
+	width: auto;
+	right: 0px;
+	height: 15px;
+}
+
+.headermenurow{
+	width: 100%;
+	padding:0px;
+	margin:0px;
+	left: 0px;
+	float: left;
+	position: absolute;	
+	top: 35px;
+	color: #000000; 
+	background: #404040; /* added bg css warn */
+	border: 0;
+	height: 22px;
+	/*background: #404040 url(http://www.ebi.ac.uk/inc/images/menu1.jpg) repeat-x;*/
+	white-space: nowrap;
+}
+
+.icons{
+	padding-left:0px; 
+	padding-top:0px; 
+	padding-bottom:0px;
+	margin:0px;
+	padding-right: 5px;
+	float: right;
+}
+
+.search{
+	/*float: left;
+	float:right;*/
+	margin-left: 0;
+	pdding:0;
+	vertical-align: top;
+	height: 35px;
+	margin: 6px 0 0 350px;
+	width:auto;
+	/*min-width: 555px;*/
+	/*min-width: 640px;*/
+} 
+
+.div_searchtext{
+	position: relative;
+	padding:0px;
+	margin-bottom:0px; 
+	margin-right:0px; 
+	margin-left:0px;
+	height:20px;
+	width: 50px;
+	background:  url(http://www.ebi.ac.uk/inc/images/header_search_revised.gif) no-repeat top left;
+	float: left;
+	margin-top: 2px;
+}
+
+.headerform{
+	border: 0;
+	margin:0;
+	padding: 0;
+}
+
+.headertextinput {
+	border: 1px solid #a5acb2;
+	color: #cccccc; 
+	background-color: #ffffff; 
+	width:235px; 
+	padding: 2px 0 2px 2px;
+}
+.headertextinput:focus {
+	color: #404040; 
+}
+
+.headerselect{
+	border: 1px solid #a5acb2;
+	color: #404040; 
+	background-color: #ffffff; 
+	margin:0;
+	width: 150px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.div_headertextinput{
+	position: relative;
+	/*width: 284px;*/
+	width: 235px;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.div_headerselect{
+	position: relative;
+	width: 150px;
+	float: left;
+	padding-right: 2px;
+}
+
+.headerbutton, .headerbuttonreset{
+	border-collapse: collapse;
+	background: #e33e3e;
+	border: 0;
+	margin: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	padding-left:0;
+	height: 20px;
+	color: #ffffff;
+	vertical-align: text-bottom;
+	text-align: center;
+	font-size: 9px;
+	font-weight: bold;
+}
+
+.headerbutton{
+	width: 20px;
+}	
+
+.headerbuttonreset{
+	width: 37px;
+}
+
+.div_headerbutton, .div_cancel_button{
+	position: relative;
+	border: 0;
+	float: left;
+	height: 20px;
+	margin-top: 0px;
+	margin-left: 2px;
+}
+
+.div_headerbutton{
+	width: 20px;
+}
+
+.div_feedback {
+	position: relative;
+	border: 0;
+	float: left;
+	height: 24px;
+	margin-top: 0px;
+	margin-left: 2px;
+	width: 152px;
+}
+
+.div_cancel_button{
+	width: 37px;
+	/* background-color: #00ff00;  test */
+}
+
+.headerbutton:hover, .headerbuttonreset:hover{
+	cursor: pointer;
+}
+
+/*
+.reset_button_image{
+	width: 37px;
+	height: 20px;
+	border: 0;
+}*/
+
+.reset_button_image{
+	width: 152px;
+	height: 24px;
+	border: 0;
+}
+
+.help_button_image{
+	width: 20px;
+	height: 20px;
+	border: 0;
+}
+
+.div_help_button {
+	position: relative;
+	border: 0;
+	float: left;
+	height: 20px;
+	width: 20px;
+	margin-top: 0px;
+	margin-left: 2px;
+	/* background-color: #0000ff;  test */
+}
+
+.odd{
+	background-color: #e9effd; 
+	color: #000000;
+}
+
+.maincat{
+	color: #000000;
+	background-color: #dddddd;
+	font-weight: bold;
+}
+
+.headertextinput, .headerselect, .headerbutton,  .headerbuttonreset, .maincat, .search, .icons, .menu, .breadcrumbs, #menubar,  .therightstuff, .headermenurow, .search, .therighticons{
+	font-size: 9pt;
+	font-family: helvetica, "trebuchet MS", arial, sans-serif;
+}
+
+.icons img{
+	border: 0;
+	width: 18px;
+	height: 18px;
+}
+
+.icons img.rss{
+	border: 0;
+	width: 35px;
+	height: 18px;
+}
+
+/*.therightstuff{
+	position: absolute;
+	top: -2px;
+	padding:0px;
+	margin-left:0px; 
+	margin-right:0px;
+	float: right;
+	left: 676px; 
+	display: block;
+	margin-bottom: -2px;
+	margin-top: 14px; */
+	/*width: 11em; */
+	/*width: 94px;
+	color: #000000; 
+	background-color: transparent;
+	overflow: hidden;
+	height: 15px; */
+	/* background-color: #ff0000;  test */
+/*}*/
+
+.therightstuff a{ 
+	color: #dedede;
+	background-color: #207a7a;
+	text-decoration: underline;
+	border: 0px;
+	/*padding-left: 9px;*/
+	/*background: url(http://www.ebi.ac.uk/inc/images/headerarrow.gif) no-repeat top left;*/
+	/*font-size: 7pt;*/
+	font-size:1px;
+	white-space: nowrap;
+}
+
+.therightstuff a img{
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: 94px;
+	height: 13px;
+}
+
+/*
+.therightstuff a:link, .therightstuff a:visited{
+	text-decoration: none;
+	color: #deebeb;
+	background-color: #207a7a;
+}
+
+.therightstuff a:active, .therightstuff a:hover{
+	text-decoration: underline;
+	color: #a1c7c7;
+	background-color: #207a7a;
+}
+*/
+
+.therighticons{
+	position: absolute;
+	top: 35px;
+	padding:0px;
+	margin-left:0px; 
+	margin-right:0px;
+	float: right;
+	height: 15px;
+	left: 666px;
+	white-space: nowrap;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	width: 100px;
+	text-align: right; 
+}
+
+.therighticons img.rssicon{
+	border: 0;
+	width: 22px;
+	height: 16px;
+}
+
+.therighticons img.print{
+	border: 0;
+	width: 16px;
+	height: 19px;
+}
+
+.therighticons img.sitemap{
+	border: 0;
+	width: 45px;
+	height: 19px;
+}
+
+.therighticons a{
+	border: 0;
+}
+
+/* HEADER Customisations - Francis Rowland, March 2011 */
+div#search form input.headertextinput {
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border-color: #134d4d #50b3b3 #50b3b3 #134d4d;
+	padding:3px;
+}
+
+div#search form input#FormsButton3 {
+	background: none repeat scroll 0 0 #72B55F;
+    color: #FFFFFF;
+	margin:0 10px;
+	font-size:12px;
+    padding:2px 4px;	
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+    border: 1px solid #134d4d;
+	border-color:#0a4f4f #333 #333 #0a4f4f;
+	text-align:center;
+	width:auto;
+}
+
+div#search form input#FormsButton3:hover { background-color:#54bdbd; }
+
+div#search form span {
+	margin:0 10px 0 20px;	
+}
+
+div#search form span a:link,
+div#search form span a:visited {
+	color:#e7e7e7;
+	text-decoration:none;
+}
+
+div#search form span a:hover,
+div#search form span a:focus,
+div#search form span a:active {
+	text-decoration: underline;
+	color:#fff;	
+}
+
+
+/* END HEADER */
+
+
+
+
+
+/* START FOOTER */
+
+.footer{
+	font-size: 8pt;
+	font-family: helvetica, "trebuchet MS", arial, sans-serif;
+}
+
+.footer a{ 
+	color: #404040; 
+	background-color: #dedede;
+	text-decoration: underline;
+}
+
+.footer a:link, .footer a:visited{
+	text-decoration: underline;
+}
+
+.footer a:active, .footer a:hover{
+	text-decoration: none;
+}
+
+.footer_text{
+	position: relative;
+	top: 2px;
+	text-align: center;
+	width: 500px;
+}
+
+.footerdiv img{
+	border: 0;
+	width: 11px;
+	height: 7px;
+}
+
+/* END FOOTER */
+
+.headermenurowtable{
+	position:relative;
+	border-collapse: collapse;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.headermenurowtable td{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.spacer{
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 5px;
+}
