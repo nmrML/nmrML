@@ -23,6 +23,6 @@ msiNMR <- getOntology("ontologies/msi-nmr.obo")
 unit   <- getOntology("http://unit-ontology.googlecode.com/svn/trunk/unit.obo")
 
 # Parse an XML sample file
-tree <- xmlTreeParse("examples/biosample-concentrations.xml")
+tree <- xmlTreeParse("../../../examples/nmrML/biosample-concentrations.xml")
 root <- xmlRoot(tree)
 
