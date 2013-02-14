@@ -20,8 +20,19 @@
 library(Risa)
 
 ## Use mtbls1 as template
-ISAmtbls1 <- readISAtab("../mtbls1")
-mtbls1.maf <- read.delim("../mtbls1/m_live_mtbl1_rms_metabolite profiling_NMR spectroscopy_v2_maf.tsv")
+#ISAmtbls1 <- readISAtab("../mtbls1")
+#mtbls1.maf <- read.delim("../mtbls1/m_live_mtbl1_rms_metabolite profiling_NMR spectroscopy_v2_maf.tsv")
+#nmr.maf.columns <- colnames(mtbls1.maf)[1:18]
+
+nmr.maf.columns <- c("database_identifier", "chemical_formula",
+                     "smiles", "inchi", "metabolite_identification",
+                     "chemical_shift", "multiplicity", "taxid",
+                     "species", "database", "database_version",
+                     "reliability", "uri", "search_engine",
+                     "search_engine_score",
+                     "smallmolecule_abundance_sub",
+                     "smallmolecule_abundance_stdev_sub",
+                     "smallmolecule_abundance_std_error_sub" )
 
 ## Read mtbls25
 ISAmtbls25 <- readISAtab()
