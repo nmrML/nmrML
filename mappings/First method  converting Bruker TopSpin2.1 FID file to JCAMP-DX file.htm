@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <title>First method: converting Bruker TopSpin2.1 FID file to JCAMP-DX file</title>
+
+  <meta name="description" content="Converting Bruker TopSpin2.1 one-dimension 
+  free-induction decay (FID) file to JCAMP-DX file">
+
+  <meta name="keywords" content="Bruker, TopSpin2.1 , JCAMP-DX, Gsim, DMfit, nmr, 
+  periodic-table, applets, nuclear magnetic resonance, quadrupolar nuclei, RMN, 
+  QCC, electric field gradient, EFG, half-integer spin, NMR, 
+  quadrupolar coupling, efg, qcc">
+
+  <meta name="author" content="Pascal P. Man">
+  <meta name="expires" content="never">
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+  <style type="text/css" media="all">
+    <!--
+    @import "/css/navigatorcss.css";
+    @import "/css/whatcss.css";
+    @import "/css/faqcss.css";
+    @import "/css/herefaq-aboutnmrcss.css";
+    @import "/css/cangjiecss.css";
+    -->
+
+  </style>
+
+  <link rel="stylesheet" type="text/css" media="print" href="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/cssprint.css"> 
+
+  <link rel="icon" type="image/x-icon" href="http://www.pascal-man.com/favicon.ico">
+  <link rel="shortcut icon" type="image/x-ico" href="http://www.pascal-man.com/favicon.ico">
+
+  <script type="text/javascript" language="javascript" src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/function.js">
+  </script>
+
+  <script type="text/javascript" src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/overlib.js">
+  <!-- overLIB (c) Erik Bosrup --></script>
+
+</head>
+
+<body onload="frameBuster()">
+
+<div id="mainwrap">
+  
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+
+<div id="navigationbartop"> 
+  <ul>
+    <li id="about"><a href="#">About P. Man</a>
+      <ul>
+        <li id="cv"><a href="http://www.pascal-man.com/navigation/about.shtml">
+            Curriculum vitae</a></li>
+        <li id="publication"><a href="http://www.pascal-man.com/navigation/publication-since1983.shtml">
+            Publication</a></li>
+        <li id="backwardslink"><a href="http://www.pascal-man.com/navigation/link-europe.shtml">
+            Backwards link</a></li>
+      </ul>
+    </li>
+    <li id="faq"><a href="#">FAQ</a>
+      <ul>
+        <li id="aboutnmr"><a href="http://www.pascal-man.com/navigation/phase-cycling.shtml">
+            About NMR</a></li>
+        <li id="aboutchinese"><a href="http://www.pascal-man.com/navigation/faq-java-browser/cangjie.shtml">
+            About Chinese</a></li>
+        <li id="aboutweb"><a href="http://www.pascal-man.com/navigation/faq-java-browser/mathML.shtml">
+            About web tools</a></li>
+        <li id="aboutjava"><a href="http://www.pascal-man.com/navigation/faq-java-browser/java-concurrency.shtml">
+            About Java</a></li>
+      </ul>
+    </li>
+    <li id="period"><a href="#">Periodic Table</a>
+      <ul>
+        <li id="standard"><a href="http://www.pascal-man.com/periodic-table/periodictable.html">
+            Standard</a></li>
+        <li id="rota"><a href="http://www.pascal-man.com/periodic-table/periodictable-rota.html">
+            Rota</a></li>
+        <li id="china"><a href="http://www.pascal-man.com/periodic-table/periodictable-china.html">
+            &#22266;&#24907;&#20803;&#32032;&#21608;&#26399;&#34920;</a></li>
+        <li id="more"><a href="http://www.pascal-man.com/links/nmr-periodic-table.shtml">
+            More...</a></li>
+      </ul>
+    </li>
+    <li id="recommended"><a href="#">Related site</a>
+      <ul>
+        <li id="links"><a href="http://www.pascal-man.com/links/links.shtml">
+            NMR laboratories</a></li>
+        <li id="nmr-software"><a href="http://www.pascal-man.com/links/nmr-software.shtml">
+            NMR software</a></li>
+        <li id="nmr-periodic-table"><a href="http://www.pascal-man.com/links/nmr-periodic-table.shtml">
+            NMR Periodic Table</a></li>
+        <li id="nmr-journal"><a href="http://www.pascal-man.com/links/nmr-journal.shtml">
+            NMR journals</a></li>
+      </ul>
+    </li>
+    <li id="sitemap"><a href="http://www.pascal-man.com/navigation/sitemap.shtml">Site map</a></li>
+    <li id="what"><a href="http://www.pascal-man.com/navigation/what.shtml">What's new</a></li>
+  </ul>
+</div><!-- navigationbartop -->
+
+<div id="logohead">
+  <a id="logo" href="http://www.pascal-man.com/index.html">
+    <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/logo2.gif" alt="pascal-man.com, Home logo" border="0" height="95" width="186"></a>
+
+  <h2 id="pagetitle">First method using two files: Converting Bruker TopSpin2.1 FID file 
+                     into JCAMP-DX file and vice versa</h2>
+  
+  <form id="sitesearchform" method="get" action="/cgi-bin/search/exec/search.cgi"><br>
+    <input name="search" size="23" type="text"><br> <br>
+    <input name="perform_search" value="Search" type="submit">
+    <input name="skin" value="" type="hidden">
+  </form>
+</div><!-- logohead -->
+
+<div id="navigationbardown">
+  <ul>
+  <li id="download"><a href="#" title="Use modern browser to access submenus">Download<br>source code</a>
+    <ul>
+      <li id="downloadjdk14"><a href="http://www.pascal-man.com/JDK1.4-applet/download-jdk.shtml" title="and SUN's Java Development Kit JDK1.4">
+          JDK1.4 applet<br>source code</a></li>
+      <li id="downloadjdk13"><a href="http://www.pascal-man.com/JDK1.3-applet/mqmas/download/download-jdk.shtml" title="and SUN's Java Development Kit JDK1.3">
+          JDK1.3 applet<br>source code</a></li>
+      <li id="downloadjdk118"><a href="http://www.pascal-man.com/JDK1.1.8-download/download-jdk.shtml" title="and SUN's Java Development Kit JDK1.1.8">
+          JDK1.1.8 applet<br>source code</a></li>
+      <li id="downloadjdk102"><a href="http://www.pascal-man.com/download/download-jdk.shtml" title="and SUN's Java Development Kit JDK1.0.2">
+          JDK1.0.2 applet<br>source code</a></li>
+    </ul>
+  </li>
+  <li id="cogwheel" title="Internet Explorer needs MathPlayer for visualizing these pages">
+     <a href="http://www.pascal-man.com/cogwheel/cogwheel-reference.xhtml">
+      Phase cycling<br>as Cogwheel</a></li>
+  <li id="pulseprog"><a href="#" title="for Bruker spectrometers">Pulse<br>program</a>
+    <ul>
+      <li id="topspin21"><a href="http://www.pascal-man.com/pulseprogram/pulse-programs.shtml">
+          TopSpin 2.1, Avance III</a></li>
+      <li id="wxinnmr35"><a href="http://www.pascal-man.com/pulseprogram/pulse-programs-xwinnmr3-5.shtml">
+          XwinNMR 3.5</a></li>
+      <li id="xwinnmr26"><a href="http://www.pascal-man.com/pulseprogram/pulse-programs-xwinnmr2-6.shtml">
+          XwinNMR 2.6, ASX, MSL</a></li>
+    </ul>
+  </li>
+  <li id="pulseseq"><a href="#" title="Solid State NMR experiment">Pulse<br>sequence</a>
+    <ul>
+      <li id="cp-menu"><a href="http://www.pascal-man.com/pulsesequence/pulse-sequences.shtml" title="Cross-polarization NMR">
+          Cross polarization</a></li>
+      <li id="double-menu"><a href="http://www.pascal-man.com/pulsesequence/double-resonance/inept.shtml" title="Double-resonance NMR">
+          Double resonance</a></li>
+      <li id="mq-menu"><a href="http://www.pascal-man.com/pulsesequence/mqmas/two-pulse.shtml" title="Multiple-Quantum Magic Angle Spinning NMR">
+          MQMAS</a></li>
+      <li id="stmas-menu"><a href="http://www.pascal-man.com/pulsesequence/stmas/stmas.shtml" title="Satellite-Transition Magic Angle Spinning NMR">
+          STMAS</a></li>
+    </ul>
+  </li>
+  <li id="quadrupole"><a href="#" title="Use modern browser to access submenus">Quadrupole<br>interaction</a>
+    <ul>
+      <li id="definition-menu"><a href="http://www.pascal-man.com/tensor-quadrupole-interaction/EFG-tensor.shtml" title="Definition of EFG tensor in NMR">
+          Definition</a></li>
+      <li id="onePulse-menu"><a href="http://www.pascal-man.com/tensor-quadrupole-interaction/one-pulse-crystal-MAS.shtml" title="One pulse Magic Angle Spinning NMR">
+          One pulse MAS</a></li>
+      <li id="mqmas-menu"><a href="http://www.pascal-man.com/tensor-quadrupole-interaction/z-filter.shtml" title="Multi-Quantum Magic Angle Spinning NMR">
+          MQMAS</a></li>
+      <li id="reference-menu"><a href="http://www.pascal-man.com/tensor-quadrupole-interaction/reference-hamiltonian.shtml" title="NMR references for quadrupole nuclei">
+          Reference</a></li>
+    </ul>
+  </li>
+  <li id="search-submit"><a href="#">Search or Submit<br>NMR reference</a>
+    <ul>
+      <li id="search"><a href="http://www.pascal-man.com/periodic-table/searchNMR.shtml" title="in a mySQL data base">
+          Search</a></li>
+      <li id="submit"><a href="http://www.pascal-man.com/periodic-table/suggestion.php" title="to a mySQL data base">
+          Submit</a></li>
+    </ul>
+  </li>
+  </ul>
+</div><!-- navigationbardown -->
+
+<div id="location">
+  <a href="http://www.pascal-man.com/index.html">Home and Applets</a>
+  &gt; FAQ
+  &gt; About NMR
+  &gt; <a href="http://www.pascal-man.com/navigation/faq-java-browser/file-conversion.shtml">About File Conversion</a>
+  &gt; First Method using Two Files: Bruker TopSpin2.1 FID to JCAMP-DX
+</div>
+
+<div id="main">
+  <div id="sidebar">
+    <div id="sidebarpad">
+
+      <h3 id="faq-aboutnmr"><a href="http://www.pascal-man.com/navigation/phase-cycling.shtml">About NMR</a></h3>
+
+      <ul>
+      <li><a href="http://www.pascal-man.com/navigation/faq.shtml">
+        About<br>this site</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/phase-cycling.shtml">
+        About<br>phase-cycling</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/T2-nmr.shtml">
+        About<br>T2 determination</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/file-conversion.shtml" id="item">
+        About<br>file conversion</a><hr></li>
+
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/SVD.shtml">
+        About<br>singular value decomposition</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/SVD-Java-application.shtml">
+        About<br>SVD Java application</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/SVD-Java-application2.shtml">
+        About<br>New SVD Java application</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/SVD-Java-application2012.shtml">
+        About<br>2012 SVD Java application</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/SVD-Java-application-GPU.shtml">
+        About<br>GPU, 2012 SVD Java 6 application</a><hr></li>
+
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/LPSVD.shtml">
+        About<br>LPSVD, harmonic inversion</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/harmonic-inversion.shtml">
+        About<br>harmonic inversion for improving spectrum resolution</a></li>
+      <li><a href="http://www.pascal-man.com/navigation/faq-java-browser/harmonic-inversion-deadtime.shtml">
+        About<br>harmonic inversion for dead time correction</a></li>
+      </ul>
+
+      <h3 id="faq-aboutchinese"><a href="http://www.pascal-man.com/navigation/faq-java-browser/cangjie.shtml">About Chinese</a></h3>
+      <h3 id="faq-aboutweb"><a href="http://www.pascal-man.com/navigation/faq-java-browser/mathML.shtml">About web tools</a></h3>
+      <h3 id="faq-aboutjava"><a href="http://www.pascal-man.com/navigation/faq-java-browser/java-concurrency.shtml">About Java</a></h3>
+
+    </div>
+  </div>
+  <!-- - data - - -->
+  <div id="data">
+    <div id="datapad">
+
+    <div id="cjoutline">
+      <br>
+      <h3>*** Outline of the first method using two files ***</h3>
+      <ul>
+         <li>(A) <a href="#jcamp-generation">Generation</a> 
+             of JCAMP-DX file from topSpin2.1 operating system</li>
+         <li>(B) <a href="#jcamp-modification">Modification</a> of JCAMP-DX file</li>
+         <li>(C) <a href="#jcamp-introduction">Introduction</a> 
+             of JCAMP-DX file into topSpin2.1 operating system</li>
+      </ul>
+    </div><br>
+
+    <h3>(A) <a name="jcamp-generation" class="cangjie-main">Generation 
+        of JCAMP-DX file from topSpin2.1 operating system</a></h3>
+
+    <ul>
+       <li><div>Consider the <sup>29</sup>Si echo train file of nanomacs, 
+           already modified by <strong>convdta</strong> command:<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/si29-echotrain.gif" alt="" border="0" width="600"></div><br></li>
+
+       <li><div>File &gt; Save; check "Save data set in a JCAMP-DX file"<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/wrpa.gif" alt="" border="1" width="460"></div><br></li>
+
+       <li><div>Click OK button<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/tojdx-panel.gif" alt="" border="1" width="460"></div><br></li>
+
+       <li><div>Save the file on the DeskTop of Windows by filling the specify destination form:<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/tojdx-desktop.gif" alt="" border="1" width="528"></div><br></li>
+
+       <li><div>A file called 29Si-nanom-4BL.dx appears on the DeskTop of Windows.<br> 
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/origine-dx.gif" alt="" border="1" width="204"></div><br></li>
+
+       <li><div>Make a copy of this file called copy-29Si-nanom-4BL.dx.<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/copy-dx.gif" alt="" border="1" width="204"></div><br></li>
+
+       <li>These two files are text files containing NMR parameters and 
+           the intensities of the echotrain. The real part of this echotrain followed by the imaginary 
+           part are two ASCII series in a single column. The left-hand side of this column contains increasing 
+           integer numbers indicating the positions of the intensities. The right-hand side of this column contains 
+           the intensities of the echotrain.<br><br></li>
+
+    </ul>
+
+    <h3>(B) <a name="jcamp-modification" class="cangjie-main">Modification 
+        of JCAMP-DX file</a></h3>
+
+    <ul>
+       <li><div>We use MS EXCEL to select the right-hand side of the column containing the intensities 
+           of the echotrain. To this end, we apply to the 29Si-nanom-4BL.dx file 
+           the <a href="http://www.pascal-man.com/navigation/faq-java-browser/ascii-To-Excel.shtml">procedure</a> 
+           for converting two-series ASCII file into two-column MS Excel spread sheet document.<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/excel-dx.gif" alt="" border="1" width="350"></div><br></li>
+
+       <li>**************************************************<br><br></li>
+
+       <li>Now, we select the real part and the imaginary part of the echotrain and paste them to 
+           <a href="http://www.pascal-man.com/navigation/faq-java-browser/SVD.shtml#SVD-applet-hankel">Java applet 
+           for denoising</a>.<br><br></li>
+
+       <li><div>After the echotrain denoising, we replace the real part and the imaginary part 
+           of the echotrain in 29Si-nanom-4BL.dx file by the denoised values which are real 
+           numbers.<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/SVD-real-true.gif" alt="" border="1" width="350"></div><br></li>
+
+       <li><div>We change the format of these cells so that the intensities of the echotrain become 
+           integer numbers.<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/SVD-real-modification.gif" alt="" border="1" width="600"></div><br></li>
+
+       <li><div>The intensities of the echotrain are integer numbers.<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/SVD-integer.gif" alt="" border="1" width="340"></div><br></li>
+
+       <li>**************************************************<br><br></li>
+
+       <li><div>We again use MS EXCEL to save the file as an ASCII file. 
+           To this end, we close the window of the 29Si-nanom-4BL.dx file <br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/close.gif" alt="" border="1" width="600"></div><br></li>
+
+       <li><div>Click YES button<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/save-changed.gif" alt="" border="1" width="600"></div><br></li>
+
+       <li><div>Click YES button<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/save-format.gif" alt="" border="1" width="600"></div><br></li>
+
+       <li><div>Open 29Si-nanom-4BL.dx file as a text file<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/converti.gif" alt="" border="1" width="394"></div><br>
+           <span>Intensiy position and intensity value are separated 
+           by a tabulation character</span>.<br><br></li>
+
+       <li><div>We select the real part and the imaginary part of the echotrain 
+           in the 29Si-nanom-4BL.dx file and paste them in the copy-29Si-nanom-4BL.dx file. 
+           We have a denoised copy-29Si-nanom-4BL.dx file, where intensiy position 
+           and intensity value are separated by a tabulation character.
+           </div><br></li>
+
+<!--        <li><div><span>The previous two steps can be obtained simply in a single step 
+           by opening 29Si-nanom-4BL.dx file with MS Word; select all the file;
+           replace tabulation with space:</span><br />
+           <img src="image-windows-java/replace.gif" 
+           alt="" width="660" border="1" /></div><br />
+           <span>save the file as a text file with the appropriate name 
+          (copy-29Si-nanom-4BL.dx).</span></li> -->
+
+    </ul>
+
+    <h3>(C) <a name="jcamp-introduction" class="cangjie-main">Introduction 
+        of JCAMP-DX file into topSpin2.1 operating system</a></h3>
+
+    <ul>
+       <li><div>In TopSpin2.1, File &gt; Open<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/open-rb.gif" alt="" border="1" width="456"></div><br></li>
+
+       <li><div>Check "Open NMR data stored in special formats"<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/openjdx.gif" alt="" border="1" width="456"></div><br></li>
+
+       <li><div>Click OK button<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/fromjdx.gif" alt="" border="1" width="560"></div><br></li>
+
+       <li><div>Click Browse button. Select copy-29Si-nanom-4BL.dx from the 
+           DeskTop of Windows then click Convert from JDX button<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/SVD-echotrain-selection.gif" alt="" border="1" width="560"></div><br></li>
+
+       <li><div>Click OK button<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/lecture.gif" alt="" border="1" width="560"></div><br></li>
+
+       <li><div>Denoised copy-29Si-nanom-4BL file is ready for processing in TopSpin2.1<br>
+           <img src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/echotrain-fin.gif" alt="" border="1" width="678"></div><br></li>
+
+    </ul>
+
+    </div>
+  </div>
+  <div id="separator">&nbsp;</div>
+</div><!-- main -->
+
+<div id="mail">
+  <a href="mailto:pm@pascal-man.com">[Contact me]</a>
+  - Last updated August 30, 2012
+</div>
+
+<div id="cpright">
+  Copyright © 2002-<script type="text/javascript" src="First%20method%20%20converting%20Bruker%20TopSpin2.1%20FID%20file%20to%20JCAMP-DX%20file-Dateien/copyright.js"></script>2013
+  pascal-man.com. All rights reserved.
+</div>
+
+</div><!-- mainwrap -->
+
+
+</body></html>

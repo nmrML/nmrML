@@ -1,0 +1,127 @@
+@charset "iso-8859-1";
+
+  html, body {
+  color: black;
+  background-color: white;
+  font-family: Georgia, "Book Antiqua", "Times New Roman", serif;
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherent;
+  font-size: small;
+  }
+
+  a:link, a:visited, a:hover, span {
+  color: black;
+  background-color: transparent;
+  }
+
+/* Navigation tables */
+
+  div#navigationbartop, div#navigationbardown {
+  display: none;
+  }
+
+  div#logohead form#sitesearchform {
+  background-color: transparent;
+  display: none;
+  }
+
+  h4 span {
+  color: green;
+  background-color: transparent;
+  }
+
+/* Location */
+
+  #location {
+  background-color: transparent;
+  }
+
+  #location a:link, #location a:visited, #location a:hover {
+  color: black;
+  background-color: transparent;
+  }
+
+  a#appletlocation {
+  display: none;
+  }
+
+/* Spin property table and directory table */
+
+  tr.head, tr.valueup, tr.value, tr.valueempty {
+  border: 1pt solid black;
+  background-color: transparent;
+  }
+
+  #directory {
+  display: none;
+  }
+
+/* Main table: references */
+
+  div#main div#nucleuslinkspad, p#chineseday {
+  display: none;
+  }
+
+  div#data {
+  float: none; /* for Gecko-based browsers */
+  width: 100%;
+  }
+
+  #leftsidebar {
+  display: none;
+  }
+
+/* Bottom part */
+
+  div#mail {
+  display: none;
+  }
+
+  #tabPeriodic {
+  display: none;
+  }
+
+  div#cpright {
+  border-top: 1px solid;
+  padding-top: 0.5em;
+  }
+
+  .hiden{
+  display: none;
+}
+
+/* Subdirectory in nucleus directory as such aluminum.php */
+
+  div#subdirectory {
+  display: none;
+  }
+
+/* About, faq, recommended sites, what's new , download102, download118, */
+
+  #sidebar {
+  display: none;
+  }
+
+  div#main span.courierstyle {
+  color: black;
+  background-color: transparent;
+  }
+  /* SIMPSON */
+  div#main #simpsoncomment {
+  background-color: transparent;
+  }
+
+  /* JDK1.1.8 applet */
+  #helpselect {
+  display: none;
+  }
+
+  pre.tty {
+  font-family: "Courier New", Courier;
+  }
+
+  /* mathML */
+  .mathmlbrowser {
+  display: none;
+  }
