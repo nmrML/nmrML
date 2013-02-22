@@ -24,6 +24,15 @@ The TMIC platform is led by Dr. David Wishart (University of Alberta), Dr. Chris
 The Institute of Plant Biochemistry (IPB) is a non-university research centre of the Leibniz Association (www.wgl.de), It investigates in a multidisciplinary style structure and function of natural products from plants and fungi, analyse interactions of plants with pathogenic and symbiotic microorganisms and study molecular interactions as part of complex biological processes. At the IPB, plant metabolomics has been an important area of research for many years.
 The IPB leads the standards development workpackage within the COSMOS project.
 
+[**The Metabolome Facility of Bordeaux Functional Genomics Centre](http://www.cgfb.u-bordeaux2.fr/fr/metabolome)
+
+The Metabolome Facility of Bordeaux Functional Genomics Centre (MFB) is mostly dedicated to plant and plant-derived products metabolomics. 
+MFB is implicated in the [French Metabolomics and Fluxomics Network](https://www.bordeaux.inra.fr/ifr103/reseau_metabolome/)
+and is a partner of [MetaboHUB](https://www6.inra.fr/metabohub) project aiming at the development of a French Metabolome Infrastructure. 
+MFB provides expertise and tools along the complete metabolomics pipeline. In collaboration with the Bioinformatics Facility of Bordeaux, 
+it has developed [MeRy-B](http://bit.ly/meryb) database for NMR plant metabolome data. Recent dry-lab developments of MFB concern 
+1H-NMR spectra processing. MFB participates in the NMR group within the COSMOS project.
+
 [...]
 
 ### Versioning
