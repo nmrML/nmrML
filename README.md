@@ -52,14 +52,15 @@ Follow these intructions to create release a tagged version:
 
 ## Directory Structure
 
-* [docs](https://github.com/nmrML/nmrML/tree/master/docs) - The docs generated from the schema and ontology files
+* [docs](https://github.com/nmrML/nmrML/tree/master/docs) 
+	* [SchemaDocumentation](https://github.com/nmrML/nmrML/tree/master/docs/SchemaDocumentation) - The docs generated from the schema and ontology files
 * [examples](https://github.com/nmrML/nmrML/tree/master/examples)
     * [vendor](https://github.com/nmrML/nmrML/tree/master/examples/vendor) - Useful example files from other software and data formats
-    * [nmrML]((https://github.com/nmrML/nmrML/tree/master/examples/nmrML) - Example files for different use cases of nmrML
+    * [nmrML](https://github.com/nmrML/nmrML/tree/master/examples/nmrML) - Example files for different use cases of nmrML
 * [lib](https://github.com/nmrML/nmrML/tree/master/lib) - Scripts/code used for generating docs, etc.
 * [mappings](https://github.com/nmrML/nmrML/tree/master/mappings) - Files that map variable names in other formats to variable names
 in nmrML. Used by conversion software.
 * [ontologies](https://github.com/nmrML/nmrML/tree/master/ontologies) - The ontology files describing the controlled vocabulary
-* [schemas](https://github.com/nmrML/nmrML/tree/master/schemas) - The .xsd files describing the nmrML schema
+* [xml-schemata](https://github.com/nmrML/nmrML/tree/master/xml-schemata) - The .xsd files describing the nmrML schema
 * [tools](https://github.com/nmrML/nmrML/tree/master/tools) - Example software using nmrML
 
