@@ -4,14 +4,17 @@ INSTALLATION
 
 ////////////////////////////////////////////////////////////////////////
 
-[djacob@proticdb projets]$ 
-[djacob@proticdb projets]$ pwd
+[me@mach projets]$ 
+[me@mach projets]$ pwd
 /mnt/var/sys/projets
-[djacob@proticdb projets]$ 
-[djacob@proticdb projets]$ ll ./nmrview.tar.gz 
--rw-r--r-- 1 djacob users 20401644 Mar 26 15:44 ./nmrview.tar.gz
+[me@mach projets]$ 
+[me@mach projets]$ ll ./nmrview.tar.gz 
+-rw-r--r-- 1 me users 20401644 Mar 26 15:44 ./nmrview.tar.gz
 
-[djacob@proticdb projets]$ tar xvzf ./nmrview.tar.gz 
+#
+# uncompress the nmrview.tar.gz archive
+#
+[me@mach projets]$ tar xvzf ./nmrview.tar.gz 
 ./nmrview/
 ./nmrview/www/
 ./nmrview/www/tmp
@@ -57,97 +60,59 @@ INSTALLATION
 ./nmrview/www/view
 ./nmrview/www/log/
 ./nmrview/www/log/tracing/
+./nmrview/www/log/tracing/147.100.111.154
 ./nmrview/www/log/access.log
 ./nmrview/www/view.php
-./nmrview/www/simple.html
 ./nmrview/etc/
 ./nmrview/etc/nmrproc.conf
 ./nmrview/bin/
 ./nmrview/bin/corrige_1r
 ./nmrview/bin/pack_1r
 ./nmrview/bin/bin4gp_1r
-./nmrview/scripts/
-./nmrview/scripts/geoloc_check.sh
-./nmrview/scripts/init_bin.sh
-./nmrview/scripts/parserJCAMP
-./nmrview/scripts/init_dx.sh
-./nmrview/scripts/parserJCAMP.pl
-./nmrview/scripts/parserBruker
-./nmrview/scripts/buildcsv.sh
+./nmrview/bin/geoloc_check.sh
+./nmrview/bin/pack_bruker
+./nmrview/bin/pack_jdx
+./nmrview/bin/parserBruker
+./nmrview/bin/parserJCAMP
+./nmrview/bin/parserJCAMP.pl
+./nmrview/bin/tab2csv
 ./nmrview/data/
-./nmrview/data/HUGO07/
-./nmrview/data/HUGO07/isatab/
-./nmrview/data/HUGO07/isatab/i_Investigation.txt
-./nmrview/data/HUGO07/isatab/s_Hugo_2007.txt
-./nmrview/data/HUGO07/isatab/a_hugo_2007_metabolite profiling_NMR spectroscopy.txt
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13091.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13092.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13101.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13102.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13111.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13112.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13121.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13122.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13131.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13132.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13141.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13142.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13151.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13152.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13161.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13162.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13171.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13172.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13181.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13182.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13191.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13192.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13201.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13202.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13331.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13332.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13341.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13342.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13351.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13352.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13361.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13362.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13371.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13372.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13381.zip
-./nmrview/data/HUGO07/isatab/BB_BBI_08M07_melon07_13382.zip
-./nmrview/data/HUGO07/procs/
+./nmrview/examples/
+./nmrview/examples/simple.html
 ./nmrview/tmp/
 
-[djacob@proticdb projets]$ cd nmrview
+[me@mach projets]$ cd nmrview
 
-[djacob@proticdb nmrview]$ ll
+[me@mach nmrview]$ ll
 total 24
-drwxr-xr-x 2 djacob users 4096 Mar 26 15:13 bin
-drwxr-xr-x 3 djacob users 4096 Mar 26 14:55 data
-drwxr-xr-x 2 djacob users 4096 Mar 26 15:16 etc
-drwxr-xr-x 2 djacob users 4096 Mar 26 15:06 scripts
-drwxr-xr-x 2 djacob users 4096 Mar 26 15:29 tmp
-drwxr-xr-x 7 djacob users 4096 Mar 26 15:27 www
+drwxr-xr-x 2 me users 4096 Mar 26 15:13 bin
+drwxr-xr-x 3 me users 4096 Mar 26 14:55 data
+drwxr-xr-x 2 me users 4096 Mar 26 15:16 etc
+drwxr-xr-x 2 me users 4096 Mar 26 15:29 examples
+drwxr-xr-x 2 me users 4096 Mar 26 15:29 tmp
+drwxr-xr-x 7 me users 4096 Mar 26 15:27 www
 
-[djacob@proticdb nmrview]$ chmod 777 tmp
-[djacob@proticdb nmrview]$ chmod -R 777 ./www/log/
+#
+# gives the right permissions for apache
+#
+[me@mach nmrview]$ chmod 777 tmp
+[me@mach nmrview]$ chmod -R 777 ./www/log/
 
-[djacob@proticdb nmrview]$ vi ./etc/nmrproc.conf 
+#
+# Edit the configuration files
+#
+
+[me@mach nmrview]$ vi ./etc/nmrproc.conf 
 --------------------------------------------------------------------------------------------------------------
 # Warning: Take care not putting spaces each side of equal sign, in order to be executed as a script shell 
 # VARNAME=anything including spaces
 
-DEBUG=0
-
 # The root of the bulk of your installation.
+# Think to create a symbolic link under the HTML document directory of your web server which points to the www directory of nmrview.
 ROOTDIR=/mnt/var/sys/projets/nmrview
 
-# The root of the datasets 
+# The root of the datasets may be located anywhere else, not necessary under the same directory)
 DATASETS=/mnt/var/sys/projets/nmrview/data
-
-BASEURL=www.cbib.u-bordeaux2.fr
-URLROOT=/SPECNMR
 
 # default NMR spectrum parameters
 SOLVENT_MIN=4.7
@@ -159,8 +124,11 @@ PPM_MAX=11
 
 --------------------------------------------------------------------------------------------------------------
 
-[djacob@proticdb nmrview]$ cd /var/www/html/
-[djacob@proticdb nmrview]$ sudo ln -s /mnt/var/sys/projets/nmrview/www SPECNMR
+#
+# Create a symbolic link under the HTML document directory of your web server which points to the www directory of nmrview.
+#
+[me@mach nmrview]$ cd /var/www/html/
+[me@mach nmrview]$ sudo ln -s /mnt/var/sys/projets/nmrview/www nmrview
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -169,58 +137,65 @@ How to process with an ISA-TAB archive ?
 
 ////////////////////////////////////////////////////////////////////////
 
-[djacob@proticdb nmrview]$ ll ./data/
-total 4
-drwxr-xr-x 4 djacob users 4096 Mar 26 14:56 HUGO07
+#
+# unzip the isatab archive in a temporary directory
+#
 
-[djacob@proticdb nmrview]$ ll ./data/HUGO07/
-total 8
-drwxr-xr-x 2 djacob users 4096 Mar 26 14:56 isatab
-drwxr-xr-x 2 djacob users 4096 Mar 26 14:56 procs
+[me@mach ~]$ unzip HUGO07.isa -d /tmp/HUGO07/
+Archive:  HUGO07.isa
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13091.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13092.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13101.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13102.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13111.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13112.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13121.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13122.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13131.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13132.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13141.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13142.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13151.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13152.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13161.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13162.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13171.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13172.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13181.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13182.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13191.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13192.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13201.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13202.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13331.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13332.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13341.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13342.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13351.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13352.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13361.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13362.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13371.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13372.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13381.zip  
+ extracting: /tmp/HUGO07/BB_BBI_08M07_melon07_13382.zip  
+  inflating: /tmp/HUGO07/a_hugo_2007_metabolite profiling_NMR spectroscopy.txt  
+  inflating: /tmp/HUGO07/i_Investigation.txt  
+  inflating: /tmp/HUGO07/s_Hugo_2007.txt  
 
-[djacob@proticdb nmrview]$ ll ./data/HUGO07/isatab/
-total 11472
--rw-r--r-- 1 djacob users 317389 Mar 26 14:56 BB_BBI_08M07_melon07_13091.zip
--rw-r--r-- 1 djacob users 317361 Mar 26 14:56 BB_BBI_08M07_melon07_13092.zip
--rw-r--r-- 1 djacob users 318559 Mar 26 14:56 BB_BBI_08M07_melon07_13101.zip
--rw-r--r-- 1 djacob users 318787 Mar 26 14:56 BB_BBI_08M07_melon07_13102.zip
--rw-r--r-- 1 djacob users 318251 Mar 26 14:56 BB_BBI_08M07_melon07_13111.zip
--rw-r--r-- 1 djacob users 318122 Mar 26 14:56 BB_BBI_08M07_melon07_13112.zip
--rw-r--r-- 1 djacob users 309234 Mar 26 14:56 BB_BBI_08M07_melon07_13121.zip
--rw-r--r-- 1 djacob users 318059 Mar 26 14:56 BB_BBI_08M07_melon07_13122.zip
--rw-r--r-- 1 djacob users 318926 Mar 26 14:56 BB_BBI_08M07_melon07_13131.zip
--rw-r--r-- 1 djacob users 309249 Mar 26 14:56 BB_BBI_08M07_melon07_13132.zip
--rw-r--r-- 1 djacob users 317804 Mar 26 14:56 BB_BBI_08M07_melon07_13141.zip
--rw-r--r-- 1 djacob users 318394 Mar 26 14:56 BB_BBI_08M07_melon07_13142.zip
--rw-r--r-- 1 djacob users 323837 Mar 26 14:56 BB_BBI_08M07_melon07_13151.zip
--rw-r--r-- 1 djacob users 325276 Mar 26 14:56 BB_BBI_08M07_melon07_13152.zip
--rw-r--r-- 1 djacob users 324708 Mar 26 14:56 BB_BBI_08M07_melon07_13161.zip
--rw-r--r-- 1 djacob users 323442 Mar 26 14:56 BB_BBI_08M07_melon07_13162.zip
--rw-r--r-- 1 djacob users 324762 Mar 26 14:56 BB_BBI_08M07_melon07_13171.zip
--rw-r--r-- 1 djacob users 323527 Mar 26 14:56 BB_BBI_08M07_melon07_13172.zip
--rw-r--r-- 1 djacob users 324286 Mar 26 14:56 BB_BBI_08M07_melon07_13181.zip
--rw-r--r-- 1 djacob users 322688 Mar 26 14:56 BB_BBI_08M07_melon07_13182.zip
--rw-r--r-- 1 djacob users 323630 Mar 26 14:56 BB_BBI_08M07_melon07_13191.zip
--rw-r--r-- 1 djacob users 324020 Mar 26 14:56 BB_BBI_08M07_melon07_13192.zip
--rw-r--r-- 1 djacob users 324789 Mar 26 14:56 BB_BBI_08M07_melon07_13201.zip
--rw-r--r-- 1 djacob users 324475 Mar 26 14:56 BB_BBI_08M07_melon07_13202.zip
--rw-r--r-- 1 djacob users 311251 Mar 26 14:56 BB_BBI_08M07_melon07_13331.zip
--rw-r--r-- 1 djacob users 316116 Mar 26 14:56 BB_BBI_08M07_melon07_13332.zip
--rw-r--r-- 1 djacob users 311180 Mar 26 14:56 BB_BBI_08M07_melon07_13341.zip
--rw-r--r-- 1 djacob users 314663 Mar 26 14:56 BB_BBI_08M07_melon07_13342.zip
--rw-r--r-- 1 djacob users 319548 Mar 26 14:56 BB_BBI_08M07_melon07_13351.zip
--rw-r--r-- 1 djacob users 317141 Mar 26 14:56 BB_BBI_08M07_melon07_13352.zip
--rw-r--r-- 1 djacob users 326022 Mar 26 14:56 BB_BBI_08M07_melon07_13361.zip
--rw-r--r-- 1 djacob users 324277 Mar 26 14:56 BB_BBI_08M07_melon07_13362.zip
--rw-r--r-- 1 djacob users 320622 Mar 26 14:56 BB_BBI_08M07_melon07_13371.zip
--rw-r--r-- 1 djacob users 310643 Mar 26 14:56 BB_BBI_08M07_melon07_13372.zip
--rw-r--r-- 1 djacob users 319364 Mar 26 14:56 BB_BBI_08M07_melon07_13381.zip
--rw-r--r-- 1 djacob users 319049 Mar 26 14:56 BB_BBI_08M07_melon07_13382.zip
--rw-r--r-- 1 djacob users   8414 Mar 26 14:56 a_hugo_2007_metabolite profiling_NMR spectroscopy.txt
--rw-r--r-- 1 djacob users  10906 Mar 26 14:56 i_Investigation.txt
--rw-r--r-- 1 djacob users   5023 Mar 26 14:56 s_Hugo_2007.txt
+#
+# Create an entry under the root of the datasets (see ./etc/nmrproc.conf)
+#
+  
+[me@mach ~]$ cd /mnt/var/sys/projets/nmrview/
+[me@mach nmrview]$ 
+[me@mach nmrview]$ mkdir ./data/HUGO07
 
-[djacob@proticdb nmrview]$ sh ./scripts/buildcsv.sh -d ./data/HUGO07/isatab/ -o samples.csv -v
+#
+# Convert isa_tab metadata files into a CSV file
+#
+
+[me@mach nmrview]$ ./bin/tab2csv -d /tmp/HUGO07/ -o samples.csv -v
 i_Investigation.txt ... OK
 s_Hugo_2007.txt ... OK
 a_hugo_2007_metabolite profiling_NMR spectroscopy.txt ... OK
@@ -229,7 +204,11 @@ Factors: ;Harvest date
 Extract columns from Study File : 9,10 ... OK
 Merging ...OK
 
-[djacob@proticdb nmrview]$ sh ./scripts/init_bin.sh -i ./data/HUGO07/isatab/samples.csv -o ./data/HUGO07/procs/ -h
+#
+# Create the "pack" file : 'pack_bruker' script is for bruker raw files
+#
+
+[me@mach nmrview]$ time ./bin/pack_bruker -i /tmp/HUGO07/samples.csv -o ./data/HUGO07/ -h
 ----------------------------
 BB_BBI_08M07_melon07_13091 (1/36) ...
 NAME = 07.HU1.1.1309.1
@@ -263,11 +242,34 @@ NAME = 07.HU3.6.1338.2
 OK
 Pack ...OK
 
-[djacob@proticdb nmrview]$ ll ./data/HUGO07/procs/
+real    0m39.698s
+user    0m13.305s
+sys     0m9.039s
+
+#
+# Check if all files have been created
+#
+[me@mach nmrview]$ ll ./data/HUGO07/
 total 9756
--rw-r--r-- 1 djacob users      28 Mar 26 15:03 factors
-lrwxrwxrwx 1 djacob users      11 Mar 26 15:03 rawfile -> samples.csv
--rw-r--r-- 1 djacob users    1812 Mar 26 15:03 samples.csv
--rw-r--r-- 1 djacob users 9961496 Mar 26 15:04 specs.pack
+-rw-r--r-- 1 me users      28 Mar 27 17:57 factors
+lrwxrwxrwx 1 me users      11 Mar 27 17:57 rawfile -> samples.csv
+-rw-r--r-- 1 me users    1812 Mar 27 17:57 samples.csv
+-rw-r--r-- 1 me users 9961496 Mar 27 17:58 specs.pack
 
+#
+# Create a simple html page using the example
+#
 
+[me@mach nmrview]$ cp examples/simple.html ./www/
+
+[me@mach nmrview]$ vi ./www/simple.html 
+--------------------------------------------------------------------------------------------------------------
+change the line 13:
+       url:'/nmrview/view',  dataset: 'exemple', colorby: 0, width: 'auto'
+replace 'example' by 'HUGO07':
+       url:'/nmrview/view',  dataset: 'HUGO7', colorby: 0, width: 'auto'
+--------------------------------------------------------------------------------------------------------------
+
+#
+# In your web browser, open the URL: http:<your domain>/nmrview/simple.html 
+#
