@@ -4,6 +4,42 @@ INSTALLATION
 
 ////////////////////////////////////////////////////////////////////////
 
+#
+# Requirements
+#
+
+[me@mach ~]$ uname -a
+Linux mach 2.6.18-238.19.1.el5PAE #1 SMP Fri Jul 15 08:15:44 EDT 2011 i686 athlon i386 GNU/Linux
+
+[me@mach ~]$ cat /etc/redhat-release 
+CentOS release 5.6 (Final)
+
+[me@mach ~]$ which gnuplot
+/usr/local/bin/gnuplot
+
+[me@mach ~]$ /usr/local/bin/gnuplot -V
+gnuplot 4.3 patchlevel 0
+
+[me@mach ~]$ /usr/sbin/httpd -v
+Server version: Apache/2.2.3
+Server built:   May  4 2011 06:51:15
+
+[me@mach ~]$ /usr/sbin/httpd -l
+Compiled in modules:
+  core.c
+  prefork.c
+  http_core.c
+  mod_so.c
+
+[me@mach ~]$ php -v
+PHP 5.1.6 (cli) (built: Nov 29 2010 16:47:37) 
+Copyright (c) 1997-2006 The PHP Group
+Zend Engine v2.1.0, Copyright (c) 1998-2006 Zend Technologies
+
+#
+# uncompress the nmrview.tar.gz archive
+#
+
 [me@mach projets]$ 
 [me@mach projets]$ pwd
 /mnt/var/sys/projets
@@ -11,9 +47,6 @@ INSTALLATION
 [me@mach projets]$ ll ./nmrview.tar.gz 
 -rw-r--r-- 1 me users 20401644 Mar 26 15:44 ./nmrview.tar.gz
 
-#
-# uncompress the nmrview.tar.gz archive
-#
 [me@mach projets]$ tar xvzf ./nmrview.tar.gz 
 ./nmrview/
 ./nmrview/www/
