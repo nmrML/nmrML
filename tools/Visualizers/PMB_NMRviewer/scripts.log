@@ -40,14 +40,13 @@ Zend Engine v2.1.0, Copyright (c) 1998-2006 Zend Technologies
 # uncompress the nmrview.tar.gz archive
 #
 
-[me@mach projets]$ 
-[me@mach projets]$ pwd
-/mnt/var/sys/projets
-[me@mach projets]$ 
-[me@mach projets]$ ll ./nmrview.tar.gz 
+[me@mach softs]$ pwd
+/opt/softs
+
+[me@mach softs]$ ll ./nmrview.tar.gz 
 -rw-r--r-- 1 me users 20401644 Mar 26 15:44 ./nmrview.tar.gz
 
-[me@mach projets]$ tar xvzf ./nmrview.tar.gz 
+[me@mach softs]$ tar xvzf ./nmrview.tar.gz 
 ./nmrview/
 ./nmrview/www/
 ./nmrview/www/tmp
@@ -142,10 +141,10 @@ drwxr-xr-x 7 me users 4096 Mar 26 15:27 www
 
 # The root of the bulk of your installation.
 # Think to create a symbolic link under the HTML document directory of your web server which points to the www directory of nmrview.
-ROOTDIR=/mnt/var/sys/projets/nmrview
+ROOTDIR=/opt/softs/nmrview
 
 # The root of the datasets may be located anywhere else, not necessary under the same directory)
-DATASETS=/mnt/var/sys/projets/nmrview/data
+DATASETS=/opt/data/nmrview
 
 # default NMR spectrum parameters
 SOLVENT_MIN=4.7
@@ -161,7 +160,7 @@ PPM_MAX=11
 # Create a symbolic link under the HTML document directory of your web server which points to the www directory of nmrview.
 #
 [me@mach nmrview]$ cd /var/www/html/
-[me@mach nmrview]$ sudo ln -s /mnt/var/sys/projets/nmrview/www nmrview
+[me@mach nmrview]$ sudo ln -s /opt/softs/nmrview/www nmrview
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -220,13 +219,12 @@ Archive:  HUGO07.isa
 # Create an entry under the root of the datasets (see ./etc/nmrproc.conf)
 #
   
-[me@mach ~]$ cd /mnt/var/sys/projets/nmrview/
-[me@mach nmrview]$ 
-[me@mach nmrview]$ mkdir ./data/HUGO07
+[me@mach ~]$ mkdir /opt/data/nmrview/HUGO07
 
 #
 # Convert isa_tab metadata files into a CSV file
 #
+[me@mach ~]$ cd /opt/softs/nmrview
 
 [me@mach nmrview]$ ./bin/tab2csv -d /tmp/HUGO07/ -o samples.csv -v
 i_Investigation.txt ... OK
@@ -241,7 +239,7 @@ Merging ...OK
 # Create the "pack" file : 'pack_bruker' script is for bruker raw files
 #
 
-[me@mach nmrview]$ time ./bin/pack_bruker -i /tmp/HUGO07/samples.csv -o ./data/HUGO07/ -h
+[me@mach nmrview]$ time ./bin/pack_bruker -i /tmp/HUGO07/samples.csv -o /opt/data/nmrview/HUGO07/ -h
 ----------------------------
 BB_BBI_08M07_melon07_13091 (1/36) ...
 NAME = 07.HU1.1.1309.1
