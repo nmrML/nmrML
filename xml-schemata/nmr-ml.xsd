@@ -8,7 +8,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="cvList" type="dx:CVListType"/>
-      <xs:element name="fileDescription"/>
+      <xs:element name="fileDescription" type="dx:FileDescriptionType"/>
       <xs:element minOccurs="0" name="referenceableParamGroupList"
         type="dx:ReferenceableParamGroupListType"/>
       <xs:element minOccurs="0" name="sampleList" type="dx:SampleListType"/>
@@ -78,7 +78,7 @@
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ContactListType">
-    <xs:sequence>
+    <xs:sequence maxOccurs="unbounded" minOccurs="1">
       <xs:element name="contact" type="dx:ContactType"/>
     </xs:sequence>
   </xs:complexType>
@@ -119,7 +119,7 @@
           <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it. It should also describe the nativeID format used in the file by referring to an appropriate CV term.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="contactList" type="dx:ContactListType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="contactList" type="dx:ContactListType"/>
       <xs:element minOccurs="0" name="sourceFileList" type="dx:SourceFileListType"/>
     </xs:sequence>
   </xs:complexType>
