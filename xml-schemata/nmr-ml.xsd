@@ -529,7 +529,7 @@
   </xs:complexType>
   <xs:complexType name="RunType">
     <xs:annotation>
-      <xs:documentation>A run in nmrML should correspond to a single, consecutive and coherent set of scans on an instrument.</xs:documentation>
+      <xs:documentation>A run in nmrML should correspond to a single sample analysis generating an FID through averaging multiple scans.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="dx:ParamGroupType">
