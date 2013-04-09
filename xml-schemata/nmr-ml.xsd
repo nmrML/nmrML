@@ -8,7 +8,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="cvList" type="dx:CVListType"/>
-      <xs:element name="fileDescription" type="dx:FileDescriptionType"/>
+      <xs:element name="fileDescription"/>
       <xs:element minOccurs="0" name="referenceableParamGroupList"
         type="dx:ReferenceableParamGroupListType"/>
       <xs:element minOccurs="0" name="sampleList" type="dx:SampleListType"/>
@@ -77,6 +77,38 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:complexType name="ContactListType">
+    <xs:sequence>
+      <xs:element name="contact" type="dx:ContactType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactType">
+    <xs:attribute name="fullname" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Name of the contact person.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="url" type="xs:anyURI">
+      <xs:annotation>
+        <xs:documentation>Uniform Resource Locator related to the contact person or organization.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="address" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Postal address of the contact person or organization.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="organization" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Home institution of the contact person.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="email" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Email address of the contact person or organization.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="FileDescriptionType">
     <xs:annotation>
       <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here.</xs:documentation>
@@ -87,8 +119,8 @@
           <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it. It should also describe the nativeID format used in the file by referring to an appropriate CV term.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="contactList" type="dx:ContactListType"/>
       <xs:element minOccurs="0" name="sourceFileList" type="dx:SourceFileListType"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="contact" type="dx:ParamGroupType"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ParamGroupType">
