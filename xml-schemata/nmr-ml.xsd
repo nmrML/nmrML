@@ -833,6 +833,44 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:complexType name="AcquisitionDimensionParameterSet">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
+        <xs:annotation>
+          <xs:documentation>90º pulse width of acquisition nucleus</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="width" type="xs:float" use="required"/>
+          <xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
+        <xs:complexType>
+          <xs:attribute name="width" type="xs:float" use="required"/>
+          <xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dwellTime">
+        <xs:annotation>
+          <xs:documentation>The time interval (sampling period ) between the acquisition of individual datapoints.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="time" type="xs:float" use="required"/>
+          <xs:attribute name="timeUnit" type="timeUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
+        <xs:complexType>
+          <xs:attribute name="frequency" type="xs:float" use="required"/>
+          <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
+    <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
+    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+    <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
+  </xs:complexType>
   <xs:complexType name="ContactListType">
     <xs:sequence maxOccurs="unbounded" minOccurs="1">
       <xs:element name="contact" type="dx:ContactType"/>
@@ -1466,28 +1504,39 @@
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="shapedPulseParameters">
+      <xs:element name="acquisitionParameterFile">
         <xs:complexType>
-          <xs:attribute name="shapedPulseFileRef" type="xs:anyURI" use="required"/>
+          <xs:attribute name="fileRef" type="xs:anyURI" use="required"/>
+          <xs:attribute name="name" type="xs:string"/>
         </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="sampleIntroductionMethodSize">
+      <xs:element maxOccurs="1" minOccurs="1" name="pulseSequence">
+        <xs:annotation>
+          <xs:documentation>Capture a reference to the pulse sequence program or the name of the pulse sequence program.</xs:documentation>
+        </xs:annotation>
         <xs:complexType>
-          <xs:attribute name="size" type="xs:float" use="required"/>
-          <xs:attribute name="sizeUnit" type="volumeUnitType" use="required"/>
+          <xs:attribute name="fileRef" type="xs:anyURI" use="required"/>
+          <xs:attribute name="literatueReference" type="xs:anyURI"/>
+          <xs:attribute name="name" type="xs:string"/>
         </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="sampleTemperatureInAutosampler">
-        <xs:complexType>
-          <xs:attribute name="temperature" type="xs:float" use="required"/>
-          <xs:attribute name="temperatureUnit" type="temperatureUnitType" use="required"/>
-        </xs:complexType>
+      <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVParamType">
+        <xs:annotation>
+          <xs:documentation>Captures the container used to introduc the sample into the autosampler. Example: tube, flow probe, rotor. Must refernce a CV term. </xs:documentation>
+        </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="sampleTemperatureInMagnet">
-        <xs:complexType>
-          <xs:attribute name="temperature" type="xs:float" use="required"/>
-          <xs:attribute name="temperatureUnit" type="temperatureUnitType" use="required"/>
-        </xs:complexType>
+      <xs:element name="waterSuppressionMethod" type="CVParamType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="sampleTemperatureInAutosampler"
+        type="TemperatureType">
+        <xs:annotation>
+          <xs:documentation>Captures the temperature of the sample in the autosampler during the aquisition.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="sampleTemperatureInMagnet"
+        type="TemperatureType">
+        <xs:annotation>
+          <xs:documentation>Captures the temperature of the magnet during the aquisition.</xs:documentation>
+        </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spinningRate">
         <xs:complexType>
@@ -1501,99 +1550,72 @@
           <xs:attribute name="delayUnit" type="timeUnitType" use="required"/>
         </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="FirstDimAcquisitionParameters">
-        <xs:complexType>
-          <xs:sequence maxOccurs="1" minOccurs="1">
-            <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParametersForEachDimension">
-              <xs:complexType>
-                <xs:sequence maxOccurs="1" minOccurs="1">
-                  <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
-                    <xs:complexType>
-                      <xs:attribute name="frequency" type="xs:float" use="required"/>
-                      <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
-                    <xs:complexType>
-                      <xs:attribute name="width" type="xs:float" use="required"/>
-                      <xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
-                    <xs:complexType>
-                      <xs:attribute name="width" type="xs:float" use="required"/>
-                      <xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
-                    </xs:complexType>
-                  </xs:element>
-                </xs:sequence>
-                <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
-                <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
-                <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-          <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
-        </xs:complexType>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="HigherDimAcquisitionParameters">
+      <xs:element maxOccurs="1" minOccurs="0" name="shapedPulseFile">
         <xs:annotation>
-          <xs:documentation>Only required if experiment is 2D.</xs:documentation>
+          <xs:documentation>Capture a reference to the pulse shape file, from the power section of the Bruker acquisition software. Example: gauss</xs:documentation>
         </xs:annotation>
         <xs:complexType>
-          <xs:sequence maxOccurs="1" minOccurs="1">
-            <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParametersForEachDimension">
-              <xs:complexType>
-                <xs:sequence maxOccurs="1" minOccurs="1">
-                  <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
-                    <xs:complexType>
-                      <xs:attribute name="frequency" type="xs:float" use="required"/>
-                      <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
-                    <xs:complexType>
-                      <xs:attribute name="width" type="xs:float" use="required"/>
-                      <xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
-                    <xs:complexType>
-                      <xs:attribute name="width" type="xs:float" use="required"/>
-                      <xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
-                    </xs:complexType>
-                  </xs:element>
-                </xs:sequence>
-                <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
-                <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
-                <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
-              </xs:complexType>
-            </xs:element>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="HadamardParameters">
-              <xs:annotation>
-                <xs:documentation>Required if and only if the encoding type is Hadamard.</xs:documentation>
-              </xs:annotation>
-              <xs:complexType>
-                <xs:attribute name="frequency" type="xs:float" use="required"/>
-                <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-          <xs:attribute name="encoding" type="encodingType" use="required"/>
+          <xs:attribute name="fileRef" type="xs:anyURI" use="required"/>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="sampleIntroductionMethod" type="sampleIntroductionMethodType" use="required"/>
-    <xs:attribute name="waterSuppression" type="waterSuppressionType" use="required"/>
-    <xs:attribute name="pulseSequence" type="pulseSequenceNameType" use="required"/>
-    <xs:attribute name="pulseSequenceFileRef" type="xs:anyURI" use="required"/>
-    <xs:attribute name="pulseSequenceLiteratureRef" type="xs:anyURI" use="required"/>
     <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
     <xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
   </xs:complexType>
+  <xs:complexType name="AcquisitionParameterSet1DType">
+    <xs:complexContent>
+      <xs:extension base="AcquisitionParameterSetType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AcquisitionParameterSet2DType">
+    <xs:complexContent>
+      <xs:extension base="AcquisitionParameterSetType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="HadamardParameters">
+            <xs:annotation>
+              <xs:documentation>Required if and only if the encoding type is Hadamard.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:attribute name="frequency" type="xs:float" use="required"/>
+              <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="1" name="encodingScheme" type="CVParamType"/>
+          <xs:element name="ParameterSet1D" type="AcquisitionDimensionParameterSet"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="ParameterSet2D"
+            type="AcquisitionDimensionParameterSet">
+            <xs:annotation>
+              <xs:documentation>Only required if experiment is 2D.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TemperatureType">
+    <xs:annotation>
+      <xs:documentation>Captures a temperature and references a unit from the unit ontology.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="temperature" type="xs:float" use="required"/>
+    <xs:attribute name="temperatureUnitName" type="xs:string" use="required"/>
+    <xs:attribute name="temperatureUnitID" type="xs:ID"/>
+  </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParameterSet"
-        type="AcquisitionParameterSetType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParameterSet">
+        <xs:annotation>
+          <xs:documentation>Note, steady state scan is also know as dummy scan.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="AcquisitionParameterSet1DType">
+              <xs:sequence>
+                <xs:element name="ParameterSet1D" type="AcquisitionDimensionParameterSet"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="FID1D" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 1D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.</xs:documentation>
@@ -1754,7 +1776,7 @@
   <xs:complexType name="Acquisition2DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParameterSet"
-        type="AcquisitionParameterSetType"> </xs:element>
+        type="AcquisitionParameterSet2DType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="FID2D" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
