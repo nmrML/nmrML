@@ -1476,21 +1476,15 @@
           <xs:documentation>Captures the container used to introduc the sample into the autosampler. Example: tube, flow probe, rotor. Must refernce a CV term. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="waterSuppressionMethod" type="CVParamType">
+      <xs:element minOccurs="0" name="solventSuppressionMethod" type="CVParamType">
         <xs:annotation>
-          <xs:documentation>This tag captures the instrument inherent water suppression method used during acquisition.</xs:documentation>
+          <xs:documentation>This tag captures the instrument inherent solvent (usually water) suppression method used during acquisition.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="sampleTemperatureInAutosampler"
+      <xs:element maxOccurs="1" minOccurs="1" name="sampleAcquisitionTemperature"
         type="TemperatureType">
         <xs:annotation>
-          <xs:documentation>Captures the temperature of the sample in the autosampler during the aquisition.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="sampleTemperatureInMagnet"
-        type="TemperatureType">
-        <xs:annotation>
-          <xs:documentation>Captures the temperature of the magnet during the aquisition.</xs:documentation>
+          <xs:documentation>Captures the temperature of the sample during the aquisition.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spinningRate">
