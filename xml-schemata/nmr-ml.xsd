@@ -51,7 +51,6 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:element name="acquisitionParameterListOld" type="AcquisitionParameterListType"/>
   <xs:element name="run" type="RunType"/>
   <xs:complexType name="AnalysisType">
     <xs:sequence maxOccurs="1" minOccurs="1">
@@ -833,44 +832,6 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="AcquisitionDimensionParameterSet">
-    <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
-        <xs:annotation>
-          <xs:documentation>90º pulse width of acquisition nucleus</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-          <xs:attribute name="width" type="xs:float" use="required"/>
-          <xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
-        </xs:complexType>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
-        <xs:complexType>
-          <xs:attribute name="width" type="xs:float" use="required"/>
-          <xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="dwellTime">
-        <xs:annotation>
-          <xs:documentation>The time interval (sampling period ) between the acquisition of individual datapoints.</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-          <xs:attribute name="time" type="xs:float" use="required"/>
-          <xs:attribute name="timeUnit" type="timeUnitType" use="required"/>
-        </xs:complexType>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
-        <xs:complexType>
-          <xs:attribute name="frequency" type="xs:float" use="required"/>
-          <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
-    <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
-    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
-    <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
-  </xs:complexType>
   <xs:complexType name="ContactListType">
     <xs:sequence maxOccurs="unbounded" minOccurs="1">
       <xs:element name="contact" type="dx:ContactType"/>
@@ -1145,19 +1106,6 @@
         </xs:attribute>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="AcquisitionParameterListType">
-    <xs:annotation>
-      <xs:documentation>List with the descriptions of the acquisition settings applied prior to the start of data acquisition.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="acquisitionParameter" type="dx:ScanSettingsType"/>
-    </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of AcquisitionType elements in this list.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ScanSettingsType">
     <xs:annotation>
@@ -1503,6 +1451,9 @@
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetType">
+    <xs:annotation>
+      <xs:documentation>List with the descriptions of the acquisition settings applied prior to the start of data acquisition.</xs:documentation>
+    </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element name="acquisitionParameterFile">
         <xs:complexType>
@@ -1561,6 +1512,47 @@
     </xs:sequence>
     <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
     <xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="AcquisitionDimensionParameterSet">
+    <xs:annotation>
+      <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
+        <xs:annotation>
+          <xs:documentation>90º pulse width of acquisition nucleus</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="width" type="xs:float" use="required"/>
+          <xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
+        <xs:complexType>
+          <xs:attribute name="width" type="xs:float" use="required"/>
+          <xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dwellTime">
+        <xs:annotation>
+          <xs:documentation>The time interval (sampling period ) between the acquisition of individual datapoints.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="time" type="xs:float" use="required"/>
+          <xs:attribute name="timeUnit" type="timeUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
+        <xs:complexType>
+          <xs:attribute name="frequency" type="xs:float" use="required"/>
+          <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
+    <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
+    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+    <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSet1DType">
     <xs:complexContent>
