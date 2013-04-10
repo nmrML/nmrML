@@ -1476,7 +1476,11 @@
           <xs:documentation>Captures the container used to introduc the sample into the autosampler. Example: tube, flow probe, rotor. Must refernce a CV term. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="waterSuppressionMethod" type="CVParamType"/>
+      <xs:element name="waterSuppressionMethod" type="CVParamType">
+        <xs:annotation>
+          <xs:documentation>This tag captures the instrument inherent water suppression method used during acquisition.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="sampleTemperatureInAutosampler"
         type="TemperatureType">
         <xs:annotation>
