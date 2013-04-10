@@ -1563,7 +1563,7 @@
     <xs:complexContent>
       <xs:extension base="AcquisitionParameterSetType">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="HadamardParameters">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="hadamardParameters">
             <xs:annotation>
               <xs:documentation>Required if and only if the encoding type is Hadamard.</xs:documentation>
             </xs:annotation>
@@ -1573,8 +1573,8 @@
             </xs:complexType>
           </xs:element>
           <xs:element minOccurs="1" name="encodingScheme" type="CVParamType"/>
-          <xs:element name="ParameterSet1D" type="AcquisitionDimensionParameterSet"/>
-          <xs:element maxOccurs="1" minOccurs="1" name="ParameterSet2D"
+          <xs:element name="parameterSet1D" type="AcquisitionDimensionParameterSet"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="parameterSet2D"
             type="AcquisitionDimensionParameterSet">
             <xs:annotation>
               <xs:documentation>Only required if experiment is 2D.</xs:documentation>
@@ -1594,7 +1594,7 @@
   </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParameterSet">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet">
         <xs:annotation>
           <xs:documentation>Note, steady state scan is also know as dummy scan.</xs:documentation>
         </xs:annotation>
@@ -1608,7 +1608,7 @@
           </xs:complexContent>
         </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="FID1D" type="BinaryDataArrayType">
+      <xs:element maxOccurs="1" minOccurs="1" name="fid1D" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 1D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.</xs:documentation>
         </xs:annotation>
@@ -1767,9 +1767,9 @@
   </xs:complexType>
   <xs:complexType name="Acquisition2DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParameterSet"
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
         type="AcquisitionParameterSet2DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="FID2D" type="BinaryDataArrayType">
+      <xs:element maxOccurs="1" minOccurs="1" name="fid2D" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
         </xs:annotation>
