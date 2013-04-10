@@ -692,8 +692,7 @@
   </xs:complexType>
   <xs:complexType name="BinaryDataArrayType">
     <xs:annotation>
-      <xs:documentation>The structure into which encoded binary data goes. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.
-</xs:documentation>
+      <xs:documentation>The encoded binary data string is stored in this tag.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="binary" type="xs:base64Binary">
@@ -846,7 +845,7 @@
         type="AcquisitionParameterSetType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="FID1D" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The structure into which encoded binary data goes. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.</xs:documentation>
+          <xs:documentation>The 1D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -1000,5 +999,16 @@
     <xs:attribute name="xStartValue" type="xs:float" use="required"/>
     <xs:attribute name="xEndValue" type="xs:float" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Acquisition2DType">
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionParameterSet"
+        type="AcquisitionParameterSetType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="FID2D" type="BinaryDataArrayType">
+        <xs:annotation>
+          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>
