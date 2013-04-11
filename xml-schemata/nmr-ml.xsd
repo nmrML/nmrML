@@ -13,20 +13,19 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="cvList" type="dx:CVListType"/>
-      <xs:element name="fileDescription" type="dx:FileDescriptionType"/>
+      <xs:element name="fileDescription" type="FileDescriptionType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="contactList" type="ContactListType"/>
+      <xs:element minOccurs="0" name="sourceFileList" type="SourceFileListType"/>
+      <xs:element name="softwareList" type="SoftwareListType"/>
+      <xs:element minOccurs="0" name="sampleList" type="SampleListType"/>
       <xs:element minOccurs="0" name="referenceableParamGroupList"
         type="dx:ReferenceableParamGroupListType"/>
-      <xs:element name="acquisition">
-        <xs:complexType>
-          <xs:choice maxOccurs="1" minOccurs="1">
-            <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
-            <xs:element maxOccurs="1" minOccurs="1" name="acquisition2D" type="Acquisition2DType">
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
+      <xs:element name="acquisition" type="AcquisitionType"/>
+      <xs:element minOccurs="0" name="spectrumList" type="SpectrumListType">
+        <xs:annotation>
+          <xs:documentation>TODO</xs:documentation>
+        </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" name="sampleList" type="dx:SampleListType"/>
-      <xs:element name="softwareList" type="dx:SoftwareListType"/>
       <xs:element name="instrumentConfigurationList" type="dx:InstrumentConfigurationListType"/>
       <xs:element name="dataProcessingList" type="dx:DataProcessingListType"/>
     </xs:sequence>
@@ -838,6 +837,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ContactType">
+    <xs:attribute name="id" type="xs:ID" use="required">
+      <xs:annotation>
+        <xs:documentation>An identifier for this contact
+.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="fullname" type="xs:string" use="required">
       <xs:annotation>
         <xs:documentation>Name of the contact person.</xs:documentation>
@@ -874,8 +879,6 @@
           <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it. It should also describe the nativeID format used in the file by referring to an appropriate CV term.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="contactList" type="dx:ContactListType"/>
-      <xs:element minOccurs="0" name="sourceFileList" type="dx:SourceFileListType"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ParamGroupType">
@@ -1275,13 +1278,7 @@
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="dx:ParamGroupType">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="spectrumList" type="dx:SpectrumListType">
-            <xs:annotation>
-              <xs:documentation>All NMR spectra and the acquisitions underlying them are described and attached here. Subsidiary data arrays are also both described and attached here.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
+        <xs:sequence> </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required">
           <xs:annotation>
             <xs:documentation>A unique identifier for this run.</xs:documentation>
@@ -1328,16 +1325,22 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="SpectrumType">
+  <xs:complexType name="SpectrumTypeOLD">
     <xs:annotation>
       <xs:documentation>The structure that captures the generation of a peak list (including the underlying acquisitions). Also describes some of the parameters for the NMR spectrometer for a given acquisition (or list of acquisitions).</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="dx:ParamGroupType">
         <xs:sequence>
-          <xs:element minOccurs="0" name="binList" type="dx:BinListType"/>
-          <xs:element minOccurs="0" name="metaboliteConcentrationList"
-            type="dx:MetaboliteConcentrationListType"/>
+          <xs:element name="spectrum1D">
+            <xs:complexType>
+              <xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+              <xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+              <xs:attribute name="xStartValue" type="xs:float" use="required"/>
+              <xs:attribute name="xEndValue" type="xs:float" use="required"/>
+              <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+            </xs:complexType>
+          </xs:element>
         </xs:sequence>
         <xs:attribute name="id" use="required">
           <xs:annotation>
@@ -1409,36 +1412,18 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="BinaryDataArrayListType">
-    <xs:annotation>
-      <xs:documentation>List of binary data arrays.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="2" name="binaryDataArray"
-        type="BinaryDataArrayType">
-        <xs:annotation>
-          <xs:documentation>Data point arrays for default data arrays (m/z, intensity, time) and meta data arrays. Default data arrays must not have the attributes 'arrayLength' and 'dataProcessingRef'.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of binary data arrays defined in this list.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
   <xs:complexType name="BinaryDataArrayType">
     <xs:annotation>
-      <xs:documentation>The encoded binary data string is stored in this tag.</xs:documentation>
+      <xs:documentation/>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="binary" type="xs:base64Binary">
         <xs:annotation>
-          <xs:documentation>base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
+          <xs:documentation>The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="byteLength"/>
+    <xs:attribute name="byteLength" type="xs:integer"/>
     <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
       <xs:annotation>
         <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
@@ -1449,6 +1434,7 @@
         <xs:documentation>The encoded length of the binary data array.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="byteFormat"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetType">
     <xs:annotation>
@@ -1507,6 +1493,7 @@
           <xs:attribute name="fileRef" type="xs:anyURI" use="required"/>
         </xs:complexType>
       </xs:element>
+      <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
     </xs:sequence>
     <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
     <xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
@@ -1609,6 +1596,17 @@
       <xs:element maxOccurs="1" minOccurs="1" name="fid1D" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 1D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Acquisition2DType">
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
+        type="AcquisitionParameterSet2DType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="fid2D" type="BinaryDataArrayType">
+        <xs:annotation>
+          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -1763,15 +1761,300 @@
     <xs:attribute name="xEndValue" type="xs:float" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
-  <xs:complexType name="Acquisition2DType">
-    <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
-        type="AcquisitionParameterSet2DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="fid2D" type="BinaryDataArrayType">
-        <xs:annotation>
-          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
+  <xs:simpleType name="pHUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pH"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="concentrationUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="moles"/>
+      <xs:enumeration value="millimoles"/>
+      <xs:enumeration value="%"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="fieldStrengthUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="gauss"/>
+      <xs:enumeration value="tesla"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="volumeUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="millilitres"/>
+      <xs:enumeration value="microlitres"/>
+      <xs:enumeration value="millimetres"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="temperatureUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="centigrade"/>
+      <xs:enumeration value="kelvin"/>
+      <xs:enumeration value="fahrenheit"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="frequencyUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="hertz"/>
+      <xs:enumeration value="kilohertz"/>
+      <xs:enumeration value="megahertz"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="timeUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="seconds"/>
+      <xs:enumeration value="milliseconds"/>
+      <xs:enumeration value="microseconds"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="phaseUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="degrees"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="referenceShiftUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ppm"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="concentrationStandardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="internal"/>
+      <xs:enumeration value="external"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="sampleIntroductionMethodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="tube"/>
+      <xs:enumeration value="MAS"/>
+      <xs:enumeration value="flow probe"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="waterSuppressionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Presat"/>
+      <xs:enumeration value="NOESY-Presat"/>
+      <xs:enumeration value="Watergate"/>
+      <xs:enumeration value="WET"/>
+      <xs:enumeration value="excitation sculpting"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="pulseSequenceNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1D"/>
+      <xs:enumeration value="1D CPMG"/>
+      <xs:enumeration value="2D J-resolved"/>
+      <xs:enumeration value="2D TOCSY"/>
+      <xs:enumeration value="2D Hadamard TOCSY"/>
+      <xs:enumeration value="1D Diffusion Edited"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="encodingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TPPI"/>
+      <xs:enumeration value="States"/>
+      <xs:enumeration value="States-TPPI"/>
+      <xs:enumeration value="Quadrature filter"/>
+      <xs:enumeration value="Hadamard"/>
+      <xs:enumeration value="Radon"/>
+      <xs:enumeration value="GFT"/>
+      <xs:enumeration value="Frydman"/>
+      <xs:enumeration value="Echo/Anti-Echo"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="postAcquisitionWaterSuppressionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="convolution"/>
+      <xs:enumeration value="polynomial fitting"/>
+      <xs:enumeration value="WaveWat"/>
+      <xs:enumeration value="HSVD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="transformationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="fourier transformation"/>
+      <xs:enumeration value="non-fourier transformation"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="windowFunctionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="exponential multiplication"/>
+      <xs:enumeration value="gaussian broadening"/>
+      <xs:enumeration value="sine"/>
+      <xs:enumeration value="sine2"/>
+      <xs:enumeration value="sinc"/>
+      <xs:enumeration value="sem"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="windowFunctionParameterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="line broadening"/>
+      <xs:enumeration value="line sharpening"/>
+      <xs:enumeration value="sine bell length"/>
+      <xs:enumeration value="sine bell shift"/>
+      <xs:enumeration value="gaussian broadening"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="methodOfSpectralProjectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="maximum intensity"/>
+      <xs:enumeration value="summation"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="spectralProjectionAxisType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="f1"/>
+      <xs:enumeration value="f2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="spectralQuantitationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="peak picking"/>
+      <xs:enumeration value="bucketing"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="xAxisUnitFIDType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="seconds"/>
+      <xs:enumeration value="milliseconds"/>
+      <xs:enumeration value="microseconds"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="xAxisUnitSpectrumType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="hertz"/>
+      <xs:enumeration value="kilohertz"/>
+      <xs:enumeration value="megahertz"/>
+      <xs:enumeration value="ppm"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="additionalAxisUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="seconds"/>
+      <xs:enumeration value="milliseconds"/>
+      <xs:enumeration value="microseconds"/>
+      <xs:enumeration value="hertz"/>
+      <xs:enumeration value="kilohertz"/>
+      <xs:enumeration value="megahertz"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="yAxisValueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="power"/>
+      <xs:enumeration value="magnitude"/>
+      <xs:enumeration value="real"/>
+      <xs:enumeration value="imaginary"/>
+      <xs:enumeration value="complex"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="peakPickedDataPointType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="singlet"/>
+      <xs:enumeration value="doublet"/>
+      <xs:enumeration value="triplet"/>
+      <xs:enumeration value="quadruplet"/>
+      <xs:enumeration value="multiplet"/>
+      <xs:enumeration value="unassigned"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Spectrum1D">
+    <xs:annotation>
+      <xs:documentation>1D experiments only.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="1" minOccurs="1">
+        <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
+          <xs:annotation>
+            <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element maxOccurs="1" minOccurs="1" name="spectralProcessingParameterSet">
+          <xs:complexType>
+            <xs:sequence maxOccurs="1" minOccurs="1">
+              <xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters"
+                type="SoftwareRefType"> </xs:element>
+              <xs:element maxOccurs="1" minOccurs="1" name="parameterSet1D">
+                <xs:complexType>
+                  <xs:sequence maxOccurs="1" minOccurs="1">
+                    <xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
+                      <xs:complexType>
+                        <xs:attribute name="correction" type="xs:float" use="required"/>
+                        <xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
+                      <xs:complexType>
+                        <xs:attribute name="correction" type="xs:float" use="required"/>
+                        <xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+                      <xs:complexType>
+                        <xs:attribute name="shift" type="xs:float" use="required"/>
+                        <xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"
+                        />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
+                      <xs:complexType>
+                        <xs:sequence maxOccurs="1" minOccurs="1">
+                          <xs:element maxOccurs="unbounded" minOccurs="1"
+                            name="ParameterToWindowFunction">
+                            <xs:complexType>
+                              <xs:attribute name="windowFunctionParameter"
+                                type="windowFunctionParameterType" use="required"/>
+                              <xs:attribute name="parameterValue" type="xs:string" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="windowFunction" type="windowFunctionType" use="required"
+                        />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="processingParamsFile" type="SourceFileRefType"/>
+                  </xs:sequence>
+                  <xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
+                  <xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
+                  <xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
+                  <xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVParamType">
+                <xs:annotation>
+                  <xs:documentation>The method used for post acquisition solvent suppression.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="dataTransformationMethod" type="CVParamType">
+                <xs:annotation>
+                  <xs:documentation>The method used for time-based to frequency-based data tranformation.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="calibrationCompound" type="CVParamType"/>
+              <xs:element minOccurs="0" name="spectralProjectionParameterSet"
+                type="SpectralProjectionParameterSetType"/>
+            </xs:sequence>
+            <xs:attribute name="analyser" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+      <xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+      <xs:attribute name="xStartValue" type="xs:float" use="required"/>
+      <xs:attribute name="xEndValue" type="xs:float" use="required"/>
+      <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SpectralProjectionParameterSetType">
+    <xs:sequence>
+      <xs:element name="projectionMethod" type="CVParamType"/>
     </xs:sequence>
+    <xs:attribute name="projectionAxis"/>
+  </xs:complexType>
+  <xs:complexType name="AcquisitionType">
+    <xs:choice maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisition2D" type="Acquisition2DType">
+      </xs:element>
+    </xs:choice>
   </xs:complexType>
 </xs:schema>
