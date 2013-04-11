@@ -916,14 +916,84 @@
         <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="value" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="CVTermType">
+    <xs:annotation>
+      <xs:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="cvRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="accession" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="name" type="xs:string" use="required">
       <xs:annotation>
         <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="CVParamWithUnitType">
+    <xs:annotation>
+      <xs:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="cvRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="accession" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="value" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitAccession" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitName" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="ValueWithUnitType">
+    <xs:annotation>
+      <xs:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="value" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation/>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
@@ -1957,96 +2027,9 @@
       <xs:enumeration value="unassigned"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:element name="Spectrum1D">
-    <xs:annotation>
-      <xs:documentation>1D experiments only.</xs:documentation>
-    </xs:annotation>
-    <xs:complexType>
-      <xs:sequence maxOccurs="1" minOccurs="1">
-        <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
-          <xs:annotation>
-            <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element maxOccurs="1" minOccurs="1" name="spectralProcessingParameterSet">
-          <xs:complexType>
-            <xs:sequence maxOccurs="1" minOccurs="1">
-              <xs:element maxOccurs="unbounded" minOccurs="1" name="ProcessingSoftwareParameters"
-                type="SoftwareRefType"> </xs:element>
-              <xs:element maxOccurs="1" minOccurs="1" name="parameterSet1D">
-                <xs:complexType>
-                  <xs:sequence maxOccurs="1" minOccurs="1">
-                    <xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection">
-                      <xs:complexType>
-                        <xs:attribute name="correction" type="xs:float" use="required"/>
-                        <xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection">
-                      <xs:complexType>
-                        <xs:attribute name="correction" type="xs:float" use="required"/>
-                        <xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
-                      <xs:complexType>
-                        <xs:attribute name="shift" type="xs:float" use="required"/>
-                        <xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"
-                        />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element maxOccurs="unbounded" minOccurs="1" name="WindowFunction">
-                      <xs:complexType>
-                        <xs:sequence maxOccurs="1" minOccurs="1">
-                          <xs:element maxOccurs="unbounded" minOccurs="1"
-                            name="ParameterToWindowFunction">
-                            <xs:complexType>
-                              <xs:attribute name="windowFunctionParameter"
-                                type="windowFunctionParameterType" use="required"/>
-                              <xs:attribute name="parameterValue" type="xs:string" use="required"/>
-                            </xs:complexType>
-                          </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="windowFunction" type="windowFunctionType" use="required"
-                        />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="processingParamsFile" type="SourceFileRefType"/>
-                  </xs:sequence>
-                  <xs:attribute name="processingParamsFileRef" type="xs:anyURI" use="optional"/>
-                  <xs:attribute name="noOfDataPointsInSpectrum" type="xs:integer" use="required"/>
-                  <xs:attribute name="baselineCorrection" type="xs:string" use="optional"/>
-                  <xs:attribute name="spectralDenoising" type="xs:string" use="optional"/>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVParamType">
-                <xs:annotation>
-                  <xs:documentation>The method used for post acquisition solvent suppression.</xs:documentation>
-                </xs:annotation>
-              </xs:element>
-              <xs:element name="dataTransformationMethod" type="CVParamType">
-                <xs:annotation>
-                  <xs:documentation>The method used for time-based to frequency-based data tranformation.</xs:documentation>
-                </xs:annotation>
-              </xs:element>
-              <xs:element name="calibrationCompound" type="CVParamType"/>
-              <xs:element minOccurs="0" name="spectralProjectionParameterSet"
-                type="SpectralProjectionParameterSetType"/>
-            </xs:sequence>
-            <xs:attribute name="analyser" type="xs:string" use="required"/>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-      <xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
-      <xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
-      <xs:attribute name="xStartValue" type="xs:float" use="required"/>
-      <xs:attribute name="xEndValue" type="xs:float" use="required"/>
-      <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
-    </xs:complexType>
-  </xs:element>
   <xs:complexType name="SpectralProjectionParameterSetType">
     <xs:sequence>
-      <xs:element name="projectionMethod" type="CVParamType"/>
+      <xs:element name="projectionMethod" type="CVTermType"/>
     </xs:sequence>
     <xs:attribute name="projectionAxis"/>
   </xs:complexType>
@@ -2056,5 +2039,161 @@
       <xs:element maxOccurs="1" minOccurs="1" name="acquisition2D" type="Acquisition2DType">
       </xs:element>
     </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="PhaseCorrectionType">
+    <xs:attribute name="correction" type="xs:float" use="required"/>
+    <xs:attribute name="correctionUnit" type="phaseUnitType" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Spectrum1DType">
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
+        <xs:annotation>
+          <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="spectralProcessingParameterSet"
+        type="SpectralProcessingParameterSet1DType"> </xs:element>
+    </xs:sequence>
+    <xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+    <xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+    <xs:attribute name="xStartValue" type="xs:float" use="required"/>
+    <xs:attribute name="xEndValue" type="xs:float" use="required"/>
+    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Spectrum2DType">
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
+        <xs:annotation>
+          <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="spectralProcessingParameterSet"
+        type="SpectralProcessingParameterSet2DType"> </xs:element>
+    </xs:sequence>
+    <xs:attribute name="xAxisUnits" type="xAxisUnitSpectrumType" use="required"/>
+    <xs:attribute name="yAxisType" type="yAxisValueType" use="required"/>
+    <xs:attribute name="xStartValue" type="xs:float" use="required"/>
+    <xs:attribute name="xEndValue" type="xs:float" use="required"/>
+    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SpectralProcessingParameterSetType">
+    <xs:annotation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareParameters"
+        type="SoftwareRefType"> </xs:element>
+      <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
+        <xs:annotation>
+          <xs:documentation>The method used for post acquisition solvent suppression.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dataTransformationMethod" type="CVTermType">
+        <xs:annotation>
+          <xs:documentation>The method used for time-based to frequency-based data tranformation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="calibrationCompound" type="CVTermType"/>
+      <xs:element minOccurs="0" name="spectralProjectionParameterSet"
+        type="SpectralProjectionParameterSetType"/>
+    </xs:sequence>
+    <xs:attribute name="analyser" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SpectralProcessingParameterSet1DType">
+    <xs:annotation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a 1D spectra.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SpectralProcessingParameterSetType">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="parameterSet1D"
+            type="SpectralProcessingParameterDimensionSetType"> </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SpectralProcessingParameterSet2DType">
+    <xs:annotation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a 2D spectra.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SpectralProcessingParameterSetType">
+        <xs:sequence maxOccurs="1" minOccurs="1">
+          <xs:element maxOccurs="1" minOccurs="1" name="parameterSet1D"
+            type="SpectralProcessingParameterDimensionSetType"> </xs:element>
+          <xs:element name="parameterSet2D" type="SpectralProcessingParameterDimension2DSetType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SpectralProcessingParameterDimensionSetType">
+    <xs:annotation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to a dimension.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection"
+        type="PhaseCorrectionType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection"
+        type="PhaseCorrectionType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+        <xs:complexType>
+          <xs:attribute name="shift" type="xs:float" use="required"/>
+          <xs:attribute name="shiftUnit" type="referenceShiftUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="spectralDenoisingMethod" type="CVTermType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="windowFunction">
+        <xs:complexType>
+          <xs:sequence maxOccurs="1" minOccurs="1">
+            <xs:element name="windowFunctionMethod" type="CVTermType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="windowFunctionParameter"
+              type="CVParamType">
+              <xs:annotation>
+                <xs:documentation>The parameters used in the window function method.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="baselineCorrectionMethod" type="CVTermType"/>
+      <xs:element name="parameterFileRef" type="SourceFileRefType"/>
+    </xs:sequence>
+    <xs:attribute name="noOfDataPoints" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SpectralProcessingParameterDimension1DSetType">
+    <xs:annotation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to the first dimension.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SpectralProcessingParameterDimensionSetType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SpectralProcessingParameterDimension2DSetType">
+    <xs:annotation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to the second dimension.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SpectralProcessingParameterDimensionSetType">
+        <xs:sequence>
+          <xs:element name="JResolvedParameterSet">
+            <xs:annotation>
+              <xs:documentation>Only if experiment is J-Res.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:attribute name="rotated45Deg" type="xs:boolean" use="required">
+                <xs:annotation>
+                  <xs:documentation>A flag to indicate if the data has been tilted.</xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+              <xs:attribute name="symmetrised" type="xs:boolean" use="required">
+                <xs:annotation>
+                  <xs:documentation>A flag to indicate if the data set has been symmetrized.</xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
 </xs:schema>
