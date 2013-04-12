@@ -17,6 +17,8 @@
       <xs:element maxOccurs="1" minOccurs="1" name="contactList" type="ContactListType"/>
       <xs:element minOccurs="0" name="sourceFileList" type="SourceFileListType"/>
       <xs:element name="softwareList" type="SoftwareListType"/>
+      <xs:element name="instrumentConfigurationList" type="InstrumentConfigurationListType"/>
+      <xs:element name="dataProcessingList" type="DataProcessingListType" minOccurs="0"/>
       <xs:element minOccurs="0" name="sampleList" type="SampleListType"/>
       <xs:element minOccurs="0" name="referenceableParamGroupList"
         type="dx:ReferenceableParamGroupListType"/>
@@ -26,8 +28,6 @@
           <xs:documentation>TODO</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="instrumentConfigurationList" type="dx:InstrumentConfigurationListType"/>
-      <xs:element name="dataProcessingList" type="dx:DataProcessingListType"/>
     </xs:sequence>
     <xs:attribute name="version" type="xs:string" use="required">
       <xs:annotation>
@@ -230,8 +230,8 @@
       </xs:element>
       <xs:choice maxOccurs="1" minOccurs="1">
         <xs:element maxOccurs="1" minOccurs="1" name="Acquisition1D" type="Acquisition1DType"> </xs:element>
-        <xs:element maxOccurs="1" minOccurs="1" name="Acquisition2D" type="Acquisition2DType">
-        </xs:element>
+        <xs:element maxOccurs="1" minOccurs="1" name="AcquisitionHigherDimension"
+          type="Acquisition2DType"> </xs:element>
       </xs:choice>
     </xs:sequence>
     <xs:attribute name="dateAndTimeOfDataAcquisition" type="xs:dateTime" use="required"/>
@@ -1575,6 +1575,56 @@
           <xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
         </xs:complexType>
       </xs:element>
+      <xs:element name="timeDomain" type="BinaryDataArrayType">
+        <xs:annotation>
+          <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
+        <xs:complexType>
+          <xs:attribute name="frequency" type="xs:float" use="required"/>
+          <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
+    <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
+    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+    <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="AcquisitionIndirectDimensionParameterSet">
+    <xs:annotation>
+      <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength">
+        <xs:annotation>
+          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="width" type="xs:float" use="required"/>
+          <xs:attribute name="widthUnit" type="timeUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
+        <xs:annotation>
+          <xs:documentation>TODO should be in ppm and Hz.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="width" type="xs:float" use="required"/>
+          <xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="timeDomain" type="BinaryDataArrayType">
+        <xs:annotation>
+          <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="encodingMethod" type="CVTermType">
+        <xs:annotation>
+          <xs:documentation>The quadrature method.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
         <xs:complexType>
           <xs:attribute name="frequency" type="xs:float" use="required"/>
@@ -1605,16 +1655,16 @@
               <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
             </xs:complexType>
           </xs:element>
+          <xs:element name="directDimensionParameterSet" type="AcquisitionDimensionParameterSet"/>
           <xs:element minOccurs="1" name="encodingScheme" type="CVParamType">
             <xs:annotation>
               <xs:documentation>Quadrature detection method.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="parameterSet1D" type="AcquisitionDimensionParameterSet"/>
-          <xs:element maxOccurs="1" minOccurs="1" name="parameterSet2D"
+          <xs:element maxOccurs="2" minOccurs="1" name="indirectDimensionParameterSet"
             type="AcquisitionDimensionParameterSet">
             <xs:annotation>
-              <xs:documentation>Only required if experiment is 2D.</xs:documentation>
+              <xs:documentation>Required once for each indirect dimension that is measured.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1639,13 +1689,14 @@
           <xs:complexContent>
             <xs:extension base="AcquisitionParameterSet1DType">
               <xs:sequence>
-                <xs:element name="ParameterSet1D" type="AcquisitionDimensionParameterSet"/>
+                <xs:element name="DirectDimensionParameterSet"
+                  type="AcquisitionDimensionParameterSet"/>
               </xs:sequence>
             </xs:extension>
           </xs:complexContent>
         </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="fid1D" type="BinaryDataArrayType">
+      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 1D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.</xs:documentation>
         </xs:annotation>
@@ -1656,7 +1707,7 @@
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
         type="AcquisitionParameterSet2DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="fid2D" type="BinaryDataArrayType">
+      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
         </xs:annotation>
@@ -2099,7 +2150,7 @@
         <xs:sequence maxOccurs="1" minOccurs="1">
           <xs:element maxOccurs="1" minOccurs="1" name="parameterSetDirectDimension"
             type="SpectralProcessingParameterDimensionSetType"> </xs:element>
-          <xs:element name="parameterSetIndirectDimension"
+          <xs:element maxOccurs="2" minOccurs="1" name="parameterSetIndirectDimension"
             type="SpectralProcessingParameterDimension2DSetType"/>
         </xs:sequence>
       </xs:extension>
@@ -2157,25 +2208,15 @@
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="SpectralProcessingParameterDimensionSetType">
-        <xs:sequence>
-          <xs:element name="jResolvedParameterSet">
-            <xs:annotation>
-              <xs:documentation>Only if experiment is J-Res.</xs:documentation>
-            </xs:annotation>
-            <xs:complexType>
-              <xs:attribute name="rotated45Deg" type="xs:boolean" use="required">
-                <xs:annotation>
-                  <xs:documentation>A flag to indicate if the data has been tilted.</xs:documentation>
-                </xs:annotation>
-              </xs:attribute>
-              <xs:attribute name="symmetrised" type="xs:boolean" use="required">
-                <xs:annotation>
-                  <xs:documentation>A flag to indicate if the data set has been symmetrized.</xs:documentation>
-                </xs:annotation>
-              </xs:attribute>
-            </xs:complexType>
-          </xs:element>
-        </xs:sequence>
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="projected3DIndirectDimentionSpectralProcessingParameterSet">
+    <xs:complexContent>
+      <xs:extension base="SpectralProcessingParameterDimension2DSetType">
+        <xs:attribute name="projectionAngle" type="xs:double"/>
+        <xs:attribute name="positiveProjectionMethod" type="xs:boolean"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
