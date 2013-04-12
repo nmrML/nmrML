@@ -302,6 +302,9 @@
                             </xs:complexType>
                           </xs:element>
                           <xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift">
+                            <xs:annotation>
+                              <xs:documentation>The value will be the edge of the spectrum in ppm or Hz</xs:documentation>
+                            </xs:annotation>
                             <xs:complexType>
                               <xs:attribute name="shift" type="xs:float" use="required"/>
                               <xs:attribute name="shiftUnit" type="referenceShiftUnitType"
@@ -2071,8 +2074,6 @@
         </xs:annotation>
       </xs:element>
       <xs:element name="calibrationCompound" type="CVTermType"/>
-      <xs:element minOccurs="0" name="spectralProjectionParameterSet"
-        type="SpectralProjectionParameterSetType"/>
     </xs:sequence>
     <xs:attribute name="analyser" type="xs:string" use="required"/>
   </xs:complexType>
@@ -2096,9 +2097,10 @@
     <xs:complexContent>
       <xs:extension base="SpectralProcessingParameterSetType">
         <xs:sequence maxOccurs="1" minOccurs="1">
-          <xs:element maxOccurs="1" minOccurs="1" name="parameterSet1D"
+          <xs:element maxOccurs="1" minOccurs="1" name="parameterSetDirectDimension"
             type="SpectralProcessingParameterDimensionSetType"> </xs:element>
-          <xs:element name="parameterSet2D" type="SpectralProcessingParameterDimension2DSetType"/>
+          <xs:element name="parameterSetIndirectDimension"
+            type="SpectralProcessingParameterDimension2DSetType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
