@@ -1125,25 +1125,6 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="SampleType">
-    <xs:annotation>
-      <xs:documentation>Expansible description of the sample used to generate the dataset, named in sampleName.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="dx:ParamGroupType">
-        <xs:attribute name="id" type="xs:ID" use="required">
-          <xs:annotation>
-            <xs:documentation>A unique identifier across the samples with which to reference this sample description.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="name" type="xs:string" use="optional">
-          <xs:annotation>
-            <xs:documentation>An optional name for the sample description, mostly intended as a quick mnemonic.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="SoftwareListType">
     <xs:annotation>
       <xs:documentation>List and descriptions of software used to acquire and/or process the data in this nmrML file.</xs:documentation>
@@ -1527,7 +1508,7 @@
           <xs:attribute name="name" type="xs:string"/>
         </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVParamType">
+      <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTerm">
         <xs:annotation>
           <xs:documentation>Captures the container used to introduc the sample into the autosampler. Example: tube, flow probe, rotor. Must refernce a CV term. </xs:documentation>
         </xs:annotation>
@@ -1573,9 +1554,9 @@
       <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" name="hardPulseWidth">
+      <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength">
         <xs:annotation>
-          <xs:documentation>90º pulse width of acquisition nucleus</xs:documentation>
+          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful</xs:documentation>
         </xs:annotation>
         <xs:complexType>
           <xs:attribute name="width" type="xs:float" use="required"/>
@@ -1583,18 +1564,12 @@
         </xs:complexType>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth">
+        <xs:annotation>
+          <xs:documentation>TODO should be in ppm and Hz.</xs:documentation>
+        </xs:annotation>
         <xs:complexType>
           <xs:attribute name="width" type="xs:float" use="required"/>
           <xs:attribute name="widthUnit" type="frequencyUnitType" use="required"/>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="dwellTime">
-        <xs:annotation>
-          <xs:documentation>The time interval (sampling period ) between the acquisition of individual datapoints.</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-          <xs:attribute name="time" type="xs:float" use="required"/>
-          <xs:attribute name="timeUnit" type="timeUnitType" use="required"/>
         </xs:complexType>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency">
@@ -1627,7 +1602,11 @@
               <xs:attribute name="frequencyUnit" type="frequencyUnitType" use="required"/>
             </xs:complexType>
           </xs:element>
-          <xs:element minOccurs="1" name="encodingScheme" type="CVParamType"/>
+          <xs:element minOccurs="1" name="encodingScheme" type="CVParamType">
+            <xs:annotation>
+              <xs:documentation>Quadrature detection method.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="parameterSet1D" type="AcquisitionDimensionParameterSet"/>
           <xs:element maxOccurs="1" minOccurs="1" name="parameterSet2D"
             type="AcquisitionDimensionParameterSet">
@@ -1831,10 +1810,8 @@
     <xs:attribute name="xEndValue" type="xs:float" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
-  <xs:simpleType name="pHUnitType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="pH"/>
-    </xs:restriction>
+  <xs:simpleType name="PhType">
+    <xs:restriction base="xs:double"/>
   </xs:simpleType>
   <xs:simpleType name="concentrationUnitType">
     <xs:restriction base="xs:string">
@@ -2158,7 +2135,11 @@
       <xs:element name="baselineCorrectionMethod" type="CVTermType"/>
       <xs:element name="parameterFileRef" type="SourceFileRefType"/>
     </xs:sequence>
-    <xs:attribute name="noOfDataPoints" type="xs:integer" use="required"/>
+    <xs:attribute name="noOfDataPoints" type="xs:integer" use="required">
+      <xs:annotation>
+        <xs:documentation>This number will also reflect the zero filling.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SpectralProcessingParameterDimension1DSetType">
     <xs:annotation>
@@ -2175,7 +2156,7 @@
     <xs:complexContent>
       <xs:extension base="SpectralProcessingParameterDimensionSetType">
         <xs:sequence>
-          <xs:element name="JResolvedParameterSet">
+          <xs:element name="jResolvedParameterSet">
             <xs:annotation>
               <xs:documentation>Only if experiment is J-Res.</xs:documentation>
             </xs:annotation>
@@ -2195,5 +2176,38 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SampleType">
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="0" name="originalBiologicalSamplepH" type="PhType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="postBufferpH" type="PhType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="buffer" type="CVTermType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="fieldFrequencyLock">
+        <xs:complexType>
+          <xs:attribute name="fieldFrequencyLockName" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="additionalSolute">
+        <xs:complexType>
+          <xs:attribute name="soluteName" type="xs:string" use="required"/>
+          <xs:attribute name="concentrationInSample" type="xs:float" use="required"/>
+          <xs:attribute name="concentrationInSampleUnit" type="concentrationUnitType" use="required"
+          />
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="chemicalShiftStandard" type="CVParamType"> </xs:element>
+      <xs:element name="solventType" type="CVTermType"/>
+      <xs:element name="solventConcentration" type="ValueWithUnitType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="concentrationStandard">
+        <xs:complexType>
+          <xs:attribute name="concentrationStdName" type="xs:string" use="required"/>
+          <xs:attribute name="concentrationStdType" type="concentrationStandardType" use="required"/>
+          <xs:attribute name="concentrationInSample" type="xs:float" use="required"/>
+          <xs:attribute name="concentrationInSampleUnit" type="concentrationUnitType" use="required"
+          />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="originalBiologicalSampleReference" type="xs:anyURI" use="required"/>
   </xs:complexType>
 </xs:schema>
