@@ -473,6 +473,20 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:complexType name="SoftwareRefListType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="softwareRef" type="SoftwareRefType">
+        <xs:annotation>
+          <xs:documentation>Reference to a previously defined sourceFile.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>This number of source files referenced in this list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="SourceFileType">
     <xs:annotation>
       <xs:documentation>Description of the source file, including location and type.</xs:documentation>
@@ -793,6 +807,13 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="AcquisitionType">
+    <xs:choice maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisition2D" type="Acquisition2DType">
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet">
@@ -817,47 +838,16 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AcquisitionType">
-    <xs:choice maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisition2D" type="Acquisition2DType">
-      </xs:element>
-    </xs:choice>
-  </xs:complexType>
-  <xs:complexType name="Spectrum1DType">
+  <xs:complexType name="Acquisition2DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element name="contactRefList" type="ContactRefListType"/>
-      <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
+        type="AcquisitionParameterSet2DType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="xAxis" type="AxisWithUnitType"/>
-      <xs:element name="yAxisType" type="CVTermType"/>
-      <xs:element maxOccurs="1" minOccurs="1" name="spectralProcessingParameterSet"
-        type="SpectralProcessingParameterSet1DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
-        <xs:annotation>
-          <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
-  </xs:complexType>
-  <xs:complexType name="Spectrum2DType">
-    <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element name="contactRefList" type="ContactRefListType"/>
-      <xs:element name="xAxis" type="AxisWithUnitType"/>
-      <xs:element name="yAxisType" type="CVTermType"/>
-      <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
-        <xs:annotation>
-          <xs:documentation>The 2D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="spectralProcessingParameterSet"
-        type="SpectralProcessingParameterSet2DType"> </xs:element>
-    </xs:sequence>
-    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="SpectrumListType">
     <xs:annotation>
@@ -878,24 +868,72 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="Acquisition2DType">
+  <xs:complexType name="SpectrumType">
+    <xs:annotation>
+      <xs:documentation>A spectrum that is the result of processing the acquisition and a description of the process used to create it.</xs:documentation>
+    </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
-        type="AcquisitionParameterSet2DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
+        type="SoftwareRefListType"> </xs:element>
+      <xs:element name="processingContactRefList" type="ContactRefListType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
+          <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="xAxis" type="AxisWithUnitType"/>
+      <xs:element name="yAxisType" type="CVTermType"/>
+      <xs:element name="processingParameterSet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
+              <xs:annotation>
+                <xs:documentation>The method used for post acquisition solvent suppression.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="calibrationCompound" type="CVTermType"/>
+            <xs:element name="dataTransformationMethod" type="CVTermType">
+              <xs:annotation>
+                <xs:documentation>The method used for time-based to frequency-based data tranformation.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:sequence>
+    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Spectrum1DType">
+    <xs:complexContent>
+      <xs:extension base="SpectrumType">
+        <xs:sequence>
+          <xs:element name="firstDimensionProcessingParameterSet"
+            type="FirstDimensionProcessingParameterSetType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SpectrumMultiDType">
+    <xs:complexContent>
+      <xs:extension base="SpectrumType">
+        <xs:sequence>
+          <xs:element name="firstDimensionProcessingParameterSet"
+            type="FirstDimensionProcessingParameterSetType"/>
+          <xs:element maxOccurs="2" name="higherDimensionProcessingParameterSet"
+            type="HigherDimensionProcessingParameterSetType"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="projected3DProcessingParamaterSet"
+            type="Projected3DProcessingParamaterSetType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="SpectralProcessingParameterSetType">
     <xs:annotation>
       <xs:documentation>Parameters recorded when raw data set is processed to create a spectra.</xs:documentation>
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareParameters"
-        type="SoftwareRefType"> </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
+        type="SoftwareRefListType"> </xs:element>
       <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
         <xs:annotation>
           <xs:documentation>The method used for post acquisition solvent suppression.</xs:documentation>
@@ -908,26 +946,12 @@
       </xs:element>
       <xs:element name="calibrationCompound" type="CVTermType"/>
     </xs:sequence>
-    <xs:attribute name="analyser" type="xs:string" use="required"/>
   </xs:complexType>
   <xs:complexType name="SpectralProjectionParameterSetType">
     <xs:sequence>
       <xs:element name="projectionMethod" type="CVTermType"/>
     </xs:sequence>
     <xs:attribute name="projectionAxis"/>
-  </xs:complexType>
-  <xs:complexType name="SpectralProcessingParameterSet1DType">
-    <xs:annotation>
-      <xs:documentation>Parameters recorded when raw data set is processed to create a 1D spectra.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="SpectralProcessingParameterSetType">
-        <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="parameterSet1D"
-            type="SpectralProcessingParameterDimensionSetType"> </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="SpectralProcessingParameterSet2DType">
     <xs:annotation>
@@ -937,14 +961,14 @@
       <xs:extension base="SpectralProcessingParameterSetType">
         <xs:sequence maxOccurs="1" minOccurs="1">
           <xs:element maxOccurs="1" minOccurs="1" name="directDimensionParameterSet"
-            type="SpectralProcessingParameterDimensionSetType"> </xs:element>
+            type="FirstDimensionProcessingParameterSetType"> </xs:element>
           <xs:element maxOccurs="2" minOccurs="1" name="indirectDimensionParameterSet"
-            type="SpectralProcessingParameterDimension2DSetType"/>
+            type="IndirectDimensionProcessingParameterSetType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SpectralProcessingParameterDimensionSetType">
+  <xs:complexType name="FirstDimensionProcessingParameterSetType">
     <xs:annotation>
       <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to a dimension.</xs:documentation>
     </xs:annotation>
@@ -978,32 +1002,6 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="SpectralProcessingParameterDimension1DSetType">
-    <xs:annotation>
-      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to the first dimension.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="SpectralProcessingParameterDimensionSetType"/>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SpectralProcessingParameterDimension2DSetType">
-    <xs:annotation>
-      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to the second dimension.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="SpectralProcessingParameterDimensionSetType">
-        <xs:sequence/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="projected3DIndirectDimentionSpectralProcessingParameterSetType">
-    <xs:complexContent>
-      <xs:extension base="SpectralProcessingParameterDimension2DSetType">
-        <xs:attribute name="projectionAngle" type="xs:double"/>
-        <xs:attribute name="positiveProjectionMethod" type="xs:boolean"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="AxisWithUnitType">
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
       <xs:annotation>
@@ -1022,5 +1020,17 @@
     </xs:attribute>
     <xs:attribute name="startValue"/>
     <xs:attribute name="endValue"/>
+  </xs:complexType>
+  <xs:complexType name="HigherDimensionProcessingParameterSetType">
+    <xs:annotation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to the second dimension.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="FirstDimensionProcessingParameterSetType"> </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Projected3DProcessingParamaterSetType">
+    <xs:attribute name="projectionAngle" type="xs:double"/>
+    <xs:attribute name="positiveProjectionMethod" type="xs:boolean"/>
   </xs:complexType>
 </xs:schema>
