@@ -110,6 +110,9 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ContactType">
+    <xs:annotation>
+      <xs:documentation>A person's name and information on how to communicate with them.</xs:documentation>
+    </xs:annotation>
     <xs:attribute name="id" type="xs:ID" use="required">
       <xs:annotation>
         <xs:documentation>An identifier for this contact
@@ -142,12 +145,33 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:complexType name="ContactRefType">
+    <xs:attribute name="ref" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>This attribute must reference the 'id' of the appropriate sourceFile.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="ContactRefListType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="contactRef" type="ContactRefType">
+        <xs:annotation>
+          <xs:documentation>Reference to a previously defined sourceFile.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>This number of source files referenced in this list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="FileDescriptionType">
     <xs:annotation>
       <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="fileContent" type="dx:ParamGroupType">
+      <xs:element name="fileContent" type="ParamGroupType">
         <xs:annotation>
           <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it. It should also describe the nativeID format used in the file by referring to an appropriate CV term.</xs:documentation>
         </xs:annotation>
@@ -604,7 +628,7 @@
   </xs:complexType>
   <xs:complexType name="TemperatureType">
     <xs:annotation>
-      <xs:documentation>Captures a temperature and references a unit from the unit ontology.</xs:documentation>
+      <xs:documentation>A temperature and references to a unit from the unit ontology.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="temperature" type="xs:float" use="required"/>
     <xs:attribute name="temperatureUnitName" type="xs:string" use="required"/>
@@ -614,52 +638,6 @@
     <xs:sequence>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="solute" type="SoluteType"> </xs:element>
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="AcquisitionParameterSetType">
-    <xs:annotation>
-      <xs:documentation>List with the descriptions of the acquisition settings applied prior to the start of data acquisition.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element name="acquisitionParameterFile" type="SourceFileRefType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="pulseSequence">
-        <xs:annotation>
-          <xs:documentation>A reference to the pulse sequence program or the name of the pulse sequence program.</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="pulseSequenceFile" type="SourceFileRefType"/>
-          </xs:sequence>
-          <xs:attribute name="literatueReference" type="xs:anyURI"/>
-          <xs:attribute name="name" type="xs:string"/>
-        </xs:complexType>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTermType">
-        <xs:annotation>
-          <xs:documentation>The container used to introduc the sample into the autosampler. Example: tube, flow probe, rotor. Must refernce a CV term. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="solventSuppressionMethod" type="CVParamType">
-        <xs:annotation>
-          <xs:documentation>This tag captures the instrument inherent solvent (usually water) suppression method used during acquisition.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="sampleAcquisitionTemperature"
-        type="ValueWithUnitType">
-        <xs:annotation>
-          <xs:documentation>The temperature of the sample during the aquisition.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="spinningRate" type="ValueWithUnitType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="relaxationDelay" type="ValueWithUnitType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="shapedPulseFile" type="SourceFileRefType">
-        <xs:annotation>
-          <xs:documentation>A reference to the pulse shape file, from the power section of the Bruker acquisition software. Example: gauss</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
-    </xs:sequence>
-    <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
-    <xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionDimensionParameterSet">
     <xs:annotation>
@@ -726,6 +704,53 @@
     <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
     <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="AcquisitionParameterSetType">
+    <xs:annotation>
+      <xs:documentation>Base type for the list with the descriptions of the acquisition settings applied prior to the start of data acquisition.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element name="contactRefList" type="ContactRefListType"/>
+      <xs:element name="acquisitionParameterFileRef" type="SourceFileRefType"> </xs:element>
+      <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTermType">
+        <xs:annotation>
+          <xs:documentation>The container used to introduc the sample into the autosampler. Example: tube, flow probe, rotor. Must refernce a CV term. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="sampleAcquisitionTemperature"
+        type="ValueWithUnitType">
+        <xs:annotation>
+          <xs:documentation>The temperature of the sample during the aquisition.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="solventSuppressionMethod" type="CVParamType">
+        <xs:annotation>
+          <xs:documentation>This tag captures the instrument inherent solvent (usually water) suppression method used during acquisition.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="spinningRate" type="ValueWithUnitType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="relaxationDelay" type="ValueWithUnitType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="pulseSequence">
+        <xs:annotation>
+          <xs:documentation>A reference to the pulse sequence program or the name of the pulse sequence program.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pulseSequenceFile" type="SourceFileRefType"/>
+          </xs:sequence>
+          <xs:attribute name="literatueReference" type="xs:anyURI"/>
+          <xs:attribute name="name" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="shapedPulseFile" type="SourceFileRefType">
+        <xs:annotation>
+          <xs:documentation>A reference to the pulse shape file, from the power section of the Bruker acquisition software. Example: gauss</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
+    <xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSet1DType">
     <xs:complexContent>
@@ -801,6 +826,7 @@
   </xs:complexType>
   <xs:complexType name="Spectrum1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element name="contactRefList" type="ContactRefListType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
@@ -820,6 +846,7 @@
   </xs:complexType>
   <xs:complexType name="Spectrum2DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element name="contactRefList" type="ContactRefListType"/>
       <xs:element name="xAxis" type="AxisWithUnitType"/>
       <xs:element name="yAxisType" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
