@@ -8,6 +8,10 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="QualityControl">
+    <xs:annotation>
+      <xs:documentation>TODO need to discuss including this in aqcuisition
+</xs:documentation>
+    </xs:annotation>
     <xs:complexType>
       <xs:sequence maxOccurs="1" minOccurs="1">
         <xs:element maxOccurs="1" minOccurs="1" name="linewidth" type="ValueWithUnitType"> </xs:element>
@@ -26,7 +30,7 @@
       <xs:element name="fileDescription" type="FileDescriptionType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="contactList" type="ContactListType"/>
       <xs:element minOccurs="0" name="sourceFileList" type="SourceFileListType"/>
-      <xs:element name="softwareList" type="SoftwareListType"/>
+      <xs:element name="softwareList" type="SoftwareListType" minOccurs="0"/>
       <xs:element name="instrumentConfigurationList" type="InstrumentConfigurationListType"/>
       <xs:element name="dataProcessingList" type="DataProcessingListType" minOccurs="0"/>
       <xs:element minOccurs="0" name="sampleList" type="SampleListType"/>
@@ -443,28 +447,6 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="ScanSettingsType">
-    <xs:annotation>
-      <xs:documentation>Description of the acquisition settings of the instrument prior to the start of the run.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="dx:ParamGroupType">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="1" name="sourceFileRefList"
-            type="dx:SourceFileRefListType">
-            <xs:annotation>
-              <xs:documentation>List with the source files containing the acquisition settings.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required">
-          <xs:annotation>
-            <xs:documentation>A unique identifier for this acquisition setting.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="SourceFileType">
     <xs:annotation>
       <xs:documentation>Description of the source file, including location and type.</xs:documentation>
@@ -525,7 +507,6 @@
             <xs:documentation>An identifier for this instrument configuration.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="scanSettingsRef" type="xs:IDREF"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -589,24 +570,48 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SpectrumListType">
+  <xs:complexType name="BinaryDataArrayType">
     <xs:annotation>
-      <xs:documentation>List and descriptions of spectra.</xs:documentation>
+      <xs:documentation/>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="spectrum1D" type="Spectrum1DType"/>
-      <xs:element name="spectrum2D" type="Spectrum2DType"/>
+      <xs:element name="binary" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation>The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+    <xs:attribute name="byteLength" type="xs:integer"/>
+    <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
       <xs:annotation>
-        <xs:documentation>The number of spectra defined in this nmrML file.</xs:documentation>
+        <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="required">
+    <xs:attribute name="totalBytes" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute MUST reference the 'id' of the default data processing for the spectrum list. If an acquisition does not reference any data processing, it implicitly refers to this data processing. This attribute is required because the minimum amount of data processing that any format will undergo is "conversion to nmrML".</xs:documentation>
+        <xs:documentation>The encoded length of the binary data array.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="byteFormat"/>
+  </xs:complexType>
+  <xs:complexType name="SoluteType">
+    <xs:sequence>
+      <xs:element name="concentrationInSample" type="ValueWithUnitType"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="TemperatureType">
+    <xs:annotation>
+      <xs:documentation>Captures a temperature and references a unit from the unit ontology.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="temperature" type="xs:float" use="required"/>
+    <xs:attribute name="temperatureUnitName" type="xs:string" use="required"/>
+    <xs:attribute name="temperatureUnitID" type="xs:ID"/>
+  </xs:complexType>
+  <xs:complexType name="AdditionalSoluteListType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="solute" type="SoluteType"> </xs:element>
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetType">
     <xs:annotation>
@@ -720,30 +725,6 @@
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
     <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
   </xs:complexType>
-  <xs:complexType name="BinaryDataArrayType">
-    <xs:annotation>
-      <xs:documentation/>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="binary" type="xs:base64Binary">
-        <xs:annotation>
-          <xs:documentation>The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="byteLength" type="xs:integer"/>
-    <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
-      <xs:annotation>
-        <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="totalBytes" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The encoded length of the binary data array.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="byteFormat"/>
-  </xs:complexType>
   <xs:complexType name="AcquisitionParameterSet1DType">
     <xs:complexContent>
       <xs:extension base="AcquisitionParameterSetType"/>
@@ -785,14 +766,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="TemperatureType">
-    <xs:annotation>
-      <xs:documentation>Captures a temperature and references a unit from the unit ontology.</xs:documentation>
-    </xs:annotation>
-    <xs:attribute name="temperature" type="xs:float" use="required"/>
-    <xs:attribute name="temperatureUnitName" type="xs:string" use="required"/>
-    <xs:attribute name="temperatureUnitID" type="xs:ID"/>
-  </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet">
@@ -817,23 +790,6 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="Acquisition2DType">
-    <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
-        type="AcquisitionParameterSet2DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
-        <xs:annotation>
-          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SpectralProjectionParameterSetType">
-    <xs:sequence>
-      <xs:element name="projectionMethod" type="CVTermType"/>
-    </xs:sequence>
-    <xs:attribute name="projectionAxis"/>
-  </xs:complexType>
   <xs:complexType name="AcquisitionType">
     <xs:choice maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
@@ -848,6 +804,8 @@
           <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="xAxis" type="AxisWithUnitType"/>
+      <xs:element name="yAxisType" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="spectralProcessingParameterSet"
         type="SpectralProcessingParameterSet1DType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
@@ -855,24 +813,52 @@
           <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="xAxis" type="AxisWithUnitType"/>
-      <xs:element name="yAxisType" type="CVTermType"/>
     </xs:sequence>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="Spectrum2DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
-        <xs:annotation>
-          <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="xAxis" type="AxisWithUnitType"/>
       <xs:element name="yAxisType" type="CVTermType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
+        <xs:annotation>
+          <xs:documentation>The 2D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spectralProcessingParameterSet"
         type="SpectralProcessingParameterSet2DType"> </xs:element>
     </xs:sequence>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SpectrumListType">
+    <xs:annotation>
+      <xs:documentation>List and descriptions of spectra.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spectrum1D" type="Spectrum1DType"/>
+      <xs:element name="spectrum2D" type="Spectrum2DType" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of spectra defined in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>This attribute MUST reference the 'id' of the default data processing for the spectrum list. If an acquisition does not reference any data processing, it implicitly refers to this data processing. This attribute is required because the minimum amount of data processing that any format will undergo is "conversion to nmrML".</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="Acquisition2DType">
+    <xs:sequence maxOccurs="1" minOccurs="1">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
+        type="AcquisitionParameterSet2DType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
+        <xs:annotation>
+          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="SpectralProcessingParameterSetType">
     <xs:annotation>
@@ -894,6 +880,12 @@
       <xs:element name="calibrationCompound" type="CVTermType"/>
     </xs:sequence>
     <xs:attribute name="analyser" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SpectralProjectionParameterSetType">
+    <xs:sequence>
+      <xs:element name="projectionMethod" type="CVTermType"/>
+    </xs:sequence>
+    <xs:attribute name="projectionAxis"/>
   </xs:complexType>
   <xs:complexType name="SpectralProcessingParameterSet1DType">
     <xs:annotation>
@@ -982,17 +974,6 @@
         <xs:attribute name="positiveProjectionMethod" type="xs:boolean"/>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SoluteType">
-    <xs:sequence>
-      <xs:element name="concentrationInSample" type="ValueWithUnitType"/>
-    </xs:sequence>
-    <xs:attribute name="name" type="xs:string" use="required"/>
-  </xs:complexType>
-  <xs:complexType name="AdditionalSoluteListType">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="solute" type="SoluteType"> </xs:element>
-    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="AxisWithUnitType">
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
