@@ -30,7 +30,7 @@
 						<xs:sequence>
 							<xs:element ref="CvMappingRule" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Single mapping rule between a specific elements of the model and to controlled vocabularies listed on the CvTerm element.</xs:documentation>
+									<xs:documentation>Single mapping rule between a specific element of the xsd and controlled vocabularies listed as allowed values on the CvTerm element.</xs:documentation>
 								</xs:annotation>
 							</xs:element>
 						</xs:sequence>
@@ -39,7 +39,7 @@
 			</xs:sequence>
 			<xs:attribute name="modelName" type="xs:string" use="required">
 				<xs:annotation>
-					<xs:documentation>Name of the PSI data exchange schema, e.g. mzData, GelML, MIF.</xs:documentation>
+					<xs:documentation>Name of the PSI/MSI data exchange schema, e.g. mzData, nmrML.</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
 			<xs:attribute name="modelURI" type="xs:anyURI" use="required">
@@ -63,10 +63,32 @@
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of the rule in this mapping file.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="name" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>Name of this rule (can be used for reporting of errors)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
 			<xs:attribute name="scopePath" type="xs:string" use="required">
 				<xs:annotation>
 					<xs:documentation>Element scope in the schema within which the non repeatable (isRepeatable = FALSE) condition applies.</xs:documentation>
 				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="requirementLevel" use="required">
+				<xs:annotation>
+					<xs:documentation>The requirement level indicated, when the XML element exists in the instance data file, if the association with CV terms is optional (MAY), recommended (SHOULD) or mandatory (MUST). </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="MUST"/>
+						<xs:enumeration value="SHOULD"/>
+						<xs:enumeration value="MAY"/>
+					</xs:restriction>
+				</xs:simpleType>
 			</xs:attribute>
 			<xs:attribute name="cvElementPath" type="xs:string" use="required"/>
 			<xs:attribute name="cvTermsCombinationLogic" use="required">
@@ -81,28 +103,6 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
-			<xs:attribute name="requirementLevel" use="required">
-				<xs:annotation>
-					<xs:documentation>The requirement level indicated, when the XML element exists in the instance data file, if the association with CV terms is optional (MAY), recommended (SHOULD) or mandatory (MUST). </xs:documentation>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:NMTOKEN">
-						<xs:enumeration value="MUST"/>
-						<xs:enumeration value="SHOULD"/>
-						<xs:enumeration value="MAY"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-			<xs:attribute name="name" type="xs:string" use="optional">
-				<xs:annotation>
-					<xs:documentation>Name of this rule (can be used for reporting of errors)</xs:documentation>
-				</xs:annotation>
-			</xs:attribute>
-			<xs:attribute name="id" type="xs:ID" use="required">
-				<xs:annotation>
-					<xs:documentation>Unique identifier of the rule in this mapping file.</xs:documentation>
-				</xs:annotation>
-			</xs:attribute>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CvTerm">
@@ -114,10 +114,14 @@
 			</xs:attribute>
 			<xs:attribute name="termAccession" type="xs:string" use="required">
 				<xs:annotation>
-					<xs:documentation>CV term accession number as in the CV file.</xs:documentation>
+					<xs:documentation>CV term accession number / identifyier as in the CV file. Usually consistimg out of a short namespace prefix and a unique number, or of a meaningful string.</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
-			<xs:attribute name="termName" type="xs:string" use="required"/>
+			<xs:attribute name="termName" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The human readable and intelligable label. Ideally adhering to naming conventions outlined in http://www.biomedcentral.com/1471-2105</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
 			<xs:attribute name="useTermName" type="xs:boolean" use="optional" default="false">
 				<xs:annotation>
 					<xs:documentation>Boolean to set whether the check is done on the termName (TRUE) or on the termAccession (FALSE and default). </xs:documentation>
