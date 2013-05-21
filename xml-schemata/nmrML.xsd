@@ -962,8 +962,8 @@
         <xs:sequence maxOccurs="1" minOccurs="1">
           <xs:element maxOccurs="1" minOccurs="1" name="directDimensionParameterSet"
             type="FirstDimensionProcessingParameterSetType"> </xs:element>
-          <xs:element maxOccurs="2" minOccurs="1" name="indirectDimensionParameterSet"
-            type="IndirectDimensionProcessingParameterSetType"/>
+          <xs:element maxOccurs="2" minOccurs="1" name="higherDimensionParameterSet"
+            type="HigherDimensionProcessingParameterSetType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
