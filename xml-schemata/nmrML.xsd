@@ -855,7 +855,8 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="spectrum1D" type="Spectrum1DType"/>
-      <xs:element name="spectrum2D" type="Spectrum2DType" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="spectrumMultiD" type="SpectrumMultiDType" maxOccurs="unbounded"
+        minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
