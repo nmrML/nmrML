@@ -14,6 +14,9 @@ To view and edit this owl CV you have to download and install Protege 4.2 or lat
 Remark: We must decide on the formats (OBO vs owl). If we envision a common data annotation pipeline for MSI and PSI, leveraging on the PSI validators and obo ontologies, we should stick with OBO format, as at the moment these do not integrate particularly well.
 Making the validator software aware of owl formatted CVs is possible according to their Authors: The OntologyAccess interface would need to be reprogrammed and registered in the ontology manager XML config file.
 
+As P4 does not display the part_of hierarchy (as OBO Edit does), in the converted owl file you only see the is a Hierarchy in the class browser to the left. I sugggest to rebin these so that they all have proper is_a superclasses that ease navigation.
+
+
 ToDOs: Depending on the file format we go for we would proceed via the following Steps:
 
 For OBO Edit:
@@ -32,11 +35,13 @@ Currently largest ID is NMR:1002021. It used the default 7 digit Number.
 
 For Protege:
 Set namespace (NS)
-Set ID ranges
+Set ID ranges/policies
 agree versioning
 agree RA and RU metadata: Agree on RA annotation (Metadata), RU annotation properties (we get both by using BFO 2.0)
 agree semantics, i.e. obo backwards compatibility, crossproducts
 	Check if all assumptions made by the OBO to OWL converter worked out right in the owl class definitions
+	As P4 does not display the part_of hierarchy (as OBO Edit does), in the converted owl file you only see the is a Hierarchy in the class browser to the left. I sugggest to rebin these 25? part_of so that they all have proper is_a superclasses that ease navigation.
+
 Remove Unit Classes from our CV file and import UO and ref it instead (only 7 classes affected). The UO classes were put directly into the wishard nmr CV before.
 
 Decide on BFO, OBILight or BioTopLight usage: These provide a proper set of object properties (Relations Ontology) as well. At the moment only a few from UO are used.
@@ -45,10 +50,10 @@ Bin Cruz CV terms under BFO and MSI NMR CV classes
 Bin new EBI-NMR CV clases (from PRS) under TLO and Cruz CV classes.
 Remove redundant Classes, clean up CV.
 Align Class naming schemes
-Refactor terms, using opject properties ?
+Refactor terms, using object properties ?
 Add new terms according to our use cases at Wishard Lab, Bordeaux, IPB, EBI, ...
 
-From here on we can gather missing terms from the nmr community.
+All this will leave us with a version 1.0 to be the first release. From here on we can (finally )gather missing terms from the nmr community.
 
 
 Next Step:
@@ -58,6 +63,7 @@ For e.g. SolventType, decide if we want to have naming coherence of the XSD leaf
 List of terms required by current XSD:
 buffer
 solvent
+
 
 ...
 
