@@ -653,7 +653,7 @@
       <xs:element maxOccurs="unbounded" minOccurs="0" name="solute" type="SoluteType"> </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AcquisitionDimensionParameterSet">
+  <xs:complexType name="AcquisitionDimensionParameterSetType">
     <xs:annotation>
       <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
@@ -791,14 +791,14 @@
               </xs:sequence>
             </xs:complexType>
           </xs:element>
-          <xs:element name="directDimensionParameterSet" type="AcquisitionDimensionParameterSet"/>
+          <xs:element name="directDimensionParameterSet" type="AcquisitionDimensionParameterSetType"/>
           <xs:element minOccurs="1" name="encodingScheme" type="CVParamType">
             <xs:annotation>
               <xs:documentation>Quadrature detection method.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="2" minOccurs="1" name="indirectDimensionParameterSet"
-            type="AcquisitionDimensionParameterSet">
+            type="AcquisitionDimensionParameterSetType">
             <xs:annotation>
               <xs:documentation>Required once for each indirect dimension that is measured.</xs:documentation>
             </xs:annotation>
@@ -825,7 +825,7 @@
             <xs:extension base="AcquisitionParameterSet1DType">
               <xs:sequence>
                 <xs:element name="DirectDimensionParameterSet"
-                  type="AcquisitionDimensionParameterSet"/>
+                  type="AcquisitionDimensionParameterSetType"/>
               </xs:sequence>
             </xs:extension>
           </xs:complexContent>
@@ -855,7 +855,8 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="spectrum1D" type="Spectrum1DType"/>
-      <xs:element name="spectrum2D" type="Spectrum2DType" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="spectrumMultiD" type="SpectrumMultiDType" maxOccurs="unbounded"
+        minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
@@ -962,8 +963,8 @@
         <xs:sequence maxOccurs="1" minOccurs="1">
           <xs:element maxOccurs="1" minOccurs="1" name="directDimensionParameterSet"
             type="FirstDimensionProcessingParameterSetType"> </xs:element>
-          <xs:element maxOccurs="2" minOccurs="1" name="indirectDimensionParameterSet"
-            type="IndirectDimensionProcessingParameterSetType"/>
+          <xs:element maxOccurs="2" minOccurs="1" name="higherDimensionParameterSet"
+            type="HigherDimensionProcessingParameterSetType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
