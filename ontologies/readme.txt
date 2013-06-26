@@ -28,7 +28,7 @@ Set Metadata/ID manager to use <cosmos nmr IDs>.
 Under Configuration manager/user preferences set your name and allocate enough Ram (>2GB).
 
 What was done on the obo file:
-Set ID rule for COSMSO as specified at http://oboedit.org/docs/html/The_ID_Manager_Plugin.htm
+Set ID rule for COSMOS as specified at http://oboedit.org/docs/html/The_ID_Manager_Plugin.htm
 
 $sequence(length, min_value, max_value)$ 
 
