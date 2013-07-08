@@ -1,0 +1,1 @@
+This is the place to put any documentation of the nmrML CV, i.e. HTML serializations or Constrained Natural Language (CNL) serializations of the nmrML.v.x.owl file.
