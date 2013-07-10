@@ -180,7 +180,7 @@
   </xs:complexType>
   <xs:complexType name="CVParamType">
     <xs:annotation>
-      <xs:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xs:documentation>
+      <xs:documentation>This element holds additional data or annotation. In contrast to CVTermType, here a pair of CV term plus a value (=Parameter) is captured. Only controlled values are allowed here.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="cvRef" type="xs:IDREF" use="required">
       <xs:annotation>
@@ -205,7 +205,7 @@
   </xs:complexType>
   <xs:complexType name="CVTermType">
     <xs:annotation>
-      <xs:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xs:documentation>
+      <xs:documentation>This element holds additional data or annotation as a simple CV term with no further values (Parameters) associated with it. Only controlled CV terms values are allowed here.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="cvRef" type="xs:IDREF" use="required">
       <xs:annotation>
