@@ -36,7 +36,8 @@ If we want to use restrictions, we should only use existential quantifiers as th
  By means of cardinality specifications and XPath expressions defined in an XML mapping file (an instances of the CvMappingRules.xsd ), one can define what ontology terms are allowed in a specific location of the data model.</obo:IAO_0000115>
         <oboInOwl:saved-by rdf:datatype="&xsd;string">dschober</oboInOwl:saved-by>
         <owl:imports rdf:resource="http://msi-ontology.sourceforge.net/ontology/NMR.owl"/>
-        <owl:imports rdf:resource="http://purl.org/biotop/btl2.owl"/>
+        <!--owl:imports rdf:resource="http://purl.org/biotop/btl2.owl"/-->
+        <owl:imports rdf:resource="https://biotop.googlecode.com/svn/trunk/btl2.owl"/>
     </owl:Ontology>
     
 
