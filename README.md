@@ -1,4 +1,6 @@
-#  [nmrML](http://nmrml.org/)
+<p align="center">
+<img src="https://raw.github.com/nmrML/nmrML/master/docs/logo/images/horizontal-logo-500.png" alt="alt tag" >
+</p>
 
 [nmrML](http://nmrml.org/) is an open mark-up language for NMR data. It is currently under heavy development and is not yet ready for public use.
 The development of this standard is coordinated by Workpackage 2 of the [**COSMOS - COordination Of Standards In MetabOlomicS**](http://cosmos-fp7.eu/) Project. COSMOS is a global effort to enable free and open sharing of metabolomics data. Coordinated by Dr Christoph Steinbeck of the EMBL-European Bioinformatics Institute, COSMOS brings together European data providers to set and promote community standards that will make it easier to disseminate metabolomics data through life science e-infrastructures. This Coordination Action has been financed with €2 million by the European Commission's Seventh Framework Programme. 
