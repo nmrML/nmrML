@@ -187,81 +187,81 @@
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400030 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400030">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400030">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#Compound"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400031 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400031">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400031">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#Role"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400032 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400032">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400032">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#Role"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400033 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400033">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400033">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#Role"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400034 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400034">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400034">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#Role"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400035 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400035">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400035">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#Role"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400063 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400063">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400063">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#InformationObject"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400083 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400083">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400083">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#Role"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400127 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400127">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400127">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#Role"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400181 -->
 
-    <rdf:Description rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400181">
+    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400181">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#InformationObject"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
@@ -283,9 +283,9 @@
 
     <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_187 -->
 
-    <rdf:Description rdf:about="http://obi.sourceforge.net/ontology/OBI.owl#OBI_187">
+    <owl:Class rdf:about="http://obi.sourceforge.net/ontology/OBI.owl#OBI_187">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotoplite.owl#InformationObject"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
@@ -427,16 +427,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Total volume of solution used.</owl:annotatedTarget>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000005"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000005"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Total volume of solution used.</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000005"/>
     </owl:Axiom>
     
 
@@ -495,16 +495,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000032"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Free text description of a single customization made to the instrument; for several modifications, use several entries.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000032"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000032"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -628,16 +628,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Sample batch lot identifier.</owl:annotatedTarget>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000053"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000053"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Sample batch lot identifier.</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000053"/>
     </owl:Axiom>
     
 
@@ -810,16 +810,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Serial Number of the instrument.</owl:annotatedTarget>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000529"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000529"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Serial Number of the instrument.</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000529"/>
     </owl:Axiom>
     
 
@@ -968,16 +968,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000569"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">SHA-1 (Secure Hash Algorithm-1) is a cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is also used to verify file integrity.</owl:annotatedTarget>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000569"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000569"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -1055,16 +1055,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Postal address of the contact person or organization.</owl:annotatedTarget>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000587"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000587"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Postal address of the contact person or organization.</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000587"/>
     </owl:Axiom>
     
 
@@ -1080,16 +1080,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Uniform Resource Locator related to the contact person or organization.</owl:annotatedTarget>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000588"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000588"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Uniform Resource Locator related to the contact person or organization.</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000588"/>
     </owl:Axiom>
     
 
@@ -1173,16 +1173,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:date</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:date</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000747"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">The time that a data processing action was finished.</owl:annotatedTarget>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000747"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:date</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000747"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -1352,16 +1352,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000862"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">The pH of a solution at which a charged molecule does not migrate in an electric field.</owl:annotatedTarget>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000862"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000862"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -1378,16 +1378,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000863"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm.</owl:annotatedTarget>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000863"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000863"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -1421,16 +1421,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical formula which expresses the proportions of the elements present in a substance.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000865"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000865"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical formula which expresses the proportions of the elements present in a substance.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000865"/>
     </owl:Axiom>
     
 
@@ -1471,16 +1471,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000867"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical formula showing the number of atoms of each element in a molecule, their spatial arrangement, and their linkage to each other.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000867"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000867"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -1600,16 +1600,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000883"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A short name or symbol of a protein (e.g., HSF 1 or HSF1_HUMAN).</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000883"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000883"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -1816,16 +1816,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">An arbitrary string label used to mark a set of peptides that belong together in a set, whereby the members are differentiated by different isotopic labels. For example, the heavy and light forms of the same peptide will both be assigned the same peptide group label.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1000893"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1000893"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">An arbitrary string label used to mark a set of peptides that belong together in a set, whereby the members are differentiated by different isotopic labels. For example, the heavy and light forms of the same peptide will both be assigned the same peptide group label.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1000893"/>
     </owl:Axiom>
     
 
@@ -2241,16 +2241,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Phone number of the contact person or organization.</owl:annotatedTarget>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1001755"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1001755"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Phone number of the contact person or organization.</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1001755"/>
     </owl:Axiom>
     
 
@@ -2316,16 +2316,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">DOI unique identifier.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1001922"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1001922"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">DOI unique identifier.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1001922"/>
     </owl:Axiom>
     
 
@@ -2341,16 +2341,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Free text attribute that can enrich the information about an entity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1001923"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1001923"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Free text attribute that can enrich the information about an entity.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1001923"/>
     </owl:Axiom>
     
 
@@ -2366,16 +2366,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword present in a scientific publication.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1001924"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1001924"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword present in a scientific publication.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1001924"/>
     </owl:Axiom>
     
 
@@ -2391,16 +2391,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword assigned by the data submitter.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1001925"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1001925"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword assigned by the data submitter.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1001925"/>
     </owl:Axiom>
     
 
@@ -2416,16 +2416,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword assigned by a data curator.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1001926"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1001926"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword assigned by a data curator.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1001926"/>
     </owl:Axiom>
     
 
@@ -2723,16 +2723,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Chemical shift reference.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1002013"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1002013"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Chemical shift reference.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1002013"/>
     </owl:Axiom>
     
 
@@ -2773,16 +2773,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin label.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1002015"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1002015"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin label.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1002015"/>
     </owl:Axiom>
     
 
@@ -2823,16 +2823,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1002017"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Bin end.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&obo;NMR_1002017"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1002017"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -2923,16 +2923,16 @@
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin start.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&obo;NMR_1002021"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&obo;NMR_1002021"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin start.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&obo;NMR_1002021"/>
     </owl:Axiom>
     
 
