@@ -1,4 +1,3 @@
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -20,7 +19,7 @@ import org.nmrml.schema.*;
  
 public class dx2nmrML {
     
-    // This sample application demonstrates how to modify a java content
+    // This sample application demonstrates how to create a java content
     // tree and marshal it back to a xml data
     
     public static void main( String[] args ) {
