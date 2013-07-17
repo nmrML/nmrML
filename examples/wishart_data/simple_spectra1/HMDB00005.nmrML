@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nmrML xmlns="http://nmrml.org/schema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://nmrml.org/schema file:/Users/mike/Projects/nmrML/nmrML/xml-schemata/nmrML.xsd" version="version1">
+    <cvList count="2">
+        <cv id="ID001" fullName="nmrML Controlled Vocabulary" URI="http://www.nmrml.org/nmrml-cv.0.0.1.owl" version="0.0.1"/>
+        <cv id="ID002" fullName="Unit Ontology" URI="http://unit-ontology.googlecode.com/svn/trunk/uo.owl/" version="3.2.0"/>
+    </cvList>
+    <fileDescription>
+        <fileContent>
+            <cvParam cvRef="ID001" accession="??" name="acquisition type" value="1D"/>
+        </fileContent>
+    </fileDescription>
+    <contactList>
+        <contact id="ID004" fullname="Michael Wilson"  email="michael.wilson@ualberta.ca"/> 
+        <contact id="ID005" fullname="Trent Bjorndahl" email="tbjorndahl@gmail.com"      />
+        <contact id="ID006" fullname="Philip Liu"      email="pbliu@ualberta.ca"         />
+    </contactList>
+    <sourceFileList count="1">
+        <sourceFile id="ID009" name="D2O_02.fid" location="file:///Users/mike/Projects/nmrML/nmrML/HMDB00005/data/D2O_02.fid" >         
+            <cvParam cvRef="ID001" accession="??" name="sourceFileType" value="Varian 1D FID"/>
+        </sourceFile>
+        <sourceFile id="ID009" name="D2O_02.fid" location="file:///Users/mike/Projects/nmrML/nmrML/HMDB00005/data/D2O_02.fid/procvar" >         
+            <cvParam cvRef="ID001" accession="??" name="sourceFileType" value="Acquisition Parameters"/>
+        </sourceFile>
+    </sourceFileList>
+    <instrumentConfigurationList count="50">
+        <instrumentConfiguration id="1">
+        </instrumentConfiguration>
+        <instrumentConfiguration id="2">
+        </instrumentConfiguration>
+    </instrumentConfigurationList>
+    <acquisition>
+        <acquisition1D>
+            <acquisitionParameterSet numberOfSteadyStateScans="4" numberOfScans="32">
+                <contactRefList count="2">
+                    <contactRef ref="ID005"/>
+                    <contactRef ref="ID006"/>
+                </contactRefList>
+                <acquisitionParameterFileRef ref="ID011"/>
+                <sampleContainer cvRef="ID009" accession="accession3" name="name1"/>
+                <sampleAcquisitionTemperature  value="25" unitAccession="UO:0000027" unitCvRef="ID002" unitName="degree celsius"/>
+                <spinningRate value="0" unitAccession="UO:0000106" unitCvRef="ID002" unitName="hertz />
+                <relaxationDelay value="0.01" unitCvRef="ID002" unitName="second" unitAccession="UO:0000010"/>
+                
+                <!-- TODO -->
+                <pulseSequence >
+                </pulseSequence>
+                
+                <DirectDimensionParameterSet decoupled="true" acquisitionParamsFileRef="ID" numberOfDataPoints="57804" acquisitionNucleus="H1">
+                    <gammaB1PulseFieldStrength/>
+                    <!-- spectral width = sweep width in ppm or Hz -->
+                    <sweepWidth  value="7225.43352601" unitCvRef="ID002" unitAccession="UO:0000106" unitName="hertz"/>                  
+                    <irradiationFrequency  value="599.7286502" unitName="hertz" unitCvRef="ID002" unitAccession="UO:0000106" />
+                    <timeDomain totalBytes="50">
+                        <binary>ZGVmYXVsdA==</binary>
+                    </timeDomain>              
+                </DirectDimensionParameterSet>
+            </acquisitionParameterSet>
+            <fid totalBytes="50">
+                <binary>ZGVmYXVsdA==</binary>
+            </fid>
+        </acquisition1D>
+    </acquisition>
+</nmrML>
