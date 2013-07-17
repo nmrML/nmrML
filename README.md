@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.github.com/nmrML/nmrML/master/docs/logo/images/horizontal-logo-500.png" alt="alt tag" >
+<img src="https://raw.github.com/nmrML/nmrML/master/docs/logo/images/horizontal-logo-500.png" alt="nmrML logo" >
 </p>
 
 [nmrML](http://nmrml.org/) is an open mark-up language for NMR data. It is currently under heavy development and is not yet ready for public use.
