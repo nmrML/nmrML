@@ -62,7 +62,16 @@ org\nmrml\schema\package-info.java
 Launch test program
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<nmrMLType xmlns="http://nmrml.org/schema" version="0.9" accession="S1">
+<nmrML xmlns="http://nmrml.org/schema" version="1.0" accession="S1">
+    <cvList count="2">
+        <cv id="NMR" fullName="Nuclear Magnetic Resonance CV" version="0.1.0" URI="http://msi-ontology.sourceforge.net/ontology/NMR.owl"/>
+        <cv id="OBI" fullName="Ontology for Biomedical Investigations" version="2012.07.01" URI="http://purl.obolibrary.org/obo/obi"/>
+    </cvList>
+    <fileDescription>
+        <fileContent>
+            <cvParam cvRef="NMR" accession="#NMR_400128" name="NMR Sample" value=""/>
+        </fileContent>
+    </fileDescription>
     <acquisition>
         <acquisition1D>
             <acquisitionParameterSet>
@@ -70,6 +79,7 @@ Launch test program
             </acquisitionParameterSet>
         </acquisition1D>
     </acquisition>
-</nmrMLType>
+</nmrML>
+
 OK
 

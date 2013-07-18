@@ -16,17 +16,6 @@ PKG=org/nmrml/schema
 #1/ Generate Class object
 $XJC -extension -xmlschema -no-header  $XSD
 
-# --  XJC BUGS ?? ---
-# In the root object nmrMLType insert the line:
-# import javax.xml.bind.annotation.XmlRootElement;
-#
-# And just before the Public class NmrMLType declaration, put the line:
-# @XmlRootElement
-
-sed -i -e "s/import javax.xml.bind.annotation.XmlType;/import javax.xml.bind.annotation.XmlType;\nimport javax.xml.bind.annotation.XmlRootElement;/" \
-       -e "s/public class NmrMLType/@XmlRootElement\npublic class NmrMLType/" $MYDIR/$PKG/NmrMLType.java
-
-
 # 2/ Compile Class object
 $JAVAC ./$PKG/*.java
 
