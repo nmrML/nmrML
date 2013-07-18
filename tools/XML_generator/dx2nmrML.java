@@ -33,20 +33,20 @@ public class dx2nmrML {
             nmrMLtype.setVersion("1.0");
             nmrMLtype.setAccession("S1");
 
-       /* CV List */
+       /* CV List : used as references for all CV in the document */
             CVListType cvList = (CVListType) objFactory.createCVListType();
-            CVType cv1 = (CVType) objFactory.createCVType();
-            cv1.setId("NMR");
-            cv1.setFullName("Nuclear Magnetic Resonance CV");
-            cv1.setVersion("0.1.0");
-            cv1.setURI("http://msi-ontology.sourceforge.net/ontology/NMR.owl");
-            cvList.getCv().add(cv1);
-            CVType cv2 = (CVType) objFactory.createCVType();
-            cv2.setId("OBI");
-            cv2.setFullName("Ontology for Biomedical Investigations");
-            cv2.setVersion("2012.07.01");
-            cv2.setURI("http://purl.obolibrary.org/obo/obi");
-            cvList.getCv().add(cv2);
+            CVType cvNMR = (CVType) objFactory.createCVType();
+            cvNMR.setId("NMR");
+            cvNMR.setFullName("Nuclear Magnetic Resonance CV");
+            cvNMR.setVersion("0.1.0");
+            cvNMR.setURI("http://msi-ontology.sourceforge.net/ontology/NMR.owl");
+            cvList.getCv().add(cvNMR);
+            CVType cvOBI = (CVType) objFactory.createCVType();
+            cvOBI.setId("OBI");
+            cvOBI.setFullName("Ontology for Biomedical Investigations");
+            cvOBI.setVersion("2012.07.01");
+            cvOBI.setURI("http://purl.obolibrary.org/obo/obi");
+            cvList.getCv().add(cvOBI);
             cvList.setCount(new BigInteger("2"));
             nmrMLtype.setCvList(cvList);
 
@@ -56,7 +56,7 @@ public class dx2nmrML {
             ParamGroupType paramgrp = (ParamGroupType) objFactory.createParamGroupType();
             CVParamType cvp1 = (CVParamType) objFactory.createCVParamType();
             String cvref="NMR";
-            cvp1.setCvRef(cv1);
+            cvp1.setCvRef(cvNMR);
             cvp1.setAccession("#NMR_400128");
             cvp1.setName("NMR Sample");
             cvp1.setValue("");
