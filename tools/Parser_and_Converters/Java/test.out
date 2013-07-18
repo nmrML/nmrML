@@ -63,9 +63,10 @@ Launch test program
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <nmrML xmlns="http://nmrml.org/schema" version="1.0" accession="S1">
-    <cvList count="2">
+    <cvList count="3">
         <cv id="NMR" fullName="Nuclear Magnetic Resonance CV" version="0.1.0" URI="http://msi-ontology.sourceforge.net/ontology/NMR.owl"/>
         <cv id="OBI" fullName="Ontology for Biomedical Investigations" version="2012.07.01" URI="http://purl.obolibrary.org/obo/obi"/>
+        <cv id="UO" fullName="Unit Ontology" version="3.2.0" URI="http://purl.obolibrary.org/obo/"/>
     </cvList>
     <fileDescription>
         <fileContent>
@@ -74,8 +75,12 @@ Launch test program
     </fileDescription>
     <acquisition>
         <acquisition1D>
-            <acquisitionParameterSet>
-                <DirectDimensionParameterSet decoupled="false" numberOfDataPoints="32768" acquisitionNucleus="1H"/>
+            <acquisitionParameterSet numberOfScans="64">
+                <DirectDimensionParameterSet decoupled="false" numberOfDataPoints="32768" acquisitionNucleus="1H">
+                    <gammaB1PulseFieldStrength value="500160000.0" unitAccession="UO_0000169" unitName="Hertz" unitCvRef="UO"/>
+                    <sweepWidth value="12.01532577" unitAccession="UO_0000169" unitName="parts per million" unitCvRef="UO"/>
+                    <irradiationFrequency value="500162500.8" unitAccession="UO_0000106" unitName="Hertz" unitCvRef="UO"/>
+                </DirectDimensionParameterSet>
             </acquisitionParameterSet>
         </acquisition1D>
     </acquisition>
