@@ -40,7 +40,7 @@ public class dx2nmrML {
             NmrMLType nmrMLtype = (NmrMLType) objFactory.createNmrMLType();
  
             nmrMLtype.setVersion("1.0");
-            nmrMLtype.setAccession("S1");
+            nmrMLtype.setAccessionUrl("http://nmrml.org/schema/nmrML.xsd");
 
        /* CV List : used as references for all CV in the document */
             CVListType cvList = (CVListType) objFactory.createCVListType();
@@ -178,13 +178,13 @@ public class dx2nmrML {
             CVTermType cvSolvent = (CVTermType) objFactory.createCVTermType();
             cvSolvent.setCvRef(cvCHEBI);
             cvSolvent.setAccession("CHEBI_41981");
-            cvSolvent.setAccession("D2O");
+            cvSolvent.setName("D2O");
             sample.setSolventType(cvSolvent);
             CVTermType cvBuffer = (CVTermType) objFactory.createCVTermType();
             cvBuffer.setCvRef(cvCHEBI);
             cvBuffer.setAccession("CHEBI_60004");
-            cvBuffer.setAccession("Mixture");
-            sample.setSolventType(cvBuffer);
+            cvBuffer.setName("Mixture");
+            sample.setBuffer(cvBuffer);
             sample.setPostBufferpH(new Double(6.0));
             samplelist.getSample().add(sample);
             samplelist.setCount(getBigInteger(1));
