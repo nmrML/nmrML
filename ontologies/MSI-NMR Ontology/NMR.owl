@@ -75,7 +75,6 @@ The nmr ontology is developed by the ontology working group (http://msi-ontology
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400001">
         <rdfs:label rdf:datatype="&xsd;string">optional_part_of_NMR_instrument</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_47"/>
         <owl:versionInfo rdf:datatype="&xsd;string">TODO: Discuss &quot;obligatory_part_of&quot;.</owl:versionInfo>
         <rdfs:comment rdf:datatype="&xsd;string">def: Part of an NMR instrument which is not cardinally important and hence optional / facultative for the proper intended function of the instrument.
 synonym: optional part of NMR instrument
@@ -88,7 +87,6 @@ clsdel: ontologically there is no such universal which characteristic is a possi
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400002">
         <rdfs:label rdf:datatype="&xsd;string">autosampler</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_47"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: An optional  part of an NMR instrument used to hold samples prior to NMR analysis and that sequentially loads these samples into the analytical part of the NMR instrument. 
 altdef: The autosampler is an automatic sample changer.</rdfs:comment>
     </owl:Class>
@@ -188,7 +186,6 @@ defprov: Daniel Schober</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400011">
         <rdfs:label rdf:datatype="&xsd;string">cardinal_part_of_NMR_instrument</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_47"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A part of an NMR instrument which is cardinally important and hence obligatory and compulsatory for the proper intended function of the instrument.
 synonym: cardinal part of NMR instrument</rdfs:comment>
     </owl:Class>
@@ -231,7 +228,6 @@ altdef: The instrument that transmits and recieves radiofrequency to and from th
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400017">
         <rdfs:label rdf:datatype="&xsd;string">number_of_data_points</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <owl:versionInfo rdf:datatype="&xsd;string">TODO: Def not aristotelian.</owl:versionInfo>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: The number of data points in a data set.</rdfs:comment>
     </owl:Class>
@@ -242,7 +238,6 @@ altdef: The instrument that transmits and recieves radiofrequency to and from th
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400018">
         <rdfs:label rdf:datatype="&xsd;string">concentration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The ratio of the mass or volume of a solute to the mass or volume of the solution or solvent.</rdfs:comment>
     </owl:Class>
     
@@ -252,7 +247,6 @@ altdef: The instrument that transmits and recieves radiofrequency to and from th
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400019">
         <rdfs:label rdf:datatype="&xsd;string">hadamard_frequency</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A frequency used during Hadamard encoding.</rdfs:comment>
     </owl:Class>
     
@@ -262,7 +256,6 @@ altdef: The instrument that transmits and recieves radiofrequency to and from th
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400020">
         <rdfs:label rdf:datatype="&xsd;string">projection_axis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The axis onto which the spectrum was projected.</rdfs:comment>
     </owl:Class>
     
@@ -272,7 +265,6 @@ altdef: The instrument that transmits and recieves radiofrequency to and from th
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400021">
         <rdfs:label rdf:datatype="&xsd;string">calibration_reference_shift</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The parts-per-million value of the peak used to reference a spectrum.</rdfs:comment>
     </owl:Class>
     
@@ -282,7 +274,6 @@ altdef: The instrument that transmits and recieves radiofrequency to and from th
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400022">
         <rdfs:label rdf:datatype="&xsd;string">ninety_degree_pulse_duration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The duration of the excitation pulse needed to rotate the magnetisation vector by 90 degrees.
 synonym: 90 degree pulse duration</rdfs:comment>
     </owl:Class>
@@ -293,7 +284,6 @@ synonym: 90 degree pulse duration</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400023">
         <rdfs:label rdf:datatype="&xsd;string">dwell_time</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A digital sampling interval.
 alsprcls: time_interval</rdfs:comment>
     </owl:Class>
@@ -324,7 +314,6 @@ alsprcls: time_interval</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400026">
         <rdfs:label rdf:datatype="&xsd;string">irradiation_frequency</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The frequency of the RF radiation used to irradiate an NMR sample.</rdfs:comment>
     </owl:Class>
     
@@ -334,7 +323,6 @@ alsprcls: time_interval</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400027">
         <rdfs:label rdf:datatype="&xsd;string">field_strength</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The intensity of an electric, magnetic, or other field.</rdfs:comment>
     </owl:Class>
     
@@ -344,7 +332,6 @@ alsprcls: time_interval</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400028">
         <rdfs:label rdf:datatype="&xsd;string">spinning_rate</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The rate at which an item of analysis material is spun.</rdfs:comment>
     </owl:Class>
     
@@ -354,19 +341,7 @@ alsprcls: time_interval</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400029">
         <rdfs:label rdf:datatype="&xsd;string">decoupled_nucleus</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: An indication of whether the nucleus being studied is the acquitsition nucleus.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400030 -->
-
-    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400030">
-        <rdfs:label rdf:datatype="&xsd;string">chemical_compound</rdfs:label>
-        <owl:versionInfo rdf:datatype="&xsd;string">TODO: May be imported from other Ontology.</owl:versionInfo>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A chemical compound is a small object which reacts chemically and is usually a molecule or composed out of molecules.
-defprov: Daniel Schober</rdfs:comment>
     </owl:Class>
     
 
@@ -421,7 +396,6 @@ synonym: NMR solvent</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400036">
         <rdfs:label rdf:datatype="&xsd;string">complex_datatype</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_43"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A complex datatype (or complex value) is a datatype that is not a primitive one (like string or integer) and that references to more primitive values. Often, these are called reference data types. Complex datatypes can belong to the object data type. Data types that define sets of complex values include Array, Date, Error, Function, and XML and others.</rdfs:comment>
     </owl:Class>
     
@@ -643,7 +617,6 @@ synonym: S-TPPI</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400059">
         <rdfs:label rdf:datatype="&xsd;string">NMR_instrument</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_47"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: An Instrument which is used to carry out a NMR analysis of some sample.
 synonym: NMR instrument</rdfs:comment>
     </owl:Class>
@@ -666,7 +639,6 @@ synonym: NMR instrument acquisition parameter set</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400062">
         <rdfs:label rdf:datatype="&xsd;string">instrument_configuration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: An instrument configuration is the description for the setting of an instrument or a machine in order to archive a certain intended goal or task.
 altdef: An instrument configuration is the process of setting the possible parameters of an instrument in order to archive a certain intended goal.</rdfs:comment>
     </owl:Class>
@@ -859,7 +831,6 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400085">
         <rdfs:label rdf:datatype="&xsd;string">tilt</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -869,7 +840,6 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400086">
         <rdfs:label rdf:datatype="&xsd;string">quality_check_peak_feature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A feature of a peak that is measured to assess the quality of a data set.</rdfs:comment>
     </owl:Class>
     
@@ -879,7 +849,6 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400087">
         <rdfs:label rdf:datatype="&xsd;string">number_of_scans</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The number of repeat scans performed and summed to create the data set for an NMR sample.</rdfs:comment>
     </owl:Class>
     
@@ -889,7 +858,6 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400088">
         <rdfs:label rdf:datatype="&xsd;string">number_of_steady_state_scans</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The number of scans whose data is not summed to create the data set for an NMR sample, but that are carried out to establish the steady-state of relaxation for the nuclei.</rdfs:comment>
     </owl:Class>
     
@@ -899,7 +867,6 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400089">
         <rdfs:label rdf:datatype="&xsd;string">atom_environment_encoding</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A scheme for producing a numerical representation of the environment of an atom.</rdfs:comment>
     </owl:Class>
     
@@ -909,7 +876,6 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400090">
         <rdfs:label rdf:datatype="&xsd;string">relaxation_delay</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The delay between repeat scans to allow nuclei to relax back to their steady state.</rdfs:comment>
     </owl:Class>
     
@@ -919,7 +885,6 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400091">
         <rdfs:label rdf:datatype="&xsd;string">x-axis_unit</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The units of measure for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum. 
 altdef: The units used to represent either time domain (for a FID) or the frequency domain (for a spectrum).</rdfs:comment>
     </owl:Class>
@@ -930,7 +895,6 @@ altdef: The units used to represent either time domain (for a FID) or the freque
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400092">
         <rdfs:label rdf:datatype="&xsd;string">y-axis_unit</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -940,7 +904,6 @@ altdef: The units used to represent either time domain (for a FID) or the freque
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400093">
         <rdfs:label rdf:datatype="&xsd;string">additional_axis_unit</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The unit of measurement of the second dimension of a 2D NMR dataset.</rdfs:comment>
     </owl:Class>
     
@@ -950,7 +913,6 @@ altdef: The units used to represent either time domain (for a FID) or the freque
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400094">
         <rdfs:label rdf:datatype="&xsd;string">x_start_value</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The starting value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.
 altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:comment>
     </owl:Class>
@@ -961,7 +923,6 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400095">
         <rdfs:label rdf:datatype="&xsd;string">x_end_value</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: The end value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.</rdfs:comment>
     </owl:Class>
     
@@ -971,7 +932,6 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400096">
         <rdfs:label rdf:datatype="&xsd;string">window_function_parameter</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A parameter to a window function.</rdfs:comment>
     </owl:Class>
     
@@ -1024,7 +984,6 @@ synonym: ssb</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400101">
         <rdfs:label rdf:datatype="&xsd;string">parameter_set</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_11"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -1185,7 +1144,6 @@ synonym: NMR quality check</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400117">
         <rdfs:label rdf:datatype="&xsd;string">reference</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A reference is a label which refers to data elsewhere, as opposed to containing the data itself. Accessing the value that a reference refers to is called dereferencing it. References are fundamental in constructing many data structures and in exchanging information between different parts of programs and databases.</rdfs:comment>
     </owl:Class>
     
@@ -1274,21 +1232,10 @@ synonym: NMR quality check result</rdfs:comment>
     
 
 
-    <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400127 -->
-
-    <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400127">
-        <rdfs:label rdf:datatype="&xsd;string">sample</rdfs:label>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A sample is a role that is played by an object of interest in an investigation used to obtain generalizable information about the sample source.
-defprov: Daniel Schober</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400128 -->
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400128">
         <rdfs:label rdf:datatype="&xsd;string">NMR_sample</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400127"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A sample that has been prepared for chemical analysis by NMR. NMR samples are usually liquid solutions contained in glass tubes. NMR solution sample volume ranges from 50ul to 5ml depending on the NMR probe. Sample concentrations of solute for 1H NMR are usually in the range of 100ug to 5g, with 10 to 50mg being typical. NMR is not a chemical trace analysis technique. The NMR signal of solids and gases can be recorded but to measure solid-state NMR additional specialized hardware is required.
 synonym: NMR sample</rdfs:comment>
     </owl:Class>
@@ -1299,7 +1246,6 @@ synonym: NMR sample</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400129">
         <rdfs:label rdf:datatype="&xsd;string">sample_introduction_parameter</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A sample introduction parameter is a parameter that describes the particular method of introducing the sample under investigation into the nmr instrument.</rdfs:comment>
     </owl:Class>
     
@@ -1340,7 +1286,6 @@ synonym: MAS_rotor</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400134">
         <rdfs:label rdf:datatype="&xsd;string">data_pre-processing_software</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_10"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A software artifact used during data pre-processing.</rdfs:comment>
     </owl:Class>
     
@@ -1350,7 +1295,6 @@ synonym: MAS_rotor</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400135">
         <rdfs:label rdf:datatype="&xsd;string">spectrum_post-processing_software</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_10"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A software artifact used during spectral post-processing.</rdfs:comment>
     </owl:Class>
     
@@ -1391,7 +1335,6 @@ altdef: A type of automated integration which occurs across pre-defined regions 
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400139">
         <rdfs:label rdf:datatype="&xsd;string">water_suppression_parameter</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_20"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -1980,7 +1923,6 @@ synonym: flow_HR-probe</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400202">
         <rdfs:label rdf:datatype="&xsd;string">NMR_plattform</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_50"/>
         <owl:versionInfo rdf:datatype="&xsd;string">TODO: What is the differrence to NMR instrument?</owl:versionInfo>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
@@ -2002,7 +1944,6 @@ defprov: Bruker website</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400204">
         <rdfs:label rdf:datatype="&xsd;string">NMR_tube_washing_system</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_47"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -2035,7 +1976,6 @@ synonym: Bruker Efficient Sample Transfer NMR</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400207">
         <rdfs:label rdf:datatype="&xsd;string">SampleRail</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_47"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: This system automatically prepares an NMR sample, inserts it into an NMR magnet, performs NMR experiments on the sample, and transports it back to the preparation system.
 The SampleRail fulfills the transporting tasks from the preparation system into the NMR magnet and back
 defprov: website</rdfs:comment>
@@ -2103,7 +2043,6 @@ synonym: Bruker Multiple Adjustable Tube Clamp Holder</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400213">
         <rdfs:label rdf:datatype="&xsd;string">NMR_software</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_10"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -2467,7 +2406,6 @@ defprov: website</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400254">
         <rdfs:label rdf:datatype="&xsd;string">vendor</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <owl:versionInfo rdf:datatype="&xsd;string">TODO: Belongs in Ref Ontol.</owl:versionInfo>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
@@ -2535,7 +2473,6 @@ defprov: website</rdfs:comment>
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400262">
         <rdfs:label rdf:datatype="&xsd;string">sample_temperature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_3"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: In some cases, it is necessary or advisable to control the temperature of the sample at some value other than ambient. The sample may be only slightly solubility at room temperatures, or it may be desirable to control some aspect of the dynamics of the system. In such cases, a default temperature, or some means of selecting this parameter, can be built into the experiment.</rdfs:comment>
     </owl:Class>
     
@@ -2689,7 +2626,6 @@ Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdf
 
     <owl:Class rdf:about="http://msi-ontology.sourceforge.net/ontology/NMR.owl#NMR_400285">
         <rdfs:label rdf:datatype="&xsd;string">NMR_data_format</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obi;OBI_187"/>
     </owl:Class>
     
 
@@ -3016,54 +2952,6 @@ Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdf
         <rdfs:label rdf:datatype="&xsd;string">acdlabs</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://msi-ontology.sourceforge.net/ontology/NMR.owl#MSI_400255"/>
     </owl:Class>
-    
-
-
-    <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_10 -->
-
-    <owl:Class rdf:about="&obi;OBI_10"/>
-    
-
-
-    <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_11 -->
-
-    <owl:Class rdf:about="&obi;OBI_11"/>
-    
-
-
-    <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_187 -->
-
-    <owl:Class rdf:about="&obi;OBI_187"/>
-    
-
-
-    <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_20 -->
-
-    <owl:Class rdf:about="&obi;OBI_20"/>
-    
-
-
-    <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_3 -->
-
-    <owl:Class rdf:about="&obi;OBI_3"/>
-    
-
-
-    <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_43 -->
-
-    <owl:Class rdf:about="&obi;OBI_43"/>
-    
-
-
-    <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_47 -->
-
-    <owl:Class rdf:about="&obi;OBI_47"/>
-    
-
-
-    <!-- http://obi.sourceforge.net/ontology/OBI.owl#OBI_50 -->
-
-    <owl:Class rdf:about="&obi;OBI_50"/>
 </rdf:RDF>
 
 

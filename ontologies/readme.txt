@@ -10,7 +10,9 @@ v.6 This version as v.5, but importing BiotopLight2.0 instead of BFO 2.0 as top 
 
 v.7 This version is a complete new start (as v.6 ended up being too complex and error prone). For this version I removed the unit import from the Wishard nmr.obo, converted it into owl and imported biotop light 2 and the msi-nmr.owl. To make editing easier, I will merge the owl files physically rather than importing the msi-nmr.owl. The tol level classes from OBI and BFO will then vanish as well.
 v.8 This version as v.7, but namespace set to NMR, added _purgatory helperclass and started rebinning under biotopLight 2. 
-v.9 This version as v8, but Wishard CV binned under biotopLight2 (btl2). Added RA metadata.
+v.9 This version as v.8, but Wishard CV binned under biotopLight2 (btl2). Added RA metadata.
+v1.0 As v.9, but removed OBI temporary and outdated IDs and Refs.Taxonomic re-binning of classes that part_of /is_a 'Metabolomics Standards Initiative NMR Spectrometry Vocabularies' under appropriate Biotop classes. Integration of required xsd leaf nodes into CV (see below). Removed Wishard Top Level nodes of doubtful justification, i.e. 'Metabolomics Standards Initiative NMR Spectrometry Vocabularies' and 'spectrum generation information' and 'spectrum interpretation'. 
+
 
 To view and edit this owl CV you have to download and install Protege 4.2 or later on your Computer. As the BFO import goes over a weblink, you need to make sure your Computer is connected to the Internet when opening the owl file.
 
@@ -72,12 +74,16 @@ Next Step:
 Add CVterms als required in the XSD leafs when CVTermType, CVParamType, CVParamWithUnitType... occures. For, e.g. name="buffer" type="CVTermType", we have to create a term "buffer" in the CV, so it can be further populated according to our use cases?
 For e.g. SolventType, decide if we want to have naming coherence of the XSD leafs to the CV entry Class labels ? E.g. Should we put the term "SolventType" or the term "solvent" intop the CV? I suggest the latter is more correct.
 
+Word separator (_ vs spc) alignment
+ID scheme alignmemnt
+Amalgamating nmr and msi namespaces into one NS without imports.
+
 List of terms required by current XSD:
 
 CVTermType occurrences:
-buffer
-solvent
-concentration standard type
+buffer-->buffer
+solvent-->solvent/NMR_Slovent
+concentration standard type-->
 concentration standard name	we here see a use-mention problem arising for the CV. The xsd should probably change here to avoid this.
 encoding method (Quadrature detection method)	is this the same as for encoding scheme ?
 sample container
@@ -110,7 +116,7 @@ instrument configuration type
 processing method type
 
 UserParamType:
-
+...
 
 
 
