@@ -27,6 +27,7 @@ public class dx2nmrML {
     public static String getNewIdentifier ( ) {
        return String.format("ID%05d",++ID_count);
     }
+
     public static BigInteger getBigInteger (Integer entier) {
        return new BigInteger(entier.toString());
     }
@@ -44,31 +45,35 @@ public class dx2nmrML {
 
        /* CV List : used as references for all CV in the document */
             CVListType cvList = (CVListType) objFactory.createCVListType();
+            /* NMR */
             CVType cvNMR = (CVType) objFactory.createCVType();
             cvNMR.setId("NMR");
             cvNMR.setFullName("Nuclear Magnetic Resonance CV");
             cvNMR.setVersion("0.1.0");
             cvNMR.setURI("http://msi-ontology.sourceforge.net/ontology/NMR.owl");
             cvList.getCv().add(cvNMR);
+            /* OBI */
             CVType cvOBI = (CVType) objFactory.createCVType();
             cvOBI.setId("OBI");
             cvOBI.setFullName("Ontology for Biomedical Investigations");
             cvOBI.setVersion("2012.07.01");
             cvOBI.setURI("http://purl.obolibrary.org/obo/obi");
             cvList.getCv().add(cvOBI);
+            /* UO */
             CVType cvUO = (CVType) objFactory.createCVType();
             cvUO.setId("UO");
             cvUO.setFullName("Unit Ontology");
             cvUO.setVersion("3.2.0");
             cvUO.setURI("http://purl.obolibrary.org/obo/");
             cvList.getCv().add(cvUO);
+            /* CHEBI */
             CVType cvCHEBI = (CVType) objFactory.createCVType();
             cvCHEBI.setId("CHEBI");
             cvCHEBI.setFullName("Chemical Entities of Biological Interest Ontology");
             cvCHEBI.setVersion("105");
             cvCHEBI.setURI("http://purl.obolibrary.org/obo/");
             cvList.getCv().add(cvCHEBI);
-            cvList.setCount(getBigInteger(3));
+            cvList.setCount(getBigInteger(4));
             nmrMLtype.setCvList(cvList);
 
 
@@ -98,20 +103,50 @@ public class dx2nmrML {
             contact1.setOrganization("INRA");
             contactlist.getContact().add(contact1);
             nmrMLtype.setContactList(contactlist);
+            
+       /* Contact Ref List */
+            ContactRefListType contactRefList = (ContactRefListType) objFactory.createContactRefListType();
+            ContactRefType contactRef = (ContactRefType) objFactory.createContactRefType();
+            contactRef.setRef(contact1);
+            contactRefList.getContactRef().add(contactRef);
 
        /* SourceFile List */
             SourceFileListType srcfilelist = (SourceFileListType) objFactory.createSourceFileListType();
+            /* Pulse sequence file */
             SourceFileType pulsefile = (SourceFileType) objFactory.createSourceFileType();
             pulsefile.setId(getNewIdentifier());
             pulsefile.setName("zg.eretic.1H.2");
             CVParamType cvpf = (CVParamType) objFactory.createCVParamType();
             cvpf.setCvRef(cvNMR);
-            cvpf.setAccession("#MSI_400169");
+            cvpf.setAccession("NMR_400169");
             cvpf.setName("one_dimensional_pulse_sequence");
             cvpf.setValue("");
             pulsefile.getCvParam().add(cvpf);
             srcfilelist.getSourceFile().add(pulsefile);
-            srcfilelist.setCount(getBigInteger(1));
+            /* Acquisition parameter file */
+            SourceFileType acqfile = (SourceFileType) objFactory.createSourceFileType();
+            acqfile.setId(getNewIdentifier());
+            acqfile.setName("acqus");
+            CVParamType cvacqf = (CVParamType) objFactory.createCVParamType();
+            cvacqf.setCvRef(cvNMR);
+            cvacqf.setAccession("NMR_400118");
+            cvacqf.setName("acquisition parameter set file reference");
+            cvacqf.setValue("");
+            acqfile.getCvParam().add(cvacqf);
+            srcfilelist.getSourceFile().add(acqfile);
+            /* Processing parameter file */
+            SourceFileType procfile = (SourceFileType) objFactory.createSourceFileType();
+            procfile.setId(getNewIdentifier());
+            procfile.setName("procs");
+            CVParamType cvprocf = (CVParamType) objFactory.createCVParamType();
+            cvprocf.setCvRef(cvNMR);
+            cvprocf.setAccession("NMR_400123");
+            cvprocf.setName("processing parameter set file reference");
+            cvprocf.setValue("");
+            procfile.getCvParam().add(cvprocf);
+            srcfilelist.getSourceFile().add(procfile);
+
+            srcfilelist.setCount(getBigInteger(3));
             nmrMLtype.setSourceFileList(srcfilelist);
 
        /* Software List */
@@ -129,15 +164,19 @@ public class dx2nmrML {
             softwareList.setCount(getBigInteger(1));
             nmrMLtype.setSoftwareList(softwareList);
 
-       /* InstrumentConfiguration List */
+       /* Software Ref List */
+            SoftwareRefListType softwareRefList = (SoftwareRefListType) objFactory.createSoftwareRefListType();
             SoftwareRefType softref1 = (SoftwareRefType) objFactory.createSoftwareRefType();
             softref1.setRef(software1);
+            softwareRefList.getSoftwareRef().add(softref1);
+
+       /* InstrumentConfiguration List */
             InstrumentConfigurationListType instrumentConfList = 
                       (InstrumentConfigurationListType) objFactory.createInstrumentConfigurationListType();
             InstrumentConfigurationType instrumentConf = 
                       (InstrumentConfigurationType) objFactory.createInstrumentConfigurationType();
             instrumentConf.setSoftwareRef(softref1);
-            instrumentConf.setId("PMB001");
+            instrumentConf.setId(getNewIdentifier());
             instrumentConfList.getInstrumentConfiguration().add(instrumentConf);
             instrumentConfList.setCount(getBigInteger(1));
 /* componentListType needed to be implemented to have the corresponding nmrML fragment that looks like to:
@@ -161,12 +200,12 @@ public class dx2nmrML {
             procmethod.setSoftwareRef(software1);
             CVParamType cvproc1 = (CVParamType) objFactory.createCVParamType();
             cvproc1.setCvRef(cvNMR);
-            cvproc1.setAccession("#MSI_400043");
+            cvproc1.setAccession("#NMR_400043");
             cvproc1.setName("data_transformation");
             cvproc1.setValue("");
             procmethod.getCvParam().add(cvproc1);
             dataproc.getProcessingMethod().add(procmethod);
-            dataproc.setId("Proc_PMB001");
+            dataproc.setId(getNewIdentifier());
             dataproclist.getDataProcessing().add(dataproc);
             dataproclist.setCount(getBigInteger(1));
             nmrMLtype.setDataProcessingList(dataproclist);
@@ -175,11 +214,13 @@ public class dx2nmrML {
             SampleListType samplelist = (SampleListType) objFactory.createSampleListType();
             SampleType sample = (SampleType) objFactory.createSampleType();
             sample.setOriginalBiologicalSampleReference("http://www.cbib.u-bordeaux2.fr/MERYB/res/spectra/367");
+            /* Solvent */
             CVTermType cvSolvent = (CVTermType) objFactory.createCVTermType();
             cvSolvent.setCvRef(cvCHEBI);
             cvSolvent.setAccession("CHEBI_41981");
             cvSolvent.setName("D2O");
             sample.setSolventType(cvSolvent);
+            /* Buffer */
             CVTermType cvBuffer = (CVTermType) objFactory.createCVTermType();
             cvBuffer.setCvRef(cvCHEBI);
             cvBuffer.setAccession("CHEBI_60004");
@@ -194,8 +235,81 @@ public class dx2nmrML {
             /* TODO */
 
        /* Spectrum List */
-            /* TODO */
+            SpectrumListType spectrumList = (SpectrumListType) objFactory.createSpectrumListType();
+            Spectrum1DType spectrum1D = (Spectrum1DType) objFactory.createSpectrum1DType();
+            /* Spectrum1D - FirstDimensionProcessingParameterSet */
+            FirstDimensionProcessingParameterSetType ProcParam1D = 
+                      (FirstDimensionProcessingParameterSetType) objFactory.createFirstDimensionProcessingParameterSetType();
 
+            /* Spectrum1D - WindowFunction */
+            FirstDimensionProcessingParameterSetType.WindowFunction windowFunction = 
+                      (FirstDimensionProcessingParameterSetType.WindowFunction) objFactory.createFirstDimensionProcessingParameterSetTypeWindowFunction();
+            CVTermType cvWinFunc = (CVTermType) objFactory.createCVTermType();
+            cvWinFunc.setCvRef(cvNMR);
+            cvWinFunc.setAccession("#NMR_400097");
+            cvWinFunc.setName("Line Broadening");
+            windowFunction.setWindowFunctionMethod(cvWinFunc);
+            CVParamType cvWinParam = (CVParamType) objFactory.createCVParamType();
+            cvWinParam.setCvRef(cvNMR);
+            cvWinParam.setAccession("#NMR_400097");
+            cvWinParam.setName("Line Broadening");
+            cvWinParam.setValue("0.3");
+            windowFunction.getWindowFunctionParameter().add(cvWinParam);
+            ProcParam1D.getWindowFunction().add(windowFunction);
+
+            /* Spectrum1D - Phasing */
+            ValueWithUnitType  zeroOrderPhaseCorrection = (ValueWithUnitType) objFactory.createValueWithUnitType();
+            zeroOrderPhaseCorrection.setValue("-27.58516");
+            zeroOrderPhaseCorrection.setUnitCvRef(cvUO);
+            zeroOrderPhaseCorrection.setUnitAccession("UO_0000185");
+            zeroOrderPhaseCorrection.setUnitName("degree");
+            ProcParam1D.setZeroOrderPhaseCorrection(zeroOrderPhaseCorrection);
+            ValueWithUnitType  firstOrderPhaseCorrection = (ValueWithUnitType) objFactory.createValueWithUnitType();
+            firstOrderPhaseCorrection.setValue("-6.6");
+            firstOrderPhaseCorrection.setUnitCvRef(cvUO);
+            firstOrderPhaseCorrection.setUnitAccession("UO_0000185");
+            firstOrderPhaseCorrection.setUnitName("degree");
+            ProcParam1D.setFirstOrderPhaseCorrection(firstOrderPhaseCorrection);
+
+            /* Spectrum1D - Source File Ref */
+            SourceFileRefType procFileRef = (SourceFileRefType) objFactory.createSourceFileRefType();
+            procFileRef.setRef(procfile);
+            ProcParam1D.setParameterFileRef(procFileRef);
+            spectrum1D.setFirstDimensionProcessingParameterSet(ProcParam1D);
+
+            /* SpectrumType - X Axis */
+            AxisWithUnitType Xaxis = (AxisWithUnitType) objFactory.createAxisWithUnitType();
+            Xaxis.setUnitCvRef(cvUO);
+            Xaxis.setStartValue("11.09281");
+            Xaxis.setEndValue("-0.92251577");
+            Xaxis.setUnitAccession("UO_0000169");
+            Xaxis.setUnitName("parts per million");
+            spectrum1D.setXAxis(Xaxis);
+
+            /* SpectrumType - Y Axis */
+            CVTermType cvYAxis = (CVTermType) objFactory.createCVTermType();
+            cvYAxis.setCvRef(cvUO);
+            cvYAxis.setAccession("UO_0000186");
+            cvYAxis.setName("dimensionless unit");
+            spectrum1D.setYAxisType(cvYAxis);
+
+            /* SpectrumType - Software, Contact Ref List */
+            spectrum1D.getProcessingSoftwareRefList().add(softwareRefList);
+            spectrum1D.setProcessingContactRefList(contactRefList);
+
+            /* SpectrumType - ProcessingParameterSet */
+            SpectrumType.ProcessingParameterSet procParamSet = (SpectrumType.ProcessingParameterSet) objFactory.createSpectrumTypeProcessingParameterSet();
+            CVTermType cvProcSet1 = (CVTermType) objFactory.createCVTermType();
+            cvProcSet1.setCvRef(cvNMR);
+            cvProcSet1.setAccession("#NMR_400044");
+            cvProcSet1.setName("Fourrier Transformation");
+            procParamSet.setDataTransformationMethod(cvProcSet1);
+            spectrum1D.setProcessingParameterSet(procParamSet);
+
+            spectrum1D.setNumberOfDataPoints(getBigInteger(32768));
+            spectrumList.getSpectrum1D().add(spectrum1D);
+            spectrumList.setCount(getBigInteger(1));
+            nmrMLtype.setSpectrumList(spectrumList);
 
        /* Acquition */
 
@@ -230,6 +344,7 @@ public class dx2nmrML {
             acqdimparam.setSweepWidth(SweepWidth);
             acqdimparam.setIrradiationFrequency(IrradiationFrequency);
             acqdimparam.setGammaB1PulseFieldStrength(gammaB1PulseFieldStrength);
+            acqdimparam.setAcquisitionParamsFileRef("ID00003");
             acqparam.setDirectDimensionParameterSet(acqdimparam);
 
            /* Acquisition1D */
