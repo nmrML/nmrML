@@ -1,0 +1,914 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Configurating Protege 4 for nmrCV editing</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"Überschrift 1 Zchn";
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	background:#5B9BD5;
+	border:none;
+	padding:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	color:white;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Überschrift 2 Zchn";
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	background:#DEEAF6;
+	border:none;
+	padding:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	font-weight:normal;}
+h3
+	{mso-style-link:"Überschrift 3 Zchn";
+	margin-top:15.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	border:none;
+	padding:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#1F4D78;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	font-weight:normal;}
+h4
+	{mso-style-link:"Überschrift 4 Zchn";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	border:none;
+	padding:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#2E74B5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-weight:normal;}
+h5
+	{mso-style-link:"Überschrift 5 Zchn";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	border:none;
+	padding:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#2E74B5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-weight:normal;}
+h6
+	{mso-style-link:"Überschrift 6 Zchn";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	border:none;
+	padding:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#2E74B5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-link:"Überschrift 7 Zchn";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#2E74B5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-link:"Überschrift 8 Zchn";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-link:"Überschrift 9 Zchn";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{mso-style-link:"Fußnotentext Zchn";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Kommentartext Zchn";
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Kopfzeile Zchn";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Fußzeile Zchn";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:8.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#2E74B5;
+	font-weight:bold;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Titel Zchn";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:26.0pt;
+	font-family:"Calibri Light","sans-serif";
+	color:#5B9BD5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-link:"Untertitel Zchn";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:25.0pt;
+	margin-left:0cm;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";
+	color:#595959;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+em
+	{color:#1F4D78;
+	text-transform:uppercase;
+	letter-spacing:.25pt;
+	font-style:normal;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Kommentarthema Zchn";
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Sprechblasentext Zchn";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI","sans-serif";}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoQuote, li.MsoQuote, div.MsoQuote
+	{mso-style-link:"Zitat Zchn";
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	font-style:italic;}
+p.MsoIntenseQuote, li.MsoIntenseQuote, div.MsoIntenseQuote
+	{mso-style-link:"Intensives Zitat Zchn";
+	margin-top:12.0pt;
+	margin-right:54.0pt;
+	margin-bottom:12.0pt;
+	margin-left:54.0pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#5B9BD5;}
+span.MsoSubtleEmphasis
+	{color:#1F4D78;
+	font-style:italic;}
+span.MsoIntenseEmphasis
+	{color:#1F4D78;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-weight:bold;}
+span.MsoSubtleReference
+	{color:#5B9BD5;
+	font-weight:bold;}
+span.MsoIntenseReference
+	{color:#5B9BD5;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-style:italic;}
+span.MsoBookTitle
+	{letter-spacing:0pt;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	background:#5B9BD5;
+	border:none;
+	padding:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	color:white;
+	text-transform:uppercase;
+	letter-spacing:.75pt;}
+span.berschrift3Zchn
+	{mso-style-name:"Überschrift 3 Zchn";
+	mso-style-link:"Überschrift 3";
+	color:#1F4D78;
+	text-transform:uppercase;
+	letter-spacing:.75pt;}
+span.mw-headline
+	{mso-style-name:mw-headline;}
+span.berschrift1Zchn
+	{mso-style-name:"Überschrift 1 Zchn";
+	mso-style-link:"Überschrift 1";
+	color:white;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	background:#5B9BD5;}
+span.berschrift2Zchn
+	{mso-style-name:"Überschrift 2 Zchn";
+	mso-style-link:"Überschrift 2";
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	background:#DEEAF6;}
+span.berschrift4Zchn
+	{mso-style-name:"Überschrift 4 Zchn";
+	mso-style-link:"Überschrift 4";
+	color:#2E74B5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.berschrift5Zchn
+	{mso-style-name:"Überschrift 5 Zchn";
+	mso-style-link:"Überschrift 5";
+	color:#2E74B5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.berschrift6Zchn
+	{mso-style-name:"Überschrift 6 Zchn";
+	mso-style-link:"Überschrift 6";
+	color:#2E74B5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.berschrift7Zchn
+	{mso-style-name:"Überschrift 7 Zchn";
+	mso-style-link:"Überschrift 7";
+	color:#2E74B5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.berschrift8Zchn
+	{mso-style-name:"Überschrift 8 Zchn";
+	mso-style-link:"Überschrift 8";
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.berschrift9Zchn
+	{mso-style-name:"Überschrift 9 Zchn";
+	mso-style-link:"Überschrift 9";
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-style:italic;}
+span.TitelZchn
+	{mso-style-name:"Titel Zchn";
+	mso-style-link:Titel;
+	font-family:"Calibri Light","sans-serif";
+	color:#5B9BD5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.UntertitelZchn
+	{mso-style-name:"Untertitel Zchn";
+	mso-style-link:Untertitel;
+	color:#595959;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.ZitatZchn
+	{mso-style-name:"Zitat Zchn";
+	mso-style-link:Zitat;
+	font-style:italic;}
+span.IntensivesZitatZchn
+	{mso-style-name:"Intensives Zitat Zchn";
+	mso-style-link:"Intensives Zitat";
+	color:#5B9BD5;}
+span.KopfzeileZchn
+	{mso-style-name:"Kopfzeile Zchn";
+	mso-style-link:Kopfzeile;}
+span.FuzeileZchn
+	{mso-style-name:"Fußzeile Zchn";
+	mso-style-link:Fußzeile;}
+span.KommentartextZchn
+	{mso-style-name:"Kommentartext Zchn";
+	mso-style-link:Kommentartext;}
+span.KommentarthemaZchn
+	{mso-style-name:"Kommentarthema Zchn";
+	mso-style-link:Kommentarthema;
+	font-weight:bold;}
+span.SprechblasentextZchn
+	{mso-style-name:"Sprechblasentext Zchn";
+	mso-style-link:Sprechblasentext;
+	font-family:"Segoe UI","sans-serif";}
+span.FunotentextZchn
+	{mso-style-name:"Fußnotentext Zchn";
+	mso-style-link:Fußnotentext;}
+.MsoChpDefault
+	{font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink="#954F72">
+
+<div class=WordSection1>
+
+<div style='border:solid #5B9BD5 3.0pt;padding:0cm 0cm 0cm 0cm;background:#5B9BD5'>
+
+<h1><a name="_Toc361216599"></a><a name="_Toc361047231">Setting up &amp;
+configurating Protege  4.x for COSMOS nmr-CV editing</a></h1>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216600">Scope of this Document</a></h2>
+
+</div>
+
+<p class=MsoNormal>This is a short tutorial that aims at providing COSMOS
+participants and external interested parties with the necessary basic set-up
+information in order to open and manipulate the controlled vocabularies (CVs)
+developed in support of the COSMOS nmrML exchange standard. As COSMOS agreed to
+develop the CV in OWL syntax, this guideline focuses on the set-up of the open
+source ontology editor Protégé 4.x (P4). As Protégé is quite a complex tool, we
+recommend people just wanting to have a quick glance at the CV (without need to
+manipulate it) to open its HTML serialization in a normal web browser. The HTML
+version of the CV can be found under nmrML\docs\CVDocumentation .</p>
+
+<p class=MsoNormal>The decision to represent the nmrML CV in OWL rather than
+OBO format was made for the following reasons:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>OWL is the W3C recommended standard.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>OWL allows easy extension of formal semantics up to full
+description logics (DL).</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Major Top level ontologies (BFO) and bio-upper level ontologies
+(Biotop) are available in OWL format.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>OWL is based on XML and RDF, hence we foresee an easy migration
+towards future Open Linked Data approaches.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>W3C supported Query languages like SPARQL and rule set-ups like
+SWRL exist that also integrate well with P4, e.g. are available as Protégé
+plugins.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The Protégé editor is pretty robust compared to OBO Edit. A lot
+of free plugins are available covering most needs: <a
+href="http://protegewiki.stanford.edu/wiki/Protege-OWL_4.0">http://protegewiki.stanford.edu/wiki/Protege-OWL_4.0</a>
+</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>A plethora of open source tools and libraries is available for
+OWL.</p>
+
+<p class=MsoNormal>This document will be amended <i>as-we-go</i> according to
+the development stage of the CV and the skill level of the CV editors.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216601"></a><span class=berschrift2Zchn><span
+style='text-transform:none'>Contents</span></span></h2>
+
+</div>
+
+<p class=MsoToc1><a href="#_Toc361216599">Setting up &amp; configurating
+Protege  4.x for COSMOS nmr-CV editing<span style='color:windowtext;display:
+none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216600">Scope of this Document<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216601"><span style='background:#DEEAF6'>Contents</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216602">Download &amp; Install Protégé 4.x<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216603">Basic Orientation within GUI<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216604">A few words on how P4 stores its
+set-up Preferences<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216605">Set the class renderer to display
+human readable class labels in the hierarchy pane<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216606">Set ID scheme under File/preferences/New
+Entities<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216607">Set CV namespace<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216608">Recommended Class Naming Conventions<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc361216609">Set Search to allow for full regular
+expression searches under File/preferences/general<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216602">Download &amp; Install Protégé 4.x</a></h2>
+
+</div>
+
+<p class=MsoNormal>Download &amp; Install the latest Java-based Protégé 4 form <a
+href="http://protege.stanford.edu/download/download.html">http://protege.stanford.edu/download/download.html</a>
+, as described at <a
+href="http://protegewiki.stanford.edu/wiki/Protege-OWL_4_FAQ#How_do_I_install_Protege-OWL.3F">http://protegewiki.stanford.edu/wiki/Protege-OWL_4_FAQ#How_do_I_install_Protege-OWL.3F</a>
+</p>
+
+<p class=MsoNormal>Start Protégé via its .exe or .bat file. A new default ontology
+will be created &amp; displayed. Ignore it and open the latest nmrMLv.x.owl
+file in the Github at: nmrML\ontologies via File/Open.</p>
+
+<p class=MsoNormal>Basic Instructions for using P4 is given here: <a
+href="http://protegewiki.stanford.edu/wiki/Protege4GettingStarted">http://protegewiki.stanford.edu/wiki/Protege4GettingStarted</a>
+</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216603">Basic Orientation within GUI</a></h2>
+
+</div>
+
+<p class=MsoNormal>When an ontology is opened, P4 will open the first pane, the
+Active Ontology tab (to the left) per default, which will display the general metadata,
+import structure (<a
+href="http://protegewiki.stanford.edu/wiki/Importing_Ontologies_in_P41">http://protegewiki.stanford.edu/wiki/Importing_Ontologies_in_P41</a>)
+and ontology metrics, pertaining to the whole representational artefact/CV
+rather than to singular representational units. For class editing you will use
+the Classes tab. Within a tab you can freely configure the GUI’s appearance by
+selected ‘views’ (<a href="http://protegewiki.stanford.edu/wiki/Protege4Views">http://protegewiki.stanford.edu/wiki/Protege4Views</a>).</p>
+
+<p class=MsoNormal>A general overview of how P4 can be configured to your
+general needs (Set preferences) can be found at <a
+href="http://protegewiki.stanford.edu/wiki/Protege4Preferences">http://protegewiki.stanford.edu/wiki/Protege4Preferences</a>
+. All preferences specific to our nmrML CV set-up are explained in this
+document.</p>
+
+<p class=MsoNormal>If you have any questions, please do not hesitate to contact
+me (DS) via email. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216604">A few words on how P4 stores its set-up Preferences</a></h2>
+
+</div>
+
+<p class=MsoNormal>Protege 4 uses the Java Preferences API to store user preferences
+and activity. This allows for persistence of preference data across
+installations of Protege 4.x, e.g., recently opened ontologies, rendering
+preferences, location of Graphviz (used by the OWLViz plug-in), etc. The
+storage location of these preferences varies according to operating system:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Linux - stored in ~/.java/.userPrefs</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Mac OS X - stored in
+~/Library/Preferences/com.apple.java.util.prefs.plist</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Windows - stored in the Windows Registry at
+HKEY_CURRENT_USER/Software/JavaSoft/Prefs </p>
+
+<p class=MsoNormal>Occasionally, users may need to clear the Java Preferences
+to fix errors displayed by Protege. Preferences can either be deleted manually,
+or via a tool called the Java Preferences User Interface. </p>
+
+<p class=MsoNormal>For example under Windows you can access and edit these
+preferences by typing “regedit” in the command line (Start/Run) and traverse
+the file path to the Prefs//P/R/O/T/E/G/E/_/P/R/E/F/E/R/E/N/C/E/S  folder. In
+the application_preferences you will find a subfolder called HKEY_CURRENT_USER\Software\JavaSoft\Prefs\/P/R/O/T/E/G/E_/P/R/E/F/E/R/E/N/C/E/S\application_preferences\org.protege.editor.owl.entity.creation</p>
+
+<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 3"
+src="ConfiguratingProtege4-Dateien/image001.jpg"></p>
+
+<p class=MsoNormal>In here, e.g. the ID setup is stored. These preferences have
+been exported by me into a file named protege_entities_prefs.reg and have been
+placed in the github nmrML\ontologies folder.</p>
+
+<p class=MsoNormal>In windows you can now copy this protege_entities_prefs.reg file
+onto your desktop and execute it by double clicking on it. Your registry will
+then be automatically be updated with the new preference settings for the ID
+generation in the appropriate registry location.</p>
+
+<p class=MsoNormal>For all further preferences we could proceed in the same way<a
+href="#_ftn1" name="_ftnref1" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri","sans-serif"'>[1]</span></span></span></a>. For more
+information please look at <a
+href="http://protegewiki.stanford.edu/wiki/ClearingP4Preferences">http://protegewiki.stanford.edu/wiki/ClearingP4Preferences</a>
+</p>
+
+<p class=MsoNormal>As this is rather complicated, I would recommend to just do
+the preference settings manually on your computer from within P4s preferences
+Tab (see below).</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216605">Set the class renderer to display human readable
+class labels in the hierarchy pane</a></h2>
+
+</div>
+
+<p class=MsoNormal>Set the renderer to use Labels when displaying the
+hierarchy. Under File/preferences/Renderer tick the render by annotation
+property and hit “configure”. Then set it to display rdfs:label rather than rdf:about
+or rdf:id<a href="#_ftn2" name="_ftnref2" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[2]</span></span></span></a>.
+Set View/render by label. This will display the classes in the Class
+Tab/hierarchy pane (to the left of the GUI) by the classes rdfs:label, given
+one is provided. If no label is provided, the renderer will display the class
+by its ID.</p>
+
+<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 4"
+src="ConfiguratingProtege4-Dateien/image002.jpg"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216606">Set ID scheme under File/preferences/New Entities</a></h2>
+
+</div>
+
+<p class=MsoNormal>Before editing the CV you need to make P4 aware of how you
+want a newly generated class/terms rdfs:about or rdf:id to look like, i.e. you
+need to specify that we want semantics-free numeric IDs rather than human
+readable meaningful ones. For our nmrML CV, we should align the ID scheme to
+generate IDs like NMR:1000442 (Short NS prefix/IRI), colon, 7 digits, ranging
+from 1000000 to 1100000). </p>
+
+<p class=MsoNormal>We need to specify the IRI (“NMR<a href="#_ftn3"
+name="_ftnref3" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri","sans-serif"'>[3]</span></span></span></a>”), the
+following separator (“:”) and then we also need to specify the amount of digits
+the number should have and its numeric range:</p>
+
+<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 1"
+src="ConfiguratingProtege4-Dateien/image003.jpg"></p>
+
+<p class=MsoNormal>This will generate the following registry entry in Windows
+Registry Editor Version 5.00</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>[HKEY_CURRENT_USER\Software\JavaSoft\Prefs\/P/R/O/T/E/G/E_/P/R/E/F/E/R/E/N/C/E/S\application_preferences\org.protege.editor.owl.entity.creation]</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/U/S/E_/D/E/F/A/U/L/T_/B/A/S/E_/U/R/I&quot;=&quot;false&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/D/E/F/A/U/L/T_/B/A/S/E_/U/R/I&quot;=&quot;&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/D/E/F/A/U/L/T_/U/R/I_/S/E/P/A/R/A/T/O/R&quot;=&quot;#&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/U/S/E_/A/U/T/O_/I/D_/F/O/R_/F/R/A/G/M/E/N/T&quot;=&quot;true&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'><span lang=DE>&quot;/N/A/M/E_/L/A/B/E/L_/G/E/N/E/R/A/T/E&quot;=&quot;true&quot;</span></p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'><span lang=DE>&quot;/I/D_/L/A/B/E/L_/G/E/N/E/R/A/T/E&quot;=&quot;false&quot;</span></p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/L/A/B/E/L_/D/E/S/C/R/I/P/T/O/R&quot;=&quot;org.protege.editor.owl.model.entity./Match/Renderer/Label/Descriptor&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/N/A/M/E_/L/A/B/E/L_/U/R/I&quot;=&quot;http:\\\\www.w3.org\\2000\\01\\rdf-schema#label&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/G/E/N/E/R/A/T/O/R_/C/L/A/S/S&quot;=&quot;org.protege.editor.owl.model.entity./Iterative/Auto/I/D/Generator&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/S/T/A/R/T&quot;=&quot;1000000&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/E/N/D&quot;=&quot;1100000&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/S/I/Z/E&quot;=&quot;7&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/P/R/E/F/I/X&quot;=&quot;/N/M/R&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/S/U/F/F/I/X&quot;=&quot;&quot;</p>
+
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/S/A/V/E_/A/U/T/O_/I/D_/S/T/A/R/T&quot;=&quot;false&quot;</p>
+
+<p class=MsoNormalCxSpLast style='line-height:normal'>&quot;/N/A/M/E_/L/A/B/E/L_/L/A/N/G&quot;=&quot;en&quot;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216607">Set CV namespace</a></h2>
+
+</div>
+
+<p class=MsoNormal>In the Active Ontology pane/Ontology header/Ontology IRI
+field we put <a href="http://nmrML.org/nmr">http://nmrML.org/nmr</a><span
+class=MsoHyperlink>ML</span> <a href="#_ftn4" name="_ftnref4" title=""><span
+class=MsoFootnoteReference><u><span style='color:blue'><span
+class=MsoFootnoteReference><u><span style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri","sans-serif";color:blue'>[4]</span></u></span></span></u></span></a>
+to set the active ontology’s namespace in accordance to the one of the XSD (xmlns:nmrML=http://nmrML.org/nmrML
+).</p>
+
+<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 5"
+src="ConfiguratingProtege4-Dateien/image004.jpg"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216608">Recommended Class Naming Conventions</a></h2>
+
+</div>
+
+<p class=MsoNormal>To provide some guidance on how a meaningful and unambiguous
+term /class label should look like, the OBO Foundry has provided a set of
+naming conventions (<a href="http://obofoundry.org/wiki/index.php/Naming">http://obofoundry.org/wiki/index.php/Naming</a>
+). Within P4 we can define labelling Checks via the P4 plugin OntoCheck:  <a
+href="http://www.imbi.uni-freiburg.de/ontology/OntoCheck">http://www.imbi.uni-freiburg.de/ontology/OntoCheck</a>
+</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc361216609">Set Search to allow for full regular expression
+searches under File/preferences/general</a></h2>
+
+</div>
+
+<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 2"
+src="ConfiguratingProtege4-Dateien/image005.jpg"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[1]</span></span></span></a>
+I am hesitant to recommend to export the whole HKEY_CURRENT_USER\Software\JavaSoft\Prefs\/P/R/O/T/E/G/E_/P/R/E/F/E/R/E/N/C/E/S 
+folder, as it may contain country and language specific setting not applicable
+to your local environment.</p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[2]</span></span></span></a>
+On the difference, look at <a
+href="http://answers.semanticweb.com/questions/2189/should-i-use-rdfabout-or-rdfid">http://answers.semanticweb.com/questions/2189/should-i-use-rdfabout-or-rdfid</a>
+</p>
+
+</div>
+
+<div id=ftn3>
+
+<p class=MsoFootnoteText><a href="#_ftnref3" name="_ftn3" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[3]</span></span></span></a>
+Should we use the full URL path here ? E.g. <a href="http://nmrML.org/nmrCV">http://nmrML.org/nmrCV</a>,
+or <a href="http://nmrML.org/nmrML">http://nmrML.org/nmrML</a>  ? Read more on <a
+href="http://protegewiki.stanford.edu/wiki/Protege4NamingAndRendering">http://protegewiki.stanford.edu/wiki/Protege4NamingAndRendering</a>
+</p>
+
+</div>
+
+<div id=ftn4>
+
+<p class=MsoFootnoteText><a href="#_ftnref4" name="_ftn4" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[4]</span></span></span></a>
+Or should we rather than having the same NS for both CV and XSD, have an own
+one for the CV, e.g. <a href="http://nmrML.org/nmrCV">http://nmrML.org/nmrCV</a> 
+ ?</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
