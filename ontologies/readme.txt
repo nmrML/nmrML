@@ -7,7 +7,6 @@ v.4 This version as v.3, but importing BFO 2.0 instead of non-DL BFO 1.1. BFO 2.
 http://ncorwiki.buffalo.edu/index.php/Basic_Formal_Ontology_2.0:_Tutorial_at_ICBO/FOIS, file loads from http://bfo.googlecode.com/svn/releases/2012-11-15-bugfix/owl-group/bfo.owl
 v.5 This version as v.4, but additionally  importing MSI NMR.owl developed at EBI
 v.6 This version as v.5, but importing BiotopLight2.0 instead of BFO 2.0 as top level ontology
-
 v.7 This version is a complete new start (as v.6 ended up being too complex and error prone). For this version I removed the unit import from the Wishard nmr.obo, converted it into owl and imported biotop light 2 and the msi-nmr.owl. To make editing easier, I will merge the owl files physically rather than importing the msi-nmr.owl. The tol level classes from OBI and BFO will then vanish as well.
 v.8 This version as v.7, but namespace set to NMR, added _purgatory helperclass and started rebinning under biotopLight 2. 
 v.9 This version as v.8, but Wishard CV binned under biotopLight2 (btl2). Added RA metadata.
