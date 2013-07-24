@@ -336,6 +336,8 @@ pre
 	margin-bottom:.0001pt;
 	font-size:10.0pt;
 	font-family:"Courier New";}
+tt
+	{font-family:"Courier New";}
 p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
 	{mso-style-link:"Kommentarthema Zchn";
 	margin-top:5.0pt;
@@ -550,7 +552,8 @@ span.HTMLVorformatiertZchn
 	mso-style-link:"HTML Vorformatiert";
 	font-family:"Courier New";}
 .MsoChpDefault
-	{font-size:10.0pt;}
+	{font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
 .MsoPapDefault
 	{margin-top:5.0pt;
 	margin-right:0cm;
@@ -579,7 +582,7 @@ ul
 
 <div style='border:solid #5B9BD5 3.0pt;padding:0cm 0cm 0cm 0cm;background:#5B9BD5'>
 
-<h1><a name="_Toc362357114"></a><a name="_Toc361047231">Setting up &amp;
+<h1><a name="_Toc362431984"></a><a name="_Toc361047231">Setting up &amp;
 configurating Protege  4.x for COSMOS nmr-CV editing</a></h1>
 
 </div>
@@ -588,7 +591,7 @@ configurating Protege  4.x for COSMOS nmr-CV editing</a></h1>
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357115">Scope of this Document</a></h2>
+<h2><a name="_Toc362431985">Scope of this Document</a></h2>
 
 </div>
 
@@ -661,87 +664,87 @@ pragmatic.</p>
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357116"></a><span class=berschrift2Zchn><span
+<h2><a name="_Toc362431986"></a><span class=berschrift2Zchn><span
 style='text-transform:none'>Contents</span></span></h2>
 
 </div>
 
-<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc362357114">Setting up
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc362431984">Setting up
 &amp; configurating Protege  4.x for COSMOS nmr-CV editing<span
 style='color:windowtext;display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357115">Scope of
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431985">Scope of
 this Document<span style='color:windowtext;display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357116"><span
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431986"><span
 style='background:#DEEAF6'>Contents</span><span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357117">Download
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431987">Download
 &amp; Install Protégé 4.x<span style='color:windowtext;display:none;text-decoration:
 none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357118">Set-up
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431988">Set-up
 Github reposiotory to get access to CV.owl file<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357119">Open the CV
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431989">Open the CV
 in P4<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357120">CV releases
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431990">CV releases
 and versions<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357121">Basic
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431991">Basic
 Orientation within GUI<span style='color:windowtext;display:none;text-decoration:
 none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357122">A few words
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431992">A few words
 on how P4 stores its set-up Preferences<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357123">Set the
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431993">Set the
 class renderer to display human readable class labels in the hierarchy pane<span
 style='color:windowtext;display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357124">Set
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431994">Set CV
+namespace<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431995">Set
 ID-scheme under File/preferences/New Entities<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357125">Set CV
-namespace<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
-style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357126">Recommended
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431996">Recommended
 Class Naming Conventions<span style='color:windowtext;display:none;text-decoration:
 none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357127">Increase
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431997">Increase
 Java RAM Heap Size for P4<span style='color:windowtext;display:none;text-decoration:
 none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357128">Handling of
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431998">Handling of
 Imports<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357129">Term
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362431999">Term
 obsoletion practice and _Purgatory usage<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
 
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362357130">Set Search
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc362432000">Set Search
 to allow for full regular expression searches under File/preferences/general<span
 style='color:windowtext;display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
@@ -750,7 +753,7 @@ style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357117">Download &amp; Install Protégé 4.x</a></h2>
+<h2><a name="_Toc362431987">Download &amp; Install Protégé 4.x</a></h2>
 
 </div>
 
@@ -770,7 +773,7 @@ href="http://protegewiki.stanford.edu/wiki/Protege4GettingStarted">http://proteg
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357118">Set-up Github reposiotory to get access to CV.owl
+<h2><a name="_Toc362431988">Set-up Github reposiotory to get access to CV.owl
 file</a></h2>
 
 </div>
@@ -781,19 +784,19 @@ out the master repository from <a href="https://github.com/nmrML/nmrML">https://
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357119">Open the CV in P4</a></h2>
+<h2><a name="_Toc362431989">Open the CV in P4</a></h2>
 
 </div>
 
 <p class=MsoNormal>Before running the Protege 4, please check that there is a
-file catelog-v0001.xml in the ontology/branches directory. The file is needed
-for Protege 4 to find where the imported ontologies are. Start P4. Choose open
-owl ontology. Select and open the latest version of the nmrMLCV.owl from your local
+file catelog-v0001.xml in the ontologies directory. The file is needed for
+Protege 4 to find where the imported ontologies are. Start P4. Choose open owl
+ontology. Select and open the latest version of the nmrMLCV.owl from your local
 git directory, e.g. nmrML\ontologies\nmrMLv1.0.owl</p>
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357120">CV releases and versions</a></h2>
+<h2><a name="_Toc362431990">CV releases and versions</a></h2>
 
 </div>
 
@@ -805,7 +808,7 @@ agree on unit tests to be done prior to a release.</p>
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357121">Basic Orientation within GUI</a></h2>
+<h2><a name="_Toc362431991">Basic Orientation within GUI</a></h2>
 
 </div>
 
@@ -831,12 +834,12 @@ href="https://groups.google.com/forum/?hl=en#!forum/nmrml/join">https://groups.g
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357122">A few words on how P4 stores its set-up Preferences</a></h2>
+<h2><a name="_Toc362431992">A few words on how P4 stores its set-up Preferences</a></h2>
 
 </div>
 
-<p class=MsoNormal>Protege 4 uses the Java Preferences API to store user preferences
-and activity. This allows for persistence of preference data across
+<p class=MsoNormal>Protege 4 uses the Java Preferences API to store user
+preferences and activity. This allows for persistence of preference data across
 installations of Protege 4.x, e.g., recently opened ontologies, rendering
 preferences, location of Graphviz (used by the OWLViz plug-in), etc. The
 storage location of these preferences varies according to your operating
@@ -853,8 +856,8 @@ style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nb
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
 style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>Windows - stored in the Windows Registry at
-HKEY_CURRENT_USER/Software/JavaSoft/Prefs </p>
+</span></span>Windows - stored in the Windows Registry at HKEY_CURRENT_USER/Software/JavaSoft/Prefs
+</p>
 
 <p class=MsoNormal>Occasionally, users may need to clear the Java Preferences
 to fix errors displayed by Protege. Preferences can either be deleted manually,
@@ -865,17 +868,11 @@ preferences by typing “regedit” in the command line (Start/Run) and traverse
 the file path to the Prefs//P/R/O/T/E/G/E/_/P/R/E/F/E/R/E/N/C/E/S  folder. In
 the application_preferences you will find a subfolder called HKEY_CURRENT_USER\Software\JavaSoft\Prefs\/P/R/O/T/E/G/E_/P/R/E/F/E/R/E/N/C/E/S\application_preferences\org.protege.editor.owl.entity.creation</p>
 
-<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 3"
+<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 6"
 src="ConfiguratingProtege4-Dateien/image001.jpg"></p>
 
 <p class=MsoNormal>In here, e.g. the ID setup for newly generated CV terms is
-stored. These preferences have been exported into a file named <b>protege_entities_prefs.reg</b>
-and have been placed in the github nmrML\ontologies folder.</p>
-
-<p class=MsoNormal>In windows you can now copy this protege_entities_prefs.reg file
-onto your desktop and execute it by double clicking on it. Your registry will
-then be automatically be updated with the new preference settings for the nmrML
-CV term ID generation in the appropriate registry location.</p>
+stored (entity.creation). </p>
 
 <p class=MsoNormal>For all further preferences you proceed in the same way<a
 href="#_ftn1" name="_ftnref1" title=""><span class=MsoFootnoteReference><span
@@ -891,13 +888,13 @@ preference settings manually on your computer from within P4s preferences Tab
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357123">Set the class renderer to display human readable
+<h2><a name="_Toc362431993">Set the class renderer to display human readable
 class labels in the hierarchy pane</a></h2>
 
 </div>
 
-<p class=MsoNormal>Set the renderer to use labels rather than the unintuitive IDs
-when displaying the class hierarchy (to the left of the GUI): Under
+<p class=MsoNormal>Set the renderer to use labels rather than the unintuitive
+IDs when displaying the class hierarchy (to the left of the GUI): Under
 File/preferences/Renderer tick the render by annotation property and hit
 “configure”. Then set it to display rdfs:label rather than rdf:about or rdf:id<a
 href="#_ftn2" name="_ftnref2" title=""><span class=MsoFootnoteReference><span
@@ -916,29 +913,59 @@ column blank and hit ok.</p>
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357124">Set ID-scheme under File/preferences/New Entities</a></h2>
+<h2><a name="_Toc362431994">Set CV namespace</a></h2>
+
+</div>
+
+<p class=MsoNormal>In the Active Ontology pane/Ontology header/Ontology <a>IRI</a><span
+class=MsoCommentReference><span style='font-size:8.0pt;line-height:115%'><a
+class=msocomanchor id="_anchor_1"
+onmouseover="msoCommentShow('_anchor_1','_com_1')"
+onmouseout="msoCommentHide('_com_1')" href="#_msocom_1" language=JavaScript
+name="_msoanchor_1">[d1]</a>&nbsp;</span></span> field we put <a
+href="http://nmrML.org/nmr">http://nmrML.org/nmr</a><span class=MsoHyperlink>ML</span>
+<a href="#_ftn3" name="_ftnref3" title=""><span class=MsoFootnoteReference><u><span
+style='color:blue'><span class=MsoFootnoteReference><u><span style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri","sans-serif";color:blue'>[3]</span></u></span></span></u></span></a>
+to set the active ontology’s namespace in accordance to the one of the XSD (xmlns:nmrML=http://nmrML.org/nmrML
+). </p>
+
+<p class=MsoNormal>The active ontologies <b>namespace</b> (also called <b>ontology
+IRI </b>or <b>base Fragment</b>, e.g. <a href="http://nmrML.org">http://nmrML.org</a>
+) plus an <b>entity IRI</b> (base Fragment (Term ID), e.g. nmrML_1000559) will
+comprise the entities Full IRI, e.g. <a href="http://nmrML.org/nmrML_1000559">http://nmrML.org/nmrML_1000559</a>
+, which should be dereferencable.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 5"
+src="ConfiguratingProtege4-Dateien/image003.jpg"></p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name="_Toc362431995">Set ID-scheme under File/preferences/New Entities</a></h2>
 
 </div>
 
 <p class=MsoNormal>Before editing the CV you need to make P4 aware of how you
-want a newly generated class/terms’ rdfs:about or rdf:id value to look like,
-i.e. you need to specify that we want semantics-free numeric IDs rather than
-human readable meaningful ones (to be captured by the rdfs:label field). For
-our nmrML CV, we should align the ID scheme to generate IDs like NMR:1000442
-(Short NS prefix/IRI), colon, 7 digits, ranging from 1000000 to 1100000). This
-means we need to specify the CVs  IRI (“NMR<a href="#_ftn3" name="_ftnref3"
-title=""><span class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[3]</span></span></span></a>”),
-the following separator (“<a>:</a><span class=MsoCommentReference><span
-style='font-size:8.0pt;line-height:115%'><a class=msocomanchor id="_anchor_1"
-onmouseover="msoCommentShow('_anchor_1','_com_1')"
-onmouseout="msoCommentHide('_com_1')" href="#_msocom_1" language=JavaScript
-name="_msoanchor_1">[d1]</a>&nbsp;</span></span>”) and then we also need to
-specify the amount of digits the number should have and its numeric range. This
-is done in the File/Preferences/New Entities Tab:</p>
+want a newly generated class/terms’ ID (also called the Entities IRI, to be
+stored as rdfs:about or rdf:id value) to look like, i.e. you need to specify
+that we want semantics-free <a>numeric IDs </a><span class=MsoCommentReference><span
+style='font-size:8.0pt;line-height:115%'><a class=msocomanchor id="_anchor_2"
+onmouseover="msoCommentShow('_anchor_2','_com_2')"
+onmouseout="msoCommentHide('_com_2')" href="#_msocom_2" language=JavaScript
+name="_msoanchor_2">[d2]</a>&nbsp;</span></span>rather than human readable meaningful
+ones (to be captured by the rdfs:label field). For our nmrML CV, we should
+align the ID scheme to generate IDs like NMR:1000442, i.e. Short NS prefix ended
+by  colon followed by 7 digits ranging from 1000000 to 1100000. This means we need
+to specify the CVs  ID Prefix (“NMR:<a href="#_ftn4" name="_ftnref4" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[4]</span></span></span></a>”),
+the amount of digits the number should have and its numeric range. This is done
+in the File/Preferences/New Entities Tab:</p>
 
 <p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 1"
-src="ConfiguratingProtege4-Dateien/image003.jpg"></p>
+src="ConfiguratingProtege4-Dateien/image004.jpg"></p>
 
 <p class=MsoNormal>This will generate the following registry entry in Windows
 Registry Editor Version 5.00</p>
@@ -963,41 +990,32 @@ Registry Editor Version 5.00</p>
 
 <p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/G/E/N/E/R/A/T/O/R_/C/L/A/S/S&quot;=&quot;org.protege.editor.owl.model.entity./Iterative/Auto/I/D/Generator&quot;</p>
 
-<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/S/T/A/R/T&quot;=&quot;1000000&quot;</p>
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/S/T/A/R/T&quot;=&quot;1000001&quot;</p>
 
 <p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/E/N/D&quot;=&quot;1100000&quot;</p>
 
 <p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/S/I/Z/E&quot;=&quot;7&quot;</p>
 
-<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/P/R/E/F/I/X&quot;=&quot;/N/M/R&quot;</p>
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/P/R/E/F/I/X&quot;=&quot;/N/M/R:&quot;</p>
 
 <p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/A/U/T/O_/I/D_/S/U/F/F/I/X&quot;=&quot;&quot;</p>
 
-<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/S/A/V/E_/A/U/T/O_/I/D_/S/T/A/R/T&quot;=&quot;false&quot;</p>
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/S/A/V/E_/A/U/T/O_/I/D_/S/T/A/R/T&quot;=&quot;true&quot;</p>
 
-<p class=MsoNormalCxSpLast style='line-height:normal'>&quot;/N/A/M/E_/L/A/B/E/L_/L/A/N/G&quot;=&quot;en&quot;</p>
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&quot;/N/A/M/E_/L/A/B/E/L_/L/A/N/G&quot;=&quot;en&quot;
+</p>
 
-<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+<p class=MsoNormalCxSpMiddle style='line-height:normal'>&nbsp;</p>
 
-<h2><a name="_Toc362357125">Set CV namespace</a></h2>
-
-</div>
-
-<p class=MsoNormal>In the Active Ontology pane/Ontology header/Ontology IRI
-field we put <a href="http://nmrML.org/nmr">http://nmrML.org/nmr</a><span
-class=MsoHyperlink>ML</span> <a href="#_ftn4" name="_ftnref4" title=""><span
-class=MsoFootnoteReference><u><span style='color:blue'><span
-class=MsoFootnoteReference><u><span style='font-size:10.0pt;line-height:115%;
-font-family:"Calibri","sans-serif";color:blue'>[4]</span></u></span></span></u></span></a>
-to set the active ontology’s namespace in accordance to the one of the XSD (xmlns:nmrML=http://nmrML.org/nmrML
-).</p>
-
-<p class=MsoNormal><img border=0 width=627 height=353 id="Grafik 5"
-src="ConfiguratingProtege4-Dateien/image004.jpg"></p>
+<p class=MsoNormalCxSpLast style='line-height:normal'>A corresponding
+P4EntityCreation.reg file can be found in the CVDocumentation github folder. On
+Windows you can just double-click and run it and it will update your Registry
+accordingly with the new preference settings for the nmrML CV term ID
+generation.</p>
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357126">Recommended Class Naming Conventions</a></h2>
+<h2><a name="_Toc362431996">Recommended Class Naming Conventions</a></h2>
 
 </div>
 
@@ -1010,7 +1028,7 @@ href="http://www.imbi.uni-freiburg.de/ontology/OntoCheck">http://www.imbi.uni-fr
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357127">Increase Java RAM Heap Size for P4</a></h2>
+<h2><a name="_Toc362431997">Increase Java RAM Heap Size for P4</a></h2>
 
 </div>
 
@@ -1021,22 +1039,22 @@ href="http://protegewiki.stanford.edu/wiki/Setting_Heap_Size">http://protegewiki
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357128">Handling of Imports</a></h2>
+<h2><a name="_Toc362431998">Handling of Imports</a></h2>
 
 </div>
 
-<p class=MsoNormal>There is a configuration file, catalog-v001.xml, which sets Protege
-to load imported ontologies from local files.</p>
+<p class=MsoNormal>There is a configuration file, catalog-v001.xml, which sets
+Protege to load imported ontologies from local files.</p>
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357129">Term obsoletion practice and _Purgatory usage</a></h2>
+<h2><a name="_Toc362431999">Term obsoletion practice and _Purgatory usage</a></h2>
 
 </div>
 
-<p class=MsoNormal>There are multiple ways to do this. The easiest would be using
-owl: Deprecated Class, owl: Deprecated Property. Alternatively we can re-use
-the policy specified for OBI at <a
+<p class=MsoNormal>There are multiple ways to do this. The easiest would be
+using owl: Deprecated Class, owl: Deprecated Property. Alternatively we can
+re-use the policy specified for OBI at <a
 href="http://obi-ontology.org/page/OBIDeprecationPolicy">http://obi-ontology.org/page/OBIDeprecationPolicy</a>.
 </p>
 
@@ -1095,7 +1113,7 @@ as a new file with an git log</p>
 
 <div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
 
-<h2><a name="_Toc362357130">Set Search to allow for full regular expression
+<h2><a name="_Toc362432000">Set Search to allow for full regular expression
 searches under File/preferences/general</a></h2>
 
 </div>
@@ -1140,10 +1158,8 @@ href="http://answers.semanticweb.com/questions/2189/should-i-use-rdfabout-or-rdf
 <p class=MsoFootnoteText><a href="#_ftnref3" name="_ftn3" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[3]</span></span></span></a>
-Should we use the full URL path here ? E.g. <a href="http://nmrML.org/nmrCV">http://nmrML.org/nmrCV</a>,
-or <a href="http://nmrML.org/nmrML">http://nmrML.org/nmrML</a>  ? Read more on <a
-href="http://protegewiki.stanford.edu/wiki/Protege4NamingAndRendering">http://protegewiki.stanford.edu/wiki/Protege4NamingAndRendering</a>
-</p>
+Or should we (rather than having the same NS for both CV and XSD) have an own NS
+for the CV, e.g. <a href="http://nmrML.org/nmrCV">http://nmrML.org/nmrCV</a>   ?</p>
 
 </div>
 
@@ -1152,9 +1168,10 @@ href="http://protegewiki.stanford.edu/wiki/Protege4NamingAndRendering">http://pr
 <p class=MsoFootnoteText><a href="#_ftnref4" name="_ftn4" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Calibri","sans-serif"'>[4]</span></span></span></a>
-Or should we rather than having the same NS for both CV and XSD, have an own
-one for the CV, e.g. <a href="http://nmrML.org/nmrCV">http://nmrML.org/nmrCV</a> 
- ?</p>
+Should we use the full URL path here ? E.g. <a href="http://nmrML.org/nmrCV">http://nmrML.org/nmrCV</a>,
+or <a href="http://nmrML.org/nmrML">http://nmrML.org/nmrML</a>  ? Read more on <a
+href="http://protegewiki.stanford.edu/wiki/Protege4NamingAndRendering">http://protegewiki.stanford.edu/wiki/Protege4NamingAndRendering</a>
+</p>
 
 </div>
 
@@ -1170,9 +1187,353 @@ one for the CV, e.g. <a href="http://nmrML.org/nmrCV">http://nmrML.org/nmrCV</a>
 onmouseover="msoCommentShow('_anchor_1','_com_1')"
 onmouseout="msoCommentHide('_com_1')"><a name="_msocom_1"></a>
 
+<p><span class=MsoCommentReference><span style='font-size:8.0pt'>&nbsp;<a
+href="#_msoanchor_1" class=msocomoff>[d1]</a></span></span>OWL, being a
+semantic web language identifies all named things (entities) uniquely with URIs
+(Uniform Resource Identifiers). </p>
+
+<p>Examples of URIs include URLs (web addresses), URNs and others. </p>
+
+<p>eg The Pizza class in the pizza ontology is identified by its URI (<a
+href="http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza">http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza</a>)
+</p>
+
+<p>As URLs with fragments are often used, it is worth quickly explaining the
+terminology used later on: </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><b>base URI</b> the
+     (leftermost) part of the URI that will likely be common across multiple
+     entities (eg <b><a href="http://www.co-ode.org/ontologies/pizza/pizza.owl">http://www.co-ode.org/ontologies/pizza/pizza.owl#</a></b>).
+     </li>
+ <li class=MsoNormal style='line-height:normal'><b>URI fragment</b> the part of
+     a URI after the delimiter <b>#</b> (eg <b>Pizza</b>). In Protege 4.x, we
+     sometimes broaden this to include the last path element if no fragment is
+     available - particularly for rendering. </li>
+</ul>
+
+<p>It is common for a base URI to be used across many entities with each having
+its own unique fragment. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid #5B9BD5 1.0pt;padding:2.0pt 0cm 0cm 0cm'>
+
+<h4 style='border:none;padding:0cm'>Taken from “How to publish Linked Data on
+the Web.htm”:</h4>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid #5B9BD5 1.0pt;padding:2.0pt 0cm 0cm 0cm'>
+
+<h4 style='border:none;padding:0cm'>Resource Identifiers</h4>
+
+</div>
+
+<p>Resources are identified using <a
+href="http://en.wikipedia.org/wiki/Uniform_Resource_Identifier"><i>Uniform
+Resource Identifiers (URIs)</i></a>. In the context of Linked Data, we restrict
+ourselves to using HTTP URIs only and avoid other URI schemes such as <a
+href="http://en.wikipedia.org/wiki/Uniform_Resource_Name">URNs</a> and <a
+href="http://en.wikipedia.org/wiki/Digital_object_identifier">DOIs</a>. HTTP
+URIs make good names for two reasons: They provide a simple way to create
+globally unique names without centralized management; and URIs work not just as
+a name but also as a means of accessing information about a resource over the
+Web. The preference for HTTP over other URI schemes is discussed at length in
+the W3C TAG draft finding <a
+href="http://www.w3.org/2001/tag/doc/URNsAndRegistries-50.html">URNs,
+Namespaces and Registries</a>.</p>
+
+<p class=MsoCommentText>&nbsp;</p>
+
+<div style='border:solid #DEEAF6 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DEEAF6'>
+
+<h2><a name=howname>Choosing semantic web conform URIs</a></h2>
+
+</div>
+
+<p>Resources are named with URI references. When publishing Linked Data, you
+should devote some effort to choosing good URIs for your resources.</p>
+
+<p>On the one hand, they should be <em>good names</em> that other publishers
+can use confidently to link to your resources in their own data. On the other
+hand, you will have to put technical infrastructure in place to make them <em>dereferenceable</em>,
+and this may put some constraints on what you can do.</p>
+
+<p>This section lists, in loose order, some things to keep in mind.</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'>Use HTTP URIs for everything.
+     The <tt>http://</tt> scheme is the only URI scheme that is widely
+     supported in today's tools and infrastructure. All other schemes require
+     extra effort for resolver web services, dealing with identifier
+     registrars, and so on. The arguments in favour of using HTTP are discussed
+     in several places, e.g. in <a
+     href="http://norman.walsh.name/2006/07/25/namesAndAddresses">Names and
+     addresses</a> by Norman Walsh, and <a
+     href="http://www.w3.org/2001/tag/doc/URNsAndRegistries-50-2006-08-17.html">URNs,
+     Namespaces and Registries</a> (draft) by the W3C TAG.</li>
+ <li class=MsoNormal style='line-height:normal'>Define your URIs in an HTTP
+     namespace under your control, where you actually can make them
+     dereferenceable. Do not define them in someone else's namespace.</li>
+ <li class=MsoNormal style='line-height:normal'>Keep implementation cruft out
+     of your URIs. Short, mnemonic names are better. Consider these two
+     examples: </li>
+ <ul type=circle>
+  <li class=MsoNormal style='line-height:normal'>http://dbpedia.org/resource/Berlin</li>
+  <li class=MsoNormal style='line-height:normal'>http://www4.wiwiss.fu-berlin.de:2020/demos/dbpedia/cgi-bin/resources.php?id=Berlin</li>
+ </ul>
+ <li class=MsoNormal style='line-height:normal'>Try to keep your URIs stable and
+     persistent. Changing your URIs later will break any already-established
+     links, so it is advisable to devote some extra thought to them at an early
+     stage.</li>
+ <li class=MsoNormal style='line-height:normal'>The URIs you can choose are
+     constrained by your technical environment. If your server is called demo.serverpool.wiwiss.example.org
+     and getting another domain name is not an option, then your URIs will have
+     to begin with http://demo.serverpool.wiwiss.example.org/. If you cannot
+     run your server on port 80, then your URIs may have to begin with
+     http://demo.serverpool.example.org:2020/. If possible you should clean up
+     those URIs by adding some <a
+     href="http://httpd.apache.org/docs/2.0/mod/mod_rewrite.html">URI rewriting
+     rules</a> to the configuration of your webserver.</li>
+ <li class=MsoNormal style='line-height:normal'>We often end up with three URIs
+     related to a single non-information resource: </li>
+</ul>
+
+<ul type=disc>
+ <ol start=1 type=1>
+  <li class=MsoNormal style='line-height:normal'>an identifier for the
+      resource,</li>
+  <li class=MsoNormal style='line-height:normal'>an identifier for a related
+      information resource suitable to HTML browsers (with a web page
+      representation),</li>
+  <li class=MsoNormal style='line-height:normal'>an identifier for a related
+      information resource suitable to RDF browsers (with an RDF/XML
+      representation).</li>
+ </ol>
+</ul>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Here are several ideas for
+choosing these related URIs: </p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:0cm;line-height:normal'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>http://dbpedia.org/resource/Berlin</p>
+
+<ul type=disc>
+ <ol start=5 type=1>
+  <li class=MsoNormal style='line-height:normal'>http://dbpedia.org/page/Berlin</li>
+  <li class=MsoNormal style='line-height:normal'>http://dbpedia.org/data/Berlin</li>
+ </ol>
+</ul>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Or: </p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:0cm;line-height:normal'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>http://id.dbpedia.org/Berlin</p>
+
+<ul type=disc>
+ <ol start=8 type=1>
+  <li class=MsoNormal style='line-height:normal'>http://pages.dbpedia.org/Berlin</li>
+  <li class=MsoNormal style='line-height:normal'>http://data.dbpedia.org/Berlin</li>
+ </ol>
+</ul>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Or: </p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:0cm;line-height:normal'>10.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>http://dbpedia.org/Berlin</p>
+
+<ul type=disc>
+ <ol start=11 type=1>
+  <li class=MsoNormal style='line-height:normal'>http://dbpedia.org/Berlin.html</li>
+  <li class=MsoNormal style='line-height:normal'>http://dbpedia.org/Berlin.rdf</li>
+ </ol>
+ <li class=MsoNormal style='line-height:normal'>You will often need to use some
+     kind of primary key inside your URIs, to make sure that each one is
+     unique. If you can, use a key that is meaningful inside your domain. For
+     example, when dealing with books, making the ISBN number part of the URI
+     is better than using the primary key of an internal database table. This
+     also makes equivalence mining to <a
+     href="../../../Users/dschober/Desktop/COSMOS_Halle/_SemWebRDF/How%20to%20publish%20Linked%20Data%20on%20the%20Web.htm#autogenerateLinks">derive
+     RDF links</a> easier.</li>
+</ul>
+
+<p>Examples of cool URIs:</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><a
+     href="http://dbpedia.org/resource/Boston">http://dbpedia.org/resource/Boston</a></li>
+ <li class=MsoNormal style='line-height:normal'><a
+     href="http://www4.wiwiss.fu-berlin.de/bookmashup/books/006251587X">http://www4.wiwiss.fu-berlin.de/bookmashup/books/006251587X</a></li>
+</ul>
+
+<p>See also:</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'>Sauermann et al.: <a
+     href="http://www.dfki.uni-kl.de/%7Esauermann/2006/11/cooluris/">Cool URIs
+     for the Semantic Web</a> (tutorial on URI dereferencing and
+     content-negotiation)</li>
+ <li class=MsoNormal style='line-height:normal'><a
+     href="http://www.w3.org/TR/chips/">Common HTTP Implementation Problems</a>,
+     sections 1 and 3</li>
+ <li class=MsoNormal style='line-height:normal'>Tim Berners-Lee: <a
+     href="http://www.w3.org/Provider/Style/URI">Cool URIs don't change</a></li>
+</ul>
+
+<p class=MsoCommentText>&nbsp;</p>
+
+<div style='border:none;border-top:solid #5B9BD5 1.0pt;padding:2.0pt 0cm 0cm 0cm'>
+
+<h4 style='border:none;padding:0cm'>From “hcls-rdf-guide”:</h4>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid #5B9BD5 1.0pt;padding:2.0pt 0cm 0cm 0cm'>
+
+<h4 style='border:none;padding:0cm'>How should the URIs and namespaces be
+determined?</h4>
+
+</div>
+
+<p>Before transforming data into RDF (Figure 1, step 1) or creating an RDF view
+of the source data (Figure 1, step 6) one must decide on the URIs and
+namespaces to be used. Tim Berners-Lee has clearly outlined good practices for
+Linked Data <a href="http://www.w3.org/2001/sw/hcls/notes/hcls-rdf-guide/#refs">(Berners-Lee
+2006)</a> and more information can be found in the Linked Data Tutorial <a
+href="http://www.w3.org/2001/sw/hcls/notes/hcls-rdf-guide/#refs">(C. Bizer et
+al. 2007)</a>. Here are some of the general guidelines:</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'>Reusing existing URIs improves
+     the connectivity of your data set with other data sets. </li>
+ <li class=MsoNormal style='line-height:normal'>Creating links that resolve to
+     URIs published by others is highly recommended and necessary if the data
+     source will be published as Linked Data. </li>
+ <li class=MsoNormal style='line-height:normal'>New URIs should be coined only
+     if no existing URIs can be found. Use <a
+     href="http://bioportal.bioontology.org/">BioPortal</a> or <a
+     href="http://www.ontobee.org/">OntoBee</a> for matching entities and their
+     URIs. Besides the ‘search all ontologies’ function of BioPortal, there is
+     also an Ontology Recommendation service (<a
+     href="http://bioportal.bioontology.org/recommender">http://bioportal.bioontology.org/recommender</a>).
+     </li>
+ <li class=MsoNormal style='line-height:normal'>Use <a
+     href="http://identifiers.org">http://identifiers.org</a> to find URIs for
+     information artifacts, such as a database records and gene accession
+     numbers. </li>
+ <li class=MsoNormal style='line-height:normal'>If you create new URIs, be sure
+     to have control over the namespace. </li>
+ <li class=MsoNormal style='line-height:normal'>Use PURLs (Persistent URLs)
+     where possible. </li>
+</ul>
+
+<p style='margin-left:36.0pt;text-indent:-18.0pt'><span style='font-size:10.0pt;
+font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>A number of projects can potentially supply URIs for the
+biomedical domain. The intention of the Shared Names project <a
+href="http://www.w3.org/2001/sw/hcls/notes/hcls-rdf-guide/#refs">(SharedNames
+2011)</a> is to supply a common set of names or URIs for entities described in
+bioinformatics data records. SharedNames is based on a federation of PURL
+servers that create a vendor neutral and stable namespace for common URIs. The <a
+href="http://identifiers.org/">http://identifiers.org/</a> consortium is
+developing URIs for the HCLS domains in cooperation with prominent members of
+the Semantic Web community, including Bio2RDF <a
+href="http://www.w3.org/2001/sw/hcls/notes/hcls-rdf-guide/#refs">(Belleau et
+al. 2008)</a>. Identifiers.org includes support for an identifier system called
+MIRIAM from the European Bioinformatics Institute (EBI), which has recently
+announced adoption of URIs.</p>
+
+<p>We do not attempt here to describe all the technicalities of creating proper
+data URIs. Further information can be found in existing best practice documents
+<a href="http://www.w3.org/2001/sw/hcls/notes/hcls-rdf-guide/#refs">(C. Bizer
+et al. 2007; Sauermann &amp; R. Cyganiak 2011)</a>.</p>
+
+<p class=MsoNormal style='line-height:normal'>&nbsp;</p>
+
+<p class=MsoCommentText>&nbsp;</p>
+
+<p class=MsoCommentText>&nbsp;</p>
+
+</div>
+
+</div>
+
+<div>
+
+<div id="_com_2" class=msocomtxt language=JavaScript
+onmouseover="msoCommentShow('_anchor_2','_com_2')"
+onmouseout="msoCommentHide('_com_2')"><a name="_msocom_2"></a>
+
 <p class=MsoCommentText><span class=MsoCommentReference><span style='font-size:
-8.0pt'>&nbsp;<a href="#_msoanchor_1" class=msocomoff>[d1]</a></span></span>Or
-should we use # ?</p>
+8.0pt'>&nbsp;<a href="#_msoanchor_2" class=msocomoff>[d2]</a></span></span><strong><span
+style='font-family:"Calibri","sans-serif"'>Make term URIs dereferenceable </span></strong>so
+that clients can look up the definition of a term, i.e. follow the <a
+href="http://www.w3.org/TR/swbp-vocab-pub/">W3C Best Practice Recipes for
+Publishing RDF Vocabularies.</a></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><b><span
+style='font-family:"Courier New"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><b><span
+style='font-family:"Courier New"'>A good Linked Data style term definition for &quot;Lover&quot;.</span></b>The
+example uses the <a href="http://www.dajobe.org/2004/01/turtle/">Turtle</a>
+syntax. Namespace declarations are omitted.</p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>&lt;http://sites.wiwiss.fu-berlin.de/suhl/bizer/pub/LoveVocabulary#Lover&gt;
+</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>    rdf:type rdfs:Class ;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>    rdfs:label &quot;Lover&quot;@en ;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>    rdfs:label &quot;Liebender&quot;@de ;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>    rdfs:comment &quot;A person who loves
+somebody.&quot;@en ;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+style='font-family:"Courier New"'>    </span><span lang=DE style='font-family:
+"Courier New"'>rdfs:comment &quot;Eine Person die Jemanden liebt.&quot;@de ;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+lang=DE style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:normal'><span
+lang=DE style='font-family:"Courier New"'>    </span><span style='font-family:
+"Courier New"'>rdfs:subClassOf foaf:Person .</span></p>
+
+<p class=MsoCommentText>&nbsp;</p>
 
 </div>
 
