@@ -7,6 +7,10 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 import java.lang.*;
+/*
+ * $Id: TestReader.java,v 0.1 2013-07-23 15:00:00 DJ $
+ */
+
 
 public class TestReader {
 
@@ -26,6 +30,8 @@ public class TestReader {
            File acquFile = new File(dataFolder.getAbsolutePath()+sep+"acqus");
            AcquReader acqObj = new BrukerAcquReader(acquFile);
            Acqu acq = acqObj.read();
+           
+           /* do someting with this Acqu instance */
 
 /* print some values for testing */
 System.out.println( String.format( "SF01 = %f", acq.getTransmiterFreq() ) );
@@ -45,10 +51,16 @@ System.out.println( String.format( "SOLVENT = %s", acq.getSolvent() ) );
            FidReader fidObj = new Simple1DFidReader(ffid, acq);
            Spectrum fid = fidObj.read();
 
+           /* do someting with this Spectrum instance */
+           /* Get FID values : fid.fid[i] , 0 <= i < acq.getAquiredPoints() */
+
            /* Processing Parameter File */
            File procFile = new File(dataFolder.getAbsolutePath()+sep+"pdata"+sep+"1"+sep+"procs");
            ProcReader procObj = new BrukerProcReader(procFile, acq);
            Proc proc = procObj.read();
+           
+           /* do someting with this Proc instance */
+
 /* print some values for testing */
 System.out.println( String.format( "PH_mod = %d", proc.getPhasingType() ) );
 System.out.println( String.format( "PHC0 = %f", proc.getZeroOrderPhase() ) );
@@ -62,6 +74,10 @@ System.out.println( String.format( "SI = %d", proc.getTransformSize() ) );
            FileInputStream f1i = new FileInputStream(file1i);
            FidReader spectObj = new SimplePdataReader(f1r, f1i, acq, proc);
            Spectrum spectrum = spectObj.read();
+
+           /* do someting with this Spectrum instance */
+           /* Get Real part  values : spectrum.realChannelData[i] , 0 <= i < proc.getTdEffective() */
+           /* Get Imaginary part  values : spectrum.imaginaryChannelData[i] , 0 <= i < proc.getTdEffective() */
 
         } catch( Exception e ) {
             e.printStackTrace();
