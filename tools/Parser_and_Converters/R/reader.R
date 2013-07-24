@@ -29,7 +29,7 @@ unit   <- getOntology("http://unit-ontology.googlecode.com/svn/trunk/unit.obo")
 ## Ontology in OWL
 ##
 ## nmrML is currently not clean enough for ontoCAT:
-nmrMLOnto <- getOntology("../../../ontologies/nmrMLv.9.owl")
+nmrMLOnto <- getOntology("../../../ontologies/nmrMLv1.2.owl")
 
 #btl2Onto <- getOntology("http://purl.org/biotop/btl2.owl")
 btl2Onto <- getOntology("https://biotop.googlecode.com/svn/trunk/btl2.owl")
