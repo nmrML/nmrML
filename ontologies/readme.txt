@@ -14,7 +14,15 @@ v.9 This version as v.8, but Wishard CV binned under biotopLight2 (btl2). Added 
 v1.0 As v.9, but removed OBI temporary and outdated IDs and Refs.Taxonomic re-binning of classes that part_of /is_a 'Metabolomics Standards Initiative NMR Spectrometry Vocabularies' under appropriate Biotop classes. Integration of required xsd leaf nodes into CV (see below). Removed Wishard Top Level nodes of doubtful justification, i.e. 'Metabolomics Standards Initiative NMR Spectrometry Vocabularies' and 'spectrum generation information' and 'spectrum interpretation'. 
 v1.1 Merged msi namespace nmr ontology (Schober NMR) into Wishard CV (using P4 Refactoring/Merge) in order to get rid of import statements and restriction overriding.
 v1.2 Entity (ID) renaming of newly (physically) integrated MSI NMR Terms from MSI namespace to Cosmos nmrML namespace
-v1.3 File renaming to get rid of version in Filname (now stores as RA annotation property) infile. New Namespace (now set to http://nmrML.org/nmrCV to distinguish it from xsd namespace). Alignment of ID schemes:To archieve this, we substituted 541 occurances of "nmrCV_" for "nmrCV#NMR:" in the complete owl file. Then we substituited 710 occurrances of "nmrCV#MSI_" with "nmrCV#NMR:1" to alin the old MSI IDs to the new NMR prefix and 7 digit length.  Importing DOAP: Add RA metadata using http://usefulinc.com/ns/doap# 
+v1.3 File renaming to get rid of version in Filname (now stores as RA annotation property) infile. New Namespace (now set to http://nmrML.org/nmrCV to distinguish it from xsd namespace). Alignment of ID schemes:To archieve this, we substituted 541 occurances of "nmrCV_" for "nmrCV#NMR:" in the complete owl file. Then we substituited 710 occurrances of "nmrCV#MSI_" with "nmrCV#NMR:1" to align the old MSI IDs to the new NMR prefix and 7 digit length.  Importing DOAP, added RA metadata using http://usefulinc.com/ns/doap#, then removed doap import to get rid of confusing class top level.
+v1.4 Empty outdated namespace declarations and NS prefix declarations were removed from the file. The following object properties were taken out of the owl file: 
+http://nmrML.org/nmrCV#has_regexp
+http://nmrML.org/nmrCV#has_units
+http://nmrML.org/nmrCV#part_of
+Thier usage in the ole Cruz obo file was minor and has to be recreated by hand, but ideally with relations from btl2 with the following mapping:
+http://nmrML.org/nmrCV#has_regexp-->
+http://nmrML.org/nmrCV#has_units-->
+http://nmrML.org/nmrCV#part_of-->http://purl.org/biotop/btl2.owl#isPartOf
 
 
 To view and edit this owl CV you have to download and install Protege 4.2 or later on your Computer. As the BFO import goes over a weblink, you need to make sure your Computer is connected to the Internet when opening the owl file.
