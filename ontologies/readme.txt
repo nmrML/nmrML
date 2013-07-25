@@ -1,4 +1,5 @@
 Version history for the nmrML.owl versions:
+http://www.w3.org/TR/2009/REC-owl2-syntax-20091027/#Versioning_of_OWL_2_Ontologies
 
 v.1 initial result from the Obo Edit OBO to OWL conversion
 v.2 added RA Metadata (just using standard annotation properties, i.e. DC)
@@ -11,8 +12,9 @@ v.7 This version is a complete new start (as v.6 ended up being too complex and 
 v.8 This version as v.7, but namespace set to NMR, added _purgatory helperclass and started rebinning under biotopLight 2. 
 v.9 This version as v.8, but Wishard CV binned under biotopLight2 (btl2). Added RA metadata.
 v1.0 As v.9, but removed OBI temporary and outdated IDs and Refs.Taxonomic re-binning of classes that part_of /is_a 'Metabolomics Standards Initiative NMR Spectrometry Vocabularies' under appropriate Biotop classes. Integration of required xsd leaf nodes into CV (see below). Removed Wishard Top Level nodes of doubtful justification, i.e. 'Metabolomics Standards Initiative NMR Spectrometry Vocabularies' and 'spectrum generation information' and 'spectrum interpretation'. 
-v1.1 Merged msi namespace nmr ontology (Schober NMR) into Wishard CV (using P4 Refactoring/Merge) in order to get rid of import statements and restriction overriding
+v1.1 Merged msi namespace nmr ontology (Schober NMR) into Wishard CV (using P4 Refactoring/Merge) in order to get rid of import statements and restriction overriding.
 v1.2 Entity (ID) renaming of newly (physically) integrated MSI NMR Terms from MSI namespace to Cosmos nmrML namespace
+v1.3 File renaming to get rid of version in Filname (now stores as RA annotation property) infile. New Namespace (now set to http://nmrML.org/nmrCV to distinguish it from xsd namespace). Alignment of ID schemes:To archieve this, we substituted 541 occurances of "nmrCV_" for "nmrCV#NMR:" in the complete owl file. Then we substituited 710 occurrances of "nmrCV#MSI_" with "nmrCV#NMR:1" to alin the old MSI IDs to the new NMR prefix and 7 digit length.  Importing DOAP: Add RA metadata using http://usefulinc.com/ns/doap# 
 
 
 To view and edit this owl CV you have to download and install Protege 4.2 or later on your Computer. As the BFO import goes over a weblink, you need to make sure your Computer is connected to the Internet when opening the owl file.
@@ -78,6 +80,28 @@ For e.g. SolventType, decide if we want to have naming coherence of the XSD leaf
 Word separator (_ vs spc) alignment
 ID scheme alignmemnt
 Amalgamating nmr and msi namespaces into one NS without imports.
+
+
+ID alignment:
+ Right now, we find the two ID schemes:
+     <!-- http://nmrML.org/nmrCV_1002021 -->
+      <owl:Class rdf:about="http://nmrML.org/nmrCV_1002021">
+      
+     <!-- http://nmrML.org/nmrCV#MSI_400001 -->
+     <owl:Class rdf:about="http://nmrML.org/nmrCV#MSI_400001">
+
+These should be aligned into the new scheme:
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000003 -->
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000003">
+        <rdfs:label xml:lang="en">newcls</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
+    </owl:Class>
+
+To archieve this, we substituted 541 occurances of "nmrCV_" for "nmrCV#NMR:" in the complete owl file. Then we substituited 710 occurrances of "nmrCV#MSI_" with "nmrCV#NMR:1" to alin the old MSI IDs to the new NMR prefix and 7 digit length.
+
+
+
 
 List of terms required by current XSD:
 
