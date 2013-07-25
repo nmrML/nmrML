@@ -1,4 +1,3 @@
-
 JAVABIN = /cygdrive/c/jdk7/bin
 JAVAC = $(JAVABIN)/javac
 JAVACFLAGS = -cp ./
@@ -17,6 +16,8 @@ DIR_BRUKER=./test
 
 
 all: parser cv xsd dev
+
+test: testparser testcv testxml
 
 parser:
 	@make install PROG=$(PKG_UK)/*
