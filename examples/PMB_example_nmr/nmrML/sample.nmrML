@@ -16,13 +16,13 @@
         <contact id="ID00001" fullname="Daniel Jacob" organization="INRA"/>
     </contactList>
     <sourceFileList count="3">
-        <sourceFile id="ID00002" name="zg.eretic.1H.2">
+        <sourceFile id="ID00002" name="pulseprogram">
             <cvParam cvRef="NMR" accession="NMR_400169" name="one_dimensional_pulse_sequence" value=""/>
         </sourceFile>
         <sourceFile id="ID00003" name="acqus">
             <cvParam cvRef="NMR" accession="NMR_400118" name="acquisition parameter set file reference" value=""/>
         </sourceFile>
-        <sourceFile id="ID00004" name="procs">
+        <sourceFile id="ID00004" name="pdata/1/procs">
             <cvParam cvRef="NMR" accession="NMR_400123" name="processing parameter set file reference" value=""/>
         </sourceFile>
     </sourceFileList>
@@ -53,6 +53,9 @@
     <acquisition>
         <acquisition1D>
             <acquisitionParameterSet numberOfScans="64">
+                <pulseSequence name="zg.eretic.1H.2">
+                    <pulseSequenceFile ref="ID00002"/>
+                </pulseSequence>
                 <DirectDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID00003" numberOfDataPoints="32768" acquisitionNucleus="1H">
                     <gammaB1PulseFieldStrength value="500160000.0" unitAccession="UO_0000169" unitName="Hertz" unitCvRef="UO"/>
                     <sweepWidth value="12.01532577" unitAccession="UO_0000169" unitName="parts per million" unitCvRef="UO"/>

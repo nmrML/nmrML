@@ -1,3 +1,4 @@
+package org.nmrml.test;
 
 import uk.ac.ebi.nmr.fid.*;
 import uk.ac.ebi.nmr.fid.io.*;
