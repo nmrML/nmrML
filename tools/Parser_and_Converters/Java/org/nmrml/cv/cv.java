@@ -1,5 +1,7 @@
+package org.nmrml.cv;
+
 /*
- * $Id: CVTest.java,v 0.1 2013-07-24 09:50:00 DJ $
+ * $Id: cv.java,v 0.1 2013-07-24 09:50:00 DJ $
  */
 
 import java.io.*;
@@ -14,8 +16,7 @@ public static String[][] cvList = {
 };
 */
 
-/* to be put in a separated file: cv.java as a public class */
-class cv
+public class cv
 {
     public static final Integer NO_UNIT  = 0;
     public static final Integer PPM_UNIT = 1;
@@ -49,38 +50,4 @@ class cv
 
     /* to be extended ... */
 
-}
-
-/* to be put in a separated file: CVparams.java as a public class */
-class CVparams
-{
-    private String IDREF;
-    private String Accession;
-    private String Name;
-
-    public CVparams(String[][] CV, int id) {
-        this.IDREF=CV[id][0];
-        this.Accession=CV[id][1];
-        this.Name=CV[id][2];
-    }
-    public String getIDREF(){ return this.IDREF; }
-    public String getAccession(){ return this.Accession; }
-    public String getName(){ return this.Name; }
-
-}
-
-public class CVTest
-{
-
-    public static void main(String[] args)
-    {
-        CVparams cv_unit = new CVparams(cv.Units,cv.PPM_UNIT);
-        System.out.println("Unit: Name="+cv_unit.getName()+", Accession="+cv_unit.getAccession());
-
-        CVparams cv_solvent = new CVparams(cv.Solvent,cv.D2O_SOL);
-        System.out.println("Solvent: Name="+cv_solvent.getName()+", Accession="+cv_solvent.getAccession());
-
-        CVparams cv_wfunc = new CVparams(cv.WindowFunction,cv.GM_WF);
-        System.out.println("Window Function: Name="+cv_wfunc.getName()+", Accession="+cv_wfunc.getAccession());
-    }
 }

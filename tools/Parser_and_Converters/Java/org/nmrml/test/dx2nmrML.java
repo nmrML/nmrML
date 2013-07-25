@@ -1,3 +1,4 @@
+package org.nmrml.test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -123,7 +124,7 @@ public class dx2nmrML {
             /* Pulse sequence file */
             SourceFileType pulsefile = (SourceFileType) objFactory.createSourceFileType();
             pulsefile.setId(getNewIdentifier());
-            pulsefile.setName("zg.eretic.1H.2");
+            pulsefile.setName("pulseprogram");
             CVParamType cvpf = (CVParamType) objFactory.createCVParamType();
             cvpf.setCvRef(cvNMR);
             cvpf.setAccession("NMR_400169");
@@ -145,7 +146,7 @@ public class dx2nmrML {
             /* Processing parameter file */
             SourceFileType procfile = (SourceFileType) objFactory.createSourceFileType();
             procfile.setId(getNewIdentifier());
-            procfile.setName("procs");
+            procfile.setName("pdata/1/procs");
             CVParamType cvprocf = (CVParamType) objFactory.createCVParamType();
             cvprocf.setCvRef(cvNMR);
             cvprocf.setAccession("NMR_400123");
@@ -272,13 +273,21 @@ public class dx2nmrML {
             //   acqdimparam.setAcquisitionParamsFileRef(acqFileRef);
             acqparam.setDirectDimensionParameterSet(acqdimparam);
 
-           /* Acquisition1D */
+            /* PulseSequence */
+            AcquisitionParameterSetType.PulseSequence pulse_sequence = 
+                        (AcquisitionParameterSetType.PulseSequence) objFactory.createAcquisitionParameterSetTypePulseSequence();
+            SourceFileRefType pulseFileRef = (SourceFileRefType) objFactory.createSourceFileRefType();
+            pulseFileRef.setRef(pulsefile);
+            pulse_sequence.setPulseSequenceFile(pulseFileRef);
+            pulse_sequence.setName("zg.eretic.1H.2");
+            acqparam.setPulseSequence(pulse_sequence);
+            
+            /* Acquisition1D */
             Acquisition1DType acq1Dtype = (Acquisition1DType) objFactory.createAcquisition1DType();
             acq1Dtype.setAcquisitionParameterSet(acqparam);
 
             AcquisitionType acqtype = (AcquisitionType) objFactory.createAcquisitionType();
             acqtype.setAcquisition1D(acq1Dtype);
-
             nmrMLtype.setAcquisition(acqtype);
 
 
