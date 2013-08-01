@@ -1,0 +1,1 @@
+We might as well use an own git for the converter developments, e.g. at https://github.com/nmrML/converter 
