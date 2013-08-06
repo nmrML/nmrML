@@ -178,6 +178,26 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="CVTermType">
+    <xs:annotation>
+      <xs:documentation>This element holds additional data or annotation as a simple CV term with no further values (Parameters) associated with it. Only controlled CV terms values are allowed here.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="cvRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="accession" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="CVParamType">
     <xs:annotation>
       <xs:documentation>This element holds additional data or annotation. In contrast to CVTermType, here a pair of CV term plus a value (=Parameter) is captured. Only controlled values are allowed here.</xs:documentation>
@@ -200,26 +220,6 @@
     <xs:attribute name="value" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:complexType name="CVTermType">
-    <xs:annotation>
-      <xs:documentation>This element holds additional data or annotation as a simple CV term with no further values (Parameters) associated with it. Only controlled CV terms values are allowed here.</xs:documentation>
-    </xs:annotation>
-    <xs:attribute name="cvRef" type="xs:IDREF" use="required">
-      <xs:annotation>
-        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="accession" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="name" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
