@@ -19,10 +19,11 @@ v1.4 Empty outdated namespace declarations and NS prefix declarations were remov
 http://nmrML.org/nmrCV#has_regexp
 http://nmrML.org/nmrCV#has_units
 http://nmrML.org/nmrCV#part_of
-Thier usage in the ole Cruz obo file was minor and has to be recreated by hand, but ideally with relations from btl2 with the following mapping:
+Their usage in the ole Cruz obo file was minor and has to be recreated by hand, but ideally with relations from btl2 with the following mapping:
 http://nmrML.org/nmrCV#has_regexp-->
 http://nmrML.org/nmrCV#has_units-->
 http://nmrML.org/nmrCV#part_of-->http://purl.org/biotop/btl2.owl#isPartOf
+v1.5 Major restructuring and redundancy removal, i.e. instruments are now captured as instrument attribute/models.
 
 
 To view and edit this owl CV you have to download and install Protege 4.2 or later on your Computer. As the BFO import goes over a weblink, you need to make sure your Computer is connected to the Internet when opening the owl file.
@@ -108,15 +109,20 @@ These should be aligned into the new scheme:
 
 To archieve this, we substituted 541 occurances of "nmrCV_" for "nmrCV#NMR:" in the complete owl file. Then we substituited 710 occurrances of "nmrCV#MSI_" with "nmrCV#NMR:1" to alin the old MSI IDs to the new NMR prefix and 7 digit length.
 
+Synomyn capture:
+Do we use obo exact synonym or skos or multiple labels or multiople classes set equivalent?
+
+General design premises:
+Avoid roles.
 
 
 
-List of terms required by current XSD:
+List of terms required by current XSD: these were bookmarked in the new nmrTab
 
 CVTermType occurrences:
 buffer-->buffer
-solvent-->solvent/NMR_Slovent
-concentration standard type-->
+solvent-->solvent
+concentration standard type-->calibration compound , what is chemical shift reference ?  What calibration_reference_shift under calibration compound ?
 concentration standard name	we here see a use-mention problem arising for the CV. The xsd should probably change here to avoid this.
 encoding method (Quadrature detection method)	is this the same as for encoding scheme ?
 sample container
