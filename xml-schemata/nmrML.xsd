@@ -168,7 +168,7 @@
   </xs:complexType>
   <xs:complexType name="FileDescriptionType">
     <xs:annotation>
-      <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here.</xs:documentation>
+      <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here. The FileDescriptionType element is intended to contain a summary description of the current nmrML file, for example it could say that the file has a 1D FID, a processed spectra, and a peak picked spectra. It does not point to source files or anything like that. It is intended to make it easy to determine what is inside a file without having to look for different element types etc and build a summary yourself. RawSpectrumFile would not be a good name. nmrMLInstanceSummary might be a more intuitive name.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="fileContent" type="ParamGroupType">
@@ -489,7 +489,7 @@
   </xs:complexType>
   <xs:complexType name="SourceFileType">
     <xs:annotation>
-      <xs:documentation>Description of the source file, including location and type.</xs:documentation>
+      <xs:documentation>Description of the source file, including location and type. The SourceFileType element is intended to be a generic element that points to a file that was used to produce the spectrum or the nmrML file. It could point to an FID file, a procpar file, a pulse program file etc. nmrExperimentSourceFile could be a good name but I personally think that SourceFile is an intuitive name already.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="ParamGroupType">

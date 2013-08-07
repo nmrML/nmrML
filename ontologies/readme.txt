@@ -85,10 +85,10 @@ All this will leave us with a version 1.0 to be the first release. From here on 
 Next Step:
 Add CVterms als required in the XSD leafs when CVTermType, CVParamType, CVParamWithUnitType... occures. For, e.g. name="buffer" type="CVTermType", we have to create a term "buffer" in the CV, so it can be further populated according to our use cases?
 For e.g. SolventType, decide if we want to have naming coherence of the XSD leafs to the CV entry Class labels ? E.g. Should we put the term "SolventType" or the term "solvent" intop the CV? I suggest the latter is more correct.
-
 Word separator (_ vs spc) alignment
 ID scheme alignmemnt
 Amalgamating nmr and msi namespaces into one NS without imports.
+Adding structure, terms required by use case examples, include terms to be refactored from Rubtsov xsd?
 
 
 ID alignment:
@@ -114,7 +114,10 @@ Do we use obo exact synonym or skos or multiple labels or multiople classes set 
 
 General design premises:
 Avoid roles.
-
+Avoid redundance between xsd and CV.
+Keep mnames between PSI MzML and MSI nmrML equal where possible: Lets just add the above distinctions into each elements definition to be clearer.
+Regarding 'renaming' of elements/terms, we have to find a cutoff between a) making the ML and ontology more intuituive and b) keeping it similar to the PSI MLs, i.e. in order to ease mapping and alignments. In the future there might be the case where people have to orient themselves in both PSI and MSI Standards, i.e. when considering systems biologic research questions. To be future proof I think we should try to use equal labels for the same concepts in PSI and MSI.
+So lets stick to the names for the moment and just alter their definitions to be more explicit.
 
 
 List of terms required by current XSD: these were bookmarked in the new nmrTab
