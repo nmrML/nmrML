@@ -89,6 +89,7 @@ Word separator (_ vs spc) alignment
 ID scheme alignmemnt
 Amalgamating nmr and msi namespaces into one NS without imports.
 Adding structure, terms required by use case examples, include terms to be refactored from Rubtsov xsd?
+Clean up: remove terms not needed by the XSD from the CV ? e.g. acquisition nucleus was required in xsd as sting then it would be redundant to also all these as CV terms.
 
 
 ID alignment:
@@ -120,48 +121,43 @@ Regarding 'renaming' of elements/terms, we have to find a cutoff between a) maki
 So lets stick to the names for the moment and just alter their definitions to be more explicit.
 
 
-List of terms required by current XSD: these were bookmarked in the new nmrTab
+List of terms required by current XSD: these were bookmarked in CV (annotation property) and are visible in the new nmrTab
 
-CVTermType occurrences:
+CVTerm occurrences:
 buffer-->buffer
 solvent-->solvent
 concentration standard type-->calibration compound , what is chemical shift reference ?  What calibration_reference_shift under calibration compound ?
 concentration standard name	we here see a use-mention problem arising for the CV. The xsd should probably change here to avoid this.
-encoding method (Quadrature detection method)	is this the same as for encoding scheme ?
-sample container
-(spectrum) y axis type
-post acquisition solvent suppression method	Two usages in xsd, but with differrent type ?
-calibration compound	Two usages in xsd, but with differrent type ?
-data transformation method
-(spectral) projection method
-spectral denoising method
-window function method
-baseline correction method
+encoding method (Quadrature detection method)	is this the same as encoding method ?
+sample container-->NMR_sample_holder
+(spectrum) y axis type-->coordinate system descriptor
+post acquisition solvent suppression method	Two usages in xsd, but with differrent type ?  -->solvent suppression method
+calibration compound	Two usages in xsd, but with differrent type ?-->calibration compound
+data transformation method-->data transformation method
+(spectral) projection method-->projection method
+spectral denoising method-->spectral denoising method
+window function method-->window function method
+baseline correction method-->baseline correction
+sample type-->NMR sample
+
+CVParam occurrences:
+file content-->data file content
+software type-->software
+source file type-->data file attribute (needs refactoring)
+instrument configuration type-->instrument configuration
+processing method type-->data processing method
 
 CVParamType occurrences:
-chemical shift standard
-solvent suppression method
-encoding scheme (Quadrature detection method)
-window function parameter
+chemical shift standard-->chemical shift standard
+solvent suppression method-->solvent suppression method
+encoding scheme (Quadrature detection method)-->encoding method
+window function parameter-->window function parameter
 
 CVParamWithUnitType occurrences:
 CVParamWithUnitType is currently not used in the xsd and dangling ! I assume ValueWithUnitType substitutes it ?
 
+UserParamType occurrences:
+No CV terms needed
+
 ValueWithUnitType occurrences:
 These will have to be used from the Unit ontology.
-
-CVParam:
-file content
-software type
-source file type
-instrument configuration type
-processing method type
-
-UserParamType:
-...
-
-
-
-...
-
-
