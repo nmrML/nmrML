@@ -681,7 +681,7 @@
       </xs:element>
     </xs:sequence>
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
-    <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
+    <xs:attribute name="acquisitionParamsFileRef" type="xs:IDREF" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionIndirectDimensionParameterSetType">
@@ -727,7 +727,7 @@
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element name="contactRefList" type="ContactRefListType"/>
-      <xs:element name="acquisitionParameterFileRef" type="SourceFileRefType"> </xs:element>
+      <xs:element name="acquisitionParameterFileRefList" type="SourceFileRefListType"> </xs:element>
       <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTermType">
         <xs:annotation>
