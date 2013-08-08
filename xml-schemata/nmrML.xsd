@@ -331,6 +331,8 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="referenceableParamGroupRef"
         type="ReferenceableParamGroupRefType"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cvParam" type="CVParamType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cvParamWithUnit"
+        type="CVParamWithUnitType"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="userParam" type="UserParamType"/>
     </xs:sequence>
   </xs:complexType>
