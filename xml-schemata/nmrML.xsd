@@ -658,6 +658,7 @@
       <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="acquisitionNucleus" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
@@ -680,7 +681,6 @@
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
     <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
-    <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionIndirectDimensionParameterSetType">
     <xs:annotation>
