@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nmrml.org/schema file:/C:/nmrML/xml-schemata/nmrML.xsd" version="20120223" accession="1221" accession_url="http://www.metabolomicscentre.ca/nmrML/biosample-concentrations.xml" id="handcraftedexample">
+    <cvList count="2">
+        <cv id="nmrCV" fullName="nuclear magnetic resonance CV" version="1.5" URI="http://nmrML.org/nmrCV"/>
+        <cv fullName="Unit Ontology" id="uo" URI="http://purl.obolibrary.org/obo/uo.owl" version="1.20"/>
+    </cvList>
+    <fileDescription>
+        <fileContent>
+            <referenceableParamGroupRef ref="http://www.metabolomicscentre.ca/nmrML/biosample-concentrations.xml ??? what is meant here?"/>
+            
+            <cvParam cvRef="nmrCV" accession="NMR:1002007" name="nmr spectrum" value="???"/>
+            <cvParam cvRef="nmrCV" accession="NMR:1000006" name="sample concentration" value="???"/>
+            <cvParamWithUnit cvRef="ID001" accession="accession7" name="name5" value="value5" unitCvRef="ID002" unitAccession="unitAccession1" unitName="unitName1"/>
+            <cvParamWithUnit cvRef="ID000" accession="accession9" name="name7" value="value7" unitCvRef="ID002" unitAccession="unitAccession3" unitName="unitName3"/>
+            <userParam name="name9" valueType="valueType1" value="value9" unitAccession="unitAccession5" unitName="unitName5" unitCvRef="ID002"/>
+            <userParam name="name11" valueType="valueType3" value="value11" unitAccession="unitAccession7" unitName="unitName7" unitCvRef="ID003"/>
+        </fileContent>
+    </fileDescription>
+    <contactList>
+        <contact id="???" url="http://www.wishartlab.com/" fullname="Joseph Cruz" address="Athabasca Hall, University of Alberta, Edmonton, AB" organization="University of Alberta" email="jacruz@example.com"/>
+        <contact id="???" url="http://www.ipb-halle.de/mitarbeiter/daniel-schober/" fullname="Daniel Schober" address="IPB-Halle, Weinberg 3, 06120 Halle, Germany" organization="Dept. for Stress and Developmental Biology		Bioinformatics &amp; Mass Spectrometry" email="dschober@ipb-halle.de"/>
+    </contactList>
+    <sourceFileList count="1">
+        <sourceFile id="sf1" location="file:///data/biosample_example/" name="HMDB00001.fid">
+            <referenceableParamGroupRef ref="ID003"/>
+            <referenceableParamGroupRef ref="ID002"/>
+            <cvParam cvRef="nmrCV" accession="NMR:1002003" name="Varian FID nativeID format"/>
+            <cvParam cvRef="nmrCV" accession="NMR:1000569" name="SHA-1" value="71be39fb2700ab2f3c8b2234b91274968b6899b1"/>
+            <cvParamWithUnit cvRef="ID006" accession="accession15" name="name19" value="value17" unitCvRef="ID009" unitAccession="unitAccession9" unitName="unitName9"/>
+            <cvParamWithUnit cvRef="ID006" accession="accession17" name="name21" value="value19" unitCvRef="ID002" unitAccession="unitAccession11" unitName="unitName11"/>
+            <userParam name="name23" valueType="valueType5" value="value21" unitAccession="unitAccession13" unitName="unitName13" unitCvRef="ID000"/>
+            <userParam name="name25" valueType="valueType7" value="value23" unitAccession="unitAccession15" unitName="unitName15" unitCvRef="ID008"/>
+        </sourceFile>
+        
+    </sourceFileList>
+    <softwareList count="50">
+        <software id="ID013" version="version7">
+            <referenceableParamGroupRef ref="ID008"/>
+            <referenceableParamGroupRef ref="ID002"/>
+            <cvParam cvRef="ID004" accession="accession27" name="name41" value="value37"/>
+            <cvParam cvRef="ID013" accession="accession29" name="name43" value="value39"/>
+            <cvParamWithUnit cvRef="ID010" accession="accession31" name="name45" value="value41" unitCvRef="ID008" unitAccession="unitAccession25" unitName="unitName25"/>
+            <cvParamWithUnit cvRef="ID012" accession="accession33" name="name47" value="value43" unitCvRef="ID001" unitAccession="unitAccession27" unitName="unitName27"/>
+            <userParam name="name49" valueType="valueType13" value="value45" unitAccession="unitAccession29" unitName="unitName29" unitCvRef="ID000"/>
+            <userParam name="name51" valueType="valueType15" value="value47" unitAccession="unitAccession31" unitName="unitName31" unitCvRef="ID012"/>
+        </software>
+        <software id="ID015" version="version9">
+            <referenceableParamGroupRef ref="ID003"/>
+            <referenceableParamGroupRef ref="ID015"/>
+            <cvParam cvRef="ID006" accession="accession35" name="name53" value="value49"/>
+            <cvParam cvRef="ID005" accession="accession37" name="name55" value="value51"/>
+            <cvParamWithUnit cvRef="ID001" accession="accession39" name="name57" value="value53" unitCvRef="ID002" unitAccession="unitAccession33" unitName="unitName33"/>
+            <cvParamWithUnit cvRef="ID005" accession="accession41" name="name59" value="value55" unitCvRef="ID004" unitAccession="unitAccession35" unitName="unitName35"/>
+            <userParam name="name61" valueType="valueType17" value="value57" unitAccession="unitAccession37" unitName="unitName37" unitCvRef="ID005"/>
+            <userParam name="name63" valueType="valueType19" value="value59" unitAccession="unitAccession39" unitName="unitName39" unitCvRef="ID008"/>
+        </software>
+    </softwareList>
+    <instrumentConfigurationList count="50">
+        <instrumentConfiguration id="ID017">
+            <referenceableParamGroupRef ref="ID012"/>
+            <referenceableParamGroupRef ref="ID008"/>
+            <cvParam cvRef="ID001" accession="accession43" name="name65" value="value61"/>
+            <cvParam cvRef="ID006" accession="accession45" name="name67" value="value63"/>
+            <cvParamWithUnit cvRef="ID013" accession="accession47" name="name69" value="value65" unitCvRef="ID012" unitAccession="unitAccession41" unitName="unitName41"/>
+            <cvParamWithUnit cvRef="ID006" accession="accession49" name="name71" value="value67" unitCvRef="ID012" unitAccession="unitAccession43" unitName="unitName43"/>
+            <userParam name="name73" valueType="valueType21" value="value69" unitAccession="unitAccession45" unitName="unitName45" unitCvRef="ID003"/>
+            <userParam name="name75" valueType="valueType23" value="value71" unitAccession="unitAccession47" unitName="unitName47" unitCvRef="ID007"/>
+            <softwareRef ref="ID004"/>
+        </instrumentConfiguration>
+        <instrumentConfiguration id="ID019">
+            <referenceableParamGroupRef ref="ID003"/>
+            <referenceableParamGroupRef ref="ID014"/>
+            <cvParam cvRef="ID019" accession="accession51" name="name77" value="value73"/>
+            <cvParam cvRef="ID011" accession="accession53" name="name79" value="value75"/>
+            <cvParamWithUnit cvRef="ID009" accession="accession55" name="name81" value="value77" unitCvRef="ID002" unitAccession="unitAccession49" unitName="unitName49"/>
+            <cvParamWithUnit cvRef="ID010" accession="accession57" name="name83" value="value79" unitCvRef="ID012" unitAccession="unitAccession51" unitName="unitName51"/>
+            <userParam name="name85" valueType="valueType25" value="value81" unitAccession="unitAccession53" unitName="unitName53" unitCvRef="ID008"/>
+            <userParam name="name87" valueType="valueType27" value="value83" unitAccession="unitAccession55" unitName="unitName55" unitCvRef="ID011"/>
+            <softwareRef ref="ID002"/>
+        </instrumentConfiguration>
+    </instrumentConfigurationList>
+    <dataProcessingList count="50">
+        <dataProcessing id="ID021">
+            <processingMethod order="50" softwareRef="ID020">
+                <referenceableParamGroupRef ref="ID020"/>
+                <referenceableParamGroupRef ref="ID020"/>
+                <cvParam cvRef="ID006" accession="accession59" name="name89" value="value85"/>
+                <cvParam cvRef="ID006" accession="accession61" name="name91" value="value87"/>
+                <cvParamWithUnit cvRef="ID008" accession="accession63" name="name93" value="value89" unitCvRef="ID010" unitAccession="unitAccession57" unitName="unitName57"/>
+                <cvParamWithUnit cvRef="ID015" accession="accession65" name="name95" value="value91" unitCvRef="ID005" unitAccession="unitAccession59" unitName="unitName59"/>
+                <userParam name="name97" valueType="valueType29" value="value93" unitAccession="unitAccession61" unitName="unitName61" unitCvRef="ID013"/>
+                <userParam name="name99" valueType="valueType31" value="value95" unitAccession="unitAccession63" unitName="unitName63" unitCvRef="ID020"/>
+            </processingMethod>
+            <processingMethod order="50" softwareRef="ID019">
+                <referenceableParamGroupRef ref="ID019"/>
+                <referenceableParamGroupRef ref="ID001"/>
+                <cvParam cvRef="ID004" accession="accession67" name="name101" value="value97"/>
+                <cvParam cvRef="ID009" accession="accession69" name="name103" value="value99"/>
+                <cvParamWithUnit cvRef="ID013" accession="accession71" name="name105" value="value101" unitCvRef="ID001" unitAccession="unitAccession65" unitName="unitName65"/>
+                <cvParamWithUnit cvRef="ID014" accession="accession73" name="name107" value="value103" unitCvRef="ID011" unitAccession="unitAccession67" unitName="unitName67"/>
+                <userParam name="name109" valueType="valueType33" value="value105" unitAccession="unitAccession69" unitName="unitName69" unitCvRef="ID019"/>
+                <userParam name="name111" valueType="valueType35" value="value107" unitAccession="unitAccession71" unitName="unitName71" unitCvRef="ID016"/>
+            </processingMethod>
+        </dataProcessing>
+        <dataProcessing id="ID023">
+            <processingMethod order="50" softwareRef="ID000">
+                <referenceableParamGroupRef ref="ID006"/>
+                <referenceableParamGroupRef ref="ID007"/>
+                <cvParam cvRef="ID015" accession="accession75" name="name113" value="value109"/>
+                <cvParam cvRef="ID020" accession="accession77" name="name115" value="value111"/>
+                <cvParamWithUnit cvRef="ID013" accession="accession79" name="name117" value="value113" unitCvRef="ID022" unitAccession="unitAccession73" unitName="unitName73"/>
+                <cvParamWithUnit cvRef="ID008" accession="accession81" name="name119" value="value115" unitCvRef="ID009" unitAccession="unitAccession75" unitName="unitName75"/>
+                <userParam name="name121" valueType="valueType37" value="value117" unitAccession="unitAccession77" unitName="unitName77" unitCvRef="ID022"/>
+                <userParam name="name123" valueType="valueType39" value="value119" unitAccession="unitAccession79" unitName="unitName79" unitCvRef="ID004"/>
+            </processingMethod>
+            <processingMethod order="50" softwareRef="ID006">
+                <referenceableParamGroupRef ref="ID008"/>
+                <referenceableParamGroupRef ref="ID012"/>
+                <cvParam cvRef="ID013" accession="accession83" name="name125" value="value121"/>
+                <cvParam cvRef="ID022" accession="accession85" name="name127" value="value123"/>
+                <cvParamWithUnit cvRef="ID016" accession="accession87" name="name129" value="value125" unitCvRef="ID013" unitAccession="unitAccession81" unitName="unitName81"/>
+                <cvParamWithUnit cvRef="ID001" accession="accession89" name="name131" value="value127" unitCvRef="ID010" unitAccession="unitAccession83" unitName="unitName83"/>
+                <userParam name="name133" valueType="valueType41" value="value129" unitAccession="unitAccession85" unitName="unitName85" unitCvRef="ID018"/>
+                <userParam name="name135" valueType="valueType43" value="value131" unitAccession="unitAccession87" unitName="unitName87" unitCvRef="ID021"/>
+            </processingMethod>
+        </dataProcessing>
+    </dataProcessingList>
+    <sampleList count="1">
+        <sample originalBiologicalSampleReference="Sample1 ??? 1-methylhistidine ???">
+            <originalBiologicalSamplepH>0</originalBiologicalSamplepH>
+            <postBufferpH>0</postBufferpH>
+            <buffer cvRef="ID012" accession="accession91" name="name137"/>
+            <fieldFrequencyLock fieldFrequencyLockName="fieldFrequencyLockName1"/>
+            <chemicalShiftStandard cvRef="ID016" accession="accession93" name="name139" value="value133"/>
+            <solventType cvRef="ID018" accession="accession95" name="name141"/>
+            <additionalSoluteList>
+                <solute name="name143">
+                    <concentrationInSample value="value135" unitAccession="unitAccession89" unitName="unitName89" unitCvRef="ID018"/>
+                </solute>
+                <solute name="name145">
+                    <concentrationInSample value="value137" unitAccession="unitAccession91" unitName="unitName91" unitCvRef="ID019"/>
+                </solute>
+            </additionalSoluteList>
+            <solventConcentration value="value139" unitAccession="unitAccession93" unitName="unitName93" unitCvRef="ID007"/>
+            <concentrationStandard>
+                <type cvRef="ID002" accession="accession97" name="name147"/>
+                <concentrationInSample value="value141" unitAccession="unitAccession95" unitName="unitName95" unitCvRef="ID013"/>
+                <name cvRef="ID005" accession="accession99" name="name149"/>
+            </concentrationStandard>
+        </sample>
+        
+    </sampleList>
+    <referenceableParamGroupList count="50">
+        <referenceableParamGroup id="ID025">
+            <cvParam cvRef="ID024" accession="accession111" name="name165" value="value153"/>
+            <cvParam cvRef="ID008" accession="accession113" name="name167" value="value155"/>
+            <userParam name="name169" valueType="valueType45" value="value157" unitAccession="unitAccession105" unitName="unitName105" unitCvRef="ID001"/>
+            <userParam name="name171" valueType="valueType47" value="value159" unitAccession="unitAccession107" unitName="unitName107" unitCvRef="ID020"/>
+        </referenceableParamGroup>
+        <referenceableParamGroup id="ID027">
+            <cvParam cvRef="ID004" accession="accession115" name="name173" value="value161"/>
+            <cvParam cvRef="ID023" accession="accession117" name="name175" value="value163"/>
+            <userParam name="name177" valueType="valueType49" value="value165" unitAccession="unitAccession109" unitName="unitName109" unitCvRef="ID027"/>
+            <userParam name="name179" valueType="valueType51" value="value167" unitAccession="unitAccession111" unitName="unitName111" unitCvRef="ID019"/>
+        </referenceableParamGroup>
+    </referenceableParamGroupList>
+    <acquisition>
+        <acquisition1D>
+            <acquisitionParameterSet numberOfSteadyStateScans="0" numberOfScans="0">
+                <contactRefList count="50">
+                    <contactRef ref="ID015"/>
+                    <contactRef ref="ID010"/>
+                </contactRefList>
+                <acquisitionParameterFileRefList count="50">
+                    <sourceFileRef ref="ID010"/>
+                    <sourceFileRef ref="ID005"/>
+                </acquisitionParameterFileRefList>
+                <softwareRef ref="ID024"/>
+                <sampleContainer cvRef="ID007" accession="accession119" name="name181"/>
+                <sampleAcquisitionTemperature value="value169" unitAccession="unitAccession113" unitName="unitName113" unitCvRef="ID021"/>
+                <solventSuppressionMethod cvRef="ID013" accession="accession121" name="name183" value="value171"/>
+                <spinningRate value="value173" unitAccession="unitAccession115" unitName="unitName115" unitCvRef="ID022"/>
+                <relaxationDelay value="value175" unitAccession="unitAccession117" unitName="unitName117" unitCvRef="ID003"/>
+                <pulseSequence literatueReference="http://www.oxygenxml.com/" name="name185">
+                    <pulseSequenceFile ref="ID020"/>
+                </pulseSequence>
+                <shapedPulseFile ref="ID007"/>
+                <DirectDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID000" numberOfDataPoints="0">
+                    <acquisitionNucleus cvRef="ID025" accession="accession123" name="name187"/>
+                    <gammaB1PulseFieldStrength value="value177" unitAccession="unitAccession119" unitName="unitName119" unitCvRef="ID006"/>
+                    <sweepWidth value="value179" unitAccession="unitAccession121" unitName="unitName121" unitCvRef="ID016"/>
+                    <timeDomain byteLength="0" dataProcessingRef="ID005" totalBytes="50" byteFormat="byteFormat1">
+                        <binary>ZGVmYXVsdA==</binary>
+                    </timeDomain>
+                    <irradiationFrequency value="value181" unitAccession="unitAccession123" unitName="unitName123" unitCvRef="ID019"/>
+                </DirectDimensionParameterSet>
+            </acquisitionParameterSet>
+            <fid byteLength="0" dataProcessingRef="ID017" totalBytes="50" byteFormat="byteFormat3">
+                <binary>ZGVmYXVsdA==</binary>
+            </fid>
+        </acquisition1D>
+<!--        <acquisition2D>
+            <acquisitionParameterSet numberOfSteadyStateScans="0" numberOfScans="0">
+                <contactRefList count="50">
+                    <contactRef ref="ID021"/>
+                    <contactRef ref="ID004"/>
+                </contactRefList>
+                <acquisitionParameterFileRefList count="50">
+                    <sourceFileRef ref="ID011"/>
+                    <sourceFileRef ref="ID027"/>
+                </acquisitionParameterFileRefList>
+                <softwareRef ref="ID021"/>
+                <sampleContainer cvRef="ID000" accession="accession125" name="name189"/>
+                <sampleAcquisitionTemperature value="value183" unitAccession="unitAccession125" unitName="unitName125" unitCvRef="ID016"/>
+                <solventSuppressionMethod cvRef="ID009" accession="accession127" name="name191" value="value185"/>
+                <spinningRate value="value187" unitAccession="unitAccession127" unitName="unitName127" unitCvRef="ID022"/>
+                <relaxationDelay value="value189" unitAccession="unitAccession129" unitName="unitName129" unitCvRef="ID012"/>
+                <pulseSequence literatueReference="http://www.oxygenxml.com/" name="name193">
+                    <pulseSequenceFile ref="ID024"/>
+                </pulseSequence>
+                <shapedPulseFile ref="ID008"/>
+                <hadamardParameterSet>
+                    <hadamardFrequency value="value191" unitAccession="unitAccession131" unitName="unitName131" unitCvRef="ID009"/>
+                    <hadamardFrequency value="value193" unitAccession="unitAccession133" unitName="unitName133" unitCvRef="ID009"/>
+                </hadamardParameterSet>
+                <directDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID024" numberOfDataPoints="0">
+                    <acquisitionNucleus cvRef="ID026" accession="accession129" name="name195"/>
+                    <gammaB1PulseFieldStrength value="value195" unitAccession="unitAccession135" unitName="unitName135" unitCvRef="ID016"/>
+                    <sweepWidth value="value197" unitAccession="unitAccession137" unitName="unitName137" unitCvRef="ID015"/>
+                    <timeDomain byteLength="0" dataProcessingRef="ID000" totalBytes="50" byteFormat="byteFormat5">
+                        <binary>ZGVmYXVsdA==</binary>
+                    </timeDomain>
+                    <irradiationFrequency value="value199" unitAccession="unitAccession139" unitName="unitName139" unitCvRef="ID009"/>
+                </directDimensionParameterSet>
+                <encodingScheme cvRef="ID003" accession="accession131" name="name197" value="value201"/>
+                <indirectDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID027" numberOfDataPoints="0">
+                    <acquisitionNucleus cvRef="ID002" accession="accession133" name="name199"/>
+                    <gammaB1PulseFieldStrength value="value203" unitAccession="unitAccession141" unitName="unitName141" unitCvRef="ID020"/>
+                    <sweepWidth value="value205" unitAccession="unitAccession143" unitName="unitName143" unitCvRef="ID015"/>
+                    <timeDomain byteLength="0" dataProcessingRef="ID023" totalBytes="50" byteFormat="byteFormat7">
+                        <binary>ZGVmYXVsdA==</binary>
+                    </timeDomain>
+                    <irradiationFrequency value="value207" unitAccession="unitAccession145" unitName="unitName145" unitCvRef="ID015"/>
+                </indirectDimensionParameterSet>
+                <indirectDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID023" numberOfDataPoints="0">
+                    <acquisitionNucleus cvRef="ID016" accession="accession135" name="name201"/>
+                    <gammaB1PulseFieldStrength value="value209" unitAccession="unitAccession147" unitName="unitName147" unitCvRef="ID007"/>
+                    <sweepWidth value="value211" unitAccession="unitAccession149" unitName="unitName149" unitCvRef="ID021"/>
+                    <timeDomain byteLength="0" dataProcessingRef="ID006" totalBytes="50" byteFormat="byteFormat9">
+                        <binary>ZGVmYXVsdA==</binary>
+                    </timeDomain>
+                    <irradiationFrequency value="value213" unitAccession="unitAccession151" unitName="unitName151" unitCvRef="ID004"/>
+                </indirectDimensionParameterSet>
+            </acquisitionParameterSet>
+            <fid byteLength="0" dataProcessingRef="ID025" totalBytes="50" byteFormat="byteFormat11">
+                <binary>ZGVmYXVsdA==</binary>
+            </fid>
+        </acquisition2D>-->
+    </acquisition>
+    <spectrumList count="50" defaultDataProcessingRef="ID017">
+        <spectrum1D numberOfDataPoints="0">
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID014"/>
+                <softwareRef ref="ID005"/>
+            </processingSoftwareRefList>
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID017"/>
+                <softwareRef ref="ID018"/>
+            </processingSoftwareRefList>
+            <processingContactRefList count="50">
+                <contactRef ref="ID015"/>
+                <contactRef ref="ID006"/>
+            </processingContactRefList>
+            <spectrumDataArray byteLength="0" dataProcessingRef="ID018" totalBytes="50" byteFormat="byteFormat13">
+                <binary>ZGVmYXVsdA==</binary>
+            </spectrumDataArray>
+            <xAxis unitAccession="unitAccession153" unitName="unitName153" unitCvRef="ID024" startValue="startValue1" endValue="endValue1"/>
+            <yAxisType cvRef="ID000" accession="accession137" name="name203"/>
+            <processingParameterSet>
+                <postAcquisitionSolventSuppressionMethod cvRef="ID006" accession="accession139" name="name205"/>
+                <calibrationCompound cvRef="ID007" accession="accession141" name="name207"/>
+                <dataTransformationMethod cvRef="ID009" accession="accession143" name="name209"/>
+            </processingParameterSet>
+            <firstDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value215" unitAccession="unitAccession155" unitName="unitName155" unitCvRef="ID013"/>
+                <firstOrderPhaseCorrection value="value217" unitAccession="unitAccession157" unitName="unitName157" unitCvRef="ID015"/>
+                <calibrationReferenceShift value="value219" unitAccession="unitAccession159" unitName="unitName159" unitCvRef="ID011"/>
+                <spectralDenoisingMethod cvRef="ID015" accession="accession145" name="name211"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID011" accession="accession147" name="name213"/>
+                    <windowFunctionParameter cvRef="ID016" accession="accession149" name="name215" value="value221"/>
+                    <windowFunctionParameter cvRef="ID000" accession="accession151" name="name217" value="value223"/>
+                </windowFunction>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID027" accession="accession153" name="name219"/>
+                    <windowFunctionParameter cvRef="ID023" accession="accession155" name="name221" value="value225"/>
+                    <windowFunctionParameter cvRef="ID015" accession="accession157" name="name223" value="value227"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID003" accession="accession159" name="name225"/>
+                <parameterFileRef ref="ID007"/>
+            </firstDimensionProcessingParameterSet>
+        </spectrum1D>
+        <spectrum1D numberOfDataPoints="0">
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID026"/>
+                <softwareRef ref="ID003"/>
+            </processingSoftwareRefList>
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID014"/>
+                <softwareRef ref="ID009"/>
+            </processingSoftwareRefList>
+            <processingContactRefList count="50">
+                <contactRef ref="ID019"/>
+                <contactRef ref="ID023"/>
+            </processingContactRefList>
+            <spectrumDataArray byteLength="0" dataProcessingRef="ID019" totalBytes="50" byteFormat="byteFormat15">
+                <binary>ZGVmYXVsdA==</binary>
+            </spectrumDataArray>
+            <xAxis unitAccession="unitAccession161" unitName="unitName161" unitCvRef="ID009" startValue="startValue3" endValue="endValue3"/>
+            <yAxisType cvRef="ID009" accession="accession161" name="name227"/>
+            <processingParameterSet>
+                <postAcquisitionSolventSuppressionMethod cvRef="ID008" accession="accession163" name="name229"/>
+                <calibrationCompound cvRef="ID024" accession="accession165" name="name231"/>
+                <dataTransformationMethod cvRef="ID002" accession="accession167" name="name233"/>
+            </processingParameterSet>
+            <firstDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value229" unitAccession="unitAccession163" unitName="unitName163" unitCvRef="ID003"/>
+                <firstOrderPhaseCorrection value="value231" unitAccession="unitAccession165" unitName="unitName165" unitCvRef="ID003"/>
+                <calibrationReferenceShift value="value233" unitAccession="unitAccession167" unitName="unitName167" unitCvRef="ID017"/>
+                <spectralDenoisingMethod cvRef="ID017" accession="accession169" name="name235"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID015" accession="accession171" name="name237"/>
+                    <windowFunctionParameter cvRef="ID015" accession="accession173" name="name239" value="value235"/>
+                    <windowFunctionParameter cvRef="ID007" accession="accession175" name="name241" value="value237"/>
+                </windowFunction>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID024" accession="accession177" name="name243"/>
+                    <windowFunctionParameter cvRef="ID016" accession="accession179" name="name245" value="value239"/>
+                    <windowFunctionParameter cvRef="ID023" accession="accession181" name="name247" value="value241"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID000" accession="accession183" name="name249"/>
+                <parameterFileRef ref="ID016"/>
+            </firstDimensionProcessingParameterSet>
+        </spectrum1D>
+        <spectrumMultiD numberOfDataPoints="0">
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID005"/>
+                <softwareRef ref="ID022"/>
+            </processingSoftwareRefList>
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID023"/>
+                <softwareRef ref="ID007"/>
+            </processingSoftwareRefList>
+            <processingContactRefList count="50">
+                <contactRef ref="ID013"/>
+                <contactRef ref="ID008"/>
+            </processingContactRefList>
+            <spectrumDataArray byteLength="0" dataProcessingRef="ID012" totalBytes="50" byteFormat="byteFormat17">
+                <binary>ZGVmYXVsdA==</binary>
+            </spectrumDataArray>
+            <xAxis unitAccession="unitAccession169" unitName="unitName169" unitCvRef="ID021" startValue="startValue5" endValue="endValue5"/>
+            <yAxisType cvRef="ID001" accession="accession185" name="name251"/>
+            <processingParameterSet>
+                <postAcquisitionSolventSuppressionMethod cvRef="ID023" accession="accession187" name="name253"/>
+                <calibrationCompound cvRef="ID018" accession="accession189" name="name255"/>
+                <dataTransformationMethod cvRef="ID007" accession="accession191" name="name257"/>
+            </processingParameterSet>
+            <firstDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value243" unitAccession="unitAccession171" unitName="unitName171" unitCvRef="ID015"/>
+                <firstOrderPhaseCorrection value="value245" unitAccession="unitAccession173" unitName="unitName173" unitCvRef="ID026"/>
+                <calibrationReferenceShift value="value247" unitAccession="unitAccession175" unitName="unitName175" unitCvRef="ID023"/>
+                <spectralDenoisingMethod cvRef="ID011" accession="accession193" name="name259"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID010" accession="accession195" name="name261"/>
+                    <windowFunctionParameter cvRef="ID020" accession="accession197" name="name263" value="value249"/>
+                    <windowFunctionParameter cvRef="ID003" accession="accession199" name="name265" value="value251"/>
+                </windowFunction>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID021" accession="accession201" name="name267"/>
+                    <windowFunctionParameter cvRef="ID015" accession="accession203" name="name269" value="value253"/>
+                    <windowFunctionParameter cvRef="ID007" accession="accession205" name="name271" value="value255"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID013" accession="accession207" name="name273"/>
+                <parameterFileRef ref="ID020"/>
+            </firstDimensionProcessingParameterSet>
+            <higherDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value257" unitAccession="unitAccession177" unitName="unitName177" unitCvRef="ID001"/>
+                <firstOrderPhaseCorrection value="value259" unitAccession="unitAccession179" unitName="unitName179" unitCvRef="ID013"/>
+                <calibrationReferenceShift value="value261" unitAccession="unitAccession181" unitName="unitName181" unitCvRef="ID008"/>
+                <spectralDenoisingMethod cvRef="ID017" accession="accession209" name="name275"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID013" accession="accession211" name="name277"/>
+                    <windowFunctionParameter cvRef="ID018" accession="accession213" name="name279" value="value263"/>
+                    <windowFunctionParameter cvRef="ID002" accession="accession215" name="name281" value="value265"/>
+                </windowFunction>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID027" accession="accession217" name="name283"/>
+                    <windowFunctionParameter cvRef="ID002" accession="accession219" name="name285" value="value267"/>
+                    <windowFunctionParameter cvRef="ID023" accession="accession221" name="name287" value="value269"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID007" accession="accession223" name="name289"/>
+                <parameterFileRef ref="ID000"/>
+            </higherDimensionProcessingParameterSet>
+            <higherDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value271" unitAccession="unitAccession183" unitName="unitName183" unitCvRef="ID010"/>
+                <firstOrderPhaseCorrection value="value273" unitAccession="unitAccession185" unitName="unitName185" unitCvRef="ID016"/>
+                <calibrationReferenceShift value="value275" unitAccession="unitAccession187" unitName="unitName187" unitCvRef="ID003"/>
+                <spectralDenoisingMethod cvRef="ID018" accession="accession225" name="name291"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID027" accession="accession227" name="name293"/>
+                    <windowFunctionParameter cvRef="ID011" accession="accession229" name="name295" value="value277"/>
+                    <windowFunctionParameter cvRef="ID023" accession="accession231" name="name297" value="value279"/>
+                </windowFunction>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID003" accession="accession233" name="name299"/>
+                    <windowFunctionParameter cvRef="ID014" accession="accession235" name="name301" value="value281"/>
+                    <windowFunctionParameter cvRef="ID006" accession="accession237" name="name303" value="value283"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID024" accession="accession239" name="name305"/>
+                <parameterFileRef ref="ID003"/>
+            </higherDimensionProcessingParameterSet>
+            <projected3DProcessingParamaterSet projectionAngle="0" positiveProjectionMethod="false"/>
+        </spectrumMultiD>
+        <spectrumMultiD numberOfDataPoints="0">
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID003"/>
+                <softwareRef ref="ID008"/>
+            </processingSoftwareRefList>
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID008"/>
+                <softwareRef ref="ID025"/>
+            </processingSoftwareRefList>
+            <processingContactRefList count="50">
+                <contactRef ref="ID022"/>
+                <contactRef ref="ID015"/>
+            </processingContactRefList>
+            <spectrumDataArray byteLength="0" dataProcessingRef="ID026" totalBytes="50" byteFormat="byteFormat19">
+                <binary>ZGVmYXVsdA==</binary>
+            </spectrumDataArray>
+            <xAxis unitAccession="unitAccession189" unitName="unitName189" unitCvRef="ID010" startValue="startValue7" endValue="endValue7"/>
+            <yAxisType cvRef="ID018" accession="accession241" name="name307"/>
+            <processingParameterSet>
+                <postAcquisitionSolventSuppressionMethod cvRef="ID015" accession="accession243" name="name309"/>
+                <calibrationCompound cvRef="ID014" accession="accession245" name="name311"/>
+                <dataTransformationMethod cvRef="ID012" accession="accession247" name="name313"/>
+            </processingParameterSet>
+            <firstDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value285" unitAccession="unitAccession191" unitName="unitName191" unitCvRef="ID018"/>
+                <firstOrderPhaseCorrection value="value287" unitAccession="unitAccession193" unitName="unitName193" unitCvRef="ID014"/>
+                <calibrationReferenceShift value="value289" unitAccession="unitAccession195" unitName="unitName195" unitCvRef="ID001"/>
+                <spectralDenoisingMethod cvRef="ID016" accession="accession249" name="name315"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID003" accession="accession251" name="name317"/>
+                    <windowFunctionParameter cvRef="ID005" accession="accession253" name="name319" value="value291"/>
+                    <windowFunctionParameter cvRef="ID009" accession="accession255" name="name321" value="value293"/>
+                </windowFunction>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID008" accession="accession257" name="name323"/>
+                    <windowFunctionParameter cvRef="ID006" accession="accession259" name="name325" value="value295"/>
+                    <windowFunctionParameter cvRef="ID025" accession="accession261" name="name327" value="value297"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID006" accession="accession263" name="name329"/>
+                <parameterFileRef ref="ID005"/>
+            </firstDimensionProcessingParameterSet>
+            <higherDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value299" unitAccession="unitAccession197" unitName="unitName197" unitCvRef="ID020"/>
+                <firstOrderPhaseCorrection value="value301" unitAccession="unitAccession199" unitName="unitName199" unitCvRef="ID010"/>
+                <calibrationReferenceShift value="value303" unitAccession="unitAccession201" unitName="unitName201" unitCvRef="ID010"/>
+                <spectralDenoisingMethod cvRef="ID009" accession="accession265" name="name331"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID000" accession="accession267" name="name333"/>
+                    <windowFunctionParameter cvRef="ID001" accession="accession269" name="name335" value="value305"/>
+                    <windowFunctionParameter cvRef="ID018" accession="accession271" name="name337" value="value307"/>
+                </windowFunction>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID005" accession="accession273" name="name339"/>
+                    <windowFunctionParameter cvRef="ID010" accession="accession275" name="name341" value="value309"/>
+                    <windowFunctionParameter cvRef="ID003" accession="accession277" name="name343" value="value311"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID014" accession="accession279" name="name345"/>
+                <parameterFileRef ref="ID004"/>
+            </higherDimensionProcessingParameterSet>
+            <higherDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value313" unitAccession="unitAccession203" unitName="unitName203" unitCvRef="ID024"/>
+                <firstOrderPhaseCorrection value="value315" unitAccession="unitAccession205" unitName="unitName205" unitCvRef="ID008"/>
+                <calibrationReferenceShift value="value317" unitAccession="unitAccession207" unitName="unitName207" unitCvRef="ID020"/>
+                <spectralDenoisingMethod cvRef="ID010" accession="accession281" name="name347"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID007" accession="accession283" name="name349"/>
+                    <windowFunctionParameter cvRef="ID025" accession="accession285" name="name351" value="value319"/>
+                    <windowFunctionParameter cvRef="ID017" accession="accession287" name="name353" value="value321"/>
+                </windowFunction>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID017" accession="accession289" name="name355"/>
+                    <windowFunctionParameter cvRef="ID013" accession="accession291" name="name357" value="value323"/>
+                    <windowFunctionParameter cvRef="ID013" accession="accession293" name="name359" value="value325"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID002" accession="accession295" name="name361"/>
+                <parameterFileRef ref="ID003"/>
+            </higherDimensionProcessingParameterSet>
+            <projected3DProcessingParamaterSet projectionAngle="0" positiveProjectionMethod="false"/>
+        </spectrumMultiD>
+    </spectrumList>
+</nmrML>
