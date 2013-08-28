@@ -12,8 +12,8 @@
             <cvParam cvRef="nmrCV" accession="NMR:1000006" name="sample concentration" value="???"/>
             <cvParamWithUnit cvRef="ID001" accession="accession7" name="name5" value="value5" unitCvRef="ID002" unitAccession="unitAccession1" unitName="unitName1"/>
             <cvParamWithUnit cvRef="ID000" accession="accession9" name="name7" value="value7" unitCvRef="ID002" unitAccession="unitAccession3" unitName="unitName3"/>
-            <userParam name="name9" valueType="valueType1" value="value9" unitAccession="unitAccession5" unitName="unitName5" unitCvRef="ID002"/>
-            <userParam name="name11" valueType="valueType3" value="value11" unitAccession="unitAccession7" unitName="unitName7" unitCvRef="ID003"/>
+            <userParam name="sample name???" valueType="valueType1" unitAccession="unitAccession5" unitName="unitName5" value="1-methylhistidine???" unitCvRef="ID002"/>
+            
         </fileContent>
     </fileDescription>
     <contactList>
@@ -33,12 +33,12 @@
         </sourceFile>
         
     </sourceFileList>
-    <softwareList count="50">
-        <software id="ID013" version="version7">
+    <softwareList count="2">
+        <software id="Chenomx" version="version7">
             <referenceableParamGroupRef ref="ID008"/>
             <referenceableParamGroupRef ref="ID002"/>
-            <cvParam cvRef="ID004" accession="accession27" name="name41" value="value37"/>
-            <cvParam cvRef="ID013" accession="accession29" name="name43" value="value39"/>
+            <cvParam cvRef="nmrCV" accession="NMR:1002002" name="NMR Suite" value="value37"/>
+            
             <cvParamWithUnit cvRef="ID010" accession="accession31" name="name45" value="value41" unitCvRef="ID008" unitAccession="unitAccession25" unitName="unitName25"/>
             <cvParamWithUnit cvRef="ID012" accession="accession33" name="name47" value="value43" unitCvRef="ID001" unitAccession="unitAccession27" unitName="unitName27"/>
             <userParam name="name49" valueType="valueType13" value="value45" unitAccession="unitAccession29" unitName="unitName29" unitCvRef="ID000"/>
@@ -56,10 +56,10 @@
         </software>
     </softwareList>
     <instrumentConfigurationList count="50">
-        <instrumentConfiguration id="ID017">
+        <instrumentConfiguration id="Varian">
             <referenceableParamGroupRef ref="ID012"/>
             <referenceableParamGroupRef ref="ID008"/>
-            <cvParam cvRef="ID001" accession="accession43" name="name65" value="value61"/>
+            <cvParam cvRef="nmrCV" accession="NMR:1000489" name="Varian instrument model" value="value61"/>
             <cvParam cvRef="ID006" accession="accession45" name="name67" value="value63"/>
             <cvParamWithUnit cvRef="ID013" accession="accession47" name="name69" value="value65" unitCvRef="ID012" unitAccession="unitAccession41" unitName="unitName41"/>
             <cvParamWithUnit cvRef="ID006" accession="accession49" name="name71" value="value67" unitCvRef="ID012" unitAccession="unitAccession43" unitName="unitName43"/>
@@ -79,13 +79,13 @@
             <softwareRef ref="ID002"/>
         </instrumentConfiguration>
     </instrumentConfigurationList>
-    <dataProcessingList count="50">
-        <dataProcessing id="ID021">
-            <processingMethod order="50" softwareRef="ID020">
+    <dataProcessingList count="2">
+        <dataProcessing id="example_dp">
+            <processingMethod order="1" softwareRef="Chenomx">
                 <referenceableParamGroupRef ref="ID020"/>
                 <referenceableParamGroupRef ref="ID020"/>
-                <cvParam cvRef="ID006" accession="accession59" name="name89" value="value85"/>
-                <cvParam cvRef="ID006" accession="accession61" name="name91" value="value87"/>
+                <cvParam cvRef="nmrCV" accession="NMR:1002009" name="Conversion to JCAMP-DX" value="value85"/>
+                <cvParam cvRef="nmrCV" accession="NMR:1002008" name="Conversion to nmrML" value="value87"/><cvParam accession="NMR:1000747" cvRef="nmrCV" name="completion time" value="2012-02-20+07:20"/>
                 <cvParamWithUnit cvRef="ID008" accession="accession63" name="name93" value="value89" unitCvRef="ID010" unitAccession="unitAccession57" unitName="unitName57"/>
                 <cvParamWithUnit cvRef="ID015" accession="accession65" name="name95" value="value91" unitCvRef="ID005" unitAccession="unitAccession59" unitName="unitName59"/>
                 <userParam name="name97" valueType="valueType29" value="value93" unitAccession="unitAccession61" unitName="unitName61" unitCvRef="ID013"/>
@@ -126,13 +126,13 @@
         </dataProcessing>
     </dataProcessingList>
     <sampleList count="1">
-        <sample originalBiologicalSampleReference="Sample1 ??? 1-methylhistidine ???">
-            <originalBiologicalSamplepH>0</originalBiologicalSamplepH>
-            <postBufferpH>0</postBufferpH>
+        <sample originalBiologicalSampleReference="as1??? Sample1 ??? 1-methylhistidine ???">
+            <originalBiologicalSamplepH></originalBiologicalSamplepH>
+            <postBufferpH>7</postBufferpH>
             <buffer cvRef="ID012" accession="accession91" name="name137"/>
-            <fieldFrequencyLock fieldFrequencyLockName="fieldFrequencyLockName1"/>
-            <chemicalShiftStandard cvRef="ID016" accession="accession93" name="name139" value="value133"/>
-            <solventType cvRef="ID018" accession="accession95" name="name141"/>
+            <fieldFrequencyLock fieldFrequencyLockName="???"/>
+            <chemicalShiftStandard cvRef="nmrCV" accession="NMR:1000027" name="2,2-Dimethyl-2-silapentane-5-sulfonate??? CSS in original" value="???"/>
+            <solventType cvRef="nmrCV" accession="NMR:1000018" name="heavy water??? H2O in original"/>
             <additionalSoluteList>
                 <solute name="name143">
                     <concentrationInSample value="value135" unitAccession="unitAccession89" unitName="unitName89" unitCvRef="ID018"/>
@@ -176,8 +176,8 @@
                     <sourceFileRef ref="ID005"/>
                 </acquisitionParameterFileRefList>
                 <softwareRef ref="ID024"/>
-                <sampleContainer cvRef="ID007" accession="accession119" name="name181"/>
-                <sampleAcquisitionTemperature value="value169" unitAccession="unitAccession113" unitName="unitName113" unitCvRef="ID021"/>
+                <sampleContainer cvRef="" accession="" name=""/>
+                <sampleAcquisitionTemperature value="25" unitAccession="UO:0000027" unitName="degree celsius" unitCvRef="UO"/>
                 <solventSuppressionMethod cvRef="ID013" accession="accession121" name="name183" value="value171"/>
                 <spinningRate value="value173" unitAccession="unitAccession115" unitName="unitName115" unitCvRef="ID022"/>
                 <relaxationDelay value="value175" unitAccession="unitAccession117" unitName="unitName117" unitCvRef="ID003"/>
@@ -199,65 +199,9 @@
                 <binary>ZGVmYXVsdA==</binary>
             </fid>
         </acquisition1D>
-<!--        <acquisition2D>
-            <acquisitionParameterSet numberOfSteadyStateScans="0" numberOfScans="0">
-                <contactRefList count="50">
-                    <contactRef ref="ID021"/>
-                    <contactRef ref="ID004"/>
-                </contactRefList>
-                <acquisitionParameterFileRefList count="50">
-                    <sourceFileRef ref="ID011"/>
-                    <sourceFileRef ref="ID027"/>
-                </acquisitionParameterFileRefList>
-                <softwareRef ref="ID021"/>
-                <sampleContainer cvRef="ID000" accession="accession125" name="name189"/>
-                <sampleAcquisitionTemperature value="value183" unitAccession="unitAccession125" unitName="unitName125" unitCvRef="ID016"/>
-                <solventSuppressionMethod cvRef="ID009" accession="accession127" name="name191" value="value185"/>
-                <spinningRate value="value187" unitAccession="unitAccession127" unitName="unitName127" unitCvRef="ID022"/>
-                <relaxationDelay value="value189" unitAccession="unitAccession129" unitName="unitName129" unitCvRef="ID012"/>
-                <pulseSequence literatueReference="http://www.oxygenxml.com/" name="name193">
-                    <pulseSequenceFile ref="ID024"/>
-                </pulseSequence>
-                <shapedPulseFile ref="ID008"/>
-                <hadamardParameterSet>
-                    <hadamardFrequency value="value191" unitAccession="unitAccession131" unitName="unitName131" unitCvRef="ID009"/>
-                    <hadamardFrequency value="value193" unitAccession="unitAccession133" unitName="unitName133" unitCvRef="ID009"/>
-                </hadamardParameterSet>
-                <directDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID024" numberOfDataPoints="0">
-                    <acquisitionNucleus cvRef="ID026" accession="accession129" name="name195"/>
-                    <gammaB1PulseFieldStrength value="value195" unitAccession="unitAccession135" unitName="unitName135" unitCvRef="ID016"/>
-                    <sweepWidth value="value197" unitAccession="unitAccession137" unitName="unitName137" unitCvRef="ID015"/>
-                    <timeDomain byteLength="0" dataProcessingRef="ID000" totalBytes="50" byteFormat="byteFormat5">
-                        <binary>ZGVmYXVsdA==</binary>
-                    </timeDomain>
-                    <irradiationFrequency value="value199" unitAccession="unitAccession139" unitName="unitName139" unitCvRef="ID009"/>
-                </directDimensionParameterSet>
-                <encodingScheme cvRef="ID003" accession="accession131" name="name197" value="value201"/>
-                <indirectDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID027" numberOfDataPoints="0">
-                    <acquisitionNucleus cvRef="ID002" accession="accession133" name="name199"/>
-                    <gammaB1PulseFieldStrength value="value203" unitAccession="unitAccession141" unitName="unitName141" unitCvRef="ID020"/>
-                    <sweepWidth value="value205" unitAccession="unitAccession143" unitName="unitName143" unitCvRef="ID015"/>
-                    <timeDomain byteLength="0" dataProcessingRef="ID023" totalBytes="50" byteFormat="byteFormat7">
-                        <binary>ZGVmYXVsdA==</binary>
-                    </timeDomain>
-                    <irradiationFrequency value="value207" unitAccession="unitAccession145" unitName="unitName145" unitCvRef="ID015"/>
-                </indirectDimensionParameterSet>
-                <indirectDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID023" numberOfDataPoints="0">
-                    <acquisitionNucleus cvRef="ID016" accession="accession135" name="name201"/>
-                    <gammaB1PulseFieldStrength value="value209" unitAccession="unitAccession147" unitName="unitName147" unitCvRef="ID007"/>
-                    <sweepWidth value="value211" unitAccession="unitAccession149" unitName="unitName149" unitCvRef="ID021"/>
-                    <timeDomain byteLength="0" dataProcessingRef="ID006" totalBytes="50" byteFormat="byteFormat9">
-                        <binary>ZGVmYXVsdA==</binary>
-                    </timeDomain>
-                    <irradiationFrequency value="value213" unitAccession="unitAccession151" unitName="unitName151" unitCvRef="ID004"/>
-                </indirectDimensionParameterSet>
-            </acquisitionParameterSet>
-            <fid byteLength="0" dataProcessingRef="ID025" totalBytes="50" byteFormat="byteFormat11">
-                <binary>ZGVmYXVsdA==</binary>
-            </fid>
-        </acquisition2D>-->
+
     </acquisition>
-    <spectrumList count="50" defaultDataProcessingRef="ID017">
+    <spectrumList count="50" defaultDataProcessingRef="example_dp ???">
         <spectrum1D numberOfDataPoints="0">
             <processingSoftwareRefList count="50">
                 <softwareRef ref="ID014"/>
