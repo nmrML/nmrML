@@ -247,6 +247,11 @@
         <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
@@ -255,11 +260,6 @@
     <xs:attribute name="unitName" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
-      <xs:annotation>
-        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
