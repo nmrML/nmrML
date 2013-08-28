@@ -7,13 +7,9 @@
     <fileDescription>
         <fileContent>
             <referenceableParamGroupRef ref="http://www.metabolomicscentre.ca/nmrML/biosample-concentrations.xml ??? what is meant here?"/>
-            
             <cvParam cvRef="nmrCV" accession="NMR:1002007" name="nmr spectrum" value="???"/>
-            <cvParam cvRef="nmrCV" accession="NMR:1000006" name="sample concentration" value="???"/>
-            
-            
+            <cvParam cvRef="nmrCV" accession="NMR:1000006" name="sample concentration" value="???"/> 
             <userParam name="sample name???" valueType="valueType1" unitAccession="unitAccession5" unitName="unitName5" value="1-methylhistidine???" unitCvRef="ID002"/>
-            
         </fileContent>
     </fileDescription>
     <contactList>
@@ -22,59 +18,28 @@
     </contactList>
     <sourceFileList count="1">
         <sourceFile id="sf1" location="file:///data/biosample_example/" name="HMDB00001.fid">
-            
-            
             <cvParam cvRef="nmrCV" accession="NMR:1002003" name="Varian FID nativeID format"/>
             <cvParam cvRef="nmrCV" accession="NMR:1000569" name="SHA-1" value="71be39fb2700ab2f3c8b2234b91274968b6899b1"/>
-            
-            
-            
-            
         </sourceFile>
-        
     </sourceFileList>
     <softwareList count="2">
         <software id="Chenomx" version="version7">
-            
-            
             <cvParam cvRef="nmrCV" accession="NMR:1002002" name="NMR Suite" value="value37"/>
-            
-            
-            
-            
-            
         </software>
-        
     </softwareList>
     <instrumentConfigurationList count="1">
         <instrumentConfiguration id="Varian">
-            
-            
             <cvParam cvRef="nmrCV" accession="NMR:1000489" name="Varian instrument model" value="value61"/>
-            
-            
-            
-            
-            
             <softwareRef ref="ID004"/>
         </instrumentConfiguration>
-        
     </instrumentConfigurationList>
     <dataProcessingList count="2">
         <dataProcessing id="example_dp">
             <processingMethod order="1" softwareRef="Chenomx">
-                
-                
                 <cvParam cvRef="nmrCV" accession="NMR:1002009" name="Conversion to JCAMP-DX" value="value85"/>
                 <cvParam cvRef="nmrCV" accession="NMR:1002008" name="Conversion to nmrML" value="value87"/><cvParam accession="NMR:1000747" cvRef="nmrCV" name="completion time" value="2012-02-20+07:20"/>
-                
-                
-                
-                
             </processingMethod>
-            
         </dataProcessing>
-        
     </dataProcessingList>
     <sampleList count="1">
         <sample originalBiologicalSampleReference="as1??? Sample1 ??? 1-methylhistidine ???">
@@ -88,7 +53,6 @@
                 <solute name="name143">
                     <concentrationInSample value="value135" unitAccession="unitAccession89" unitName="unitName89" unitCvRef="ID018"/>
                 </solute>
-                
             </additionalSoluteList>
             <solventConcentration value="value139" unitAccession="unitAccession93" unitName="unitName93" unitCvRef="ID007"/>
             <concentrationStandard>
@@ -97,27 +61,20 @@
                 <name cvRef="ID005" accession="accession99" name="name149"/>
             </concentrationStandard>
         </sample>
-        
     </sampleList>
     <referenceableParamGroupList count="50">
         <referenceableParamGroup id="ID025">
             <cvParam cvRef="ID024" accession="accession111" name="name165" value="value153"/>
-            
-            
-            
         </referenceableParamGroup>
-        
     </referenceableParamGroupList>
     <acquisition>
         <acquisition1D>
             <acquisitionParameterSet numberOfSteadyStateScans="" numberOfScans="">
                 <contactRefList count="50">
                     <contactRef ref="ID015"/>
-                    
                 </contactRefList>
                 <acquisitionParameterFileRefList count="50">
                     <sourceFileRef ref="ID010"/>
-                    
                 </acquisitionParameterFileRefList>
                 <softwareRef ref="ID024"/>
                 <sampleContainer cvRef="" accession="" name=""/>
@@ -143,7 +100,6 @@
                 <binary>ZGVmYXVsdA==</binary>
             </fid>
         </acquisition1D>
-
     </acquisition>
     <spectrumList count="50" defaultDataProcessingRef="example_dp ???">
         <spectrum1D numberOfDataPoints="0">
@@ -151,10 +107,8 @@
                 <softwareRef ref="ID014"/>
                 <softwareRef ref="ID005"/>
             </processingSoftwareRefList>
-            
             <processingContactRefList count="50">
                 <contactRef ref="ID015"/>
-                
             </processingContactRefList>
             <spectrumDataArray byteLength="0" dataProcessingRef="ID018" totalBytes="50" byteFormat="byteFormat13">
                 <binary>ZGVmYXVsdA==</binary>
@@ -174,9 +128,7 @@
                 <windowFunction>
                     <windowFunctionMethod cvRef="ID011" accession="accession147" name="name213"/>
                     <windowFunctionParameter cvRef="ID016" accession="accession149" name="name215" value="value221"/>
-                    
                 </windowFunction>
-                
                 <baselineCorrectionMethod cvRef="ID003" accession="accession159" name="name225"/>
                 <parameterFileRef ref="ID007"/>
             </firstDimensionProcessingParameterSet>
@@ -214,7 +166,6 @@
                     <windowFunctionParameter cvRef="ID015" accession="accession173" name="name239" value="value235"/>
                     <windowFunctionParameter cvRef="ID007" accession="accession175" name="name241" value="value237"/>
                 </windowFunction>
-                
                 <baselineCorrectionMethod cvRef="ID000" accession="accession183" name="name249"/>
                 <parameterFileRef ref="ID016"/>
             </firstDimensionProcessingParameterSet>
@@ -222,12 +173,9 @@
         <spectrumMultiD numberOfDataPoints="0">
             <processingSoftwareRefList count="50">
                 <softwareRef ref="ID005"/>
-                
             </processingSoftwareRefList>
-            
             <processingContactRefList count="50">
                 <contactRef ref="ID013"/>
-                
             </processingContactRefList>
             <spectrumDataArray byteLength="0" dataProcessingRef="ID012" totalBytes="50" byteFormat="byteFormat17">
                 <binary>ZGVmYXVsdA==</binary>
@@ -247,9 +195,7 @@
                 <windowFunction>
                     <windowFunctionMethod cvRef="ID010" accession="accession195" name="name261"/>
                     <windowFunctionParameter cvRef="ID020" accession="accession197" name="name263" value="value249"/>
-                    
                 </windowFunction>
-                
                 <baselineCorrectionMethod cvRef="ID013" accession="accession207" name="name273"/>
                 <parameterFileRef ref="ID020"/>
             </firstDimensionProcessingParameterSet>
@@ -294,12 +240,9 @@
         <spectrumMultiD numberOfDataPoints="0">
             <processingSoftwareRefList count="50">
                 <softwareRef ref="ID003"/>
-                
             </processingSoftwareRefList>
-            
             <processingContactRefList count="50">
                 <contactRef ref="ID022"/>
-                
             </processingContactRefList>
             <spectrumDataArray byteLength="0" dataProcessingRef="ID026" totalBytes="50" byteFormat="byteFormat19">
                 <binary>ZGVmYXVsdA==</binary>
@@ -321,7 +264,6 @@
                     <windowFunctionParameter cvRef="ID005" accession="accession253" name="name319" value="value291"/>
                     <windowFunctionParameter cvRef="ID009" accession="accession255" name="name321" value="value293"/>
                 </windowFunction>
-                
                 <baselineCorrectionMethod cvRef="ID006" accession="accession263" name="name329"/>
                 <parameterFileRef ref="ID005"/>
             </firstDimensionProcessingParameterSet>
@@ -333,13 +275,10 @@
                 <windowFunction>
                     <windowFunctionMethod cvRef="ID000" accession="accession267" name="name333"/>
                     <windowFunctionParameter cvRef="ID001" accession="accession269" name="name335" value="value305"/>
-                    
                 </windowFunction>
-                
                 <baselineCorrectionMethod cvRef="ID014" accession="accession279" name="name345"/>
                 <parameterFileRef ref="ID004"/>
             </higherDimensionProcessingParameterSet>
-            
             <projected3DProcessingParamaterSet projectionAngle="0" positiveProjectionMethod="false"/>
         </spectrumMultiD>
     </spectrumList>
