@@ -9,7 +9,7 @@
             <referenceableParamGroupRef ref="http://www.metabolomicscentre.ca/nmrML/biosample-concentrations.xml ??? what is meant here?"/>
             <cvParam cvRef="nmrCV" accession="NMR:1002007" name="nmr spectrum" value="???"/>
             <cvParam cvRef="nmrCV" accession="NMR:1000006" name="sample concentration" value="???"/> 
-            <userParam name="sample name???" valueType="valueType1" unitAccession="unitAccession5" unitName="unitName5" value="1-methylhistidine???" unitCvRef="ID002"/>
+            <userParam name="sample name???" value="1-methylhistidine???"/>
         </fileContent>
     </fileDescription>
     <contactList>
@@ -236,50 +236,5 @@
                 <parameterFileRef ref="ID003"/>
             </higherDimensionProcessingParameterSet>
             <projected3DProcessingParamaterSet projectionAngle="0" positiveProjectionMethod="false"/>
-        </spectrumMultiD>
-        <spectrumMultiD numberOfDataPoints="0">
-            <processingSoftwareRefList count="50">
-                <softwareRef ref="ID003"/>
-            </processingSoftwareRefList>
-            <processingContactRefList count="50">
-                <contactRef ref="ID022"/>
-            </processingContactRefList>
-            <spectrumDataArray byteLength="0" dataProcessingRef="ID026" totalBytes="50" byteFormat="byteFormat19">
-                <binary>ZGVmYXVsdA==</binary>
-            </spectrumDataArray>
-            <xAxis unitAccession="unitAccession189" unitName="unitName189" unitCvRef="ID010" startValue="startValue7" endValue="endValue7"/>
-            <yAxisType cvRef="ID018" accession="accession241" name="name307"/>
-            <processingParameterSet>
-                <postAcquisitionSolventSuppressionMethod cvRef="ID015" accession="accession243" name="name309"/>
-                <calibrationCompound cvRef="ID014" accession="accession245" name="name311"/>
-                <dataTransformationMethod cvRef="ID012" accession="accession247" name="name313"/>
-            </processingParameterSet>
-            <firstDimensionProcessingParameterSet noOfDataPoints="0">
-                <zeroOrderPhaseCorrection value="value285" unitAccession="unitAccession191" unitName="unitName191" unitCvRef="ID018"/>
-                <firstOrderPhaseCorrection value="value287" unitAccession="unitAccession193" unitName="unitName193" unitCvRef="ID014"/>
-                <calibrationReferenceShift value="value289" unitAccession="unitAccession195" unitName="unitName195" unitCvRef="ID001"/>
-                <spectralDenoisingMethod cvRef="ID016" accession="accession249" name="name315"/>
-                <windowFunction>
-                    <windowFunctionMethod cvRef="ID003" accession="accession251" name="name317"/>
-                    <windowFunctionParameter cvRef="ID005" accession="accession253" name="name319" value="value291"/>
-                    <windowFunctionParameter cvRef="ID009" accession="accession255" name="name321" value="value293"/>
-                </windowFunction>
-                <baselineCorrectionMethod cvRef="ID006" accession="accession263" name="name329"/>
-                <parameterFileRef ref="ID005"/>
-            </firstDimensionProcessingParameterSet>
-            <higherDimensionProcessingParameterSet noOfDataPoints="0">
-                <zeroOrderPhaseCorrection value="value299" unitAccession="unitAccession197" unitName="unitName197" unitCvRef="ID020"/>
-                <firstOrderPhaseCorrection value="value301" unitAccession="unitAccession199" unitName="unitName199" unitCvRef="ID010"/>
-                <calibrationReferenceShift value="value303" unitAccession="unitAccession201" unitName="unitName201" unitCvRef="ID010"/>
-                <spectralDenoisingMethod cvRef="ID009" accession="accession265" name="name331"/>
-                <windowFunction>
-                    <windowFunctionMethod cvRef="ID000" accession="accession267" name="name333"/>
-                    <windowFunctionParameter cvRef="ID001" accession="accession269" name="name335" value="value305"/>
-                </windowFunction>
-                <baselineCorrectionMethod cvRef="ID014" accession="accession279" name="name345"/>
-                <parameterFileRef ref="ID004"/>
-            </higherDimensionProcessingParameterSet>
-            <projected3DProcessingParamaterSet projectionAngle="0" positiveProjectionMethod="false"/>
-        </spectrumMultiD>
     </spectrumList>
 </nmrML>
