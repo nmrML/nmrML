@@ -1041,6 +1041,61 @@ Please label your issue &apos;CVenhancement&apos;</doap:bug-database>
     
 
 
+    <!-- http://nmrML.org/nmrCV#NMR:1000067 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000067">
+        <rdfs:label xml:lang="en">FID zero filling</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400039"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000068 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000068">
+        <rdfs:label xml:lang="en">linear prediction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400039"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000069 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000069">
+        <rdfs:label xml:lang="en">multiplying FID by window function</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400039"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000070 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000070">
+        <rdfs:label xml:lang="en">FID fourier transformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400039"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400044"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000071 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000071">
+        <rdfs:label xml:lang="en">phasing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400039"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000072 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000072">
+        <rdfs:label xml:lang="en">integration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400039"/>
+    </owl:Class>
+    
+
+
     <!-- http://nmrML.org/nmrCV#NMR:1000122 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000122">
@@ -4087,7 +4142,7 @@ altdef: The adding of spectra together to produce a composite avergaed spectrum.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400079">
         <rdfs:label rdf:datatype="&xsd;string">zero_order_phase_correction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400039"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000071"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A parameter used to mix real and imaginary part of an NMR spectrum that the real part of the spectrum is in pure absorption mode. 
 altdef: The number of degrees that a central peak must be moved in order to achieve an absorptive mode line width.</rdfs:comment>
     </owl:Class>
@@ -4098,7 +4153,7 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400080">
         <rdfs:label rdf:datatype="&xsd;string">first_order_phase_correction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400039"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000071"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
