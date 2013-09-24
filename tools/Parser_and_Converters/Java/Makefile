@@ -1,3 +1,4 @@
+
 JAVABIN = /cygdrive/c/jdk7/bin
 JAVAC = $(JAVABIN)/javac
 JAVACFLAGS = -cp ./
@@ -28,7 +29,7 @@ cv:
 
 xsd: xjc schema_class
 
-xjc:
+xjc:  $(XSD)
 	@$(shell [ `find $(PKG_XSD)/ -type f -name "*.java" | wc -l` -eq 0 ] && $(XJC) $(XJCFLAGS) $(XSD) 1>/dev/null 2>/dev/null)
 
 schema_class:

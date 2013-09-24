@@ -25,7 +25,7 @@
   -->
   <xs:complexType name="nmrMLType">
     <xs:annotation>
-      <xs:documentation>This is the root element for the Metabolomics Standards Initiative (MSI) nmrML schema, which is intended to capture the use of a NMR spectrometer, the data generated, and the initial processing of that data (to the level of the peak list).</xs:documentation>
+      <xs:documentation>This is the root element for the COordination Of Standards In MetabOlomicS nmrML schema, which is intended to capture the use of a nuclear magnetic resonance spectrometer, the data generated, and the initial processing of that data (to the level of the peak list).</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="cvList" type="dx:CVListType"/>
@@ -168,7 +168,7 @@
   </xs:complexType>
   <xs:complexType name="FileDescriptionType">
     <xs:annotation>
-      <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here.</xs:documentation>
+      <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here. The FileDescriptionType element is intended to contain a summary description of the current nmrML file, for example it could say that the file has a 1D FID, a processed spectra, and a peak picked spectra. It does not point to source files or anything like that. It is intended to make it easy to determine what is inside a file without having to look for different element types etc and build a summary yourself. RawSpectrumFile would not be a good name. nmrMLInstanceSummary might be a more intuitive name.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="fileContent" type="ParamGroupType">
@@ -177,6 +177,26 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CVTermType">
+    <xs:annotation>
+      <xs:documentation>This element holds additional data or annotation as a simple CV term with no further values (Parameters) associated with it. Only controlled CV terms values are allowed here.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="cvRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="accession" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="CVParamType">
     <xs:annotation>
@@ -200,26 +220,6 @@
     <xs:attribute name="value" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:complexType name="CVTermType">
-    <xs:annotation>
-      <xs:documentation>This element holds additional data or annotation as a simple CV term with no further values (Parameters) associated with it. Only controlled CV terms values are allowed here.</xs:documentation>
-    </xs:annotation>
-    <xs:attribute name="cvRef" type="xs:IDREF" use="required">
-      <xs:annotation>
-        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="accession" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="name" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -247,6 +247,11 @@
         <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
@@ -255,11 +260,6 @@
     <xs:attribute name="unitName" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
-      <xs:annotation>
-        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -297,7 +297,7 @@
         <xs:documentation>The name for the parameter.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="type" type="xs:string" use="optional">
+    <xs:attribute name="valueType" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>The datatype of the parameter, where appropriate (e.g.: xsd:float).</xs:documentation>
       </xs:annotation>
@@ -331,6 +331,8 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="referenceableParamGroupRef"
         type="ReferenceableParamGroupRefType"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cvParam" type="CVParamType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cvParamWithUnit"
+        type="CVParamWithUnitType"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="userParam" type="UserParamType"/>
     </xs:sequence>
   </xs:complexType>
@@ -489,7 +491,7 @@
   </xs:complexType>
   <xs:complexType name="SourceFileType">
     <xs:annotation>
-      <xs:documentation>Description of the source file, including location and type.</xs:documentation>
+      <xs:documentation>Description of the source file, including location and type. The SourceFileType element is intended to be a generic element that points to a file that was used to produce the spectrum or the nmrML file. It could point to an FID file, a procpar file, a pulse program file etc. nmrExperimentSourceFile could be a good name but I personally think that SourceFile is an intuitive name already.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="ParamGroupType">
@@ -658,6 +660,7 @@
       <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="acquisitionNucleus" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
@@ -678,15 +681,15 @@
       </xs:element>
     </xs:sequence>
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
-    <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
+    <xs:attribute name="acquisitionParamsFileRef" type="xs:IDREF" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
-    <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionIndirectDimensionParameterSetType">
     <xs:annotation>
       <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="acquisitionNucleus" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
@@ -717,7 +720,6 @@
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
     <xs:attribute name="acquisitionParamsFileRef" type="xs:anyURI" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
-    <xs:attribute name="acquisitionNucleus" type="xs:string" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetType">
     <xs:annotation>
@@ -725,7 +727,7 @@
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element name="contactRefList" type="ContactRefListType"/>
-      <xs:element name="acquisitionParameterFileRef" type="SourceFileRefType"> </xs:element>
+      <xs:element name="acquisitionParameterFileRefList" type="SourceFileRefListType"> </xs:element>
       <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTermType">
         <xs:annotation>
