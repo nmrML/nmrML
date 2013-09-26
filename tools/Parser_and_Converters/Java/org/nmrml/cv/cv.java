@@ -9,7 +9,7 @@ import java.util.*;
 import java.lang.*;
 
 /*
-public static String[][] cvList = {
+public String[][] cvList = {
       {"NMR", "Nuclear Magnetic Resonance CV", "http://msi-ontology.sourceforge.net/ontology/NMR.owl", "0.1.0" },
       {"OBI", "Ontology for Biomedical Investigations", "http://purl.obolibrary.org/obo/obi", "2012.07.01" },
       {"UO", "Unit Ontology", "http://purl.obolibrary.org/obo/", "3.2.0" }

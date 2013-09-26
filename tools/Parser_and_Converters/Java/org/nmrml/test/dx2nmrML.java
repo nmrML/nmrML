@@ -51,8 +51,8 @@ public class dx2nmrML {
             CVType cvNMR = (CVType) objFactory.createCVType();
             cvNMR.setId("NMR");
             cvNMR.setFullName("Nuclear Magnetic Resonance CV");
-            cvNMR.setVersion("0.1.0");
-            cvNMR.setURI("http://msi-ontology.sourceforge.net/ontology/NMR.owl");
+            cvNMR.setVersion("1.4");
+            cvNMR.setURI("http://nmrML.org/nmrCV");
             cvList.getCv().add(cvNMR);
             /* OBI */
             CVType cvOBI = (CVType) objFactory.createCVType();
@@ -85,13 +85,13 @@ public class dx2nmrML {
             ParamGroupType paramgrp = (ParamGroupType) objFactory.createParamGroupType();
             CVParamType cvp1 = (CVParamType) objFactory.createCVParamType();
             cvp1.setCvRef(cvNMR);
-            cvp1.setAccession("#NMR_400128");
+            cvp1.setAccession("#NMR:1400128");
             cvp1.setName("NMR Sample");
             cvp1.setValue("");
             paramgrp.getCvParam().add(cvp1);
             CVParamType cvp2 = (CVParamType) objFactory.createCVParamType();
             cvp2.setCvRef(cvNMR);
-            cvp2.setAccession("#NMR_400165");
+            cvp2.setAccession("#NMR:1400165");
             cvp2.setName("one_dimensional_NMR_acquisition_parameter_set");
             cvp2.setValue("");
             paramgrp.getCvParam().add(cvp2);
@@ -127,7 +127,7 @@ public class dx2nmrML {
             pulsefile.setName("pulseprogram");
             CVParamType cvpf = (CVParamType) objFactory.createCVParamType();
             cvpf.setCvRef(cvNMR);
-            cvpf.setAccession("NMR_400169");
+            cvpf.setAccession("#NMR_1400169");
             cvpf.setName("one_dimensional_pulse_sequence");
             cvpf.setValue("");
             pulsefile.getCvParam().add(cvpf);
@@ -138,7 +138,7 @@ public class dx2nmrML {
             acqfile.setName("acqus");
             CVParamType cvacqf = (CVParamType) objFactory.createCVParamType();
             cvacqf.setCvRef(cvNMR);
-            cvacqf.setAccession("NMR_400118");
+            cvacqf.setAccession("#NMR:1400118");
             cvacqf.setName("acquisition parameter set file reference");
             cvacqf.setValue("");
             acqfile.getCvParam().add(cvacqf);
@@ -149,7 +149,7 @@ public class dx2nmrML {
             procfile.setName("pdata/1/procs");
             CVParamType cvprocf = (CVParamType) objFactory.createCVParamType();
             cvprocf.setCvRef(cvNMR);
-            cvprocf.setAccession("NMR_400123");
+            cvprocf.setAccession("#NMR:1400123");
             cvprocf.setName("processing parameter set file reference");
             cvprocf.setValue("");
             procfile.getCvParam().add(cvprocf);
@@ -165,7 +165,7 @@ public class dx2nmrML {
             SoftwareType software1 = (SoftwareType) objFactory.createSoftwareType();
             CVParamType cvsoftnmr = (CVParamType) objFactory.createCVParamType();
             cvsoftnmr.setCvRef(cvNMR);
-            cvsoftnmr.setAccession("#NMR_400215");
+            cvsoftnmr.setAccession("#NMR:1400215");
             cvsoftnmr.setName("TopSpin_1.3");
             cvsoftnmr.setValue("");
             software1.getCvParam().add(cvsoftnmr);
@@ -262,18 +262,20 @@ public class dx2nmrML {
             AcquisitionDimensionParameterSetType acqdimparam =
                      (AcquisitionDimensionParameterSetType) objFactory.createAcquisitionDimensionParameterSetType();
             acqdimparam.setNumberOfDataPoints(getBigInteger(32768));
-            acqdimparam.setAcquisitionNucleus("1H");
+            
+            CVTermType cvNucleus = (CVTermType) objFactory.createCVTermType();
+            cvNucleus.setCvRef(cvNMR);
+            cvNucleus.setAccession("#NMR:1400151");
+            cvNucleus.setName("1H");
+            acqdimparam.setAcquisitionNucleus(cvNucleus);
             acqdimparam.setSweepWidth(SweepWidth);
             acqdimparam.setIrradiationFrequency(IrradiationFrequency);
             acqdimparam.setGammaB1PulseFieldStrength(gammaB1PulseFieldStrength);
-            acqdimparam.setAcquisitionParamsFileRef("ID00003"); // Wrong implementation
-            // Right implementation will give :
-            //   SourceFileRefType acqFileRef = (SourceFileRefType) objFactory.createSourceFileRefType();
-            //   acqFileRef.setRef(acqfile);
-            //   acqdimparam.setAcquisitionParamsFileRef(acqFileRef);
+            acqdimparam.setAcquisitionParamsFileRef(acqfile);
             acqparam.setDirectDimensionParameterSet(acqdimparam);
 
             /* PulseSequence */
+
             AcquisitionParameterSetType.PulseSequence pulse_sequence = 
                         (AcquisitionParameterSetType.PulseSequence) objFactory.createAcquisitionParameterSetTypePulseSequence();
             SourceFileRefType pulseFileRef = (SourceFileRefType) objFactory.createSourceFileRefType();
@@ -281,7 +283,7 @@ public class dx2nmrML {
             pulse_sequence.setPulseSequenceFile(pulseFileRef);
             pulse_sequence.setName("zg.eretic.1H.2");
             acqparam.setPulseSequence(pulse_sequence);
-            
+
             /* Acquisition1D */
             Acquisition1DType acq1Dtype = (Acquisition1DType) objFactory.createAcquisition1DType();
             acq1Dtype.setAcquisitionParameterSet(acqparam);
@@ -300,7 +302,7 @@ public class dx2nmrML {
             procmethod.setSoftwareRef(software1);
             CVParamType cvproc1 = (CVParamType) objFactory.createCVParamType();
             cvproc1.setCvRef(cvNMR);
-            cvproc1.setAccession("#NMR_400043");
+            cvproc1.setAccession("#NMR:1400043");
             cvproc1.setName("data_transformation");
             cvproc1.setValue("");
             procmethod.getCvParam().add(cvproc1);
@@ -323,12 +325,12 @@ public class dx2nmrML {
                       (FirstDimensionProcessingParameterSetType.WindowFunction) objFactory.createFirstDimensionProcessingParameterSetTypeWindowFunction();
             CVTermType cvWinFunc = (CVTermType) objFactory.createCVTermType();
             cvWinFunc.setCvRef(cvNMR);
-            cvWinFunc.setAccession("#NMR_400097");
-            cvWinFunc.setName("Line Broadening");
+            cvWinFunc.setAccession("#NMR:1400069");
+            cvWinFunc.setName("exponential multiplication");
             windowFunction.setWindowFunctionMethod(cvWinFunc);
             CVParamType cvWinParam = (CVParamType) objFactory.createCVParamType();
             cvWinParam.setCvRef(cvNMR);
-            cvWinParam.setAccession("#NMR_400097");
+            cvWinParam.setAccession("#NMR:1400097");
             cvWinParam.setName("Line Broadening");
             cvWinParam.setValue("0.3");
             windowFunction.getWindowFunctionParameter().add(cvWinParam);
@@ -378,7 +380,7 @@ public class dx2nmrML {
             SpectrumType.ProcessingParameterSet procParamSet = (SpectrumType.ProcessingParameterSet) objFactory.createSpectrumTypeProcessingParameterSet();
             CVTermType cvProcSet1 = (CVTermType) objFactory.createCVTermType();
             cvProcSet1.setCvRef(cvNMR);
-            cvProcSet1.setAccession("#NMR_400044");
+            cvProcSet1.setAccession("#NMR:1400044");
             cvProcSet1.setName("Fourrier Transformation");
             procParamSet.setDataTransformationMethod(cvProcSet1);
             spectrum1D.setProcessingParameterSet(procParamSet);

@@ -1,3 +1,8 @@
+View instructions:
+To view and edit this owl CV you have to download and install Protege 4.2 or later on your Computer. As the BiotopLight 2 (BTL2) import goes over a weblink, you should make sure your Computer is connected to the Internet when opening the owl file. An HTML serialization of this CV is available from
+
+For Protege: Look at the P4 Setup guideline at https://github.com/nmrML/nmrML/blob/master/docs/CVDocumentation/ConfiguratingProtege4.docx
+
 Version history for the nmrML.owl versions:
 http://www.w3.org/TR/2009/REC-owl2-syntax-20091027/#Versioning_of_OWL_2_Ontologies
 
@@ -24,104 +29,31 @@ http://nmrML.org/nmrCV#has_regexp-->
 http://nmrML.org/nmrCV#has_units-->
 http://nmrML.org/nmrCV#part_of-->http://purl.org/biotop/btl2.owl#isPartOf
 v1.5 Major restructuring and redundancy removal, i.e. instruments are now captured as instrument attribute/models.
+v1.6 CV is now also covering the term-needs for the BML-NMR XSD. But, again, the CV is still considered to be a prototype. Its coverage can be very shallow at times. For some cases there is merely a corresponding CV Entry Class available (to be referenceable by the xsd), which has no further subclasses. These leaf nodes will have to be expanded successively via our use cases and later by term-requests from the practitioners/users. We can expect the CV to grow from currently to about 2500 Terms (as in PSI MS CV). Labels were aligned to be consistent, i.e. NMR_spectrum_post-processing_parameter_set was changed to NMR_data_post-processing_parameter_set to be in harmony with the existing NMR_data_pre-processing_parameter_set. 'run attribute' was moved into purgatory. Use acquisition parameter instead. This version imports the owl versions of Unit Ontology and PATO (Qualities).
 
 
-To view and edit this owl CV you have to download and install Protege 4.2 or later on your Computer. As the BFO import goes over a weblink, you need to make sure your Computer is connected to the Internet when opening the owl file.
+OWL versus OBO Format:
+If we envision a common data annotation pipeline for MSI and PSI, leveraging on the PSI validators and obo ontologies, we should stick with OBO format, as at the moment these do not integrate particularly well.
+Making the validator software aware of owl formatted CVs is possible according to their Authors: The OntologyAccess interface would need to be reprogrammed and registered in the ontology manager XML config file. An alternative would be a complete re-implementation.
 
-Remark: We must decide on the formats (OBO vs owl) soon. If we envision a common data annotation pipeline for MSI and PSI, leveraging on the PSI validators and obo ontologies, we should stick with OBO format, as at the moment these do not integrate particularly well.
-Making the validator software aware of owl formatted CVs is possible according to their Authors: The OntologyAccess interface would need to be reprogrammed and registered in the ontology manager XML config file.
-
-As P4 does not display the part_of hierarchy (as OBO Edit does), in the converted owl file you only see the is a Hierarchy in the class browser to the left. This results in the Wishard CV to look distorted, as in the top level it made much use of part_of relations, which do not display here in P4. I sugggest to rebin these so that they all have proper is_a superclasses that ease navigation.
-
-ToDOs: Depending on the file format we go for we would proceed via the following Steps:
-
-For OBO Edit:
-Set OBO layout perspective to e.g. DanielsPerspective: Download  DanielsPerspective (will provide a link), select  Layout/Import perspective
-Set Metadata/ID manager to use <cosmos nmr IDs>.
-Under Configuration manager/user preferences set your name and allocate enough Ram (>2GB).
-
-What was done on the obo file:
-Set ID rule for COSMOS as specified at http://oboedit.org/docs/html/The_ID_Manager_Plugin.htm
-
-$sequence(length, min_value, max_value)$ 
-
-You have to create a new ID profile called <COSMOS ID profile> with the following default rule: NMR:$sequence(7,1000000,9999999)$ 
-Currently largest ID is NMR:1002021. It used the default 7 digit Number.
-
-
-For Protege:
-
-Look at the P4 Setup guideline at https://github.com/nmrML/nmrML/blob/master/docs/CVDocumentation/ConfiguratingProtege4.docx
-
-Set namespace (NS)
-Set ID ranges/policies
-agree versioning
-agree RA and RU metadata: Agree on RA annotation (Metadata), RU annotation properties (we get both by using BFO 2.0)
-agree semantics, i.e. obo backwards compatibility, crossproducts
-	Check if all assumptions made by the OBO to OWL converter worked out right in the owl class definitions
-	As P4 does not display the part_of hierarchy (as OBO Edit does), in the converted owl file you only see the is a Hierarchy in the class browser to the left. I sugggest to rebin these 25? part_of so that they all have proper is_a superclasses that ease navigation.
-
-Remove Unit Classes from our CV file and import UO and ref it instead (only 7 classes affected). The UO classes were put directly into the wishard nmr CV before.
-
-Decide on BFO, OBILight or BioTopLight usage: These provide a proper set of object properties (Relations Ontology) as well. At the moment only a few from UO are used.
-Add entry classes as provided by new nmrML.xsd to Cruz CV part.
-Bin Cruz CV terms under BFO and MSI NMR CV classes
-Bin new EBI-NMR CV clases (from PRS) under TLO and Cruz CV classes.
-clean up CV, e.g. rectify modelling errors as described in CV criticism paper
-Remove redundant Classes
-Align Class naming schemes
-Refactor terms, using object properties ?
+ToDOs:
 Add new terms according to our use cases at Wishard Lab, Bordeaux, IPB, EBI, ...
-
-Conclusion: The resulting owl file is quite ugly, as it suffers from unnecessary complexity: The oboInIOwl metadata is something we do not need in the future and which doies only confuse people. The converters are error-prone with current OWL specifications. 
-The imports of UO and PATO are at the moment not really justified as they are only used in 7 classes. As most of the partOf relations were wrong in the CV in the first plase it seems unnecessary to try to keep the original CVs crossproducts. It could be that we want to keep e.g. database cross reference [Type:String] value-type:xsd:float i.e. to specify allowed values for sample volume. If we keep this oboInOwl annotations, it might be easier to make the validators aware of the full obo semantiocs in OWL.
-
-
-I believe we are better off creating the owl file from scratch. This will result in a much cleaner, smaller and more performant CV.
-
-All this will leave us with a version 1.0 to be the first release. From here on we can (finally )gather missing terms from the nmr community.
-
-
-Next Step:
-Add CVterms als required in the XSD leafs when CVTermType, CVParamType, CVParamWithUnitType... occures. For, e.g. name="buffer" type="CVTermType", we have to create a term "buffer" in the CV, so it can be further populated according to our use cases?
-For e.g. SolventType, decide if we want to have naming coherence of the XSD leafs to the CV entry Class labels ? E.g. Should we put the term "SolventType" or the term "solvent" intop the CV? I suggest the latter is more correct.
-Word separator (_ vs spc) alignment
-ID scheme alignmemnt
-Amalgamating nmr and msi namespaces into one NS without imports.
-Adding structure, terms required by use case examples, include terms to be refactored from Rubtsov xsd?
-Clean up: remove terms not needed by the XSD from the CV ? e.g. acquisition nucleus was required in xsd as sting then it would be redundant to also all these as CV terms.
+Bin new EBI-NMR CV clases (from PRS) under TLO and Cruz CV classes.
+Remove redundant Classes
+Remove unused classes/terms not needed by the XSD from the CV ? e.g. acquisition nucleus was required in xsd as sting then it would be redundant to also all these as CV terms.
+Align Class naming schemes i.e. replace underscore with space
+Refactor terms, using object properties ?
+Add links to UO and Pato ? i.e. as were present in the Wishard obo predecessor:
+bin end (NMR:1002017) generated 1 warning:
+  The term bin end links to the dangling identifier UO:0000169
+bin start (NMR:1002016) generated 1 warning:
+  The term bin start links to the dangling identifier UO:0000169
 
 
-ID alignment:
- Right now, we find the two ID schemes:
-     <!-- http://nmrML.org/nmrCV_1002021 -->
-      <owl:Class rdf:about="http://nmrML.org/nmrCV_1002021">
-      
-     <!-- http://nmrML.org/nmrCV#MSI_400001 -->
-     <owl:Class rdf:about="http://nmrML.org/nmrCV#MSI_400001">
-
-These should be aligned into the new scheme:
-
-    <!-- http://nmrML.org/nmrCV#NMR:1000003 -->
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000003">
-        <rdfs:label xml:lang="en">newcls</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-    </owl:Class>
-
-To archieve this, we substituted 541 occurances of "nmrCV_" for "nmrCV#NMR:" in the complete owl file. Then we substituited 710 occurrances of "nmrCV#MSI_" with "nmrCV#NMR:1" to alin the old MSI IDs to the new NMR prefix and 7 digit length.
-
-Synomyn capture:
-Do we use obo exact synonym or skos or multiple labels or multiople classes set equivalent?
-
-General design premises:
-Avoid roles.
-Avoid redundance between xsd and CV.
-Keep mnames between PSI MzML and MSI nmrML equal where possible: Lets just add the above distinctions into each elements definition to be clearer.
-Regarding 'renaming' of elements/terms, we have to find a cutoff between a) making the ML and ontology more intuituive and b) keeping it similar to the PSI MLs, i.e. in order to ease mapping and alignments. In the future there might be the case where people have to orient themselves in both PSI and MSI Standards, i.e. when considering systems biologic research questions. To be future proof I think we should try to use equal labels for the same concepts in PSI and MSI.
-So lets stick to the names for the moment and just alter their definitions to be more explicit.
 
 
-List of terms required by current XSD: these were bookmarked in CV (annotation property) and are visible in the new nmrTab
+List of terms required by current XSD:
+these were bookmarked in CV (annotation property) and are visible in the new nmrTab
 
 CVTerm occurrences:
 buffer-->buffer
