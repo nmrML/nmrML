@@ -1,0 +1,1 @@
+Here is the place to develop the Validator software. We might as well alternatively use a differrent git for this effort, e.g. https://github.com/nmrML/validator 
