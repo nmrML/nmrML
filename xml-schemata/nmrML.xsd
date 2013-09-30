@@ -434,7 +434,7 @@
       <xs:documentation>List and descriptions of software used to acquire and/or process the data in this nmrML file.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="software" type="dx:SoftwareType">
+      <xs:element maxOccurs="unbounded" name="software" type="CVTermType">
         <xs:annotation>
           <xs:documentation>A piece of software.</xs:documentation>
         </xs:annotation>
