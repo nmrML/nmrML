@@ -625,18 +625,26 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="byteLength" type="xs:integer"/>
+    <xs:attribute name="compressed" type="xs:boolean" use="required">
+      <xs:annotation>
+        <xs:documentation>True if the binary data was compressed with zlib before encoding as base64</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
       <xs:annotation>
         <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="totalBytes" type="xs:nonNegativeInteger" use="required">
+    <xs:attribute name="encodedLength" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
         <xs:documentation>The encoded length of the binary data array.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="byteFormat"/>
+    <xs:attribute name="byteFormat" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>64-bit or 32-bit precision floats</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SoluteType">
     <xs:sequence>
@@ -666,7 +674,7 @@
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
-          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful</xs:documentation>
+          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful. should be recorded in Tesla</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
@@ -674,12 +682,11 @@
           <xs:documentation>TODO should be in ppm and Hz.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
       <xs:element name="timeDomain" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
         </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType">
       </xs:element>
     </xs:sequence>
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
