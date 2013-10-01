@@ -683,7 +683,6 @@
       </xs:element>
     </xs:sequence>
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
-    <xs:attribute name="acquisitionParamsFileRef" type="xs:IDREF" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionIndirectDimensionParameterSetType">
