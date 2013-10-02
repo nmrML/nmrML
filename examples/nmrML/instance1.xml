@@ -272,7 +272,13 @@
                     <gammaB1PulseFieldStrength value="value177" unitAccession="unitAccession119" unitName="unitName119" unitCvRef="ID006"/>
                     <sweepWidth value="value179" unitAccession="unitAccession121" unitName="unitName121" unitCvRef="ID016"/>
                     <timeDomain byteLength="0" dataProcessingRef="ID005" totalBytes="50" byteFormat="byteFormat1">
+
+		      <binaryDataArray encodedLength="4984">
+			<cvParam cvRef="NMR" accession="NMR:1000514" name="frequency domain intensity array" />
+			<cvParam cvRef="MS" accession="MS:1000523" name="64-bit float" />
+			<cvParam cvRef="MS" accession="MS:1000576" name="no compression" />
                         <binary>ZGVmYXVsdA==</binary>
+		      </binaryDataArray>
                     </timeDomain>
                     <irradiationFrequency value="value181" unitAccession="unitAccession123" unitName="unitName123" unitCvRef="ID019"/>
                 </DirectDimensionParameterSet>
