@@ -148,7 +148,7 @@
   <xs:complexType name="ContactRefType">
     <xs:attribute name="ref" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute must reference the 'id' of the appropriate sourceFile.</xs:documentation>
+        <xs:documentation>This attribute must reference the 'id' of the contact node in the contactList.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -333,6 +333,7 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cvParam" type="CVParamType"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="cvParamWithUnit"
         type="CVParamWithUnitType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cvTerm" type="CVTermType"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="userParam" type="UserParamType"/>
     </xs:sequence>
   </xs:complexType>
@@ -436,7 +437,7 @@
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="software" type="dx:SoftwareType">
         <xs:annotation>
-          <xs:documentation>A piece of software.</xs:documentation>
+          <xs:documentation>A software program used during the acquisition of the spectra or processing of the FID.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -457,7 +458,7 @@
             <xs:documentation>An identifier for this software that is unique across all SoftwareTypes.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="version" type="xs:string" use="required">
+        <xs:attribute name="version" type="xs:string">
           <xs:annotation>
             <xs:documentation>The software version.</xs:documentation>
           </xs:annotation>
@@ -510,6 +511,7 @@
             <xs:documentation>URI-formatted location where the file was retrieved.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="sha1" type="xs:string"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -623,18 +625,26 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="byteLength" type="xs:integer"/>
+    <xs:attribute name="compressed" type="xs:boolean" use="required">
+      <xs:annotation>
+        <xs:documentation>True if the binary data was compressed with zlib before encoding as base64</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
       <xs:annotation>
         <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="totalBytes" type="xs:nonNegativeInteger" use="required">
+    <xs:attribute name="encodedLength" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
         <xs:documentation>The encoded length of the binary data array.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="byteFormat"/>
+    <xs:attribute name="byteFormat" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>64-bit or 32-bit precision floats</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SoluteType">
     <xs:sequence>
@@ -664,7 +674,7 @@
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
-          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful</xs:documentation>
+          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful. should be recorded in Tesla</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
@@ -672,16 +682,14 @@
           <xs:documentation>TODO should be in ppm and Hz.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
       <xs:element name="timeDomain" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType">
-      </xs:element>
     </xs:sequence>
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
-    <xs:attribute name="acquisitionParamsFileRef" type="xs:IDREF" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionIndirectDimensionParameterSetType">
@@ -747,17 +755,10 @@
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spinningRate" type="ValueWithUnitType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="relaxationDelay" type="ValueWithUnitType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="pulseSequence">
+      <xs:element maxOccurs="1" minOccurs="1" name="pulseSequence" type="PulseSequenceType">
         <xs:annotation>
-          <xs:documentation>A reference to the pulse sequence program or the name of the pulse sequence program.</xs:documentation>
+          <xs:documentation>A description of the pulse sequence using CV params/terms, and reference to the pulse sequence file if the source is available. </xs:documentation>
         </xs:annotation>
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="pulseSequenceFile" type="SourceFileRefType"/>
-          </xs:sequence>
-          <xs:attribute name="literatueReference" type="xs:anyURI"/>
-          <xs:attribute name="name" type="xs:string"/>
-        </xs:complexType>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="shapedPulseFile" type="SourceFileRefType">
         <xs:annotation>
@@ -805,6 +806,15 @@
               <xs:documentation>Required once for each indirect dimension that is measured.</xs:documentation>
             </xs:annotation>
           </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType mixed="false" name="PulseSequenceType">
+    <xs:complexContent>
+      <xs:extension base="ParamGroupType">
+        <xs:sequence minOccurs="0">
+          <xs:element minOccurs="0" name="pulseSequenceFileRef" type="SourceFileRefType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
