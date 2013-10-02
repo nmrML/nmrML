@@ -31,13 +31,13 @@
       <xs:element name="cvList" type="dx:CVListType"/>
       <xs:element name="fileDescription" type="FileDescriptionType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="contactList" type="ContactListType"/>
+      <xs:element minOccurs="0" name="referenceableParamGroupList"
+        type="ReferenceableParamGroupListType"/>
       <xs:element minOccurs="0" name="sourceFileList" type="SourceFileListType"/>
       <xs:element name="softwareList" type="SoftwareListType" minOccurs="0"/>
       <xs:element name="instrumentConfigurationList" type="InstrumentConfigurationListType"/>
       <xs:element name="dataProcessingList" type="DataProcessingListType" minOccurs="0"/>
       <xs:element minOccurs="0" name="sampleList" type="SampleListType"/>
-      <xs:element minOccurs="0" name="referenceableParamGroupList"
-        type="dx:ReferenceableParamGroupListType"/>
       <xs:element name="acquisition" type="AcquisitionType"/>
       <xs:element minOccurs="0" name="spectrumList" type="SpectrumListType">
         <xs:annotation>
