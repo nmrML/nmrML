@@ -13,23 +13,36 @@ docs: docs/schema.html
 
 # Delete all the generated docs
 docs_clean:
-	rm docs/schema.html
+	rm -f docs/schema.html
 
 # Delete and rebuild the docs
 docs_rebuild: docs_clean docs
 
 # Build the html file explaining the schema from the xsd file
-docs/schema.html: schemas/nmr-ml.xsd tidy
+docs/schema.html: xml-schemata/nmrML.xsd tidy
 	xsltproc --stringparam title "NMR-ML v$(shell cat VERSION)" \
-         lib/xs3p.xsl schemas/nmr-ml.xsd > docs/schema.html
+         lib/xs3p.xsl xml-schemata/nmrML.xsd > docs/schema.html
+
+# Build the html file explaining the schema of the PSI Mapping from the xsd file
+docs/CvMapping-schema.html: ./xml-schemata/CvMapping.xsd tidy
+	xsltproc --stringparam title "Ontology - Schema mapping for nmrML v$(shell cat VERSION)" \
+         lib/xs3p.xsl ./xml-schemata/CvMapping.xsd > docs/CvMapping-schema.html
+
+# Build the html file explaining the mapping between schema and Ontology.
+# Requires CVInspector http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS-release/html/UTILS_CVInspector.html
+# from http://sourceforge.net/projects/open-ms/files/OpenMS/
+docs/mapping_and_cv.html: ontologies/nmrCV-protege.obo schemas/nmr-ml.xsd tidy tidy
+	CVInspector -cv_files ontologies/nmrCV-protege.obo -cv_names NMR \
+	-mapping_file ontologies/nmr-mapping.xml \
+	-html docs/mapping_and_cv.html
 
 # Tidy up the files to prepare for pushingn changes
 # Strip white space from the VERSION
 # Sort the AUTHORS file and remove blank lines
 tidy:
-	sed -i ".tmp" -e '/^$$/d' VERSION && rm VERSION.tmp
+	sed -i ".tmp" -e '/^$$/d' VERSION && rm -f VERSION.tmp
 	sed '/^$$/d' AUTHORS  | sort -o AUTHORS
-	
+
 # Tag the current version
 tag: tidy
 	git tag -a v$$(cat VERSION) 
