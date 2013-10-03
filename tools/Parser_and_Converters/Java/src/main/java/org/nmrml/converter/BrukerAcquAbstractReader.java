@@ -23,18 +23,27 @@ import org.nmrml.cv.BrukerMapper;
 import org.nmrml.cv.CVLoader;
 import org.nmrml.model.Acquisition1DType;
 import org.nmrml.model.AcquisitionDimensionParameterSetType;
+import org.nmrml.model.AcquisitionParameterSetType;
 import org.nmrml.model.AcquisitionType;
+import org.nmrml.model.BinaryDataArrayType;
 import org.nmrml.model.CVListType;
 import org.nmrml.model.CVParamType;
 import org.nmrml.model.NmrMLType;
 import org.nmrml.model.ObjectFactory;
+import org.nmrml.model.SourceFileListType;
+import org.nmrml.model.SourceFileType;
 import org.nmrml.model.ValueWithUnitType;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.channels.FileChannel;
+import java.text.DecimalFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -109,6 +118,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
     private ObjectFactory objectFactory;
     private NmrMLType nmrMLType;
     private CVLoader cvLoader;
+    private File inputFile;
     private BrukerMapper brukerMapper;
     private boolean is2D = false;
 
@@ -116,6 +126,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
     private final static Pattern REGEXP_ACQU2 = Pattern.compile("acqu2"); //file name
     // parameters from acqu
     private final static Pattern REGEXP_SFO1 = Pattern.compile("\\#\\#\\$SFO1= (-?\\d+\\.\\d+)"); //transmitter frequency
+    private final static Pattern REGEXP_BF1 = Pattern.compile("\\#\\#\\$BF1= (-?\\d+\\.\\d+)"); //magnetic field frequency of channel 1
     private final static Pattern REGEXP_SFO2 = Pattern.compile("\\#\\#\\$SFO2= (-?\\d+\\.\\d+)"); //decoupler frequency
     private final static Pattern REGEXP_SFO3 = Pattern.compile("\\#\\#\\$SFO3= (\\d+\\.\\d+)"); //second decoupler frequency
     private final static Pattern REGEXP_O1 = Pattern.compile("\\#\\#\\$O1= (\\d+\\.\\d+)"); //frequency offset in Hz
@@ -155,6 +166,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
     // examples of REGEXP_OWNER : guest; basically the used ID
     private final static Pattern REGEXP_OWNER = Pattern.compile("\\#\\#\\$OWNER= (.+)"); // owner
 
+
 //    public BrukerAcquAbstractReader() {
 //        objectFactory = new ObjectFactory();
 //        nmrMLType = objectFactory.createNmrMLType();
@@ -173,7 +185,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
         this.brukerMapper = brukerMapper;
         this.cvLoader= cvLoader;
         this.nmrMLType = nmrMLType;
-        inputAcqReader = new BufferedReader(new FileReader(acquFile));        
+        this.inputFile = acquFile;
+        this.inputAcqReader = new BufferedReader(new FileReader(acquFile));
     }
 
     public BrukerAcquAbstractReader(String filename) throws IOException {
@@ -198,6 +211,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
             cvListType.getCv().add(cvLoader.getCvTypeHashMap().get(keys));
         }
         nmrMLType.setCvList(cvListType);
+        
+        nmrMLType.setSourceFileList(loadSourceFileList());
         return nmrMLType;
     }
 
@@ -206,9 +221,14 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
         Acquisition1DType acquisition = objectFactory.createAcquisition1DType();
         //TODO check if I can usd this instanciation
-        Acquisition1DType.AcquisitionParameterSet parameterSet = new Acquisition1DType.AcquisitionParameterSet();
-        parameterSet.setDirectDimensionParameterSet(readDimensionParameters());
-        acquisition.setAcquisitionParameterSet(parameterSet);
+
+
+        AcquisitionReader acquisitionReader = new AcquisitionReader();
+        acquisition.setAcquisitionParameterSet(acquisitionReader.getParameterSet());
+        acquisition.setFid(readFid(acquisitionReader));
+
+        
+        
 
 
         // just for the record to use in 2D nmr
@@ -238,17 +258,90 @@ public class BrukerAcquAbstractReader implements AcquReader {
         return acquisition;
     }
 
-    private AcquisitionDimensionParameterSetType readDimensionParameters() throws IOException {
-        AcquisitionDimensionParameterSetType parameterSet= objectFactory.createAcquisitionDimensionParameterSetType();
-        ValueWithUnitType value;
-        Matcher matcher;
-        String line = inputAcqReader.readLine();
+    private BinaryDataArrayType readFid (AcquisitionReader acquisitionReader) throws IOException {
+        BinaryDataArrayType binaryDataArrayType = objectFactory.createBinaryDataArrayType();
+        FileInputStream fidInput = new FileInputStream(inputFile.getParentFile().getAbsolutePath().concat("/fid"));
+        FileChannel inChannel = fidInput.getChannel();
+        binaryDataArrayType.setByteLength(BigInteger.valueOf(inChannel.size() / acquisitionReader.getBiteSyze()));
+
+//        ValueWithUnitType processingRef= objectFactory.createValueWithUnitType();
+//        processingRef.setValue("nmrML converter v0.1");
+//
+//        binaryDataArrayType.setDataProcessingRef(processingRef);
+
+//        ByteBuffer buffer = inChannel.map(FileChannel.MapMode.READ_ONLY, 0, inChannel.size());
+        ByteBuffer buffer = ByteBuffer.allocate((int) inChannel.size());
+        buffer.order(acquisitionReader.getByteOrder());
+        inChannel.read(buffer);
+
+
+
+        if(acquisitionReader.getBiteSyze()==4){ // values as 32 bit integer
+            binaryDataArrayType.setByteFormat(Integer.class.toString());
+        } else { // 64 bit integer
+            binaryDataArrayType.setByteFormat(Long.class.toString());
+        }
+
+        binaryDataArrayType.setBinary(buffer.array());
+        /* debuging */
+//        FileOutputStream fos = new FileOutputStream(new File("/Users/ldpf/Downloads/fid-out"));
+//        BufferedOutputStream bos = new BufferedOutputStream(fos);
+//        bos.write(buffer.array());
+//        bos.flush();
+//        bos.close();
+//        fos.close();
+
+          return binaryDataArrayType;
+    }
+
+    private SourceFileListType loadSourceFileList(){
+        SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
+        SourceFileType sourceFileType = objectFactory.createSourceFileType();
+        File file = new File(inputFile.getParent().concat("/pulseprogram"));
+        sourceFileListType.setCount(BigInteger.valueOf(0));
+        if(file.exists()){
+            sourceFileType.setLocation(file.toURI().toString());
+            sourceFileType.setName("pulseprogram");
+            sourceFileType.setId("PULSEPROGRAM_FILE");
+
+            sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
+            sourceFileListType.getSourceFile().add(sourceFileType);
+        }
+        return sourceFileListType;
+    }
+
+    protected class AcquisitionReader {
+
+
+
+        private AcquisitionDimensionParameterSetType acquParameters;
+        private Acquisition1DType.AcquisitionParameterSet parameterSet;
+        private AcquisitionParameterSetType.PulseSequence pulseSequence;
+        private ByteOrder byteOrder;
+        private int biteSyze;
+
+        private AcquisitionReader() throws IOException {
+            this.parameterSet = new Acquisition1DType.AcquisitionParameterSet();
+            readDimensionParameters();
+            parameterSet.setDirectDimensionParameterSet(acquParameters);
+            parameterSet.setPulseSequence(pulseSequence);
+//            parameterSet.setNumberOfScans();
+        }
+
+        private void readDimensionParameters() throws IOException {
+            double gyromagneticRatio= 42.577480;
+            acquParameters= objectFactory.createAcquisitionDimensionParameterSetType();
+            pulseSequence = objectFactory.createAcquisitionParameterSetTypePulseSequence();
+            ValueWithUnitType value;
+            Matcher matcher;
+            String line = inputAcqReader.readLine();
+            acquParameters.setAcquisitionParamsFileRef(inputFile.toURI().toString());
 
 //        BinaryDataArrayType binaryDataArray = objectFactory.createBinaryDataArrayType();
 //        //binaryDataArray.setByteFormat(IntegerType.BIT32? "32bit":"64bit");
 //        binaryDataArray.setByteLength();
         while (inputAcqReader.ready() && (line != null)) {
-            //TODO wait for the decision on the units
+            /* sweep width in ppm*/
             if (REGEXP_SW.matcher(line).find()) {
                 matcher = REGEXP_SW.matcher(line);
                 matcher.find();
@@ -262,14 +355,14 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 } catch (Exception e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
-                parameterSet.setSweepWidth(value);
+                acquParameters.setSweepWidth(value);
             }
+            /* sweep width in hertz */
             if (REGEXP_SW_H.matcher(line).find()) {
                 matcher = REGEXP_SW_H.matcher(line);
                 matcher.find();
                 value = objectFactory.createValueWithUnitType();
-                // convert from MHertz to Hertz
-                Double sweepWidth = Double.parseDouble(matcher.group(1))*1000;
+                Double sweepWidth = Double.parseDouble(matcher.group(1));
                 value.setValue(sweepWidth.toString());
                 try {
                     CVParamType cvParamType = cvLoader.fetchCVParam("UO","HERTZ");
@@ -279,29 +372,113 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 } catch (Exception e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
-                parameterSet.setSweepWidth(value);
+                acquParameters.setSweepWidth(value);
             }
+            /* number of data points */
             if (REGEXP_TD.matcher(line).find()) {
                 matcher = REGEXP_TD.matcher(line);
                 matcher.find();
-                value = objectFactory.createValueWithUnitType();
-                value.setValue(matcher.group(1));
-                parameterSet.setNumberOfDataPoints(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
+                acquParameters.setNumberOfDataPoints(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
             }
-
+            /* observed nucleus */
             //TODO at the moment this stores only the first nuclei assuming that this is only 1D spectra
-            if (REGEXP_NUC.matcher(line).find() && parameterSet.getAcquisitionNucleus()==null) {
+            if (REGEXP_NUC.matcher(line).find() && acquParameters.getAcquisitionNucleus()==null) {
                 matcher = REGEXP_NUC.matcher(line);
                 matcher.find();
-                parameterSet.setAcquisitionNucleus(matcher.group(1).replace("<","").replace(">",""));
+                String atom =matcher.group(1).replace("<","").replace(">","");
+                //TODO this will be changed in the next CV
+                if(atom.matches("H")){
+                    //CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI","H");
+                    acquParameters.setAcquisitionNucleus("1H");
+                } else if (atom.matches("13C")){
+                    //CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI","13C");
+                    acquParameters.setAcquisitionNucleus("13C");
+                } else {
+                    acquParameters.setAcquisitionNucleus(atom);
+                }
+            }
+            /* byte order */
+            if(REGEXP_BYTORDA.matcher(line).find()){
+                matcher = REGEXP_BYTORDA.matcher(line);
+                matcher.find();
+                switch (Integer.parseInt(matcher.group(1))) {
+                    case 0:
+                        byteOrder=ByteOrder.LITTLE_ENDIAN;
+                        break;
+                    case 1:
+                        byteOrder=ByteOrder.BIG_ENDIAN;
+                        break;
+                    default:
+                        byteOrder=ByteOrder.nativeOrder();
+                        break;
+                }
+            }
+            /* integer type */
+            if(REGEXP_DTYPA.matcher(line).find()){
+                matcher = REGEXP_DTYPA.matcher(line);
+                matcher.find();
+                switch (Integer.parseInt(matcher.group(1))){
+                    case 0:
+                        biteSyze=4;   // 32 bits integer - 4 octets
+                        break;
+                    case 1:
+                        biteSyze=8;   // 64 bits integer - 8 octets
+                        break;
+                    default:
+                        biteSyze=4;   // 32 bits integer
+                        break;
+                }
+            }
+            /* magnetic field ?? */
+            if(REGEXP_SFO1.matcher(line).find()){
+                matcher = REGEXP_SFO1.matcher(line);
+                matcher.find();
+                Double transmitterFrequency = Double.parseDouble(matcher.group(1))/gyromagneticRatio;
+                // convert from hertz to Tesla
+                value = objectFactory.createValueWithUnitType();
+                value.setValue(new DecimalFormat("###.##").format(transmitterFrequency));
+                try {
+                    CVParamType cvParamType = cvLoader.fetchCVParam("UO","TESLA");
+                    value.setUnitCvRef(cvParamType.getCvRef());
+                    value.setUnitName(cvParamType.getName());
+                    value.setUnitAccession(cvParamType.getAccession());
+                } catch (Exception e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+                acquParameters.setGammaB1PulseFieldStrength(value);
+            }
+            if(REGEXP_PULPROG.matcher(line).find()){
+                matcher = REGEXP_PULPROG.matcher(line);
+                matcher.find();
+                // TODO probably replace with a CV term
+                pulseSequence.setName(matcher.group(1).replaceAll("<", "").replaceAll(">", ""));    
             }
 
-
+            //TODO get this parameters working
+//            parameterSet.setIrradiationFrequency();
             line = inputAcqReader.readLine();
 
         }
-        return parameterSet;
+
+
     }
+
+        public Acquisition1DType.AcquisitionParameterSet getParameterSet() {
+            return parameterSet;
+        }
+
+        public ByteOrder getByteOrder() {
+            return byteOrder;
+        }
+
+        public int getBiteSyze() {
+            return biteSyze;
+        }
+
+
+
+    }
+    
 
 
 }
