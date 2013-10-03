@@ -30,7 +30,6 @@ import org.nmrml.model.CVListType;
 import org.nmrml.model.CVParamType;
 import org.nmrml.model.NmrMLType;
 import org.nmrml.model.ObjectFactory;
-import org.nmrml.model.SourceFileListType;
 import org.nmrml.model.SourceFileRefType;
 import org.nmrml.model.SourceFileType;
 import org.nmrml.model.ValueWithUnitType;
@@ -58,8 +57,6 @@ import java.util.regex.Pattern;
  *
  */
 public class BrukerAcquAbstractReader implements AcquReader {
-
-
 
     public enum BitOrder{
         LITTLE_ENDIAN (0),
@@ -204,7 +201,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
     @Override
     public NmrMLType read() throws IOException {
-        nmrMLType.setSourceFileList(loadSourceFileList());
         AcquisitionType acquisition = objectFactory.createAcquisitionType();
         acquisition.setAcquisition1D(readDirectDimension());
         nmrMLType.setAcquisition(acquisition);
@@ -287,26 +283,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //        fos.close();
 
           return binaryDataArrayType;
-    }
-
-
-    //TODO move this method to another place
-    private SourceFileListType loadSourceFileList(){
-        SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
-        sourceFileListType.setCount(BigInteger.valueOf(0));
-        String foldername = inputFile.getParent().concat("/");
-        for (String key : brukerMapper.getSection("FILES").keySet()){
-            File file = new File(foldername+brukerMapper.getTerm("FILES",key));
-            SourceFileType sourceFileType = objectFactory.createSourceFileType();
-            if(file.exists()){
-                sourceFileType.setId(key);
-                sourceFileType.setLocation(file.toURI().toString());
-                sourceFileType.setName(file.getName());
-                sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
-                sourceFileListType.getSourceFile().add(sourceFileType);
-            }
-        }
-        return sourceFileListType;
     }
 
     protected class AcquisitionReader {
