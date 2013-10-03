@@ -17,7 +17,8 @@
 
 package org.nmrml.converter;
 
-import org.nmrml.model.AcquisitionType;
+import org.nmrml.model.NmrMLType;
+
 import java.io.IOException;
 
 
@@ -31,5 +32,5 @@ import java.io.IOException;
  *
  */
 public interface AcquReader {
-    AcquisitionType read() throws IOException;
+    NmrMLType read() throws IOException;
 }

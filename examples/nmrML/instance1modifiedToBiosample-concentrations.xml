@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nmrml.org/schema file:/C:/nmrML/xml-schemata/nmrML.xsd" version="20120223" accession="1221" accession_url="http://www.metabolomicscentre.ca/nmrML/biosample-concentrations.xml" id="handcraftedexample">
+    <cvList count="2">
+        <cv id="nmrCV" fullName="nuclear magnetic resonance CV" version="1.5" URI="http://nmrML.org/nmrCV"/>
+        <cv fullName="Unit Ontology" id="UO" URI="http://purl.obolibrary.org/obo/uo.owl" version="1.20"/>
+    </cvList>
+    <fileDescription>
+        <fileContent>
+            <referenceableParamGroupRef ref="http://www.metabolomicscentre.ca/nmrML/biosample-concentrations.xml ??? what is meant here?"/>
+            <cvParam cvRef="nmrCV" accession="NMR:1002007" name="nmr spectrum" value="???"/>
+            <cvParam cvRef="nmrCV" accession="NMR:1000006" name="sample concentration" value="???"/> 
+            <userParam name="sample name???" value="1-methylhistidine???"/>
+        </fileContent>
+    </fileDescription>
+    <contactList>
+        <contact id="???" url="http://www.wishartlab.com/" fullname="Joseph Cruz" address="Athabasca Hall, University of Alberta, Edmonton, AB" organization="University of Alberta" email="jacruz@example.com"/>
+        <contact id="???" url="http://www.ipb-halle.de/mitarbeiter/daniel-schober/" fullname="Daniel Schober" address="IPB-Halle, Weinberg 3, 06120 Halle, Germany" organization="Dept. for Stress and Developmental Biology		Bioinformatics &amp; Mass Spectrometry" email="dschober@ipb-halle.de"/>
+    </contactList>
+    <sourceFileList count="1">
+        <sourceFile id="sf1" location="file:///data/biosample_example/" name="HMDB00001.fid">
+            <cvParam cvRef="nmrCV" accession="NMR:1002003" name="Varian FID nativeID format"/>
+            <cvParam cvRef="nmrCV" accession="NMR:1000569" name="SHA-1" value="71be39fb2700ab2f3c8b2234b91274968b6899b1"/>
+        </sourceFile>
+    </sourceFileList>
+    <softwareList count="2">
+        <software id="Chenomx" version="version7">
+            <cvParam cvRef="nmrCV" accession="NMR:1002002" name="NMR Suite" value="value37"/>
+        </software>
+    </softwareList>
+    <instrumentConfigurationList count="1">
+        <instrumentConfiguration id="Varian">
+            <cvParam cvRef="nmrCV" accession="NMR:1000489" name="Varian instrument model" value="value61"/>
+            <softwareRef ref="ID004"/>
+        </instrumentConfiguration>
+    </instrumentConfigurationList>
+    <dataProcessingList count="2">
+        <dataProcessing id="example_dp">
+            <processingMethod order="1" softwareRef="Chenomx">
+                <cvParam cvRef="nmrCV" accession="NMR:1002009" name="Conversion to JCAMP-DX" value="value85"/>
+                <cvParam cvRef="nmrCV" accession="NMR:1002008" name="Conversion to nmrML" value="value87"/><cvParam accession="NMR:1000747" cvRef="nmrCV" name="completion time" value="2012-02-20+07:20"/>
+            </processingMethod>
+        </dataProcessing>
+    </dataProcessingList>
+    <sampleList count="1">
+        <sample originalBiologicalSampleReference="as1??? Sample1 ??? 1-methylhistidine ???">
+            <originalBiologicalSamplepH>n/a</originalBiologicalSamplepH>
+            <postBufferpH>7</postBufferpH>
+            <buffer cvRef="ID012" accession="accession91" name="name137"/>
+            <fieldFrequencyLock fieldFrequencyLockName="???"/>
+            <chemicalShiftStandard cvRef="nmrCV" accession="NMR:1000027" name="2,2-Dimethyl-2-silapentane-5-sulfonate" value="???"/>
+            <solventType cvRef="nmrCV" accession="NMR:1000018" name="heavy water??? H2O in original"/>
+            <additionalSoluteList>
+                <solute name="name143">
+                    <concentrationInSample value="value135" unitAccession="unitAccession89" unitName="unitName89" unitCvRef="ID018"/>
+                </solute>
+            </additionalSoluteList>
+            <solventConcentration value="value139" unitAccession="unitAccession93" unitName="unitName93" unitCvRef="ID007"/>
+            <concentrationStandard>
+                <type cvRef="ID002" accession="accession97" name="name147"/>
+                <concentrationInSample value="value141" unitAccession="unitAccession95" unitName="unitName95" unitCvRef="ID013"/>
+                <name cvRef="ID005" accession="accession99" name="name149"/>
+            </concentrationStandard>
+        </sample>
+    </sampleList>
+    <referenceableParamGroupList count="50">
+        <referenceableParamGroup id="ID025">
+            <cvParam cvRef="ID024" accession="accession111" name="name165" value="value153"/>
+        </referenceableParamGroup>
+    </referenceableParamGroupList>
+    <acquisition>
+        <acquisition1D>
+            <acquisitionParameterSet numberOfSteadyStateScans="" numberOfScans="">
+                <contactRefList count="50">
+                    <contactRef ref="ID015"/>
+                </contactRefList>
+                <acquisitionParameterFileRefList count="50">
+                    <sourceFileRef ref="ID010"/>
+                </acquisitionParameterFileRefList>
+                <softwareRef ref="ID024"/>
+                <sampleContainer cvRef="" accession="" name=""/>
+                <sampleAcquisitionTemperature value="25" unitAccession="UO:0000027" unitName="degree celsius" unitCvRef="UO"/>
+                <solventSuppressionMethod cvRef="ID013" accession="accession121" name="name183" value="value171"/>
+                <spinningRate value="value173" unitAccession="unitAccession115" unitName="unitName115" unitCvRef="ID022"/>
+                <relaxationDelay value="value175" unitAccession="unitAccession117" unitName="unitName117" unitCvRef="ID003"/>
+                <pulseSequence literatueReference="http://www.oxygenxml.com/" name="name185">
+                    <pulseSequenceFile ref="ID020"/>
+                </pulseSequence>
+                <shapedPulseFile ref="ID007"/>
+                <DirectDimensionParameterSet decoupled="false" acquisitionParamsFileRef="ID000" numberOfDataPoints="0">
+                    <acquisitionNucleus cvRef="ID025" accession="accession123" name="name187"/>
+                    <gammaB1PulseFieldStrength value="value177" unitAccession="unitAccession119" unitName="unitName119" unitCvRef="ID006"/>
+                    <sweepWidth value="value179" unitAccession="unitAccession121" unitName="unitName121" unitCvRef="ID016"/>
+                    <timeDomain byteLength="0" dataProcessingRef="ID005" totalBytes="50" byteFormat="byteFormat1">
+                        <binary>ZGVmYXVsdA==</binary>
+                    </timeDomain>
+                    <irradiationFrequency value="value181" unitAccession="unitAccession123" unitName="unitName123" unitCvRef="ID019"/>
+                </DirectDimensionParameterSet>
+            </acquisitionParameterSet>
+            <fid byteLength="0" dataProcessingRef="ID017" totalBytes="50" byteFormat="byteFormat3">
+                <binary>ZGVmYXVsdA==</binary>
+            </fid>
+        </acquisition1D>
+    </acquisition>
+    <spectrumList count="50" defaultDataProcessingRef="example_dp ???">
+        <spectrum1D numberOfDataPoints="0">
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID014"/>
+                <softwareRef ref="ID005"/>
+            </processingSoftwareRefList>
+            <processingContactRefList count="50">
+                <contactRef ref="ID015"/>
+            </processingContactRefList>
+            <spectrumDataArray byteLength="0" dataProcessingRef="ID018" totalBytes="50" byteFormat="byteFormat13">
+                <binary>ZGVmYXVsdA==</binary>
+            </spectrumDataArray>
+            <xAxis unitAccession="unitAccession153" unitName="unitName153" unitCvRef="ID024" startValue="startValue1" endValue="endValue1"/>
+            <yAxisType cvRef="ID000" accession="accession137" name="name203"/>
+            <processingParameterSet>
+                <postAcquisitionSolventSuppressionMethod cvRef="ID006" accession="accession139" name="name205"/>
+                <calibrationCompound cvRef="ID007" accession="accession141" name="name207"/>
+                <dataTransformationMethod cvRef="ID009" accession="accession143" name="name209"/>
+            </processingParameterSet>
+            <firstDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value215" unitAccession="unitAccession155" unitName="unitName155" unitCvRef="ID013"/>
+                <firstOrderPhaseCorrection value="value217" unitAccession="unitAccession157" unitName="unitName157" unitCvRef="ID015"/>
+                <calibrationReferenceShift value="value219" unitAccession="unitAccession159" unitName="unitName159" unitCvRef="ID011"/>
+                <spectralDenoisingMethod cvRef="ID015" accession="accession145" name="name211"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID011" accession="accession147" name="name213"/>
+                    <windowFunctionParameter cvRef="ID016" accession="accession149" name="name215" value="value221"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID003" accession="accession159" name="name225"/>
+                <parameterFileRef ref="ID007"/>
+            </firstDimensionProcessingParameterSet>
+        </spectrum1D>
+        <spectrum1D numberOfDataPoints="0">
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID026"/>
+                <softwareRef ref="ID003"/>
+            </processingSoftwareRefList>
+            <processingSoftwareRefList count="50">
+                <softwareRef ref="ID014"/>
+                <softwareRef ref="ID009"/>
+            </processingSoftwareRefList>
+            <processingContactRefList count="50">
+                <contactRef ref="ID019"/>
+                <contactRef ref="ID023"/>
+            </processingContactRefList>
+            <spectrumDataArray byteLength="0" dataProcessingRef="ID019" totalBytes="50" byteFormat="byteFormat15">
+                <binary>ZGVmYXVsdA==</binary>
+            </spectrumDataArray>
+            <xAxis unitAccession="unitAccession161" unitName="unitName161" unitCvRef="ID009" startValue="startValue3" endValue="endValue3"/>
+            <yAxisType cvRef="ID009" accession="accession161" name="name227"/>
+            <processingParameterSet>
+                <postAcquisitionSolventSuppressionMethod cvRef="ID008" accession="accession163" name="name229"/>
+                <calibrationCompound cvRef="ID024" accession="accession165" name="name231"/>
+                <dataTransformationMethod cvRef="ID002" accession="accession167" name="name233"/>
+            </processingParameterSet>
+            <firstDimensionProcessingParameterSet noOfDataPoints="0">
+                <zeroOrderPhaseCorrection value="value229" unitAccession="unitAccession163" unitName="unitName163" unitCvRef="ID003"/>
+                <firstOrderPhaseCorrection value="value231" unitAccession="unitAccession165" unitName="unitName165" unitCvRef="ID003"/>
+                <calibrationReferenceShift value="value233" unitAccession="unitAccession167" unitName="unitName167" unitCvRef="ID017"/>
+                <spectralDenoisingMethod cvRef="ID017" accession="accession169" name="name235"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="ID015" accession="accession171" name="name237"/>
+                    <windowFunctionParameter cvRef="ID015" accession="accession173" name="name239" value="value235"/>
+                    <windowFunctionParameter cvRef="ID007" accession="accession175" name="name241" value="value237"/>
+                </windowFunction>
+                <baselineCorrectionMethod cvRef="ID000" accession="accession183" name="name249"/>
+                <parameterFileRef ref="ID016"/>
+            </firstDimensionProcessingParameterSet>
+        </spectrum1D>
+    </spectrumList>
+</nmrML>

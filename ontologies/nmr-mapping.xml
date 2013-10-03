@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://psidev.svn.sourceforge.net/svnroot/psidev/psi/tools/current/xsl/cv-mapping/CvMappingRules.xsl" type="text/xsl"?>
+<!-- 
+CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -html mapping_and_cv.html
+-->
+
+<CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvMapping.xsd" modelName="nmrML.xsd" modelURI="https://raw.github.com/nmrML/nmrML/master/xml-schemata/nmrML.xsd" modelVersion="0.1.0">
+
+    <CvReferenceList>
+      <CvReference cvName="NMR" cvIdentifier="NMR"/>
+      <CvReference cvName="PATO" cvIdentifier="PATO"/>
+      <CvReference cvName="UO" cvIdentifier="UO"/>    
+    </CvReferenceList>
+
+    <CvMappingRuleList>
+
+        <!-- software-->
+        <CvMappingRule id="software_must" cvElementPath="/nmrML/softwareList/software/cvParam/@accession" requirementLevel="MUST" scopePath="/nmrML/softwareList/software" cvTermsCombinationLogic="AND">
+          <CvTerm termAccession="NMR:1000531" useTerm="false" termName="software" isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"></CvTerm>
+        </CvMappingRule>
+
+
+    </CvMappingRuleList>
+</CvMapping>
