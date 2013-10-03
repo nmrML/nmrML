@@ -31,6 +31,7 @@ import org.nmrml.model.CVParamType;
 import org.nmrml.model.NmrMLType;
 import org.nmrml.model.ObjectFactory;
 import org.nmrml.model.SourceFileListType;
+import org.nmrml.model.SourceFileRefType;
 import org.nmrml.model.SourceFileType;
 import org.nmrml.model.ValueWithUnitType;
 
@@ -203,18 +204,21 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
     @Override
     public NmrMLType read() throws IOException {
+        nmrMLType.setSourceFileList(loadSourceFileList());
         AcquisitionType acquisition = objectFactory.createAcquisitionType();
         acquisition.setAcquisition1D(readDirectDimension());
         nmrMLType.setAcquisition(acquisition);
+
         CVListType cvListType = objectFactory.createCVListType();
         for(String keys : cvLoader.getCvTypeHashMap().keySet()){
             cvListType.getCv().add(cvLoader.getCvTypeHashMap().get(keys));
         }
         nmrMLType.setCvList(cvListType);
-        
-        nmrMLType.setSourceFileList(loadSourceFileList());
+        loadSourceFileRefs();
         return nmrMLType;
     }
+
+
 
 
     private Acquisition1DType readDirectDimension() throws IOException{
@@ -227,6 +231,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
         acquisition.setAcquisitionParameterSet(acquisitionReader.getParameterSet());
         acquisition.setFid(readFid(acquisitionReader));
 
+        //add the reference list
+
         
         
 
@@ -236,7 +242,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //        parameterSet2DType.setDirectDimensionParameterSet(parameter);
 
 
-        Matcher matcher;
+
 
         //TODO read contact details
         //contact parameters
@@ -263,25 +269,14 @@ public class BrukerAcquAbstractReader implements AcquReader {
         FileInputStream fidInput = new FileInputStream(inputFile.getParentFile().getAbsolutePath().concat("/fid"));
         FileChannel inChannel = fidInput.getChannel();
         binaryDataArrayType.setByteLength(BigInteger.valueOf(inChannel.size() / acquisitionReader.getBiteSyze()));
-
-//        ValueWithUnitType processingRef= objectFactory.createValueWithUnitType();
-//        processingRef.setValue("nmrML converter v0.1");
-//
-//        binaryDataArrayType.setDataProcessingRef(processingRef);
-
-//        ByteBuffer buffer = inChannel.map(FileChannel.MapMode.READ_ONLY, 0, inChannel.size());
         ByteBuffer buffer = ByteBuffer.allocate((int) inChannel.size());
         buffer.order(acquisitionReader.getByteOrder());
         inChannel.read(buffer);
-
-
-
         if(acquisitionReader.getBiteSyze()==4){ // values as 32 bit integer
             binaryDataArrayType.setByteFormat(Integer.class.toString());
         } else { // 64 bit integer
             binaryDataArrayType.setByteFormat(Long.class.toString());
         }
-
         binaryDataArrayType.setBinary(buffer.array());
         /* debuging */
 //        FileOutputStream fos = new FileOutputStream(new File("/Users/ldpf/Downloads/fid-out"));
@@ -294,18 +289,22 @@ public class BrukerAcquAbstractReader implements AcquReader {
           return binaryDataArrayType;
     }
 
+
+    //TODO move this method to another place
     private SourceFileListType loadSourceFileList(){
         SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
-        SourceFileType sourceFileType = objectFactory.createSourceFileType();
-        File file = new File(inputFile.getParent().concat("/pulseprogram"));
         sourceFileListType.setCount(BigInteger.valueOf(0));
-        if(file.exists()){
-            sourceFileType.setLocation(file.toURI().toString());
-            sourceFileType.setName("pulseprogram");
-            sourceFileType.setId("PULSEPROGRAM_FILE");
-
-            sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
-            sourceFileListType.getSourceFile().add(sourceFileType);
+        String foldername = inputFile.getParent().concat("/");
+        for (String key : brukerMapper.getSection("FILES").keySet()){
+            File file = new File(foldername+brukerMapper.getTerm("FILES",key));
+            SourceFileType sourceFileType = objectFactory.createSourceFileType();
+            if(file.exists()){
+                sourceFileType.setId(key);
+                sourceFileType.setLocation(file.toURI().toString());
+                sourceFileType.setName(file.getName());
+                sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
+                sourceFileListType.getSourceFile().add(sourceFileType);
+            }
         }
         return sourceFileListType;
     }
@@ -325,7 +324,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
             readDimensionParameters();
             parameterSet.setDirectDimensionParameterSet(acquParameters);
             parameterSet.setPulseSequence(pulseSequence);
-//            parameterSet.setNumberOfScans();
+
         }
 
         private void readDimensionParameters() throws IOException {
@@ -335,7 +334,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
             ValueWithUnitType value;
             Matcher matcher;
             String line = inputAcqReader.readLine();
-            acquParameters.setAcquisitionParamsFileRef(inputFile.toURI().toString());
 
 //        BinaryDataArrayType binaryDataArray = objectFactory.createBinaryDataArrayType();
 //        //binaryDataArray.setByteFormat(IntegerType.BIT32? "32bit":"64bit");
@@ -451,11 +449,24 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 matcher = REGEXP_PULPROG.matcher(line);
                 matcher.find();
                 // TODO probably replace with a CV term
-                pulseSequence.setName(matcher.group(1).replaceAll("<", "").replaceAll(">", ""));    
+                pulseSequence.setName(matcher.group(1).replaceAll("<", "").replaceAll(">", ""));
+            }
+            /* number of scans */
+            if(REGEXP_NS.matcher(line).find()){
+                matcher = REGEXP_NS.matcher(line);
+                matcher.find();
+                parameterSet.setNumberOfScans(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
             }
 
             //TODO get this parameters working
-//            parameterSet.setIrradiationFrequency();
+//            acquParameters.setIrradiationFrequency();
+//            parameterSet.setContactRefList(); // is this available in the acqu file?
+//            parameterSet.setNumberOfSteadyStateScans();
+//            parameterSet.setRelaxationDelay();
+//            parameterSet.setSampleAcquisitionTemperature();
+//            parameterSet.setSpinningRate();
+//            parameterSet.setSampleContainer();
+
             line = inputAcqReader.readLine();
 
         }
@@ -478,7 +489,28 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
 
     }
-    
+
+    private void loadSourceFileRefs() {
+        for(SourceFileType sourceFileType : nmrMLType.getSourceFileList().getSourceFile()){
+            if(sourceFileType.getId().matches("PULSEPROGRAM_FILE")){
+                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
+                sourceFileRefType.setRef(sourceFileType);
+                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().getPulseSequence()
+                        .setPulseSequenceFile(sourceFileRefType);
+            }
+            if(sourceFileType.getId().matches("ACQUISITION_FILE")){
+                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
+                sourceFileRefType.setRef(sourceFileType);
+                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet()
+                        .setAcquisitionParameterFileRef(sourceFileRefType);
+            }
+            if(sourceFileType.getId().matches("FID_FILE")){
+                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
+                sourceFileRefType.setRef(sourceFileType);
+                //TODO find out if there is a way to refence the fid file
+            }
+        }
+    }
 
 
 }

@@ -1,5 +1,6 @@
 package org.nmrml.cv;
 
+import org.ini4j.Ini;
 import org.ini4j.Wini;
 
 import java.io.IOException;
@@ -26,5 +27,8 @@ public class BrukerMapper {
 
     public String getTerm(String brukerTag, String value){
       return brukerIni.get(brukerTag,value);
+    }
+    public Ini.Section getSection (String section){
+        return brukerIni.get(section);
     }
 }
