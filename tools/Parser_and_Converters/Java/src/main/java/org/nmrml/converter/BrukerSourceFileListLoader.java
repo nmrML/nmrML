@@ -38,8 +38,9 @@ public class BrukerSourceFileListLoader {
         this.brukerMapper=brukerMapper;
         this.objectFactory = new ObjectFactory();
     }
-
+    //TODO make this class generic to work also with a VarianMapper
     public NmrMLType loadSourceFileList() {
+
         SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
         sourceFileListType.setCount(BigInteger.valueOf(0));
         //get the name of the folder with the bruker data

@@ -210,7 +210,9 @@ public class BrukerAcquAbstractReader implements AcquReader {
             cvListType.getCv().add(cvLoader.getCvTypeHashMap().get(keys));
         }
         nmrMLType.setCvList(cvListType);
-        loadSourceFileRefs();
+        // TODO load the source files if not done yet!
+        if(!nmrMLType.getSourceFileList().getSourceFile().isEmpty())
+            loadSourceFileRefs();
         return nmrMLType;
     }
 
