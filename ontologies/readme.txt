@@ -35,6 +35,9 @@ OWL versus OBO Format:
 If we envision a common data annotation pipeline for MSI and PSI, leveraging on the PSI validators and obo ontologies, we should stick with OBO format, as at the moment these do not integrate particularly well.
 Making the validator software aware of owl formatted CVs is possible according to their Authors: The OntologyAccess interface would need to be reprogrammed and registered in the ontology manager XML config file. An alternative would be a complete re-implementation.
 
+OBO version:
+P4 save-as OBO was used to convert the current nmrCV.owl into OBO format.
+
 ToDOs:
 Add new terms according to our use cases at Wishard Lab, Bordeaux, IPB, EBI, ...
 Integrate new EBI-NMR CV clases (from PRS)
