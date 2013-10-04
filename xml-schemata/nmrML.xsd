@@ -623,6 +623,11 @@
       <xs:documentation/>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="samplingTimePoints" type="BinaryDataArrayType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="binary" type="xs:base64Binary">
         <xs:annotation>
           <xs:documentation>The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
@@ -687,11 +692,6 @@
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
-      <xs:element name="timeDomain" type="BinaryDataArrayType" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element minOccurs="0" name="decouplingMethod" type="CVTermType"/>
       <xs:element name="samplingStrategy" type="CVTermType"/>
     </xs:all>
