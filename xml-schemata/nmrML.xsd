@@ -456,7 +456,7 @@
       <xs:documentation>Software information.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="dx:ParamGroupType">
+      <xs:extension base="CVTermType">
         <xs:attribute name="id" type="xs:ID" use="required">
           <xs:annotation>
             <xs:documentation>An identifier for this software that is unique across all SoftwareTypes.</xs:documentation>
