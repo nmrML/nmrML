@@ -36,6 +36,21 @@ docs/mapping_and_cv.html: ontologies/nmrCV-protege.obo schemas/nmr-ml.xsd tidy t
 	-mapping_file ontologies/nmr-mapping.xml \
 	-html docs/mapping_and_cv.html
 
+# Build the Ontology as OBO from the OWL version.
+# Until https://github.com/nmrML/nmrML/issues/42
+# is fixed, this requires manual intervention
+ontologies/nmrCV-protege.obo: ontologies/nmrCV.owl
+	echo "You need to manually save ontologies/nmrCV.owl as ontologies/nmrCV-protege.obo"
+	/bin/false
+
+# Make sure OpenMS is using the latest versions of Schema, Ontology and the mapping
+
+# Validate our examples against Schema, Ontology and the mapping
+validate-HMDB00005:
+	FileInfo -v -in examples/wishart_data/simple_spectra1/HMDB00005.nmrML
+
+
+
 # Tidy up the files to prepare for pushingn changes
 # Strip white space from the VERSION
 # Sort the AUTHORS file and remove blank lines
