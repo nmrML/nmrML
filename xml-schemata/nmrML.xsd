@@ -681,6 +681,7 @@
           <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful. should be recorded in Tesla</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element minOccurs="0" name="DecouplingMethod" type="DecouplingMethodType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
         <xs:annotation>
           <xs:documentation>TODO should be in ppm and Hz.</xs:documentation>
@@ -821,6 +822,11 @@
           <xs:element minOccurs="0" name="pulseSequenceFileRef" type="SourceFileRefType"/>
         </xs:sequence>
       </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DecouplingMethodType">
+    <xs:complexContent>
+      <xs:extension base="CVTermType"/>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionType">
