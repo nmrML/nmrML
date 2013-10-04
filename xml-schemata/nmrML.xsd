@@ -693,6 +693,7 @@
           <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="samplingStrategy" type="CVTermType"/>
     </xs:sequence>
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
