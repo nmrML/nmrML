@@ -4,6 +4,9 @@ MAJOR   := $(shell echo $(VERSION) | cut -f1 -d'.' )
 MINOR   := $(shell echo $(VERSION) | cut -f2 -d'.' )
 BUILD   := $(shell echo $(VERSION) | cut -f3 -d'.' )
 
+## Detect where OpenMS lives
+OPENMSSHARE := $(shell which FileInfo | sed -e s!bin[/]\\+FileInfo!share/OpenMS!g )
+
 .PHONY: docs docs_clean docs_rebuild tidy undo_tag show_tags \
 	show_tags bump_build bump_minor bump_major prepare_release \
 	release_major release_minor release_build
@@ -31,7 +34,7 @@ docs/CvMapping-schema.html: ./xml-schemata/CvMapping.xsd tidy
 # Build the html file explaining the mapping between schema and Ontology.
 # Requires CVInspector http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS-release/html/UTILS_CVInspector.html
 # from http://sourceforge.net/projects/open-ms/files/OpenMS/
-docs/mapping_and_cv.html: ontologies/nmrCV-protege.obo schemas/nmr-ml.xsd tidy tidy
+docs/mapping_and_cv.html: ontologies/nmrCV.obo schemas/nmr-ml.xsd tidy tidy
 	CVInspector -cv_files ontologies/nmrCV-protege.obo -cv_names NMR \
 	-mapping_file ontologies/nmr-mapping.xml \
 	-html docs/mapping_and_cv.html
@@ -39,17 +42,21 @@ docs/mapping_and_cv.html: ontologies/nmrCV-protege.obo schemas/nmr-ml.xsd tidy t
 # Build the Ontology as OBO from the OWL version.
 # Until https://github.com/nmrML/nmrML/issues/42
 # is fixed, this requires manual intervention
-ontologies/nmrCV-protege.obo: ontologies/nmrCV.owl
-	echo "You need to manually save ontologies/nmrCV.owl as ontologies/nmrCV-protege.obo"
+ontologies/nmrCV.obo: ontologies/nmrCV.owl
+	echo "You need to manually save ontologies/nmrCV.owl as ontologies/nmrCV.obo"
 	/bin/false
 
 # Make sure OpenMS is using the latest versions of Schema, Ontology and the mapping
+update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
+	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrCV.obo
+	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
+	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmrCV.obo
 
 # Validate our examples against Schema, Ontology and the mapping
-validate-HMDB00005:
-	FileInfo -v -in examples/wishart_data/simple_spectra1/HMDB00005.nmrML
+validate-all: update-openms validate-HMDB00005
 
-
+validate-HMDB00005: 
+	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
 
 # Tidy up the files to prepare for pushingn changes
 # Strip white space from the VERSION
