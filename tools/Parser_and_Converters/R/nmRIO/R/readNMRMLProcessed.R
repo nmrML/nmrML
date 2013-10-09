@@ -1,18 +1,26 @@
-readNMRMLProcessed <-
-function (filename) {
+#' readNMRMLProcessed
+#'
+#' Extract binary processed data from nmrML
+#'
+#' This is the Details section
+#'
+#' @param filename character Filename of the nmrML to check
+#' @return A vector with the numeric values of the processed data
+#' @author Steffen Neumann
+#' @examples
+#' length(readNMRMLProcessed(system.file("examples/HMDB00005.nmrML", package = "nmRIO")))
+#' @export
+
+readNMRMLProcessed <- function (filename) {
     tree <- xmlTreeParse(filename)
     root <- xmlRoot(tree)
-
+    
     ## Extract base64encoded data 
     b64s <- sapply (xmlElementsByTagName(root, "binary",
                                          recursive = TRUE), xmlValue)
 
     intensities <- base64decode(b64s[2], "double", size=8)
-    
-    ## gzfid <- base64decode(b64s[2], "raw")
-    ## rawfid <- memDecompress(gzfid, type="gzip")
-    ## fid <- readBin(rawfid, what="complex")
-    
+        
     ## Get required parameters from nmrML
     irradiationFrequency <- as.double(xmlAttrs(xmlElementsByTagName(root, "irradiationFrequency", recursive = TRUE)[[1]])["value"])
 
@@ -22,7 +30,6 @@ function (filename) {
 
     ## delayTime <- 1.0
     ## ppmOffset <- delayTime / 599.4094446,
-
     
     ppm <- seq(from=14.77180,
                to= -5.239921,
