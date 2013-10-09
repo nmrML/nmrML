@@ -31,13 +31,13 @@
       <xs:element name="cvList" type="dx:CVListType"/>
       <xs:element name="fileDescription" type="FileDescriptionType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="contactList" type="ContactListType"/>
+      <xs:element minOccurs="0" name="referenceableParamGroupList"
+        type="ReferenceableParamGroupListType"/>
       <xs:element minOccurs="0" name="sourceFileList" type="SourceFileListType"/>
       <xs:element name="softwareList" type="SoftwareListType" minOccurs="0"/>
       <xs:element name="instrumentConfigurationList" type="InstrumentConfigurationListType"/>
       <xs:element name="dataProcessingList" type="DataProcessingListType" minOccurs="0"/>
       <xs:element minOccurs="0" name="sampleList" type="SampleListType"/>
-      <xs:element minOccurs="0" name="referenceableParamGroupList"
-        type="dx:ReferenceableParamGroupListType"/>
       <xs:element name="acquisition" type="AcquisitionType"/>
       <xs:element minOccurs="0" name="spectrumList" type="SpectrumListType">
         <xs:annotation>
@@ -70,9 +70,9 @@
     <xs:annotation>
       <xs:documentation>Container for one or more controlled vocabulary definitions.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
+    <xs:all>
       <xs:element maxOccurs="unbounded" name="cv" type="dx:CVType"/>
-    </xs:sequence>
+    </xs:all>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
         <xs:documentation>The number of CV definitions in this nmrML file.</xs:documentation>
@@ -113,42 +113,46 @@
     <xs:annotation>
       <xs:documentation>A person's name and information on how to communicate with them.</xs:documentation>
     </xs:annotation>
-    <xs:attribute name="id" type="xs:ID" use="required">
-      <xs:annotation>
-        <xs:documentation>An identifier for this contact
+    <xs:complexContent>
+      <xs:extension base="ParamGroupType">
+        <xs:attribute name="id" type="xs:ID" use="required">
+          <xs:annotation>
+            <xs:documentation>An identifier for this contact
 .</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="fullname" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>Name of the contact person.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="url" type="xs:anyURI">
-      <xs:annotation>
-        <xs:documentation>Uniform Resource Locator related to the contact person or organization.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="address" type="xs:string">
-      <xs:annotation>
-        <xs:documentation>Postal address of the contact person or organization.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="organization" type="xs:string">
-      <xs:annotation>
-        <xs:documentation>Home institution of the contact person.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="email" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>Email address of the contact person or organization.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="fullname" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Name of the contact person.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="url" type="xs:anyURI">
+          <xs:annotation>
+            <xs:documentation>Uniform Resource Locator related to the contact person or organization.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="address" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Postal address of the contact person or organization.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="organization" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Home institution of the contact person.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="email" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Email address of the contact person or organization.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="ContactRefType">
     <xs:attribute name="ref" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute must reference the 'id' of the appropriate sourceFile.</xs:documentation>
+        <xs:documentation>This attribute must reference the 'id' of the contact node in the contactList.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -170,13 +174,13 @@
     <xs:annotation>
       <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here. The FileDescriptionType element is intended to contain a summary description of the current nmrML file, for example it could say that the file has a 1D FID, a processed spectra, and a peak picked spectra. It does not point to source files or anything like that. It is intended to make it easy to determine what is inside a file without having to look for different element types etc and build a summary yourself. RawSpectrumFile would not be a good name. nmrMLInstanceSummary might be a more intuitive name.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
+    <xs:all>
       <xs:element name="fileContent" type="ParamGroupType">
         <xs:annotation>
           <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it. It should also describe the nativeID format used in the file by referring to an appropriate CV term.</xs:documentation>
         </xs:annotation>
       </xs:element>
-    </xs:sequence>
+    </xs:all>
   </xs:complexType>
   <xs:complexType name="CVTermType">
     <xs:annotation>
@@ -327,12 +331,13 @@
     <xs:annotation>
       <xs:documentation>Structure allowing the use of a controlled (cvParam) or uncontrolled vocabulary (userParam), or a reference to a predefined set of these in this nmrML file (paramGroupRef).</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
+    <xs:sequence minOccurs="0">
       <xs:element minOccurs="0" maxOccurs="unbounded" name="referenceableParamGroupRef"
         type="ReferenceableParamGroupRefType"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cvParam" type="CVParamType"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="cvParamWithUnit"
         type="CVParamWithUnitType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cvTerm" type="CVTermType"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="userParam" type="UserParamType"/>
     </xs:sequence>
   </xs:complexType>
@@ -436,7 +441,7 @@
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="software" type="dx:SoftwareType">
         <xs:annotation>
-          <xs:documentation>A piece of software.</xs:documentation>
+          <xs:documentation>A software program used during the acquisition of the spectra or processing of the FID.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -451,13 +456,13 @@
       <xs:documentation>Software information.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="dx:ParamGroupType">
+      <xs:extension base="CVTermType">
         <xs:attribute name="id" type="xs:ID" use="required">
           <xs:annotation>
             <xs:documentation>An identifier for this software that is unique across all SoftwareTypes.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="version" type="xs:string" use="required">
+        <xs:attribute name="version" type="xs:string">
           <xs:annotation>
             <xs:documentation>The software version.</xs:documentation>
           </xs:annotation>
@@ -510,6 +515,7 @@
             <xs:documentation>URI-formatted location where the file was retrieved.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="sha1" type="xs:string"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -542,7 +548,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="ParamGroupType">
         <xs:sequence>
-          <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
+          <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType" maxOccurs="unbounded"
+          />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required">
           <xs:annotation>
@@ -616,25 +623,30 @@
     <xs:annotation>
       <xs:documentation/>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element name="binary" type="xs:base64Binary">
-        <xs:annotation>
-          <xs:documentation>The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="byteLength" type="xs:integer"/>
-    <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
-      <xs:annotation>
-        <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="totalBytes" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The encoded length of the binary data array.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="byteFormat"/>
+    <xs:simpleContent>
+      <xs:extension base="xs:base64Binary">
+        <xs:attribute name="compressed" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>True if the binary data was compressed with zlib before encoding as base64</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
+          <xs:annotation>
+            <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="encodedLength" type="xs:nonNegativeInteger" use="required">
+          <xs:annotation>
+            <xs:documentation>The encoded length of the binary data array.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="byteFormat" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>64-bit or 32-bit precision floats</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="SoluteType">
     <xs:sequence>
@@ -659,12 +671,12 @@
     <xs:annotation>
       <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
+    <xs:all>
       <xs:element name="acquisitionNucleus" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
-          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful</xs:documentation>
+          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful. should be recorded in Tesla</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
@@ -672,16 +684,16 @@
           <xs:documentation>TODO should be in ppm and Hz.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="timeDomain" type="BinaryDataArrayType">
+      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
+      <xs:element minOccurs="0" name="decouplingMethod" type="CVTermType"/>
+      <xs:element name="samplingStrategy" type="CVTermType"/>
+      <xs:element name="samplingTimePoints" type="BinaryDataArrayType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType">
-      </xs:element>
-    </xs:sequence>
+    </xs:all>
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
-    <xs:attribute name="acquisitionParamsFileRef" type="xs:IDREF" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionIndirectDimensionParameterSetType">
@@ -725,7 +737,7 @@
     <xs:annotation>
       <xs:documentation>Base type for the list with the descriptions of the acquisition settings applied prior to the start of data acquisition.</xs:documentation>
     </xs:annotation>
-    <xs:sequence maxOccurs="1" minOccurs="1">
+    <xs:all maxOccurs="1" minOccurs="1">
       <xs:element name="contactRefList" type="ContactRefListType"/>
       <xs:element name="acquisitionParameterFileRefList" type="SourceFileRefListType"> </xs:element>
       <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
@@ -747,24 +759,17 @@
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spinningRate" type="ValueWithUnitType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="relaxationDelay" type="ValueWithUnitType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="pulseSequence">
+      <xs:element maxOccurs="1" minOccurs="1" name="pulseSequence" type="PulseSequenceType">
         <xs:annotation>
-          <xs:documentation>A reference to the pulse sequence program or the name of the pulse sequence program.</xs:documentation>
+          <xs:documentation>A description of the pulse sequence using CV params/terms, and reference to the pulse sequence file if the source is available. </xs:documentation>
         </xs:annotation>
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="pulseSequenceFile" type="SourceFileRefType"/>
-          </xs:sequence>
-          <xs:attribute name="literatueReference" type="xs:anyURI"/>
-          <xs:attribute name="name" type="xs:string"/>
-        </xs:complexType>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="shapedPulseFile" type="SourceFileRefType">
         <xs:annotation>
           <xs:documentation>A reference to the pulse shape file, from the power section of the Bruker acquisition software. Example: gauss</xs:documentation>
         </xs:annotation>
       </xs:element>
-    </xs:sequence>
+    </xs:all>
     <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
     <xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
   </xs:complexType>
@@ -773,10 +778,10 @@
       <xs:extension base="AcquisitionParameterSetType"/>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="AcquisitionParameterSet2DType">
+  <xs:complexType name="AcquisitionParameterSetMultiDType">
     <xs:complexContent>
       <xs:extension base="AcquisitionParameterSetType">
-        <xs:sequence>
+        <xs:all>
           <xs:element minOccurs="0" name="hadamardParameterSet">
             <xs:annotation>
               <xs:documentation>TODO needs to be a list of frequencies, but could allow for other parameters.
@@ -805,6 +810,25 @@
               <xs:documentation>Required once for each indirect dimension that is measured.</xs:documentation>
             </xs:annotation>
           </xs:element>
+        </xs:all>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType mixed="false" name="PulseSequenceType">
+    <xs:annotation>
+      <xs:documentation>A list of references to the  source files that define the pulse sequence, including pulse shape files, pulse sequence source code, pulse sequence parameter files, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ParamGroupType">
+        <xs:sequence minOccurs="0">
+          <xs:element name="pulseSequenceFileRefList">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" name="pulseSequenceFileRef" type="SourceFileRefType"
+                  maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -812,7 +836,7 @@
   <xs:complexType name="AcquisitionType">
     <xs:choice maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisition2D" type="Acquisition2DType">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionMultiD" type="AcquisitionMultiDType">
       </xs:element>
     </xs:choice>
   </xs:complexType>
@@ -825,28 +849,32 @@
         <xs:complexType>
           <xs:complexContent>
             <xs:extension base="AcquisitionParameterSet1DType">
-              <xs:sequence>
+              <xs:all>
                 <xs:element name="DirectDimensionParameterSet"
                   type="AcquisitionDimensionParameterSetType"/>
-              </xs:sequence>
+              </xs:all>
             </xs:extension>
           </xs:complexContent>
         </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
+      <xs:element name="fidData" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The 1D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.</xs:documentation>
+          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.
+
+The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="Acquisition2DType">
+  <xs:complexType name="AcquisitionMultiDType">
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
-        type="AcquisitionParameterSet2DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
+        type="AcquisitionParameterSetMultiDType"> </xs:element>
+      <xs:element name="fidData" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
+          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.
+
+The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -855,11 +883,11 @@
     <xs:annotation>
       <xs:documentation>List and descriptions of spectra.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
+    <xs:choice>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="spectrum1D" type="Spectrum1DType"/>
       <xs:element name="spectrumMultiD" type="SpectrumMultiDType" maxOccurs="unbounded"
         minOccurs="0"/>
-    </xs:sequence>
+    </xs:choice>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
         <xs:documentation>The number of spectra defined in this nmrML file.</xs:documentation>
@@ -875,7 +903,7 @@
     <xs:annotation>
       <xs:documentation>A spectrum that is the result of processing the acquisition and a description of the process used to create it.</xs:documentation>
     </xs:annotation>
-    <xs:sequence maxOccurs="1" minOccurs="1">
+    <xs:all maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
         type="SoftwareRefListType"> </xs:element>
       <xs:element name="processingContactRefList" type="ContactRefListType"/>
@@ -888,7 +916,7 @@
       <xs:element name="yAxisType" type="CVTermType"/>
       <xs:element name="processingParameterSet">
         <xs:complexType>
-          <xs:sequence>
+          <xs:all>
             <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
               <xs:annotation>
                 <xs:documentation>The method used for post acquisition solvent suppression.</xs:documentation>
@@ -900,33 +928,33 @@
                 <xs:documentation>The method used for time-based to frequency-based data tranformation.</xs:documentation>
               </xs:annotation>
             </xs:element>
-          </xs:sequence>
+          </xs:all>
         </xs:complexType>
       </xs:element>
-    </xs:sequence>
+    </xs:all>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="Spectrum1DType">
     <xs:complexContent>
       <xs:extension base="SpectrumType">
-        <xs:sequence>
+        <xs:all>
           <xs:element name="firstDimensionProcessingParameterSet"
             type="FirstDimensionProcessingParameterSetType"/>
-        </xs:sequence>
+        </xs:all>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="SpectrumMultiDType">
     <xs:complexContent>
       <xs:extension base="SpectrumType">
-        <xs:sequence>
+        <xs:all>
           <xs:element name="firstDimensionProcessingParameterSet"
             type="FirstDimensionProcessingParameterSetType"/>
           <xs:element maxOccurs="2" name="higherDimensionProcessingParameterSet"
             type="HigherDimensionProcessingParameterSetType"/>
           <xs:element maxOccurs="1" minOccurs="0" name="projected3DProcessingParamaterSet"
             type="Projected3DProcessingParamaterSetType"/>
-        </xs:sequence>
+        </xs:all>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -934,7 +962,7 @@
     <xs:annotation>
       <xs:documentation>Parameters recorded when raw data set is processed to create a spectra.</xs:documentation>
     </xs:annotation>
-    <xs:sequence maxOccurs="1" minOccurs="1">
+    <xs:all maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
         type="SoftwareRefListType"> </xs:element>
       <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
@@ -948,12 +976,12 @@
         </xs:annotation>
       </xs:element>
       <xs:element name="calibrationCompound" type="CVTermType"/>
-    </xs:sequence>
+    </xs:all>
   </xs:complexType>
   <xs:complexType name="SpectralProjectionParameterSetType">
-    <xs:sequence>
+    <xs:all>
       <xs:element name="projectionMethod" type="CVTermType"/>
-    </xs:sequence>
+    </xs:all>
     <xs:attribute name="projectionAxis"/>
   </xs:complexType>
   <xs:complexType name="SpectralProcessingParameterSet2DType">
@@ -962,12 +990,12 @@
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="SpectralProcessingParameterSetType">
-        <xs:sequence maxOccurs="1" minOccurs="1">
+        <xs:all maxOccurs="1" minOccurs="1">
           <xs:element maxOccurs="1" minOccurs="1" name="directDimensionParameterSet"
             type="FirstDimensionProcessingParameterSetType"> </xs:element>
           <xs:element maxOccurs="2" minOccurs="1" name="higherDimensionParameterSet"
             type="HigherDimensionProcessingParameterSetType"/>
-        </xs:sequence>
+        </xs:all>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -975,7 +1003,7 @@
     <xs:annotation>
       <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to a dimension.</xs:documentation>
     </xs:annotation>
-    <xs:sequence maxOccurs="1" minOccurs="1">
+    <xs:all maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection"
         type="ValueWithUnitType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection"
@@ -998,7 +1026,7 @@
       </xs:element>
       <xs:element name="baselineCorrectionMethod" type="CVTermType"/>
       <xs:element name="parameterFileRef" type="SourceFileRefType"/>
-    </xs:sequence>
+    </xs:all>
     <xs:attribute name="noOfDataPoints" type="xs:integer" use="required">
       <xs:annotation>
         <xs:documentation>This number will also reflect the zero filling.</xs:documentation>
