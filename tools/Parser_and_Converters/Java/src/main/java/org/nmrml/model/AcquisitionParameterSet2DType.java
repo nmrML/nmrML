@@ -42,7 +42,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AcquisitionParameterSet2DType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "AcquisitionParameterSet2DType", propOrder = {
     "hadamardParameterSet",
     "directDimensionParameterSet",
     "encodingScheme",
@@ -52,13 +52,12 @@ public class AcquisitionParameterSet2DType
     extends AcquisitionParameterSetType
 {
 
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected AcquisitionParameterSet2DType.HadamardParameterSet hadamardParameterSet;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected AcquisitionDimensionParameterSetType directDimensionParameterSet;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVParamType encodingScheme;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected List<AcquisitionDimensionParameterSetType> indirectDimensionParameterSet;
 
     /**
@@ -188,7 +187,6 @@ public class AcquisitionParameterSet2DType
     })
     public static class HadamardParameterSet {
 
-        @XmlElement(namespace = "http://nmrml.org/schema")
         protected List<ValueWithUnitType> hadamardFrequency;
 
         /**

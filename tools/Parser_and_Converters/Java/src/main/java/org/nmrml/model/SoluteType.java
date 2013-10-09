@@ -29,12 +29,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SoluteType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "SoluteType", propOrder = {
     "concentrationInSample"
 })
 public class SoluteType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType concentrationInSample;
     @XmlAttribute(name = "name", required = true)
     protected String name;

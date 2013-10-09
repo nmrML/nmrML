@@ -7,7 +7,6 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -38,15 +37,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SpectrumListType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "SpectrumListType", propOrder = {
     "spectrum1D",
     "spectrumMultiD"
 })
 public class SpectrumListType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<Spectrum1DType> spectrum1D;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<SpectrumMultiDType> spectrumMultiD;
     @XmlAttribute(name = "count", required = true)
     @XmlSchemaType(name = "nonNegativeInteger")

@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AxisWithUnitType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "AxisWithUnitType")
 public class AxisWithUnitType {
 
     @XmlAttribute(name = "unitAccession")

@@ -29,12 +29,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ContactListType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "ContactListType", propOrder = {
     "contact"
 })
 public class ContactListType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected List<ContactType> contact;
 
     /**

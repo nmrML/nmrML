@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -34,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ParamGroupType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "ParamGroupType", propOrder = {
     "referenceableParamGroupRef",
     "cvParam",
     "userParam"
@@ -47,11 +46,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ParamGroupType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<ReferenceableParamGroupRefType> referenceableParamGroupRef;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<CVParamType> cvParam;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<UserParamType> userParam;
 
     /**

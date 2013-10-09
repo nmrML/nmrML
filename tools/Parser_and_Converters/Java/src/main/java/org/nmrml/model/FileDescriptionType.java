@@ -29,12 +29,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FileDescriptionType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "FileDescriptionType", propOrder = {
     "fileContent"
 })
 public class FileDescriptionType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ParamGroupType fileContent;
 
     /**

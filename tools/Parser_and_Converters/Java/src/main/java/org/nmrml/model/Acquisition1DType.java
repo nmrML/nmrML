@@ -38,15 +38,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Acquisition1DType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "Acquisition1DType", propOrder = {
     "acquisitionParameterSet",
     "fid"
 })
 public class Acquisition1DType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected Acquisition1DType.AcquisitionParameterSet acquisitionParameterSet;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected BinaryDataArrayType fid;
 
     /**
@@ -125,7 +125,7 @@ public class Acquisition1DType {
         extends AcquisitionParameterSet1DType
     {
 
-        @XmlElement(name = "DirectDimensionParameterSet", namespace = "http://nmrml.org/schema", required = true)
+        @XmlElement(name = "DirectDimensionParameterSet", required = true)
         protected AcquisitionDimensionParameterSetType directDimensionParameterSet;
 
         /**

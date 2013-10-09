@@ -6,7 +6,6 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -38,15 +37,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ReferenceableParamGroupType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "ReferenceableParamGroupType", propOrder = {
     "cvParam",
     "userParam"
 })
 public class ReferenceableParamGroupType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<CVParamType> cvParam;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<UserParamType> userParam;
     @XmlAttribute(name = "id", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)

@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SoftwareRefType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "SoftwareRefType")
 public class SoftwareRefType {
 
     @XmlAttribute(name = "ref", required = true)

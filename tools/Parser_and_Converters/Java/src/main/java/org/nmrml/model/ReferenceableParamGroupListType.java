@@ -35,12 +35,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ReferenceableParamGroupListType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "ReferenceableParamGroupListType", propOrder = {
     "referenceableParamGroup"
 })
 public class ReferenceableParamGroupListType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected List<ReferenceableParamGroupType> referenceableParamGroup;
     @XmlAttribute(name = "count", required = true)
     @XmlSchemaType(name = "nonNegativeInteger")

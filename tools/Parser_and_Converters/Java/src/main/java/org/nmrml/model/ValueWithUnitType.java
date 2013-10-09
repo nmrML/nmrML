@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ValueWithUnitType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "ValueWithUnitType")
 public class ValueWithUnitType {
 
     @XmlAttribute(name = "value")

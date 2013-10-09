@@ -27,14 +27,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Spectrum1DType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "Spectrum1DType", propOrder = {
     "firstDimensionProcessingParameterSet"
 })
 public class Spectrum1DType
     extends SpectrumType
 {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected FirstDimensionProcessingParameterSetType firstDimensionProcessingParameterSet;
 
     /**

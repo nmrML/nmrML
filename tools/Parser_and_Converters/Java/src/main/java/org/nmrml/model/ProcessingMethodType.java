@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ProcessingMethodType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "ProcessingMethodType")
 public class ProcessingMethodType
     extends ParamGroupType
 {

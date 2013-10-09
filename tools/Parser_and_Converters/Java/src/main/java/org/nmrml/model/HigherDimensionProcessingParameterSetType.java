@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "HigherDimensionProcessingParameterSetType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "HigherDimensionProcessingParameterSetType")
 public class HigherDimensionProcessingParameterSetType
     extends FirstDimensionProcessingParameterSetType
 {

@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TemperatureType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "TemperatureType")
 public class TemperatureType {
 
     @XmlAttribute(name = "temperature", required = true)

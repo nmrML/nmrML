@@ -37,12 +37,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DataProcessingType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "DataProcessingType", propOrder = {
     "processingMethod"
 })
 public class DataProcessingType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected List<ProcessingMethodType> processingMethod;
     @XmlAttribute(name = "id", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)

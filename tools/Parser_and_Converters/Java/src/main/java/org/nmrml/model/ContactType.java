@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ContactType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "ContactType")
 public class ContactType {
 
     @XmlAttribute(name = "id", required = true)

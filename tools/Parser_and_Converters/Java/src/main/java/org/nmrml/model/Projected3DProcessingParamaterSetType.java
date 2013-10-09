@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Projected3DProcessingParamaterSetType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "Projected3DProcessingParamaterSetType")
 public class Projected3DProcessingParamaterSetType {
 
     @XmlAttribute(name = "projectionAngle")

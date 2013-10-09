@@ -58,7 +58,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SampleType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "SampleType", propOrder = {
     "originalBiologicalSamplepH",
     "postBufferpH",
     "buffer",
@@ -71,23 +71,20 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SampleType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected Double originalBiologicalSamplepH;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected Double postBufferpH;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVTermType buffer;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected SampleType.FieldFrequencyLock fieldFrequencyLock;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVParamType chemicalShiftStandard;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVTermType solventType;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected AdditionalSoluteListType additionalSoluteList;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType solventConcentration;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected SampleType.ConcentrationStandard concentrationStandard;
     @XmlAttribute(name = "originalBiologicalSampleReference", required = true)
     @XmlSchemaType(name = "anyURI")
@@ -363,11 +360,11 @@ public class SampleType {
     })
     public static class ConcentrationStandard {
 
-        @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+        @XmlElement(required = true)
         protected CVTermType type;
-        @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+        @XmlElement(required = true)
         protected ValueWithUnitType concentrationInSample;
-        @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+        @XmlElement(required = true)
         protected CVTermType name;
 
         /**

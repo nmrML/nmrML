@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "UserParamType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "UserParamType")
 public class UserParamType {
 
     @XmlAttribute(name = "name", required = true)

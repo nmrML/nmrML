@@ -35,12 +35,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BinaryDataArrayType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "BinaryDataArrayType", propOrder = {
     "binary"
 })
 public class BinaryDataArrayType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected byte[] binary;
     @XmlAttribute(name = "byteLength")
     protected BigInteger byteLength;

@@ -45,7 +45,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "nmrMLType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "nmrMLType", propOrder = {
     "cvList",
     "fileDescription",
     "contactList",
@@ -60,27 +60,21 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class NmrMLType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVListType cvList;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected FileDescriptionType fileDescription;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ContactListType contactList;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected SourceFileListType sourceFileList;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected SoftwareListType softwareList;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected InstrumentConfigurationListType instrumentConfigurationList;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected DataProcessingListType dataProcessingList;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected SampleListType sampleList;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected ReferenceableParamGroupListType referenceableParamGroupList;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected AcquisitionType acquisition;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected SpectrumListType spectrumList;
     @XmlAttribute(name = "version", required = true)
     protected String version;

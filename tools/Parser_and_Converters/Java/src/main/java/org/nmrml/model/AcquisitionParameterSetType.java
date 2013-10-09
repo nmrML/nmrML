@@ -56,7 +56,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AcquisitionParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "AcquisitionParameterSetType", propOrder = {
     "contactRefList",
     "acquisitionParameterFileRef",
     "softwareRef",
@@ -74,25 +74,22 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AcquisitionParameterSetType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ContactRefListType contactRefList;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected SourceFileRefType acquisitionParameterFileRef;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected SoftwareRefType softwareRef;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVTermType sampleContainer;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType sampleAcquisitionTemperature;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected CVParamType solventSuppressionMethod;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType spinningRate;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType relaxationDelay;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected AcquisitionParameterSetType.PulseSequence pulseSequence;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected SourceFileRefType shapedPulseFile;
     @XmlAttribute(name = "numberOfSteadyStateScans", required = true)
     protected BigInteger numberOfSteadyStateScans;
@@ -415,7 +412,6 @@ public class AcquisitionParameterSetType {
     })
     public static class PulseSequence {
 
-        @XmlElement(namespace = "http://nmrml.org/schema")
         protected SourceFileRefType pulseSequenceFile;
         @XmlAttribute(name = "literatueReference")
         @XmlSchemaType(name = "anyURI")

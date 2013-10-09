@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SoftwareType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "SoftwareType")
 public class SoftwareType
     extends ParamGroupType
 {

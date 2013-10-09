@@ -3,7 +3,6 @@ package org.nmrml.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -28,15 +27,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AcquisitionType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "AcquisitionType", propOrder = {
     "acquisition1D",
     "acquisition2D"
 })
 public class AcquisitionType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected Acquisition1DType acquisition1D;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected Acquisition2DType acquisition2D;
 
     /**

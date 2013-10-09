@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SpectralProcessingParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "SpectralProcessingParameterSetType", propOrder = {
     "processingSoftwareRefList",
     "postAcquisitionSolventSuppressionMethod",
     "dataTransformationMethod",
@@ -46,13 +46,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SpectralProcessingParameterSetType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected List<SoftwareRefListType> processingSoftwareRefList;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVTermType postAcquisitionSolventSuppressionMethod;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVTermType dataTransformationMethod;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVTermType calibrationCompound;
 
     /**

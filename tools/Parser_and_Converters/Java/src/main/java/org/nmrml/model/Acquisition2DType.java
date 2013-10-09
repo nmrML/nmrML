@@ -28,15 +28,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Acquisition2DType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "Acquisition2DType", propOrder = {
     "acquisitionParameterSet",
     "fid"
 })
 public class Acquisition2DType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected AcquisitionParameterSet2DType acquisitionParameterSet;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected BinaryDataArrayType fid;
 
     /**

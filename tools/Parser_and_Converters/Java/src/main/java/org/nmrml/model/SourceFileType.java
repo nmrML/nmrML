@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SourceFileType", namespace = "http://nmrml.org/schema")
+@XmlType(name = "SourceFileType")
 public class SourceFileType
     extends ParamGroupType
 {

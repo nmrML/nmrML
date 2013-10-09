@@ -52,7 +52,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FirstDimensionProcessingParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "FirstDimensionProcessingParameterSetType", propOrder = {
     "zeroOrderPhaseCorrection",
     "firstOrderPhaseCorrection",
     "calibrationReferenceShift",
@@ -66,19 +66,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class FirstDimensionProcessingParameterSetType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected ValueWithUnitType zeroOrderPhaseCorrection;
-    @XmlElement(namespace = "http://nmrml.org/schema")
     protected ValueWithUnitType firstOrderPhaseCorrection;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType calibrationReferenceShift;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVTermType spectralDenoisingMethod;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected List<FirstDimensionProcessingParameterSetType.WindowFunction> windowFunction;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected CVTermType baselineCorrectionMethod;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected SourceFileRefType parameterFileRef;
     @XmlAttribute(name = "noOfDataPoints", required = true)
     protected BigInteger noOfDataPoints;
@@ -308,9 +306,9 @@ public class FirstDimensionProcessingParameterSetType {
     })
     public static class WindowFunction {
 
-        @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+        @XmlElement(required = true)
         protected CVTermType windowFunctionMethod;
-        @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+        @XmlElement(required = true)
         protected List<CVParamType> windowFunctionParameter;
 
         /**

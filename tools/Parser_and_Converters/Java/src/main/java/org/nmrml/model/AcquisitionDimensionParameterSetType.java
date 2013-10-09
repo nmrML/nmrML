@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AcquisitionDimensionParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
+@XmlType(name = "AcquisitionDimensionParameterSetType", propOrder = {
     "gammaB1PulseFieldStrength",
     "sweepWidth",
     "timeDomain",
@@ -47,13 +47,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AcquisitionDimensionParameterSetType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType gammaB1PulseFieldStrength;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType sweepWidth;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected BinaryDataArrayType timeDomain;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(required = true)
     protected ValueWithUnitType irradiationFrequency;
     @XmlAttribute(name = "decoupled", required = true)
     protected boolean decoupled;
