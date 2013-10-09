@@ -3,7 +3,7 @@ if(require("RUnit", quietly=TRUE)) {
 
   ## --- Setup ---
 
-  pkg <- "mzR" # <-- Change to package name!
+  pkg <- "nmRIO" # <-- Change to package name!
   if(Sys.getenv("RCMDCHECK") == "FALSE") {
     ## Path to unit tests for standalone running under Makefile (not R CMD check)
     ## PKG/tests/../inst/unitTests
@@ -17,16 +17,6 @@ if(require("RUnit", quietly=TRUE)) {
   print(list(pkg=pkg, getwd=getwd(), pathToUnitTests=path))
 
   library(package=pkg, character.only=TRUE)
-  library(package="msdata", character.only=TRUE)
-##  library(package="faahKO", character.only=TRUE)
-##  attr(faahko, "filepaths") <- sapply(as.list(basename(attr(faahko, "filepaths"))), 
-##    function(x) system.file("cdf", if (length(grep("ko",x)) > 0) "KO" else  "WT" ,x, package = "faahKO"))
-
-  ## If desired, load the name space to allow testing of private functions
-  ## if (is.element(pkg, loadedNamespaces()))
-  ##     attach(loadNamespace(pkg), name=paste("namespace", pkg, sep=":"), pos=3)
-  ##
-  ## or simply call PKG:::myPrivateFunction() in tests
 
   ## --- Testing ---
 

@@ -1,9 +1,22 @@
 Package: nmRIO
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: Parser for NMR raw fid and processed data from nmrML, Bruker and Varian
+    instruments
+Version: 0.1
 Date: 2013-10-09
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Jie Hao, Ian Lewis, Steffen Neumann
+Maintainer: Steffen Neumann <sneumann@ipb-halle.de>
+Description: The package reads NMR data into R objects,
+    following the data model in nmrML.
+    Bruker and Varian files are only supported to a limited extent.
+Depends:
+    XML,
+    caTools
+Suggests:
+    RUnit
+License: Artistic-2.0
+biocViews: Infrastructure, Bioinformatics, DataImport, Metabolomics, NMR
+Collate:
+    'readNMRMLFID.R'
+    'readNMRMLProcessed.R'
+    'verify.nmrML.R'

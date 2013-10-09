@@ -1,11 +1,12 @@
 \name{readNMRMLProcessed}
 \alias{readNMRMLProcessed}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+  \title{Extract binary processed data from nmrML}
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  The processed NMR data in nmrML is a base64 encoded, optionally zipped binary
+  representation. This function will decode this
+  properly into an R vector.
 }
 \usage{
 readNMRMLProcessed(filename)

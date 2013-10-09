@@ -1,11 +1,11 @@
 \name{verify.nmrML}
 \alias{verify.nmrML}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+This function will verify an nmrML file against the schema
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  This function will just call the libXML validation
+  of a given file against the XML schema definition (XSD)
 }
 \usage{
 verify.nmrML(filename, xsdfilename = system.file(unitTests/nmrML.xsd, package = "nmRio"))

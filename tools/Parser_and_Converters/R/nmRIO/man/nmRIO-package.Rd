@@ -2,19 +2,17 @@
 \alias{nmRIO-package}
 \alias{nmRIO}
 \docType{package}
-\title{
-What the package does (short line)
-~~ package title ~~
-}
+\title{Parser for NMR raw fid and processed data from nmrML, Bruker and Varian instruments}
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+The package reads NMR data into R objects, 
+following the data model in nmrML.
+Bruker and Varian files are only supported to a limited extent. 
 }
 \details{
 \tabular{ll}{
 Package: \tab nmRIO\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 0.1\cr
 Date: \tab 2013-10-09\cr
 License: \tab What license is it under?\cr
 }
