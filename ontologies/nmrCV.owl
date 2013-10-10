@@ -6457,7 +6457,7 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400097">
         <rdfs:label rdf:datatype="&xsd;string">line broadening</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400096"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400063"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -6467,7 +6467,7 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400098">
         <rdfs:label rdf:datatype="&xsd;string">line sharpening</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400096"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400063"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -6477,7 +6477,7 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400099">
         <rdfs:label rdf:datatype="&xsd;string">shifted bell</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400096"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
 synonym: sb</rdfs:comment>
     </owl:Class>
@@ -6488,7 +6488,7 @@ synonym: sb</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400100">
         <rdfs:label rdf:datatype="&xsd;string">shifted sine bell</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400096"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A function used to multiply a FID by to produce a desired amount of line broadening and spectral resolution.
 defprov: Daniel Schober
 synonym: ssb</rdfs:comment>
