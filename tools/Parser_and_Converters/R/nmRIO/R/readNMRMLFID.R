@@ -20,10 +20,125 @@ readNMRMLFID <- function (filename) {
                                    xmlValue))
 
     ## Decode. TODO: Check cvParam about the encoding
-    rfid <- memDecompress(base64decode(b64s["acquisition.acquisition1D.fid.binary"], "raw"), type="gzip")
-    dfid <- readBin(rfid, n=length(rfid)/4+1, what="double", size=4)
-    fid <- complex(real=dfid[c(TRUE,FALSE)], imaginary=dfid[c(FALSE,TRUE)])
+    dfid <- binaryArrayDecode(b64s["acquisition.acquisition1D.fid.binary"],
+                      what="double", compression="gzip")
+    
+    fid <- fidvector2complex(dfid)
 
     ## Return the fid
     fid
+}
+
+#' binaryArrayDecode
+#'
+#' Extract binary (optionally compressed) data from base64 encoded strings
+#'
+#' This is the Details section
+#'
+#' @param b64string character the base64 encoded (optionally zipped) 
+#' @param what character Either an object whose mode will give the mode of the vector
+#'        to be read, or a character vector of length one describing
+#'        the mode: one of '"numeric"', '"double"', '"integer"',
+#'        '"int"', '"logical"', '"complex"', '"character"', '"raw"'.
+#' @param compression c("gzip", "bzip2", "xz", "none") 
+#'        character string, the type of compression.  May be
+#'        abbreviated to a single letter, defaults to "none"
+#'  
+#' @return A vector with the type "what" 
+#' @author Steffen Neumann
+#' @examples
+#' nmRIO:::binaryArrayDecode("eJxjYACBD/YMEOAAoTigtACUFoHSElBaBkorOAAAeOcDcA==", compression="gzip")
+
+binaryArrayDecode <- function (b64string, what="double", compression=c("gzip", "bzip2", "xz", "none") ) {
+    if (missing(compression)) {
+        compression <- "none"
+    }
+    ## Decode. TODO: Check cvParam about the encoding
+    raws <- memDecompress(base64decode(b64string, "raw"), type=compression)
+    doubles <- readBin(raws, n=length(raws)+1, what=what)
+    doubles
+}
+
+
+
+#' fidvector2complex
+#'
+#' Convert a vector of double into a vector or array of complex numbers with row-major order
+#'
+#' for 1D fid:
+#' [1+1i,2+2i,3+3i]
+#' 
+#' when we store it we flatten the complex numbers to adjacent floats, giving:
+#' [1,1i,2,2i,3,3i]
+#' 
+#' This case extends to 2D, up to ND, I will give an example with 3D so that all is clear:
+#' 
+#' For 3D with dimensions X=3,Y=3,Z=3:
+#' [
+#' [
+#' [1+1i,2+2i,3+3i],
+#' [4+4i,5+5i,6+6i],
+#' [7+7i,8+8i,9+9i]
+#' ],[
+#' [1+1i,2+2i,3+3i],
+#' [4+4i,5+5i,6+6i],
+#' [7+7i,8+8i,9+9i]
+#' ],[
+#' [1+1i,2+2i,3+3i],
+#' [4+4i,5+5i,6+6i],
+#' [7+7i,8+8i,9+9i]
+#' ]
+#' ]
+#' 
+#' When flattened is:
+#' [
+#' 1,1i,2,2i,3,3i,4,4i,5,5i,6,6i,7,7i,8,8i,9,9i,
+#' 1,1i,2,2i,3,3i,4,4i,5,5i,6,6i,7,7i,8,8i,9,9i,
+#' 1,1i,2,2i,3,3i,4,4i,5,5i,6,6i,7,7i,8,8i,9,9i
+#' ]
+#' 
+#' If the array is stored in a block of contiguous memory, we can use the following pointer arithmetic to access the data
+#' 
+#' To access the real part of number at [x][y][z] (multiply Z by 2 since we flatten complex into two floats):
+#' [x*Y*Z*2 + y*Z*2 + 2*z ]
+#' 
+#' To access the imaginary part of number at [x][y][z]:
+#' [x*Y*Z*2 + y*Z*2 + (2*z+1)]
+#' 
+#' so for example to access [1][2][2] ( in bold )
+#' 
+#' in our case, X=3,Y=3,Z=3
+#' 
+#' [1*3*3*2 + 2*3*2 + 2*2] = 30
+#' [1*3*3*2 + 2*3*2 + 2*2+1] = 31
+#' 
+#' In a real FID the dimensions are defined as so:
+#' Z = number of datapoints in direct dimension
+#' Y = number of datapoints in first indirect dimension
+#' X = number of datapoints in 2nd indirect dimension
+#'
+#' @param doubles numeric A vector of doubles decoded from the nmrML file
+#' @param dimensions numeric depending on how we'll implement nD NMR data, either the number of dimensions,
+#'                           or a vector with n elements and the length of each dimension
+#' @return A vector or array with the complex values of the FID data
+#' @author Steffen Neumann
+
+fidvector2complex <- function(doubles, dimensions=1) {
+    fid <- complex(real=doubles[c(TRUE,FALSE)], imaginary=doubles[c(FALSE,TRUE)])
+    if (dimensions == 2) {        
+        ## re-shape into matrix
+        stop("NYI")
+        ## Requires re-checking the input structure and expected output structure
+        fid <- as.matrix(fid,
+                         nrow=dimensions[1],
+                         ncol=dimensions[2],
+                         byrow=FALSE)
+    } else if (dimensions >3) {
+        stop("NYI")
+        ## Requires the correct re-shaping of the 1D vector
+        ## into 3D or nD.
+        ## http://stackoverflow.com/questions/12859215/switching-row-major-to-column-major-dimensions
+        fid <- as.array(data=fid, dim=dimensions)
+    }
+    fid   
 }
