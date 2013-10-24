@@ -21,9 +21,11 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="ParamGroupType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
+ *       &lt;sequence minOccurs="0">
  *         &lt;element name="referenceableParamGroupRef" type="{http://nmrml.org/schema}ReferenceableParamGroupRefType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="cvParam" type="{http://nmrml.org/schema}CVParamType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="cvParamWithUnit" type="{http://nmrml.org/schema}CVParamWithUnitType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="cvTerm" type="{http://nmrml.org/schema}CVTermType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="userParam" type="{http://nmrml.org/schema}UserParamType" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -37,12 +39,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ParamGroupType", namespace = "http://nmrml.org/schema", propOrder = {
     "referenceableParamGroupRef",
     "cvParam",
+    "cvParamWithUnit",
+    "cvTerm",
     "userParam"
 })
 @XmlSeeAlso({
     ProcessingMethodType.class,
-    SoftwareType.class,
+    ContactType.class,
     SourceFileType.class,
+    PulseSequenceType.class,
     InstrumentConfigurationType.class
 })
 public class ParamGroupType {
@@ -51,6 +56,10 @@ public class ParamGroupType {
     protected List<ReferenceableParamGroupRefType> referenceableParamGroupRef;
     @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<CVParamType> cvParam;
+    @XmlElement(namespace = "http://nmrml.org/schema")
+    protected List<CVParamWithUnitType> cvParamWithUnit;
+    @XmlElement(namespace = "http://nmrml.org/schema")
+    protected List<CVTermType> cvTerm;
     @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<UserParamType> userParam;
 
@@ -110,6 +119,64 @@ public class ParamGroupType {
             cvParam = new ArrayList<CVParamType>();
         }
         return this.cvParam;
+    }
+
+    /**
+     * Gets the value of the cvParamWithUnit property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cvParamWithUnit property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCvParamWithUnit().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CVParamWithUnitType }
+     * 
+     * 
+     */
+    public List<CVParamWithUnitType> getCvParamWithUnit() {
+        if (cvParamWithUnit == null) {
+            cvParamWithUnit = new ArrayList<CVParamWithUnitType>();
+        }
+        return this.cvParamWithUnit;
+    }
+
+    /**
+     * Gets the value of the cvTerm property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cvTerm property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCvTerm().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CVTermType }
+     * 
+     * 
+     */
+    public List<CVTermType> getCvTerm() {
+        if (cvTerm == null) {
+            cvTerm = new ArrayList<CVTermType>();
+        }
+        return this.cvTerm;
     }
 
     /**

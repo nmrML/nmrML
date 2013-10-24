@@ -16,10 +16,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="AcquisitionType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
+ *       &lt;sequence>
  *         &lt;element name="acquisition1D" type="{http://nmrml.org/schema}Acquisition1DType"/>
- *         &lt;element name="acquisition2D" type="{http://nmrml.org/schema}Acquisition2DType"/>
- *       &lt;/choice>
+ *         &lt;element name="acquisitionMultiD" type="{http://nmrml.org/schema}AcquisitionMultiDType"/>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -30,14 +30,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AcquisitionType", namespace = "http://nmrml.org/schema", propOrder = {
     "acquisition1D",
-    "acquisition2D"
+    "acquisitionMultiD"
 })
 public class AcquisitionType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema")
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected Acquisition1DType acquisition1D;
-    @XmlElement(namespace = "http://nmrml.org/schema")
-    protected Acquisition2DType acquisition2D;
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    protected AcquisitionMultiDType acquisitionMultiD;
 
     /**
      * Gets the value of the acquisition1D property.
@@ -64,27 +64,27 @@ public class AcquisitionType {
     }
 
     /**
-     * Gets the value of the acquisition2D property.
+     * Gets the value of the acquisitionMultiD property.
      * 
      * @return
      *     possible object is
-     *     {@link Acquisition2DType }
+     *     {@link AcquisitionMultiDType }
      *     
      */
-    public Acquisition2DType getAcquisition2D() {
-        return acquisition2D;
+    public AcquisitionMultiDType getAcquisitionMultiD() {
+        return acquisitionMultiD;
     }
 
     /**
-     * Sets the value of the acquisition2D property.
+     * Sets the value of the acquisitionMultiD property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Acquisition2DType }
+     *     {@link AcquisitionMultiDType }
      *     
      */
-    public void setAcquisition2D(Acquisition2DType value) {
-        this.acquisition2D = value;
+    public void setAcquisitionMultiD(AcquisitionMultiDType value) {
+        this.acquisitionMultiD = value;
     }
 
 }

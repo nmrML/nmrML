@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,26 +23,14 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="contactRefList" type="{http://nmrml.org/schema}ContactRefListType"/>
- *         &lt;element name="acquisitionParameterFileRef" type="{http://nmrml.org/schema}SourceFileRefType"/>
+ *         &lt;element name="acquisitionParameterFileRefList" type="{http://nmrml.org/schema}SourceFileRefListType"/>
  *         &lt;element name="softwareRef" type="{http://nmrml.org/schema}SoftwareRefType" minOccurs="0"/>
  *         &lt;element name="sampleContainer" type="{http://nmrml.org/schema}CVTermType"/>
  *         &lt;element name="sampleAcquisitionTemperature" type="{http://nmrml.org/schema}ValueWithUnitType"/>
  *         &lt;element name="solventSuppressionMethod" type="{http://nmrml.org/schema}CVParamType" minOccurs="0"/>
  *         &lt;element name="spinningRate" type="{http://nmrml.org/schema}ValueWithUnitType"/>
  *         &lt;element name="relaxationDelay" type="{http://nmrml.org/schema}ValueWithUnitType"/>
- *         &lt;element name="pulseSequence">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="pulseSequenceFile" type="{http://nmrml.org/schema}SourceFileRefType" minOccurs="0"/>
- *                 &lt;/sequence>
- *                 &lt;attribute name="literatueReference" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
- *                 &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
+ *         &lt;element name="pulseSequence" type="{http://nmrml.org/schema}PulseSequenceType"/>
  *         &lt;element name="shapedPulseFile" type="{http://nmrml.org/schema}SourceFileRefType" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="numberOfSteadyStateScans" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
@@ -58,7 +45,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AcquisitionParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
     "contactRefList",
-    "acquisitionParameterFileRef",
+    "acquisitionParameterFileRefList",
     "softwareRef",
     "sampleContainer",
     "sampleAcquisitionTemperature",
@@ -70,14 +57,14 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     AcquisitionParameterSet1DType.class,
-    AcquisitionParameterSet2DType.class
+    AcquisitionParameterSetMultiDType.class
 })
 public class AcquisitionParameterSetType {
 
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ContactRefListType contactRefList;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
-    protected SourceFileRefType acquisitionParameterFileRef;
+    protected SourceFileRefListType acquisitionParameterFileRefList;
     @XmlElement(namespace = "http://nmrml.org/schema")
     protected SoftwareRefType softwareRef;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
@@ -91,7 +78,7 @@ public class AcquisitionParameterSetType {
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType relaxationDelay;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
-    protected AcquisitionParameterSetType.PulseSequence pulseSequence;
+    protected PulseSequenceType pulseSequence;
     @XmlElement(namespace = "http://nmrml.org/schema")
     protected SourceFileRefType shapedPulseFile;
     @XmlAttribute(name = "numberOfSteadyStateScans", required = true)
@@ -124,27 +111,27 @@ public class AcquisitionParameterSetType {
     }
 
     /**
-     * Gets the value of the acquisitionParameterFileRef property.
+     * Gets the value of the acquisitionParameterFileRefList property.
      * 
      * @return
      *     possible object is
-     *     {@link SourceFileRefType }
+     *     {@link SourceFileRefListType }
      *     
      */
-    public SourceFileRefType getAcquisitionParameterFileRef() {
-        return acquisitionParameterFileRef;
+    public SourceFileRefListType getAcquisitionParameterFileRefList() {
+        return acquisitionParameterFileRefList;
     }
 
     /**
-     * Sets the value of the acquisitionParameterFileRef property.
+     * Sets the value of the acquisitionParameterFileRefList property.
      * 
      * @param value
      *     allowed object is
-     *     {@link SourceFileRefType }
+     *     {@link SourceFileRefListType }
      *     
      */
-    public void setAcquisitionParameterFileRef(SourceFileRefType value) {
-        this.acquisitionParameterFileRef = value;
+    public void setAcquisitionParameterFileRefList(SourceFileRefListType value) {
+        this.acquisitionParameterFileRefList = value;
     }
 
     /**
@@ -296,10 +283,10 @@ public class AcquisitionParameterSetType {
      * 
      * @return
      *     possible object is
-     *     {@link AcquisitionParameterSetType.PulseSequence }
+     *     {@link PulseSequenceType }
      *     
      */
-    public AcquisitionParameterSetType.PulseSequence getPulseSequence() {
+    public PulseSequenceType getPulseSequence() {
         return pulseSequence;
     }
 
@@ -308,10 +295,10 @@ public class AcquisitionParameterSetType {
      * 
      * @param value
      *     allowed object is
-     *     {@link AcquisitionParameterSetType.PulseSequence }
+     *     {@link PulseSequenceType }
      *     
      */
-    public void setPulseSequence(AcquisitionParameterSetType.PulseSequence value) {
+    public void setPulseSequence(PulseSequenceType value) {
         this.pulseSequence = value;
     }
 
@@ -385,116 +372,6 @@ public class AcquisitionParameterSetType {
      */
     public void setNumberOfScans(BigInteger value) {
         this.numberOfScans = value;
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="pulseSequenceFile" type="{http://nmrml.org/schema}SourceFileRefType" minOccurs="0"/>
-     *       &lt;/sequence>
-     *       &lt;attribute name="literatueReference" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
-     *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "pulseSequenceFile"
-    })
-    public static class PulseSequence {
-
-        @XmlElement(namespace = "http://nmrml.org/schema")
-        protected SourceFileRefType pulseSequenceFile;
-        @XmlAttribute(name = "literatueReference")
-        @XmlSchemaType(name = "anyURI")
-        protected String literatueReference;
-        @XmlAttribute(name = "name")
-        protected String name;
-
-        /**
-         * Gets the value of the pulseSequenceFile property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link SourceFileRefType }
-         *     
-         */
-        public SourceFileRefType getPulseSequenceFile() {
-            return pulseSequenceFile;
-        }
-
-        /**
-         * Sets the value of the pulseSequenceFile property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link SourceFileRefType }
-         *     
-         */
-        public void setPulseSequenceFile(SourceFileRefType value) {
-            this.pulseSequenceFile = value;
-        }
-
-        /**
-         * Gets the value of the literatueReference property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getLiteratueReference() {
-            return literatueReference;
-        }
-
-        /**
-         * Sets the value of the literatueReference property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setLiteratueReference(String value) {
-            this.literatueReference = value;
-        }
-
-        /**
-         * Gets the value of the name property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getName() {
-            return name;
-        }
-
-        /**
-         * Sets the value of the name property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setName(String value) {
-            this.name = value;
-        }
-
     }
 
 }

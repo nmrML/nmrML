@@ -24,10 +24,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="SpectrumListType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
+ *       &lt;choice>
  *         &lt;element name="spectrum1D" type="{http://nmrml.org/schema}Spectrum1DType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="spectrumMultiD" type="{http://nmrml.org/schema}SpectrumMultiDType" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
+ *       &lt;/choice>
  *       &lt;attribute name="count" use="required" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" />
  *       &lt;attribute name="defaultDataProcessingRef" use="required" type="{http://www.w3.org/2001/XMLSchema}IDREF" />
  *     &lt;/restriction>

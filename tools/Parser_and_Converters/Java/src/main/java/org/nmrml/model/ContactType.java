@@ -21,14 +21,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <pre>
  * &lt;complexType name="ContactType">
  *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *     &lt;extension base="{http://nmrml.org/schema}ParamGroupType">
  *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}ID" />
  *       &lt;attribute name="fullname" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="url" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
  *       &lt;attribute name="address" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="organization" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="email" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/restriction>
+ *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -37,7 +37,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ContactType", namespace = "http://nmrml.org/schema")
-public class ContactType {
+public class ContactType
+    extends ParamGroupType
+{
 
     @XmlAttribute(name = "id", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)

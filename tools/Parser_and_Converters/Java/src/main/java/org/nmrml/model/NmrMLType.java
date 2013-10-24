@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * This is the root element for the Metabolomics Standards Initiative (MSI) nmrML schema, which is intended to capture the use of a NMR spectrometer, the data generated, and the initial processing of that data (to the level of the peak list).
+ * This is the root element for the COordination Of Standards In MetabOlomicS nmrML schema, which is intended to capture the use of a nuclear magnetic resonance spectrometer, the data generated, and the initial processing of that data (to the level of the peak list).
  * 
  * <p>Java class for nmrMLType complex type.
  * 
@@ -24,12 +24,12 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="cvList" type="{http://nmrml.org/schema}CVListType"/>
  *         &lt;element name="fileDescription" type="{http://nmrml.org/schema}FileDescriptionType"/>
  *         &lt;element name="contactList" type="{http://nmrml.org/schema}ContactListType"/>
+ *         &lt;element name="referenceableParamGroupList" type="{http://nmrml.org/schema}ReferenceableParamGroupListType" minOccurs="0"/>
  *         &lt;element name="sourceFileList" type="{http://nmrml.org/schema}SourceFileListType" minOccurs="0"/>
  *         &lt;element name="softwareList" type="{http://nmrml.org/schema}SoftwareListType" minOccurs="0"/>
  *         &lt;element name="instrumentConfigurationList" type="{http://nmrml.org/schema}InstrumentConfigurationListType"/>
  *         &lt;element name="dataProcessingList" type="{http://nmrml.org/schema}DataProcessingListType" minOccurs="0"/>
  *         &lt;element name="sampleList" type="{http://nmrml.org/schema}SampleListType" minOccurs="0"/>
- *         &lt;element name="referenceableParamGroupList" type="{http://nmrml.org/schema}ReferenceableParamGroupListType" minOccurs="0"/>
  *         &lt;element name="acquisition" type="{http://nmrml.org/schema}AcquisitionType"/>
  *         &lt;element name="spectrumList" type="{http://nmrml.org/schema}SpectrumListType" minOccurs="0"/>
  *       &lt;/sequence>
@@ -49,12 +49,12 @@ import javax.xml.bind.annotation.XmlType;
     "cvList",
     "fileDescription",
     "contactList",
+    "referenceableParamGroupList",
     "sourceFileList",
     "softwareList",
     "instrumentConfigurationList",
     "dataProcessingList",
     "sampleList",
-    "referenceableParamGroupList",
     "acquisition",
     "spectrumList"
 })
@@ -67,6 +67,8 @@ public class NmrMLType {
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ContactListType contactList;
     @XmlElement(namespace = "http://nmrml.org/schema")
+    protected ReferenceableParamGroupListType referenceableParamGroupList;
+    @XmlElement(namespace = "http://nmrml.org/schema")
     protected SourceFileListType sourceFileList;
     @XmlElement(namespace = "http://nmrml.org/schema")
     protected SoftwareListType softwareList;
@@ -76,8 +78,6 @@ public class NmrMLType {
     protected DataProcessingListType dataProcessingList;
     @XmlElement(namespace = "http://nmrml.org/schema")
     protected SampleListType sampleList;
-    @XmlElement(namespace = "http://nmrml.org/schema")
-    protected ReferenceableParamGroupListType referenceableParamGroupList;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected AcquisitionType acquisition;
     @XmlElement(namespace = "http://nmrml.org/schema")
@@ -162,6 +162,30 @@ public class NmrMLType {
      */
     public void setContactList(ContactListType value) {
         this.contactList = value;
+    }
+
+    /**
+     * Gets the value of the referenceableParamGroupList property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ReferenceableParamGroupListType }
+     *     
+     */
+    public ReferenceableParamGroupListType getReferenceableParamGroupList() {
+        return referenceableParamGroupList;
+    }
+
+    /**
+     * Sets the value of the referenceableParamGroupList property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ReferenceableParamGroupListType }
+     *     
+     */
+    public void setReferenceableParamGroupList(ReferenceableParamGroupListType value) {
+        this.referenceableParamGroupList = value;
     }
 
     /**
@@ -282,30 +306,6 @@ public class NmrMLType {
      */
     public void setSampleList(SampleListType value) {
         this.sampleList = value;
-    }
-
-    /**
-     * Gets the value of the referenceableParamGroupList property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReferenceableParamGroupListType }
-     *     
-     */
-    public ReferenceableParamGroupListType getReferenceableParamGroupList() {
-        return referenceableParamGroupList;
-    }
-
-    /**
-     * Sets the value of the referenceableParamGroupList property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReferenceableParamGroupListType }
-     *     
-     */
-    public void setReferenceableParamGroupList(ReferenceableParamGroupListType value) {
-        this.referenceableParamGroupList = value;
     }
 
     /**

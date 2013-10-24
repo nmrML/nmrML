@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="valueType" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="unitAccession" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="unitName" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -39,8 +39,8 @@ public class UserParamType {
 
     @XmlAttribute(name = "name", required = true)
     protected String name;
-    @XmlAttribute(name = "type")
-    protected String type;
+    @XmlAttribute(name = "valueType")
+    protected String valueType;
     @XmlAttribute(name = "value")
     protected String value;
     @XmlAttribute(name = "unitAccession")
@@ -77,27 +77,27 @@ public class UserParamType {
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the value of the valueType property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getType() {
-        return type;
+    public String getValueType() {
+        return valueType;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the value of the valueType property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setType(String value) {
-        this.type = value;
+    public void setValueType(String value) {
+        this.valueType = value;
     }
 
     /**

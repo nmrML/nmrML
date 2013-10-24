@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *             &lt;/complexContent>
  *           &lt;/complexType>
  *         &lt;/element>
- *         &lt;element name="fid" type="{http://nmrml.org/schema}BinaryDataArrayType"/>
+ *         &lt;element name="fidData" type="{http://nmrml.org/schema}BinaryDataArrayType"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,14 +40,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Acquisition1DType", namespace = "http://nmrml.org/schema", propOrder = {
     "acquisitionParameterSet",
-    "fid"
+    "fidData"
 })
 public class Acquisition1DType {
 
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected Acquisition1DType.AcquisitionParameterSet acquisitionParameterSet;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
-    protected BinaryDataArrayType fid;
+    protected BinaryDataArrayType fidData;
 
     /**
      * Gets the value of the acquisitionParameterSet property.
@@ -74,27 +74,27 @@ public class Acquisition1DType {
     }
 
     /**
-     * Gets the value of the fid property.
+     * Gets the value of the fidData property.
      * 
      * @return
      *     possible object is
      *     {@link BinaryDataArrayType }
      *     
      */
-    public BinaryDataArrayType getFid() {
-        return fid;
+    public BinaryDataArrayType getFidData() {
+        return fidData;
     }
 
     /**
-     * Sets the value of the fid property.
+     * Sets the value of the fidData property.
      * 
      * @param value
      *     allowed object is
      *     {@link BinaryDataArrayType }
      *     
      */
-    public void setFid(BinaryDataArrayType value) {
-        this.fid = value;
+    public void setFidData(BinaryDataArrayType value) {
+        this.fidData = value;
     }
 
 
