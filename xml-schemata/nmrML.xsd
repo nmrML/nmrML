@@ -60,7 +60,9 @@
         <xs:documentation>Optional attribute for retrieva of an nmrML document. Usefull when the document has been retrieved from a public database.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute inheritable="true" name="id" type="xs:string">
+      <!--not supported-->
+    <!--<xs:attribute inheritable="true" name="id" type="xs:string">-->
+      <xs:attribute name="id" type="xs:string">
       <xs:annotation>
         <xs:documentation>An optional ID for the nmrML document.</xs:documentation>
       </xs:annotation>
@@ -990,12 +992,12 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="SpectralProcessingParameterSetType">
-        <xs:all maxOccurs="1" minOccurs="1">
+        <xs:sequence maxOccurs="1" minOccurs="1">
           <xs:element maxOccurs="1" minOccurs="1" name="directDimensionParameterSet"
             type="FirstDimensionProcessingParameterSetType"> </xs:element>
           <xs:element maxOccurs="2" minOccurs="1" name="higherDimensionParameterSet"
             type="HigherDimensionProcessingParameterSetType"/>
-        </xs:all>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
