@@ -23,14 +23,16 @@ import org.nmrml.cv.BrukerMapper;
 import org.nmrml.cv.CVLoader;
 import org.nmrml.model.Acquisition1DType;
 import org.nmrml.model.AcquisitionDimensionParameterSetType;
-import org.nmrml.model.AcquisitionParameterSetType;
 import org.nmrml.model.AcquisitionType;
 import org.nmrml.model.BinaryDataArrayType;
 import org.nmrml.model.CVListType;
 import org.nmrml.model.CVParamType;
+import org.nmrml.model.CVTermType;
 import org.nmrml.model.NmrMLType;
 import org.nmrml.model.ObjectFactory;
+import org.nmrml.model.PulseSequenceType;
 import org.nmrml.model.SourceFileListType;
+import org.nmrml.model.SourceFileRefListType;
 import org.nmrml.model.SourceFileRefType;
 import org.nmrml.model.SourceFileType;
 import org.nmrml.model.ValueWithUnitType;
@@ -229,7 +231,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
         AcquisitionReader acquisitionReader = new AcquisitionReader();
         acquisition.setAcquisitionParameterSet(acquisitionReader.getParameterSet());
-        acquisition.setFid(readFid(acquisitionReader));
+        acquisition.setFidData(readFid(acquisitionReader));
 
         //add the reference list
 
@@ -268,7 +270,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
         BinaryDataArrayType binaryDataArrayType = objectFactory.createBinaryDataArrayType();
         FileInputStream fidInput = new FileInputStream(inputFile.getParentFile().getAbsolutePath().concat("/fid"));
         FileChannel inChannel = fidInput.getChannel();
-        binaryDataArrayType.setByteLength(BigInteger.valueOf(inChannel.size() / acquisitionReader.getBiteSyze()));
+        binaryDataArrayType.setEncodedLength(BigInteger.valueOf(inChannel.size() / acquisitionReader.getBiteSyze()));
         ByteBuffer buffer = ByteBuffer.allocate((int) inChannel.size());
         buffer.order(acquisitionReader.getByteOrder());
         inChannel.read(buffer);
@@ -277,7 +279,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
         } else { // 64 bit integer
             binaryDataArrayType.setByteFormat(Long.class.toString());
         }
-        binaryDataArrayType.setBinary(buffer.array());
+        binaryDataArrayType.setValue(buffer.array());
         /* debuging */
 //        FileOutputStream fos = new FileOutputStream(new File("/Users/ldpf/Downloads/fid-out"));
 //        BufferedOutputStream bos = new BufferedOutputStream(fos);
@@ -315,7 +317,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
         private AcquisitionDimensionParameterSetType acquParameters;
         private Acquisition1DType.AcquisitionParameterSet parameterSet;
-        private AcquisitionParameterSetType.PulseSequence pulseSequence;
+        private PulseSequenceType pulseSequence;
         private ByteOrder byteOrder;
         private int biteSyze;
 
@@ -330,7 +332,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
         private void readDimensionParameters() throws IOException {
             double gyromagneticRatio= 42.577480;
             acquParameters= objectFactory.createAcquisitionDimensionParameterSetType();
-            pulseSequence = objectFactory.createAcquisitionParameterSetTypePulseSequence();
+            pulseSequence = objectFactory.createPulseSequenceType();
             ValueWithUnitType value;
             Matcher matcher;
             String line = inputAcqReader.readLine();
@@ -384,15 +386,34 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 matcher = REGEXP_NUC.matcher(line);
                 matcher.find();
                 String atom =matcher.group(1).replace("<","").replace(">","");
-                //TODO this will be changed in the next CV
                 if(atom.matches("H")){
-                    //CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI","H");
-                    acquParameters.setAcquisitionNucleus("1H");
+                    try {
+                        // TODO check why one uses cvTermType instead of cvParamType
+                        CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI","H");
+                        CVTermType cvTermType = objectFactory.createCVTermType();
+                        cvTermType.setAccession(cvParamType.getAccession());
+                        cvTermType.setCvRef(cvParamType.getCvRef());
+                        cvTermType.setName(cvParamType.getName());
+                        acquParameters.setAcquisitionNucleus(cvTermType);
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
                 } else if (atom.matches("13C")){
-                    //CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI","13C");
-                    acquParameters.setAcquisitionNucleus("13C");
+                    CVParamType cvParamType = null;
+                    try {
+                        cvParamType = cvLoader.fetchCVParam("CHEBI","13C");
+                        CVTermType cvTermType = objectFactory.createCVTermType();
+                        cvTermType.setAccession(cvParamType.getAccession());
+                        cvTermType.setCvRef(cvParamType.getCvRef());
+                        cvTermType.setName(cvParamType.getName());
+                        acquParameters.setAcquisitionNucleus(cvTermType);
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
                 } else {
-                    acquParameters.setAcquisitionNucleus(atom);
+                    CVTermType cvTermType = objectFactory.createCVTermType();
+                    cvTermType.setName(atom);
+                    acquParameters.setAcquisitionNucleus(cvTermType);
                 }
             }
             /* byte order */
@@ -449,7 +470,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 matcher = REGEXP_PULPROG.matcher(line);
                 matcher.find();
                 // TODO probably replace with a CV term
-                pulseSequence.setName(matcher.group(1).replaceAll("<", "").replaceAll(">", ""));
+                // set a cvTerm
+//                pulseSequence.setName(matcher.group(1).replaceAll("<", "").replaceAll(">", ""));
             }
             /* number of scans */
             if(REGEXP_NS.matcher(line).find()){
@@ -495,14 +517,25 @@ public class BrukerAcquAbstractReader implements AcquReader {
             if(sourceFileType.getId().matches("PULSEPROGRAM_FILE")){
                 SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
+
+                PulseSequenceType.PulseSequenceFileRefList pulseSequenceFileRefList =
+                        objectFactory.createPulseSequenceTypePulseSequenceFileRefList();
+                pulseSequenceFileRefList.getPulseSequenceFileRef().add(sourceFileRefType);
+
                 nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().getPulseSequence()
-                        .setPulseSequenceFile(sourceFileRefType);
+                        .setPulseSequenceFileRefList(pulseSequenceFileRefList);
+
             }
             if(sourceFileType.getId().matches("ACQUISITION_FILE")){
                 SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
+
+                SourceFileRefListType sourceFileRefListType = objectFactory.createSourceFileRefListType();
+                sourceFileRefListType.getSourceFileRef().add(sourceFileRefType);
+
                 nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet()
-                        .setAcquisitionParameterFileRef(sourceFileRefType);
+                        .setAcquisitionParameterFileRefList(sourceFileRefListType);
+
             }
             if(sourceFileType.getId().matches("FID_FILE")){
                 SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
