@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CVParamType")
+@XmlType(name = "CVParamType", namespace = "http://nmrml.org/schema")
 public class CVParamType {
 
     @XmlAttribute(name = "cvRef", required = true)

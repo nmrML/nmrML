@@ -33,12 +33,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ContactRefListType", propOrder = {
+@XmlType(name = "ContactRefListType", namespace = "http://nmrml.org/schema", propOrder = {
     "contactRef"
 })
 public class ContactRefListType {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected List<ContactRefType> contactRef;
     @XmlAttribute(name = "count", required = true)
     @XmlSchemaType(name = "nonNegativeInteger")

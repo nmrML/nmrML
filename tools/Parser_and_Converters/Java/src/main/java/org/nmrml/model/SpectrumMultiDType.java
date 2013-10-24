@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SpectrumMultiDType", propOrder = {
+@XmlType(name = "SpectrumMultiDType", namespace = "http://nmrml.org/schema", propOrder = {
     "firstDimensionProcessingParameterSet",
     "higherDimensionProcessingParameterSet",
     "projected3DProcessingParamaterSet"
@@ -40,10 +40,11 @@ public class SpectrumMultiDType
     extends SpectrumType
 {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected FirstDimensionProcessingParameterSetType firstDimensionProcessingParameterSet;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected List<HigherDimensionProcessingParameterSetType> higherDimensionProcessingParameterSet;
+    @XmlElement(namespace = "http://nmrml.org/schema")
     protected Projected3DProcessingParamaterSetType projected3DProcessingParamaterSet;
 
     /**

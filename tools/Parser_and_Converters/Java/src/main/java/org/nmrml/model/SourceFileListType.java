@@ -35,12 +35,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SourceFileListType", propOrder = {
+@XmlType(name = "SourceFileListType", namespace = "http://nmrml.org/schema", propOrder = {
     "sourceFile"
 })
 public class SourceFileListType {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected List<SourceFileType> sourceFile;
     @XmlAttribute(name = "count", required = true)
     @XmlSchemaType(name = "nonNegativeInteger")

@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SourceFileRefType")
+@XmlType(name = "SourceFileRefType", namespace = "http://nmrml.org/schema")
 public class SourceFileRefType {
 
     @XmlAttribute(name = "ref", required = true)

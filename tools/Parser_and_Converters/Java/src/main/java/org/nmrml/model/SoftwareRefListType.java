@@ -7,6 +7,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
@@ -32,11 +33,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SoftwareRefListType", propOrder = {
+@XmlType(name = "SoftwareRefListType", namespace = "http://nmrml.org/schema", propOrder = {
     "softwareRef"
 })
 public class SoftwareRefListType {
 
+    @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<SoftwareRefType> softwareRef;
     @XmlAttribute(name = "count", required = true)
     @XmlSchemaType(name = "nonNegativeInteger")

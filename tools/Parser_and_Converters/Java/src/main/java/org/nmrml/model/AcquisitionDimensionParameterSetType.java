@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -22,15 +21,16 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="acquisitionNucleus" type="{http://nmrml.org/schema}CVTermType"/>
  *         &lt;element name="gammaB1PulseFieldStrength" type="{http://nmrml.org/schema}ValueWithUnitType"/>
  *         &lt;element name="sweepWidth" type="{http://nmrml.org/schema}ValueWithUnitType"/>
- *         &lt;element name="timeDomain" type="{http://nmrml.org/schema}BinaryDataArrayType"/>
  *         &lt;element name="irradiationFrequency" type="{http://nmrml.org/schema}ValueWithUnitType"/>
+ *         &lt;element name="decouplingMethod" type="{http://nmrml.org/schema}CVTermType" minOccurs="0"/>
+ *         &lt;element name="samplingStrategy" type="{http://nmrml.org/schema}CVTermType"/>
+ *         &lt;element name="samplingTimePoints" type="{http://nmrml.org/schema}BinaryDataArrayType" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="decoupled" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="acquisitionParamsFileRef" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
  *       &lt;attribute name="numberOfDataPoints" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="acquisitionNucleus" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,31 +39,59 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AcquisitionDimensionParameterSetType", propOrder = {
+@XmlType(name = "AcquisitionDimensionParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
+    "acquisitionNucleus",
     "gammaB1PulseFieldStrength",
     "sweepWidth",
-    "timeDomain",
-    "irradiationFrequency"
+    "irradiationFrequency",
+    "decouplingMethod",
+    "samplingStrategy",
+    "samplingTimePoints"
 })
 public class AcquisitionDimensionParameterSetType {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    protected CVTermType acquisitionNucleus;
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType gammaB1PulseFieldStrength;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType sweepWidth;
-    @XmlElement(required = true)
-    protected BinaryDataArrayType timeDomain;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType irradiationFrequency;
+    @XmlElement(namespace = "http://nmrml.org/schema")
+    protected CVTermType decouplingMethod;
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    protected CVTermType samplingStrategy;
+    @XmlElement(namespace = "http://nmrml.org/schema")
+    protected BinaryDataArrayType samplingTimePoints;
     @XmlAttribute(name = "decoupled", required = true)
     protected boolean decoupled;
-    @XmlAttribute(name = "acquisitionParamsFileRef", required = true)
-    @XmlSchemaType(name = "anyURI")
-    protected String acquisitionParamsFileRef;
     @XmlAttribute(name = "numberOfDataPoints", required = true)
     protected BigInteger numberOfDataPoints;
-    @XmlAttribute(name = "acquisitionNucleus", required = true)
-    protected String acquisitionNucleus;
+
+    /**
+     * Gets the value of the acquisitionNucleus property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CVTermType }
+     *     
+     */
+    public CVTermType getAcquisitionNucleus() {
+        return acquisitionNucleus;
+    }
+
+    /**
+     * Sets the value of the acquisitionNucleus property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CVTermType }
+     *     
+     */
+    public void setAcquisitionNucleus(CVTermType value) {
+        this.acquisitionNucleus = value;
+    }
 
     /**
      * Gets the value of the gammaB1PulseFieldStrength property.
@@ -114,30 +142,6 @@ public class AcquisitionDimensionParameterSetType {
     }
 
     /**
-     * Gets the value of the timeDomain property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BinaryDataArrayType }
-     *     
-     */
-    public BinaryDataArrayType getTimeDomain() {
-        return timeDomain;
-    }
-
-    /**
-     * Sets the value of the timeDomain property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BinaryDataArrayType }
-     *     
-     */
-    public void setTimeDomain(BinaryDataArrayType value) {
-        this.timeDomain = value;
-    }
-
-    /**
      * Gets the value of the irradiationFrequency property.
      * 
      * @return
@@ -162,6 +166,78 @@ public class AcquisitionDimensionParameterSetType {
     }
 
     /**
+     * Gets the value of the decouplingMethod property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CVTermType }
+     *     
+     */
+    public CVTermType getDecouplingMethod() {
+        return decouplingMethod;
+    }
+
+    /**
+     * Sets the value of the decouplingMethod property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CVTermType }
+     *     
+     */
+    public void setDecouplingMethod(CVTermType value) {
+        this.decouplingMethod = value;
+    }
+
+    /**
+     * Gets the value of the samplingStrategy property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CVTermType }
+     *     
+     */
+    public CVTermType getSamplingStrategy() {
+        return samplingStrategy;
+    }
+
+    /**
+     * Sets the value of the samplingStrategy property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CVTermType }
+     *     
+     */
+    public void setSamplingStrategy(CVTermType value) {
+        this.samplingStrategy = value;
+    }
+
+    /**
+     * Gets the value of the samplingTimePoints property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BinaryDataArrayType }
+     *     
+     */
+    public BinaryDataArrayType getSamplingTimePoints() {
+        return samplingTimePoints;
+    }
+
+    /**
+     * Sets the value of the samplingTimePoints property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BinaryDataArrayType }
+     *     
+     */
+    public void setSamplingTimePoints(BinaryDataArrayType value) {
+        this.samplingTimePoints = value;
+    }
+
+    /**
      * Gets the value of the decoupled property.
      * 
      */
@@ -175,30 +251,6 @@ public class AcquisitionDimensionParameterSetType {
      */
     public void setDecoupled(boolean value) {
         this.decoupled = value;
-    }
-
-    /**
-     * Gets the value of the acquisitionParamsFileRef property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAcquisitionParamsFileRef() {
-        return acquisitionParamsFileRef;
-    }
-
-    /**
-     * Sets the value of the acquisitionParamsFileRef property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAcquisitionParamsFileRef(String value) {
-        this.acquisitionParamsFileRef = value;
     }
 
     /**
@@ -223,30 +275,6 @@ public class AcquisitionDimensionParameterSetType {
      */
     public void setNumberOfDataPoints(BigInteger value) {
         this.numberOfDataPoints = value;
-    }
-
-    /**
-     * Gets the value of the acquisitionNucleus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAcquisitionNucleus() {
-        return acquisitionNucleus;
-    }
-
-    /**
-     * Sets the value of the acquisitionNucleus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAcquisitionNucleus(String value) {
-        this.acquisitionNucleus = value;
     }
 
 }

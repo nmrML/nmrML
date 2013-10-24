@@ -22,6 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="acquisitionNucleus" type="{http://nmrml.org/schema}CVTermType"/>
  *         &lt;element name="gammaB1PulseFieldStrength" type="{http://nmrml.org/schema}ValueWithUnitType"/>
  *         &lt;element name="sweepWidth" type="{http://nmrml.org/schema}ValueWithUnitType"/>
  *         &lt;element name="timeDomain" type="{http://nmrml.org/schema}BinaryDataArrayType"/>
@@ -31,7 +32,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="decoupled" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
  *       &lt;attribute name="acquisitionParamsFileRef" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
  *       &lt;attribute name="numberOfDataPoints" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="acquisitionNucleus" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -40,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AcquisitionIndirectDimensionParameterSetType", propOrder = {
+@XmlType(name = "AcquisitionIndirectDimensionParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
+    "acquisitionNucleus",
     "gammaB1PulseFieldStrength",
     "sweepWidth",
     "timeDomain",
@@ -49,15 +50,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AcquisitionIndirectDimensionParameterSetType {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    protected CVTermType acquisitionNucleus;
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType gammaB1PulseFieldStrength;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType sweepWidth;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected BinaryDataArrayType timeDomain;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected CVTermType encodingMethod;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType irradiationFrequency;
     @XmlAttribute(name = "decoupled", required = true)
     protected boolean decoupled;
@@ -66,8 +69,30 @@ public class AcquisitionIndirectDimensionParameterSetType {
     protected String acquisitionParamsFileRef;
     @XmlAttribute(name = "numberOfDataPoints", required = true)
     protected BigInteger numberOfDataPoints;
-    @XmlAttribute(name = "acquisitionNucleus", required = true)
-    protected String acquisitionNucleus;
+
+    /**
+     * Gets the value of the acquisitionNucleus property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CVTermType }
+     *     
+     */
+    public CVTermType getAcquisitionNucleus() {
+        return acquisitionNucleus;
+    }
+
+    /**
+     * Sets the value of the acquisitionNucleus property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CVTermType }
+     *     
+     */
+    public void setAcquisitionNucleus(CVTermType value) {
+        this.acquisitionNucleus = value;
+    }
 
     /**
      * Gets the value of the gammaB1PulseFieldStrength property.
@@ -251,30 +276,6 @@ public class AcquisitionIndirectDimensionParameterSetType {
      */
     public void setNumberOfDataPoints(BigInteger value) {
         this.numberOfDataPoints = value;
-    }
-
-    /**
-     * Gets the value of the acquisitionNucleus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAcquisitionNucleus() {
-        return acquisitionNucleus;
-    }
-
-    /**
-     * Sets the value of the acquisitionNucleus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAcquisitionNucleus(String value) {
-        this.acquisitionNucleus = value;
     }
 
 }

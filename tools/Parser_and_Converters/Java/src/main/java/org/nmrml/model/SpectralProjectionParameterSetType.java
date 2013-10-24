@@ -30,12 +30,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SpectralProjectionParameterSetType", propOrder = {
+@XmlType(name = "SpectralProjectionParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
     "projectionMethod"
 })
 public class SpectralProjectionParameterSetType {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected CVTermType projectionMethod;
     @XmlAttribute(name = "projectionAxis")
     @XmlSchemaType(name = "anySimpleType")

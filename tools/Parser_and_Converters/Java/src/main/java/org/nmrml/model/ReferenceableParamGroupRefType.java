@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ReferenceableParamGroupRefType")
+@XmlType(name = "ReferenceableParamGroupRefType", namespace = "http://nmrml.org/schema")
 public class ReferenceableParamGroupRefType {
 
     @XmlAttribute(name = "ref", required = true)

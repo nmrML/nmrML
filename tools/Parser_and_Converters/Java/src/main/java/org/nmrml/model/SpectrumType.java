@@ -52,7 +52,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SpectrumType", propOrder = {
+@XmlType(name = "SpectrumType", namespace = "http://nmrml.org/schema", propOrder = {
     "processingSoftwareRefList",
     "processingContactRefList",
     "spectrumDataArray",
@@ -66,17 +66,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SpectrumType {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected List<SoftwareRefListType> processingSoftwareRefList;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ContactRefListType processingContactRefList;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected BinaryDataArrayType spectrumDataArray;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected AxisWithUnitType xAxis;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected CVTermType yAxisType;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected SpectrumType.ProcessingParameterSet processingParameterSet;
     @XmlAttribute(name = "numberOfDataPoints", required = true)
     protected BigInteger numberOfDataPoints;
@@ -284,11 +284,11 @@ public class SpectrumType {
     })
     public static class ProcessingParameterSet {
 
-        @XmlElement(required = true)
+        @XmlElement(namespace = "http://nmrml.org/schema", required = true)
         protected CVTermType postAcquisitionSolventSuppressionMethod;
-        @XmlElement(required = true)
+        @XmlElement(namespace = "http://nmrml.org/schema", required = true)
         protected CVTermType calibrationCompound;
-        @XmlElement(required = true)
+        @XmlElement(namespace = "http://nmrml.org/schema", required = true)
         protected CVTermType dataTransformationMethod;
 
         /**

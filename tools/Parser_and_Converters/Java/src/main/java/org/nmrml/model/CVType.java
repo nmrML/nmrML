@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CVType")
+@XmlType(name = "CVType", namespace = "http://nmrml.org/schema")
 public class CVType {
 
     @XmlAttribute(name = "id", required = true)

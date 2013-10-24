@@ -35,12 +35,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SampleListType", propOrder = {
+@XmlType(name = "SampleListType", namespace = "http://nmrml.org/schema", propOrder = {
     "sample"
 })
 public class SampleListType {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected List<SampleType> sample;
     @XmlAttribute(name = "count", required = true)
     @XmlSchemaType(name = "nonNegativeInteger")

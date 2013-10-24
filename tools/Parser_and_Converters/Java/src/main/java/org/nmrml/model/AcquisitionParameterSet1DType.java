@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AcquisitionParameterSet1DType")
+@XmlType(name = "AcquisitionParameterSet1DType", namespace = "http://nmrml.org/schema")
 @XmlSeeAlso({
     org.nmrml.model.Acquisition1DType.AcquisitionParameterSet.class
 })

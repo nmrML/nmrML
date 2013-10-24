@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SpectralProcessingParameterSet2DType", propOrder = {
+@XmlType(name = "SpectralProcessingParameterSet2DType", namespace = "http://nmrml.org/schema", propOrder = {
     "directDimensionParameterSet",
     "higherDimensionParameterSet"
 })
@@ -40,9 +40,9 @@ public class SpectralProcessingParameterSet2DType
     extends SpectralProcessingParameterSetType
 {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected FirstDimensionProcessingParameterSetType directDimensionParameterSet;
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected List<HigherDimensionProcessingParameterSetType> higherDimensionParameterSet;
 
     /**

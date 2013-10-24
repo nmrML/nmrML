@@ -5,10 +5,10 @@ import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 
 /**
@@ -18,87 +18,75 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * <pre>
  * &lt;complexType name="BinaryDataArrayType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="binary" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
- *       &lt;/sequence>
- *       &lt;attribute name="byteLength" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *   &lt;simpleContent>
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>base64Binary">
+ *       &lt;attribute name="compressed" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
  *       &lt;attribute name="dataProcessingRef" type="{http://www.w3.org/2001/XMLSchema}IDREF" />
- *       &lt;attribute name="totalBytes" use="required" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" />
- *       &lt;attribute name="byteFormat" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ *       &lt;attribute name="encodedLength" use="required" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" />
+ *       &lt;attribute name="byteFormat" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *     &lt;/extension>
+ *   &lt;/simpleContent>
  * &lt;/complexType>
  * </pre>
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BinaryDataArrayType", propOrder = {
-    "binary"
+@XmlType(name = "BinaryDataArrayType", namespace = "http://nmrml.org/schema", propOrder = {
+    "value"
 })
 public class BinaryDataArrayType {
 
-    @XmlElement(required = true)
-    protected byte[] binary;
-    @XmlAttribute(name = "byteLength")
-    protected BigInteger byteLength;
+    @XmlValue
+    protected byte[] value;
+    @XmlAttribute(name = "compressed", required = true)
+    protected boolean compressed;
     @XmlAttribute(name = "dataProcessingRef")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
     protected Object dataProcessingRef;
-    @XmlAttribute(name = "totalBytes", required = true)
+    @XmlAttribute(name = "encodedLength", required = true)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger totalBytes;
-    @XmlAttribute(name = "byteFormat")
-    @XmlSchemaType(name = "anySimpleType")
+    protected BigInteger encodedLength;
+    @XmlAttribute(name = "byteFormat", required = true)
     protected String byteFormat;
 
     /**
-     * Gets the value of the binary property.
+     * Gets the value of the value property.
      * 
      * @return
      *     possible object is
      *     byte[]
      */
-    public byte[] getBinary() {
-        return binary;
+    public byte[] getValue() {
+        return value;
     }
 
     /**
-     * Sets the value of the binary property.
+     * Sets the value of the value property.
      * 
      * @param value
      *     allowed object is
      *     byte[]
      */
-    public void setBinary(byte[] value) {
-        this.binary = value;
+    public void setValue(byte[] value) {
+        this.value = value;
     }
 
     /**
-     * Gets the value of the byteLength property.
+     * Gets the value of the compressed property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getByteLength() {
-        return byteLength;
+    public boolean isCompressed() {
+        return compressed;
     }
 
     /**
-     * Sets the value of the byteLength property.
+     * Sets the value of the compressed property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setByteLength(BigInteger value) {
-        this.byteLength = value;
+    public void setCompressed(boolean value) {
+        this.compressed = value;
     }
 
     /**
@@ -126,27 +114,27 @@ public class BinaryDataArrayType {
     }
 
     /**
-     * Gets the value of the totalBytes property.
+     * Gets the value of the encodedLength property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getTotalBytes() {
-        return totalBytes;
+    public BigInteger getEncodedLength() {
+        return encodedLength;
     }
 
     /**
-     * Sets the value of the totalBytes property.
+     * Sets the value of the encodedLength property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setTotalBytes(BigInteger value) {
-        this.totalBytes = value;
+    public void setEncodedLength(BigInteger value) {
+        this.encodedLength = value;
     }
 
     /**

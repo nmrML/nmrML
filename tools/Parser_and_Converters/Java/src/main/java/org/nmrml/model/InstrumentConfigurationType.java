@@ -1,9 +1,12 @@
 
 package org.nmrml.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -23,7 +26,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;complexContent>
  *     &lt;extension base="{http://nmrml.org/schema}ParamGroupType">
  *       &lt;sequence>
- *         &lt;element name="softwareRef" type="{http://nmrml.org/schema}SoftwareRefType" minOccurs="0"/>
+ *         &lt;element name="softwareRef" type="{http://nmrml.org/schema}SoftwareRefType" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}ID" />
  *     &lt;/extension>
@@ -34,14 +37,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InstrumentConfigurationType", propOrder = {
+@XmlType(name = "InstrumentConfigurationType", namespace = "http://nmrml.org/schema", propOrder = {
     "softwareRef"
 })
 public class InstrumentConfigurationType
     extends ParamGroupType
 {
 
-    protected SoftwareRefType softwareRef;
+    @XmlElement(namespace = "http://nmrml.org/schema")
+    protected List<SoftwareRefType> softwareRef;
     @XmlAttribute(name = "id", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -51,25 +55,30 @@ public class InstrumentConfigurationType
     /**
      * Gets the value of the softwareRef property.
      * 
-     * @return
-     *     possible object is
-     *     {@link SoftwareRefType }
-     *     
-     */
-    public SoftwareRefType getSoftwareRef() {
-        return softwareRef;
-    }
-
-    /**
-     * Sets the value of the softwareRef property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the softwareRef property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SoftwareRefType }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSoftwareRef().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SoftwareRefType }
+     * 
+     * 
      */
-    public void setSoftwareRef(SoftwareRefType value) {
-        this.softwareRef = value;
+    public List<SoftwareRefType> getSoftwareRef() {
+        if (softwareRef == null) {
+            softwareRef = new ArrayList<SoftwareRefType>();
+        }
+        return this.softwareRef;
     }
 
     /**

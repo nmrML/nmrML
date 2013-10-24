@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ContactRefType")
+@XmlType(name = "ContactRefType", namespace = "http://nmrml.org/schema")
 public class ContactRefType {
 
     @XmlAttribute(name = "ref", required = true)

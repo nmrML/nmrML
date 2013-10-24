@@ -42,19 +42,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AcquisitionParameterSetType }
+     * Create an instance of {@link AcquisitionParameterSetMultiDType }
      * 
      */
-    public AcquisitionParameterSetType createAcquisitionParameterSetType() {
-        return new AcquisitionParameterSetType();
-    }
-
-    /**
-     * Create an instance of {@link AcquisitionParameterSet2DType }
-     * 
-     */
-    public AcquisitionParameterSet2DType createAcquisitionParameterSet2DType() {
-        return new AcquisitionParameterSet2DType();
+    public AcquisitionParameterSetMultiDType createAcquisitionParameterSetMultiDType() {
+        return new AcquisitionParameterSetMultiDType();
     }
 
     /**
@@ -79,6 +71,14 @@ public class ObjectFactory {
      */
     public SampleType createSampleType() {
         return new SampleType();
+    }
+
+    /**
+     * Create an instance of {@link PulseSequenceType }
+     * 
+     */
+    public PulseSequenceType createPulseSequenceType() {
+        return new PulseSequenceType();
     }
 
     /**
@@ -194,14 +194,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Acquisition2DType }
-     * 
-     */
-    public Acquisition2DType createAcquisition2DType() {
-        return new Acquisition2DType();
-    }
-
-    /**
      * Create an instance of {@link DataProcessingType }
      * 
      */
@@ -242,19 +234,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AcquisitionDimensionParameterSetType }
-     * 
-     */
-    public AcquisitionDimensionParameterSetType createAcquisitionDimensionParameterSetType() {
-        return new AcquisitionDimensionParameterSetType();
-    }
-
-    /**
      * Create an instance of {@link Spectrum1DType }
      * 
      */
     public Spectrum1DType createSpectrum1DType() {
         return new Spectrum1DType();
+    }
+
+    /**
+     * Create an instance of {@link AcquisitionDimensionParameterSetType }
+     * 
+     */
+    public AcquisitionDimensionParameterSetType createAcquisitionDimensionParameterSetType() {
+        return new AcquisitionDimensionParameterSetType();
     }
 
     /**
@@ -303,6 +295,14 @@ public class ObjectFactory {
      */
     public ContactRefType createContactRefType() {
         return new ContactRefType();
+    }
+
+    /**
+     * Create an instance of {@link AcquisitionParameterSetType }
+     * 
+     */
+    public AcquisitionParameterSetType createAcquisitionParameterSetType() {
+        return new AcquisitionParameterSetType();
     }
 
     /**
@@ -458,6 +458,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AcquisitionMultiDType }
+     * 
+     */
+    public AcquisitionMultiDType createAcquisitionMultiDType() {
+        return new AcquisitionMultiDType();
+    }
+
+    /**
      * Create an instance of {@link CVListType }
      * 
      */
@@ -482,19 +490,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AcquisitionParameterSetType.PulseSequence }
+     * Create an instance of {@link AcquisitionParameterSetMultiDType.HadamardParameterSet }
      * 
      */
-    public AcquisitionParameterSetType.PulseSequence createAcquisitionParameterSetTypePulseSequence() {
-        return new AcquisitionParameterSetType.PulseSequence();
-    }
-
-    /**
-     * Create an instance of {@link AcquisitionParameterSet2DType.HadamardParameterSet }
-     * 
-     */
-    public AcquisitionParameterSet2DType.HadamardParameterSet createAcquisitionParameterSet2DTypeHadamardParameterSet() {
-        return new AcquisitionParameterSet2DType.HadamardParameterSet();
+    public AcquisitionParameterSetMultiDType.HadamardParameterSet createAcquisitionParameterSetMultiDTypeHadamardParameterSet() {
+        return new AcquisitionParameterSetMultiDType.HadamardParameterSet();
     }
 
     /**
@@ -527,6 +527,14 @@ public class ObjectFactory {
      */
     public SampleType.ConcentrationStandard createSampleTypeConcentrationStandard() {
         return new SampleType.ConcentrationStandard();
+    }
+
+    /**
+     * Create an instance of {@link PulseSequenceType.PulseSequenceFileRefList }
+     * 
+     */
+    public PulseSequenceType.PulseSequenceFileRefList createPulseSequenceTypePulseSequenceFileRefList() {
+        return new PulseSequenceType.PulseSequenceFileRefList();
     }
 
     /**

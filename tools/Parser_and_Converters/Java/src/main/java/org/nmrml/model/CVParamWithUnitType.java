@@ -24,9 +24,9 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="accession" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="unitCvRef" type="{http://www.w3.org/2001/XMLSchema}IDREF" />
  *       &lt;attribute name="unitAccession" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="unitName" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="unitCvRef" type="{http://www.w3.org/2001/XMLSchema}IDREF" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CVParamWithUnitType")
+@XmlType(name = "CVParamWithUnitType", namespace = "http://nmrml.org/schema")
 public class CVParamWithUnitType {
 
     @XmlAttribute(name = "cvRef", required = true)
@@ -48,14 +48,14 @@ public class CVParamWithUnitType {
     protected String name;
     @XmlAttribute(name = "value")
     protected String value;
-    @XmlAttribute(name = "unitAccession")
-    protected String unitAccession;
-    @XmlAttribute(name = "unitName")
-    protected String unitName;
     @XmlAttribute(name = "unitCvRef")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
     protected Object unitCvRef;
+    @XmlAttribute(name = "unitAccession")
+    protected String unitAccession;
+    @XmlAttribute(name = "unitName")
+    protected String unitName;
 
     /**
      * Gets the value of the cvRef property.
@@ -154,6 +154,30 @@ public class CVParamWithUnitType {
     }
 
     /**
+     * Gets the value of the unitCvRef property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Object }
+     *     
+     */
+    public Object getUnitCvRef() {
+        return unitCvRef;
+    }
+
+    /**
+     * Sets the value of the unitCvRef property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Object }
+     *     
+     */
+    public void setUnitCvRef(Object value) {
+        this.unitCvRef = value;
+    }
+
+    /**
      * Gets the value of the unitAccession property.
      * 
      * @return
@@ -199,30 +223,6 @@ public class CVParamWithUnitType {
      */
     public void setUnitName(String value) {
         this.unitName = value;
-    }
-
-    /**
-     * Gets the value of the unitCvRef property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Object }
-     *     
-     */
-    public Object getUnitCvRef() {
-        return unitCvRef;
-    }
-
-    /**
-     * Sets the value of the unitCvRef property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Object }
-     *     
-     */
-    public void setUnitCvRef(Object value) {
-        this.unitCvRef = value;
     }
 
 }
