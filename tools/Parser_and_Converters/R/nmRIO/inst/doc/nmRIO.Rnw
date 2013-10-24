@@ -1,0 +1,69 @@
+%\VignetteIndexEntry{nmRIO}
+%\VignetteKeywords{Infrastructure, DataImport, Metabolomics, NMR}
+%\VignettePackage{nmRIO}
+
+\documentclass[10pt,a4paper]{article}
+\usepackage[authoryear,round]{natbib}
+
+\RequirePackage{amsfonts,amsmath,amstext,amssymb,amscd}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0.2,0.0,0.4}
+
+%% \topmargin -1.5cm
+%% \oddsidemargin -0cm   % read Lamport p.163
+%% \evensidemargin -0cm  % same as oddsidemargin but for left-hand pages
+%% \textwidth 17cm
+%% \textheight 24.5cm
+%% \parindent0em
+
+\newcommand{\lib}[1]{{\mbox{\normalfont\textsf{#1}}}}
+\newcommand{\file}[1]{{\mbox{\normalfont\textsf{'#1'}}}}
+\newcommand{\R}{{\mbox{\normalfont\textsf{R}}}}
+\newcommand{\Rfunction}[1]{{\mbox{\normalfont\texttt{#1}}}}
+\newcommand{\Robject}[1]{{\mbox{\normalfont\texttt{#1}}}}
+\newcommand{\Rpackage}[1]{{\mbox{\normalfont\textsf{#1}}}}
+\newcommand{\Rclass}[1]{{\mbox{\normalfont\textit{#1}}}}
+\newcommand{\code}[1]{{\mbox{\normalfont\texttt{#1}}}}
+
+\newcommand{\email}[1]{\mbox{\href{mailto:#1}{\textcolor{darkblue}{\normalfont{#1}}}}}
+\newcommand{\web}[2]{\mbox{\href{#2}{\textcolor{darkblue}{\normalfont{#1}}}}}
+
+\SweaveOpts{keep.source=TRUE,eps=FALSE}
+
+\begin{document}
+
+\title{A Parser for \texttt{nmrML} files}
+
+\author{Jie Hao\footnote{\email{j.hao@imperial.ac.uk}} \\
+  Ian Lewis\footnote{\email{ilewis@Princeton.EDU}} \\
+  Luis de Figueiredo{\email{Luis.deFigueiredo@ebi.ac.uk}} \\ 
+  Steffen Neumann\footnote{\email{sneumann@ipb-halle.de}}}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+The \Rpackage{nmRIO} package aims at providing a common interface to
+several NMR data formats, namely \texttt{nmrML}, modelled after the
+PSI mzML~\cite{Martens2010}.
+
+
+\section{Session information}\label{sec:sessionInfo} 
+
+<<label=sessioninfo,results=tex,echo=FALSE,cache=FALSE>>=
+  toLatex(sessionInfo())
+@ 
+
+
+\bibliographystyle{plainnat}
+\bibliography{nmRIO}
+
+\end{document}
+
+
+

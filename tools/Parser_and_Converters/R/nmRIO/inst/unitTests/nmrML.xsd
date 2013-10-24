@@ -113,41 +113,37 @@
     <xs:annotation>
       <xs:documentation>A person's name and information on how to communicate with them.</xs:documentation>
     </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ParamGroupType">
-        <xs:attribute name="id" type="xs:ID" use="required">
-          <xs:annotation>
-            <xs:documentation>An identifier for this contact
+    <xs:attribute name="id" type="xs:ID" use="required">
+      <xs:annotation>
+        <xs:documentation>An identifier for this contact
 .</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="fullname" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation>Name of the contact person.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="url" type="xs:anyURI">
-          <xs:annotation>
-            <xs:documentation>Uniform Resource Locator related to the contact person or organization.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="address" type="xs:string">
-          <xs:annotation>
-            <xs:documentation>Postal address of the contact person or organization.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="organization" type="xs:string">
-          <xs:annotation>
-            <xs:documentation>Home institution of the contact person.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="email" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation>Email address of the contact person or organization.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="fullname" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Name of the contact person.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="url" type="xs:anyURI">
+      <xs:annotation>
+        <xs:documentation>Uniform Resource Locator related to the contact person or organization.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="address" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Postal address of the contact person or organization.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="organization" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Home institution of the contact person.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="email" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Email address of the contact person or organization.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ContactRefType">
     <xs:attribute name="ref" type="xs:IDREF" use="required">
@@ -331,7 +327,7 @@
     <xs:annotation>
       <xs:documentation>Structure allowing the use of a controlled (cvParam) or uncontrolled vocabulary (userParam), or a reference to a predefined set of these in this nmrML file (paramGroupRef).</xs:documentation>
     </xs:annotation>
-    <xs:sequence minOccurs="0">
+    <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="referenceableParamGroupRef"
         type="ReferenceableParamGroupRefType"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cvParam" type="CVParamType"/>
@@ -456,7 +452,7 @@
       <xs:documentation>Software information.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="CVTermType">
+      <xs:extension base="dx:ParamGroupType">
         <xs:attribute name="id" type="xs:ID" use="required">
           <xs:annotation>
             <xs:documentation>An identifier for this software that is unique across all SoftwareTypes.</xs:documentation>
@@ -548,8 +544,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="ParamGroupType">
         <xs:sequence>
-          <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType" maxOccurs="unbounded"
-          />
+          <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required">
           <xs:annotation>
@@ -623,30 +618,33 @@
     <xs:annotation>
       <xs:documentation/>
     </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:base64Binary">
-        <xs:attribute name="compressed" type="xs:boolean" use="required">
-          <xs:annotation>
-            <xs:documentation>True if the binary data was compressed with zlib before encoding as base64</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
-          <xs:annotation>
-            <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="encodedLength" type="xs:nonNegativeInteger" use="required">
-          <xs:annotation>
-            <xs:documentation>The encoded length of the binary data array.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="byteFormat" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation>64-bit or 32-bit precision floats</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:sequence>
+      <xs:element name="binary" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation>The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="compressed" type="xs:boolean" use="required">
+      <xs:annotation>
+        <xs:documentation>True if the binary data was compressed with zlib before encoding as base64</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="encodedLength" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The encoded length of the binary data array.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="byteFormat" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>64-bit or 32-bit precision floats</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SoluteType">
     <xs:sequence>
@@ -685,9 +683,7 @@
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
-      <xs:element minOccurs="0" name="decouplingMethod" type="CVTermType"/>
-      <xs:element name="samplingStrategy" type="CVTermType"/>
-      <xs:element name="samplingTimePoints" type="BinaryDataArrayType" minOccurs="0">
+      <xs:element name="timeDomain" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
         </xs:annotation>
@@ -778,7 +774,7 @@
       <xs:extension base="AcquisitionParameterSetType"/>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="AcquisitionParameterSetMultiDType">
+  <xs:complexType name="AcquisitionParameterSet2DType">
     <xs:complexContent>
       <xs:extension base="AcquisitionParameterSetType">
         <xs:sequence>
@@ -815,30 +811,20 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType mixed="false" name="PulseSequenceType">
-    <xs:annotation>
-      <xs:documentation>A list of references to the  source files that define the pulse sequence, including pulse shape files, pulse sequence source code, pulse sequence parameter files, etc.</xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="ParamGroupType">
         <xs:sequence minOccurs="0">
-          <xs:element name="pulseSequenceFileRefList">
-            <xs:complexType>
-              <xs:sequence>
-                <xs:element minOccurs="0" name="pulseSequenceFileRef" type="SourceFileRefType"
-                  maxOccurs="unbounded"/>
-              </xs:sequence>
-            </xs:complexType>
-          </xs:element>
+          <xs:element minOccurs="0" name="pulseSequenceFileRef" type="SourceFileRefType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionType">
-    <xs:sequence maxOccurs="1" minOccurs="1">
+    <xs:choice maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionMultiD" type="AcquisitionMultiDType">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisition2D" type="Acquisition2DType">
       </xs:element>
-    </xs:sequence>
+    </xs:choice>
   </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
@@ -857,24 +843,20 @@
           </xs:complexContent>
         </xs:complexType>
       </xs:element>
-      <xs:element name="fidData" type="BinaryDataArrayType">
+      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.
-
-The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
+          <xs:documentation>The 1D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AcquisitionMultiDType">
+  <xs:complexType name="Acquisition2DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
-        type="AcquisitionParameterSetMultiDType"> </xs:element>
-      <xs:element name="fidData" type="BinaryDataArrayType">
+        type="AcquisitionParameterSet2DType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="fid" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.
-
-The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
+          <xs:documentation>The 2D FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 2D array before encoding.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -883,11 +865,11 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
     <xs:annotation>
       <xs:documentation>List and descriptions of spectra.</xs:documentation>
     </xs:annotation>
-    <xs:choice>
+    <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="spectrum1D" type="Spectrum1DType"/>
       <xs:element name="spectrumMultiD" type="SpectrumMultiDType" maxOccurs="unbounded"
         minOccurs="0"/>
-    </xs:choice>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
         <xs:documentation>The number of spectra defined in this nmrML file.</xs:documentation>
@@ -990,12 +972,12 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="SpectralProcessingParameterSetType">
-        <xs:all maxOccurs="1" minOccurs="1">
+        <xs:sequence maxOccurs="1" minOccurs="1">
           <xs:element maxOccurs="1" minOccurs="1" name="directDimensionParameterSet"
             type="FirstDimensionProcessingParameterSetType"> </xs:element>
           <xs:element maxOccurs="2" minOccurs="1" name="higherDimensionParameterSet"
             type="HigherDimensionProcessingParameterSetType"/>
-        </xs:all>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
