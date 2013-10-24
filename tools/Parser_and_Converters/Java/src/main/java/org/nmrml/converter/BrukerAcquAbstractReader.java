@@ -31,10 +31,6 @@ import org.nmrml.model.CVTermType;
 import org.nmrml.model.NmrMLType;
 import org.nmrml.model.ObjectFactory;
 import org.nmrml.model.PulseSequenceType;
-import org.nmrml.model.SourceFileListType;
-import org.nmrml.model.SourceFileRefListType;
-import org.nmrml.model.SourceFileRefType;
-import org.nmrml.model.SourceFileType;
 import org.nmrml.model.ValueWithUnitType;
 
 import java.io.BufferedReader;
@@ -206,7 +202,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
     @Override
     public NmrMLType read() throws IOException {
-        nmrMLType.setSourceFileList(loadSourceFileList());
+        nmrMLType = new BrukerSourceFileListLoader(nmrMLType, inputFile,brukerMapper).loadSourceFileList();
         AcquisitionType acquisition = objectFactory.createAcquisitionType();
         acquisition.setAcquisition1D(readDirectDimension());
         nmrMLType.setAcquisition(acquisition);
@@ -216,7 +212,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
             cvListType.getCv().add(cvLoader.getCvTypeHashMap().get(keys));
         }
         nmrMLType.setCvList(cvListType);
-        loadSourceFileRefs();
+
         return nmrMLType;
     }
 
@@ -291,25 +287,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
           return binaryDataArrayType;
     }
 
-
-    //TODO move this method to another place
-    private SourceFileListType loadSourceFileList(){
-        SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
-        sourceFileListType.setCount(BigInteger.valueOf(0));
-        String foldername = inputFile.getParent().concat("/");
-        for (String key : brukerMapper.getSection("FILES").keySet()){
-            File file = new File(foldername+brukerMapper.getTerm("FILES",key));
-            SourceFileType sourceFileType = objectFactory.createSourceFileType();
-            if(file.exists()){
-                sourceFileType.setId(key);
-                sourceFileType.setLocation(file.toURI().toString());
-                sourceFileType.setName(file.getName());
-                sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
-                sourceFileListType.getSourceFile().add(sourceFileType);
-            }
-        }
-        return sourceFileListType;
-    }
 
     protected class AcquisitionReader {
 
@@ -511,39 +488,5 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
 
     }
-
-    private void loadSourceFileRefs() {
-        for(SourceFileType sourceFileType : nmrMLType.getSourceFileList().getSourceFile()){
-            if(sourceFileType.getId().matches("PULSEPROGRAM_FILE")){
-                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
-                sourceFileRefType.setRef(sourceFileType);
-
-                PulseSequenceType.PulseSequenceFileRefList pulseSequenceFileRefList =
-                        objectFactory.createPulseSequenceTypePulseSequenceFileRefList();
-                pulseSequenceFileRefList.getPulseSequenceFileRef().add(sourceFileRefType);
-
-                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().getPulseSequence()
-                        .setPulseSequenceFileRefList(pulseSequenceFileRefList);
-
-            }
-            if(sourceFileType.getId().matches("ACQUISITION_FILE")){
-                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
-                sourceFileRefType.setRef(sourceFileType);
-
-                SourceFileRefListType sourceFileRefListType = objectFactory.createSourceFileRefListType();
-                sourceFileRefListType.getSourceFileRef().add(sourceFileRefType);
-
-                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet()
-                        .setAcquisitionParameterFileRefList(sourceFileRefListType);
-
-            }
-            if(sourceFileType.getId().matches("FID_FILE")){
-                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
-                sourceFileRefType.setRef(sourceFileType);
-                //TODO find out if there is a way to refence the fid file
-            }
-        }
-    }
-
 
 }
