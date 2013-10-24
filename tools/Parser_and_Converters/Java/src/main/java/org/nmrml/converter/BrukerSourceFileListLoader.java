@@ -32,8 +32,8 @@ public class BrukerSourceFileListLoader {
     private BrukerMapper brukerMapper;
     private ObjectFactory objectFactory;
 
-    public BrukerSourceFileListLoader(NmrMLType mnrMlType, File inpuFile, BrukerMapper brukerMapper) {
-        this.nmrMLType= nmrMLType;
+    public BrukerSourceFileListLoader(NmrMLType nmrMLType, File inpuFile, BrukerMapper brukerMapper) {
+        this.nmrMLType=nmrMLType;
         this.inputFile=inpuFile;
         this.brukerMapper=brukerMapper;
         this.objectFactory = new ObjectFactory();
