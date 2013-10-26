@@ -53,7 +53,10 @@ update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mappin
 	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmrCV.obo
 
 # Validate our examples against Schema, Ontology and the mapping
-validate-all: update-openms validate-HMDB00005
+validate-all: validate-nmrml-schema update-openms validate-HMDB00005
+
+validate-nmrml-schema: 
+	xmllint --noout --schema xml-schemata/XMLSchema.xsd xml-schemata/nmrML.xsd
 
 validate-HMDB00005: 
 	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
