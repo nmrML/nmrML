@@ -775,7 +775,12 @@
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSet1DType">
     <xs:complexContent>
-      <xs:extension base="AcquisitionParameterSetType"/>
+      <xs:extension base="AcquisitionParameterSetType">
+        <xs:sequence>
+          <xs:element name="DirectDimensionParameterSet" type="AcquisitionDimensionParameterSetType"
+          />
+        </xs:sequence>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetMultiDType">
@@ -842,20 +847,11 @@
   </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
+        type="AcquisitionParameterSet1DType">
         <xs:annotation>
           <xs:documentation>Note, steady state scan is also know as dummy scan.</xs:documentation>
         </xs:annotation>
-        <xs:complexType>
-          <xs:complexContent>
-            <xs:extension base="AcquisitionParameterSet1DType">
-              <xs:sequence>
-                <xs:element name="DirectDimensionParameterSet"
-                  type="AcquisitionDimensionParameterSetType"/>
-              </xs:sequence>
-            </xs:extension>
-          </xs:complexContent>
-        </xs:complexType>
       </xs:element>
       <xs:element name="fidData" type="BinaryDataArrayType">
         <xs:annotation>
