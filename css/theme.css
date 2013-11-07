@@ -1,8 +1,7 @@
-body {
+body,html {
+  height: 100%;
   padding: 0;
 }
-
-body,html { height: 100%; }
 
 .navbar {
   margin-bottom: 30px;
@@ -15,7 +14,31 @@ body,html { height: 100%; }
 
 .navbar-brand img { height: 43px;}
 
-iframe {
+.iframewrap {  height: 100%; }
+.iframewrap iframe {
   height: 100%;
   width: 100%;
 }
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+  position: relative;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #555;
+  border-top: 3px solid #75D5F3;
+}
+
