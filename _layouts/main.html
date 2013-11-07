@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- link rel="shortcut icon" href="/images/favicon.png" -->
+
+    <title>nmrML - {{ page.title }}</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    {% if page.container == "none" %}
+    <link rel="stylesheet" href="/css/no-container.css">
+    {% endif %}
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45551716-1', 'nmrml.org');
+  ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+<div class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/images/header-mark.png "></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="{{ page.nav.home }}"><a href="/">Home</a></li>
+          
+          <li class="{{ page.nav.about }}"><a href="/about">About</a></li>
+
+            <li class="dropdown {{ page.nav.docs }}">
+                <a href="/docs" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/nmrml">nmrML</a></li>
+                    <li><a href="/nmrcv">nmrCV</a></li>
+                    <hr>
+                    <li><a href="/tutorial">Tutorial</a></li>
+                    <li><a href="/examples">Example Files</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown {{ page.nav.specs }}">
+                <a href="/specs" class="dropdown-toggle" data-toggle="dropdown">Specifications <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/nmrml">nmrML</a></li>
+                    <li><a href="/nmrcv">nmrCV</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown {{ page.nav.tools }}">
+                <a href="/tools" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/converter">Converter</a></li>
+                    <li><a href="/validator">Validator</a></li>
+                </ul>
+            </li>
+
+            <li class="{{ page.nav.software }}"><a href="/software">Software</a></li>
+
+            <li class="{{ page.nav.news }}"><a href="/news">News</a></li>
+
+        </ul>
+    </div>
+</div>
+
+{% if page.container == "none" %}
+  {{ content }}
+{% else %}
+<div class="container">
+  {{ content }}
+</div>
+{% endif %}
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+

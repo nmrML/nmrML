@@ -1,22 +1,23 @@
 ---
-layout: new
-title: Your New Jekyll Site
+layout: main
+title: home
+nav:
+  home: active
 ---
 
-<!-- Main component for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <h1>Navbar example</h1>
-  <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-  <p>
-  <a class="btn btn-lg btn-primary" href="../../components/#navbar">View navbar docs &raquo;</a>
-  </p>
-</div>
+<p>
+nmrML is an open mark-up language for NMR data. It is currently under heavy development and is not yet ready for public use. The development of this standard is coordinated by Workpackage 2 of the COSMOS - COordination Of Standards In MetabOlomicS Project. COSMOS is a global effort to enable free and open sharing of metabolomics data. Coordinated by Dr Christoph Steinbeck of the EMBL-European Bioinformatics Institute, COSMOS brings together European data providers to set and promote community standards that will make it easier to disseminate metabolomics data through life science e-infrastructures. This Coordination Action has been financed with €2 million by the European Commission's Seventh Framework Programme. The nmrML data standard will be approved by the Metabolomics standards Initiative and was derived from an earlier nmrML that was developed by the Metabolomics Innovation Centre (TMIC).
+</p>
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row">
+  <div class="col-md-4">
+    View project on GitHub
+  </div>
+  <div class="col-md-4">
+    
+  </div>
+  <div class="col-md-4">
+  
+  </div>
 </div>

@@ -1,7 +1,21 @@
 body {
-  padding: 30px;
+  padding: 0;
 }
+
+body,html { height: 100%; }
 
 .navbar {
   margin-bottom: 30px;
+}
+
+.navbar-brand { 
+  padding: 3px;
+  padding-left: 15px;
+}
+
+.navbar-brand img { height: 43px;}
+
+iframe {
+  height: 100%;
+  width: 100%;
 }
