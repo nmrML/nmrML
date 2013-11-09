@@ -58,6 +58,10 @@ validate-all: validate-nmrml-schema update-openms validate-HMDB00005
 validate-nmrml-schema: 
 	xmllint --noout --schema xml-schemata/XMLSchema.xsd xml-schemata/nmrML.xsd
 
+# This fails because my xmllint chokes on the XSD-1.1 compliant nmrML.xsd
+#lint-HMDB00005: 
+#	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/HMDB00005.nmrML
+
 validate-HMDB00005: 
 	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
 
