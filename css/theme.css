@@ -5,6 +5,8 @@ body,html {
 
 .navbar {
   margin-bottom: 30px;
+  background: #fff;
+  padding-right: 15px;
 }
 
 .navbar-brand { 
@@ -12,7 +14,12 @@ body,html {
   padding-left: 15px;
 }
 
-.navbar-brand img { height: 43px;}
+.navbar-nav>li>a {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.navbar-brand img { height: 58px;}
 
 .iframewrap {  height: 100%; }
 .iframewrap iframe {
