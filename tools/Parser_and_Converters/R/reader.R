@@ -68,7 +68,7 @@ verify.nmrML <- function(filename,
     xmlSchemaValidate(xsd, doc)    
 }
 
-verify.nmrML("../../../examples/nmrML/instance1.xml",
+verify.nmrML("../../../examples/reference_spectra_example/HMDB00005.nmrML",
              "../../../xml-schemata/nmrML.xsd")
 
 
