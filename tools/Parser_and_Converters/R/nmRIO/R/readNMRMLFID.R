@@ -16,11 +16,11 @@ readNMRMLFID <- function (filename) {
     root <- xmlRoot(tree)
 
     ## Extract base64encoded data 
-    b64s <- gsub("\n", "", sapply (xmlElementsByTagName(root, "binary", recursive = TRUE),
+    b64s <- gsub("\n", "", sapply (xmlElementsByTagName(root, "fidData", recursive = TRUE),
                                    xmlValue))
 
     ## Decode. TODO: Check cvParam about the encoding
-    dfid <- binaryArrayDecode(b64s["acquisition.acquisition1D.fid.binary"],
+    dfid <- binaryArrayDecode(b64s["acquisition.acquisition1D.fidData"],
                       what="double", compression="gzip")
     
     fid <- fidvector2complex(dfid)
@@ -142,3 +142,46 @@ fidvector2complex <- function(doubles, dimensions=1) {
     }
     fid   
 }
+
+
+if (FALSE) {
+    ## This section contains test snippets during development
+    library(XML)
+    library(caTools)
+    
+    files <- list.files("../../../../../examples/IPB_HopExample/nmrMLs/",
+                        full.names=TRUE)
+
+    filename <- files[1]
+    filename
+    
+    fid <- readNMRMLFID(filename)
+    str(fid)
+
+    ## Snippet from Luis:
+    
+    acqu<-data.frame(
+        td = 14400, #encodedLength="165170"
+        bitorder= "little", # (BYTORDA) 0 -> little; 1 -> big        
+        bitsize=4 # (DTYPA) 0 -> 32 bit int -> size 4; 1 -> 64 bit double -> size 8
+  )
+
+    to.read = file("../../../../../examples/reference_spectra_example/HMDB00005.fid/fid", "rb");
+
+    fid = readBin(to.read, integer(),
+        n=acqu$td, size = acqu$bitsize, endian = acqu$bitorder);
+    str(fid)
+    
+    
+    ## from Bruker 
+    filename <- "../../../../../examples/reference_spectra_example/HMDB00005.nmrML"
+    filename
+    
+    fid <- readNMRMLFID(filename)
+    str(fid)
+    
+    
+}
+
+
+
