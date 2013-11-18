@@ -7,12 +7,16 @@ nav:
 
 You can view the documentation and download current and past releases here:
 
-<table class="table">
+<table class="table table-hover">
 <thead>
 <tr><th>nmrML Version</th><th>Documenation</th><th>Download</th></tr>
 </thead>
 <tbody>
-<tr><td>v1.0.rc1</td><td><a href="/schema/v1.0.rc1/doc" >View Documentation</a><td><td><a href="/schema/v1.0.rc1/nmrML.xsd">nmrML Schema</a></td></tr>
+<tr>
+<td>v1.0.rc1</td>
+<td><a href="/schema/v1.0.rc1/doc" >View Documentation</a></td>
+<td><a href="/schema/v1.0.rc1/nmrML.xsd">nmrML Schema</a></td>
+</tr>
 </tbody>
 </table>
 
