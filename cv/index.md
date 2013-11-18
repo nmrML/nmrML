@@ -22,8 +22,6 @@ You can view the documentation and download current and past releases here:
 
 The nmrCV.owl ontology momentarily contains ~ 600 classes under nmr namespace. Around 2000 terms are imported from the units ontology and BioTopLight upper level ontology.
 
-### nmrCV design decisions
-
 We choose the OWL Syntax  over the OBO format  as exchange syntax for the CV, as the OBO tools are instable, the OBO format is only established in the biology domain (lack of off-the-shelf development tools, OBO expressivity is not as formal as OWL-DL) and there are hence less resources to integrate with.
 
 We maintain a pure taxonomy without use of axiomatic definitions. Multiple parenthood is however allowed, but needs to be maintained manually, as DL reasoning is not possible without DL axiomatisations.
