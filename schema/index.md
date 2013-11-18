@@ -26,7 +26,9 @@ We had several overarching goals that guided our decision making process. The da
 * The data format should be flexible and allow for multiple use cases of NMR experiments.
 * The data format should be easy for developers to understand and integrate into software.
 
-As in our PSI role model, we agreed on implementing a combined standard using XML and accompanying CV terms (see ![nmrML structure](/images/nmrML_Structure.gif)), as this allows multiple validation levels to be established: XML syntax and structural validity of XML instances (xml element and attribute positions, order and cardinality) are validated by the XML parser against the XML Schema.
+As in our PSI role model, we agreed on implementing a combined standard using XML and accompanying CV terms (see image below), as this allows multiple validation levels to be established: XML syntax and structural validity of XML instances (xml element and attribute positions, order and cardinality) are validated by the XML parser against the XML Schema.
+
+<img src="/images/nmrML_structure.jpg" alt="nmrML structure" class="img-responsive" />
 
 The mapping files enforce semantic validity  by specifying which CV terms are allowed in an element as well as the order and cardinality those terms. A proprietary validator tool, to be developed for the next deliverable) checks that the criteria outlined by the mapping file are being met in a given XML instance. The mapping file combined with the CV can also be used when creating an interface that records NMR experiment information for example to populate a drop down menu or an autocomplete box.
 
