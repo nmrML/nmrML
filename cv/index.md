@@ -2,7 +2,7 @@
 layout: main
 title: nmrCV
 nav:
-  docs: active
+  specs: active
 ---
 
 You can view the documentation and download current and past releases here:

@@ -2,7 +2,7 @@
 layout: main
 title: nmrML
 nav:
-  docs: active
+  specs: active
 ---
 
 You can view the documentation and download current and past releases here:
