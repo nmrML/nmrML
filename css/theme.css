@@ -47,7 +47,7 @@ body,html {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -60px;
+  margin: 0 auto -15px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
   position: relative;
@@ -55,8 +55,12 @@ body,html {
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: 60px;
+  //height: 60px;
   background-color: #555;
   border-top: 3px solid #75D5F3;
+  padding: 15px;
+  color: #efefef;
 }
+#footer a { color: #B4B3B3; }
+#footer a:hover { color: #efefef; }
 
