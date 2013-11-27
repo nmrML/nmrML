@@ -14,5 +14,5 @@ import java.security.NoSuchAlgorithmException;
  */
 public interface AcquReader {
 
-    NmrMLType read() throws IOException, NoSuchAlgorithmException;
+    NmrMLType read() throws Exception;
 }

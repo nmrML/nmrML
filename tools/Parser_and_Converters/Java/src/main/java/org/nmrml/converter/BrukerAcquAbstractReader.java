@@ -236,7 +236,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
     }
 
     @Override
-    public NmrMLType read() throws IOException, NoSuchAlgorithmException {
+    public NmrMLType read() throws Exception {
         AcquisitionType acquisition = objectFactory.createAcquisitionType();
         /* load source files */
         nmrMLType.setSourceFileList(loadSourceFileList());
@@ -252,7 +252,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
     }
 
 
-    private void readAcqufile() throws IOException {
+    private void readAcqufile() throws Exception {
 
 
         //TODO check if I can usd this instanciation
@@ -371,7 +371,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
             return cvParamType;
         }
 
-        private NmrMLType read() throws IOException {
+        private NmrMLType read() throws Exception {
             AcquisitionDimensionParameterSetType acquParameters=
                     objectFactory.createAcquisitionDimensionParameterSetType();
             Acquisition1DType.AcquisitionParameterSet parameterSet = new Acquisition1DType.AcquisitionParameterSet();
@@ -379,7 +379,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
             PulseSequenceType pulseSequence =objectFactory.createPulseSequenceType();
             SoftwareListType softwareListType = objectFactory.createSoftwareListType();
 
-
+            instrumentConfigurationType.getCvParam().add(cvLoader.fetchCVParam("NMRCV","BRUKER"));
 
             ValueWithUnitType value;
             Matcher matcher;
