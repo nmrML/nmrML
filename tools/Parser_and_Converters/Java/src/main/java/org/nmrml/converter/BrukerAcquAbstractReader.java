@@ -52,6 +52,7 @@ import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -163,17 +164,22 @@ public class BrukerAcquAbstractReader implements AcquReader {
     private final static Pattern REGEXP_DTYPA = Pattern.compile("\\#\\#\\$DTYPA= (\\d+)"); //data type (0 -> 32 bit int, 1 -> 64 bit double)
     //TODO review REGEXP_SOLVENT
     // examples of REGEXP_SOLVENT : <DMSO> ; basically <solvent name>
-    private final static Pattern REGEXP_SOLVENT = Pattern.compile("\\#\\#\\$SOLVENT= (.+)"); // instrument name
+    private final static Pattern REGEXP_SOLVENT = Pattern.compile("\\#\\#\\$SOLVENT= (.+)"); // solvent name
     //TODO review REGEXP_PROBHD
     // examples of REGEXP_PROBHD : <32> <>; basically <digit?>
     private final static Pattern REGEXP_PROBHD = Pattern.compile("\\#\\#\\$PROBHD= (.+)"); // probehead
     //TODO review REGEXP_ORIGIN
     // examples of REGEXP_ORIGIN : Bruker Analytik GmbH; basically a name
-    private final static Pattern REGEXP_ORIGIN = Pattern.compile("\\#\\#\\$ORIGIN= (.+)"); // origin
+    private final static Pattern REGEXP_ORIGIN = Pattern.compile("\\#\\#ORIGIN= (.+)"); // origin
     //TODO review REGEXP_OWNER
     // examples of REGEXP_OWNER : guest; basically the used ID
-    private final static Pattern REGEXP_OWNER = Pattern.compile("\\#\\#\\$OWNER= (.+)"); // owner
+    private final static Pattern REGEXP_OWNER = Pattern.compile("\\#\\#OWNER= (.+)"); // owner
 
+    private static enum CvParam {
+        FILE_FORMAT
+    }
+
+    private HashMap<CvParam,CVParamType> cvParamType;
 
 //    public BrukerAcquAbstractReader() {
 //        objectFactory = new ObjectFactory();
@@ -211,10 +217,10 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
     @Override
     public NmrMLType read() throws IOException, NoSuchAlgorithmException {
-        nmrMLType.setSourceFileList(loadSourceFileList());
         AcquisitionType acquisition = objectFactory.createAcquisitionType();
         acquisition.setAcquisition1D(readDirectDimension());
         nmrMLType.setAcquisition(acquisition);
+        nmrMLType.setSourceFileList(loadSourceFileList());
 
         CVListType cvListType = objectFactory.createCVListType();
         for(String keys : cvLoader.getCvTypeHashMap().keySet()){
@@ -233,9 +239,9 @@ public class BrukerAcquAbstractReader implements AcquReader {
         Acquisition1DType acquisition = objectFactory.createAcquisition1DType();
         //TODO check if I can usd this instanciation
 
-
         AcquisitionReader acquisitionReader = new AcquisitionReader();
         acquisition.setAcquisitionParameterSet(acquisitionReader.getParameterSet());
+        cvParamType=acquisitionReader.getCvParamType();
         acquisition.setFidData(readFid(acquisitionReader));
 
         //add the reference list
@@ -321,7 +327,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 };
                 sourceFileType.setSha1(DatatypeConverter.printHexBinary(messageDigest.digest()));
                 try {
-                    sourceFileType.getCvParam().add(cvLoader.fetchCVParam("NMRCV", "BRUKER"));
+                    if(cvParamType.containsKey(CvParam.FILE_FORMAT))
+                        sourceFileType.getCvParam().add(cvParamType.get(CvParam.FILE_FORMAT));
                     sourceFileType.getCvParam().add(cvLoader.fetchCVParam("NMRCV", key));
                 } catch (Exception e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -343,8 +350,11 @@ public class BrukerAcquAbstractReader implements AcquReader {
         private PulseSequenceType pulseSequence;
         private ByteOrder byteOrder;
         private int biteSyze;
+        private HashMap<CvParam,CVParamType> cvParamType;
+
 
         private AcquisitionReader() throws IOException {
+            this.cvParamType = new HashMap<CvParam, CVParamType>();
             this.parameterSet = new Acquisition1DType.AcquisitionParameterSet();
             readDimensionParameters();
             parameterSet.setDirectDimensionParameterSet(acquParameters);
@@ -352,7 +362,12 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
         }
 
+        public HashMap<CvParam, CVParamType> getCvParamType() {
+            return cvParamType;
+        }
+
         private void readDimensionParameters() throws IOException {
+
             double gyromagneticRatio= 42.577480;
             acquParameters= objectFactory.createAcquisitionDimensionParameterSetType();
             pulseSequence = objectFactory.createPulseSequenceType();
@@ -429,6 +444,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                         cvTermType.setAccession(cvParamType.getAccession());
                         cvTermType.setCvRef(cvParamType.getCvRef());
                         cvTermType.setName(cvParamType.getName());
+
                         acquParameters.setAcquisitionNucleus(cvTermType);
                     } catch (Exception e) {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -503,8 +519,34 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 parameterSet.setNumberOfScans(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
             }
 
+            if (REGEXP_BF1.matcher(line).find()){
+                matcher = REGEXP_BF1.matcher(line);
+                matcher.find();
+                value = objectFactory.createValueWithUnitType();
+                Double irradiationFrequency= Double.parseDouble(matcher.group(1))*1e6;
+                value.setValue(irradiationFrequency.toString());
+                try {
+                    CVParamType cvParamType = cvLoader.fetchCVParam("UO","HERTZ");
+                    value.setUnitCvRef(cvParamType.getCvRef());
+                    value.setUnitName(cvParamType.getName());
+                    value.setUnitAccession(cvParamType.getAccession());
+                } catch (Exception e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+                acquParameters.setIrradiationFrequency(value);
+            }
+            if(REGEXP_ORIGIN.matcher(line).find()){
+                matcher = REGEXP_ORIGIN.matcher(line);
+                matcher.find();
+                try {
+                    if(matcher.group(1).contains("UXNMR"))
+                        cvParamType.put(CvParam.FILE_FORMAT, cvLoader.fetchCVParam("NMRCV", "UXNMR"));
+                } catch (Exception e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+
+            }
             //TODO get this parameters working
-//            acquParameters.setIrradiationFrequency();
 //            parameterSet.setContactRefList(); // is this available in the acqu file?
 //            parameterSet.setNumberOfSteadyStateScans();
 //            parameterSet.setRelaxationDelay();
@@ -512,9 +554,11 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //            parameterSet.setSpinningRate();
 //            parameterSet.setSampleContainer();
 
+
             line = inputAcqReader.readLine();
 
         }
+
 
 
     }
