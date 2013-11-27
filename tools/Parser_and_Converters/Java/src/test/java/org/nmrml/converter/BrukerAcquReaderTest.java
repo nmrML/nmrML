@@ -44,8 +44,12 @@ public class BrukerAcquReaderTest {
 //        System.out.println(BrukerAcquReader.class.getClassLoader()
 //                .getResource("org/nmrml/example/files/bruker/onedimensional/putrescine/proton/acqus").getPath());
         ObjectFactory objFactory = new ObjectFactory();
+//        System.out.println((BrukerAcquAbstractReader.class.getClassLoader()
+//                .getResource("org/nmrml/").getPath()));
         Path path = Paths.get(BrukerAcquAbstractReader.class.getClassLoader()
-                .getResource("org/nmrml/example/files/bruker/onedimensional/putrescine/proton/acqus").getPath());
+                .getResource("org/nmrml/example/reference_spectra_example/bmse000325.fid/1H/acqu").getPath());
+//        Path path = Paths.get(BrukerAcquAbstractReader.class.getClassLoader()
+//                .getResource("org/nmrml/example/files/bruker/onedimensional/putrescine/proton/acqu").getPath());
         System.out.println(path.toString());
         System.out.println(path.getParent().toString()+"/acqu2");
         NmrMLType nmrMLElement = new BrukerAcquAbstractReader(new File(path.toString())).read();
@@ -53,7 +57,8 @@ public class BrukerAcquReaderTest {
 //        NmrMLType nmrMLType = new NmrMLType();
 //        nmrMLType.setAcquisition(acquisition);
 
-
+        System.out.println(Paths.get(BrukerAcquAbstractReader.class.getClassLoader()
+                .getResource("org/nmrml/example/reference_spectra_example/bmse000325.fid").getPath().toString()));
         /* Generate XML */
         try{
 
@@ -67,7 +72,7 @@ public class BrukerAcquReaderTest {
             m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, new Boolean(true) );
             m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, "http://nmrML.org/schema/nmrML.xsd");
             m.marshal( nmrML, System.out );
-            m.marshal( nmrML, new File("/Users/ldpf/Downloads/putrescine.mnrml"));
+            m.marshal( nmrML, new File("/Users/ldpf/Dev/cosmos/nmrML/examples/reference_spectra_example/bmse000325.nmrML"));
 
 
         } catch( JAXBException je ) {

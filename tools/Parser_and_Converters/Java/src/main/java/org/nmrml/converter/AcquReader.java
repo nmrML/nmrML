@@ -3,6 +3,7 @@ package org.nmrml.converter;
 import org.nmrml.model.NmrMLType;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,5 +14,5 @@ import java.io.IOException;
  */
 public interface AcquReader {
 
-    NmrMLType read() throws IOException;
+    NmrMLType read() throws IOException, NoSuchAlgorithmException;
 }

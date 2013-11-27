@@ -37,15 +37,20 @@ import org.nmrml.model.SourceFileRefType;
 import org.nmrml.model.SourceFileType;
 import org.nmrml.model.ValueWithUnitType;
 
+import javax.xml.bind.DatatypeConverter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -205,7 +210,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
     }
 
     @Override
-    public NmrMLType read() throws IOException {
+    public NmrMLType read() throws IOException, NoSuchAlgorithmException {
         nmrMLType.setSourceFileList(loadSourceFileList());
         AcquisitionType acquisition = objectFactory.createAcquisitionType();
         acquisition.setAcquisition1D(readDirectDimension());
@@ -293,7 +298,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
 
     //TODO move this method to another place
-    private SourceFileListType loadSourceFileList(){
+    private SourceFileListType loadSourceFileList() throws NoSuchAlgorithmException, IOException {
+
         SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
         sourceFileListType.setCount(BigInteger.valueOf(0));
         String foldername = inputFile.getParent().concat("/");
@@ -302,7 +308,24 @@ public class BrukerAcquAbstractReader implements AcquReader {
             SourceFileType sourceFileType = objectFactory.createSourceFileType();
             if(file.exists()){
                 sourceFileType.setId(key);
-                sourceFileType.setLocation(file.toURI().toString());
+                /* insert a relative path */
+                sourceFileType.setLocation(inputFile.getParentFile().getParentFile().toURI()
+                        .relativize(file.toURI()).toString());
+                /* get the sha1 of the file */
+                MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
+                InputStream inputStream = Files.newInputStream(file.toPath());
+                byte[] dataBytes = new byte[1024];
+                int nread = 0;
+                while ((nread = inputStream .read(dataBytes)) != -1) {
+                    messageDigest.update(dataBytes, 0, nread);
+                };
+                sourceFileType.setSha1(DatatypeConverter.printHexBinary(messageDigest.digest()));
+                try {
+                    sourceFileType.getCvParam().add(cvLoader.fetchCVParam("NMRCV", "BRUKER"));
+                    sourceFileType.getCvParam().add(cvLoader.fetchCVParam("NMRCV", key));
+                } catch (Exception e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
                 sourceFileType.setName(file.getName());
                 sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
                 sourceFileListType.getSourceFile().add(sourceFileType);
