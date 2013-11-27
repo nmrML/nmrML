@@ -27,15 +27,18 @@ import org.nmrml.model.BinaryDataArrayType;
 import org.nmrml.model.CVListType;
 import org.nmrml.model.CVParamType;
 import org.nmrml.model.CVTermType;
+import org.nmrml.model.InstrumentConfigurationListType;
 import org.nmrml.model.InstrumentConfigurationType;
 import org.nmrml.model.NmrMLType;
 import org.nmrml.model.ObjectFactory;
 import org.nmrml.model.PulseSequenceType;
 import org.nmrml.model.SoftwareListType;
+import org.nmrml.model.SoftwareType;
 import org.nmrml.model.SourceFileListType;
 import org.nmrml.model.SourceFileRefListType;
 import org.nmrml.model.SourceFileRefType;
 import org.nmrml.model.SourceFileType;
+import org.nmrml.model.UserParamType;
 import org.nmrml.model.ValueWithUnitType;
 
 import javax.xml.bind.DatatypeConverter;
@@ -181,6 +184,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
     //TODO review REGEXP_PROBHD
     // examples of REGEXP_PROBHD : <32> <>; basically <digit?>
     private final static Pattern REGEXP_PROBHD = Pattern.compile("\\#\\#\\$PROBHD= (.+)"); // probehead
+    // examples of REGEXP_ORIGIN : Bruker Analytik GmbH; basically a name
+    private final static Pattern REGEXP_TITLE = Pattern.compile("\\#\\#TITLE= (.+), (.+)\t\t(.+)"); // origin
     //TODO review REGEXP_ORIGIN
     // examples of REGEXP_ORIGIN : Bruker Analytik GmbH; basically a name
     private final static Pattern REGEXP_ORIGIN = Pattern.compile("\\#\\#ORIGIN= (.+)"); // origin
@@ -540,7 +545,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     }
                     acquParameters.setIrradiationFrequency(value);
                 }
-                /* add the file format */
+                /* add the file format to the source files*/
                 if (REGEXP_ORIGIN.matcher(line).find()) {
                     matcher = REGEXP_ORIGIN.matcher(line);
                     matcher.find();
@@ -552,8 +557,24 @@ public class BrukerAcquAbstractReader implements AcquReader {
                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                         }
                     }
-
-
+                }
+                /* extract software metadata */
+                if(REGEXP_TITLE.matcher(line).find()){
+                    matcher = REGEXP_TITLE.matcher(line);
+                    matcher.find();
+                    SoftwareType softwareType = objectFactory.createSoftwareType();
+                    softwareType.setName(matcher.group(2));
+                    softwareType.setVersion(matcher.group(3));
+                    softwareListType.getSoftware().add(softwareType);
+                }
+                /* extract instrument metadata */
+                if(REGEXP_PROBHD.matcher(line).find()){
+                    matcher = REGEXP_PROBHD.matcher(line);
+                    matcher.find();
+                    UserParamType userParamType = objectFactory.createUserParamType();
+                    userParamType.setName("Probehead");
+                    userParamType.setValue(matcher.group(1));
+                    instrumentConfigurationType.getUserParam().add(userParamType);
                 }
                 //TODO get this parameters working
 //            parameterSet.setContactRefList(); // is this available in the acqu file?
@@ -568,13 +589,21 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
             }
             /* fill in the data */
+            /* set acquisition parameters */
             parameterSet.setDirectDimensionParameterSet(acquParameters);
-            parameterSet.setPulseSequence(pulseSequence);
-            /* set the acquisition parameters */
             Acquisition1DType acquisition1DType = objectFactory.createAcquisition1DType();
             acquisition1DType.setAcquisitionParameterSet(parameterSet);
             AcquisitionType acquisitionType = objectFactory.createAcquisitionType();
             acquisitionType.setAcquisition1D(acquisition1DType);
+            parameterSet.setPulseSequence(pulseSequence);
+            /* set other parameters */
+            nmrMLType.setSoftwareList(softwareListType);
+
+            InstrumentConfigurationListType instrumentConfigurationListType =
+                    (nmrMLType.getInstrumentConfigurationList()==null)?
+                    objectFactory.createInstrumentConfigurationListType():nmrMLType.getInstrumentConfigurationList();
+            instrumentConfigurationListType.getInstrumentConfiguration().add(instrumentConfigurationType);
+            nmrMLType.setInstrumentConfigurationList(instrumentConfigurationListType);
 
             nmrMLType.setAcquisition(acquisitionType);
             return nmrMLType;
