@@ -18,7 +18,6 @@
 package org.nmrml.converter;
 
 
-
 import org.nmrml.cv.BrukerMapper;
 import org.nmrml.cv.CVLoader;
 import org.nmrml.model.Acquisition1DType;
@@ -28,9 +27,11 @@ import org.nmrml.model.BinaryDataArrayType;
 import org.nmrml.model.CVListType;
 import org.nmrml.model.CVParamType;
 import org.nmrml.model.CVTermType;
+import org.nmrml.model.InstrumentConfigurationType;
 import org.nmrml.model.NmrMLType;
 import org.nmrml.model.ObjectFactory;
 import org.nmrml.model.PulseSequenceType;
+import org.nmrml.model.SoftwareListType;
 import org.nmrml.model.SourceFileListType;
 import org.nmrml.model.SourceFileRefListType;
 import org.nmrml.model.SourceFileRefType;
@@ -60,67 +61,79 @@ import java.util.regex.Pattern;
  * Reader for Bruker's acqu and acqus files
  *
  * @author Luis F. de Figueiredo
- *
- * User: ldpf
- * Date: 27/07/2013
- *
+ *         <p/>
+ *         User: ldpf
+ *         Date: 27/07/2013
  */
 public class BrukerAcquAbstractReader implements AcquReader {
 
 
-
-    public enum BitOrder{
-        LITTLE_ENDIAN (0),
-        BIG_ENDIAN    (1);
+    public enum BitOrder {
+        LITTLE_ENDIAN(0),
+        BIG_ENDIAN(1);
         private final int type;
 
-        private BitOrder(int type){
-            this.type=type;
+        private BitOrder(int type) {
+            this.type = type;
         }
 
-        private int getType(){return type;}
+        private int getType() {
+            return type;
+        }
     }
 
-    public enum IntegerLength{
-        BIT32         (4),  // integer
-        BIT64         (8); //double
+    public enum IntegerLength {
+        BIT32(4),  // integer
+        BIT64(8); //double
         private final int length;
 
 
-        private IntegerLength(int length){
-            this.length=length;
+        private IntegerLength(int length) {
+            this.length = length;
         }
-        private int getLength(){return length;}
+
+        private int getLength() {
+            return length;
+        }
 
     }
+
     public enum AcquisitionMode {
-        SEQUENTIAL      (1),
-        SIMULTANIOUS    (2),
-        DISP            (3),
-        CUSTOM_DISP     (4);
+        SEQUENTIAL(1),
+        SIMULTANIOUS(2),
+        DISP(3),
+        CUSTOM_DISP(4);
 
         private final int type;
 
-        private AcquisitionMode(int type){
-            this.type=type;
+        private AcquisitionMode(int type) {
+            this.type = type;
         }
 
-        private double getType(){return type;};
+        private double getType() {
+            return type;
+        }
+
+        ;
     }
 
     public enum FidData {
-        INT32       (1),
-        DOUBLE      (2),
-        FLOAT       (3),
-        INT16       (4);
+        INT32(1),
+        DOUBLE(2),
+        FLOAT(3),
+        INT16(4);
 
         private final int type;
 
-        private FidData(int type){
-            this.type=type;
+        private FidData(int type) {
+            this.type = type;
         }
 
-        private double getType(){return type;};
+        private double getType() {
+            return type;
+        }
+
+        ;
     }
 
     private BufferedReader inputAcqReader;
@@ -179,7 +192,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
         FILE_FORMAT
     }
 
-    private HashMap<CvParam,CVParamType> cvParamType;
+    private HashMap<CvParam, CVParamType> cvParamType;
 
 //    public BrukerAcquAbstractReader() {
 //        objectFactory = new ObjectFactory();
@@ -187,8 +200,9 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //    }
 
     public BrukerAcquAbstractReader(File acquFile) throws IOException {
-        this(acquFile,new ObjectFactory().createNmrMLType(), new BrukerMapper(), new CVLoader());
+        this(acquFile, new ObjectFactory().createNmrMLType(), new BrukerMapper(), new CVLoader());
     }
+
     public BrukerAcquAbstractReader(File acquFile,
                                     NmrMLType nmrMLType,
                                     BrukerMapper brukerMapper,
@@ -197,7 +211,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //        is2D = REGEXP_ACQU2.matcher(path.toString()).find() || new File(path.getParent().toString()+"/acqu2").exists();
         objectFactory = new ObjectFactory();
         this.brukerMapper = brukerMapper;
-        this.cvLoader= cvLoader;
+        this.cvLoader = cvLoader;
         this.nmrMLType = nmrMLType;
         this.inputFile = acquFile;
         this.inputAcqReader = new BufferedReader(new FileReader(acquFile));
@@ -206,8 +220,9 @@ public class BrukerAcquAbstractReader implements AcquReader {
     public BrukerAcquAbstractReader(String filename) throws IOException {
         this(new File(filename), new ObjectFactory().createNmrMLType(), new BrukerMapper(), new CVLoader());
     }
+
     public BrukerAcquAbstractReader(String filename, NmrMLType nmrMLType) throws IOException {
-        this(new File(filename), nmrMLType, new BrukerMapper(),new CVLoader());
+        this(new File(filename), nmrMLType, new BrukerMapper(), new CVLoader());
         // required parameters so far...
         // AquiredPoints: FidReader
         // SpectraWidth: FidReader
@@ -218,12 +233,12 @@ public class BrukerAcquAbstractReader implements AcquReader {
     @Override
     public NmrMLType read() throws IOException, NoSuchAlgorithmException {
         AcquisitionType acquisition = objectFactory.createAcquisitionType();
-        acquisition.setAcquisition1D(readDirectDimension());
-        nmrMLType.setAcquisition(acquisition);
+        /* load source files */
         nmrMLType.setSourceFileList(loadSourceFileList());
-
+        /* load ontologies */
+        readAcqufile();
         CVListType cvListType = objectFactory.createCVListType();
-        for(String keys : cvLoader.getCvTypeHashMap().keySet()){
+        for (String keys : cvLoader.getCvTypeHashMap().keySet()) {
             cvListType.getCv().add(cvLoader.getCvTypeHashMap().get(keys));
         }
         nmrMLType.setCvList(cvListType);
@@ -232,29 +247,24 @@ public class BrukerAcquAbstractReader implements AcquReader {
     }
 
 
+    private void readAcqufile() throws IOException {
 
 
-    private Acquisition1DType readDirectDimension() throws IOException{
-
-        Acquisition1DType acquisition = objectFactory.createAcquisition1DType();
         //TODO check if I can usd this instanciation
 
-        AcquisitionReader acquisitionReader = new AcquisitionReader();
-        acquisition.setAcquisitionParameterSet(acquisitionReader.getParameterSet());
-        cvParamType=acquisitionReader.getCvParamType();
-        acquisition.setFidData(readFid(acquisitionReader));
+        AcquisitionReader acquisitionReader = new AcquisitionReader(nmrMLType);
+        nmrMLType = acquisitionReader.read();
+        cvParamType = acquisitionReader.getCvParamType();
+        /* read fid */
+        nmrMLType.getAcquisition().getAcquisition1D().setFidData(readFid(acquisitionReader));
+
 
         //add the reference list
-
-        
-        
 
 
         // just for the record to use in 2D nmr
 //        AcquisitionParameterSet2DType parameterSet2DType = new AcquisitionParameterSet2DType();
 //        parameterSet2DType.setDirectDimensionParameterSet(parameter);
-
-
 
 
         //TODO read contact details
@@ -273,11 +283,9 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //            contact.setFullname(matcher.group(1));
 //        }
 
-
-        return acquisition;
     }
 
-    private BinaryDataArrayType readFid (AcquisitionReader acquisitionReader) throws IOException {
+    private BinaryDataArrayType readFid(AcquisitionReader acquisitionReader) throws IOException {
         BinaryDataArrayType binaryDataArrayType = objectFactory.createBinaryDataArrayType();
         FileInputStream fidInput = new FileInputStream(inputFile.getParentFile().getAbsolutePath().concat("/fid"));
         FileChannel inChannel = fidInput.getChannel();
@@ -285,7 +293,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
         ByteBuffer buffer = ByteBuffer.allocate((int) inChannel.size());
         buffer.order(acquisitionReader.getByteOrder());
         inChannel.read(buffer);
-        if(acquisitionReader.getBiteSyze()==4){ // values as 32 bit integer
+        if (acquisitionReader.getBiteSyze() == 4) { // values as 32 bit integer
             binaryDataArrayType.setByteFormat(Integer.class.toString());
         } else { // 64 bit integer
             binaryDataArrayType.setByteFormat(Long.class.toString());
@@ -299,7 +307,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //        bos.close();
 //        fos.close();
 
-          return binaryDataArrayType;
+        return binaryDataArrayType;
     }
 
 
@@ -309,10 +317,10 @@ public class BrukerAcquAbstractReader implements AcquReader {
         SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
         sourceFileListType.setCount(BigInteger.valueOf(0));
         String foldername = inputFile.getParent().concat("/");
-        for (String key : brukerMapper.getSection("FILES").keySet()){
-            File file = new File(foldername+brukerMapper.getTerm("FILES",key));
+        for (String key : brukerMapper.getSection("FILES").keySet()) {
+            File file = new File(foldername + brukerMapper.getTerm("FILES", key));
             SourceFileType sourceFileType = objectFactory.createSourceFileType();
-            if(file.exists()){
+            if (file.exists()) {
                 sourceFileType.setId(key);
                 /* insert a relative path */
                 sourceFileType.setLocation(inputFile.getParentFile().getParentFile().toURI()
@@ -322,13 +330,11 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 InputStream inputStream = Files.newInputStream(file.toPath());
                 byte[] dataBytes = new byte[1024];
                 int nread = 0;
-                while ((nread = inputStream .read(dataBytes)) != -1) {
+                while ((nread = inputStream.read(dataBytes)) != -1) {
                     messageDigest.update(dataBytes, 0, nread);
-                };
+                }
                 sourceFileType.setSha1(DatatypeConverter.printHexBinary(messageDigest.digest()));
                 try {
-                    if(cvParamType.containsKey(CvParam.FILE_FORMAT))
-                        sourceFileType.getCvParam().add(cvParamType.get(CvParam.FILE_FORMAT));
                     sourceFileType.getCvParam().add(cvLoader.fetchCVParam("NMRCV", key));
                 } catch (Exception e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -343,34 +349,33 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
     protected class AcquisitionReader {
 
+        static final double gyromagneticRatio = 42.577480;
 
-
-        private AcquisitionDimensionParameterSetType acquParameters;
-        private Acquisition1DType.AcquisitionParameterSet parameterSet;
-        private PulseSequenceType pulseSequence;
         private ByteOrder byteOrder;
         private int biteSyze;
-        private HashMap<CvParam,CVParamType> cvParamType;
+        private HashMap<CvParam, CVParamType> cvParamType;
+        private NmrMLType nmrMLType;
 
 
-        private AcquisitionReader() throws IOException {
+        private AcquisitionReader(NmrMLType nmrMLType) throws IOException {
+            this.nmrMLType = (nmrMLType == null)? objectFactory.createNmrMLType():nmrMLType;
             this.cvParamType = new HashMap<CvParam, CVParamType>();
-            this.parameterSet = new Acquisition1DType.AcquisitionParameterSet();
-            readDimensionParameters();
-            parameterSet.setDirectDimensionParameterSet(acquParameters);
-            parameterSet.setPulseSequence(pulseSequence);
-
         }
 
         public HashMap<CvParam, CVParamType> getCvParamType() {
             return cvParamType;
         }
 
-        private void readDimensionParameters() throws IOException {
+        private NmrMLType read() throws IOException {
+            AcquisitionDimensionParameterSetType acquParameters=
+                    objectFactory.createAcquisitionDimensionParameterSetType();
+            Acquisition1DType.AcquisitionParameterSet parameterSet = new Acquisition1DType.AcquisitionParameterSet();
+            InstrumentConfigurationType instrumentConfigurationType = objectFactory.createInstrumentConfigurationType();
+            PulseSequenceType pulseSequence =objectFactory.createPulseSequenceType();
+            SoftwareListType softwareListType = objectFactory.createSoftwareListType();
 
-            double gyromagneticRatio= 42.577480;
-            acquParameters= objectFactory.createAcquisitionDimensionParameterSetType();
-            pulseSequence = objectFactory.createPulseSequenceType();
+
+
             ValueWithUnitType value;
             Matcher matcher;
             String line = inputAcqReader.readLine();
@@ -378,175 +383,179 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //        BinaryDataArrayType binaryDataArray = objectFactory.createBinaryDataArrayType();
 //        //binaryDataArray.setByteFormat(IntegerType.BIT32? "32bit":"64bit");
 //        binaryDataArray.setByteLength();
-        while (inputAcqReader.ready() && (line != null)) {
+            while (inputAcqReader.ready() && (line != null)) {
             /* sweep width in ppm*/
-            if (REGEXP_SW.matcher(line).find()) {
-                matcher = REGEXP_SW.matcher(line);
-                matcher.find();
-                value = objectFactory.createValueWithUnitType();
-                value.setValue(matcher.group(1));
-                try {
-                    CVParamType cvParamType = cvLoader.fetchCVParam("UO","PPM");
-                    value.setUnitCvRef(cvParamType.getCvRef());
-                    value.setUnitName(cvParamType.getName());
-                    value.setUnitAccession(cvParamType.getAccession());
-                } catch (Exception e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                if (REGEXP_SW.matcher(line).find()) {
+                    matcher = REGEXP_SW.matcher(line);
+                    matcher.find();
+                    value = objectFactory.createValueWithUnitType();
+                    value.setValue(matcher.group(1));
+                    try {
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "PPM");
+                        value.setUnitCvRef(cvParamType.getCvRef());
+                        value.setUnitName(cvParamType.getName());
+                        value.setUnitAccession(cvParamType.getAccession());
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    acquParameters.setSweepWidth(value);
                 }
-                acquParameters.setSweepWidth(value);
-            }
             /* sweep width in hertz */
-            if (REGEXP_SW_H.matcher(line).find()) {
-                matcher = REGEXP_SW_H.matcher(line);
-                matcher.find();
-                value = objectFactory.createValueWithUnitType();
-                Double sweepWidth = Double.parseDouble(matcher.group(1));
-                value.setValue(sweepWidth.toString());
-                try {
-                    CVParamType cvParamType = cvLoader.fetchCVParam("UO","HERTZ");
-                    value.setUnitCvRef(cvParamType.getCvRef());
-                    value.setUnitName(cvParamType.getName());
-                    value.setUnitAccession(cvParamType.getAccession());
-                } catch (Exception e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                if (REGEXP_SW_H.matcher(line).find()) {
+                    matcher = REGEXP_SW_H.matcher(line);
+                    matcher.find();
+                    value = objectFactory.createValueWithUnitType();
+                    Double sweepWidth = Double.parseDouble(matcher.group(1));
+                    value.setValue(sweepWidth.toString());
+                    try {
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "HERTZ");
+                        value.setUnitCvRef(cvParamType.getCvRef());
+                        value.setUnitName(cvParamType.getName());
+                        value.setUnitAccession(cvParamType.getAccession());
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    acquParameters.setSweepWidth(value);
                 }
-                acquParameters.setSweepWidth(value);
-            }
             /* number of data points */
-            if (REGEXP_TD.matcher(line).find()) {
-                matcher = REGEXP_TD.matcher(line);
-                matcher.find();
-                acquParameters.setNumberOfDataPoints(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
-            }
+                if (REGEXP_TD.matcher(line).find()) {
+                    matcher = REGEXP_TD.matcher(line);
+                    matcher.find();
+                    acquParameters.setNumberOfDataPoints(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
+                }
             /* observed nucleus */
-            //TODO at the moment this stores only the first nuclei assuming that this is only 1D spectra
-            if (REGEXP_NUC.matcher(line).find() && acquParameters.getAcquisitionNucleus()==null) {
-                matcher = REGEXP_NUC.matcher(line);
-                matcher.find();
-                String atom =matcher.group(1).replace("<","").replace(">","");
-                if(atom.matches("H")){
-                    try {
-                        // TODO check why one uses cvTermType instead of cvParamType
-                        CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI","H");
-                        CVTermType cvTermType = objectFactory.createCVTermType();
-                        cvTermType.setAccession(cvParamType.getAccession());
-                        cvTermType.setCvRef(cvParamType.getCvRef());
-                        cvTermType.setName(cvParamType.getName());
-                        acquParameters.setAcquisitionNucleus(cvTermType);
-                    } catch (Exception e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    }
-                } else if (atom.matches("13C")){
-                    CVParamType cvParamType = null;
-                    try {
-                        cvParamType = cvLoader.fetchCVParam("CHEBI","13C");
-                        CVTermType cvTermType = objectFactory.createCVTermType();
-                        cvTermType.setAccession(cvParamType.getAccession());
-                        cvTermType.setCvRef(cvParamType.getCvRef());
-                        cvTermType.setName(cvParamType.getName());
+                //TODO at the moment this stores only the first nuclei assuming that this is only 1D spectra
+                if (REGEXP_NUC.matcher(line).find() && acquParameters.getAcquisitionNucleus() == null) {
+                    matcher = REGEXP_NUC.matcher(line);
+                    matcher.find();
+                    String atom = matcher.group(1).replace("<", "").replace(">", "");
+                    if (atom.matches("H")) {
+                        try {
+                            // TODO check why one uses cvTermType instead of cvParamType
+                            CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI", "H");
+                            CVTermType cvTermType = objectFactory.createCVTermType();
+                            cvTermType.setAccession(cvParamType.getAccession());
+                            cvTermType.setCvRef(cvParamType.getCvRef());
+                            cvTermType.setName(cvParamType.getName());
+                            acquParameters.setAcquisitionNucleus(cvTermType);
+                        } catch (Exception e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+                    } else if (atom.matches("13C")) {
+                        CVParamType cvParamType = null;
+                        try {
+                            cvParamType = cvLoader.fetchCVParam("CHEBI", "13C");
+                            CVTermType cvTermType = objectFactory.createCVTermType();
+                            cvTermType.setAccession(cvParamType.getAccession());
+                            cvTermType.setCvRef(cvParamType.getCvRef());
+                            cvTermType.setName(cvParamType.getName());
 
+                            acquParameters.setAcquisitionNucleus(cvTermType);
+                        } catch (Exception e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+                    } else {
+                        CVTermType cvTermType = objectFactory.createCVTermType();
+                        cvTermType.setName(atom);
                         acquParameters.setAcquisitionNucleus(cvTermType);
-                    } catch (Exception e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
-                } else {
-                    CVTermType cvTermType = objectFactory.createCVTermType();
-                    cvTermType.setName(atom);
-                    acquParameters.setAcquisitionNucleus(cvTermType);
                 }
-            }
             /* byte order */
-            if(REGEXP_BYTORDA.matcher(line).find()){
-                matcher = REGEXP_BYTORDA.matcher(line);
-                matcher.find();
-                switch (Integer.parseInt(matcher.group(1))) {
-                    case 0:
-                        byteOrder=ByteOrder.LITTLE_ENDIAN;
-                        break;
-                    case 1:
-                        byteOrder=ByteOrder.BIG_ENDIAN;
-                        break;
-                    default:
-                        byteOrder=ByteOrder.nativeOrder();
-                        break;
+                if (REGEXP_BYTORDA.matcher(line).find()) {
+                    matcher = REGEXP_BYTORDA.matcher(line);
+                    matcher.find();
+                    switch (Integer.parseInt(matcher.group(1))) {
+                        case 0:
+                            byteOrder = ByteOrder.LITTLE_ENDIAN;
+                            break;
+                        case 1:
+                            byteOrder = ByteOrder.BIG_ENDIAN;
+                            break;
+                        default:
+                            byteOrder = ByteOrder.nativeOrder();
+                            break;
+                    }
                 }
-            }
             /* integer type */
-            if(REGEXP_DTYPA.matcher(line).find()){
-                matcher = REGEXP_DTYPA.matcher(line);
-                matcher.find();
-                switch (Integer.parseInt(matcher.group(1))){
-                    case 0:
-                        biteSyze=4;   // 32 bits integer - 4 octets
-                        break;
-                    case 1:
-                        biteSyze=8;   // 64 bits integer - 8 octets
-                        break;
-                    default:
-                        biteSyze=4;   // 32 bits integer
-                        break;
+                if (REGEXP_DTYPA.matcher(line).find()) {
+                    matcher = REGEXP_DTYPA.matcher(line);
+                    matcher.find();
+                    switch (Integer.parseInt(matcher.group(1))) {
+                        case 0:
+                            biteSyze = 4;   // 32 bits integer - 4 octets
+                            break;
+                        case 1:
+                            biteSyze = 8;   // 64 bits integer - 8 octets
+                            break;
+                        default:
+                            biteSyze = 4;   // 32 bits integer
+                            break;
+                    }
                 }
-            }
             /* magnetic field ?? */
-            if(REGEXP_SFO1.matcher(line).find()){
-                matcher = REGEXP_SFO1.matcher(line);
-                matcher.find();
-                Double transmitterFrequency = Double.parseDouble(matcher.group(1))/gyromagneticRatio;
-                // convert from hertz to Tesla
-                value = objectFactory.createValueWithUnitType();
-                value.setValue(new DecimalFormat("###.##").format(transmitterFrequency));
-                try {
-                    CVParamType cvParamType = cvLoader.fetchCVParam("UO","TESLA");
-                    value.setUnitCvRef(cvParamType.getCvRef());
-                    value.setUnitName(cvParamType.getName());
-                    value.setUnitAccession(cvParamType.getAccession());
-                } catch (Exception e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                if (REGEXP_SFO1.matcher(line).find()) {
+                    matcher = REGEXP_SFO1.matcher(line);
+                    matcher.find();
+                    Double transmitterFrequency = Double.parseDouble(matcher.group(1)) / gyromagneticRatio;
+                    // convert from hertz to Tesla
+                    value = objectFactory.createValueWithUnitType();
+                    value.setValue(new DecimalFormat("###.##").format(transmitterFrequency));
+                    try {
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "TESLA");
+                        value.setUnitCvRef(cvParamType.getCvRef());
+                        value.setUnitName(cvParamType.getName());
+                        value.setUnitAccession(cvParamType.getAccession());
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    acquParameters.setGammaB1PulseFieldStrength(value);
                 }
-                acquParameters.setGammaB1PulseFieldStrength(value);
-            }
-            if(REGEXP_PULPROG.matcher(line).find()){
-                matcher = REGEXP_PULPROG.matcher(line);
-                matcher.find();
-                // TODO probably replace with a CV term
-                // set a cvTerm
+                if (REGEXP_PULPROG.matcher(line).find()) {
+                    matcher = REGEXP_PULPROG.matcher(line);
+                    matcher.find();
+                    // TODO probably replace with a CV term
+                    // set a cvTerm
 //                pulseSequence.setName(matcher.group(1).replaceAll("<", "").replaceAll(">", ""));
-            }
+                }
             /* number of scans */
-            if(REGEXP_NS.matcher(line).find()){
-                matcher = REGEXP_NS.matcher(line);
-                matcher.find();
-                parameterSet.setNumberOfScans(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
-            }
-
-            if (REGEXP_BF1.matcher(line).find()){
-                matcher = REGEXP_BF1.matcher(line);
-                matcher.find();
-                value = objectFactory.createValueWithUnitType();
-                Double irradiationFrequency= Double.parseDouble(matcher.group(1))*1e6;
-                value.setValue(irradiationFrequency.toString());
-                try {
-                    CVParamType cvParamType = cvLoader.fetchCVParam("UO","HERTZ");
-                    value.setUnitCvRef(cvParamType.getCvRef());
-                    value.setUnitName(cvParamType.getName());
-                    value.setUnitAccession(cvParamType.getAccession());
-                } catch (Exception e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                }
-                acquParameters.setIrradiationFrequency(value);
-            }
-            if(REGEXP_ORIGIN.matcher(line).find()){
-                matcher = REGEXP_ORIGIN.matcher(line);
-                matcher.find();
-                try {
-                    if(matcher.group(1).contains("UXNMR"))
-                        cvParamType.put(CvParam.FILE_FORMAT, cvLoader.fetchCVParam("NMRCV", "UXNMR"));
-                } catch (Exception e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                if (REGEXP_NS.matcher(line).find()) {
+                    matcher = REGEXP_NS.matcher(line);
+                    matcher.find();
+                    parameterSet.setNumberOfScans(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
                 }
 
-            }
-            //TODO get this parameters working
+                if (REGEXP_BF1.matcher(line).find()) {
+                    matcher = REGEXP_BF1.matcher(line);
+                    matcher.find();
+                    value = objectFactory.createValueWithUnitType();
+                    Double irradiationFrequency = Double.parseDouble(matcher.group(1)) * 1e6;
+                    value.setValue(irradiationFrequency.toString());
+                    try {
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "HERTZ");
+                        value.setUnitCvRef(cvParamType.getCvRef());
+                        value.setUnitName(cvParamType.getName());
+                        value.setUnitAccession(cvParamType.getAccession());
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    acquParameters.setIrradiationFrequency(value);
+                }
+                /* add the file format */
+                if (REGEXP_ORIGIN.matcher(line).find()) {
+                    matcher = REGEXP_ORIGIN.matcher(line);
+                    matcher.find();
+                    for (SourceFileType sourceFileType : nmrMLType.getSourceFileList().getSourceFile()){
+                        try {
+                            if (matcher.group(1).contains("UXNMR"))
+                                sourceFileType.getCvParam().add(cvLoader.fetchCVParam("NMRCV", "UXNMR"));
+                        } catch (Exception e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+                    }
+
+
+                }
+                //TODO get this parameters working
 //            parameterSet.setContactRefList(); // is this available in the acqu file?
 //            parameterSet.setNumberOfSteadyStateScans();
 //            parameterSet.setRelaxationDelay();
@@ -555,16 +564,20 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //            parameterSet.setSampleContainer();
 
 
-            line = inputAcqReader.readLine();
+                line = inputAcqReader.readLine();
 
-        }
+            }
+            /* fill in the data */
+            parameterSet.setDirectDimensionParameterSet(acquParameters);
+            parameterSet.setPulseSequence(pulseSequence);
+            /* set the acquisition parameters */
+            Acquisition1DType acquisition1DType = objectFactory.createAcquisition1DType();
+            acquisition1DType.setAcquisitionParameterSet(parameterSet);
+            AcquisitionType acquisitionType = objectFactory.createAcquisitionType();
+            acquisitionType.setAcquisition1D(acquisition1DType);
 
-
-
-    }
-
-        public Acquisition1DType.AcquisitionParameterSet getParameterSet() {
-            return parameterSet;
+            nmrMLType.setAcquisition(acquisitionType);
+            return nmrMLType;
         }
 
         public ByteOrder getByteOrder() {
@@ -576,13 +589,12 @@ public class BrukerAcquAbstractReader implements AcquReader {
         }
 
 
-
     }
 
     private void loadSourceFileRefs() {
-        for(SourceFileType sourceFileType : nmrMLType.getSourceFileList().getSourceFile()){
-            if(sourceFileType.getId().matches("PULSEPROGRAM_FILE")){
-                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
+        for (SourceFileType sourceFileType : nmrMLType.getSourceFileList().getSourceFile()) {
+            if (sourceFileType.getId().matches("PULSEPROGRAM_FILE")) {
+                SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
 
                 PulseSequenceType.PulseSequenceFileRefList pulseSequenceFileRefList =
@@ -593,8 +605,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
                         .setPulseSequenceFileRefList(pulseSequenceFileRefList);
 
             }
-            if(sourceFileType.getId().matches("ACQUISITION_FILE")){
-                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
+            if (sourceFileType.getId().matches("ACQUISITION_FILE")) {
+                SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
 
                 SourceFileRefListType sourceFileRefListType = objectFactory.createSourceFileRefListType();
@@ -604,8 +616,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
                         .setAcquisitionParameterFileRefList(sourceFileRefListType);
 
             }
-            if(sourceFileType.getId().matches("FID_FILE")){
-                SourceFileRefType sourceFileRefType =objectFactory.createSourceFileRefType();
+            if (sourceFileType.getId().matches("FID_FILE")) {
+                SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
                 //TODO find out if there is a way to refence the fid file
             }
