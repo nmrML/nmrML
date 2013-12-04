@@ -375,10 +375,11 @@ public class BrukerAcquAbstractReader implements AcquReader {
             AcquisitionDimensionParameterSetType acquParameters=
                     objectFactory.createAcquisitionDimensionParameterSetType();
             Acquisition1DType.AcquisitionParameterSet parameterSet = new Acquisition1DType.AcquisitionParameterSet();
-            InstrumentConfigurationType instrumentConfigurationType = objectFactory.createInstrumentConfigurationType();
+
             PulseSequenceType pulseSequence =objectFactory.createPulseSequenceType();
             SoftwareListType softwareListType = objectFactory.createSoftwareListType();
 
+            InstrumentConfigurationType instrumentConfigurationType = objectFactory.createInstrumentConfigurationType();
             instrumentConfigurationType.getCvParam().add(cvLoader.fetchCVParam("NMRCV","BRUKER"));
 
             ValueWithUnitType value;
@@ -648,7 +649,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
             if (sourceFileType.getId().matches("FID_FILE")) {
                 SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
-                //TODO find out if there is a way to refence the fid file
             }
         }
     }

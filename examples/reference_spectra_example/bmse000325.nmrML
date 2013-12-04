@@ -6,18 +6,27 @@
     </cvList>
     <sourceFileList count="3">
         <sourceFile id="FID_FILE" name="fid" location="1H/fid" sha1="E7926300F0A2413F71C545D0D18E1388648E0A2C">
-            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400119" name="FID file"/>
+            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
         </sourceFile>
         <sourceFile id="PULSEPROGRAM_FILE" name="pulseprogram" location="1H/pulseprogram" sha1="8BA2AC9ADA97A0C1F1644F85739D4BAC2CF36FB9">
-            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400122" name="pulse sequence file"/>
+            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
         </sourceFile>
         <sourceFile id="ACQUISITION_FILE" name="acqus" location="1H/acqus" sha1="0706DB54984C0788DAAB9D5E34BD00BDC1633797">
-            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
             <cvParam cvRef="NMRCV" accession="NMR:1002006" name="acquisition parameter file"/>
+            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
         </sourceFile>
     </sourceFileList>
+    <softwareList>
+        <software version="Version 2.6" name="XWIN-NMR"/>
+    </softwareList>
+    <instrumentConfigurationList>
+        <instrumentConfiguration>
+            <cvParam cvRef="NMRCV" accession="NMR:1400198" name="Bruker NMR instrument"/>
+            <userParam name="Probehead" value="&lt;5mm TXI XYZ-grad long coil Z8281/0125"/>
+        </instrumentConfiguration>
+    </instrumentConfigurationList>
     <acquisition>
         <acquisition1D>
             <acquisitionParameterSet numberOfScans="4">

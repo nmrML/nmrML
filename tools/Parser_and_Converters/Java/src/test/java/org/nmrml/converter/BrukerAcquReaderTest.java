@@ -47,7 +47,7 @@ public class BrukerAcquReaderTest {
 //        System.out.println((BrukerAcquAbstractReader.class.getClassLoader()
 //                .getResource("org/nmrml/").getPath()));
         Path path = Paths.get(BrukerAcquAbstractReader.class.getClassLoader()
-                .getResource("org/nmrml/example/reference_spectra_example/bmse000325.fid/1H/acqu").getPath());
+                .getResource("org/nmrml/example/reference_spectra_example/bmse000325.fid/1H/acqus").getPath());
 //        Path path = Paths.get(BrukerAcquAbstractReader.class.getClassLoader()
 //                .getResource("org/nmrml/example/files/bruker/onedimensional/putrescine/proton/acqu").getPath());
         System.out.println(path.toString());
