@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Aug 20 21:26:03 2013 by generateDS.py version 2.11a.
+# Generated Wed Oct 30 15:59:51 2013 by generateDS.py version 2.11a.
 #
 
 import sys
@@ -621,7 +621,7 @@ class nmrMLType(GeneratedsSuper):
     nmrML document."""
     subclass = None
     superclass = None
-    def __init__(self, version=None, accession_url=None, accession=None, id=None, cvList=None, fileDescription=None, contactList=None, sourceFileList=None, softwareList=None, instrumentConfigurationList=None, dataProcessingList=None, sampleList=None, referenceableParamGroupList=None, acquisition=None, spectrumList=None):
+    def __init__(self, version=None, accession_url=None, accession=None, id=None, cvList=None, fileDescription=None, contactList=None, referenceableParamGroupList=None, sourceFileList=None, softwareList=None, instrumentConfigurationList=None, dataProcessingList=None, sampleList=None, acquisition=None, spectrumList=None):
         self.version = _cast(None, version)
         self.accession_url = _cast(None, accession_url)
         self.accession = _cast(None, accession)
@@ -629,12 +629,12 @@ class nmrMLType(GeneratedsSuper):
         self.cvList = cvList
         self.fileDescription = fileDescription
         self.contactList = contactList
+        self.referenceableParamGroupList = referenceableParamGroupList
         self.sourceFileList = sourceFileList
         self.softwareList = softwareList
         self.instrumentConfigurationList = instrumentConfigurationList
         self.dataProcessingList = dataProcessingList
         self.sampleList = sampleList
-        self.referenceableParamGroupList = referenceableParamGroupList
         self.acquisition = acquisition
         self.spectrumList = spectrumList
     def factory(*args_, **kwargs_):
@@ -649,6 +649,8 @@ class nmrMLType(GeneratedsSuper):
     def set_fileDescription(self, fileDescription): self.fileDescription = fileDescription
     def get_contactList(self): return self.contactList
     def set_contactList(self, contactList): self.contactList = contactList
+    def get_referenceableParamGroupList(self): return self.referenceableParamGroupList
+    def set_referenceableParamGroupList(self, referenceableParamGroupList): self.referenceableParamGroupList = referenceableParamGroupList
     def get_sourceFileList(self): return self.sourceFileList
     def set_sourceFileList(self, sourceFileList): self.sourceFileList = sourceFileList
     def get_softwareList(self): return self.softwareList
@@ -659,8 +661,6 @@ class nmrMLType(GeneratedsSuper):
     def set_dataProcessingList(self, dataProcessingList): self.dataProcessingList = dataProcessingList
     def get_sampleList(self): return self.sampleList
     def set_sampleList(self, sampleList): self.sampleList = sampleList
-    def get_referenceableParamGroupList(self): return self.referenceableParamGroupList
-    def set_referenceableParamGroupList(self, referenceableParamGroupList): self.referenceableParamGroupList = referenceableParamGroupList
     def get_acquisition(self): return self.acquisition
     def set_acquisition(self, acquisition): self.acquisition = acquisition
     def get_spectrumList(self): return self.spectrumList
@@ -678,12 +678,12 @@ class nmrMLType(GeneratedsSuper):
             self.cvList is not None or
             self.fileDescription is not None or
             self.contactList is not None or
+            self.referenceableParamGroupList is not None or
             self.sourceFileList is not None or
             self.softwareList is not None or
             self.instrumentConfigurationList is not None or
             self.dataProcessingList is not None or
             self.sampleList is not None or
-            self.referenceableParamGroupList is not None or
             self.acquisition is not None or
             self.spectrumList is not None
         ):
@@ -730,6 +730,8 @@ class nmrMLType(GeneratedsSuper):
             self.fileDescription.export(outfile, level, namespace_, name_='fileDescription', pretty_print=pretty_print)
         if self.contactList is not None:
             self.contactList.export(outfile, level, namespace_, name_='contactList', pretty_print=pretty_print)
+        if self.referenceableParamGroupList is not None:
+            self.referenceableParamGroupList.export(outfile, level, namespace_, name_='referenceableParamGroupList', pretty_print=pretty_print)
         if self.sourceFileList is not None:
             self.sourceFileList.export(outfile, level, namespace_, name_='sourceFileList', pretty_print=pretty_print)
         if self.softwareList is not None:
@@ -740,8 +742,6 @@ class nmrMLType(GeneratedsSuper):
             self.dataProcessingList.export(outfile, level, namespace_, name_='dataProcessingList', pretty_print=pretty_print)
         if self.sampleList is not None:
             self.sampleList.export(outfile, level, namespace_, name_='sampleList', pretty_print=pretty_print)
-        if self.referenceableParamGroupList is not None:
-            self.referenceableParamGroupList.export(outfile, level, namespace_, name_='referenceableParamGroupList', pretty_print=pretty_print)
         if self.acquisition is not None:
             self.acquisition.export(outfile, level, namespace_, name_='acquisition', pretty_print=pretty_print)
         if self.spectrumList is not None:
@@ -788,6 +788,12 @@ class nmrMLType(GeneratedsSuper):
             self.contactList.exportLiteral(outfile, level, name_='contactList')
             showIndent(outfile, level)
             outfile.write('),\n')
+        if self.referenceableParamGroupList is not None:
+            showIndent(outfile, level)
+            outfile.write('referenceableParamGroupList=model_.ReferenceableParamGroupListType(\n')
+            self.referenceableParamGroupList.exportLiteral(outfile, level, name_='referenceableParamGroupList')
+            showIndent(outfile, level)
+            outfile.write('),\n')
         if self.sourceFileList is not None:
             showIndent(outfile, level)
             outfile.write('sourceFileList=model_.SourceFileListType(\n')
@@ -816,12 +822,6 @@ class nmrMLType(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('sampleList=model_.SampleListType(\n')
             self.sampleList.exportLiteral(outfile, level, name_='sampleList')
-            showIndent(outfile, level)
-            outfile.write('),\n')
-        if self.referenceableParamGroupList is not None:
-            showIndent(outfile, level)
-            outfile.write('referenceableParamGroupList=model_.ReferenceableParamGroupListType(\n')
-            self.referenceableParamGroupList.exportLiteral(outfile, level, name_='referenceableParamGroupList')
             showIndent(outfile, level)
             outfile.write('),\n')
         if self.acquisition is not None:
@@ -872,6 +872,10 @@ class nmrMLType(GeneratedsSuper):
             obj_ = ContactListType.factory()
             obj_.build(child_)
             self.contactList = obj_
+        elif nodeName_ == 'referenceableParamGroupList':
+            obj_ = ReferenceableParamGroupListType.factory()
+            obj_.build(child_)
+            self.referenceableParamGroupList = obj_
         elif nodeName_ == 'sourceFileList':
             obj_ = SourceFileListType.factory()
             obj_.build(child_)
@@ -892,10 +896,6 @@ class nmrMLType(GeneratedsSuper):
             obj_ = SampleListType.factory()
             obj_.build(child_)
             self.sampleList = obj_
-        elif nodeName_ == 'referenceableParamGroupList':
-            obj_ = ReferenceableParamGroupListType.factory()
-            obj_.build(child_)
-            self.referenceableParamGroupList = obj_
         elif nodeName_ == 'acquisition':
             obj_ = AcquisitionType.factory()
             obj_.build(child_)
@@ -1208,156 +1208,9 @@ class ContactListType(GeneratedsSuper):
 # end class ContactListType
 
 
-class ContactType(GeneratedsSuper):
-    """A person's name and information on how to communicate with them.An
-    identifier for this contact .Name of the contact person.Uniform
-    Resource Locator related to the contact person or
-    organization.Postal address of the contact person or
-    organization.Home institution of the contact person.Email
-    address of the contact person or organization."""
-    subclass = None
-    superclass = None
-    def __init__(self, url=None, id=None, address=None, organization=None, fullname=None, email=None):
-        self.url = _cast(None, url)
-        self.id = _cast(None, id)
-        self.address = _cast(None, address)
-        self.organization = _cast(None, organization)
-        self.fullname = _cast(None, fullname)
-        self.email = _cast(None, email)
-        pass
-    def factory(*args_, **kwargs_):
-        if ContactType.subclass:
-            return ContactType.subclass(*args_, **kwargs_)
-        else:
-            return ContactType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_url(self): return self.url
-    def set_url(self, url): self.url = url
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def get_address(self): return self.address
-    def set_address(self, address): self.address = address
-    def get_organization(self): return self.organization
-    def set_organization(self, organization): self.organization = organization
-    def get_fullname(self): return self.fullname
-    def set_fullname(self, fullname): self.fullname = fullname
-    def get_email(self): return self.email
-    def set_email(self, email): self.email = email
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='dx:', name_='ContactType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='ContactType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='ContactType'):
-        if self.url is not None and 'url' not in already_processed:
-            already_processed.add('url')
-            outfile.write(' url=%s' % (self.gds_format_string(quote_attrib(self.url).encode(ExternalEncoding), input_name='url'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.address is not None and 'address' not in already_processed:
-            already_processed.add('address')
-            outfile.write(' address=%s' % (self.gds_format_string(quote_attrib(self.address).encode(ExternalEncoding), input_name='address'), ))
-        if self.organization is not None and 'organization' not in already_processed:
-            already_processed.add('organization')
-            outfile.write(' organization=%s' % (self.gds_format_string(quote_attrib(self.organization).encode(ExternalEncoding), input_name='organization'), ))
-        if self.fullname is not None and 'fullname' not in already_processed:
-            already_processed.add('fullname')
-            outfile.write(' fullname=%s' % (self.gds_format_string(quote_attrib(self.fullname).encode(ExternalEncoding), input_name='fullname'), ))
-        if self.email is not None and 'email' not in already_processed:
-            already_processed.add('email')
-            outfile.write(' email=%s' % (self.gds_format_string(quote_attrib(self.email).encode(ExternalEncoding), input_name='email'), ))
-    def exportChildren(self, outfile, level, namespace_='dx:', name_='ContactType', fromsubclass_=False, pretty_print=True):
-        pass
-    def exportLiteral(self, outfile, level, name_='ContactType'):
-        level += 1
-        already_processed = set()
-        self.exportLiteralAttributes(outfile, level, already_processed, name_)
-        if self.hasContent_():
-            self.exportLiteralChildren(outfile, level, name_)
-    def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        if self.url is not None and 'url' not in already_processed:
-            already_processed.add('url')
-            showIndent(outfile, level)
-            outfile.write('url="%s",\n' % (self.url,))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            showIndent(outfile, level)
-            outfile.write('id="%s",\n' % (self.id,))
-        if self.address is not None and 'address' not in already_processed:
-            already_processed.add('address')
-            showIndent(outfile, level)
-            outfile.write('address="%s",\n' % (self.address,))
-        if self.organization is not None and 'organization' not in already_processed:
-            already_processed.add('organization')
-            showIndent(outfile, level)
-            outfile.write('organization="%s",\n' % (self.organization,))
-        if self.fullname is not None and 'fullname' not in already_processed:
-            already_processed.add('fullname')
-            showIndent(outfile, level)
-            outfile.write('fullname="%s",\n' % (self.fullname,))
-        if self.email is not None and 'email' not in already_processed:
-            already_processed.add('email')
-            showIndent(outfile, level)
-            outfile.write('email="%s",\n' % (self.email,))
-    def exportLiteralChildren(self, outfile, level, name_):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('url', node)
-        if value is not None and 'url' not in already_processed:
-            already_processed.add('url')
-            self.url = value
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-        value = find_attr_value_('address', node)
-        if value is not None and 'address' not in already_processed:
-            already_processed.add('address')
-            self.address = value
-        value = find_attr_value_('organization', node)
-        if value is not None and 'organization' not in already_processed:
-            already_processed.add('organization')
-            self.organization = value
-        value = find_attr_value_('fullname', node)
-        if value is not None and 'fullname' not in already_processed:
-            already_processed.add('fullname')
-            self.fullname = value
-        value = find_attr_value_('email', node)
-        if value is not None and 'email' not in already_processed:
-            already_processed.add('email')
-            self.email = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class ContactType
-
-
 class ContactRefType(GeneratedsSuper):
-    """This attribute must reference the 'id' of the appropriate
-    sourceFile."""
+    """This attribute must reference the 'id' of the contact node in the
+    contactList."""
     subclass = None
     superclass = None
     def __init__(self, ref=None):
@@ -1630,11 +1483,11 @@ class CVTermType(GeneratedsSuper):
     preferred name associated with the specified accession number."""
     subclass = None
     superclass = None
-    def __init__(self, cvRef=None, accession=None, name=None):
+    def __init__(self, cvRef=None, accession=None, name=None, extensiontype_=None):
         self.cvRef = _cast(None, cvRef)
         self.accession = _cast(None, accession)
         self.name = _cast(None, name)
-        pass
+        self.extensiontype_ = extensiontype_
     def factory(*args_, **kwargs_):
         if CVTermType.subclass:
             return CVTermType.subclass(*args_, **kwargs_)
@@ -1647,6 +1500,8 @@ class CVTermType(GeneratedsSuper):
     def set_accession(self, accession): self.accession = accession
     def get_name(self): return self.name
     def set_name(self, name): self.name = name
+    def get_extensiontype_(self): return self.extensiontype_
+    def set_extensiontype_(self, extensiontype_): self.extensiontype_ = extensiontype_
     def hasContent_(self):
         if (
 
@@ -1679,6 +1534,10 @@ class CVTermType(GeneratedsSuper):
         if self.name is not None and 'name' not in already_processed:
             already_processed.add('name')
             outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
+        if self.extensiontype_ is not None and 'xsi:type' not in already_processed:
+            already_processed.add('xsi:type')
+            outfile.write(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
+            outfile.write(' xsi:type="%s"' % self.extensiontype_)
     def exportChildren(self, outfile, level, namespace_='dx:', name_='CVTermType', fromsubclass_=False, pretty_print=True):
         pass
     def exportLiteral(self, outfile, level, name_='CVTermType'):
@@ -1721,6 +1580,10 @@ class CVTermType(GeneratedsSuper):
         if value is not None and 'name' not in already_processed:
             already_processed.add('name')
             self.name = value
+        value = find_attr_value_('xsi:type', node)
+        if value is not None and 'xsi:type' not in already_processed:
+            already_processed.add('xsi:type')
+            self.extensiontype_ = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
 # end class CVTermType
@@ -1861,13 +1724,13 @@ class CVParamWithUnitType(GeneratedsSuper):
     name associated with the specified accession number.The value
     for the parameter; may be absent if not appropriate, or a
     numeric or symbolic value, or may itself be CV (legal values for
-    a parameter should be enumerated and defined in the ontology).An
+    a parameter should be enumerated and defined in the ontology).If
+    a unit term is referenced, this attribute must refer to the CV
+    'id' attribute defined in the cvList in this nmrML file.An
     optional CV accession number for the unit term associated with
     the value, if any (e.g., 'UO:0000266' for 'electron volt').An
     optional CV name for the unit accession number, if any (e.g.,
-    'electron volt' for 'UO:0000266' ).If a unit term is referenced,
-    this attribute must refer to the CV 'id' attribute defined in
-    the cvList in this nmrML file."""
+    'electron volt' for 'UO:0000266' )."""
     subclass = None
     superclass = None
     def __init__(self, name=None, unitName=None, accession=None, value=None, unitAccession=None, cvRef=None, unitCvRef=None):
@@ -2300,7 +2163,7 @@ class ParamGroupType(GeneratedsSuper):
     these in this nmrML file (paramGroupRef)."""
     subclass = None
     superclass = None
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, extensiontype_=None):
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, extensiontype_=None):
         if referenceableParamGroupRef is None:
             self.referenceableParamGroupRef = []
         else:
@@ -2313,6 +2176,10 @@ class ParamGroupType(GeneratedsSuper):
             self.cvParamWithUnit = []
         else:
             self.cvParamWithUnit = cvParamWithUnit
+        if cvTerm is None:
+            self.cvTerm = []
+        else:
+            self.cvTerm = cvTerm
         if userParam is None:
             self.userParam = []
         else:
@@ -2336,6 +2203,10 @@ class ParamGroupType(GeneratedsSuper):
     def set_cvParamWithUnit(self, cvParamWithUnit): self.cvParamWithUnit = cvParamWithUnit
     def add_cvParamWithUnit(self, value): self.cvParamWithUnit.append(value)
     def insert_cvParamWithUnit(self, index, value): self.cvParamWithUnit[index] = value
+    def get_cvTerm(self): return self.cvTerm
+    def set_cvTerm(self, cvTerm): self.cvTerm = cvTerm
+    def add_cvTerm(self, value): self.cvTerm.append(value)
+    def insert_cvTerm(self, index, value): self.cvTerm[index] = value
     def get_userParam(self): return self.userParam
     def set_userParam(self, userParam): self.userParam = userParam
     def add_userParam(self, value): self.userParam.append(value)
@@ -2347,6 +2218,7 @@ class ParamGroupType(GeneratedsSuper):
             self.referenceableParamGroupRef or
             self.cvParam or
             self.cvParamWithUnit or
+            self.cvTerm or
             self.userParam
         ):
             return True
@@ -2385,6 +2257,8 @@ class ParamGroupType(GeneratedsSuper):
             cvParam_.export(outfile, level, namespace_, name_='cvParam', pretty_print=pretty_print)
         for cvParamWithUnit_ in self.cvParamWithUnit:
             cvParamWithUnit_.export(outfile, level, namespace_, name_='cvParamWithUnit', pretty_print=pretty_print)
+        for cvTerm_ in self.cvTerm:
+            cvTerm_.export(outfile, level, namespace_, name_='cvTerm', pretty_print=pretty_print)
         for userParam_ in self.userParam:
             userParam_.export(outfile, level, namespace_, name_='userParam', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='ParamGroupType'):
@@ -2433,6 +2307,18 @@ class ParamGroupType(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
         showIndent(outfile, level)
+        outfile.write('cvTerm=[\n')
+        level += 1
+        for cvTerm_ in self.cvTerm:
+            showIndent(outfile, level)
+            outfile.write('model_.CVTermType(\n')
+            cvTerm_.exportLiteral(outfile, level, name_='CVTermType')
+            showIndent(outfile, level)
+            outfile.write('),\n')
+        level -= 1
+        showIndent(outfile, level)
+        outfile.write('],\n')
+        showIndent(outfile, level)
         outfile.write('userParam=[\n')
         level += 1
         for userParam_ in self.userParam:
@@ -2468,6 +2354,11 @@ class ParamGroupType(GeneratedsSuper):
             obj_ = CVParamWithUnitType.factory()
             obj_.build(child_)
             self.cvParamWithUnit.append(obj_)
+        elif nodeName_ == 'cvTerm':
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
+            obj_.build(child_)
+            self.cvTerm.append(obj_)
         elif nodeName_ == 'userParam':
             obj_ = UserParamType.factory()
             obj_.build(child_)
@@ -3189,7 +3080,8 @@ class SampleType(GeneratedsSuper):
             self.postBufferpH = fval_
             self.validate_PhType(self.postBufferpH)    # validate type PhType
         elif nodeName_ == 'buffer':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.buffer = obj_
         elif nodeName_ == 'fieldFrequencyLock':
@@ -3201,7 +3093,8 @@ class SampleType(GeneratedsSuper):
             obj_.build(child_)
             self.chemicalShiftStandard = obj_
         elif nodeName_ == 'solventType':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.solventType = obj_
         elif nodeName_ == 'additionalSoluteList':
@@ -3325,13 +3218,13 @@ class SoftwareListType(GeneratedsSuper):
 # end class SoftwareListType
 
 
-class SoftwareType(ParamGroupType):
+class SoftwareType(CVTermType):
     """Software information.An identifier for this software that is unique
     across all SoftwareTypes.The software version."""
     subclass = None
-    superclass = ParamGroupType
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, version=None, id=None):
-        super(SoftwareType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, )
+    superclass = CVTermType
+    def __init__(self, cvRef=None, accession=None, name=None, version=None, id=None):
+        super(SoftwareType, self).__init__(cvRef, accession, name, )
         self.version = _cast(None, version)
         self.id = _cast(None, id)
         pass
@@ -3364,7 +3257,6 @@ class SoftwareType(ParamGroupType):
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
             self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
@@ -3378,6 +3270,7 @@ class SoftwareType(ParamGroupType):
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
     def exportChildren(self, outfile, level, namespace_='dx:', name_='SoftwareType', fromsubclass_=False, pretty_print=True):
         super(SoftwareType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
     def exportLiteral(self, outfile, level, name_='SoftwareType'):
         level += 1
         already_processed = set()
@@ -3396,6 +3289,7 @@ class SoftwareType(ParamGroupType):
         super(SoftwareType, self).exportLiteralAttributes(outfile, level, already_processed, name_)
     def exportLiteralChildren(self, outfile, level, name_):
         super(SoftwareType, self).exportLiteralChildren(outfile, level, name_)
+        pass
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -3608,8 +3502,9 @@ class SourceFileType(ParamGroupType):
     formatted location where the file was retrieved."""
     subclass = None
     superclass = ParamGroupType
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, location=None, id=None, name=None):
-        super(SourceFileType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, )
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, sha1=None, location=None, id=None, name=None):
+        super(SourceFileType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, )
+        self.sha1 = _cast(None, sha1)
         self.location = _cast(None, location)
         self.id = _cast(None, id)
         self.name = _cast(None, name)
@@ -3620,6 +3515,8 @@ class SourceFileType(ParamGroupType):
         else:
             return SourceFileType(*args_, **kwargs_)
     factory = staticmethod(factory)
+    def get_sha1(self): return self.sha1
+    def set_sha1(self, sha1): self.sha1 = sha1
     def get_location(self): return self.location
     def set_location(self, location): self.location = location
     def get_id(self): return self.id
@@ -3651,6 +3548,9 @@ class SourceFileType(ParamGroupType):
             outfile.write('/>%s' % (eol_, ))
     def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='SourceFileType'):
         super(SourceFileType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='SourceFileType')
+        if self.sha1 is not None and 'sha1' not in already_processed:
+            already_processed.add('sha1')
+            outfile.write(' sha1=%s' % (self.gds_format_string(quote_attrib(self.sha1).encode(ExternalEncoding), input_name='sha1'), ))
         if self.location is not None and 'location' not in already_processed:
             already_processed.add('location')
             outfile.write(' location=%s' % (self.gds_format_string(quote_attrib(self.location).encode(ExternalEncoding), input_name='location'), ))
@@ -3669,6 +3569,10 @@ class SourceFileType(ParamGroupType):
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
+        if self.sha1 is not None and 'sha1' not in already_processed:
+            already_processed.add('sha1')
+            showIndent(outfile, level)
+            outfile.write('sha1="%s",\n' % (self.sha1,))
         if self.location is not None and 'location' not in already_processed:
             already_processed.add('location')
             showIndent(outfile, level)
@@ -3691,6 +3595,10 @@ class SourceFileType(ParamGroupType):
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
     def buildAttributes(self, node, attrs, already_processed):
+        value = find_attr_value_('sha1', node)
+        if value is not None and 'sha1' not in already_processed:
+            already_processed.add('sha1')
+            self.sha1 = value
         value = find_attr_value_('location', node)
         if value is not None and 'location' not in already_processed:
             already_processed.add('location')
@@ -3894,10 +3802,13 @@ class InstrumentConfigurationType(ParamGroupType):
     instrument configuration."""
     subclass = None
     superclass = ParamGroupType
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, id=None, softwareRef=None):
-        super(InstrumentConfigurationType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, )
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, id=None, softwareRef=None):
+        super(InstrumentConfigurationType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, )
         self.id = _cast(None, id)
-        self.softwareRef = softwareRef
+        if softwareRef is None:
+            self.softwareRef = []
+        else:
+            self.softwareRef = softwareRef
     def factory(*args_, **kwargs_):
         if InstrumentConfigurationType.subclass:
             return InstrumentConfigurationType.subclass(*args_, **kwargs_)
@@ -3906,11 +3817,13 @@ class InstrumentConfigurationType(ParamGroupType):
     factory = staticmethod(factory)
     def get_softwareRef(self): return self.softwareRef
     def set_softwareRef(self, softwareRef): self.softwareRef = softwareRef
+    def add_softwareRef(self, value): self.softwareRef.append(value)
+    def insert_softwareRef(self, index, value): self.softwareRef[index] = value
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
     def hasContent_(self):
         if (
-            self.softwareRef is not None or
+            self.softwareRef or
             super(InstrumentConfigurationType, self).hasContent_()
         ):
             return True
@@ -3943,8 +3856,8 @@ class InstrumentConfigurationType(ParamGroupType):
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.softwareRef is not None:
-            self.softwareRef.export(outfile, level, namespace_, name_='softwareRef', pretty_print=pretty_print)
+        for softwareRef_ in self.softwareRef:
+            softwareRef_.export(outfile, level, namespace_, name_='softwareRef', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='InstrumentConfigurationType'):
         level += 1
         already_processed = set()
@@ -3959,12 +3872,18 @@ class InstrumentConfigurationType(ParamGroupType):
         super(InstrumentConfigurationType, self).exportLiteralAttributes(outfile, level, already_processed, name_)
     def exportLiteralChildren(self, outfile, level, name_):
         super(InstrumentConfigurationType, self).exportLiteralChildren(outfile, level, name_)
-        if self.softwareRef is not None:
+        showIndent(outfile, level)
+        outfile.write('softwareRef=[\n')
+        level += 1
+        for softwareRef_ in self.softwareRef:
             showIndent(outfile, level)
-            outfile.write('softwareRef=model_.SoftwareRefType(\n')
-            self.softwareRef.exportLiteral(outfile, level, name_='softwareRef')
+            outfile.write('model_.SoftwareRefType(\n')
+            softwareRef_.exportLiteral(outfile, level, name_='SoftwareRefType')
             showIndent(outfile, level)
             outfile.write('),\n')
+        level -= 1
+        showIndent(outfile, level)
+        outfile.write('],\n')
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -3981,7 +3900,7 @@ class InstrumentConfigurationType(ParamGroupType):
         if nodeName_ == 'softwareRef':
             obj_ = SoftwareRefType.factory()
             obj_.build(child_)
-            self.softwareRef = obj_
+            self.softwareRef.append(obj_)
         super(InstrumentConfigurationType, self).buildChildren(child_, node, nodeName_, True)
 # end class InstrumentConfigurationType
 
@@ -4307,8 +4226,8 @@ class ProcessingMethodType(ParamGroupType):
     appropriate SoftwareType."""
     subclass = None
     superclass = ParamGroupType
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, order=None, softwareRef=None):
-        super(ProcessingMethodType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, )
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, order=None, softwareRef=None):
+        super(ProcessingMethodType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, )
         self.order = _cast(int, order)
         self.softwareRef = _cast(None, softwareRef)
         pass
@@ -4401,36 +4320,37 @@ class ProcessingMethodType(ParamGroupType):
 
 
 class BinaryDataArrayType(GeneratedsSuper):
-    """This optional attribute may reference the 'id' attribute of the
-    appropriate dataProcessing.The encoded length of the binary data
-    array."""
+    """True if the binary data was compressed with zlib before encoding as
+    base64This optional attribute may reference the 'id' attribute
+    of the appropriate dataProcessing.The encoded length of the
+    binary data array.64-bit or 32-bit precision floats"""
     subclass = None
     superclass = None
-    def __init__(self, byteLength=None, totalBytes=None, dataProcessingRef=None, byteFormat=None, binary=None):
-        self.byteLength = _cast(int, byteLength)
-        self.totalBytes = _cast(int, totalBytes)
-        self.dataProcessingRef = _cast(None, dataProcessingRef)
+    def __init__(self, byteFormat=None, encodedLength=None, compressed=None, dataProcessingRef=None, valueOf_=None):
         self.byteFormat = _cast(None, byteFormat)
-        self.binary = binary
+        self.encodedLength = _cast(int, encodedLength)
+        self.compressed = _cast(bool, compressed)
+        self.dataProcessingRef = _cast(None, dataProcessingRef)
+        self.valueOf_ = valueOf_
     def factory(*args_, **kwargs_):
         if BinaryDataArrayType.subclass:
             return BinaryDataArrayType.subclass(*args_, **kwargs_)
         else:
             return BinaryDataArrayType(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_binary(self): return self.binary
-    def set_binary(self, binary): self.binary = binary
-    def get_byteLength(self): return self.byteLength
-    def set_byteLength(self, byteLength): self.byteLength = byteLength
-    def get_totalBytes(self): return self.totalBytes
-    def set_totalBytes(self, totalBytes): self.totalBytes = totalBytes
-    def get_dataProcessingRef(self): return self.dataProcessingRef
-    def set_dataProcessingRef(self, dataProcessingRef): self.dataProcessingRef = dataProcessingRef
     def get_byteFormat(self): return self.byteFormat
     def set_byteFormat(self, byteFormat): self.byteFormat = byteFormat
+    def get_encodedLength(self): return self.encodedLength
+    def set_encodedLength(self, encodedLength): self.encodedLength = encodedLength
+    def get_compressed(self): return self.compressed
+    def set_compressed(self, compressed): self.compressed = compressed
+    def get_dataProcessingRef(self): return self.dataProcessingRef
+    def set_dataProcessingRef(self, dataProcessingRef): self.dataProcessingRef = dataProcessingRef
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
     def hasContent_(self):
         if (
-            self.binary is not None
+            self.valueOf_
         ):
             return True
         else:
@@ -4445,106 +4365,90 @@ class BinaryDataArrayType(GeneratedsSuper):
         already_processed = set()
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='BinaryDataArrayType')
         if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
             self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
     def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='BinaryDataArrayType'):
-        if self.byteLength is not None and 'byteLength' not in already_processed:
-            already_processed.add('byteLength')
-            outfile.write(' byteLength="%s"' % self.gds_format_integer(self.byteLength, input_name='byteLength'))
-        if self.totalBytes is not None and 'totalBytes' not in already_processed:
-            already_processed.add('totalBytes')
-            outfile.write(' totalBytes="%s"' % self.gds_format_integer(self.totalBytes, input_name='totalBytes'))
-        if self.dataProcessingRef is not None and 'dataProcessingRef' not in already_processed:
-            already_processed.add('dataProcessingRef')
-            outfile.write(' dataProcessingRef=%s' % (self.gds_format_string(quote_attrib(self.dataProcessingRef).encode(ExternalEncoding), input_name='dataProcessingRef'), ))
         if self.byteFormat is not None and 'byteFormat' not in already_processed:
             already_processed.add('byteFormat')
             outfile.write(' byteFormat=%s' % (self.gds_format_string(quote_attrib(self.byteFormat).encode(ExternalEncoding), input_name='byteFormat'), ))
+        if self.encodedLength is not None and 'encodedLength' not in already_processed:
+            already_processed.add('encodedLength')
+            outfile.write(' encodedLength="%s"' % self.gds_format_integer(self.encodedLength, input_name='encodedLength'))
+        if self.compressed is not None and 'compressed' not in already_processed:
+            already_processed.add('compressed')
+            outfile.write(' compressed="%s"' % self.gds_format_boolean(self.compressed, input_name='compressed'))
+        if self.dataProcessingRef is not None and 'dataProcessingRef' not in already_processed:
+            already_processed.add('dataProcessingRef')
+            outfile.write(' dataProcessingRef=%s' % (self.gds_format_string(quote_attrib(self.dataProcessingRef).encode(ExternalEncoding), input_name='dataProcessingRef'), ))
     def exportChildren(self, outfile, level, namespace_='dx:', name_='BinaryDataArrayType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.binary is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sbinary>%s</%sbinary>%s' % (namespace_, self.gds_format_base64(self.binary, input_name='binary'), namespace_, eol_))
+        pass
     def exportLiteral(self, outfile, level, name_='BinaryDataArrayType'):
         level += 1
         already_processed = set()
         self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
+        showIndent(outfile, level)
+        outfile.write('valueOf_ = """%s""",\n' % (self.valueOf_,))
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        if self.byteLength is not None and 'byteLength' not in already_processed:
-            already_processed.add('byteLength')
-            showIndent(outfile, level)
-            outfile.write('byteLength=%d,\n' % (self.byteLength,))
-        if self.totalBytes is not None and 'totalBytes' not in already_processed:
-            already_processed.add('totalBytes')
-            showIndent(outfile, level)
-            outfile.write('totalBytes=%d,\n' % (self.totalBytes,))
-        if self.dataProcessingRef is not None and 'dataProcessingRef' not in already_processed:
-            already_processed.add('dataProcessingRef')
-            showIndent(outfile, level)
-            outfile.write('dataProcessingRef="%s",\n' % (self.dataProcessingRef,))
         if self.byteFormat is not None and 'byteFormat' not in already_processed:
             already_processed.add('byteFormat')
             showIndent(outfile, level)
             outfile.write('byteFormat="%s",\n' % (self.byteFormat,))
+        if self.encodedLength is not None and 'encodedLength' not in already_processed:
+            already_processed.add('encodedLength')
+            showIndent(outfile, level)
+            outfile.write('encodedLength=%d,\n' % (self.encodedLength,))
+        if self.compressed is not None and 'compressed' not in already_processed:
+            already_processed.add('compressed')
+            showIndent(outfile, level)
+            outfile.write('compressed=%s,\n' % (self.compressed,))
+        if self.dataProcessingRef is not None and 'dataProcessingRef' not in already_processed:
+            already_processed.add('dataProcessingRef')
+            showIndent(outfile, level)
+            outfile.write('dataProcessingRef="%s",\n' % (self.dataProcessingRef,))
     def exportLiteralChildren(self, outfile, level, name_):
-        if self.binary is not None:
-            showIndent(outfile, level)
-            outfile.write('binary=model_.xs_base64Binary(\n')
-            self.binary.exportLiteral(outfile, level, name_='binary')
-            showIndent(outfile, level)
-            outfile.write('),\n')
+        pass
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
     def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('byteLength', node)
-        if value is not None and 'byteLength' not in already_processed:
-            already_processed.add('byteLength')
-            try:
-                self.byteLength = int(value)
-            except ValueError, exp:
-                raise_parse_error(node, 'Bad integer attribute: %s' % exp)
-        value = find_attr_value_('totalBytes', node)
-        if value is not None and 'totalBytes' not in already_processed:
-            already_processed.add('totalBytes')
-            try:
-                self.totalBytes = int(value)
-            except ValueError, exp:
-                raise_parse_error(node, 'Bad integer attribute: %s' % exp)
-            if self.totalBytes < 0:
-                raise_parse_error(node, 'Invalid NonNegativeInteger')
-        value = find_attr_value_('dataProcessingRef', node)
-        if value is not None and 'dataProcessingRef' not in already_processed:
-            already_processed.add('dataProcessingRef')
-            self.dataProcessingRef = value
         value = find_attr_value_('byteFormat', node)
         if value is not None and 'byteFormat' not in already_processed:
             already_processed.add('byteFormat')
             self.byteFormat = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'binary':
-            sval_ = child_.text
-            if sval_ is not None:
-                try:
-                    bval_ = base64.b64decode(sval_)
-                except (TypeError, ValueError), exp:
-                    raise_parse_error(child_, 'requires base64 encoded string: %s' % exp)
-                bval_ = self.gds_validate_base64(bval_, node, 'binary')
+        value = find_attr_value_('encodedLength', node)
+        if value is not None and 'encodedLength' not in already_processed:
+            already_processed.add('encodedLength')
+            try:
+                self.encodedLength = int(value)
+            except ValueError, exp:
+                raise_parse_error(node, 'Bad integer attribute: %s' % exp)
+            if self.encodedLength < 0:
+                raise_parse_error(node, 'Invalid NonNegativeInteger')
+        value = find_attr_value_('compressed', node)
+        if value is not None and 'compressed' not in already_processed:
+            already_processed.add('compressed')
+            if value in ('true', '1'):
+                self.compressed = True
+            elif value in ('false', '0'):
+                self.compressed = False
             else:
-                bval_ = None
-            self.binary = bval_
+                raise_parse_error(node, 'Bad boolean attribute')
+        value = find_attr_value_('dataProcessingRef', node)
+        if value is not None and 'dataProcessingRef' not in already_processed:
+            already_processed.add('dataProcessingRef')
+            self.dataProcessingRef = value
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
 # end class BinaryDataArrayType
 
 
@@ -4830,15 +4734,16 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
     data acquisition specific to each NMR analysis dimension."""
     subclass = None
     superclass = None
-    def __init__(self, numberOfDataPoints=None, acquisitionParamsFileRef=None, decoupled=None, acquisitionNucleus=None, gammaB1PulseFieldStrength=None, sweepWidth=None, timeDomain=None, irradiationFrequency=None):
+    def __init__(self, numberOfDataPoints=None, decoupled=None, acquisitionNucleus=None, gammaB1PulseFieldStrength=None, sweepWidth=None, irradiationFrequency=None, decouplingMethod=None, samplingStrategy=None, samplingTimePoints=None):
         self.numberOfDataPoints = _cast(int, numberOfDataPoints)
-        self.acquisitionParamsFileRef = _cast(None, acquisitionParamsFileRef)
         self.decoupled = _cast(bool, decoupled)
         self.acquisitionNucleus = acquisitionNucleus
         self.gammaB1PulseFieldStrength = gammaB1PulseFieldStrength
         self.sweepWidth = sweepWidth
-        self.timeDomain = timeDomain
         self.irradiationFrequency = irradiationFrequency
+        self.decouplingMethod = decouplingMethod
+        self.samplingStrategy = samplingStrategy
+        self.samplingTimePoints = samplingTimePoints
     def factory(*args_, **kwargs_):
         if AcquisitionDimensionParameterSetType.subclass:
             return AcquisitionDimensionParameterSetType.subclass(*args_, **kwargs_)
@@ -4851,14 +4756,16 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
     def set_gammaB1PulseFieldStrength(self, gammaB1PulseFieldStrength): self.gammaB1PulseFieldStrength = gammaB1PulseFieldStrength
     def get_sweepWidth(self): return self.sweepWidth
     def set_sweepWidth(self, sweepWidth): self.sweepWidth = sweepWidth
-    def get_timeDomain(self): return self.timeDomain
-    def set_timeDomain(self, timeDomain): self.timeDomain = timeDomain
     def get_irradiationFrequency(self): return self.irradiationFrequency
     def set_irradiationFrequency(self, irradiationFrequency): self.irradiationFrequency = irradiationFrequency
+    def get_decouplingMethod(self): return self.decouplingMethod
+    def set_decouplingMethod(self, decouplingMethod): self.decouplingMethod = decouplingMethod
+    def get_samplingStrategy(self): return self.samplingStrategy
+    def set_samplingStrategy(self, samplingStrategy): self.samplingStrategy = samplingStrategy
+    def get_samplingTimePoints(self): return self.samplingTimePoints
+    def set_samplingTimePoints(self, samplingTimePoints): self.samplingTimePoints = samplingTimePoints
     def get_numberOfDataPoints(self): return self.numberOfDataPoints
     def set_numberOfDataPoints(self, numberOfDataPoints): self.numberOfDataPoints = numberOfDataPoints
-    def get_acquisitionParamsFileRef(self): return self.acquisitionParamsFileRef
-    def set_acquisitionParamsFileRef(self, acquisitionParamsFileRef): self.acquisitionParamsFileRef = acquisitionParamsFileRef
     def get_decoupled(self): return self.decoupled
     def set_decoupled(self, decoupled): self.decoupled = decoupled
     def hasContent_(self):
@@ -4866,8 +4773,10 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
             self.acquisitionNucleus is not None or
             self.gammaB1PulseFieldStrength is not None or
             self.sweepWidth is not None or
-            self.timeDomain is not None or
-            self.irradiationFrequency is not None
+            self.irradiationFrequency is not None or
+            self.decouplingMethod is not None or
+            self.samplingStrategy is not None or
+            self.samplingTimePoints is not None
         ):
             return True
         else:
@@ -4892,9 +4801,6 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
         if self.numberOfDataPoints is not None and 'numberOfDataPoints' not in already_processed:
             already_processed.add('numberOfDataPoints')
             outfile.write(' numberOfDataPoints="%s"' % self.gds_format_integer(self.numberOfDataPoints, input_name='numberOfDataPoints'))
-        if self.acquisitionParamsFileRef is not None and 'acquisitionParamsFileRef' not in already_processed:
-            already_processed.add('acquisitionParamsFileRef')
-            outfile.write(' acquisitionParamsFileRef=%s' % (self.gds_format_string(quote_attrib(self.acquisitionParamsFileRef).encode(ExternalEncoding), input_name='acquisitionParamsFileRef'), ))
         if self.decoupled is not None and 'decoupled' not in already_processed:
             already_processed.add('decoupled')
             outfile.write(' decoupled="%s"' % self.gds_format_boolean(self.decoupled, input_name='decoupled'))
@@ -4909,10 +4815,14 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
             self.gammaB1PulseFieldStrength.export(outfile, level, namespace_, name_='gammaB1PulseFieldStrength', pretty_print=pretty_print)
         if self.sweepWidth is not None:
             self.sweepWidth.export(outfile, level, namespace_, name_='sweepWidth', pretty_print=pretty_print)
-        if self.timeDomain is not None:
-            self.timeDomain.export(outfile, level, namespace_, name_='timeDomain', pretty_print=pretty_print)
         if self.irradiationFrequency is not None:
             self.irradiationFrequency.export(outfile, level, namespace_, name_='irradiationFrequency', pretty_print=pretty_print)
+        if self.decouplingMethod is not None:
+            self.decouplingMethod.export(outfile, level, namespace_, name_='decouplingMethod', pretty_print=pretty_print)
+        if self.samplingStrategy is not None:
+            self.samplingStrategy.export(outfile, level, namespace_, name_='samplingStrategy', pretty_print=pretty_print)
+        if self.samplingTimePoints is not None:
+            self.samplingTimePoints.export(outfile, level, namespace_, name_='samplingTimePoints', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='AcquisitionDimensionParameterSetType'):
         level += 1
         already_processed = set()
@@ -4924,10 +4834,6 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
             already_processed.add('numberOfDataPoints')
             showIndent(outfile, level)
             outfile.write('numberOfDataPoints=%d,\n' % (self.numberOfDataPoints,))
-        if self.acquisitionParamsFileRef is not None and 'acquisitionParamsFileRef' not in already_processed:
-            already_processed.add('acquisitionParamsFileRef')
-            showIndent(outfile, level)
-            outfile.write('acquisitionParamsFileRef="%s",\n' % (self.acquisitionParamsFileRef,))
         if self.decoupled is not None and 'decoupled' not in already_processed:
             already_processed.add('decoupled')
             showIndent(outfile, level)
@@ -4951,16 +4857,28 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
             self.sweepWidth.exportLiteral(outfile, level, name_='sweepWidth')
             showIndent(outfile, level)
             outfile.write('),\n')
-        if self.timeDomain is not None:
-            showIndent(outfile, level)
-            outfile.write('timeDomain=model_.BinaryDataArrayType(\n')
-            self.timeDomain.exportLiteral(outfile, level, name_='timeDomain')
-            showIndent(outfile, level)
-            outfile.write('),\n')
         if self.irradiationFrequency is not None:
             showIndent(outfile, level)
             outfile.write('irradiationFrequency=model_.ValueWithUnitType(\n')
             self.irradiationFrequency.exportLiteral(outfile, level, name_='irradiationFrequency')
+            showIndent(outfile, level)
+            outfile.write('),\n')
+        if self.decouplingMethod is not None:
+            showIndent(outfile, level)
+            outfile.write('decouplingMethod=model_.CVTermType(\n')
+            self.decouplingMethod.exportLiteral(outfile, level, name_='decouplingMethod')
+            showIndent(outfile, level)
+            outfile.write('),\n')
+        if self.samplingStrategy is not None:
+            showIndent(outfile, level)
+            outfile.write('samplingStrategy=model_.CVTermType(\n')
+            self.samplingStrategy.exportLiteral(outfile, level, name_='samplingStrategy')
+            showIndent(outfile, level)
+            outfile.write('),\n')
+        if self.samplingTimePoints is not None:
+            showIndent(outfile, level)
+            outfile.write('samplingTimePoints=model_.BinaryDataArrayType(\n')
+            self.samplingTimePoints.exportLiteral(outfile, level, name_='samplingTimePoints')
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
@@ -4977,10 +4895,6 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
                 self.numberOfDataPoints = int(value)
             except ValueError, exp:
                 raise_parse_error(node, 'Bad integer attribute: %s' % exp)
-        value = find_attr_value_('acquisitionParamsFileRef', node)
-        if value is not None and 'acquisitionParamsFileRef' not in already_processed:
-            already_processed.add('acquisitionParamsFileRef')
-            self.acquisitionParamsFileRef = value
         value = find_attr_value_('decoupled', node)
         if value is not None and 'decoupled' not in already_processed:
             already_processed.add('decoupled')
@@ -4992,7 +4906,8 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
                 raise_parse_error(node, 'Bad boolean attribute')
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'acquisitionNucleus':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.acquisitionNucleus = obj_
         elif nodeName_ == 'gammaB1PulseFieldStrength':
@@ -5003,14 +4918,24 @@ class AcquisitionDimensionParameterSetType(GeneratedsSuper):
             obj_ = ValueWithUnitType.factory()
             obj_.build(child_)
             self.sweepWidth = obj_
-        elif nodeName_ == 'timeDomain':
-            obj_ = BinaryDataArrayType.factory()
-            obj_.build(child_)
-            self.timeDomain = obj_
         elif nodeName_ == 'irradiationFrequency':
             obj_ = ValueWithUnitType.factory()
             obj_.build(child_)
             self.irradiationFrequency = obj_
+        elif nodeName_ == 'decouplingMethod':
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
+            obj_.build(child_)
+            self.decouplingMethod = obj_
+        elif nodeName_ == 'samplingStrategy':
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
+            obj_.build(child_)
+            self.samplingStrategy = obj_
+        elif nodeName_ == 'samplingTimePoints':
+            obj_ = BinaryDataArrayType.factory()
+            obj_.build(child_)
+            self.samplingTimePoints = obj_
 # end class AcquisitionDimensionParameterSetType
 
 
@@ -5193,7 +5118,8 @@ class AcquisitionIndirectDimensionParameterSetType(GeneratedsSuper):
                 raise_parse_error(node, 'Bad boolean attribute')
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'acquisitionNucleus':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.acquisitionNucleus = obj_
         elif nodeName_ == 'gammaB1PulseFieldStrength':
@@ -5209,7 +5135,8 @@ class AcquisitionIndirectDimensionParameterSetType(GeneratedsSuper):
             obj_.build(child_)
             self.timeDomain = obj_
         elif nodeName_ == 'encodingMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.encodingMethod = obj_
         elif nodeName_ == 'irradiationFrequency':
@@ -5404,7 +5331,7 @@ class AcquisitionParameterSetType(GeneratedsSuper):
             outfile.write('),\n')
         if self.pulseSequence is not None:
             showIndent(outfile, level)
-            outfile.write('pulseSequence=model_.pulseSequenceType(\n')
+            outfile.write('pulseSequence=model_.PulseSequenceType(\n')
             self.pulseSequence.exportLiteral(outfile, level, name_='pulseSequence')
             showIndent(outfile, level)
             outfile.write('),\n')
@@ -5453,7 +5380,8 @@ class AcquisitionParameterSetType(GeneratedsSuper):
             obj_.build(child_)
             self.softwareRef = obj_
         elif nodeName_ == 'sampleContainer':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.sampleContainer = obj_
         elif nodeName_ == 'sampleAcquisitionTemperature':
@@ -5473,7 +5401,7 @@ class AcquisitionParameterSetType(GeneratedsSuper):
             obj_.build(child_)
             self.relaxationDelay = obj_
         elif nodeName_ == 'pulseSequence':
-            obj_ = pulseSequenceType.factory()
+            obj_ = PulseSequenceType.factory()
             obj_.build(child_)
             self.pulseSequence = obj_
         elif nodeName_ == 'shapedPulseFile':
@@ -5486,19 +5414,20 @@ class AcquisitionParameterSetType(GeneratedsSuper):
 class AcquisitionParameterSet1DType(AcquisitionParameterSetType):
     subclass = None
     superclass = AcquisitionParameterSetType
-    def __init__(self, numberOfScans=None, numberOfSteadyStateScans=None, contactRefList=None, acquisitionParameterFileRefList=None, softwareRef=None, sampleContainer=None, sampleAcquisitionTemperature=None, solventSuppressionMethod=None, spinningRate=None, relaxationDelay=None, pulseSequence=None, shapedPulseFile=None, extensiontype_=None):
-        super(AcquisitionParameterSet1DType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, extensiontype_, )
-        self.extensiontype_ = extensiontype_
+    def __init__(self, numberOfScans=None, numberOfSteadyStateScans=None, contactRefList=None, acquisitionParameterFileRefList=None, softwareRef=None, sampleContainer=None, sampleAcquisitionTemperature=None, solventSuppressionMethod=None, spinningRate=None, relaxationDelay=None, pulseSequence=None, shapedPulseFile=None, DirectDimensionParameterSet=None):
+        super(AcquisitionParameterSet1DType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, )
+        self.DirectDimensionParameterSet = DirectDimensionParameterSet
     def factory(*args_, **kwargs_):
         if AcquisitionParameterSet1DType.subclass:
             return AcquisitionParameterSet1DType.subclass(*args_, **kwargs_)
         else:
             return AcquisitionParameterSet1DType(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_extensiontype_(self): return self.extensiontype_
-    def set_extensiontype_(self, extensiontype_): self.extensiontype_ = extensiontype_
+    def get_DirectDimensionParameterSet(self): return self.DirectDimensionParameterSet
+    def set_DirectDimensionParameterSet(self, DirectDimensionParameterSet): self.DirectDimensionParameterSet = DirectDimensionParameterSet
     def hasContent_(self):
         if (
+            self.DirectDimensionParameterSet is not None or
             super(AcquisitionParameterSet1DType, self).hasContent_()
         ):
             return True
@@ -5522,12 +5451,14 @@ class AcquisitionParameterSet1DType(AcquisitionParameterSetType):
             outfile.write('/>%s' % (eol_, ))
     def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='AcquisitionParameterSet1DType'):
         super(AcquisitionParameterSet1DType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='AcquisitionParameterSet1DType')
-        if self.extensiontype_ is not None and 'xsi:type' not in already_processed:
-            already_processed.add('xsi:type')
-            outfile.write(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
-            outfile.write(' xsi:type="%s"' % self.extensiontype_)
     def exportChildren(self, outfile, level, namespace_='dx:', name_='AcquisitionParameterSet1DType', fromsubclass_=False, pretty_print=True):
         super(AcquisitionParameterSet1DType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.DirectDimensionParameterSet is not None:
+            self.DirectDimensionParameterSet.export(outfile, level, namespace_, name_='DirectDimensionParameterSet', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='AcquisitionParameterSet1DType'):
         level += 1
         already_processed = set()
@@ -5538,6 +5469,12 @@ class AcquisitionParameterSet1DType(AcquisitionParameterSetType):
         super(AcquisitionParameterSet1DType, self).exportLiteralAttributes(outfile, level, already_processed, name_)
     def exportLiteralChildren(self, outfile, level, name_):
         super(AcquisitionParameterSet1DType, self).exportLiteralChildren(outfile, level, name_)
+        if self.DirectDimensionParameterSet is not None:
+            showIndent(outfile, level)
+            outfile.write('DirectDimensionParameterSet=model_.AcquisitionDimensionParameterSetType(\n')
+            self.DirectDimensionParameterSet.exportLiteral(outfile, level, name_='DirectDimensionParameterSet')
+            showIndent(outfile, level)
+            outfile.write('),\n')
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -5545,22 +5482,21 @@ class AcquisitionParameterSet1DType(AcquisitionParameterSetType):
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
     def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('xsi:type', node)
-        if value is not None and 'xsi:type' not in already_processed:
-            already_processed.add('xsi:type')
-            self.extensiontype_ = value
         super(AcquisitionParameterSet1DType, self).buildAttributes(node, attrs, already_processed)
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'DirectDimensionParameterSet':
+            obj_ = AcquisitionDimensionParameterSetType.factory()
+            obj_.build(child_)
+            self.DirectDimensionParameterSet = obj_
         super(AcquisitionParameterSet1DType, self).buildChildren(child_, node, nodeName_, True)
-        pass
 # end class AcquisitionParameterSet1DType
 
 
-class AcquisitionParameterSet2DType(AcquisitionParameterSetType):
+class AcquisitionParameterSetMultiDType(AcquisitionParameterSetType):
     subclass = None
     superclass = AcquisitionParameterSetType
     def __init__(self, numberOfScans=None, numberOfSteadyStateScans=None, contactRefList=None, acquisitionParameterFileRefList=None, softwareRef=None, sampleContainer=None, sampleAcquisitionTemperature=None, solventSuppressionMethod=None, spinningRate=None, relaxationDelay=None, pulseSequence=None, shapedPulseFile=None, hadamardParameterSet=None, directDimensionParameterSet=None, encodingScheme=None, indirectDimensionParameterSet=None):
-        super(AcquisitionParameterSet2DType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, )
+        super(AcquisitionParameterSetMultiDType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, )
         self.hadamardParameterSet = hadamardParameterSet
         self.directDimensionParameterSet = directDimensionParameterSet
         self.encodingScheme = encodingScheme
@@ -5569,10 +5505,10 @@ class AcquisitionParameterSet2DType(AcquisitionParameterSetType):
         else:
             self.indirectDimensionParameterSet = indirectDimensionParameterSet
     def factory(*args_, **kwargs_):
-        if AcquisitionParameterSet2DType.subclass:
-            return AcquisitionParameterSet2DType.subclass(*args_, **kwargs_)
+        if AcquisitionParameterSetMultiDType.subclass:
+            return AcquisitionParameterSetMultiDType.subclass(*args_, **kwargs_)
         else:
-            return AcquisitionParameterSet2DType(*args_, **kwargs_)
+            return AcquisitionParameterSetMultiDType(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_hadamardParameterSet(self): return self.hadamardParameterSet
     def set_hadamardParameterSet(self, hadamardParameterSet): self.hadamardParameterSet = hadamardParameterSet
@@ -5590,12 +5526,12 @@ class AcquisitionParameterSet2DType(AcquisitionParameterSetType):
             self.directDimensionParameterSet is not None or
             self.encodingScheme is not None or
             self.indirectDimensionParameterSet or
-            super(AcquisitionParameterSet2DType, self).hasContent_()
+            super(AcquisitionParameterSetMultiDType, self).hasContent_()
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='dx:', name_='AcquisitionParameterSet2DType', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='dx:', name_='AcquisitionParameterSetMultiDType', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5603,7 +5539,7 @@ class AcquisitionParameterSet2DType(AcquisitionParameterSetType):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='AcquisitionParameterSet2DType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='AcquisitionParameterSetMultiDType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
             self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
@@ -5611,10 +5547,10 @@ class AcquisitionParameterSet2DType(AcquisitionParameterSetType):
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='AcquisitionParameterSet2DType'):
-        super(AcquisitionParameterSet2DType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='AcquisitionParameterSet2DType')
-    def exportChildren(self, outfile, level, namespace_='dx:', name_='AcquisitionParameterSet2DType', fromsubclass_=False, pretty_print=True):
-        super(AcquisitionParameterSet2DType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='AcquisitionParameterSetMultiDType'):
+        super(AcquisitionParameterSetMultiDType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='AcquisitionParameterSetMultiDType')
+    def exportChildren(self, outfile, level, namespace_='dx:', name_='AcquisitionParameterSetMultiDType', fromsubclass_=False, pretty_print=True):
+        super(AcquisitionParameterSetMultiDType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5627,16 +5563,16 @@ class AcquisitionParameterSet2DType(AcquisitionParameterSetType):
             self.encodingScheme.export(outfile, level, namespace_, name_='encodingScheme', pretty_print=pretty_print)
         for indirectDimensionParameterSet_ in self.indirectDimensionParameterSet:
             indirectDimensionParameterSet_.export(outfile, level, namespace_, name_='indirectDimensionParameterSet', pretty_print=pretty_print)
-    def exportLiteral(self, outfile, level, name_='AcquisitionParameterSet2DType'):
+    def exportLiteral(self, outfile, level, name_='AcquisitionParameterSetMultiDType'):
         level += 1
         already_processed = set()
         self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        super(AcquisitionParameterSet2DType, self).exportLiteralAttributes(outfile, level, already_processed, name_)
+        super(AcquisitionParameterSetMultiDType, self).exportLiteralAttributes(outfile, level, already_processed, name_)
     def exportLiteralChildren(self, outfile, level, name_):
-        super(AcquisitionParameterSet2DType, self).exportLiteralChildren(outfile, level, name_)
+        super(AcquisitionParameterSetMultiDType, self).exportLiteralChildren(outfile, level, name_)
         if self.hadamardParameterSet is not None:
             showIndent(outfile, level)
             outfile.write('hadamardParameterSet=model_.hadamardParameterSetType(\n')
@@ -5674,7 +5610,7 @@ class AcquisitionParameterSet2DType(AcquisitionParameterSetType):
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
     def buildAttributes(self, node, attrs, already_processed):
-        super(AcquisitionParameterSet2DType, self).buildAttributes(node, attrs, already_processed)
+        super(AcquisitionParameterSetMultiDType, self).buildAttributes(node, attrs, already_processed)
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'hadamardParameterSet':
             obj_ = hadamardParameterSetType.factory()
@@ -5692,16 +5628,100 @@ class AcquisitionParameterSet2DType(AcquisitionParameterSetType):
             obj_ = AcquisitionDimensionParameterSetType.factory()
             obj_.build(child_)
             self.indirectDimensionParameterSet.append(obj_)
-        super(AcquisitionParameterSet2DType, self).buildChildren(child_, node, nodeName_, True)
-# end class AcquisitionParameterSet2DType
+        super(AcquisitionParameterSetMultiDType, self).buildChildren(child_, node, nodeName_, True)
+# end class AcquisitionParameterSetMultiDType
+
+
+class PulseSequenceType(ParamGroupType):
+    """A list of references to the source files that define the pulse
+    sequence, including pulse shape files, pulse sequence source
+    code, pulse sequence parameter files, etc."""
+    subclass = None
+    superclass = ParamGroupType
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, pulseSequenceFileRefList=None):
+        super(PulseSequenceType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, )
+        self.pulseSequenceFileRefList = pulseSequenceFileRefList
+    def factory(*args_, **kwargs_):
+        if PulseSequenceType.subclass:
+            return PulseSequenceType.subclass(*args_, **kwargs_)
+        else:
+            return PulseSequenceType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_pulseSequenceFileRefList(self): return self.pulseSequenceFileRefList
+    def set_pulseSequenceFileRefList(self, pulseSequenceFileRefList): self.pulseSequenceFileRefList = pulseSequenceFileRefList
+    def hasContent_(self):
+        if (
+            self.pulseSequenceFileRefList is not None or
+            super(PulseSequenceType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='dx:', name_='PulseSequenceType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='PulseSequenceType')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='PulseSequenceType'):
+        super(PulseSequenceType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='PulseSequenceType')
+    def exportChildren(self, outfile, level, namespace_='dx:', name_='PulseSequenceType', fromsubclass_=False, pretty_print=True):
+        super(PulseSequenceType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.pulseSequenceFileRefList is not None:
+            self.pulseSequenceFileRefList.export(outfile, level, namespace_, name_='pulseSequenceFileRefList', pretty_print=pretty_print)
+    def exportLiteral(self, outfile, level, name_='PulseSequenceType'):
+        level += 1
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
+        if self.hasContent_():
+            self.exportLiteralChildren(outfile, level, name_)
+    def exportLiteralAttributes(self, outfile, level, already_processed, name_):
+        super(PulseSequenceType, self).exportLiteralAttributes(outfile, level, already_processed, name_)
+    def exportLiteralChildren(self, outfile, level, name_):
+        super(PulseSequenceType, self).exportLiteralChildren(outfile, level, name_)
+        if self.pulseSequenceFileRefList is not None:
+            showIndent(outfile, level)
+            outfile.write('pulseSequenceFileRefList=model_.pulseSequenceFileRefListType(\n')
+            self.pulseSequenceFileRefList.exportLiteral(outfile, level, name_='pulseSequenceFileRefList')
+            showIndent(outfile, level)
+            outfile.write('),\n')
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+    def buildAttributes(self, node, attrs, already_processed):
+        super(PulseSequenceType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'pulseSequenceFileRefList':
+            obj_ = pulseSequenceFileRefListType.factory()
+            obj_.build(child_)
+            self.pulseSequenceFileRefList = obj_
+        super(PulseSequenceType, self).buildChildren(child_, node, nodeName_, True)
+# end class PulseSequenceType
 
 
 class AcquisitionType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, acquisition1D=None, acquisition2D=None):
+    def __init__(self, acquisition1D=None, acquisitionMultiD=None):
         self.acquisition1D = acquisition1D
-        self.acquisition2D = acquisition2D
+        self.acquisitionMultiD = acquisitionMultiD
     def factory(*args_, **kwargs_):
         if AcquisitionType.subclass:
             return AcquisitionType.subclass(*args_, **kwargs_)
@@ -5710,12 +5730,12 @@ class AcquisitionType(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_acquisition1D(self): return self.acquisition1D
     def set_acquisition1D(self, acquisition1D): self.acquisition1D = acquisition1D
-    def get_acquisition2D(self): return self.acquisition2D
-    def set_acquisition2D(self, acquisition2D): self.acquisition2D = acquisition2D
+    def get_acquisitionMultiD(self): return self.acquisitionMultiD
+    def set_acquisitionMultiD(self, acquisitionMultiD): self.acquisitionMultiD = acquisitionMultiD
     def hasContent_(self):
         if (
             self.acquisition1D is not None or
-            self.acquisition2D is not None
+            self.acquisitionMultiD is not None
         ):
             return True
         else:
@@ -5745,8 +5765,8 @@ class AcquisitionType(GeneratedsSuper):
             eol_ = ''
         if self.acquisition1D is not None:
             self.acquisition1D.export(outfile, level, namespace_, name_='acquisition1D', pretty_print=pretty_print)
-        if self.acquisition2D is not None:
-            self.acquisition2D.export(outfile, level, namespace_, name_='acquisition2D', pretty_print=pretty_print)
+        if self.acquisitionMultiD is not None:
+            self.acquisitionMultiD.export(outfile, level, namespace_, name_='acquisitionMultiD', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='AcquisitionType'):
         level += 1
         already_processed = set()
@@ -5762,10 +5782,10 @@ class AcquisitionType(GeneratedsSuper):
             self.acquisition1D.exportLiteral(outfile, level, name_='acquisition1D')
             showIndent(outfile, level)
             outfile.write('),\n')
-        if self.acquisition2D is not None:
+        if self.acquisitionMultiD is not None:
             showIndent(outfile, level)
-            outfile.write('acquisition2D=model_.Acquisition2DType(\n')
-            self.acquisition2D.exportLiteral(outfile, level, name_='acquisition2D')
+            outfile.write('acquisitionMultiD=model_.AcquisitionMultiDType(\n')
+            self.acquisitionMultiD.exportLiteral(outfile, level, name_='acquisitionMultiD')
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
@@ -5781,19 +5801,19 @@ class AcquisitionType(GeneratedsSuper):
             obj_ = Acquisition1DType.factory()
             obj_.build(child_)
             self.acquisition1D = obj_
-        elif nodeName_ == 'acquisition2D':
-            obj_ = Acquisition2DType.factory()
+        elif nodeName_ == 'acquisitionMultiD':
+            obj_ = AcquisitionMultiDType.factory()
             obj_.build(child_)
-            self.acquisition2D = obj_
+            self.acquisitionMultiD = obj_
 # end class AcquisitionType
 
 
 class Acquisition1DType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, acquisitionParameterSet=None, fid=None):
+    def __init__(self, acquisitionParameterSet=None, fidData=None):
         self.acquisitionParameterSet = acquisitionParameterSet
-        self.fid = fid
+        self.fidData = fidData
     def factory(*args_, **kwargs_):
         if Acquisition1DType.subclass:
             return Acquisition1DType.subclass(*args_, **kwargs_)
@@ -5802,12 +5822,12 @@ class Acquisition1DType(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_acquisitionParameterSet(self): return self.acquisitionParameterSet
     def set_acquisitionParameterSet(self, acquisitionParameterSet): self.acquisitionParameterSet = acquisitionParameterSet
-    def get_fid(self): return self.fid
-    def set_fid(self, fid): self.fid = fid
+    def get_fidData(self): return self.fidData
+    def set_fidData(self, fidData): self.fidData = fidData
     def hasContent_(self):
         if (
             self.acquisitionParameterSet is not None or
-            self.fid is not None
+            self.fidData is not None
         ):
             return True
         else:
@@ -5837,8 +5857,8 @@ class Acquisition1DType(GeneratedsSuper):
             eol_ = ''
         if self.acquisitionParameterSet is not None:
             self.acquisitionParameterSet.export(outfile, level, namespace_, name_='acquisitionParameterSet', pretty_print=pretty_print)
-        if self.fid is not None:
-            self.fid.export(outfile, level, namespace_, name_='fid', pretty_print=pretty_print)
+        if self.fidData is not None:
+            self.fidData.export(outfile, level, namespace_, name_='fidData', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='Acquisition1DType'):
         level += 1
         already_processed = set()
@@ -5850,14 +5870,14 @@ class Acquisition1DType(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         if self.acquisitionParameterSet is not None:
             showIndent(outfile, level)
-            outfile.write('acquisitionParameterSet=model_.acquisitionParameterSetType(\n')
+            outfile.write('acquisitionParameterSet=model_.AcquisitionParameterSet1DType(\n')
             self.acquisitionParameterSet.exportLiteral(outfile, level, name_='acquisitionParameterSet')
             showIndent(outfile, level)
             outfile.write('),\n')
-        if self.fid is not None:
+        if self.fidData is not None:
             showIndent(outfile, level)
-            outfile.write('fid=model_.BinaryDataArrayType(\n')
-            self.fid.exportLiteral(outfile, level, name_='fid')
+            outfile.write('fidData=model_.BinaryDataArrayType(\n')
+            self.fidData.exportLiteral(outfile, level, name_='fidData')
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
@@ -5870,41 +5890,41 @@ class Acquisition1DType(GeneratedsSuper):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'acquisitionParameterSet':
-            obj_ = acquisitionParameterSetType.factory()
+            obj_ = AcquisitionParameterSet1DType.factory()
             obj_.build(child_)
             self.acquisitionParameterSet = obj_
-        elif nodeName_ == 'fid':
+        elif nodeName_ == 'fidData':
             obj_ = BinaryDataArrayType.factory()
             obj_.build(child_)
-            self.fid = obj_
+            self.fidData = obj_
 # end class Acquisition1DType
 
 
-class Acquisition2DType(GeneratedsSuper):
+class AcquisitionMultiDType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, acquisitionParameterSet=None, fid=None):
+    def __init__(self, acquisitionParameterSet=None, fidData=None):
         self.acquisitionParameterSet = acquisitionParameterSet
-        self.fid = fid
+        self.fidData = fidData
     def factory(*args_, **kwargs_):
-        if Acquisition2DType.subclass:
-            return Acquisition2DType.subclass(*args_, **kwargs_)
+        if AcquisitionMultiDType.subclass:
+            return AcquisitionMultiDType.subclass(*args_, **kwargs_)
         else:
-            return Acquisition2DType(*args_, **kwargs_)
+            return AcquisitionMultiDType(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_acquisitionParameterSet(self): return self.acquisitionParameterSet
     def set_acquisitionParameterSet(self, acquisitionParameterSet): self.acquisitionParameterSet = acquisitionParameterSet
-    def get_fid(self): return self.fid
-    def set_fid(self, fid): self.fid = fid
+    def get_fidData(self): return self.fidData
+    def set_fidData(self, fidData): self.fidData = fidData
     def hasContent_(self):
         if (
             self.acquisitionParameterSet is not None or
-            self.fid is not None
+            self.fidData is not None
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='dx:', name_='Acquisition2DType', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='dx:', name_='AcquisitionMultiDType', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5912,7 +5932,7 @@ class Acquisition2DType(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='Acquisition2DType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='AcquisitionMultiDType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
             self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
@@ -5920,18 +5940,18 @@ class Acquisition2DType(GeneratedsSuper):
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='Acquisition2DType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='AcquisitionMultiDType'):
         pass
-    def exportChildren(self, outfile, level, namespace_='dx:', name_='Acquisition2DType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='dx:', name_='AcquisitionMultiDType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
         if self.acquisitionParameterSet is not None:
             self.acquisitionParameterSet.export(outfile, level, namespace_, name_='acquisitionParameterSet', pretty_print=pretty_print)
-        if self.fid is not None:
-            self.fid.export(outfile, level, namespace_, name_='fid', pretty_print=pretty_print)
-    def exportLiteral(self, outfile, level, name_='Acquisition2DType'):
+        if self.fidData is not None:
+            self.fidData.export(outfile, level, namespace_, name_='fidData', pretty_print=pretty_print)
+    def exportLiteral(self, outfile, level, name_='AcquisitionMultiDType'):
         level += 1
         already_processed = set()
         self.exportLiteralAttributes(outfile, level, already_processed, name_)
@@ -5942,14 +5962,14 @@ class Acquisition2DType(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         if self.acquisitionParameterSet is not None:
             showIndent(outfile, level)
-            outfile.write('acquisitionParameterSet=model_.AcquisitionParameterSet2DType(\n')
+            outfile.write('acquisitionParameterSet=model_.AcquisitionParameterSetMultiDType(\n')
             self.acquisitionParameterSet.exportLiteral(outfile, level, name_='acquisitionParameterSet')
             showIndent(outfile, level)
             outfile.write('),\n')
-        if self.fid is not None:
+        if self.fidData is not None:
             showIndent(outfile, level)
-            outfile.write('fid=model_.BinaryDataArrayType(\n')
-            self.fid.exportLiteral(outfile, level, name_='fid')
+            outfile.write('fidData=model_.BinaryDataArrayType(\n')
+            self.fidData.exportLiteral(outfile, level, name_='fidData')
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
@@ -5962,14 +5982,14 @@ class Acquisition2DType(GeneratedsSuper):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'acquisitionParameterSet':
-            obj_ = AcquisitionParameterSet2DType.factory()
+            obj_ = AcquisitionParameterSetMultiDType.factory()
             obj_.build(child_)
             self.acquisitionParameterSet = obj_
-        elif nodeName_ == 'fid':
+        elif nodeName_ == 'fidData':
             obj_ = BinaryDataArrayType.factory()
             obj_.build(child_)
-            self.fid = obj_
-# end class Acquisition2DType
+            self.fidData = obj_
+# end class AcquisitionMultiDType
 
 
 class SpectrumListType(GeneratedsSuper):
@@ -6307,7 +6327,8 @@ class SpectrumType(GeneratedsSuper):
             obj_.build(child_)
             self.xAxis = obj_
         elif nodeName_ == 'yAxisType':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.yAxisType = obj_
         elif nodeName_ == 'processingParameterSet':
@@ -6657,15 +6678,18 @@ class SpectralProcessingParameterSetType(GeneratedsSuper):
             obj_.build(child_)
             self.processingSoftwareRefList.append(obj_)
         elif nodeName_ == 'postAcquisitionSolventSuppressionMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.postAcquisitionSolventSuppressionMethod = obj_
         elif nodeName_ == 'dataTransformationMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.dataTransformationMethod = obj_
         elif nodeName_ == 'calibrationCompound':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.calibrationCompound = obj_
 # end class SpectralProcessingParameterSetType
@@ -6752,7 +6776,8 @@ class SpectralProjectionParameterSetType(GeneratedsSuper):
             self.projectionAxis = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'projectionMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.projectionMethod = obj_
 # end class SpectralProjectionParameterSetType
@@ -7062,7 +7087,8 @@ class FirstDimensionProcessingParameterSetType(GeneratedsSuper):
             obj_.build(child_)
             self.calibrationReferenceShift = obj_
         elif nodeName_ == 'spectralDenoisingMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.spectralDenoisingMethod = obj_
         elif nodeName_ == 'windowFunction':
@@ -7070,7 +7096,8 @@ class FirstDimensionProcessingParameterSetType(GeneratedsSuper):
             obj_.build(child_)
             self.windowFunction.append(obj_)
         elif nodeName_ == 'baselineCorrectionMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.baselineCorrectionMethod = obj_
         elif nodeName_ == 'parameterFileRef':
@@ -7536,7 +7563,8 @@ class concentrationStandardType(GeneratedsSuper):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'type':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.type_ = obj_
         elif nodeName_ == 'concentrationInSample':
@@ -7544,111 +7572,11 @@ class concentrationStandardType(GeneratedsSuper):
             obj_.build(child_)
             self.concentrationInSample = obj_
         elif nodeName_ == 'name':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.name = obj_
 # end class concentrationStandardType
-
-
-class pulseSequenceType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, literatueReference=None, name=None, pulseSequenceFile=None):
-        self.literatueReference = _cast(None, literatueReference)
-        self.name = _cast(None, name)
-        self.pulseSequenceFile = pulseSequenceFile
-    def factory(*args_, **kwargs_):
-        if pulseSequenceType.subclass:
-            return pulseSequenceType.subclass(*args_, **kwargs_)
-        else:
-            return pulseSequenceType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_pulseSequenceFile(self): return self.pulseSequenceFile
-    def set_pulseSequenceFile(self, pulseSequenceFile): self.pulseSequenceFile = pulseSequenceFile
-    def get_literatueReference(self): return self.literatueReference
-    def set_literatueReference(self, literatueReference): self.literatueReference = literatueReference
-    def get_name(self): return self.name
-    def set_name(self, name): self.name = name
-    def hasContent_(self):
-        if (
-            self.pulseSequenceFile is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='dx:', name_='pulseSequenceType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='pulseSequenceType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='pulseSequenceType'):
-        if self.literatueReference is not None and 'literatueReference' not in already_processed:
-            already_processed.add('literatueReference')
-            outfile.write(' literatueReference=%s' % (self.gds_format_string(quote_attrib(self.literatueReference).encode(ExternalEncoding), input_name='literatueReference'), ))
-        if self.name is not None and 'name' not in already_processed:
-            already_processed.add('name')
-            outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
-    def exportChildren(self, outfile, level, namespace_='dx:', name_='pulseSequenceType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.pulseSequenceFile is not None:
-            self.pulseSequenceFile.export(outfile, level, namespace_, name_='pulseSequenceFile', pretty_print=pretty_print)
-    def exportLiteral(self, outfile, level, name_='pulseSequenceType'):
-        level += 1
-        already_processed = set()
-        self.exportLiteralAttributes(outfile, level, already_processed, name_)
-        if self.hasContent_():
-            self.exportLiteralChildren(outfile, level, name_)
-    def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        if self.literatueReference is not None and 'literatueReference' not in already_processed:
-            already_processed.add('literatueReference')
-            showIndent(outfile, level)
-            outfile.write('literatueReference="%s",\n' % (self.literatueReference,))
-        if self.name is not None and 'name' not in already_processed:
-            already_processed.add('name')
-            showIndent(outfile, level)
-            outfile.write('name="%s",\n' % (self.name,))
-    def exportLiteralChildren(self, outfile, level, name_):
-        if self.pulseSequenceFile is not None:
-            showIndent(outfile, level)
-            outfile.write('pulseSequenceFile=model_.SourceFileRefType(\n')
-            self.pulseSequenceFile.exportLiteral(outfile, level, name_='pulseSequenceFile')
-            showIndent(outfile, level)
-            outfile.write('),\n')
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('literatueReference', node)
-        if value is not None and 'literatueReference' not in already_processed:
-            already_processed.add('literatueReference')
-            self.literatueReference = value
-        value = find_attr_value_('name', node)
-        if value is not None and 'name' not in already_processed:
-            already_processed.add('name')
-            self.name = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'pulseSequenceFile':
-            obj_ = SourceFileRefType.factory()
-            obj_.build(child_)
-            self.pulseSequenceFile = obj_
-# end class pulseSequenceType
 
 
 class hadamardParameterSetType(GeneratedsSuper):
@@ -7738,29 +7666,32 @@ class hadamardParameterSetType(GeneratedsSuper):
 # end class hadamardParameterSetType
 
 
-class acquisitionParameterSetType(AcquisitionParameterSet1DType):
+class pulseSequenceFileRefListType(GeneratedsSuper):
     subclass = None
-    superclass = AcquisitionParameterSet1DType
-    def __init__(self, numberOfScans=None, numberOfSteadyStateScans=None, contactRefList=None, acquisitionParameterFileRefList=None, softwareRef=None, sampleContainer=None, sampleAcquisitionTemperature=None, solventSuppressionMethod=None, spinningRate=None, relaxationDelay=None, pulseSequence=None, shapedPulseFile=None, DirectDimensionParameterSet=None):
-        super(acquisitionParameterSetType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, )
-        self.DirectDimensionParameterSet = DirectDimensionParameterSet
-    def factory(*args_, **kwargs_):
-        if acquisitionParameterSetType.subclass:
-            return acquisitionParameterSetType.subclass(*args_, **kwargs_)
+    superclass = None
+    def __init__(self, pulseSequenceFileRef=None):
+        if pulseSequenceFileRef is None:
+            self.pulseSequenceFileRef = []
         else:
-            return acquisitionParameterSetType(*args_, **kwargs_)
+            self.pulseSequenceFileRef = pulseSequenceFileRef
+    def factory(*args_, **kwargs_):
+        if pulseSequenceFileRefListType.subclass:
+            return pulseSequenceFileRefListType.subclass(*args_, **kwargs_)
+        else:
+            return pulseSequenceFileRefListType(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_DirectDimensionParameterSet(self): return self.DirectDimensionParameterSet
-    def set_DirectDimensionParameterSet(self, DirectDimensionParameterSet): self.DirectDimensionParameterSet = DirectDimensionParameterSet
+    def get_pulseSequenceFileRef(self): return self.pulseSequenceFileRef
+    def set_pulseSequenceFileRef(self, pulseSequenceFileRef): self.pulseSequenceFileRef = pulseSequenceFileRef
+    def add_pulseSequenceFileRef(self, value): self.pulseSequenceFileRef.append(value)
+    def insert_pulseSequenceFileRef(self, index, value): self.pulseSequenceFileRef[index] = value
     def hasContent_(self):
         if (
-            self.DirectDimensionParameterSet is not None or
-            super(acquisitionParameterSetType, self).hasContent_()
+            self.pulseSequenceFileRef
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='dx:', name_='acquisitionParameterSetType', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='dx:', name_='pulseSequenceFileRefListType', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7768,7 +7699,7 @@ class acquisitionParameterSetType(AcquisitionParameterSet1DType):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='acquisitionParameterSetType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='pulseSequenceFileRefListType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
             self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
@@ -7776,32 +7707,36 @@ class acquisitionParameterSetType(AcquisitionParameterSet1DType):
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='acquisitionParameterSetType'):
-        super(acquisitionParameterSetType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='acquisitionParameterSetType')
-    def exportChildren(self, outfile, level, namespace_='dx:', name_='acquisitionParameterSetType', fromsubclass_=False, pretty_print=True):
-        super(acquisitionParameterSetType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='pulseSequenceFileRefListType'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='dx:', name_='pulseSequenceFileRefListType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.DirectDimensionParameterSet is not None:
-            self.DirectDimensionParameterSet.export(outfile, level, namespace_, name_='DirectDimensionParameterSet', pretty_print=pretty_print)
-    def exportLiteral(self, outfile, level, name_='acquisitionParameterSetType'):
+        for pulseSequenceFileRef_ in self.pulseSequenceFileRef:
+            pulseSequenceFileRef_.export(outfile, level, namespace_, name_='pulseSequenceFileRef', pretty_print=pretty_print)
+    def exportLiteral(self, outfile, level, name_='pulseSequenceFileRefListType'):
         level += 1
         already_processed = set()
         self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        super(acquisitionParameterSetType, self).exportLiteralAttributes(outfile, level, already_processed, name_)
+        pass
     def exportLiteralChildren(self, outfile, level, name_):
-        super(acquisitionParameterSetType, self).exportLiteralChildren(outfile, level, name_)
-        if self.DirectDimensionParameterSet is not None:
+        showIndent(outfile, level)
+        outfile.write('pulseSequenceFileRef=[\n')
+        level += 1
+        for pulseSequenceFileRef_ in self.pulseSequenceFileRef:
             showIndent(outfile, level)
-            outfile.write('DirectDimensionParameterSet=model_.AcquisitionDimensionParameterSetType(\n')
-            self.DirectDimensionParameterSet.exportLiteral(outfile, level, name_='DirectDimensionParameterSet')
+            outfile.write('model_.SourceFileRefType(\n')
+            pulseSequenceFileRef_.exportLiteral(outfile, level, name_='SourceFileRefType')
             showIndent(outfile, level)
             outfile.write('),\n')
+        level -= 1
+        showIndent(outfile, level)
+        outfile.write('],\n')
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -7809,14 +7744,13 @@ class acquisitionParameterSetType(AcquisitionParameterSet1DType):
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
     def buildAttributes(self, node, attrs, already_processed):
-        super(acquisitionParameterSetType, self).buildAttributes(node, attrs, already_processed)
+        pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'DirectDimensionParameterSet':
-            obj_ = AcquisitionDimensionParameterSetType.factory()
+        if nodeName_ == 'pulseSequenceFileRef':
+            obj_ = SourceFileRefType.factory()
             obj_.build(child_)
-            self.DirectDimensionParameterSet = obj_
-        super(acquisitionParameterSetType, self).buildChildren(child_, node, nodeName_, True)
-# end class acquisitionParameterSetType
+            self.pulseSequenceFileRef.append(obj_)
+# end class pulseSequenceFileRefListType
 
 
 class processingParameterSetType(GeneratedsSuper):
@@ -7913,15 +7847,18 @@ class processingParameterSetType(GeneratedsSuper):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'postAcquisitionSolventSuppressionMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.postAcquisitionSolventSuppressionMethod = obj_
         elif nodeName_ == 'calibrationCompound':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.calibrationCompound = obj_
         elif nodeName_ == 'dataTransformationMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.dataTransformationMethod = obj_
 # end class processingParameterSetType
@@ -8020,7 +7957,8 @@ class windowFunctionType(GeneratedsSuper):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'windowFunctionMethod':
-            obj_ = CVTermType.factory()
+            class_obj_ = self.get_class_obj_(child_, CVTermType)
+            obj_ = class_obj_.factory()
             obj_.build(child_)
             self.windowFunctionMethod = obj_
         elif nodeName_ == 'windowFunctionParameter':
@@ -8030,13 +7968,164 @@ class windowFunctionType(GeneratedsSuper):
 # end class windowFunctionType
 
 
+class ContactType(ParamGroupType):
+    """A person's name and information on how to communicate with them.An
+    identifier for this contact .Name of the contact person.Uniform
+    Resource Locator related to the contact person or
+    organization.Postal address of the contact person or
+    organization.Home institution of the contact person.Email
+    address of the contact person or organization."""
+    subclass = None
+    superclass = ParamGroupType
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, url=None, id=None, address=None, organization=None, fullname=None, email=None):
+        super(ContactType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, )
+        self.url = _cast(None, url)
+        self.id = _cast(None, id)
+        self.address = _cast(None, address)
+        self.organization = _cast(None, organization)
+        self.fullname = _cast(None, fullname)
+        self.email = _cast(None, email)
+        pass
+    def factory(*args_, **kwargs_):
+        if ContactType.subclass:
+            return ContactType.subclass(*args_, **kwargs_)
+        else:
+            return ContactType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_url(self): return self.url
+    def set_url(self, url): self.url = url
+    def get_id(self): return self.id
+    def set_id(self, id): self.id = id
+    def get_address(self): return self.address
+    def set_address(self, address): self.address = address
+    def get_organization(self): return self.organization
+    def set_organization(self, organization): self.organization = organization
+    def get_fullname(self): return self.fullname
+    def set_fullname(self, fullname): self.fullname = fullname
+    def get_email(self): return self.email
+    def set_email(self, email): self.email = email
+    def hasContent_(self):
+        if (
+            super(ContactType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='dx:', name_='ContactType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='ContactType')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='dx:', name_='ContactType'):
+        super(ContactType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='ContactType')
+        if self.url is not None and 'url' not in already_processed:
+            already_processed.add('url')
+            outfile.write(' url=%s' % (self.gds_format_string(quote_attrib(self.url).encode(ExternalEncoding), input_name='url'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.address is not None and 'address' not in already_processed:
+            already_processed.add('address')
+            outfile.write(' address=%s' % (self.gds_format_string(quote_attrib(self.address).encode(ExternalEncoding), input_name='address'), ))
+        if self.organization is not None and 'organization' not in already_processed:
+            already_processed.add('organization')
+            outfile.write(' organization=%s' % (self.gds_format_string(quote_attrib(self.organization).encode(ExternalEncoding), input_name='organization'), ))
+        if self.fullname is not None and 'fullname' not in already_processed:
+            already_processed.add('fullname')
+            outfile.write(' fullname=%s' % (self.gds_format_string(quote_attrib(self.fullname).encode(ExternalEncoding), input_name='fullname'), ))
+        if self.email is not None and 'email' not in already_processed:
+            already_processed.add('email')
+            outfile.write(' email=%s' % (self.gds_format_string(quote_attrib(self.email).encode(ExternalEncoding), input_name='email'), ))
+    def exportChildren(self, outfile, level, namespace_='dx:', name_='ContactType', fromsubclass_=False, pretty_print=True):
+        super(ContactType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+    def exportLiteral(self, outfile, level, name_='ContactType'):
+        level += 1
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
+        if self.hasContent_():
+            self.exportLiteralChildren(outfile, level, name_)
+    def exportLiteralAttributes(self, outfile, level, already_processed, name_):
+        if self.url is not None and 'url' not in already_processed:
+            already_processed.add('url')
+            showIndent(outfile, level)
+            outfile.write('url="%s",\n' % (self.url,))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            showIndent(outfile, level)
+            outfile.write('id="%s",\n' % (self.id,))
+        if self.address is not None and 'address' not in already_processed:
+            already_processed.add('address')
+            showIndent(outfile, level)
+            outfile.write('address="%s",\n' % (self.address,))
+        if self.organization is not None and 'organization' not in already_processed:
+            already_processed.add('organization')
+            showIndent(outfile, level)
+            outfile.write('organization="%s",\n' % (self.organization,))
+        if self.fullname is not None and 'fullname' not in already_processed:
+            already_processed.add('fullname')
+            showIndent(outfile, level)
+            outfile.write('fullname="%s",\n' % (self.fullname,))
+        if self.email is not None and 'email' not in already_processed:
+            already_processed.add('email')
+            showIndent(outfile, level)
+            outfile.write('email="%s",\n' % (self.email,))
+        super(ContactType, self).exportLiteralAttributes(outfile, level, already_processed, name_)
+    def exportLiteralChildren(self, outfile, level, name_):
+        super(ContactType, self).exportLiteralChildren(outfile, level, name_)
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+    def buildAttributes(self, node, attrs, already_processed):
+        value = find_attr_value_('url', node)
+        if value is not None and 'url' not in already_processed:
+            already_processed.add('url')
+            self.url = value
+        value = find_attr_value_('id', node)
+        if value is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            self.id = value
+        value = find_attr_value_('address', node)
+        if value is not None and 'address' not in already_processed:
+            already_processed.add('address')
+            self.address = value
+        value = find_attr_value_('organization', node)
+        if value is not None and 'organization' not in already_processed:
+            already_processed.add('organization')
+            self.organization = value
+        value = find_attr_value_('fullname', node)
+        if value is not None and 'fullname' not in already_processed:
+            already_processed.add('fullname')
+            self.fullname = value
+        value = find_attr_value_('email', node)
+        if value is not None and 'email' not in already_processed:
+            already_processed.add('email')
+            self.email = value
+        super(ContactType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        super(ContactType, self).buildChildren(child_, node, nodeName_, True)
+        pass
+# end class ContactType
+
+
 GDSClassesMapping = {
     'gammaB1PulseFieldStrength': ValueWithUnitType,
-    'acquisition2D': Acquisition2DType,
     'concentrationInSample': ValueWithUnitType,
     'softwareRef': SoftwareRefType,
     'encodingScheme': CVParamType,
-    'fid': BinaryDataArrayType,
     'fileDescription': FileDescriptionType,
     'dataTransformationMethod': CVTermType,
     'firstDimensionProcessingParameterSet': FirstDimensionProcessingParameterSetType,
@@ -8046,22 +8135,24 @@ GDSClassesMapping = {
     'processingParameterSet': processingParameterSetType,
     'additionalSoluteList': AdditionalSoluteListType,
     'sourceFile': SourceFileType,
-    'instrumentConfigurationList': InstrumentConfigurationListType,
+    'pulseSequenceFileRefList': pulseSequenceFileRefListType,
     'higherDimensionParameterSet': HigherDimensionProcessingParameterSetType,
+    'pulseSequenceFileRef': SourceFileRefType,
     'softwareList': SoftwareListType,
     'referenceableParamGroupList': ReferenceableParamGroupListType,
-    'pulseSequence': pulseSequenceType,
+    'pulseSequence': PulseSequenceType,
     'windowFunctionMethod': CVTermType,
     'solventType': CVTermType,
-    'acquisitionParameterSet': AcquisitionParameterSet2DType,
+    'acquisitionParameterSet': AcquisitionParameterSetMultiDType,
     'calibrationReferenceShift': ValueWithUnitType,
-    'contactRefList': ContactRefListType,
+    'DirectDimensionParameterSet': AcquisitionDimensionParameterSetType,
     'solventSuppressionMethod': CVParamType,
     'acquisitionParameterFileRefList': SourceFileRefListType,
     'dataProcessing': DataProcessingType,
     'spectrumDataArray': BinaryDataArrayType,
     'processingContactRefList': ContactRefListType,
     'fileContent': ParamGroupType,
+    'samplingStrategy': CVTermType,
     'baselineCorrectionMethod': CVTermType,
     'acquisition1D': Acquisition1DType,
     'sourceFileRef': SourceFileRefType,
@@ -8074,6 +8165,7 @@ GDSClassesMapping = {
     'fieldFrequencyLock': fieldFrequencyLockType,
     'calibrationCompound': CVTermType,
     'zeroOrderPhaseCorrection': ValueWithUnitType,
+    'instrumentConfigurationList': InstrumentConfigurationListType,
     'cv': CVType,
     'spinningRate': ValueWithUnitType,
     'cvParam': CVParamType,
@@ -8084,13 +8176,14 @@ GDSClassesMapping = {
     'nmrML': nmrMLType,
     'cvList': CVListType,
     'encodingMethod': CVTermType,
+    'decouplingMethod': CVTermType,
     'xAxis': AxisWithUnitType,
     'contactList': ContactListType,
     'projectionMethod': CVTermType,
     'higherDimensionProcessingParameterSet': HigherDimensionProcessingParameterSetType,
     'sample': SampleType,
-    'DirectDimensionParameterSet': AcquisitionDimensionParameterSetType,
-    'windowFunction': windowFunctionType,
+    'contactRefList': ContactRefListType,
+    'parameterFileRef': SourceFileRefType,
     'windowFunctionParameter': CVParamType,
     'shapedPulseFile': SourceFileRefType,
     'hadamardParameterSet': hadamardParameterSetType,
@@ -8100,8 +8193,9 @@ GDSClassesMapping = {
     'cvParamWithUnit': CVParamWithUnitType,
     'spectrumList': SpectrumListType,
     'sampleContainer': CVTermType,
+    'fidData': BinaryDataArrayType,
     'sampleList': SampleListType,
-    'parameterFileRef': SourceFileRefType,
+    'windowFunction': windowFunctionType,
     'irradiationFrequency': ValueWithUnitType,
     'acquisitionNucleus': CVTermType,
     'postAcquisitionSolventSuppressionMethod': CVTermType,
@@ -8109,8 +8203,8 @@ GDSClassesMapping = {
     'sweepWidth': ValueWithUnitType,
     'firstOrderPhaseCorrection': ValueWithUnitType,
     'indirectDimensionParameterSet': AcquisitionDimensionParameterSetType,
+    'contact': ContactType,
     'hadamardFrequency': ValueWithUnitType,
-    'pulseSequenceFile': SourceFileRefType,
     'processingSoftwareRefList': SoftwareRefListType,
     'contactRef': ContactRefType,
     'solventConcentration': ValueWithUnitType,
@@ -8118,10 +8212,12 @@ GDSClassesMapping = {
     'buffer': CVTermType,
     'timeDomain': BinaryDataArrayType,
     'instrumentConfiguration': InstrumentConfigurationType,
+    'samplingTimePoints': BinaryDataArrayType,
     'dataProcessingList': DataProcessingListType,
     'referenceableParamGroup': ReferenceableParamGroupType,
-    'contact': ContactType,
+    'cvTerm': CVTermType,
     'software': SoftwareType,
+    'acquisitionMultiD': AcquisitionMultiDType,
 }
 
 
@@ -8149,7 +8245,7 @@ def parse(inFileName, silence=False):
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
         rootTag = 'nmrML'
-        rootClass = nmrMLType
+        rootClass = nmrML
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -8169,7 +8265,7 @@ def parseEtree(inFileName, silence=False):
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
         rootTag = 'nmrML'
-        rootClass = nmrMLType
+        rootClass = nmrML
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -8193,7 +8289,7 @@ def parseString(inString, silence=False):
     roots = get_root_tag(rootNode)
     rootClass = roots[1]
     if rootClass is None:
-        rootClass = nmrMLType
+        rootClass = nmrML
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -8212,7 +8308,7 @@ def parseLiteral(inFileName, silence=False):
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
         rootTag = 'nmrML'
-        rootClass = nmrMLType
+        rootClass = nmrML
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -8241,11 +8337,11 @@ if __name__ == '__main__':
 
 __all__ = [
     "Acquisition1DType",
-    "Acquisition2DType",
     "AcquisitionDimensionParameterSetType",
     "AcquisitionIndirectDimensionParameterSetType",
+    "AcquisitionMultiDType",
     "AcquisitionParameterSet1DType",
-    "AcquisitionParameterSet2DType",
+    "AcquisitionParameterSetMultiDType",
     "AcquisitionParameterSetType",
     "AcquisitionType",
     "AdditionalSoluteListType",
@@ -8270,6 +8366,7 @@ __all__ = [
     "ParamGroupType",
     "ProcessingMethodType",
     "Projected3DProcessingParamaterSetType",
+    "PulseSequenceType",
     "ReferenceableParamGroupListType",
     "ReferenceableParamGroupRefType",
     "ReferenceableParamGroupType",
@@ -8294,12 +8391,11 @@ __all__ = [
     "TemperatureType",
     "UserParamType",
     "ValueWithUnitType",
-    "acquisitionParameterSetType",
     "concentrationStandardType",
     "fieldFrequencyLockType",
     "hadamardParameterSetType",
     "nmrMLType",
     "processingParameterSetType",
-    "pulseSequenceType",
+    "pulseSequenceFileRefListType",
     "windowFunctionType"
 ]
