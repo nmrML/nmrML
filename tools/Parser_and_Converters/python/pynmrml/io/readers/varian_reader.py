@@ -1,7 +1,6 @@
+import os, nmrglue
 from abstract_reader import AbstractReader
-import os
-import nmrglue
-from ..util import convert
+from ...util import convert
 
 class VarianOneDReader(AbstractReader):
     #def __init__(self, input_dir):

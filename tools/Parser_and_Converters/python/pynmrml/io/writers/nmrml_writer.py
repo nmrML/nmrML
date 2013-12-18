@@ -4,15 +4,7 @@ import hashlib
 
 import numpy as np
 
-from .. import nmrML
-
-#sys.path.append(os.path.join(os.path.dirname(__file__), 'tools/Parser_and_Converters/python'))
-from ..nmrML import *
-#from pynmrml.readers.varian_reader import *
-#from pynmrml.cv.factory import *
-
-#infile = os.path.abspath("examples/reference_spectra_example/HMDB00005.fid")
-#reader = VarianOneDReader(infile)
+from ...nmrML import *
 
 #uoCV  = CvFactory.uo()
 #nmrCV = CvFactory.nmrCV()
