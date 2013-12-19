@@ -1,7 +1,7 @@
 import sys, os, glob
 
 # add the converter tools to the syspath
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 
 from pynmrml import io
 from pynmrml import nmrML
