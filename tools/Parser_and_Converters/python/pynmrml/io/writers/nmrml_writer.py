@@ -17,6 +17,9 @@ class nmrmlWriter(object):
         self.reader       = reader_class(infile)
         self.instance     = self.build_instance()
 
+        # Default is no namespace
+        self.namespace    = ""
+
     # building this as a script then moving functionality into the
     # class definitions, and making the parser oo
 
@@ -26,13 +29,9 @@ class nmrmlWriter(object):
         hashlib.sha1(open(filename).read()).hexdigest()
 
     def write(self,out):
-        #f = open("test.out.nmrML","w")
-        namespace = ""
-
         # Have to set name_ to be the name the root element...
         # not sure why the default is the name of the element's type. Doesn't seem right.
-        #instance.export(sys.stdout,0,namespace,name_ = 'nmrML')
-        self.instance.export(out, 0, namespace, name_ = 'nmrML')
+        self.instance.export(out, 0, self.namespace, name_ = 'nmrML')
 
     def doc(self):
       return self.instance

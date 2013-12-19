@@ -41,10 +41,21 @@ class AbstractReader(object):
     @abstractmethod
     def acquisition_nucleus(self):
         return
+    @abstractmethod
+    def sweep_width(self):
+        return
 
     @abstractmethod
-    def gamma_b1_pulse_field_strength(self):
+    def dwell_time(self):
         return
+    
+    @abstractmethod
+    def pulse_width(self):
+        # Pulse Width at 90 degree
+        return
+
+    def gamma_b1_pulse_field_strength(self):
+        return 1/( 4 * float(self.pulse_width()) / 1000000.0 )
 
     @abstractmethod
     def irradiation_frequency(self):

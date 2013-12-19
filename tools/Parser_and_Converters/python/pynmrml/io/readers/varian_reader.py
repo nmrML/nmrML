@@ -3,10 +3,6 @@ from abstract_reader import AbstractReader
 from ...util import convert
 
 class VarianOneDReader(AbstractReader):
-    #def __init__(self, input_dir):
-    #    self.load_params()
-    #    self.super(VarianOneDReader, self, input_dir)
-
     def load_params(self):
         dic, _ = nmrglue.varian.read(self.input_dir)
         self.varian_params = dic["procpar"]
@@ -18,6 +14,8 @@ class VarianOneDReader(AbstractReader):
         return self.varian_fid
 
     def get_param(self,name):
+        # Returns the value from the procpar file for the varian parameter
+        # passed in as the argument. 
         return self.varian_params[name]['values'][0]
 
     def number_of_scans(self):
@@ -42,13 +40,21 @@ class VarianOneDReader(AbstractReader):
     def number_of_data_points(self):
         return self.get_param('np')
 
+    def sweep_width(self):
+        return self.get_param('sw')
+
+    def dwell_time(self):
+        # dwell time is actually not available in varian, simply use
+        # the inverse of sweep width to get the dwell time in Hz
+        return 1/float(self.sweep_width())
+
+    # in microseconds
+    def pulse_width(self):
+        return self.get_param('pw90')
+
     # TODO convert the term to the one we need for the CV
     def acquisition_nucleus(self):
         return self.get_param('tn')
-
-    # TODO calculate this value..
-    def gamma_b1_pulse_field_strength(self):
-        return "??"
 
     # TODO make sure this value is in Hz
     def irradiation_frequency(self):
