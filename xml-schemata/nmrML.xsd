@@ -105,8 +105,8 @@
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ContactListType">
-    <xs:sequence maxOccurs="unbounded" minOccurs="1">
-      <xs:element name="contact" type="dx:ContactType"/>
+    <xs:sequence minOccurs="1">
+      <xs:element name="contact" type="dx:ContactType" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ContactType">

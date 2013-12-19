@@ -10,6 +10,18 @@ pynmrML is a Python library for reading, writing and interfacing with [nmrML](ht
 * [lxml](http://lxml.de/)
 * [nmrglue](https://github.com/jjhelmus/nmrglue)
 
+Add the path the the bin dir to use the `var2nmrML` command
+
+```bash
+export PATH=${PATH}:/Users/mike/Projects/nmrML/nmrML/tools/Parser_and_Converters/python/pynmrml/bin
+```
+
+### Usage
+Convert a varian FID to an nmrML instance. Provide the path to the FID and the name to output the nmrML file:
+
+```
+var2nmrML input.fid output.nmrML
+```
 
 ### Development Prerequisites:
 generateDS.py is required to autogenerate the bindings.
@@ -44,6 +56,8 @@ To regenerate the bindings from an updated schema run the following command:
 ```bash 
 generateDS.py --subclass-suffix=""  --root-element="nmrML" --external-encoding='utf-8'  --super="nmrML_lib"  -o nmrML_lib.py -s nmrML.py xml-schemata/nmrML.xsd
 ```
+
+Then replace the current nmrML_lib.py with the generated one
 
 ## Authors
 

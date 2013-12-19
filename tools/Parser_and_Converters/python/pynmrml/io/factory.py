@@ -8,7 +8,7 @@ import readers, writers
 #from .writers.nmrml import *
 
 
-def varian_reader(input_file):
+def varian_converter(input_file):
     return writers.nmrmlWriter(readers.VarianOneDReader,input_file)
 
 #def bruker_to_nmrml(input_file):

@@ -13,8 +13,9 @@ class nmrmlWriter(object):
 
     def __init__(self,reader_class,infile):
         self.reader_class = reader_class
-        self.infile = infile
-        self.reader = reader_class(infile)
+        self.infile       = infile
+        self.reader       = reader_class(infile)
+        self.instance     = self.build_instance()
 
     # building this as a script then moving functionality into the
     # class definitions, and making the parser oo
@@ -25,6 +26,18 @@ class nmrmlWriter(object):
         hashlib.sha1(open(filename).read()).hexdigest()
 
     def write(self,out):
+        #f = open("test.out.nmrML","w")
+        namespace = ""
+
+        # Have to set name_ to be the name the root element...
+        # not sure why the default is the name of the element's type. Doesn't seem right.
+        #instance.export(sys.stdout,0,namespace,name_ = 'nmrML')
+        self.instance.export(out, 0, namespace, name_ = 'nmrML')
+
+    def doc(self):
+      return self.instance
+
+    def build_instance(self):
         instance = nmrMLType()
 
         # Add the CVs
@@ -47,7 +60,6 @@ class nmrmlWriter(object):
         instance.set_cvList(cvList)
 
         # Add fileDescription
-
 
         # Add contacts
         contactList = ContactListType()
@@ -109,14 +121,19 @@ class nmrmlWriter(object):
 
         dd_param_set = AcquisitionDimensionParameterSetType(
             decoupled="true", numberOfDataPoints=self.reader.number_of_data_points() )
+
         # TODO varian gives H1 need to get correct CV term from this
         dd_param_set.set_acquisitionNucleus(
             CVTermType(name=self.reader.acquisition_nucleus(), cvRef="??", accession="??"))
+        
         # TODO calculate this value
         dd_param_set.set_gammaB1PulseFieldStrength(ValueWithUnitType(
-          value=self.reader.gamma_b1_pulse_field_strength(), unitName="tesla", unitCvRef="UO", unitAccession="UO:0000228"))
-        dd_param_set.set_irradiationFrequency(ValueWithUnitType( value=self.reader.irradiation_frequency(),
-          unitName="hertz", unitCvRef="UO", unitAccession="UO:0000106" ))
+            value=self.reader.gamma_b1_pulse_field_strength(), 
+            unitName="tesla", unitCvRef="UO", unitAccession="UO:0000228"))
+
+        dd_param_set.set_irradiationFrequency(ValueWithUnitType(
+            value=self.reader.irradiation_frequency(),
+            unitName="hertz", unitCvRef="UO", unitAccession="UO:0000106" ))
 
         # TODO how to get??
         dd_param_set.set_decouplingMethod(CVTermType(name=self.reader.decoupling_method(),
@@ -143,10 +160,6 @@ class nmrmlWriter(object):
         acquisition = AcquisitionType(acquisition1D=acquisition_1D)
         instance.set_acquisition(acquisition)
 
-        #f = open("test.out.nmrML","w")
-        namespace = ""
+        return instance
 
-        # Have to set name_ to be the name the root element...
-        # not sure why the default is the name of the element's type. Doesn't seem right.
-        #instance.export(sys.stdout,0,namespace,name_ = 'nmrML')
-        instance.export(out, 0, namespace, name_ = 'nmrML')
+

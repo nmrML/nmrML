@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Wed Oct 30 15:59:51 2013 by generateDS.py version 2.11a.
+# Generated Wed Dec 18 17:30:45 2013 by generateDS.py version 2.11a.
 #
 
 import sys
@@ -1136,7 +1136,10 @@ class ContactListType(GeneratedsSuper):
     subclass = None
     superclass = None
     def __init__(self, contact=None):
-        self.contact = contact
+        if contact is None:
+            self.contact = []
+        else:
+            self.contact = contact
     def factory(*args_, **kwargs_):
         if ContactListType.subclass:
             return ContactListType.subclass(*args_, **kwargs_)
@@ -1145,9 +1148,11 @@ class ContactListType(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_contact(self): return self.contact
     def set_contact(self, contact): self.contact = contact
+    def add_contact(self, value): self.contact.append(value)
+    def insert_contact(self, index, value): self.contact[index] = value
     def hasContent_(self):
         if (
-            self.contact is not None
+            self.contact
         ):
             return True
         else:
@@ -1175,8 +1180,8 @@ class ContactListType(GeneratedsSuper):
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.contact is not None:
-            self.contact.export(outfile, level, namespace_, name_='contact', pretty_print=pretty_print)
+        for contact_ in self.contact:
+            contact_.export(outfile, level, namespace_, name_='contact', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='ContactListType'):
         level += 1
         already_processed = set()
@@ -1186,12 +1191,18 @@ class ContactListType(GeneratedsSuper):
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         pass
     def exportLiteralChildren(self, outfile, level, name_):
-        if self.contact is not None:
+        showIndent(outfile, level)
+        outfile.write('contact=[\n')
+        level += 1
+        for contact_ in self.contact:
             showIndent(outfile, level)
-            outfile.write('contact=model_.ContactType(\n')
-            self.contact.exportLiteral(outfile, level, name_='contact')
+            outfile.write('model_.ContactType(\n')
+            contact_.exportLiteral(outfile, level, name_='ContactType')
             showIndent(outfile, level)
             outfile.write('),\n')
+        level -= 1
+        showIndent(outfile, level)
+        outfile.write('],\n')
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -1204,7 +1215,7 @@ class ContactListType(GeneratedsSuper):
         if nodeName_ == 'contact':
             obj_ = ContactType.factory()
             obj_.build(child_)
-            self.contact = obj_
+            self.contact.append(obj_)
 # end class ContactListType
 
 
