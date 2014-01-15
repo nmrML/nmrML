@@ -40,6 +40,7 @@ readNMRMLFID <- function (filename) {
 #'        to be read, or a character vector of length one describing
 #'        the mode: one of '"numeric"', '"double"', '"integer"',
 #'        '"int"', '"logical"', '"complex"', '"character"', '"raw"'.
+#' @param sizeof the data type. 
 #' @param compression c("gzip", "bzip2", "xz", "none") 
 #'        character string, the type of compression.  May be
 #'        abbreviated to a single letter, defaults to "none"
@@ -49,14 +50,14 @@ readNMRMLFID <- function (filename) {
 #' @examples
 #' nmRIO:::binaryArrayDecode("eJxjYACBD/YMEOAAoTigtACUFoHSElBaBkorOAAAeOcDcA==", compression="gzip")
 
-binaryArrayDecode <- function (b64string, what="double", compression=c("gzip", "bzip2", "xz", "none") ) {
+binaryArrayDecode <- function (b64string, what="double", sizeof=4, compression=c("gzip", "bzip2", "xz", "none") ) {
     if (missing(compression)) {
         compression <- "none"
     }
     ## Decode. TODO: Check cvParam about the encoding
     raws <- memDecompress(base64decode(b64string, "raw"), type=compression)
-    doubles <- readBin(raws, n=length(raws)+1, what=what)
-    doubles
+    result <- readBin(raws, n=length(raws)+1, what=what, size=sizeof)
+    result
 }
 
 
