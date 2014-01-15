@@ -3356,7 +3356,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000330">
         <rdfs:label xml:lang="en">NMR solvent</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000027"/>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
     </owl:Class>
     
 
@@ -3365,7 +3365,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000331">
         <rdfs:label xml:lang="en">NMR buffer</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000027"/>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
     </owl:Class>
     
 
@@ -3411,7 +3411,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000457">
         <rdfs:label rdf:datatype="&xsd;string">sample</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000027"/>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000457</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">tempdef: A sample is a role that is played by an object of interest in an investigation used to obtain generalizable information about the sample source.
@@ -3431,7 +3431,7 @@ defprov: Daniel Schober</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000463">
         <rdfs:label rdf:datatype="&xsd;string">instrument</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000027"/>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Description of the instrument or the mass spectrometer.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000463</oboInOwl:id>
@@ -4259,7 +4259,7 @@ defprov: Daniel Schober</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000881">
         <rdfs:label rdf:datatype="&xsd;string">chemical compound</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000027"/>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A substance formed by chemical union of two or more elements or ingredients in definite proportion by weight.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000881</oboInOwl:id>
@@ -6424,7 +6424,7 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400083">
         <rdfs:label rdf:datatype="&xsd;string">acquisition nucleus</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000027"/>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</rdfs:comment>
     </owl:Class>
     
