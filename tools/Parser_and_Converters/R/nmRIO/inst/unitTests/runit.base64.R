@@ -31,4 +31,12 @@ test.base64todouble <- function() {
     checkEqualsNumeric(result, 1:8)
 }
 
-
+disabled.test.base64tocomplex128 <- function() {
+    b64string <- "MAAAF/H//8no///QF..MAAAF/H//8no///QF"
+    
+    doubles <- nmRIO:::binaryArrayDecode(b64string,
+                                        what="double",
+                                        compression="gzip")
+    result <- fidvector2complex1D(doubles)    
+    checkEqualsNumeric(result, 1:8)
+}

@@ -174,6 +174,7 @@ if (FALSE) {
     
     
     ## from Bruker 
+    library(nmRIO)
     filename <- "../../../../../examples/reference_spectra_example/HMDB00005.nmrML"
     filename
     
