@@ -294,39 +294,9 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     
 
 
-    <!-- http://nmrML.org/nmrCV#is_manufactured_by -->
-
-    <owl:ObjectProperty rdf:about="http://nmrML.org/nmrCV#is_manufactured_by">
-        <rdfs:label xml:lang="en">is manufactured by</rdfs:label>
-        <rdfs:range rdf:resource="http://nmrML.org/nmrCV#organization"/>
-        <rdfs:domain rdf:resource="&btl2;MaterialObject"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/biotop/btl2.owl#isBearerOf -->
 
     <owl:ObjectProperty rdf:about="&btl2;isBearerOf"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://nmrML.org/nmrCV#has_value -->
-
-    <owl:DatatypeProperty rdf:about="http://nmrML.org/nmrCV#has_value">
-        <rdfs:label>has value</rdfs:label>
-    </owl:DatatypeProperty>
     
 
 
@@ -338,69 +308,6 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://nmrML.org/nmrCV#5_mm_7inch_Long_100_MHz_Borosilicate_Economy_NMR_Sample_Tube -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#5_mm_7inch_Long_100_MHz_Borosilicate_Economy_NMR_Sample_Tube">
-        <rdfs:label xml:lang="en">Wilmad 5 mm 7 inch long 100 MHz Borosilicate Economy NMR sample tube</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#tube"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&btl2;hasPart"/>
-                <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#borosilicate"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&btl2;isBearerOf"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://nmrML.org/nmrCV#magnetic_field_rating"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&btl2;isRepresentedBy"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;UO_0000106"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://nmrML.org/nmrCV#has_value"/>
-                                        <owl:hasValue rdf:datatype="&xsd;integer">100</owl:hasValue>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&btl2;isBearerOf"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;PATO_0001334"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&btl2;isRepresentedBy"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;UO_0000016"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://nmrML.org/nmrCV#has_value"/>
-                                        <owl:hasValue rdf:datatype="&xsd;integer">5</owl:hasValue>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nmrML.org/nmrCV#is_manufactured_by"/>
-                <owl:hasValue rdf:resource="http://nmrML.org/nmrCV#Wilmad"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
     
 
 
@@ -588,7 +495,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000015">
         <rdfs:label xml:lang="en">peak processing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
     </owl:Class>
     
 
@@ -1161,7 +1068,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000069">
         <rdfs:label xml:lang="en">multiplying FID by window function</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
     </owl:Class>
     
 
@@ -1179,7 +1086,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000071">
         <rdfs:label xml:lang="en">phase correction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
         <oboInOwl:hasExactSynonym>spectral phasing</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>phasing</oboInOwl:hasExactSynonym>
     </owl:Class>
@@ -1190,7 +1097,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000072">
         <rdfs:label xml:lang="en">integration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
     </owl:Class>
     
 
@@ -1217,7 +1124,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000075">
         <rdfs:label xml:lang="en">spectral referencing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
     </owl:Class>
     
 
@@ -1257,7 +1164,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000079">
         <rdfs:label xml:lang="en">scaling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
         <rdfs:comment>used to be called &apos;scaling algorithm&apos;</rdfs:comment>
     </owl:Class>
     
@@ -1437,7 +1344,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000099">
         <rdfs:label xml:lang="en">Gibbs multiplication</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
     </owl:Class>
     
 
@@ -1915,7 +1822,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000154">
         <rdfs:label xml:lang="en">3D strip plot generation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
     </owl:Class>
     
 
@@ -2770,7 +2677,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000249">
         <rdfs:label xml:lang="en">DSP phase correction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000071"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
     </owl:Class>
     
 
@@ -2893,7 +2800,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000261">
         <rdfs:label xml:lang="en">chemical shift sorting</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
         <obo:IAO_0000115>A method of sorting multiple spectra by position of chemical shift peaks. This method is used in Batman and improves the fit for shifted/overlapped peaks.</obo:IAO_0000115>
     </owl:Class>
     
@@ -6336,7 +6243,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400073">
         <rdfs:label rdf:datatype="&xsd;string">spectral denoising</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A method for eliminating or reducing the noise in a spectrum.</rdfs:comment>
     </owl:Class>
     
@@ -6346,7 +6253,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400074">
         <rdfs:label rdf:datatype="&xsd;string">baseline correction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A method of flattening the baseline of a spectrum.</rdfs:comment>
     </owl:Class>
     
@@ -6408,7 +6315,7 @@ altdef: The number of degrees that a central peak must be moved in order to achi
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400081">
         <rdfs:label rdf:datatype="&xsd;string">symmetrisation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -6550,7 +6457,7 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400097">
         <rdfs:label rdf:datatype="&xsd;string">line broadening</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400063"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -6560,7 +6467,7 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400098">
         <rdfs:label rdf:datatype="&xsd;string">line sharpening</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400063"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
@@ -6659,7 +6566,7 @@ synonym: NMR quality check parameter set</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400108">
         <rdfs:label rdf:datatype="&xsd;string">post-acquisition water suppression</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400066"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A data processing technique used to suppress the water peak in a spectrum in order to get clearer results.
 defprov: Daniel Schober</rdfs:comment>
@@ -8611,76 +8518,10 @@ Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdf
     
 
 
-    <!-- http://nmrML.org/nmrCV#borosilicate -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#borosilicate">
-        <rdfs:label xml:lang="en">borosilicate</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000881"/>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#keyword -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#keyword">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400117"/>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#magnetic_field_rating -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#magnetic_field_rating">
-        <rdfs:label xml:lang="en">magnetic field rating</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&btl2;InformationObject"/>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#manufacturing_organization -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#manufacturing_organization">
-        <rdfs:label xml:lang="en">manufacturing organization</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#organization"/>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#organization -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#organization">
-        <rdfs:label xml:lang="en">organization</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&btl2;MaterialObject"/>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#tube -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#tube">
-        <rdfs:label xml:lang="en">tube</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&btl2;MaterialObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&btl2;hasPart"/>
-                <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#NMR:1000881"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&btl2;isBearerOf"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://nmrML.org/nmrCV#magnetic_field_rating"/>
-                            <rdf:Description rdf:about="&obo;PATO_0000122"/>
-                            <rdf:Description rdf:about="&obo;PATO_0001334"/>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <ru-meta:definition xml:lang="en">a type of vessel / container defined in terms of material, coating, diameter, length and magnetic field rating</ru-meta:definition>
     </owl:Class>
     
 
@@ -8730,57 +8571,6 @@ Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdf
     <!-- http://purl.org/biotop/btl2.owl#Role -->
 
     <owl:Class rdf:about="&btl2;Role"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://nmrML.org/nmrCV#Agilent -->
-
-    <owl:NamedIndividual rdf:about="http://nmrML.org/nmrCV#Agilent">
-        <rdf:type rdf:resource="http://nmrML.org/nmrCV#manufacturing_organization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#Bruker -->
-
-    <owl:NamedIndividual rdf:about="http://nmrML.org/nmrCV#Bruker">
-        <rdf:type rdf:resource="http://nmrML.org/nmrCV#manufacturing_organization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#Norell -->
-
-    <owl:NamedIndividual rdf:about="http://nmrML.org/nmrCV#Norell">
-        <rdf:type rdf:resource="http://nmrML.org/nmrCV#manufacturing_organization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#Varian -->
-
-    <owl:NamedIndividual rdf:about="http://nmrML.org/nmrCV#Varian">
-        <rdf:type rdf:resource="http://nmrML.org/nmrCV#manufacturing_organization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#Wilmad -->
-
-    <owl:NamedIndividual rdf:about="http://nmrML.org/nmrCV#Wilmad">
-        <rdfs:label>Wilmad</rdfs:label>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
