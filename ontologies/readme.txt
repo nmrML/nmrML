@@ -30,6 +30,7 @@ http://nmrML.org/nmrCV#has_units-->
 http://nmrML.org/nmrCV#part_of-->http://purl.org/biotop/btl2.owl#isPartOf
 v1.5 Major restructuring and redundancy removal, i.e. instruments are now captured as instrument attribute/models.
 v1.6 CV is now also covering the term-needs for the BML-NMR XSD. But, again, the CV is still considered to be a prototype. Its coverage can be very shallow at times. For some cases there is merely a corresponding CV Entry Class available (to be referenceable by the xsd), which has no further subclasses. These leaf nodes will have to be expanded successively via our use cases and later by term-requests from the practitioners/users. We can expect the CV to grow from currently to about 2500 Terms (as in PSI MS CV). Labels were aligned to be consistent, i.e. NMR_spectrum_post-processing_parameter_set was changed to NMR_data_post-processing_parameter_set to be in harmony with the existing NMR_data_pre-processing_parameter_set. 'run attribute' was moved into purgatory. Use acquisition parameter instead. This version imports the owl versions of Unit Ontology and PATO (Qualities).
+v1.7 Stop any notion of pre and post-processing (there is no agreement on meaning and start/end). We now use 'frequence domain processing' and 'time domain processing' as sortals for processing parameters.
 
 Internal version annotation attribute will be substituted by version from makefile of release policy.
 v1.7.x
@@ -37,10 +38,8 @@ last one is build #
 first is major version
 second digit is amall changes
 
-
 OWL versus OBO Format:
-If we envision a common data annotation pipeline for MSI and PSI, leveraging on the PSI validators and obo ontologies, we should stick with OBO format, as at the moment these do not integrate particularly well.
-Making the validator software aware of owl formatted CVs is possible according to their Authors: The OntologyAccess interface would need to be reprogrammed and registered in the ontology manager XML config file. An alternative would be a complete re-implementation.
+If we envision a common data annotation pipeline for MSI and PSI, leveraging on the PSI validators and obo ontologies, we should stick with OBO format, as at the moment these do not integrate particularly well. Making the validator software aware of owl formatted CVs is possible according to their Authors: The OntologyAccess interface would need to be reprogrammed and registered in the ontology manager XML config file. An alternative would be a complete re-implementation.
 
 OBO version:
 P4 save-as OBO was used to convert the current nmrCV.owl into OBO format.
@@ -56,7 +55,6 @@ bin end (NMR:1002017) generated 1 warning:
   The term bin end links to the dangling identifier UO:0000169
 bin start (NMR:1002016) generated 1 warning:
   The term bin start links to the dangling identifier UO:0000169
-
 
 List of terms required by current XSD:
 these were bookmarked in CV (annotation property) and are visible in the new nmrTab

@@ -23,26 +23,28 @@
     </fileDescription>
 
     <contactList>
-        <contact id="contact1" fullname="Michael Wilson" email="michael.wilson@ualberta.ca"/>
+        <contact id="contact1" fullname="Michael Wilson"  email="michael.wilson@ualberta.ca"/>
         <contact id="contact2" fullname="Trent Bjorndahl" email="tbjorndahl@gmail.com"/>
-        <contact id="contact3" fullname="Philip Liu" email="pbliu@ualberta.ca"/>
+        <contact id="contact3" fullname="Philip Liu"      email="pbliu@ualberta.ca"/>
     </contactList>
 
     <sourceFileList count="6">
         <sourceFile id="FID_FILE" name="fid" location="file://HMDB00005.fid/fid"
             sha1="856a38dcffeeec46e79520cd290485f7826f89b2">
+            <cvTerm cvRef="NMRCV" accession="NMR:1400119" name="FID file"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
+        
         <sourceFile id="PARAMETER_FILE_1" name="procpar" location="file://HMDB00005.fid/procpar"
             sha1="2e852e97e8cbba6d6fbd9df74dbf05b91bbfe8dc">
-            <cvTerm cvRef="NMRCV" accession="?" name="Acquisition Parameter file"/>
+            <cvTerm cvRef="NMRCV" accession="NMR:1002006" name="acquisition parameter file"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
 
         <!-- replace these descriptions from the CV -->
         <sourceFile id="PARAMETER_FILE_2" name="global" location="file://HMDB00005.fid/global"
             sha1="29833e1a9aaed80b55f8a3513748fc9e952bb708">
-            <cvTerm cvRef="NMRCV" accession="?" name="Acquisition Parameter file"/>
+            <cvTerm cvRef="NMRCV" accession="NMR:1002006" name="acquisition parameter file"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
         
@@ -55,9 +57,10 @@
 
         <sourceFile id="PULSE_SEQ_SRC" name="tnnoesy.c" location="file://HMDB00005.fid/tnnoesy.c"
             sha1="614e2747e37a20cd6f686827ec8a440d5d50575c">
-            <cvTerm cvRef="NMRCV" accession="?" name="Pulse Sequence Source file"/>
+            <cvTerm cvRef="NMRCV" accession="?" name="Pulse Sequence Source Code file"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
+        
         <sourceFile id="ACQUISITON_LOG" name="log" location="file://HMDB00005.fid/log"
             sha1="dc779194f62e3cd431b28c76bbf069b2212f2fc4">
             <cvTerm cvRef="NMRCV" accession="?" name="Acquisition Log file"/>
@@ -66,7 +69,7 @@
     </sourceFileList>
 
     <softwareList count="1">
-        <software id="software1" cvRef="NMRCV" accession="?" name="VNMR" version="1.1"/>
+        <software id="software1" cvRef="NMRCV" accession="NMR:1000277" name="VnmrJ software" version="1.1"/>
     </softwareList>
 
     <!-- must report instument model -->
@@ -121,6 +124,9 @@
                 </pulseSequence>
 
                 <!-- must check for decouplingMethod if decouple id true -->
+                   <!--  decoupled definition needs to be clarified  >
+ -->
+                
                 <DirectDimensionParameterSet decoupled="true" numberOfDataPoints="57804">
                     <acquisitionNucleus name="1H" cvRef="NMRCV" accession="NMR:400151"/>
 

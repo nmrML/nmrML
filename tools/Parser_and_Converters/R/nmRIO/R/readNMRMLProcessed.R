@@ -39,3 +39,16 @@ readNMRMLProcessed <- function (filename) {
     names(datamatrix) <- c("ppm", basename(filename))
     datamatrix
 }
+
+if (FALSE) {
+    ## This section contains test snippets during development
+    library(nmRIO)
+    library(XML)
+    library(caTools)
+    
+    files <- list.files("../../../../../examples/IPB_HopExample/nmrMLs/",
+                        full.names=TRUE)
+
+    filename <- files[1]
+    
+}

@@ -192,6 +192,21 @@ CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -h
 		cvIdentifierRef="UO"></CvTerm>
       </CvMappingRule>
 
+      <!-- must add the mapping for this -->
+      <!-- <samplingStrategy accession="?" cvRef="NMRCV" name="uniform"/> -->
+      <CvMappingRule id="samplingStrategy_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/samplingStrategy@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/samplingStrategy"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1000000"
+		useTerm="false" 
+		termName="sampling strategy"
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
       <CvMappingRule id="gammaB1PulseFieldStrength_must" 
 		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/gammaB1PulseFieldStrength@unitAccession" 
 		     requirementLevel="MUST" 

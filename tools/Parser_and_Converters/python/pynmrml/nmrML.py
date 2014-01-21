@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #
-# Generated Tue Aug 20 21:26:07 2013 by generateDS.py version 2.11a.
+# Generated Wed Oct 30 15:59:51 2013 by generateDS.py version 2.11a.
 #
 
 import sys
@@ -75,8 +75,8 @@ ExternalEncoding = 'utf-8'
 
 
 class nmrMLType(supermod.nmrMLType):
-    def __init__(self, version=None, accession_url=None, accession=None, id=None, cvList=None, fileDescription=None, contactList=None, sourceFileList=None, softwareList=None, instrumentConfigurationList=None, dataProcessingList=None, sampleList=None, referenceableParamGroupList=None, acquisition=None, spectrumList=None):
-        super(nmrMLType, self).__init__(version, accession_url, accession, id, cvList, fileDescription, contactList, sourceFileList, softwareList, instrumentConfigurationList, dataProcessingList, sampleList, referenceableParamGroupList, acquisition, spectrumList, )
+    def __init__(self, version=None, accession_url=None, accession=None, id=None, cvList=None, fileDescription=None, contactList=None, referenceableParamGroupList=None, sourceFileList=None, softwareList=None, instrumentConfigurationList=None, dataProcessingList=None, sampleList=None, acquisition=None, spectrumList=None):
+        super(nmrMLType, self).__init__(version, accession_url, accession, id, cvList, fileDescription, contactList, referenceableParamGroupList, sourceFileList, softwareList, instrumentConfigurationList, dataProcessingList, sampleList, acquisition, spectrumList, )
 supermod.nmrMLType.subclass = nmrMLType
 # end class nmrMLType
 
@@ -84,21 +84,6 @@ supermod.nmrMLType.subclass = nmrMLType
 class CVListType(supermod.CVListType):
     def __init__(self, count=None, cv=None):
         super(CVListType, self).__init__(count, cv, )
-   
-    def set_cv(self, cv):
-        self.cv = cv
-        self.recount()
-  
-    def add_cv(self, value):
-        self.cv.append(value)
-        self.recount()
-        
-    def insert_cv(self, index, value):
-        self.cv[index] = value
-        self.recount()
-
-    def recount(self): self.count = len(self.cv)
-
 supermod.CVListType.subclass = CVListType
 # end class CVListType
 
@@ -115,13 +100,6 @@ class ContactListType(supermod.ContactListType):
         super(ContactListType, self).__init__(contact, )
 supermod.ContactListType.subclass = ContactListType
 # end class ContactListType
-
-
-class ContactType(supermod.ContactType):
-    def __init__(self, url=None, id=None, address=None, organization=None, fullname=None, email=None):
-        super(ContactType, self).__init__(url, id, address, organization, fullname, email, )
-supermod.ContactType.subclass = ContactType
-# end class ContactType
 
 
 class ContactRefType(supermod.ContactRefType):
@@ -146,8 +124,8 @@ supermod.FileDescriptionType.subclass = FileDescriptionType
 
 
 class CVTermType(supermod.CVTermType):
-    def __init__(self, cvRef=None, accession=None, name=None):
-        super(CVTermType, self).__init__(cvRef, accession, name, )
+    def __init__(self, cvRef=None, accession=None, name=None, extensiontype_=None):
+        super(CVTermType, self).__init__(cvRef, accession, name, extensiontype_, )
 supermod.CVTermType.subclass = CVTermType
 # end class CVTermType
 
@@ -181,8 +159,8 @@ supermod.UserParamType.subclass = UserParamType
 
 
 class ParamGroupType(supermod.ParamGroupType):
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, extensiontype_=None):
-        super(ParamGroupType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, extensiontype_, )
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, extensiontype_=None):
+        super(ParamGroupType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, extensiontype_, )
 supermod.ParamGroupType.subclass = ParamGroupType
 # end class ParamGroupType
 
@@ -237,8 +215,8 @@ supermod.SoftwareListType.subclass = SoftwareListType
 
 
 class SoftwareType(supermod.SoftwareType):
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, version=None, id=None):
-        super(SoftwareType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, version, id, )
+    def __init__(self, cvRef=None, accession=None, name=None, version=None, id=None):
+        super(SoftwareType, self).__init__(cvRef, accession, name, version, id, )
 supermod.SoftwareType.subclass = SoftwareType
 # end class SoftwareType
 
@@ -258,8 +236,8 @@ supermod.SoftwareRefListType.subclass = SoftwareRefListType
 
 
 class SourceFileType(supermod.SourceFileType):
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, location=None, id=None, name=None):
-        super(SourceFileType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, location, id, name, )
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, sha1=None, location=None, id=None, name=None):
+        super(SourceFileType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, sha1, location, id, name, )
 supermod.SourceFileType.subclass = SourceFileType
 # end class SourceFileType
 
@@ -279,8 +257,8 @@ supermod.SourceFileRefListType.subclass = SourceFileRefListType
 
 
 class InstrumentConfigurationType(supermod.InstrumentConfigurationType):
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, id=None, softwareRef=None):
-        super(InstrumentConfigurationType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, id, softwareRef, )
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, id=None, softwareRef=None):
+        super(InstrumentConfigurationType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, id, softwareRef, )
 supermod.InstrumentConfigurationType.subclass = InstrumentConfigurationType
 # end class InstrumentConfigurationType
 
@@ -307,15 +285,15 @@ supermod.DataProcessingListType.subclass = DataProcessingListType
 
 
 class ProcessingMethodType(supermod.ProcessingMethodType):
-    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, userParam=None, order=None, softwareRef=None):
-        super(ProcessingMethodType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, userParam, order, softwareRef, )
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, order=None, softwareRef=None):
+        super(ProcessingMethodType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, order, softwareRef, )
 supermod.ProcessingMethodType.subclass = ProcessingMethodType
 # end class ProcessingMethodType
 
 
 class BinaryDataArrayType(supermod.BinaryDataArrayType):
-    def __init__(self, byteLength=None, totalBytes=None, dataProcessingRef=None, byteFormat=None, binary=None):
-        super(BinaryDataArrayType, self).__init__(byteLength, totalBytes, dataProcessingRef, byteFormat, binary, )
+    def __init__(self, byteFormat=None, encodedLength=None, compressed=None, dataProcessingRef=None, valueOf_=None):
+        super(BinaryDataArrayType, self).__init__(byteFormat, encodedLength, compressed, dataProcessingRef, valueOf_, )
 supermod.BinaryDataArrayType.subclass = BinaryDataArrayType
 # end class BinaryDataArrayType
 
@@ -342,8 +320,8 @@ supermod.AdditionalSoluteListType.subclass = AdditionalSoluteListType
 
 
 class AcquisitionDimensionParameterSetType(supermod.AcquisitionDimensionParameterSetType):
-    def __init__(self, numberOfDataPoints=None, acquisitionParamsFileRef=None, decoupled=None, acquisitionNucleus=None, gammaB1PulseFieldStrength=None, sweepWidth=None, timeDomain=None, irradiationFrequency=None):
-        super(AcquisitionDimensionParameterSetType, self).__init__(numberOfDataPoints, acquisitionParamsFileRef, decoupled, acquisitionNucleus, gammaB1PulseFieldStrength, sweepWidth, timeDomain, irradiationFrequency, )
+    def __init__(self, numberOfDataPoints=None, decoupled=None, acquisitionNucleus=None, gammaB1PulseFieldStrength=None, sweepWidth=None, irradiationFrequency=None, decouplingMethod=None, samplingStrategy=None, samplingTimePoints=None):
+        super(AcquisitionDimensionParameterSetType, self).__init__(numberOfDataPoints, decoupled, acquisitionNucleus, gammaB1PulseFieldStrength, sweepWidth, irradiationFrequency, decouplingMethod, samplingStrategy, samplingTimePoints, )
 supermod.AcquisitionDimensionParameterSetType.subclass = AcquisitionDimensionParameterSetType
 # end class AcquisitionDimensionParameterSetType
 
@@ -363,38 +341,45 @@ supermod.AcquisitionParameterSetType.subclass = AcquisitionParameterSetType
 
 
 class AcquisitionParameterSet1DType(supermod.AcquisitionParameterSet1DType):
-    def __init__(self, numberOfScans=None, numberOfSteadyStateScans=None, contactRefList=None, acquisitionParameterFileRefList=None, softwareRef=None, sampleContainer=None, sampleAcquisitionTemperature=None, solventSuppressionMethod=None, spinningRate=None, relaxationDelay=None, pulseSequence=None, shapedPulseFile=None, extensiontype_=None):
-        super(AcquisitionParameterSet1DType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, extensiontype_, )
+    def __init__(self, numberOfScans=None, numberOfSteadyStateScans=None, contactRefList=None, acquisitionParameterFileRefList=None, softwareRef=None, sampleContainer=None, sampleAcquisitionTemperature=None, solventSuppressionMethod=None, spinningRate=None, relaxationDelay=None, pulseSequence=None, shapedPulseFile=None, DirectDimensionParameterSet=None):
+        super(AcquisitionParameterSet1DType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, DirectDimensionParameterSet, )
 supermod.AcquisitionParameterSet1DType.subclass = AcquisitionParameterSet1DType
 # end class AcquisitionParameterSet1DType
 
 
-class AcquisitionParameterSet2DType(supermod.AcquisitionParameterSet2DType):
+class AcquisitionParameterSetMultiDType(supermod.AcquisitionParameterSetMultiDType):
     def __init__(self, numberOfScans=None, numberOfSteadyStateScans=None, contactRefList=None, acquisitionParameterFileRefList=None, softwareRef=None, sampleContainer=None, sampleAcquisitionTemperature=None, solventSuppressionMethod=None, spinningRate=None, relaxationDelay=None, pulseSequence=None, shapedPulseFile=None, hadamardParameterSet=None, directDimensionParameterSet=None, encodingScheme=None, indirectDimensionParameterSet=None):
-        super(AcquisitionParameterSet2DType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, hadamardParameterSet, directDimensionParameterSet, encodingScheme, indirectDimensionParameterSet, )
-supermod.AcquisitionParameterSet2DType.subclass = AcquisitionParameterSet2DType
-# end class AcquisitionParameterSet2DType
+        super(AcquisitionParameterSetMultiDType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, hadamardParameterSet, directDimensionParameterSet, encodingScheme, indirectDimensionParameterSet, )
+supermod.AcquisitionParameterSetMultiDType.subclass = AcquisitionParameterSetMultiDType
+# end class AcquisitionParameterSetMultiDType
+
+
+class PulseSequenceType(supermod.PulseSequenceType):
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, pulseSequenceFileRefList=None):
+        super(PulseSequenceType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, pulseSequenceFileRefList, )
+supermod.PulseSequenceType.subclass = PulseSequenceType
+# end class PulseSequenceType
 
 
 class AcquisitionType(supermod.AcquisitionType):
-    def __init__(self, acquisition1D=None, acquisition2D=None):
-        super(AcquisitionType, self).__init__(acquisition1D, acquisition2D, )
+    def __init__(self, acquisition1D=None, acquisitionMultiD=None):
+        super(AcquisitionType, self).__init__(acquisition1D, acquisitionMultiD, )
 supermod.AcquisitionType.subclass = AcquisitionType
 # end class AcquisitionType
 
 
 class Acquisition1DType(supermod.Acquisition1DType):
-    def __init__(self, acquisitionParameterSet=None, fid=None):
-        super(Acquisition1DType, self).__init__(acquisitionParameterSet, fid, )
+    def __init__(self, acquisitionParameterSet=None, fidData=None):
+        super(Acquisition1DType, self).__init__(acquisitionParameterSet, fidData, )
 supermod.Acquisition1DType.subclass = Acquisition1DType
 # end class Acquisition1DType
 
 
-class Acquisition2DType(supermod.Acquisition2DType):
-    def __init__(self, acquisitionParameterSet=None, fid=None):
-        super(Acquisition2DType, self).__init__(acquisitionParameterSet, fid, )
-supermod.Acquisition2DType.subclass = Acquisition2DType
-# end class Acquisition2DType
+class AcquisitionMultiDType(supermod.AcquisitionMultiDType):
+    def __init__(self, acquisitionParameterSet=None, fidData=None):
+        super(AcquisitionMultiDType, self).__init__(acquisitionParameterSet, fidData, )
+supermod.AcquisitionMultiDType.subclass = AcquisitionMultiDType
+# end class AcquisitionMultiDType
 
 
 class SpectrumListType(supermod.SpectrumListType):
@@ -488,13 +473,6 @@ supermod.concentrationStandardType.subclass = concentrationStandardType
 # end class concentrationStandardType
 
 
-class pulseSequenceType(supermod.pulseSequenceType):
-    def __init__(self, literatueReference=None, name=None, pulseSequenceFile=None):
-        super(pulseSequenceType, self).__init__(literatueReference, name, pulseSequenceFile, )
-supermod.pulseSequenceType.subclass = pulseSequenceType
-# end class pulseSequenceType
-
-
 class hadamardParameterSetType(supermod.hadamardParameterSetType):
     def __init__(self, hadamardFrequency=None):
         super(hadamardParameterSetType, self).__init__(hadamardFrequency, )
@@ -502,11 +480,11 @@ supermod.hadamardParameterSetType.subclass = hadamardParameterSetType
 # end class hadamardParameterSetType
 
 
-class acquisitionParameterSetType(supermod.acquisitionParameterSetType):
-    def __init__(self, numberOfScans=None, numberOfSteadyStateScans=None, contactRefList=None, acquisitionParameterFileRefList=None, softwareRef=None, sampleContainer=None, sampleAcquisitionTemperature=None, solventSuppressionMethod=None, spinningRate=None, relaxationDelay=None, pulseSequence=None, shapedPulseFile=None, DirectDimensionParameterSet=None):
-        super(acquisitionParameterSetType, self).__init__(numberOfScans, numberOfSteadyStateScans, contactRefList, acquisitionParameterFileRefList, softwareRef, sampleContainer, sampleAcquisitionTemperature, solventSuppressionMethod, spinningRate, relaxationDelay, pulseSequence, shapedPulseFile, DirectDimensionParameterSet, )
-supermod.acquisitionParameterSetType.subclass = acquisitionParameterSetType
-# end class acquisitionParameterSetType
+class pulseSequenceFileRefListType(supermod.pulseSequenceFileRefListType):
+    def __init__(self, pulseSequenceFileRef=None):
+        super(pulseSequenceFileRefListType, self).__init__(pulseSequenceFileRef, )
+supermod.pulseSequenceFileRefListType.subclass = pulseSequenceFileRefListType
+# end class pulseSequenceFileRefListType
 
 
 class processingParameterSetType(supermod.processingParameterSetType):
@@ -521,6 +499,13 @@ class windowFunctionType(supermod.windowFunctionType):
         super(windowFunctionType, self).__init__(windowFunctionMethod, windowFunctionParameter, )
 supermod.windowFunctionType.subclass = windowFunctionType
 # end class windowFunctionType
+
+
+class ContactType(supermod.ContactType):
+    def __init__(self, referenceableParamGroupRef=None, cvParam=None, cvParamWithUnit=None, cvTerm=None, userParam=None, url=None, id=None, address=None, organization=None, fullname=None, email=None):
+        super(ContactType, self).__init__(referenceableParamGroupRef, cvParam, cvParamWithUnit, cvTerm, userParam, url, id, address, organization, fullname, email, )
+supermod.ContactType.subclass = ContactType
+# end class ContactType
 
 
 def get_root_tag(node):
@@ -538,7 +523,7 @@ def parse(inFilename, silence=False):
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
         rootTag = 'nmrML'
-        rootClass = supermod.nmrMLType
+        rootClass = supermod.nmrML
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -558,7 +543,7 @@ def parseEtree(inFilename, silence=False):
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
         rootTag = 'nmrML'
-        rootClass = supermod.nmrMLType
+        rootClass = supermod.nmrML
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -582,7 +567,7 @@ def parseString(inString, silence=False):
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
         rootTag = 'nmrML'
-        rootClass = supermod.nmrMLType
+        rootClass = supermod.nmrML
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -601,7 +586,7 @@ def parseLiteral(inFilename, silence=False):
     roots = get_root_tag(rootNode)
     rootClass = roots[1]
     if rootClass is None:
-        rootClass = supermod.nmrMLType
+        rootClass = supermod.nmrML
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.

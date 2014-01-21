@@ -4,7 +4,10 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://nmrml.org/schema">
   <xs:element name="nmrML" type="nmrMLType">
     <xs:annotation>
-      <xs:documentation>This is the root element for the COordination Of Standards In MetabOlomicS nmrML schema, which is intended to capture the use of a nuclear magnetic resonance spectrometer, the data generated, and the initial processing of that data (to the level of the peak list).</xs:documentation>
+      <xs:documentation>This is the root element for the COordination Of Standards In MetabOlomicS
+        nmrML schema, which is intended to capture the use of a nuclear magnetic resonance
+        spectrometer, the data generated, and the initial processing of that data (to the level of
+        the peak list).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <!--
@@ -25,7 +28,10 @@
   -->
   <xs:complexType name="nmrMLType">
     <xs:annotation>
-      <xs:documentation>This is the root element for the COordination Of Standards In MetabOlomicS nmrML schema, which is intended to capture the use of a nuclear magnetic resonance spectrometer, the data generated, and the initial processing of that data (to the level of the peak list).</xs:documentation>
+      <xs:documentation>This is the root element for the COordination Of Standards In MetabOlomicS
+        nmrML schema, which is intended to capture the use of a nuclear magnetic resonance
+        spectrometer, the data generated, and the initial processing of that data (to the level of
+        the peak list).</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="cvList" type="dx:CVListType"/>
@@ -52,12 +58,14 @@
     </xs:attribute>
     <xs:attribute name="accession" type="xs:string">
       <xs:annotation>
-        <xs:documentation>Optional accession number for the nmrML document. Used for storage (for example MetaboLights) </xs:documentation>
+        <xs:documentation>Optional accession number for the nmrML document. Used for storage (for
+          example MetaboLights) </xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="accession_url" type="xs:anyURI">
       <xs:annotation>
-        <xs:documentation>Optional attribute for retrieva of an nmrML document. Usefull when the document has been retrieved from a public database.</xs:documentation>
+        <xs:documentation>Optional attribute for retrieva of an nmrML document. Usefull when the
+          document has been retrieved from a public database.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute inheritable="true" name="id" type="xs:string">
@@ -68,11 +76,12 @@
   </xs:complexType>
   <xs:complexType name="CVListType">
     <xs:annotation>
-      <xs:documentation>Container for one or more controlled vocabulary definitions.</xs:documentation>
+      <xs:documentation>Container for one or more controlled vocabulary
+        definitions.</xs:documentation>
     </xs:annotation>
-    <xs:all>
+    <xs:sequence>
       <xs:element maxOccurs="unbounded" name="cv" type="dx:CVType"/>
-    </xs:all>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
         <xs:documentation>The number of CV definitions in this nmrML file.</xs:documentation>
@@ -81,21 +90,26 @@
   </xs:complexType>
   <xs:complexType name="CVType">
     <xs:annotation>
-      <xs:documentation>Information about an ontology or CV source and a short 'lookup' tag to refer to.</xs:documentation>
+      <xs:documentation>Information about an ontology or CV source and a short 'lookup' tag to refer
+        to.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="id" type="xs:ID" use="required">
       <xs:annotation>
-        <xs:documentation>The short label to be used as a reference tag with which to refer to this particular Controlled Vocabulary source description (e.g., from the cvLabel attribute, in CVParamType elements).</xs:documentation>
+        <xs:documentation>The short label to be used as a reference tag with which to refer to this
+          particular Controlled Vocabulary source description (e.g., from the cvLabel attribute, in
+          CVParamType elements).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="fullName" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The usual name for the resource (e.g. The MSI-NMR Controlled Vocabulary).</xs:documentation>
+        <xs:documentation>The usual name for the resource (e.g. The MSI-NMR Controlled
+          Vocabulary).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="version" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>The version of the CV from which the referred-to terms are drawn.</xs:documentation>
+        <xs:documentation>The version of the CV from which the referred-to terms are
+          drawn.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="URI" type="xs:anyURI" use="required">
@@ -105,20 +119,20 @@
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ContactListType">
-    <xs:sequence maxOccurs="unbounded" minOccurs="1">
-      <xs:element name="contact" type="dx:ContactType"/>
+    <xs:sequence minOccurs="1">
+      <xs:element name="contact" type="dx:ContactType" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ContactType">
     <xs:annotation>
-      <xs:documentation>A person's name and information on how to communicate with them.</xs:documentation>
+      <xs:documentation>A person's name and information on how to communicate with
+        them.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="ParamGroupType">
         <xs:attribute name="id" type="xs:ID" use="required">
           <xs:annotation>
-            <xs:documentation>An identifier for this contact
-.</xs:documentation>
+            <xs:documentation>An identifier for this contact .</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="fullname" type="xs:string" use="required">
@@ -128,12 +142,14 @@
         </xs:attribute>
         <xs:attribute name="url" type="xs:anyURI">
           <xs:annotation>
-            <xs:documentation>Uniform Resource Locator related to the contact person or organization.</xs:documentation>
+            <xs:documentation>Uniform Resource Locator related to the contact person or
+              organization.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="address" type="xs:string">
           <xs:annotation>
-            <xs:documentation>Postal address of the contact person or organization.</xs:documentation>
+            <xs:documentation>Postal address of the contact person or
+              organization.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="organization" type="xs:string">
@@ -143,7 +159,8 @@
         </xs:attribute>
         <xs:attribute name="email" type="xs:string" use="required">
           <xs:annotation>
-            <xs:documentation>Email address of the contact person or organization.</xs:documentation>
+            <xs:documentation>Email address of the contact person or
+              organization.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -152,7 +169,8 @@
   <xs:complexType name="ContactRefType">
     <xs:attribute name="ref" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute must reference the 'id' of the contact node in the contactList.</xs:documentation>
+        <xs:documentation>This attribute must reference the 'id' of the contact node in the
+          contactList.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -172,104 +190,139 @@
   </xs:complexType>
   <xs:complexType name="FileDescriptionType">
     <xs:annotation>
-      <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any part of the data set) is stored here. The FileDescriptionType element is intended to contain a summary description of the current nmrML file, for example it could say that the file has a 1D FID, a processed spectra, and a peak picked spectra. It does not point to source files or anything like that. It is intended to make it easy to determine what is inside a file without having to look for different element types etc and build a summary yourself. RawSpectrumFile would not be a good name. nmrMLInstanceSummary might be a more intuitive name.</xs:documentation>
+      <xs:documentation>Information pertaining to the entire nmrML file (i.e. not specific to any
+        part of the data set) is stored here. The FileDescriptionType element is intended to contain
+        a summary description of the current nmrML file, for example it could say that the file has
+        a 1D FID, a processed spectra, and a peak picked spectra. It does not point to source files
+        or anything like that. It is intended to make it easy to determine what is inside a file
+        without having to look for different element types etc and build a summary yourself.
+        RawSpectrumFile would not be a good name. nmrMLInstanceSummary might be a more intuitive
+        name.</xs:documentation>
     </xs:annotation>
-    <xs:all>
+    <xs:sequence>
       <xs:element name="fileContent" type="ParamGroupType">
         <xs:annotation>
-          <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it. It should also describe the nativeID format used in the file by referring to an appropriate CV term.</xs:documentation>
+          <xs:documentation>This summarizes the different types of spectra that can be expected in
+            the file. This is expected to aid processing software in skipping files that do not
+            contain appropriate spectrum types for it. It should also describe the nativeID format
+            used in the file by referring to an appropriate CV term.</xs:documentation>
         </xs:annotation>
       </xs:element>
-    </xs:all>
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CVTermType">
     <xs:annotation>
-      <xs:documentation>This element holds additional data or annotation as a simple CV term with no further values (Parameters) associated with it. Only controlled CV terms values are allowed here.</xs:documentation>
+      <xs:documentation>This element holds additional data or annotation as a simple CV term with no
+        further values (Parameters) associated with it. Only controlled CV terms values are allowed
+        here.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="cvRef" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
+        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this
+          nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="accession" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
+        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.:
+          NMR:000012).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="name" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+        <xs:documentation>The actual name for the parameter, from the referred-to controlled
+          vocabulary. This should be the preferred name associated with the specified accession
+          number.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="CVParamType">
     <xs:annotation>
-      <xs:documentation>This element holds additional data or annotation. In contrast to CVTermType, here a pair of CV term plus a value (=Parameter) is captured. Only controlled values are allowed here.</xs:documentation>
+      <xs:documentation>This element holds additional data or annotation. In contrast to CVTermType,
+        here a pair of CV term plus a value (=Parameter) is captured. Only controlled values are
+        allowed here.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="cvRef" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
+        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this
+          nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="accession" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
+        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.:
+          NMR:000012).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="name" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+        <xs:documentation>The actual name for the parameter, from the referred-to controlled
+          vocabulary. This should be the preferred name associated with the specified accession
+          number.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="value" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
+        <xs:documentation>The value for the parameter; may be absent if not appropriate, or a
+          numeric or symbolic value, or may itself be CV (legal values for a parameter should be
+          enumerated and defined in the ontology).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="CVParamWithUnitType">
     <xs:annotation>
-      <xs:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xs:documentation>
+      <xs:documentation>This element holds additional data or annotation. Only controlled values are
+        allowed here.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="cvRef" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this nmrML file.</xs:documentation>
+        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this
+          nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="accession" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.: NMR:000012).</xs:documentation>
+        <xs:documentation>The accession number of the referred-to term in the named resource (e.g.:
+          NMR:000012).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="name" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The actual name for the parameter, from the referred-to controlled vocabulary. This should be the preferred name associated with the specified accession number.</xs:documentation>
+        <xs:documentation>The actual name for the parameter, from the referred-to controlled
+          vocabulary. This should be the preferred name associated with the specified accession
+          number.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="value" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).</xs:documentation>
+        <xs:documentation>The value for the parameter; may be absent if not appropriate, or a
+          numeric or symbolic value, or may itself be CV (legal values for a parameter should be
+          enumerated and defined in the ontology).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
       <xs:annotation>
-        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id'
+          attribute defined in the cvList in this nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
+        <xs:documentation>An optional CV accession number for the unit term associated with the
+          value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitName" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
+        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron
+          volt' for 'UO:0000266' ).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ValueWithUnitType">
     <xs:annotation>
-      <xs:documentation>This element holds additional data or annotation. Only controlled values are allowed here.</xs:documentation>
+      <xs:documentation>This element holds additional data or annotation. Only controlled values are
+        allowed here.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="value" type="xs:string" use="optional">
       <xs:annotation>
@@ -278,23 +331,28 @@
     </xs:attribute>
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
+        <xs:documentation>An optional CV accession number for the unit term associated with the
+          value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitName" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
+        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron
+          volt' for 'UO:0000266' ).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
       <xs:annotation>
-        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id'
+          attribute defined in the cvList in this nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="UserParamType">
     <xs:annotation>
-      <xs:documentation>Uncontrolled user parameters (essentially allowing free text). Before using these, one should verify whether there is an appropriate CV term available, and if so, use the CV term instead</xs:documentation>
+      <xs:documentation>Uncontrolled user parameters (essentially allowing free text). Before using
+        these, one should verify whether there is an appropriate CV term available, and if so, use
+        the CV term instead</xs:documentation>
     </xs:annotation>
     <xs:attribute name="name" type="xs:string" use="required">
       <xs:annotation>
@@ -303,7 +361,8 @@
     </xs:attribute>
     <xs:attribute name="valueType" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>The datatype of the parameter, where appropriate (e.g.: xsd:float).</xs:documentation>
+        <xs:documentation>The datatype of the parameter, where appropriate (e.g.:
+          xsd:float).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="value" type="xs:string" use="optional">
@@ -313,23 +372,28 @@
     </xs:attribute>
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
+        <xs:documentation>An optional CV accession number for the unit term associated with the
+          value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitName" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
+        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron
+          volt' for 'UO:0000266' ).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
       <xs:annotation>
-        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id'
+          attribute defined in the cvList in this nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ParamGroupType">
     <xs:annotation>
-      <xs:documentation>Structure allowing the use of a controlled (cvParam) or uncontrolled vocabulary (userParam), or a reference to a predefined set of these in this nmrML file (paramGroupRef).</xs:documentation>
+      <xs:documentation>Structure allowing the use of a controlled (cvParam) or uncontrolled
+        vocabulary (userParam), or a reference to a predefined set of these in this nmrML file
+        (paramGroupRef).</xs:documentation>
     </xs:annotation>
     <xs:sequence minOccurs="0">
       <xs:element minOccurs="0" maxOccurs="unbounded" name="referenceableParamGroupRef"
@@ -343,7 +407,9 @@
   </xs:complexType>
   <xs:complexType name="ReferenceableParamGroupType">
     <xs:annotation>
-      <xs:documentation>A collection of CVParam and UserParam elements that can be referenced from elsewhere in this nmrML document by using the 'paramGroupRef' element in that location to reference the 'id' attribute value of this element.</xs:documentation>
+      <xs:documentation>A collection of CVParam and UserParam elements that can be referenced from
+        elsewhere in this nmrML document by using the 'paramGroupRef' element in that location to
+        reference the 'id' attribute value of this element.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cvParam" type="CVParamType"/>
@@ -351,17 +417,20 @@
     </xs:sequence>
     <xs:attribute name="id" type="xs:ID" use="required">
       <xs:annotation>
-        <xs:documentation>The identifier with which to reference this ReferenceableParamGroup.</xs:documentation>
+        <xs:documentation>The identifier with which to reference this
+          ReferenceableParamGroup.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ReferenceableParamGroupRefType">
     <xs:annotation>
-      <xs:documentation>A reference to a previously defined ParamGroup, which is a reusable container of one or more cvParams.</xs:documentation>
+      <xs:documentation>A reference to a previously defined ParamGroup, which is a reusable
+        container of one or more cvParams.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="ref" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>Reference to the id attribute in a referenceableParamGroup.</xs:documentation>
+        <xs:documentation>Reference to the id attribute in a
+          referenceableParamGroup.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -381,14 +450,16 @@
   </xs:complexType>
   <xs:complexType name="SourceFileListType">
     <xs:annotation>
-      <xs:documentation>List and descriptions of the source files this nmrML document was generated or derived from</xs:documentation>
+      <xs:documentation>List and descriptions of the source files this nmrML document was generated
+        or derived from</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="sourceFile" type="dx:SourceFileType"/>
     </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
-        <xs:documentation>Number of source files used in generating the instance document.</xs:documentation>
+        <xs:documentation>Number of source files used in generating the instance
+          document.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -436,12 +507,14 @@
   </xs:complexType>
   <xs:complexType name="SoftwareListType">
     <xs:annotation>
-      <xs:documentation>List and descriptions of software used to acquire and/or process the data in this nmrML file.</xs:documentation>
+      <xs:documentation>List and descriptions of software used to acquire and/or process the data in
+        this nmrML file.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="software" type="dx:SoftwareType">
         <xs:annotation>
-          <xs:documentation>A software program used during the acquisition of the spectra or processing of the FID.</xs:documentation>
+          <xs:documentation>A software program used during the acquisition of the spectra or
+            processing of the FID.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -459,7 +532,8 @@
       <xs:extension base="CVTermType">
         <xs:attribute name="id" type="xs:ID" use="required">
           <xs:annotation>
-            <xs:documentation>An identifier for this software that is unique across all SoftwareTypes.</xs:documentation>
+            <xs:documentation>An identifier for this software that is unique across all
+              SoftwareTypes.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="version" type="xs:string">
@@ -476,7 +550,8 @@
     </xs:annotation>
     <xs:attribute name="ref" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute must be used to reference the 'id' attribute of a software element.</xs:documentation>
+        <xs:documentation>This attribute must be used to reference the 'id' attribute of a software
+          element.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -496,7 +571,11 @@
   </xs:complexType>
   <xs:complexType name="SourceFileType">
     <xs:annotation>
-      <xs:documentation>Description of the source file, including location and type. The SourceFileType element is intended to be a generic element that points to a file that was used to produce the spectrum or the nmrML file. It could point to an FID file, a procpar file, a pulse program file etc. nmrExperimentSourceFile could be a good name but I personally think that SourceFile is an intuitive name already.</xs:documentation>
+      <xs:documentation>Description of the source file, including location and type. The
+        SourceFileType element is intended to be a generic element that points to a file that was
+        used to produce the spectrum or the nmrML file. It could point to an FID file, a procpar
+        file, a pulse program file etc. nmrExperimentSourceFile could be a good name but I
+        personally think that SourceFile is an intuitive name already.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="ParamGroupType">
@@ -507,12 +586,14 @@
         </xs:attribute>
         <xs:attribute name="name" type="xs:string" use="required">
           <xs:annotation>
-            <xs:documentation>Name of the source file, without reference to location (either URI or local path).</xs:documentation>
+            <xs:documentation>Name of the source file, without reference to location (either URI or
+              local path).</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="location" type="xs:anyURI" use="required">
           <xs:annotation>
-            <xs:documentation>URI-formatted location where the file was retrieved.</xs:documentation>
+            <xs:documentation>URI-formatted location where the file was
+              retrieved.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="sha1" type="xs:string"/>
@@ -522,7 +603,8 @@
   <xs:complexType name="SourceFileRefType">
     <xs:attribute name="ref" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute must reference the 'id' of the appropriate sourceFile.</xs:documentation>
+        <xs:documentation>This attribute must reference the 'id' of the appropriate
+          sourceFile.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -543,7 +625,8 @@
   </xs:complexType>
   <xs:complexType name="InstrumentConfigurationType">
     <xs:annotation>
-      <xs:documentation>Description of a particular hardware configuration of a NMR spectrometer. For software configuration, use a ReferenceableParamGroup element.</xs:documentation>
+      <xs:documentation>Description of a particular hardware configuration of a NMR spectrometer.
+        For software configuration, use a ReferenceableParamGroup element.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="ParamGroupType">
@@ -561,7 +644,10 @@
   </xs:complexType>
   <xs:complexType name="InstrumentConfigurationListType">
     <xs:annotation>
-      <xs:documentation>List and descriptions of instrument configurations. At least one instrument configuration must be specified, even if it is only to specify that the instrument is unknown. In that case, the "instrument model" term is used to indicate the unknown instrument in the instrumentConfiguration.</xs:documentation>
+      <xs:documentation>List and descriptions of instrument configurations. At least one instrument
+        configuration must be specified, even if it is only to specify that the instrument is
+        unknown. In that case, the "instrument model" term is used to indicate the unknown
+        instrument in the instrumentConfiguration.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="instrumentConfiguration"
@@ -569,30 +655,38 @@
     </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
-        <xs:documentation>The number of instrument configurations present in this list.</xs:documentation>
+        <xs:documentation>The number of instrument configurations present in this
+          list.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="DataProcessingType">
     <xs:annotation>
-      <xs:documentation>Description of the way in which a particular software was used.</xs:documentation>
+      <xs:documentation>Description of the way in which a particular software was
+        used.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="processingMethod" type="ProcessingMethodType">
         <xs:annotation>
-          <xs:documentation>Description of the default peak processing method. This element describes the base method used in the generation of a particular nmrML file. Variable methods should be described in the appropriate acquisition section - if no acquisition-specific details are found, then this information serves as the default.</xs:documentation>
+          <xs:documentation>Description of the default peak processing method. This element
+            describes the base method used in the generation of a particular nmrML file. Variable
+            methods should be described in the appropriate acquisition section - if no
+            acquisition-specific details are found, then this information serves as the
+            default.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
     <xs:attribute name="id" type="xs:ID" use="required">
       <xs:annotation>
-        <xs:documentation>A unique identifier for this data processing that is unique across all DataProcessingTypes.</xs:documentation>
+        <xs:documentation>A unique identifier for this data processing that is unique across all
+          DataProcessingTypes.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="DataProcessingListType">
     <xs:annotation>
-      <xs:documentation>List and descriptions of data processing applied to this data.</xs:documentation>
+      <xs:documentation>List and descriptions of data processing applied to this
+        data.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="dataProcessing" type="dx:DataProcessingType"/>
@@ -608,12 +702,14 @@
       <xs:extension base="dx:ParamGroupType">
         <xs:attribute name="order" type="xs:nonNegativeInteger" use="required">
           <xs:annotation>
-            <xs:documentation>This attributes allows a series of consecutive steps to be placed in the correct order.</xs:documentation>
+            <xs:documentation>This attributes allows a series of consecutive steps to be placed in
+              the correct order.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="softwareRef" type="xs:IDREF" use="required">
           <xs:annotation>
-            <xs:documentation>This attribute must reference the 'id' of the appropriate SoftwareType.</xs:documentation>
+            <xs:documentation>This attribute must reference the 'id' of the appropriate
+              SoftwareType.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -627,12 +723,14 @@
       <xs:extension base="xs:base64Binary">
         <xs:attribute name="compressed" type="xs:boolean" use="required">
           <xs:annotation>
-            <xs:documentation>True if the binary data was compressed with zlib before encoding as base64</xs:documentation>
+            <xs:documentation>True if the binary data was compressed with zlib before encoding as
+              base64</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
           <xs:annotation>
-            <xs:documentation>This optional attribute may reference the 'id' attribute of the appropriate dataProcessing.</xs:documentation>
+            <xs:documentation>This optional attribute may reference the 'id' attribute of the
+              appropriate dataProcessing.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="encodedLength" type="xs:nonNegativeInteger" use="required">
@@ -656,7 +754,8 @@
   </xs:complexType>
   <xs:complexType name="TemperatureType">
     <xs:annotation>
-      <xs:documentation>A temperature and references to a unit from the unit ontology.</xs:documentation>
+      <xs:documentation>A temperature and references to a unit from the unit
+        ontology.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="temperature" type="xs:float" use="required"/>
     <xs:attribute name="temperatureUnitName" type="xs:string" use="required"/>
@@ -669,14 +768,17 @@
   </xs:complexType>
   <xs:complexType name="AcquisitionDimensionParameterSetType">
     <xs:annotation>
-      <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
+      <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data
+        acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
-    <xs:all>
+    <xs:sequence>
       <xs:element name="acquisitionNucleus" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
-          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful. should be recorded in Tesla</xs:documentation>
+          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated
+            from the procs. If you say the pulse width you also have to specify the excitation angle
+            so this way is more compact/useful. should be recorded in Tesla</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
@@ -689,23 +791,27 @@
       <xs:element name="samplingStrategy" type="CVTermType"/>
       <xs:element name="samplingTimePoints" type="BinaryDataArrayType" minOccurs="0">
         <xs:annotation>
-          <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
+          <xs:documentation>The time domain for the samples. Allows for capturing off grid points
+            and non-uniform sampling.</xs:documentation>
         </xs:annotation>
       </xs:element>
-    </xs:all>
+    </xs:sequence>
     <xs:attribute name="decoupled" type="xs:boolean" use="required"/>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionIndirectDimensionParameterSetType">
     <xs:annotation>
-      <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.</xs:documentation>
+      <xs:documentation>Descriptions of the acquisition parameters set prior to the start of data
+        acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="acquisitionNucleus" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
-          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful</xs:documentation>
+          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated
+            from the procs. If you say the pulse width you also have to specify the excitation angle
+            so this way is more compact/useful</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
@@ -715,7 +821,8 @@
       </xs:element>
       <xs:element name="timeDomain" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The time domain for the samples. Allows for capturing off grid points and non-uniform sampling.</xs:documentation>
+          <xs:documentation>The time domain for the samples. Allows for capturing off grid points
+            and non-uniform sampling.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="encodingMethod" type="CVTermType">
@@ -735,64 +842,75 @@
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetType">
     <xs:annotation>
-      <xs:documentation>Base type for the list with the descriptions of the acquisition settings applied prior to the start of data acquisition.</xs:documentation>
+      <xs:documentation>Base type for the list with the descriptions of the acquisition settings
+        applied prior to the start of data acquisition.</xs:documentation>
     </xs:annotation>
-    <xs:all maxOccurs="1" minOccurs="1">
+    <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element name="contactRefList" type="ContactRefListType"/>
       <xs:element name="acquisitionParameterFileRefList" type="SourceFileRefListType"> </xs:element>
       <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTermType">
         <xs:annotation>
-          <xs:documentation>The container used to introduc the sample into the autosampler. Example: tube, flow probe, rotor. Must refernce a CV term. </xs:documentation>
+          <xs:documentation>The container used to introduc the sample into the autosampler. Example:
+            tube, flow probe, rotor. Must reference a CV term. </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sampleAcquisitionTemperature"
         type="ValueWithUnitType">
         <xs:annotation>
-          <xs:documentation>The temperature of the sample during the aquisition.</xs:documentation>
+          <xs:documentation>The temperature of the sample during the acquisition.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="solventSuppressionMethod" type="CVParamType">
         <xs:annotation>
-          <xs:documentation>This tag captures the instrument inherent solvent (usually water) suppression method used during acquisition.</xs:documentation>
+          <xs:documentation>This tag captures the instrument inherent solvent (usually water)
+            suppression method used during acquisition.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spinningRate" type="ValueWithUnitType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="relaxationDelay" type="ValueWithUnitType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="pulseSequence" type="PulseSequenceType">
         <xs:annotation>
-          <xs:documentation>A description of the pulse sequence using CV params/terms, and reference to the pulse sequence file if the source is available. </xs:documentation>
+          <xs:documentation>A description of the pulse sequence using CV params/terms, and reference
+            to the pulse sequence file if the source is available. </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="shapedPulseFile" type="SourceFileRefType">
         <xs:annotation>
-          <xs:documentation>A reference to the pulse shape file, from the power section of the Bruker acquisition software. Example: gauss</xs:documentation>
+          <xs:documentation>A reference to the pulse shape file, from the power section of the
+            Bruker acquisition software. Example: gauss</xs:documentation>
         </xs:annotation>
       </xs:element>
-    </xs:all>
+    </xs:sequence>
     <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
     <xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSet1DType">
     <xs:complexContent>
-      <xs:extension base="AcquisitionParameterSetType"/>
+      <xs:extension base="AcquisitionParameterSetType">
+        <xs:sequence>
+          <xs:element name="DirectDimensionParameterSet" type="AcquisitionDimensionParameterSetType"
+          />
+        </xs:sequence>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetMultiDType">
     <xs:complexContent>
       <xs:extension base="AcquisitionParameterSetType">
-        <xs:all>
+        <xs:sequence>
           <xs:element minOccurs="0" name="hadamardParameterSet">
             <xs:annotation>
-              <xs:documentation>TODO needs to be a list of frequencies, but could allow for other parameters.
-</xs:documentation>
+              <xs:documentation>TODO needs to be a list of frequencies, but could allow for other
+                parameters. </xs:documentation>
             </xs:annotation>
             <xs:complexType>
               <xs:sequence>
                 <xs:element maxOccurs="unbounded" minOccurs="0" name="hadamardFrequency"
                   type="ValueWithUnitType">
                   <xs:annotation>
-                    <xs:documentation>Required if and only if the encoding type is Hadamard.</xs:documentation>
+                    <xs:documentation>Required if and only if the encoding type is
+                      Hadamard.</xs:documentation>
                   </xs:annotation>
                 </xs:element>
               </xs:sequence>
@@ -804,19 +922,22 @@
               <xs:documentation>Quadrature detection method.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="2" minOccurs="1" name="indirectDimensionParameterSet"
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="indirectDimensionParameterSet"
             type="AcquisitionDimensionParameterSetType">
             <xs:annotation>
-              <xs:documentation>Required once for each indirect dimension that is measured.</xs:documentation>
+              <xs:documentation>Required once for each indirect dimension that is
+                measured.</xs:documentation>
             </xs:annotation>
           </xs:element>
-        </xs:all>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType mixed="false" name="PulseSequenceType">
     <xs:annotation>
-      <xs:documentation>A list of references to the  source files that define the pulse sequence, including pulse shape files, pulse sequence source code, pulse sequence parameter files, etc.</xs:documentation>
+      <xs:documentation>A list of references to the source files that define the pulse sequence,
+        including pulse shape files, pulse sequence source code, pulse sequence parameter files,
+        etc.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="ParamGroupType">
@@ -834,34 +955,27 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionType">
-    <xs:choice maxOccurs="1" minOccurs="1">
+    <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="acquisitionMultiD" type="AcquisitionMultiDType">
       </xs:element>
-    </xs:choice>
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
+        type="AcquisitionParameterSet1DType">
         <xs:annotation>
           <xs:documentation>Note, steady state scan is also know as dummy scan.</xs:documentation>
         </xs:annotation>
-        <xs:complexType>
-          <xs:complexContent>
-            <xs:extension base="AcquisitionParameterSet1DType">
-              <xs:all>
-                <xs:element name="DirectDimensionParameterSet"
-                  type="AcquisitionDimensionParameterSetType"/>
-              </xs:all>
-            </xs:extension>
-          </xs:complexContent>
-        </xs:complexType>
       </xs:element>
       <xs:element name="fidData" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.
-
-The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
+          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little
+            endian (Intel style). Computers using a different endian style must convert to/from
+            little endian when writing/reading nmrML. The FID should be converted into a Complex64
+            array before encoding. The base64 encoded binary data. The byte order is always 'little
+            endian'.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -872,9 +986,11 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
         type="AcquisitionParameterSetMultiDType"> </xs:element>
       <xs:element name="fidData" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding.
-
-The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
+          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little
+            endian (Intel style). Computers using a different endian style must convert to/from
+            little endian when writing/reading nmrML. The FID should be converted into a Complex64
+            array before encoding. The base64 encoded binary data. The byte order is always 'little
+            endian'.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -895,115 +1011,127 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
     </xs:attribute>
     <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute MUST reference the 'id' of the default data processing for the spectrum list. If an acquisition does not reference any data processing, it implicitly refers to this data processing. This attribute is required because the minimum amount of data processing that any format will undergo is "conversion to nmrML".</xs:documentation>
+        <xs:documentation>This attribute MUST reference the 'id' of the default data processing for
+          the spectrum list. If an acquisition does not reference any data processing, it implicitly
+          refers to this data processing. This attribute is required because the minimum amount of
+          data processing that any format will undergo is "conversion to nmrML".</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SpectrumType">
     <xs:annotation>
-      <xs:documentation>A spectrum that is the result of processing the acquisition and a description of the process used to create it.</xs:documentation>
+      <xs:documentation>A spectrum that is the result of processing the acquisition and a
+        description of the process used to create it.</xs:documentation>
     </xs:annotation>
-    <xs:all maxOccurs="1" minOccurs="1">
+    <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
         type="SoftwareRefListType"> </xs:element>
       <xs:element name="processingContactRefList" type="ContactRefListType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal x-axis intervals or a set of (x,y) pairs.</xs:documentation>
+          <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal
+            x-axis intervals or a set of (x,y) pairs.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="xAxis" type="AxisWithUnitType"/>
       <xs:element name="yAxisType" type="CVTermType"/>
       <xs:element name="processingParameterSet">
         <xs:complexType>
-          <xs:all>
+          <xs:sequence>
             <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
               <xs:annotation>
-                <xs:documentation>The method used for post acquisition solvent suppression.</xs:documentation>
+                <xs:documentation>The method used for post acquisition solvent
+                  suppression.</xs:documentation>
               </xs:annotation>
             </xs:element>
             <xs:element name="calibrationCompound" type="CVTermType"/>
             <xs:element name="dataTransformationMethod" type="CVTermType">
               <xs:annotation>
-                <xs:documentation>The method used for time-based to frequency-based data tranformation.</xs:documentation>
+                <xs:documentation>The method used for time-based to frequency-based data
+                  tranformation.</xs:documentation>
               </xs:annotation>
             </xs:element>
-          </xs:all>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
-    </xs:all>
+    </xs:sequence>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
   </xs:complexType>
   <xs:complexType name="Spectrum1DType">
     <xs:complexContent>
       <xs:extension base="SpectrumType">
-        <xs:all>
+        <xs:sequence>
           <xs:element name="firstDimensionProcessingParameterSet"
             type="FirstDimensionProcessingParameterSetType"/>
-        </xs:all>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="SpectrumMultiDType">
     <xs:complexContent>
       <xs:extension base="SpectrumType">
-        <xs:all>
+        <xs:sequence>
           <xs:element name="firstDimensionProcessingParameterSet"
             type="FirstDimensionProcessingParameterSetType"/>
           <xs:element maxOccurs="2" name="higherDimensionProcessingParameterSet"
             type="HigherDimensionProcessingParameterSetType"/>
           <xs:element maxOccurs="1" minOccurs="0" name="projected3DProcessingParamaterSet"
             type="Projected3DProcessingParamaterSetType"/>
-        </xs:all>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="SpectralProcessingParameterSetType">
     <xs:annotation>
-      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra.</xs:documentation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a
+        spectra.</xs:documentation>
     </xs:annotation>
-    <xs:all maxOccurs="1" minOccurs="1">
+    <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
         type="SoftwareRefListType"> </xs:element>
       <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
         <xs:annotation>
-          <xs:documentation>The method used for post acquisition solvent suppression.</xs:documentation>
+          <xs:documentation>The method used for post acquisition solvent
+            suppression.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="dataTransformationMethod" type="CVTermType">
         <xs:annotation>
-          <xs:documentation>The method used for time-based to frequency-based data tranformation.</xs:documentation>
+          <xs:documentation>The method used for time-based to frequency-based data
+            tranformation.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="calibrationCompound" type="CVTermType"/>
-    </xs:all>
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="SpectralProjectionParameterSetType">
-    <xs:all>
+    <xs:sequence>
       <xs:element name="projectionMethod" type="CVTermType"/>
-    </xs:all>
+    </xs:sequence>
     <xs:attribute name="projectionAxis"/>
   </xs:complexType>
   <xs:complexType name="SpectralProcessingParameterSet2DType">
     <xs:annotation>
-      <xs:documentation>Parameters recorded when raw data set is processed to create a 2D spectra.</xs:documentation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a 2D
+        spectra.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="SpectralProcessingParameterSetType">
-        <xs:all maxOccurs="1" minOccurs="1">
+        <xs:sequence maxOccurs="1" minOccurs="1">
           <xs:element maxOccurs="1" minOccurs="1" name="directDimensionParameterSet"
             type="FirstDimensionProcessingParameterSetType"> </xs:element>
           <xs:element maxOccurs="2" minOccurs="1" name="higherDimensionParameterSet"
             type="HigherDimensionProcessingParameterSetType"/>
-        </xs:all>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="FirstDimensionProcessingParameterSetType">
     <xs:annotation>
-      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to a dimension.</xs:documentation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that
+        are specific to a dimension.</xs:documentation>
     </xs:annotation>
-    <xs:all maxOccurs="1" minOccurs="1">
+    <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="0" name="zeroOrderPhaseCorrection"
         type="ValueWithUnitType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection"
@@ -1018,7 +1146,8 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
             <xs:element maxOccurs="unbounded" minOccurs="1" name="windowFunctionParameter"
               type="CVParamType">
               <xs:annotation>
-                <xs:documentation>The parameters used in the window function method.</xs:documentation>
+                <xs:documentation>The parameters used in the window function
+                  method.</xs:documentation>
               </xs:annotation>
             </xs:element>
           </xs:sequence>
@@ -1026,7 +1155,7 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
       </xs:element>
       <xs:element name="baselineCorrectionMethod" type="CVTermType"/>
       <xs:element name="parameterFileRef" type="SourceFileRefType"/>
-    </xs:all>
+    </xs:sequence>
     <xs:attribute name="noOfDataPoints" type="xs:integer" use="required">
       <xs:annotation>
         <xs:documentation>This number will also reflect the zero filling.</xs:documentation>
@@ -1036,17 +1165,20 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
   <xs:complexType name="AxisWithUnitType">
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional CV accession number for the unit term associated with the value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
+        <xs:documentation>An optional CV accession number for the unit term associated with the
+          value, if any (e.g., 'UO:0000266' for 'electron volt').</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitName" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron volt' for 'UO:0000266' ).</xs:documentation>
+        <xs:documentation>An optional CV name for the unit accession number, if any (e.g., 'electron
+          volt' for 'UO:0000266' ).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="unitCvRef" type="xs:IDREF" use="optional">
       <xs:annotation>
-        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id' attribute defined in the cvList in this nmrML file.</xs:documentation>
+        <xs:documentation>If a unit term is referenced, this attribute must refer to the CV 'id'
+          attribute defined in the cvList in this nmrML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="startValue"/>
@@ -1054,7 +1186,8 @@ The base64 encoded binary data. The byte order is always 'little endian'.</xs:do
   </xs:complexType>
   <xs:complexType name="HigherDimensionProcessingParameterSetType">
     <xs:annotation>
-      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that are specific to the second dimension.</xs:documentation>
+      <xs:documentation>Parameters recorded when raw data set is processed to create a spectra that
+        are specific to the second dimension.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="FirstDimensionProcessingParameterSetType"> </xs:extension>
