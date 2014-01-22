@@ -26,7 +26,7 @@ class nmrmlWriter(object):
     #TODO methods to move:
 
     def get_sha1(self,filename):
-        hashlib.sha1(open(filename).read()).hexdigest()
+        return hashlib.sha1(open(filename).read()).hexdigest()
 
     def write(self,out):
         # Have to set name_ to be the name the root element...
@@ -75,14 +75,27 @@ class nmrmlWriter(object):
 
         # for Varian 1D NMR
         source_file_list = SourceFileListType(count="2")
-        #
+
+        # TODO make this into a method
+        #<cvTerm cvRef="NMRCV" accession="NMR:1400119" name="FID file"/>
+        #    <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
+
         for i,filename in enumerate([ "procpar","fid" ]):
           paramfile = os.path.join(self.infile,filename)
           fileid = "SOURCE_FILE_" + str(i)
-          source_file = SourceFileType(
-              id=fileid, name=filename, location="file://"+paramfile,
-              sha1=self.get_sha1(paramfile)
-            )
+          source_file = SourceFileType(id=fileid, name=filename, location="file://"+paramfile)
+
+          source_file.set_sha1(self.get_sha1(paramfile))
+          source_file.add_cvTerm( CVTermType( cvRef="NMRCV",
+              accession="NMR:1400297", name="Varian VNMR Format"))
+
+          if filename == "fid":
+              source_file.add_cvTerm(CVTermType(cvRef="NMRCV",
+                  accession="NMR:1400119", name="FID file" ))
+          elif filename == "procpar":
+              source_file.add_cvTerm( CVTermType(cvRef="NMRCV",
+                  accession="NMR:1002006", name="acquisition parameter file"))
+
           source_file_list.add_sourceFile(source_file)
 
         instance.set_sourceFileList(source_file_list)
