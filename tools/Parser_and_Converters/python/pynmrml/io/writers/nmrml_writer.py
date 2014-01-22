@@ -38,10 +38,7 @@ class nmrmlWriter(object):
       return self.instance
 
     def build_instance(self):
-        instance = nmrMLType()
-        #    xmlns="http://nmrml.org/schema",
-        #    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance",
-        #    xsi:schemaLocation="http://nmrml.org/schema ../../../xml-schemata/nmrML.xsd")
+        instance = nmrMLType(version="1.0.0")
 
         # Add the CVs
         cvList = CVListType(count="2")
