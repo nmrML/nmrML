@@ -846,7 +846,7 @@
         applied prior to the start of data acquisition.</xs:documentation>
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element name="contactRefList" type="ContactRefListType"/>
+      <xs:element name="contactRefList" type="ContactRefListType" minOccurs="0"/>
       <xs:element name="acquisitionParameterFileRefList" type="SourceFileRefListType"> </xs:element>
       <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTermType">
