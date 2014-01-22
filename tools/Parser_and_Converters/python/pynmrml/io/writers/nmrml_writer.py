@@ -31,13 +31,17 @@ class nmrmlWriter(object):
     def write(self,out):
         # Have to set name_ to be the name the root element...
         # not sure why the default is the name of the element's type. Doesn't seem right.
-        self.instance.export(out, 0, self.namespace, name_ = 'nmrML')
+        self.instance.export(out, 0, self.namespace, name_ = 'nmrML',
+            namespacedef_ = 'xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nmrml.org/schema ../../../xml-schemata/nmrML.xsd"')
 
     def doc(self):
       return self.instance
 
     def build_instance(self):
         instance = nmrMLType()
+        #    xmlns="http://nmrml.org/schema",
+        #    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance",
+        #    xsi:schemaLocation="http://nmrml.org/schema ../../../xml-schemata/nmrML.xsd")
 
         # Add the CVs
         cvList = CVListType(count="2")
