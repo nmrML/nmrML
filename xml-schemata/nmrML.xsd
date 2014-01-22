@@ -955,11 +955,10 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionType">
-    <xs:sequence maxOccurs="1" minOccurs="1">
+    <xs:choice maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionMultiD" type="AcquisitionMultiDType">
-      </xs:element>
-    </xs:sequence>
+      <xs:element maxOccurs="1" name="acquisitionMultiD" type="AcquisitionMultiDType"> </xs:element>
+    </xs:choice>
   </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
