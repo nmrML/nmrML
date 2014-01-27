@@ -1,6 +1,7 @@
 import os, nmrglue
 from abstract_reader import AbstractReader
 from ...util import convert
+import re
 
 class VarianOneDReader(AbstractReader):
     def load_params(self):
@@ -60,9 +61,31 @@ class VarianOneDReader(AbstractReader):
     def irradiation_frequency(self):
         return self.get_param('sfrq')
 
-    # TODO how to get this value ??
+    # Determines the state of first decoupler during different status periods within a
+    # pulse sequence (refer to the manual VNMR User Programming for a discussion
+    # of status periods). Pulse sequences may require one, two, three, or more
+    # different decoupler states. The number of letters that make up the dm parameter
+    # vary appropriately, with each letter representing a status period (e.g.,
+    # dm='yny' or dm='ns'). If the decoupler status is constant for the entire
+    # pulse sequence, it can be entered as a single letter (e.g., dm='n').
+    #
+    # Values: 'n', 'y', 'a', or 's' (or a combination of these values), where:
+    #
+    #       'n' specifies no decoupler rf.
+    #       'y' specifies the asynchronous mode. In this mode, the decoupler rf is gated
+    #       on and modulation is started at a random places in the modulation sequence.
+    #       'a' specifies the asynchronous mode, the same as 'y'. The 'a' value is not
+    #       available on MERCURY series and GEMINI 2000 systems.
+    #       's' specifies the synchronous mode in which the decoupler rf is gated on and
+    #
+    # modulation is started at the beginning of the modulation sequence. This value
+    # has meaning only on UNITYINOVA and UNITYplus systems. On UNITY and
+    # VXR-S systems it is equivalent to 'y'. The 's' value is not available on
+    # MERCURY series and GEMINI 2000
+    #
     def decoupling_method(self):
-        return "??"
+        pattern = re.compile('^n+$')
+        return not pattern.match(self.get_param('dm'))
 
     # TODO get info about the files in the directory??
     def source_file_descriptions(self):

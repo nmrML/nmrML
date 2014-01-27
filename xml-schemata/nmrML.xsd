@@ -772,13 +772,14 @@
         acquisition specific to each NMR analysis dimension.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element minOccurs="0" name="decouplingMethod" type="CVTermType"/>
       <xs:element name="acquisitionNucleus" type="CVTermType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
           <xs:documentation>replacing the hardPulse parameter, would be automatically calculated
-            from the procs. If you say the pulse width you also have to specify the excitation angle
-            so this way is more compact/useful. should be recorded in Tesla</xs:documentation>
+            from the pulse width in the procs file. If you say the pulse width you also have to specify the excitation angle
+            so this way is more compact/useful. Should be recorded in Tesla</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
@@ -787,7 +788,7 @@
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
-      <xs:element minOccurs="0" name="decouplingMethod" type="CVTermType"/>
+      <xs:element name="decouplingNucleus" type="CVTermType"/>
       <xs:element name="samplingStrategy" type="CVTermType"/>
       <xs:element name="samplingTimePoints" type="BinaryDataArrayType" minOccurs="0">
         <xs:annotation>
@@ -809,9 +810,8 @@
       <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
         type="ValueWithUnitType">
         <xs:annotation>
-          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated
-            from the procs. If you say the pulse width you also have to specify the excitation angle
-            so this way is more compact/useful</xs:documentation>
+          <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful
+Parsed from Excitation width ?</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
@@ -846,7 +846,7 @@
         applied prior to the start of data acquisition.</xs:documentation>
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element name="contactRefList" type="ContactRefListType"/>
+      <xs:element name="contactRefList" type="ContactRefListType" minOccurs="0"/>
       <xs:element name="acquisitionParameterFileRefList" type="SourceFileRefListType"> </xs:element>
       <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTermType">
@@ -883,7 +883,11 @@
       </xs:element>
     </xs:sequence>
     <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
-    <xs:attribute name="numberOfScans" type="xs:integer" use="required"/>
+    <xs:attribute name="numberOfScans" type="xs:integer" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of transients/scans.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSet1DType">
     <xs:complexContent>
@@ -955,11 +959,10 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionType">
-    <xs:sequence maxOccurs="1" minOccurs="1">
+    <xs:choice maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="1" name="acquisition1D" type="Acquisition1DType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionMultiD" type="AcquisitionMultiDType">
-      </xs:element>
-    </xs:sequence>
+      <xs:element maxOccurs="1" name="acquisitionMultiD" type="AcquisitionMultiDType"> </xs:element>
+    </xs:choice>
   </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
@@ -971,11 +974,7 @@
       </xs:element>
       <xs:element name="fidData" type="BinaryDataArrayType">
         <xs:annotation>
-          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little
-            endian (Intel style). Computers using a different endian style must convert to/from
-            little endian when writing/reading nmrML. The FID should be converted into a Complex64
-            array before encoding. The base64 encoded binary data. The byte order is always 'little
-            endian'.</xs:documentation>
+          <xs:documentation>The FID is stored here as a binary blob. Byte ordering is always little endian (Intel style). Computers using a different endian style must convert to/from little endian when writing/reading nmrML. The FID should be converted into a Complex64 array before encoding. The base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
