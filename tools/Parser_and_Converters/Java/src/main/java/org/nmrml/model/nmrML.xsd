@@ -777,12 +777,7 @@
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSet1DType">
     <xs:complexContent>
-      <xs:extension base="AcquisitionParameterSetType">
-        <xs:sequence>
-          <xs:element name="DirectDimensionParameterSet" type="AcquisitionDimensionParameterSetType"
-          />
-        </xs:sequence>
-      </xs:extension>
+      <xs:extension base="AcquisitionParameterSetType"/>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionParameterSetMultiDType">
@@ -811,7 +806,7 @@
               <xs:documentation>Quadrature detection method.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="indirectDimensionParameterSet"
+          <xs:element maxOccurs="2" minOccurs="1" name="indirectDimensionParameterSet"
             type="AcquisitionDimensionParameterSetType">
             <xs:annotation>
               <xs:documentation>Required once for each indirect dimension that is measured.</xs:documentation>
@@ -849,11 +844,20 @@
   </xs:complexType>
   <xs:complexType name="Acquisition1DType">
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet"
-        type="AcquisitionParameterSet1DType">
+      <xs:element maxOccurs="1" minOccurs="1" name="acquisitionParameterSet">
         <xs:annotation>
           <xs:documentation>Note, steady state scan is also know as dummy scan.</xs:documentation>
         </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="AcquisitionParameterSet1DType">
+              <xs:sequence>
+                <xs:element name="DirectDimensionParameterSet"
+                  type="AcquisitionDimensionParameterSetType"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
       </xs:element>
       <xs:element name="fidData" type="BinaryDataArrayType">
         <xs:annotation>
