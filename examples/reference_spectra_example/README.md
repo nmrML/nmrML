@@ -46,4 +46,3 @@ pH 7.4 in D<sub>2</sub>O and refereced to DSS and was collected on a Bruker DMX 
 
 Download FID here (3e537ca7a351c8e34fad813b0060cd6b18090bf1):
 > http://www.bmrb.wisc.edu/metabolomics/standards/2_ketobutyric_acid/nmr/bmse000325/1H.tar
-
