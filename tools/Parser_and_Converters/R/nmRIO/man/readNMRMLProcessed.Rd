@@ -17,7 +17,8 @@
   This is the Details section
 }
 \examples{
-length(readNMRMLProcessed(system.file("examples/HMDB00005.nmrML", package = "nmRIO")))
+# TODO: re-enable once we have an example file with preprocessed data
+# length(readNMRMLProcessed(system.file("examples/HMDB00005.nmrML", package = "nmRIO")))
 }
 \author{
   Steffen Neumann

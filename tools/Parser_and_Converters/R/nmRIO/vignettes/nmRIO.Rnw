@@ -51,6 +51,10 @@
 The \Rpackage{nmRIO} package aims at providing a common interface to
 several NMR data formats.
 
+Cool R packages for NMR processing are e.g. \cite{Lewis09rNMRopensource}
+and \cite{Hao12BATMANRpackage}
+
+
 \section{Example}
 
 
@@ -70,6 +74,25 @@ fid <- readNMRMLFID(nmrMLfile)
 plot(Re(fid), type="l")
 @ %def 
  
+Luis: I also need to access the following parameters:
+spectral width (ideally in ppm but can work out the one in Hz)
+transmitter frequency. Later, for bruker files I also need the following data
+group delay, dsp firmware version
+
+<<Mockup-nmrML-parameters>>=
+  tree <- xmlTreeParse(nmrMLfile)
+  root <- xmlRoot(tree)
+  ## Get required parameters from nmrML
+  irradiationFrequency <- as.double(xmlAttrs(xmlElementsByTagName(root, "irradiationFrequency", recursive = TRUE)[[1]])["value"])
+
+  sweepWidth <- as.double(xmlAttrs(xmlElementsByTagName(root, "sweepWidth", recursive = TRUE)[[1]])["value"])
+
+  numberOfDataPoints <- as.integer(xmlAttrs(xmlElementsByTagName(root, "DirectDimensionParameterSet", recursive = TRUE)[[1]])["numberOfDataPoints"])
+
+  irradiationFrequency
+  sweepWidth
+  numberOfDataPoints
+@
 
 \section{Future plans}
 

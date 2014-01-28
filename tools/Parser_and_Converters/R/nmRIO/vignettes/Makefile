@@ -16,9 +16,7 @@ LATEXFILES = *.aux\
 	nmRIO.synctex.gz\
 	*concordance.tex
 
-all:
-	make vignette
-	make clean
+all: vignette
 
 setvars:
 ifeq (${R_HOME},)
