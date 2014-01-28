@@ -47,23 +47,3 @@ pH 7.4 in D<sub>2</sub>O and refereced to DSS and was collected on a Bruker DMX 
 Download FID here (3e537ca7a351c8e34fad813b0060cd6b18090bf1):
 > http://www.bmrb.wisc.edu/metabolomics/standards/2_ketobutyric_acid/nmr/bmse000325/1H.tar
 
-## mtbls1
-
-### Explanation of files:
- - mtbls1/ADG10003u_007:	Acquisition results from XWIN-NMR software
- 
- Contact: Reza Salek (reza.salek@ebi.ac.uk)
- 
-### Overview
-
-This spectra is one of the metabolomics spectra (ADG10003u_007) present in the 
-MTBLS1 study archived in MetaboLights database. The data corresponds to a urine sample
-from a type 2 diabetes mellitus patient. More details about the experiment and sample
-conditions can be found in the source URL.
-
-### Source
- > http://www.ebi.ac.uk/metabolights/MTBLS1
- 
- Download FID here (SHA1=e569828d2f37089a86092a599a69e88befcb2262):
- > ftp://ftp.ebi.ac.uk/pub/databases/metabolights/studies/public/MTBLS1/ADG10003u_007.zip
- 
