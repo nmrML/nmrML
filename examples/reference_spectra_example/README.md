@@ -1,3 +1,6 @@
+
+## HMDB00005
+
 ### Explanation of files:
 - HMDB00005.fid:   Acquisition results from VNMR software
 - HMDB00005.nmrML: nmrML instance created from the FID file
@@ -22,3 +25,24 @@ Download FID here (SHA1=f7e527efb93a61fa2facc871a9b3c65bae4c36de):
 
 ### Method References
 http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0073076#pone.0073076.s001
+
+
+## bmse000325
+
+### Explanation of files:
+- bmse000325.fid:   Acquisition results from XWIN-NMR software
+- bmse000325.nmrML: nmrML instance created from the FID file
+
+### Overview
+
+This reference is one of the reference specra created by the Biological Magnetic 
+Resonance Data Bank (University of Wisconsin). The spectra is a reference 1H NMR
+of 2-Ketobutyric acid. The sample was collected at a concentration of 100 mM at 
+pH 7.4 in D<sub>2</sub>O and refereced to DSS and was collected on a Bruker DMX -
+500 MHz spectrometer.
+
+### Source
+> http://www.bmrb.wisc.edu/metabolomics/mol_summary/show_data.php?molName=2_ketobutyric_acid&id=bmse000325&whichTab=1
+
+Download FID here (3e537ca7a351c8e34fad813b0060cd6b18090bf1):
+> http://www.bmrb.wisc.edu/metabolomics/standards/2_ketobutyric_acid/nmr/bmse000325/1H.tar

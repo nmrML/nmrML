@@ -9,7 +9,6 @@
     <!ENTITY btl2 "http://purl.org/biotop/btl2.owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ru-meta "http://purl.org/imbi/ru-meta.owl#" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY meta "http://www.co-ode.org/ontologies/meta.owl#" >
@@ -30,7 +29,6 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:ru-meta="http://purl.org/imbi/ru-meta.owl#"
      xmlns:doap="http://usefulinc.com/ns/doap#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
@@ -185,12 +183,6 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://purl.org/dc/elements/1.1/source -->
 
     <owl:AnnotationProperty rdf:about="&dc;source"/>
-    
-
-
-    <!-- http://purl.org/imbi/ru-meta.owl#definition -->
-
-    <owl:AnnotationProperty rdf:about="&ru-meta;definition"/>
     
 
 
@@ -756,12 +748,11 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000044">
         <rdfs:label xml:lang="en">decoupling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400063"/>
-        <ru-meta:definition>Nuclear magnetic resonance decoupling (NMR decoupling for short) is a special method used in nuclear magnetic resonance (NMR) spectroscopy where a sample to be analyzed is irradiated at a certain frequency or frequency range to eliminate fully or partially the effect of coupling between certain nuclei. NMR coupling refers to the effect of nuclei on each other in atoms within a couple of bonds distance of each other in molecules. This effect causes NMR signals in a spectrum to be split into multiple peaks which are up to several hertz frequency from each other. Decoupling fully or partially eliminates splitting of the signal between the nuclei irradiated and other nuclei such as the nuclei being analyzed in a certain spectrum. NMR spectroscopy and sometimes decoupling can help determine structures of chemical compounds.</ru-meta:definition>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">Nuclear magnetic resonance decoupling (NMR decoupling for short) is a special method used in nuclear magnetic resonance (NMR) spectroscopy where a sample to be analyzed is irradiated at a certain frequency or frequency range to eliminate fully or partially the effect of coupling between certain nuclei. NMR coupling refers to the effect of nuclei on each other in atoms within a couple of bonds distance of each other in molecules. This effect causes NMR signals in a spectrum to be split into multiple peaks which are up to several hertz frequency from each other. Decoupling fully or partially eliminates splitting of the signal between the nuclei irradiated and other nuclei such as the nuclei being analyzed in a certain spectrum. NMR spectroscopy and sometimes decoupling can help determine structures of chemical compounds.</obo:IAO_0000115>
         <rdfs:comment xml:lang="en">PRS: used to be suffixed with &apos;method&apos;, now removed to cast all as processes</rdfs:comment>
         <dc:source>http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</dc:source>
     </owl:Class>
     
-
 
     <!-- http://nmrML.org/nmrCV#NMR:1000045 -->
 
@@ -5320,9 +5311,9 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002007</oboInOwl:id>
         <dc:source>as designated Experiment type on http://www.bmrb.wisc.edu/tools/choose_pulse_info.php </dc:source>
-        <ru-meta:definition>tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or &apos;lines&apos;.
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or &apos;lines&apos;.
 def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
-synonym: NMR spectrum</ru-meta:definition>
+synonym: NMR spectrum</obo:IAO_0000115>
     </owl:Class>
     
 
