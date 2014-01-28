@@ -42,6 +42,7 @@ readNMRMLProcessed <- function (filename) {
 
 if (FALSE) {
     ## This section contains test snippets during development
+    library(nmRIO)
     library(XML)
     library(caTools)
     
