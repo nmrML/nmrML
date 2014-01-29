@@ -122,6 +122,11 @@
     <xs:sequence minOccurs="1">
       <xs:element name="contact" type="dx:ContactType" maxOccurs="unbounded"/>
     </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of contact elements in the contact list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ContactType">
     <xs:annotation>
