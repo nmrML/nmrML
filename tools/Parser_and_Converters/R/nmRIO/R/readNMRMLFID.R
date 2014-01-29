@@ -40,6 +40,7 @@ readNMRMLFID <- function (filename) {
 #'        to be read, or a character vector of length one describing
 #'        the mode: one of '"numeric"', '"double"', '"integer"',
 #'        '"int"', '"logical"', '"complex"', '"character"', '"raw"'.
+#' @param sizeof the data type. 
 #' @param compression c("gzip", "bzip2", "xz", "none") 
 #'        character string, the type of compression.  May be
 #'        abbreviated to a single letter, defaults to "none"
@@ -49,17 +50,59 @@ readNMRMLFID <- function (filename) {
 #' @examples
 #' nmRIO:::binaryArrayDecode("eJxjYACBD/YMEOAAoTigtACUFoHSElBaBkorOAAAeOcDcA==", compression="gzip")
 
-binaryArrayDecode <- function (b64string, what="double", compression=c("gzip", "bzip2", "xz", "none") ) {
+binaryArrayDecode <- function (b64string, what="double", sizeof=4, compression=c("gzip", "bzip2", "xz", "none") ) {
     if (missing(compression)) {
         compression <- "none"
     }
     ## Decode. TODO: Check cvParam about the encoding
     raws <- memDecompress(base64decode(b64string, "raw"), type=compression)
-    doubles <- readBin(raws, n=length(raws)+1, what=what)
-    doubles
+    result <- readBin(raws, n=length(raws)+1, what=what, size=sizeof, endian = "little")
+    result
 }
 
+#' binaryArrayEncode
+#'
+#' Create a base64 encoded string from vector of complex or real data (optionally compressed)
+#'
+#' This is the Details section
+#'
+#' @param data vector of type numeric or complex to write out.
+#' @param byteFormat which byte-level representation to use
+#' @param compression c("gzip", "bzip2", "xz", "none") 
+#'        character string, the type of compression.  May be
+#'        abbreviated to a single letter, defaults to "none"#'  
+#' @return base64 encoded character string (optionally zipped) 
+#' @author Steffen Neumann
+#' @examples
+#' fid <- c(complex(1.37930,2.00010), complex(2.09823, 2.00010), c(3.80324, 2.00010))
+#' b64string <- nmRIO:::binaryArrayEncode(fid, byteFormat="complex64", compression="gzip")
 
+binaryArrayEncode <- function (data, byteFormat=c("complex64", "complex128"), compression=c("gzip", "bzip2", "xz", "none") ) {
+  
+  numericVector <- as.numeric(data)
+  
+  if(byteFormat=="complex128") {
+    sizeof=8
+  } else if(byteFormat=="complex64") {
+    sizeof=4
+  }
+    
+  raws <- writeBin(numericVector, con=raw(), size=sizeof, endian = "little", useBytes = FALSE)      
+  compressed <- memCompress(raws, type = compression)  
+  b64string <- base64encode(compressed, endian="little")    
+  b64string
+}  
+
+if (FALSE) {
+fid <- c(complex(1.37930,2.00010), complex(2.09823, 2.00010), c(3.80324, 2.00010))
+
+b <- binaryArrayEncode(fid, byteFormat="complex128", compression="none")
+b
+b <- binaryArrayEncode(fid, byteFormat="complex64", compression="none")
+b
+b <- binaryArrayEncode(fid, byteFormat="complex64", compression="gzip")
+b
+}
 
 #' fidvector2complex
 #'
@@ -175,7 +218,7 @@ if (FALSE) {
     
     ## from Bruker 
     library(nmRIO)
-    filename <- "../../../../../examples/reference_spectra_example/HMDB00005.nmrML"
+    filename <- "../../../../examples/reference_spectra_example/HMDB00005.nmrML"
     filename
     
     fid <- readNMRMLFID(filename)

@@ -8,7 +8,8 @@
 #' @return A vector with the numeric values of the processed data
 #' @author Steffen Neumann
 #' @examples
-#' length(readNMRMLProcessed(system.file("examples/HMDB00005.nmrML", package = "nmRIO")))
+#' # TODO: re-enable once we have an example file with preprocessed data
+#' # length(readNMRMLProcessed(system.file("examples/HMDB00005.nmrML", package = "nmRIO")))
 #' @export
 
 readNMRMLProcessed <- function (filename) {
