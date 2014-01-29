@@ -70,7 +70,7 @@ fid <- readNMRMLFID(nmrMLfile)
 
 @ 
  
-<<plot, fig = TRUE, width = 5, height = 4>>=
+<<plotFID, fig = TRUE, width = 5, height = 4 >>=
 plot(Re(fid), type="l")
 @ %def 
  
@@ -92,7 +92,27 @@ group delay, dsp firmware version
   irradiationFrequency
   sweepWidth
   numberOfDataPoints
+
+  spectrum <- Re(fft(fid, inverse=TRUE))
 @
+
+The rudimentary processing results in:
+
+<<plotSpectrum, fig = TRUE, width = 5, height = 4 >>=
+plot(spectrum, type="l")
+@ %def 
+
+
+<<writeNmrML>>=
+## Mockup to write the spectrum back into the nmrML 
+## as "processed data"
+
+#b64string <- nmRIO:::binaryArrayEncode(spectrum, byteFormat="complex64", compression="gzip")
+  
+@ %def 
+
+
+
 
 \section{Future plans}
 
