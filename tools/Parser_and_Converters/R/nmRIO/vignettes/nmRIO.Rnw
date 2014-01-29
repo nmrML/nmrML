@@ -1,0 +1,114 @@
+%\VignetteIndexEntry{nmRIO, nmrML}
+%\VignetteKeywords{NMR, nmrML, metabolomics}
+%\VignettePackage{nmRIO}
+
+\documentclass[10pt,a4paper]{article}
+\usepackage[authoryear,round]{natbib}
+
+\RequirePackage{amsfonts,amsmath,amstext,amssymb,amscd}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0.2,0.0,0.4}
+
+%% \topmargin -1.5cm
+%% \oddsidemargin -0cm   % read Lamport p.163
+%% \evensidemargin -0cm  % same as oddsidemargin but for left-hand pages
+%% \textwidth 17cm
+%% \textheight 24.5cm
+%% \parindent0em
+
+\newcommand{\lib}[1]{{\mbox{\normalfont\textsf{#1}}}}
+\newcommand{\file}[1]{{\mbox{\normalfont\textsf{'#1'}}}}
+\newcommand{\R}{{\mbox{\normalfont\textsf{R}}}}
+\newcommand{\Rfunction}[1]{{\mbox{\normalfont\texttt{#1}}}}
+\newcommand{\Robject}[1]{{\mbox{\normalfont\texttt{#1}}}}
+\newcommand{\Rpackage}[1]{{\mbox{\normalfont\textsf{#1}}}}
+\newcommand{\Rclass}[1]{{\mbox{\normalfont\textit{#1}}}}
+\newcommand{\code}[1]{{\mbox{\normalfont\texttt{#1}}}}
+
+\newcommand{\email}[1]{\mbox{\href{mailto:#1}{\textcolor{darkblue}{\normalfont{#1}}}}}
+\newcommand{\web}[2]{\mbox{\href{#2}{\textcolor{darkblue}{\normalfont{#1}}}}}
+
+\SweaveOpts{keep.source=TRUE,eps=FALSE}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\title{A Parser for \texttt{nmrML}}
+
+\author{Steffen Neumann\footnote{\email{sneumann@ipb-halle.de}} \\
+  Luis Filipe de Figueiredo \footnote{\email{Luis.deFigueiredo@ebi.ac.uk}} \\
+  Jie Hao \footnote{\email{j.hao@imperial.ac.uk}}}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+The \Rpackage{nmRIO} package aims at providing a common interface to
+several NMR data formats.
+
+Cool R packages for NMR processing are e.g. \cite{Lewis09rNMRopensource}
+and \cite{Hao12BATMANRpackage}
+
+
+\section{Example}
+
+
+A short example sequence to read data from a mass spectrometer. 
+First open the file.
+
+<<open the file>>=
+library(nmRIO)
+
+nmrMLfile <- system.file("examples/HMDB00005.nmrML", package = "nmRIO")
+
+fid <- readNMRMLFID(nmrMLfile)
+
+@ 
+ 
+<<plot, fig = TRUE, width = 5, height = 4>>=
+plot(Re(fid), type="l")
+@ %def 
+ 
+Luis: I also need to access the following parameters:
+spectral width (ideally in ppm but can work out the one in Hz)
+transmitter frequency. Later, for bruker files I also need the following data
+group delay, dsp firmware version
+
+<<Mockup-nmrML-parameters>>=
+  tree <- xmlTreeParse(nmrMLfile)
+  root <- xmlRoot(tree)
+  ## Get required parameters from nmrML
+  irradiationFrequency <- as.double(xmlAttrs(xmlElementsByTagName(root, "irradiationFrequency", recursive = TRUE)[[1]])["value"])
+
+  sweepWidth <- as.double(xmlAttrs(xmlElementsByTagName(root, "sweepWidth", recursive = TRUE)[[1]])["value"])
+
+  numberOfDataPoints <- as.integer(xmlAttrs(xmlElementsByTagName(root, "DirectDimensionParameterSet", recursive = TRUE)[[1]])["numberOfDataPoints"])
+
+  irradiationFrequency
+  sweepWidth
+  numberOfDataPoints
+@
+
+\section{Future plans}
+
+A lot.
+
+\section{Session information}\label{sec:sessionInfo} 
+
+<<label=sessioninfo,results=tex,echo=FALSE,cache=FALSE>>=
+  toLatex(sessionInfo())
+@ 
+
+
+\bibliographystyle{plainnat}
+\bibliography{nmRIO}
+
+\end{document}
+
+
+

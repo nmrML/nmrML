@@ -27,7 +27,7 @@ disabled_test.fidvector2complex3D <- function() {
 
 test.base64todouble <- function() {
     ## b64string <- base64encode(memCompress(writeBin(as.numeric(1:8), con=raw()), type="g"))
-    result <- nmRIO:::binaryArrayDecode("eJxjYACBD/YMEOAAoTigtACUFoHSElBaBkorOAAAeOcDcA==", compression="gzip")
+    result <- nmRIO:::binaryArrayDecode("eJxjYACBD/YMEOAAoTigtACUFoHSElBaBkorOAAAeOcDcA==", sizeof=8, compression="gzip")
     checkEqualsNumeric(result, 1:8)
 }
 

@@ -1,10 +1,13 @@
-<nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nmrml.org/schema ../../../xml-schemata/nmrML.xsd" version="1.0.0">
+<nmrML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://nmrml.org/schema ../../../xml-schemata/nmrML.xsd"
+ xmlns="http://nmrml.org/schema" version="1.0.0">
     <cvList count="2">
         <cv fullName="nmrML Controlled Vocabulary" version="0.0.1" id="NMRCV" URI="http://www.nmrml.org/nmrml-cv.0.0.1.owl"/>
         <cv fullName="Unit Ontology" version="3.2.0" id="UO" URI="http://unit-ontology.googlecode.com/svn/trunk/uo.owl/"/>
     </cvList>
     <contactList>
-        <contact id="ID004" fullname="Mohamed A. Farag" email="mfarag73 [a] yahoo.com"/>
+        <contact id="ID004" fullname="Lutger A. Wessjohann" email="Ludger.Wessjohann [a] ipb-halle.de"/>
+        <contact id="ID044" fullname="Mohamed A. Farag" email="mfarag73 [a] yahoo.com"/>
     </contactList>
     <sourceFileList count="2">
         <sourceFile sha1="fd99c095046e2356c7d31154d45353fa79cbc844" location="file:///Users/mike/Projects/nmrML/nmrML/examples/IPB_HopExample/FIDs/FAM013_AHTM.PROTON_04.fid/procpar" id="SOURCE_FILE_0" name="procpar">
@@ -21,7 +24,7 @@
     </softwareList>
     <instrumentConfigurationList count="4">
         <instrumentConfiguration id="INST_CONFIG_1">
-            <cvTerm cvRef="NMRCV" accession="NMR:400234" name="Varian NMR instrument"/>
+            <cvTerm cvRef="NMRCV" accession="NMR:1400234" name="Varian NMR instrument"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1000235" name="Varian probe"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400234" name="Varian NMR instrument"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1000236" name="5mm HCN probe"/>
@@ -36,7 +39,7 @@
                 <pulseSequence/>
                 <DirectDimensionParameterSet numberOfDataPoints="65536" decoupled="false">
                     <acquisitionNucleus cvRef="NMRCV" accession="NMR:1400151" name="1H"/>
-                    <gammaB1PulseFieldStrength unitName="tesla" unitCvRef="UO" value="34482.7586207" unitAccession="UO:0000228"/>
+                    <gammaB1PulseFieldStrength unitName="hertz" unitCvRef="UO" value="34482.7586207" unitAccession="UO:0000106"/>
                     <irradiationFrequency unitName="hertz" unitCvRef="UO" value="599.8311617" unitAccession="UO:0000106"/>
                 </DirectDimensionParameterSet>
             </acquisitionParameterSet>
