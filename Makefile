@@ -4,15 +4,30 @@ MAJOR   := $(shell echo $(VERSION) | cut -f1 -d'.' )
 MINOR   := $(shell echo $(VERSION) | cut -f2 -d'.' )
 BUILD   := $(shell echo $(VERSION) | cut -f3 -d'.' )
 
+## Some paths 
+
+# Here is the checkout of https://github.com/nmrML/nmrML/blob/gh-pages/
+GHP=../gh-pages/
+
+# This is where OWL and HTML of CV will get copied
+GHP_CV = ${GHP}/cv/${VERSION}
+
+
 ## Detect where OpenMS lives
 OPENMSSHARE := $(shell which FileInfo | sed -e s!bin[/]\\+FileInfo!share/OpenMS!g )
 
 .PHONY: docs docs_clean docs_rebuild tidy undo_tag show_tags \
 	show_tags bump_build bump_minor bump_major prepare_release \
-	release_major release_minor release_build
+	release_major release_minor release_build \
+	gh-pages-install
+
+gh-pages-install: docs/CVDocumentation/OwlDoc/index.html ontologies/nmrCV.owl	
+	mkdir -p ${GHP_CV}/doc
+	cp -avx ontologies/nmrCV.owl ${GHP_CV}
+	cp -avx docs/CVDocumentation/OwlDoc/* ${GHP_CV}/doc
 
 # Build the docs if they don't exist
-docs: docs/schema.html
+docs: docs/schema.html docs/CVDocumentation/OwlDoc/index.html	
 
 # Delete all the generated docs
 docs_clean:
@@ -38,6 +53,15 @@ docs/mapping_and_cv.html: ontologies/nmrCV.obo schemas/nmr-ml.xsd tidy tidy
 	CVInspector -cv_files ontologies/nmrCV-protege.obo -cv_names NMR \
 	-mapping_file ontologies/nmr-mapping.xml \
 	-html docs/mapping_and_cv.html
+
+# Build the HTML documentation for the Ontology 
+# Until there is a command line tool to do this, 
+# this requires manual intervention
+docs/CVDocumentation/OwlDoc/index.html: ontologies/nmrCV.owl
+	echo "You need to manually export the ontologies/nmrCV.owl into docs/CVDocumentation/OwlDoc/"
+	/bin/false
+
+
 
 # Build the Ontology as OBO from the OWL version.
 # Until https://github.com/nmrML/nmrML/issues/42
