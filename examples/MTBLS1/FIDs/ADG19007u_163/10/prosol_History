@@ -1,0 +1,81 @@
+#*******************************************************************
+#
+# $Source: /sc/CvsTree/sc/gen/src/prg/scripts/tix/prosol/lib/lists/default,v $
+#
+# Copyright (c) 1999
+# BRUKER ANALYTIK GMBH
+# D-76287 Rheinstetten, Germany
+#
+# All Rights Reserved
+#
+#
+# $Id: default,v 1.10.2.1 2003/03/13 14:48:33 bau Exp $
+#
+#*******************************************************************
+
+#../conf/instr/spect/prosol/relations/default
+P[0]=P90[F1];
+P[1]=P90[F1];
+P[2]=P90[F1]*2;
+P[3]=P90[F2];
+P[4]=P90[F2]*2;
+P[5]=PTOC[F1]*0.66;
+P[6]=PTOC[F1];
+P[7]=PTOC[F1]*2;
+P[9]=PTOC[F2];
+P[10]=PTOC[F2]*2;
+P[11]=PSH1[F1];
+#P[11]=PSH8[F1];
+P[12]=PSH2[F1];
+P[14]=PSH3[F2];         # 180 inv.
+P[15]=TROE[F1];
+P[18]=PSH7[F1];
+P[21]=P90[F3];
+P[22]=P90[F3]*2;
+P[23]=P90[F4];
+P[24]=PSH2[F2];         # 180 ref.
+P[25]=PROE[F1]*2;
+P[27]=P90[F1];
+PCPD[1]=PCPDP[F1];
+PCPD[2]=PCPDP[F2];
+PCPD[3]=PCPDP[F3];
+PL[1]=PL90[F1];
+PL[2]=PL90[F2];
+PL[3]=PL90[F3];
+PL[4]=PL90[F4];
+PL[9]=PLCW[F1];
+PL[10]=PLTOC[F1];
+PL[11]=PLROE[F1];
+PL[12]=PLCPDP[F2];
+PL[13]=PLCPD2[F2];
+PL[14]=PLNOE[F2];
+PL[15]=PLTOC[F2];
+PL[16]=PLCPDP[F3];
+PL[18]=PL90[F1];
+PL[19]=PLCPDP[F1];
+PL[21]=PLCW[F2];
+PL[23]=PLTOC[F3];
+PL[24]=PLHD[F2];
+PL[27]=PLROE[F1];
+SP[1]=PLSH1[F1];
+SP[2]=PLSH2[F1];
+SP[3]=PLSH3[F2];
+SP[6]=PLSH7[F1];
+SP[7]=PLSH2[F2];
+SPNAM1=PNSH1[F1];
+SPNAM2=PNSH2[F1];
+SPNAM3=PNSH3[F2];
+SPNAM6=PNSH7[F1];
+SPNAM7=PNSH2[F2];
+SPOAL[1]=PASH1[F1];
+SPOAL[2]=PASH2[F1];
+SPOAL[3]=PASH3[F2];
+SPOAL[6]=PASH7[F1];
+SPOAL[7]=PASH2[F2];
+D[9]=TTOC[F1];
+D[16]=D_grad;
+P[16]=P_grad1;
+P[17]=P_mlev;
+P[19]=P_grad2;
+P[28]=P_hsqc;
+

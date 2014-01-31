@@ -68,7 +68,9 @@
           document has been retrieved from a public database.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute inheritable="true" name="id" type="xs:string">
+      <!--not supported-->
+    <!--<xs:attribute inheritable="true" name="id" type="xs:string">-->
+      <xs:attribute name="id" type="xs:string">
       <xs:annotation>
         <xs:documentation>An optional ID for the nmrML document.</xs:documentation>
       </xs:annotation>
