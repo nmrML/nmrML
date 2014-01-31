@@ -68,9 +68,9 @@
           document has been retrieved from a public database.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-      <!--not supported-->
+    <!--not supported-->
     <!--<xs:attribute inheritable="true" name="id" type="xs:string">-->
-      <xs:attribute name="id" type="xs:string">
+    <xs:attribute name="id" type="xs:string">
       <xs:annotation>
         <xs:documentation>An optional ID for the nmrML document.</xs:documentation>
       </xs:annotation>
@@ -84,11 +84,6 @@
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="cv" type="dx:CVType"/>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of CV definitions in this nmrML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="CVType">
     <xs:annotation>
@@ -124,11 +119,6 @@
     <xs:sequence minOccurs="1">
       <xs:element name="contact" type="dx:ContactType" maxOccurs="unbounded"/>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>Number of contact elements in the contact list.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ContactType">
     <xs:annotation>
@@ -189,11 +179,6 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>This number of source files referenced in this list.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="FileDescriptionType">
     <xs:annotation>
@@ -449,11 +434,6 @@
       <xs:element maxOccurs="unbounded" name="referenceableParamGroup"
         type="ReferenceableParamGroupType"/>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of ParamGroups defined in this nmrML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SourceFileListType">
     <xs:annotation>
@@ -463,12 +443,6 @@
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="sourceFile" type="dx:SourceFileType"/>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>Number of source files used in generating the instance
-          document.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SampleListType">
     <xs:annotation>
@@ -477,11 +451,6 @@
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="sample" type="dx:SampleType"/>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of Samples defined in this nmrML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:simpleType name="PhType">
     <xs:restriction base="xs:double"/>
@@ -525,11 +494,6 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of softwares defined in this nmrML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SoftwareType">
     <xs:annotation>
@@ -570,11 +534,6 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>This number of source files referenced in this list.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SourceFileType">
     <xs:annotation>
@@ -624,11 +583,6 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>This number of source files referenced in this list.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="InstrumentConfigurationType">
     <xs:annotation>
@@ -660,12 +614,6 @@
       <xs:element maxOccurs="unbounded" name="instrumentConfiguration"
         type="dx:InstrumentConfigurationType"/>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of instrument configurations present in this
-          list.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="DataProcessingType">
     <xs:annotation>
@@ -698,11 +646,6 @@
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="dataProcessing" type="dx:DataProcessingType"/>
     </xs:sequence>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of DataProcessingTypes in this nmrML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ProcessingMethodType">
     <xs:complexContent mixed="false">
@@ -1010,11 +953,6 @@ Parsed from Excitation width ?</xs:documentation>
       <xs:element name="spectrumMultiD" type="SpectrumMultiDType" maxOccurs="unbounded"
         minOccurs="0"/>
     </xs:choice>
-    <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>The number of spectra defined in this nmrML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
     <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="required">
       <xs:annotation>
         <xs:documentation>This attribute MUST reference the 'id' of the default data processing for
