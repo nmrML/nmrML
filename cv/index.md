@@ -32,21 +32,21 @@ Representational Unit (RU) metadata is captured via standardized owl annotation 
 
 A term batch submission table, i.e. for submitting new CV terms for inclusion into nmrCV, should have the following mandatory fields:
 
-*term name (rdfs:label)-->skos:prefLabel,ideally adhering to labelling best practice descibed at  http://www.obofoundry.org/wiki/index.php/Naming
+* term name (rdfs:label)-->skos:prefLabel,ideally adhering to labelling best practice descibed at  http://www.obofoundry.org/wiki/index.php/Naming
 
-*term definition in natural language (IAO_0000115)-->skos:definition
+* term definition in natural language (IAO_0000115)-->skos:definition
 
-*superclass (ideally a term from the current nmrCV.owl, or an own suggestion)
+* superclass (ideally a term from the current nmrCV.owl, or an own suggestion)
 
 Optional fields (good to have) are:
 
-*synonym (oboInOwl:hasExactSynonym)-->skos:altLabel
+* synonym (oboInOwl:hasExactSynonym)-->skos:altLabel
 
-*term definition source-->dc:source
+* term definition source-->dc:source
 
-*dc:creator-->dc:author
+* dc:creator-->dc:author
 
-*example of usage-->skos:example
+* example of usage-->skos:example
 
 
 
