@@ -78,6 +78,10 @@ ontologies/nmrCV.obo: ontologies/nmrCV.owl
 	echo "You need to manually save ontologies/nmrCV.owl as ontologies/nmrCV.obo"
 	/bin/false
 
+# We'd love to be able to use https://code.google.com/p/oboformat/
+# for the conversion:
+# obolib-owl2obo ontologies/nmrCV.owl -o ontologies/nmrCV.obo
+
 # Make sure OpenMS is using the latest versions of Schema, Ontology and the mapping
 update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
 	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrCV.obo
@@ -100,6 +104,12 @@ validate-HMDB00005:
 
 validate-bmse000325: 
 	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/bmse000325.nmrML
+
+# Check for broken links and other problems with linkchecker:
+# Homepage: http://linkchecker.sourceforge.net/
+# and the debian/ubuntu package linkchecker
+gh-pages-linkcheck:
+	linkchecker http://nmrml.org/
 
 # Tidy up the files to prepare for pushingn changes
 # Strip white space from the VERSION
