@@ -724,7 +724,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="decouplingMethod" type="CVTermType"/>
       <xs:element name="acquisitionNucleus" type="CVTermType"/>
-      <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
+      <xs:element maxOccurs="1" minOccurs="1" name="effectiveExcitationField"
         type="ValueWithUnitType">
         <xs:annotation>
           <xs:documentation>replacing the hardPulse parameter, would be automatically calculated
