@@ -14,8 +14,18 @@ GHP_XSD = ${GHP}/schema/${VERSION}
 GHP_CV = ${GHP}/cv/${VERSION}
 
 
-## Detect where OpenMS lives
+## OPENMS settings
+# This requires an OpenMS Installation
+# XMLVALIDATOR=/vol/openms/src/OpenMS/bin/XMLValidator
+# SEMANTICVALIDATOR=/vol/openms/src/OpenMS/bin/SemanticValidator
+
+# The fallback if no OpenMS is available:
+XMLVALIDATOR=/bin/true
+SEMANTICVALIDATOR=/bin/true
+
 OPENMSSHARE := $(shell which FileInfo | sed -e s!bin[/]\\+FileInfo!share/OpenMS!g )
+
+
 
 .PHONY: docs docs_clean docs_rebuild tidy undo_tag show_tags \
 	show_tags bump_build bump_minor bump_major prepare_release \
@@ -83,10 +93,11 @@ ontologies/nmrCV.obo: ontologies/nmrCV.owl
 # obolib-owl2obo ontologies/nmrCV.owl -o ontologies/nmrCV.obo
 
 # Make sure OpenMS is using the latest versions of Schema, Ontology and the mapping
-update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
-	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrCV.obo
-	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
-	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmrCV.obo
+# Requires the OpenMS fork from https://github.com/sneumann/OpenMS/tree/nmrML
+#update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
+#	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrCV.obo
+#	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
+#	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmrCV.obo
 
 # Validate our examples against Schema, Ontology and the mapping
 #validate-all: validate-nmrml-schema validate-nmrml-mapping update-openms validate-HMDB00005 validate-bmse000325
@@ -100,6 +111,9 @@ validate-nmrml-mapping:
 
 validate-HMDB00005: 
 	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/HMDB00005.nmrML
+	XMLValidator -in examples/reference_spectra_example/HMDB00005.nmrML -schema xml-schemata/nmrML.xsd 
+	SemanticValidator -in examples/reference_spectra_example/HMDB00005.nmrML -cv ontologies/nmrCV.obo -mapping_file ontologies/nmr-mapping.xml 
+
 #	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
 
 validate-bmse000325: 
