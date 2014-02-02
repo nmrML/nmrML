@@ -40,7 +40,7 @@ Now in that directory install the github pages libraries, and start the
 server with:
 ```bash
 bundle install
-bundle exec jekyll serve 
+bundle exec jekyll serve --watch 
 ```
 
 You should now be able to access the site in a browser at
