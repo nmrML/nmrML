@@ -734,7 +734,12 @@
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="sweepWidth" type="ValueWithUnitType">
         <xs:annotation>
-          <xs:documentation>TODO should be in ppm and Hz.</xs:documentation>
+          <xs:documentation>Should be in ppm and Hz.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="pulseWidth" type="ValueWithUnitType">
+        <xs:annotation>
+          <xs:documentation>90° pulse width, measured in µs</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
