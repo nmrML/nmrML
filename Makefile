@@ -14,8 +14,18 @@ GHP_XSD = ${GHP}/schema/${VERSION}
 GHP_CV = ${GHP}/cv/${VERSION}
 
 
-## Detect where OpenMS lives
+## OPENMS settings
+# This requires an OpenMS Installation
+# XMLVALIDATOR=/vol/openms/src/OpenMS/bin/XMLValidator
+# SEMANTICVALIDATOR=/vol/openms/src/OpenMS/bin/SemanticValidator
+
+# The fallback if no OpenMS is available:
+XMLVALIDATOR=/bin/true
+SEMANTICVALIDATOR=/bin/true
+
 OPENMSSHARE := $(shell which FileInfo | sed -e s!bin[/]\\+FileInfo!share/OpenMS!g )
+
+
 
 .PHONY: docs docs_clean docs_rebuild tidy undo_tag show_tags \
 	show_tags bump_build bump_minor bump_major prepare_release \
@@ -78,14 +88,20 @@ ontologies/nmrCV.obo: ontologies/nmrCV.owl
 	echo "You need to manually save ontologies/nmrCV.owl as ontologies/nmrCV.obo"
 	/bin/false
 
+# We'd love to be able to use https://code.google.com/p/oboformat/
+# for the conversion:
+# obolib-owl2obo ontologies/nmrCV.owl -o ontologies/nmrCV.obo
+
 # Make sure OpenMS is using the latest versions of Schema, Ontology and the mapping
-update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
-	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrCV.obo
-	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
-	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmrCV.obo
+# Requires the OpenMS fork from https://github.com/sneumann/OpenMS/tree/nmrML
+#update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
+#	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrCV.obo
+#	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
+#	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmrCV.obo
 
 # Validate our examples against Schema, Ontology and the mapping
-validate-all: validate-nmrml-schema validate-nmrml-mapping update-openms validate-HMDB00005
+#validate-all: validate-nmrml-schema validate-nmrml-mapping update-openms validate-HMDB00005 validate-bmse000325
+validate-all: validate-nmrml-schema validate-nmrml-mapping validate-HMDB00005 validate-bmse000325
 
 validate-nmrml-schema: 
 	xmllint --noout --schema xml-schemata/XMLSchema.xsd xml-schemata/nmrML.xsd
@@ -93,12 +109,21 @@ validate-nmrml-schema:
 validate-nmrml-mapping: 
 	xmllint --noout --schema xml-schemata/CvMapping.xsd ontologies/nmr-mapping.xml
 
-# This fails because my xmllint chokes on the XSD-1.1 compliant nmrML.xsd
-#lint-HMDB00005: 
-#	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/HMDB00005.nmrML
-
 validate-HMDB00005: 
-	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
+	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/HMDB00005.nmrML
+	XMLValidator -in examples/reference_spectra_example/HMDB00005.nmrML -schema xml-schemata/nmrML.xsd 
+	SemanticValidator -in examples/reference_spectra_example/HMDB00005.nmrML -cv ontologies/nmrCV.obo -mapping_file ontologies/nmr-mapping.xml 
+
+#	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
+
+validate-bmse000325: 
+	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/bmse000325.nmrML
+
+# Check for broken links and other problems with linkchecker:
+# Homepage: http://linkchecker.sourceforge.net/
+# and the debian/ubuntu package linkchecker
+gh-pages-linkcheck:
+	linkchecker http://nmrml.org/
 
 # Tidy up the files to prepare for pushingn changes
 # Strip white space from the VERSION

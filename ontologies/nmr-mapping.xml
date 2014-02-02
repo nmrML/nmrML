@@ -52,7 +52,7 @@ CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -h
       
       <!-- software-->
 
-      <CvMappingRule id="software_must" 
+      <CvMappingRule id="software_must1" 
 		     cvElementPath="/nmrML/softwareList/software/cvParam/@accession" 
 		     requirementLevel="MUST" 
 		     scopePath="/nmrML/softwareList/software" 
@@ -65,7 +65,7 @@ CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -h
 		cvIdentifierRef="NMR"></CvTerm>
       </CvMappingRule>
 
-      <CvMappingRule id="software_must" 
+      <CvMappingRule id="software_must2" 
 		     cvElementPath="/nmrML/softwareList/software@accession" 
 		     requirementLevel="MUST" 
 		     scopePath="/nmrML/softwareList/" 
