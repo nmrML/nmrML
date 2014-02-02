@@ -20,7 +20,7 @@ You can view the documentation and download current and past releases here:
 
 ### nmrCV Overview
 
-The nmrCV.owl ontology momentarily contains ~ 600 classes under nmr namespace. Around 2000 terms are imported from the units ontology and BioTopLight upper level ontology.
+The nmrCV.owl ontology momentarily contains ~ 600 classes under nmr namespace. Around 2000 terms are imported from the units ontology and BFO top level ontology.
 
 We choose the OWL Syntax  over the OBO format  as exchange syntax for the CV, as the OBO tools are instable, the OBO format is only established in the biology domain (lack of off-the-shelf development tools, OBO expressivity is not as formal as OWL-DL) and there are hence less resources to integrate with.
 
@@ -32,17 +32,23 @@ Representational Unit (RU) metadata is captured via standardized owl annotation 
 
 A term batch submission table, i.e. for submitting new CV terms for inclusion into nmrCV, should have the following mandatory fields:
 
-* term name (rdfs:label)
-* term definition in natural language (IAO_0000115, or skos ?)
+* term name (rdfs:label)-->skos:prefLabel,ideally adhering to labelling best practice descibed at  http://www.obofoundry.org/wiki/index.php/Naming
+
+* term definition in natural language (IAO_0000115)-->skos:definition
+
 * superclass (ideally a term from the current nmrCV.owl, or an own suggestion)
 
-Optional fields:
+Optional fields (good to have) are:
 
-* synonym (oboInOwl:hasExactSynonym)
-* term definition source (dc:source)
-* dc:contributor
-* dc:creator
-* example of usage (skos:example)
+* synonym (oboInOwl:hasExactSynonym)-->skos:altLabel
+
+* term definition source-->dc:source
+
+* dc:creator-->dc:author
+
+* example of usage-->skos:example
+
+
 
 Here is an example of the definition of the FID file term (NMR:1400119)
 
@@ -59,7 +65,7 @@ synonym: FID file reference</rdfs:comment>
 #### Top Level Ontology usage
 
 There are a few top and upper level ontologies (TLO) already established. From BFO, OBILight &
- BioTopLight (btl2), we choose btl2  as top level ontology to guide our CV upper level development. The reason was that the WP2 leads are involved in the btl2 development (fast to react) and it provides a proper set of object properties (close to Relations Ontology). At the moment only a few relations from unit ontology (UO) are used. Bridges from btl2 to BFO and other TLOs exist and we can at some later point still switch the TLO, as we do not use any axioms (It is only ~10 classes, so rebinning will be quick). It can be argued why we use a TLO when developing a CV not an Ontology. There has already been a case where the TLO provided modeling restrictions that allowed an automatic DL reasoner to discover CV modelling errors, e.g. https://github.com/nmrML/nmrML/issues/62
+ BioTopLight (btl2), we choose BFO as top level ontology to guide our CV upper level development. The reason was that it is abundantly used within existing bioontology frameworks. At the moment only a few relations from unit ontology (UO) are used. We can at some later point still switch the TLO, as we do not use any axioms (It is only ~10 classes, so rebinning will be quick). It can be argued why we use a TLO when developing a CV not an Ontology. There has already been a case where the TLO provided modeling restrictions that allowed an automatic DL reasoner to discover CV modelling errors, e.g. https://github.com/nmrML/nmrML/issues/62
 
 Nevertheless, at the moment we avoid any usage of object properties from the CV. E.g. for coding the vendor of an NMR instrument, we could have the following axiom in the CV:  ‘NMR Instrument’ hasVendor Vendor
 
