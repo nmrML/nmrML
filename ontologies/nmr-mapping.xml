@@ -16,10 +16,10 @@ CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -h
 
       <!-- sourceFile -->
 
-      <CvMappingRule id="sourceFile_must" 
-		     cvElementPath="/nmrML/sourceFileList/sourceFile/cvParam/@accession" 
-		     requirementLevel="MUST" 
-		     scopePath="/nmrML/sourceFileList/sourceFile/" 
+      <CvMappingRule id="sourceFile_may" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/cvParam@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/" 
 		     cvTermsCombinationLogic="AND">
 	<CvTerm termAccession="NMR:1400285" 
 		useTerm="false" 
@@ -27,15 +27,6 @@ CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -h
 		isRepeatable="false" 
 		allowChildren="true" 
 		cvIdentifierRef="NMR"></CvTerm>
-      </CvMappingRule>
-
-      <!-- sourceFile -->
-
-      <CvMappingRule id="sourceFile_may" 
-		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/cvParam@accession" 
-		     requirementLevel="MAY" 
-		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/" 
-		     cvTermsCombinationLogic="AND">
 	<CvTerm termAccession="NMR:1400285" 
 		useTerm="false" 
 		termName="NMR software data format" 
@@ -52,9 +43,9 @@ CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -h
       
       <!-- software-->
 
-      <CvMappingRule id="software_must1" 
+      <CvMappingRule id="software_may" 
 		     cvElementPath="/nmrML/softwareList/software/cvParam/@accession" 
-		     requirementLevel="MUST" 
+		     requirementLevel="MAY" 
 		     scopePath="/nmrML/softwareList/software" 
 		     cvTermsCombinationLogic="AND">
 	<CvTerm termAccession="NMR:1000531" 
@@ -63,13 +54,6 @@ CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -h
 		isRepeatable="false" 
 		allowChildren="true" 
 		cvIdentifierRef="NMR"></CvTerm>
-      </CvMappingRule>
-
-      <CvMappingRule id="software_must2" 
-		     cvElementPath="/nmrML/softwareList/software@accession" 
-		     requirementLevel="MUST" 
-		     scopePath="/nmrML/softwareList/" 
-		     cvTermsCombinationLogic="AND">
 	<CvTerm termAccession="NMR:1000531" 
 		useTerm="false" 
 		termName="software" 
