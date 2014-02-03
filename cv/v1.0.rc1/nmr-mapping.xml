@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://psidev.svn.sourceforge.net/svnroot/psidev/psi/tools/current/xsl/cv-mapping/CvMappingRules.xsl" type="text/xsl"?>
+<!-- 
+CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -html mapping_and_cv.html
+-->
+
+<CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvMapping.xsd" modelName="nmrML.xsd" modelURI="https://raw.github.com/nmrML/nmrML/master/xml-schemata/nmrML.xsd" modelVersion="0.1.0">
+
+    <CvReferenceList>
+      <CvReference cvName="NMR" cvIdentifier="NMR"/>
+      <CvReference cvName="PATO" cvIdentifier="PATO"/>
+      <CvReference cvName="UO" cvIdentifier="UO"/>    
+    </CvReferenceList>
+
+    <CvMappingRuleList>
+
+      <!-- sourceFile -->
+
+      <CvMappingRule id="sourceFile_may" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/cvParam@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/" 
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1400285" 
+		useTerm="false" 
+		termName="NMR software data format" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+	<CvTerm termAccession="NMR:1400285" 
+		useTerm="false" 
+		termName="NMR software data format" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+	<CvTerm termAccession="NMR:1002006" 
+		useTerm="false" 
+		termName="acquisition parameter file format"
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+      </CvMappingRule>
+      
+      <!-- software-->
+
+      <CvMappingRule id="software_may" 
+		     cvElementPath="/nmrML/softwareList/software/cvParam/@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/softwareList/software" 
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1000531" 
+		useTerm="false" 
+		termName="software" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+	<CvTerm termAccession="NMR:1000531" 
+		useTerm="false" 
+		termName="software" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+      </CvMappingRule>
+
+      <!-- instrumentConfiguration -->
+
+      <CvMappingRule id="instrumentConfiguration_must" 
+		     cvElementPath="/nmrML/instrumentConfigurationList/instrumentConfiguration/cvParam/@accession"
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/instrumentConfigurationList/instrumentConfiguration/"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1000031" 
+		useTerm="false" 
+		termName="instrument model" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+	<CvTerm termAccession="NMR:1400014" 
+		useTerm="false" 
+		termName="NMR probe" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="instrumentConfiguration_may" 
+		     cvElementPath="/nmrML/instrumentConfigurationList/instrumentConfiguration/cvParam/@accession"
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/instrumentConfigurationList/instrumentConfiguration/"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1000463" 
+		useTerm="false" 
+		termName="instrument" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+      </CvMappingRule>
+
+      <!-- Contact has no mapping, can use whatever seems fit from FOAF or whatever -->
+
+      <CvMappingRule id="sampleAcquisitionTemperature_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/sampleAcquisitionTemperature@unitAccession" 
+		     requirementLevel="MUST" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/sampleAcquisitionTemperature/" 
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="UO:0000012" 
+		useTerm="true" 
+		termName="kelvin" 
+		isRepeatable="false" 
+		allowChildren="false" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="spinningRate_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/spinningRate@unitAccession" 
+		     requirementLevel="MUST" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/spinningRate"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="UO:0000106"
+		useTerm="true" 
+		termName="hertz" 
+		isRepeatable="false" 
+		allowChildren="false" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="relaxationDelay_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/relaxationDelay@unitAccession" 
+		     requirementLevel="MUST" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/relaxationDelay"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="UO:0000010"
+		useTerm="true" 
+		termName="second" 
+		isRepeatable="false" 
+		allowChildren="false" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="pulseSequence_may" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/cvParam@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1000226"
+		useTerm="false" 
+		termName="first transient of the tnnoesy-presaturation pulse sequence UPDATE TO PARENT TERM !!" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="acquisitionNucleus_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/acquisitionNucleus@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/acquisitionNucleus"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1400083"
+		useTerm="false" 
+		termName="acquisition nucleus"
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="decouplingMethod_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/decouplingMethod@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/decouplingMethod"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1000000"
+		useTerm="false" 
+		termName="decoupling method"
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <!-- must add the mapping for this -->
+      <!-- <samplingStrategy accession="?" cvRef="NMRCV" name="uniform"/> -->
+      <CvMappingRule id="samplingStrategy_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/samplingStrategy@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/samplingStrategy"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1000000"
+		useTerm="false" 
+		termName="sampling strategy"
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="gammaB1PulseFieldStrength_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/gammaB1PulseFieldStrength@unitAccession" 
+		     requirementLevel="MUST" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/gammaB1PulseFieldStrength"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="UO:0000228"
+		useTerm="true" 
+		termName="tesla" 
+		isRepeatable="false" 
+		allowChildren="false" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="sweepWidth_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/sweepWidth@unitAccession" 
+		     requirementLevel="MUST" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/sweepWidth"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="UO:0000106"
+		useTerm="true" 
+		termName="hertz" 
+		isRepeatable="false" 
+		allowChildren="false" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+
+      <CvMappingRule id="irradiationFrequency_must" 
+		     cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/irradiationFrequency@unitAccession" 
+		     requirementLevel="MUST" 
+		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/irradiationFrequency"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="UO:0000106"
+		useTerm="true" 
+		termName="hertz" 
+		isRepeatable="false" 
+		allowChildren="false" 
+		cvIdentifierRef="UO"></CvTerm>
+      </CvMappingRule>
+      
+    </CvMappingRuleList>
+</CvMapping>
