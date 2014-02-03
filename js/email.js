@@ -16,5 +16,5 @@
       link += (key.charAt(ltr))
     }
   }
-document.write("<a href='mailto:"+link+"'>Send us an email at info@nmrml.org</a>")
+document.write("<a href='mailto:"+link+"'>info@nmrml.org</a>")
 }
