@@ -12,3 +12,13 @@ nmrML is an open mark-up language for NMR data. It is currently under heavy deve
 ### Why do we need a better NMR data standard? 
 
 NMR is an important analytical method in metabolomics experiments. The instrument vendors (the dominant ones are Bruker, Varian and JEOL) typically provide the software to process the vendor specific data. Alternative data analysis software needs to put considerable efforts into reading and writing these specific vendor format, this applies both to commercial software such as NmrPipe, MestReNova (Mnova) or Chenomx NMR Suite, but even more so to community developed open source efforts such as Metaboquant  (Matlab-based), the Batman R package or rNMR. Currently existing standard data formats such as the JCAMP family have several drawbacks, especially in metabolomics applications. One problem is that there is no semantic validation of JCAMP-DX files, and that the JCAMP-DX website says even about their own test data  that “these files do not always comply 100% to the written standard but do represent files commonly found -- they do not claim to cover all possible allowed variations but are a good starting point to test your software.” This was the starting point that a new, well-specified NMR data standard was needed.
+
+
+<h3 id="contact">Contact Us</h3>
+
+<a class="btn btn-primary" href="https://github.com/nmrML/nmrML" role="button">Find us on
+GitHub.</a> <a class="btn btn-primary" href="https://github.com/nmrML/nmrML/issues"
+role="button">Submit an issue.</a>
+
+<script type="text/javascript" language="javascript" src="/js/email.js" >
+</script><noscript>Sorry, you need Javascript on to view our email address.</noscript>
