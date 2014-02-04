@@ -50,23 +50,21 @@
     
     <acquisition>
         <acquisition1D>
-            <acquisitionParameterSet numberOfScans="160" numberOfSteadyStateScans="0">        
+            <acquisitionParameterSet numberOfScans="160" numberOfSteadyStateScans="0">
                 <acquisitionParameterFileRefList >
                     <sourceFileRef ref="SOURCE_FILE_1"/>
                     <sourceFileRef ref="SOURCE_FILE_0"/>
-                </acquisitionParameterFileRefList>                
+                </acquisitionParameterFileRefList>
                 <sampleContainer name="tube" cvRef="NMRCV" accession="NMR:400128"/>
                 <sampleAcquisitionTemperature unitName="kelvin" unitCvRef="UO" value="299.15" unitAccession="UO:0000012"/>
-                
                 <spinningRate unitName="hertz" unitCvRef="UO" value="0" unitAccession="UO:0000106"/>
                 <relaxationDelay unitName="second" unitCvRef="UO" value="22.2737024" unitAccession="UO:0000010"/>
                 <pulseSequence/>
                 <DirectDimensionParameterSet numberOfDataPoints="65536" decoupled="false">
                     <acquisitionNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
                     <effectiveExcitationField value="34482.7586207" unitName="megaHertz" unitCvRef="UO" unitAccession="UO:0000325"/>                  
-                    <sweepWidth value="12019.2307692" unitName="hertz" unitCvRef="UO"
-                        unitAccession="UO:0000106"/>
-                    <pulseWidth value="7.25" unitName="ppm" unitCvRef="UO" unitAccession="UO:0000169"/>
+                    <sweepWidth value="12019.2307692" unitName="hertz" unitCvRef="UO" unitAccession="UO:0000106"/>
+                    <pulseWidth value="7.25" unitName="microsecond" unitCvRef="UO" unitAccession="UO:0000029"/>
                     <irradiationFrequency unitName="hertz" unitCvRef="UO" value="599.8311617" unitAccession="UO:0000106"/>
                     <decouplingNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
                     <samplingStrategy accession="?" cvRef="NMRCV" name="uniform"/>
