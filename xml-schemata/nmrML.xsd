@@ -744,7 +744,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="acquisitionNucleus" type="CVTermType"/>
-      <xs:element maxOccurs="1" minOccurs="1" name="gammaB1PulseFieldStrength"
+      <xs:element maxOccurs="1" minOccurs="1" name="effectiveExcitationField"
         type="ValueWithUnitType">
         <xs:annotation>
           <xs:documentation>replacing the hardPulse parameter, would be automatically calculated from the procs. If you say the pulse width you also have to specify the excitation angle so this way is more compact/useful
