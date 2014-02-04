@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nmrML.org/schema/nmrML.xsd" version="v1.0.rc1">
-    <cvList count="3">
+    <cvList>
         <cv id="UO" fullName="Unit Ontology" version="3.2.0" URI="http://purl.obolibrary.org/obo/"/>
         <cv id="NMRCV" fullName="Nuclear Magnetic Resonance CV" version="1.0.rc1" URI="http://nmrml.org/cv/v1.0.rc1/nmrCV.owl"/>
 	<cv id="ChEBI" fullName="Chemical entities of biological interest" 
@@ -22,7 +22,7 @@
         <contact id="contact1" fullname="Luis Filipe de Figueiredo" email="luis.defigueiredo@ebi.ac.uk"/>
     </contactList>
 
-    <sourceFileList count="3">
+    <sourceFileList>
         <sourceFile id="FID_FILE" name="fid" location="1H/fid" sha1="E7926300F0A2413F71C545D0D18E1388648E0A2C">
             <cvParam cvRef="NMRCV" accession="NMR:1400119" name="FID file"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
@@ -36,10 +36,10 @@
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
         </sourceFile>
     </sourceFileList>
-    <softwareList count="1">
+    <softwareList>
         <software id="software1" cvRef="NMRCV" accession="NMR:1400320" version="Version 2.6" name="XWIN-NMR"/>
     </softwareList>
-    <instrumentConfigurationList count="1">
+    <instrumentConfigurationList>
         <instrumentConfiguration id="instrumentconfig1">
             <cvParam cvRef="NMRCV" accession="NMR:1400198" name="Bruker NMR instrument"/>
             <userParam name="Probehead" value="&lt;5mm TXI XYZ-grad long coil Z8281/0125"/>
@@ -48,7 +48,7 @@
     <acquisition>
         <acquisition1D>
             <acquisitionParameterSet numberOfScans="4" numberOfSteadyStateScans="-999">
-                <acquisitionParameterFileRefList count="1">
+                <acquisitionParameterFileRefList>
                     <sourceFileRef ref="ACQUISITION_FILE"/>
                 </acquisitionParameterFileRefList>
 
@@ -59,15 +59,16 @@
 
                 <pulseSequence>
                     <pulseSequenceFileRefList>
-                        <pulseSequenceFileRef ref="PULSEPROGRAM_FILE"/>
+                        <sourceFileRef ref="PULSEPROGRAM_FILE"/>
                     </pulseSequenceFileRefList>
                 </pulseSequence>
                 <DirectDimensionParameterSet decoupled="false" numberOfDataPoints="32768">
                     <acquisitionNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
-                    <gammaB1PulseFieldStrength value="11.74" unitAccession="UO_0000228" unitName="tesla" unitCvRef="UO"/>
+                    <effectiveExcitationField value="11.74" unitAccession="UO_0000228" unitName="tesla" unitCvRef="UO"/>
                     <sweepWidth value="7002.80112044818" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
+<!-- WRONG, copied from HDMB0005, required by XSD--><pulseWidth value="6.3" unitName="ppm" unitCvRef="UO" unitAccession="UO:0000169"/>
                     <irradiationFrequency value="4.9984E8" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
-                    <decouplingNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
+<!-- WRONG, but required by XSD --><decouplingNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
                     <samplingStrategy accession="?" cvRef="NMRCV" name="uniform"/>
                 </DirectDimensionParameterSet>
             </acquisitionParameterSet>

@@ -13,7 +13,6 @@ GHP=../gh-pages/
 GHP_XSD = ${GHP}/schema/${VERSION}
 GHP_CV = ${GHP}/cv/${VERSION}
 
-
 ## OPENMS settings
 # This requires an OpenMS Installation
 # XMLVALIDATOR=/vol/openms/src/OpenMS/bin/XMLValidator
@@ -32,16 +31,50 @@ OPENMSSHARE := $(shell which FileInfo | sed -e s!bin[/]\\+FileInfo!share/OpenMS!
 	release_major release_minor release_build \
 	gh-pages-install
 
-gh-pages-install: #xml-schemata/nmrML.xsd docs/SchemaDocumentation/HTML_Serialisations/nmrML_xsd.html \
-	docs/CVDocumentation/OwlDoc/index.html ontologies/nmrCV.owl	
-	rm -rf ${GHP_XSD}/doc
-	mkdir -p ${GHP_XSD}/doc
-	cp -avx xml-schemata/nmrML.xsd ${GHP_CV}
-	cp -avx docs/SchemaDocumentation/HTML_Serialisations/* ${GHP_XSD}/doc/
-	rm -rf ${GHP_CV}/doc
-	mkdir -p ${GHP_CV}/doc
+gh-pages-install: gh-pages-xsd-install gh-pages-specdoc-install gh-pages-cv-install gh-pages-mapping-install
+
+gh-pages-xsd-install: #xml-schemata/nmrML.xsd docs/SchemaDocumentation/HTML_Serialisations/nmrML_xsd.html \
+	@echo "Copying the schema" 
+	cp -avx xml-schemata/nmrML.xsd ${GHP_XSD}
+
+gh-pages-specdoc-install:
+	@echo "Copy a fresh set of Word-exported SpecDoc HTML files" 
+	rm -rf ${GHP_XSD}/doc/specification/
+	mkdir -p ${GHP_XSD}/doc/specification/
+	cp      docs/SchemaDocumentation/NMR-ML1.0_specificationDoc.docx ${GHP_XSD}/doc/specification/
+	cp      docs/SchemaDocumentation/NMR-ML1.0_specificationDoc.htm ${GHP_XSD}/doc/specification/index.html
+	cp -avx docs/SchemaDocumentation/NMR-ML1.0_specificationDoc-Dateien/ ${GHP_XSD}/doc/specification/
+
+gh-pages-cv-install: ontologies/nmrCV.owl ontologies/nmrCV.obo # docs/CVDocumentation/OwlDoc/index.html
+	@echo "Copy CV in OBO and OWL" 
 	cp -avx ontologies/nmrCV.owl ${GHP_CV}
-	cp -avx docs/CVDocumentation/OwlDoc/* ${GHP_CV}/doc/
+	cp -avx ontologies/nmrCV.obo ${GHP_CV}
+	@echo "Copy a fresh set of oXygen-exported Ontology HTML files" 
+	rm -rf ${GHP_CV}/doc/doc/
+	mkdir -p ${GHP_CV}/doc/doc/
+	cp -avx docs/CVDocumentation/OwlDoc/* ${GHP_CV}/doc/doc/
+
+gh-pages-mapping-install: docs/mapping_and_cv.html
+	@echo "Copy mapping file" 
+	cp -avx ontologies/nmr-mapping.xml ${GHP_CV}
+	rm -rf ${GHP_CV}/doc/mapping/
+	mkdir -p ${GHP_CV}/doc/mapping/
+	cp -avx docs/mapping_and_cv.html ${GHP_CV}/doc/mapping/
+
+
+# Once we have the oXygen gerenated HTML in the nmrML master:
+#	@echo "Copy a fresh set of oXygen documentation HTML files" 
+#	rm -rf ${GHP_XSD}/doc/doc/
+#	mkdir -p ${GHP_XSD}/doc/doc/
+#	cp -avx docs/SchemaDocumentation/HTML_Serialisations/* ${GHP_XSD}/doc/doc/
+
+
+
+
+
+
+
+
 
 # Build the docs if they don't exist
 docs: docs/schema.html docs/CVDocumentation/OwlDoc/index.html	
@@ -66,7 +99,7 @@ docs/CvMapping-schema.html: ./xml-schemata/CvMapping.xsd tidy
 # Build the html file explaining the mapping between schema and Ontology.
 # Requires CVInspector http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS-release/html/UTILS_CVInspector.html
 # from http://sourceforge.net/projects/open-ms/files/OpenMS/
-docs/mapping_and_cv.html: ontologies/nmrCV.obo schemas/nmr-ml.xsd tidy tidy
+docs/mapping_and_cv.html: ontologies/nmrCV.obo xml-schemata/nmrML.xsd tidy tidy
 	CVInspector -cv_files ontologies/nmrCV-protege.obo -cv_names NMR \
 	-mapping_file ontologies/nmr-mapping.xml \
 	-html docs/mapping_and_cv.html
