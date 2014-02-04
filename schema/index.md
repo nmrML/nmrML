@@ -9,13 +9,14 @@ You can view the documentation and download current and past releases here:
 
 <table class="table table-hover">
 <thead>
-<tr><th>nmrML Version</th><th>Documenation</th><th>Download</th></tr>
+<tr><th>nmrML Version</th><th>Design Specification</th><th>XSD Documenation</th><th>Download</th></tr>
 </thead>
 <tbody>
 <tr>
 <td>v1.0.rc1</td>
-<td><a href="/schema/v1.0.rc1/doc" >View Documentation</a></td>
-<td><a href="/schema/v1.0.rc1/nmrML.xsd">nmrML Schema</a></td>
+<td><a href="/schema/v1.0.rc1/design-doc">View Design Specification</a></td>
+<td><a href="/schema/v1.0.rc1/doc" >View XSD Documentation</a></td>
+<td><a href="/schema/v1.0.rc1/nmrML.xsd">nmrML XSD</a></td>
 </tr>
 </tbody>
 </table>
