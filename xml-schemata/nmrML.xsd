@@ -10,22 +10,6 @@
         the peak list).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <!--
-  <xs:element name="QualityControl">
-    <xs:annotation>
-      <xs:documentation>TODO need to discuss including this in aqcuisition
-</xs:documentation>
-    </xs:annotation>
-    <xs:complexType>
-      <xs:sequence maxOccurs="1" minOccurs="1">
-        <xs:element maxOccurs="1" minOccurs="1" name="linewidth" type="ValueWithUnitType"> </xs:element>
-        <xs:element maxOccurs="1" minOccurs="1" name="linewidthAt5PercentIntensity"
-          type="ValueWithUnitType"> </xs:element>
-      </xs:sequence>
-      <xs:attribute name="signal" type="xs:string" use="required"/>
-    </xs:complexType>
-  </xs:element>
-  -->
   <xs:complexType name="nmrMLType">
     <xs:annotation>
       <xs:documentation>This is the root element for the COordination Of Standards In MetabOlomicS
@@ -68,8 +52,6 @@
           document has been retrieved from a public database.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <!--not supported-->
-    <!--<xs:attribute inheritable="true" name="id" type="xs:string">-->
     <xs:attribute name="id" type="xs:string">
       <xs:annotation>
         <xs:documentation>An optional ID for the nmrML document.</xs:documentation>
@@ -904,7 +886,7 @@ Parsed from Excitation width ?</xs:documentation>
           <xs:element name="pulseSequenceFileRefList">
             <xs:complexType>
               <xs:sequence>
-                <xs:element minOccurs="0" name="pulseSequenceFileRef" type="SourceFileRefType"
+                <xs:element minOccurs="0" name="sourceFileRef" type="SourceFileRefType"
                   maxOccurs="unbounded"/>
               </xs:sequence>
             </xs:complexType>
