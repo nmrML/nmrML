@@ -7,7 +7,7 @@ nav:
 
 ### Contact Us
 
-If you have any questions you can send us an email to the developers at: <script type="text/javascript" language="javascript" src="/js/email.js" >
+If you have any questions you can send an email to the developers at: <script type="text/javascript" language="javascript" src="/js/email.js" >
 </script><noscript>Sorry, you need Javascript on to view our email address.</noscript>
 
 If you are an NMR user or standards developer, you can take part in the ongoing discussion at the [nmrML Developers Google
