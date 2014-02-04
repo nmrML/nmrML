@@ -34,12 +34,12 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:btl2="http://purl.org/biotop/btl2.owl#">
     <owl:Ontology rdf:about="http://nmrML.org/nmrCV">
+        <oboInOwl:creation_date rdf:datatype="&xsd;dateTime">04.02.2014</oboInOwl:creation_date>
         <owl:versionInfo rdf:datatype="&xsd;string">1.0.0</owl:versionInfo>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="&xsd;string">1.2</oboInOwl:hasOBOFormatVersion>
-        <oboInOwl:creation_date rdf:datatype="&xsd;dateTime">30.01.2014</oboInOwl:creation_date>
         <oboInOwl:created_by rdf:datatype="&xsd;string">COSMOS consortium</oboInOwl:created_by>
-        <oboInOwl:created_by rdf:datatype="&xsd;string">Daniel Schober</oboInOwl:created_by>
         <doap:documenter rdf:datatype="&xsd;string">Daniel Schober</doap:documenter>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">Daniel Schober</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">In case we like to be able to convert this owl CV back into the obo format, we should only use DL/owl constructs that are supported by obo. Hence, editors of this CV should take care not to use any higher descriptrion logics semantics, i.e. cardinality restrictions or defined terms using constructors. We should start to build the taxonomic backbone first and later connect the main axis via relations. 
 If we want to use restrictions, we should only use existential quantifiers as the OBO format does not support universal quantification.
 
@@ -126,28 +126,26 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <doap:location rdf:datatype="&xsd;string">https://github.com/nmrML/nmrML/tree/master/ontologies</doap:location>
         <doap:mailing-list rdf:datatype="&xsd;string">https://groups.google.com/forum/?hl=en#!forum/nmrml/join</doap:mailing-list>
         <dc:title rdf:datatype="&xsd;string">nuclear magnetic resonance CV</dc:title>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000011</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000014</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000013</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400096</meta:bookmark>
-        <dc:rights>Creative Commons Public Domain Mark 1.0</dc:rights>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400042</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400043</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1002010</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400032</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000531</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400033</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400073</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000011</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400074</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400075</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000014</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000013</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400096</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400128</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000524</meta:bookmark>
+        <dc:rights>Creative Commons Public Domain Mark 1.0</dc:rights>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400062</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400042</meta:bookmark>
         <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400068</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400043</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1002010</meta:bookmark>
         <dc:format xml:lang="en">Rather flat CV. Taxonomic backbone with few relations used. No OWL DL complexity such as cardinalities, blank nodes, nested class definitions.</dc:format>
         <owl:imports rdf:resource="&obo;bfo.owl"/>
-        <owl:imports rdf:resource="&obo;pato.owl"/>
-        <owl:imports rdf:resource="&obo;uo.owl"/>
     </owl:Ontology>
     
 
@@ -219,6 +217,12 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;hasBroadSynonym"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
     <owl:AnnotationProperty rdf:about="&oboInOwl;hasDbXref">
@@ -281,6 +285,30 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     
 
 
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="&skos;definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
+
+    <owl:AnnotationProperty rdf:about="&skos;editorialNote"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="&skos;example"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="&skos;scopeNote"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -303,16 +331,16 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A reference number relevant to the sample under study.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A reference number relevant to the sample under study.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -346,16 +374,16 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Total mass of sample used.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000004"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000004"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Total mass of sample used.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000004"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -423,6 +451,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000009">
         <rdfs:label xml:lang="en">_obsolete</rdfs:label>
+        <skos:scopeNote>This administrative helper class contains the deleted classes which will be physically deleted form the release file.</skos:scopeNote>
     </owl:Class>
     
 
@@ -644,16 +673,16 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000032"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Free text description of a single customization made to the instrument; for several modifications, use several entries.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000032"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000032"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -1375,17 +1404,17 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000104">
         <rdfs:label xml:lang="en">trapezoid window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400068"/>
-        <rdfs:comment>Functional form:
-    0:t1        linear increase from 0.0 to 1.0
-    t1:size-t2  1.0
-    -t2:        linear decrease from 1.0 to 0.0
-
-Parameters:
-* data  Array of spectral data.
-* t1    Left ramp length.
-* t2    Right ramp length.
-* inv   Set True for inverse apodization.</rdfs:comment>
         <oboInOwl:hasExactSynonym>trapezoid apodization</oboInOwl:hasExactSynonym>
+        <rdfs:comment>Functional form:
+       0:t1        linear increase from 0.0 to 1.0
+       t1:size-t2  1.0
+       -t2:        linear decrease from 1.0 to 0.0
+   
+   Parameters:
+   * data  Array of spectral data.
+   * t1    Left ramp length.
+   * t2    Right ramp length.
+   * inv   Set True for inverse apodization.</rdfs:comment>
     </owl:Class>
     
 
@@ -1835,34 +1864,6 @@ Parameters:
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1000158 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000158">
-        <rdfs:label xml:lang="en">magnetic field strength unit</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <oboInOwl:consider>use terms from Unit ontology (UO), Use UO:tesla, rather than Gauss</oboInOwl:consider>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1000159 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000159">
-        <rdfs:label xml:lang="en">Tesla</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000158"/>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1000160 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000160">
-        <rdfs:label xml:lang="en">Gauss</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000158"/>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1000161 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000161">
@@ -2042,15 +2043,6 @@ Parameters:
         <rdfs:label xml:lang="en">spectral quantitation algorithm</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
         <oboInOwl:hasExactSynonym>NMR spectrum quantification method</oboInOwl:hasExactSynonym>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1000182 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000182">
-        <rdfs:label xml:lang="en">acquisition time</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -2315,7 +2307,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000213">
         <rdfs:label xml:lang="en">15N</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -2334,7 +2326,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000215">
         <rdfs:label xml:lang="en">14N</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -2343,7 +2335,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000216">
         <rdfs:label xml:lang="en">10B</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -2352,7 +2344,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000217">
         <rdfs:label xml:lang="en">12C</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -2361,7 +2353,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000218">
         <rdfs:label xml:lang="en">23Na</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -2370,7 +2362,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000219">
         <rdfs:label xml:lang="en">35Cl</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -2644,16 +2636,6 @@ Parameters:
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1000249 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000249">
-        <rdfs:label xml:lang="en">DSP phase correction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <oboInOwl:consider>use: phase correction</oboInOwl:consider>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1000250 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000250">
@@ -2709,15 +2691,15 @@ Parameters:
         <rdfs:label xml:lang="en">Lorentz Gaussian window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400068"/>
         <rdfs:comment>Functional form:
-    gm(x_i) = exp(e - g*g)
-Where:  e = pi*i*g1
-        g = 0.6*pi*g2*(g3*(size-1)-i)
-Parameters:
-* data  Array of spectral data.
-* g1    Inverse exponential width.
-* g2    Gaussian broaden width.
-* g3    Location of gauss maximum.
-* inv   Set True for inverse apodization.</rdfs:comment>
+       gm(x_i) = exp(e - g*g)
+   Where:  e = pi*i*g1
+           g = 0.6*pi*g2*(g3*(size-1)-i)
+   Parameters:
+   * data  Array of spectral data.
+   * g1    Inverse exponential width.
+   * g2    Gaussian broaden width.
+   * g3    Location of gauss maximum.
+   * inv   Set True for inverse apodization.</rdfs:comment>
         <oboInOwl:hasExactSynonym>Lorentz-to-Gauss apodization</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -3156,12 +3138,12 @@ Parameters:
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400070"/>
         <oboInOwl:hasExactSynonym>modified gaussian apodization</oboInOwl:hasExactSynonym>
         <rdfs:comment>Functional form:
-    gmb(x_i) = exp(-a*i - b*i*i)
-Parameters:
-* data  Array of spectral data.
-* a     Exponential term.
-* b     Gaussian term.
-* inv   Set True for inverse apodization.</rdfs:comment>
+       gmb(x_i) = exp(-a*i - b*i*i)
+   Parameters:
+   * data  Array of spectral data.
+   * a     Exponential term.
+   * b     Gaussian term.
+   * inv   Set True for inverse apodization.</rdfs:comment>
     </owl:Class>
     
 
@@ -3172,13 +3154,13 @@ Parameters:
         <rdfs:label xml:lang="en">exponentially damped J-modulation window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400068"/>
         <rdfs:comment>Functional form:
-    jmod(x_i) = exp(-e)*sin( pi*off + pi*(end-off)*i/(size-1))
-Parameters:
-* data  Array of spectral data.
-* e     Exponential term.
-* off   Start of  modulation in fraction of pi radians.
-* end   End of modulation in fraction of pi radians.
-* inv   Set True for inverse apodization</rdfs:comment>
+       jmod(x_i) = exp(-e)*sin( pi*off + pi*(end-off)*i/(size-1))
+   Parameters:
+   * data  Array of spectral data.
+   * e     Exponential term.
+   * off   Start of  modulation in fraction of pi radians.
+   * end   End of modulation in fraction of pi radians.
+   * inv   Set True for inverse apodization</rdfs:comment>
         <oboInOwl:hasExactSynonym>exponentially damped J-modulation apodization</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -3189,15 +3171,15 @@ Parameters:
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000308">
         <rdfs:label xml:lang="en">shifted sine bell window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400071"/>
-        <oboInOwl:hasExactSynonym>shifted sine-bell apodization</oboInOwl:hasExactSynonym>
         <rdfs:comment>Functional form:
-    sp(x_i) = sin( (pi*off + pi*(end-off)*i/(size-1) )**pow
-Parameters:
-* data  Array of spectral data.
-* start Start of Sine-Bell as percent of vector (0.0 -&gt; 1.0)
-* end   End of Sine-Bell as percent of vector (0.0 -&gt; 1.0 )
-* pow   Power of Sine-Bell
-* inv   Set True for inverse apodization.</rdfs:comment>
+       sp(x_i) = sin( (pi*off + pi*(end-off)*i/(size-1) )**pow
+   Parameters:
+   * data  Array of spectral data.
+   * start Start of Sine-Bell as percent of vector (0.0 -&gt; 1.0)
+   * end   End of Sine-Bell as percent of vector (0.0 -&gt; 1.0 )
+   * pow   Power of Sine-Bell
+   * inv   Set True for inverse apodization.</rdfs:comment>
+        <oboInOwl:hasExactSynonym>shifted sine-bell apodization</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -3207,17 +3189,17 @@ Parameters:
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000309">
         <rdfs:label xml:lang="en">triangle window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400068"/>
-        <oboInOwl:hasExactSynonym>triangle apodization</oboInOwl:hasExactSynonym>
         <rdfs:comment>Functional form:
-    0:loc   linear increase/decrease from lHi to 1.0   
-    loc:    linear increase/decrease from 1.0 to rHi
-
-Parameters:
-* data  Array of spectral data.
-* loc   Location of apex, &quot;auto&quot; sets to middle.
-* lHi   Left side starting height.
-* rHi   Right side starting height.
-* inv   Set True for inverse apodization.</rdfs:comment>
+       0:loc   linear increase/decrease from lHi to 1.0   
+       loc:    linear increase/decrease from 1.0 to rHi
+   
+   Parameters:
+   * data  Array of spectral data.
+   * loc   Location of apex, &quot;auto&quot; sets to middle.
+   * lHi   Left side starting height.
+   * rHi   Right side starting height.
+   * inv   Set True for inverse apodization.</rdfs:comment>
+        <oboInOwl:hasExactSynonym>triangle apodization</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -3502,21 +3484,31 @@ Parameters:
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1000442 -->
+    <!-- http://nmrML.org/nmrCV#NMR:1000348 -->
 
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000442">
-        <rdfs:label rdf:datatype="&xsd;string">spectrum</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">A NMR spectrum is a set of chemical shifts representing a chemical analysis.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000442</oboInOwl:id>
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000348">
+        <rdfs:label xml:lang="en">NMR sampling strategy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400101"/>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A NMR spectrum is a set of chemical shifts representing a chemical analysis.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000442"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000349 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000349">
+        <rdfs:label xml:lang="en">uniform sampling</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000348"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000350 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000350">
+        <rdfs:label xml:lang="en">non-uniform sampling</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000348"/>
+        <dc:source>http://link.springer.com/chapter/10.1007%2F1-4020-3910-7_142#page-1</dc:source>
+    </owl:Class>
     
 
 
@@ -3547,12 +3539,12 @@ Parameters:
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000457</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">tempdef: A sample is a role that is played by an object of interest in an investigation used to obtain generalizable information about the sample source.
-defprov: Daniel Schober</obo:IAO_0000115>
+   defprov: Daniel Schober</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">tempdef: A sample is a role that is played by an object of interest in an investigation used to obtain generalizable information about the sample source.
-defprov: Daniel Schober</owl:annotatedTarget>
+   defprov: Daniel Schober</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000457"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
@@ -3729,24 +3721,6 @@ defprov: Daniel Schober</owl:annotatedTarget>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1000559 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000559">
-        <rdfs:label rdf:datatype="&xsd;string">spectrum type</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000559</oboInOwl:id>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">Spectrum type.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Spectrum type.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000559"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1000561 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000561">
@@ -3776,16 +3750,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000568"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">MD5 (Message-Digest algorithm 5) is a cryptographic hash function with a 128-bit hash value used to check the integrity of files.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000568"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000568"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -3801,16 +3775,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">SHA-1 (Secure Hash Algorithm-1) is a cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is also used to verify file integrity.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000569"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000569"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">SHA-1 (Secure Hash Algorithm-1) is a cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is also used to verify file integrity.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000569"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -3913,16 +3887,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000588"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Uniform Resource Locator related to the contact person or organization.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000588"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000588"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -3938,16 +3912,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Email address of the contact person or organization.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000589"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000589"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Email address of the contact person or organization.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000589"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -4006,16 +3980,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:date</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">The time that a data processing action was finished.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000747"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:date</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000747"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">The time that a data processing action was finished.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000747"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -4096,25 +4070,6 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Description of the preparation steps which took place before the measurement was performed.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000831"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1000857 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000857">
-        <rdfs:label rdf:datatype="&xsd;string">run attribute</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000857</oboInOwl:id>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">Properties of the described run.</obo:IAO_0000115>
-        <rdfs:comment>use acquisition parameter</rdfs:comment>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Properties of the described run.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000857"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
@@ -4212,16 +4167,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000863"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000863"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000863"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4255,16 +4210,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical formula which expresses the proportions of the elements present in a substance.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000865"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000865"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical formula which expresses the proportions of the elements present in a substance.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000865"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -4280,16 +4235,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000866"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical compound formula expressing the number of atoms of each element present in a compound, without indicating how they are linked.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000866"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000866"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4434,16 +4389,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A short name or symbol of a protein (e.g., HSF 1 or HSF1_HUMAN).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000883"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000883"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A short name or symbol of a protein (e.g., HSF 1 or HSF1_HUMAN).</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000883"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -4570,16 +4525,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000889"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A sequence of letter symbols denoting the order of amino acids that compose the peptide plus the encoding any amino acid mass modifications that are present using the notation where the total mass of the modified amino acid is specified in square bracketed numbers following the letter (e.g. R[162.10111] indicates an arginine whose final modified mass is 162.10111 amu).</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000889"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000889"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4772,16 +4727,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Name of the gene from which the protein is translated.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000934"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000934"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Name of the gene from which the protein is translated.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000934"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -4822,24 +4777,6 @@ defprov: Daniel Schober</owl:annotatedTarget>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1001044 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001044">
-        <rdfs:label rdf:datatype="&xsd;string">cleavage agent details</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001249"/>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">Details of cleavage agent (enzyme).</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001044</oboInOwl:id>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Details of cleavage agent (enzyme).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001044"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1001107 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001107">
@@ -4853,64 +4790,6 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Source file for this nmrIdentML was a data set in a database.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001107"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1001176 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001176">
-        <rdfs:label rdf:datatype="&xsd;string">(?&lt;=[KR])(?!P)</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001180"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001176</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1001180 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001180">
-        <rdfs:label rdf:datatype="&xsd;string">cleavage agent regular expression</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">Branch containing regular expressions for cleavage enzymes.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001180</oboInOwl:id>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Branch containing regular expressions for cleavage enzymes.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001180"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1001249 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001249">
-        <rdfs:label rdf:datatype="&xsd;string">search input details</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001249</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1001266 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001266">
-        <rdfs:label rdf:datatype="&xsd;string">role type</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001266</oboInOwl:id>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">Role of a Person or Organization.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Role of a Person or Organization.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001266"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
@@ -5075,16 +4954,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001755"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Phone number of the contact person or organization.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001755"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001755"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5100,16 +4979,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Fax number for the contact person or organization.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001756"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001756"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Fax number for the contact person or organization.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001756"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5175,16 +5054,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Free text attribute that can enrich the information about an entity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001923"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001923"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Free text attribute that can enrich the information about an entity.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001923"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5225,16 +5104,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword assigned by the data submitter.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001925"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001925"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword assigned by the data submitter.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001925"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5275,16 +5154,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Parameters used in the NMR spectrometry acquisition.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5300,16 +5179,16 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:integer</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:integer</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A unique identifier for a metabolite in the HMDB database (HMDB00001).</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:integer</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5432,8 +5311,8 @@ defprov: Daniel Schober</owl:annotatedTarget>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002007</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or &apos;lines&apos;.
-def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
-synonym: NMR spectrum</obo:IAO_0000115>
+   def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
+   synonym: NMR spectrum</obo:IAO_0000115>
         <dc:source>as designated Experiment type on http://www.bmrb.wisc.edu/tools/choose_pulse_info.php </dc:source>
     </owl:Class>
     
@@ -5518,31 +5397,6 @@ synonym: NMR spectrum</obo:IAO_0000115>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1002012 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002012">
-        <rdfs:label rdf:datatype="&xsd;string">temperature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002012</oboInOwl:id>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">Temperature.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
-    </owl:Class>
-    <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002012"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Temperature.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002012"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1002013 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002013">
@@ -5555,16 +5409,16 @@ synonym: NMR spectrum</obo:IAO_0000115>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/29#issue</doap:bug-database>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002013"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Chemical shift reference is a run attribute to designate the parts-per-million value of the peak used to reference a spectrum. It points to a fix chemical shift number, for examples 0 ppm for DSS or TSP. It can also have a calculated concentration, for examples 0.1 mM.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002013"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002013"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5631,16 +5485,16 @@ synonym: NMR spectrum</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002016"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Bin start.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002016"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002016"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5656,16 +5510,16 @@ synonym: NMR spectrum</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin end.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002017"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002017"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin end.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002017"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5695,32 +5549,6 @@ synonym: NMR spectrum</obo:IAO_0000115>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1002019 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002019">
-        <rdfs:label rdf:datatype="&xsd;string">metabolite concentrations</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">Identified and quantified metabolites.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002019</oboInOwl:id>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
-        <rdfs:comment>remove plural forms. Redundant to metabolite concentration.</rdfs:comment>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Identified and quantified metabolites.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002019"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002019"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1002020 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002020">
@@ -5732,16 +5560,16 @@ synonym: NMR spectrum</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Name of metabolite.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002020"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002020"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Name of metabolite.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002020"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5771,8 +5599,8 @@ synonym: NMR spectrum</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000463"/>
         <owl:versionInfo rdf:datatype="&xsd;string">TODO: Discuss &quot;obligatory_part_of&quot;.</owl:versionInfo>
         <rdfs:comment rdf:datatype="&xsd;string">def: Part of an NMR instrument which is not cardinally important and hence optional / facultative for the proper intended function of the instrument.
-synonym: optional part of NMR instrument
-clsdel: ontologically there is no such universal which characteristic is a possible (!) state of being a part of something...</rdfs:comment>
+   synonym: optional part of NMR instrument
+   clsdel: ontologically there is no such universal which characteristic is a possible (!) state of being a part of something...</rdfs:comment>
     </owl:Class>
     
 
@@ -5783,40 +5611,7 @@ clsdel: ontologically there is no such universal which characteristic is a possi
         <rdfs:label rdf:datatype="&xsd;string">autosampler</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400001"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: An optional  part of an NMR instrument used to hold samples prior to NMR analysis and that sequentially loads these samples into the analytical part of the NMR instrument. 
-altdef: The autosampler is an automatic sample changer.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400003 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400003">
-        <rdfs:label rdf:datatype="&xsd;string">algorithm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: An algorithm is a procedure (a finite set of well-defined instructions) for accomplishing some task which, given an initial state, will terminate in a defined end-state.
-defprov:wiki</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400004 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400004">
-        <rdfs:label rdf:datatype="&xsd;string">post-processing algorithm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: An algorithm for achieving a post-processed spectrum.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400005 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400005">
-        <rdfs:label rdf:datatype="&xsd;string">analysis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: An investigation of the component parts of a whole and their relations in making up the whole.
-defprov: Google define
-altdef: A systematic approach to problem solving. Complex problems are made simpler by separating them into more understandable elements. This involves the identification of purposes and facts, the statement of defensible assumptions, and the formulation of conclusions.</rdfs:comment>
+   altdef: The autosampler is an automatic sample changer.</rdfs:comment>
     </owl:Class>
     
 
@@ -5827,7 +5622,7 @@ altdef: A systematic approach to problem solving. Complex problems are made simp
         <rdfs:label rdf:datatype="&xsd;string">multiplet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The analysis of one NMR sample at one time by NMR producing one raw dataset (a FID).
-synonym: NMR analysis</rdfs:comment>
+   synonym: NMR analysis</rdfs:comment>
         <oboInOwl:hasExactSynonym>multiplicity</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -5837,10 +5632,10 @@ synonym: NMR analysis</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400007">
         <rdfs:label rdf:datatype="&xsd;string">cardinal part of NMR data set</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: An immanent important, non-obligatory part of any NMR data set.
-defprov: Daniel Schober
-synonym: cardinal part of NMR data set</rdfs:comment>
+   defprov: Daniel Schober
+   synonym: cardinal part of NMR data set</rdfs:comment>
     </owl:Class>
     
 
@@ -5851,7 +5646,7 @@ synonym: cardinal part of NMR data set</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">projected spectrum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000200"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: The data matrix a spectrum consists of can be projected from a higher dimension onto a lower dimension, e.g. a 3D NMR spectrum can be converted (projected) into a 2D NMR spectrum.
-defprov: Daniel Schober</rdfs:comment>
+   defprov: Daniel Schober</rdfs:comment>
     </owl:Class>
     
 
@@ -5885,7 +5680,7 @@ defprov: Daniel Schober</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">cardinal part of NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000463"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A part of an NMR instrument which is cardinally important and hence obligatory and compulsatory for the proper intended function of the instrument.
-synonym: cardinal part of NMR instrument</rdfs:comment>
+   synonym: cardinal part of NMR instrument</rdfs:comment>
     </owl:Class>
     
 
@@ -5906,7 +5701,7 @@ synonym: cardinal part of NMR instrument</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400011"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Part of an NMR instrument that detects the signals emitted from a sample. No single probe can perform the full range of experiments, and probes that are designed to perform more than one type of measurement usually suffer from performance compromises. The probe represents a rather fragile “single point of failure” that can render an NMR system completely unusable if the probe is dropped or otherwise damaged. Probes are usually characterised by Sample diameter and Frequency.
-altdef: The instrument that transmits and recieves radiofrequency to and from the NMR sample.</rdfs:comment>
+   altdef: The instrument that transmits and recieves radiofrequency to and from the NMR sample.</rdfs:comment>
     </owl:Class>
     
 
@@ -5932,17 +5727,6 @@ altdef: The instrument that transmits and recieves radiofrequency to and from th
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400018 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400018">
-        <rdfs:label rdf:datatype="&xsd;string">concentration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The ratio of the mass or volume of a solute to the mass or volume of the solution or solvent.</rdfs:comment>
-        <oboInOwl:consider>use UO:concentration unit</oboInOwl:consider>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400019 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400019">
@@ -5963,25 +5747,13 @@ altdef: The instrument that transmits and recieves radiofrequency to and from th
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400021 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400021">
-        <rdfs:label rdf:datatype="&xsd;string">calibration reference shift</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">Same as chemical shift reference.
-
-def: The parts-per-million value of the peak used to reference a spectrum.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400022 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400022">
         <rdfs:label rdf:datatype="&xsd;string">ninety degree pulse duration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000190"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The duration of the excitation pulse needed to rotate the magnetisation vector by 90 degrees.
-synonym: 90 degree pulse duration</rdfs:comment>
+   synonym: 90 degree pulse duration</rdfs:comment>
     </owl:Class>
     
 
@@ -5992,7 +5764,7 @@ synonym: 90 degree pulse duration</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">dwell time</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A digital sampling interval.
-alsprcls: time interval</rdfs:comment>
+   alsprcls: time interval</rdfs:comment>
     </owl:Class>
     
 
@@ -6105,7 +5877,7 @@ alsprcls: time interval</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400036">
         <rdfs:label rdf:datatype="&xsd;string">complex datatype</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A complex datatype (or complex value) is a datatype that is not a primitive one (like string or integer) and that references to more primitive values. Often, these are called reference data types. Complex datatypes can belong to the object data type. Data types that define sets of complex values include Array, Date, Error, Function, and XML and others.</rdfs:comment>
     </owl:Class>
     
@@ -6134,27 +5906,6 @@ alsprcls: time interval</rdfs:comment>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400039 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400039">
-        <rdfs:label rdf:datatype="&xsd;string">NMR data post-processing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The process of producing an annotated spectrum from a pre-processed spectrum.
-synonym: NMR spectral post processing</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400040 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400040">
-        <rdfs:label rdf:datatype="&xsd;string">data pre-processing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400041 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400041">
@@ -6162,7 +5913,7 @@ synonym: NMR spectral post processing</rdfs:comment>
         <rdfs:label xml:lang="en">time domain data processing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The post acquisition process of producing or refining a spectrum from raw data.
-defprov: Daniel Schober</rdfs:comment>
+   defprov: Daniel Schober</rdfs:comment>
     </owl:Class>
     
 
@@ -6177,23 +5928,13 @@ defprov: Daniel Schober</rdfs:comment>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400043 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400043">
-        <rdfs:label rdf:datatype="&xsd;string">data transformation method</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: A method for transforming the time-based acquisition data into frequency-based data.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400044 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400044">
         <rdfs:label rdf:datatype="&xsd;string">fourier transformation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: An integral data transformation that re-expresses a function in terms of sinusoidal basis functions, i.e. as a sum or integral of sinusoidal functions multiplied by some coefficients (&quot;amplitudes&quot;).
-defprov: Daniel Schober</rdfs:comment>
+   defprov: Daniel Schober</rdfs:comment>
     </owl:Class>
     
 
@@ -6209,24 +5950,13 @@ defprov: Daniel Schober</rdfs:comment>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400047 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400047">
-        <rdfs:label rdf:datatype="&xsd;string">NMR data set</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: A data set that was generated within, from or for an NMR experiment.
-synonym: NMR data set</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400048 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400048">
         <rdfs:label rdf:datatype="&xsd;string">encoding</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A data processing  which compresses a data file for a specific purpose.
-defprov: Daniel Schober</rdfs:comment>
+   defprov: Daniel Schober</rdfs:comment>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/37</doap:bug-database>
     </owl:Class>
     
@@ -6238,20 +5968,8 @@ defprov: Daniel Schober</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">G matrix fourier transform projection</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400075"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef:GFT NMR allows for rapid multidimensional FT NMR spectral information gathering, avoiding sampling limitations without compromising on the precision of chemicalshift.
-defprov: ttp://www.nsm.buffalo.edu/Research/GFT/szyperski_publications_1st_page/Szyperski%2067.pdf
-synonym: GFT-projection</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400050 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400050">
-        <rdfs:label rdf:datatype="&xsd;string">quantum momentum field gradient</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: Quantum Moment/Field Gradient interaction or relaxation mechanism.
-defprov: Daniel Schober
-synonym: QF</rdfs:comment>
+   defprov: ttp://www.nsm.buffalo.edu/Research/GFT/szyperski_publications_1st_page/Szyperski%2067.pdf
+   synonym: GFT-projection</rdfs:comment>
     </owl:Class>
     
 
@@ -6262,17 +5980,7 @@ synonym: QF</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">time proportional phase incrementation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400048"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: TPPI</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400052 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400052">
-        <rdfs:label rdf:datatype="&xsd;string">states</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
+   synonym: TPPI</rdfs:comment>
     </owl:Class>
     
 
@@ -6283,7 +5991,7 @@ synonym: TPPI</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">states-time proportional phase incrementation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400048"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A method for quadrature detection.
-synonym: S-TPPI</rdfs:comment>
+   synonym: S-TPPI</rdfs:comment>
     </owl:Class>
     
 
@@ -6335,7 +6043,7 @@ synonym: S-TPPI</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000463"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: An Instrument which is used to carry out a NMR analysis of some sample.
-synonym: NMR instrument</rdfs:comment>
+   synonym: NMR instrument</rdfs:comment>
     </owl:Class>
     
 
@@ -6346,8 +6054,8 @@ synonym: NMR instrument</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR instrument acquisition parameter set</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400196"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The list of parameters that describe the instrument settings used for the acquisition of a spectrum.
-altdef: The set of variables dependent on a given pulse sequence that will be optimised in order to acquire a spectrum.
-synonym: NMR instrument acquisition parameter set</rdfs:comment>
+   altdef: The set of variables dependent on a given pulse sequence that will be optimised in order to acquire a spectrum.
+   synonym: NMR instrument acquisition parameter set</rdfs:comment>
     </owl:Class>
     
 
@@ -6358,7 +6066,7 @@ synonym: NMR instrument acquisition parameter set</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">instrument configuration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: An instrument configuration is the description for the setting of an instrument or a machine in order to archive a certain intended goal or task.
-altdef: An instrument configuration is the process of setting the possible parameters of an instrument in order to archive a certain intended goal.</rdfs:comment>
+   altdef: An instrument configuration is the process of setting the possible parameters of an instrument in order to archive a certain intended goal.</rdfs:comment>
     </owl:Class>
     
 
@@ -6385,23 +6093,13 @@ altdef: An instrument configuration is the process of setting the possible param
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400065 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400065">
-        <rdfs:label rdf:datatype="&xsd;string">sample introduction method</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">redundant to sample introduction parameter</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400066 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400066">
         <rdfs:label rdf:datatype="&xsd;string">water suppression</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000014"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A technique used to suppress the water resonance peak in a spectrum. Suppression of the strong solvent signal is necessary in order to obtain high signal to noise for the peaks of the sample under investiogation, e.g. protein peaks.
-defprov: Daniel Schober</rdfs:comment>
+   defprov: Daniel Schober</rdfs:comment>
     </owl:Class>
     
 
@@ -6426,11 +6124,11 @@ defprov: Daniel Schober</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">exponential multiplication window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400068"/>
         <rdfs:comment rdf:datatype="&xsd;string">Functional form:
-    em(x_i) = exp(-pi*i*lb)
-Parameters:
-* data  Array of spectral data.
-* lp    Exponential line broadening.
-* inv   Set True for inverse apodization.</rdfs:comment>
+       em(x_i) = exp(-pi*i*lb)
+   Parameters:
+   * data  Array of spectral data.
+   * lp    Exponential line broadening.
+   * inv   Set True for inverse apodization.</rdfs:comment>
         <oboInOwl:hasExactSynonym>exponential apodization</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>The exponential function used to multiply a FID by to produce a desitred amount of line broadening.</obo:IAO_0000115>
     </owl:Class>
@@ -6515,7 +6213,7 @@ Parameters:
         <rdfs:label rdf:datatype="&xsd;string">summation projection</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400075"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: .A projection method that sums the intensities of a pre-processed 2D J-resolved NMR spectrum to obtain a projected spectrum. 
-altdef: The adding of spectra together to produce a composite avergaed spectrum.</rdfs:comment>
+   altdef: The adding of spectra together to produce a composite avergaed spectrum.</rdfs:comment>
     </owl:Class>
     
 
@@ -6526,7 +6224,7 @@ altdef: The adding of spectra together to produce a composite avergaed spectrum.
         <rdfs:label rdf:datatype="&xsd;string">zero order phase correction</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000071"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A parameter used to mix real and imaginary part of an NMR spectrum that the real part of the spectrum is in pure absorption mode. 
-altdef: The number of degrees that a central peak must be moved in order to achieve an absorptive mode line width.</rdfs:comment>
+   altdef: The number of degrees that a central peak must be moved in order to achieve an absorptive mode line width.</rdfs:comment>
     </owl:Class>
     
 
@@ -6557,16 +6255,6 @@ altdef: The number of degrees that a central peak must be moved in order to achi
         <rdfs:label rdf:datatype="&xsd;string">acquisition nucleus</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400085 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400085">
-        <rdfs:label rdf:datatype="&xsd;string">tilt</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
 
@@ -6627,7 +6315,7 @@ altdef: The number of degrees that a central peak must be moved in order to achi
         <rdfs:label rdf:datatype="&xsd;string">x-axis unit</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000013"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The units of measure for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum. 
-altdef: The units used to represent either time domain (for a FID) or the frequency domain (for a spectrum).</rdfs:comment>
+   altdef: The units used to represent either time domain (for a FID) or the frequency domain (for a spectrum).</rdfs:comment>
     </owl:Class>
     
 
@@ -6658,7 +6346,7 @@ altdef: The units used to represent either time domain (for a FID) or the freque
         <rdfs:label rdf:datatype="&xsd;string">x start value</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000013"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The starting value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.
-altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:comment>
+   altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:comment>
     </owl:Class>
     
 
@@ -6703,29 +6391,6 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</rdfs:
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400099 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400099">
-        <rdfs:label rdf:datatype="&xsd;string">shifted bell</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: sb</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400100 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400100">
-        <rdfs:label rdf:datatype="&xsd;string">shifted sine bell</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A function used to multiply a FID by to produce a desired amount of line broadening and spectral resolution.
-defprov: Daniel Schober
-synonym: ssb</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400101 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400101">
@@ -6736,35 +6401,13 @@ synonym: ssb</rdfs:comment>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400103 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400103">
-        <rdfs:label rdf:datatype="&xsd;string">NMR data pre-processing parameter set by dimension</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The set of variables dependent on a given pulse sequence for a given dimension that will be optimised in order to acquire a spectrum.
-synonym: NMR data pre-processing parameter set by dimension</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400104 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400104">
-        <rdfs:label rdf:datatype="&xsd;string">NMR 2D J-resolved processing parameter set</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The list of parameters that describe the settings used to process a 2D J-resolved NMR spectrum. altdeft: The set of variables associated with adjusting the spectrum in the frequency domain to phase, baseline correct and integrate a spectrum.
-synonym: NMR 2D J-resolved processing parameter set</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400105 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400105">
         <rdfs:label rdf:datatype="&xsd;string">NMR spectral projection parameter set</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400106"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The data processing parameters that describe a method of translating a 2D NMR pre-processed spectrum into a 1D NMR spectrum.
-synonym: NMR spectral projection parameter set</rdfs:comment>
+   synonym: NMR spectral projection parameter set</rdfs:comment>
     </owl:Class>
     
 
@@ -6776,7 +6419,7 @@ synonym: NMR spectral projection parameter set</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000630"/>
         <owl:versionInfo rdf:datatype="&xsd;string">TODO: altsprcls: process, not clear wether set is plural (list) or process.</owl:versionInfo>
         <rdfs:comment rdf:datatype="&xsd;string">def: A description of the post-processing strategy used to convert a pre-processed NMR spectrum into a suitable data format for chemometric analysis.
-synonym: NMR spectrum post-processing parameter set</rdfs:comment>
+   synonym: NMR spectrum post-processing parameter set</rdfs:comment>
     </owl:Class>
     
 
@@ -6787,7 +6430,7 @@ synonym: NMR spectrum post-processing parameter set</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR quality check parameter set</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400106"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A nuclear magnetic resonance spectroscopy quality check parameter set is a parameter set used for the quality check method for an NMR analysis
-synonym: NMR quality check parameter set</rdfs:comment>
+   synonym: NMR quality check parameter set</rdfs:comment>
     </owl:Class>
     
 
@@ -6799,7 +6442,7 @@ synonym: NMR quality check parameter set</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400066"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A data processing technique used to suppress the water peak in a spectrum in order to get clearer results.
-defprov: Daniel Schober</rdfs:comment>
+   defprov: Daniel Schober</rdfs:comment>
     </owl:Class>
     
 
@@ -6810,7 +6453,7 @@ defprov: Daniel Schober</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">hankel singular value decomposition</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400108"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: This Method removes the residual water and its side lobes, thereby reducing the baseline for the metabolites of interest and allowing subsequent data analysis using more sophisticated nonlinear least squares algorithms.
-synonym: HSVD</rdfs:comment>
+   synonym: HSVD</rdfs:comment>
     </owl:Class>
     
 
@@ -6845,34 +6488,13 @@ synonym: HSVD</rdfs:comment>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400113 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400113">
-        <rdfs:label rdf:datatype="&xsd;string">pre-processing parameter set</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">use NMR data pre-processing parameter set</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400114 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400114">
         <rdfs:label rdf:datatype="&xsd;string">NMR data pre-processing parameter set</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000630"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: NMR data pre-processing parameter set</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400115 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400115">
-        <rdfs:label rdf:datatype="&xsd;string">quality control method</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A quality control method is a method, which is applied to ensure or to verify for a good quality outcome.
-defprov: Daniel Schober</rdfs:comment>
+   synonym: NMR data pre-processing parameter set</rdfs:comment>
     </owl:Class>
     
 
@@ -6883,7 +6505,7 @@ defprov: Daniel Schober</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR quality check</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400063"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The process of ensuring the quality of the raw data that results from an NMR analysis.
-synonym: NMR quality check</rdfs:comment>
+   synonym: NMR quality check</rdfs:comment>
     </owl:Class>
     
 
@@ -6902,7 +6524,7 @@ synonym: NMR quality check</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400118">
         <rdfs:label rdf:datatype="&xsd;string">acquisition parameter set file reference</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A reference to the file of acquisition parameters produced by a machine.</rdfs:comment>
         <oboInOwl:consider>use acquisition parameter file</oboInOwl:consider>
     </owl:Class>
@@ -6915,7 +6537,7 @@ synonym: NMR quality check</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">FID file</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400267"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A reference to a file containing the raw FID.
-synonym: FID file reference</rdfs:comment>
+   synonym: FID file reference</rdfs:comment>
         <oboInOwl:hasExactSynonym>FID file reference</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -6967,7 +6589,7 @@ synonym: FID file reference</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR sample identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000878"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A reference to information on the provenance of the NMR sample.
-synonym: NMR sample reference</rdfs:comment>
+   synonym: NMR sample reference</rdfs:comment>
         <rdfs:comment xml:lang="en">PRS: rename &apos;reference&apos; to &apos;identifier&apos;</rdfs:comment>
     </owl:Class>
     
@@ -6979,7 +6601,7 @@ synonym: NMR sample reference</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR quality check result</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400181"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A result of an NMR quality check.
-synonym: NMR quality check result</rdfs:comment>
+   synonym: NMR quality check result</rdfs:comment>
     </owl:Class>
     
 
@@ -6990,7 +6612,7 @@ synonym: NMR quality check result</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR sample</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000457"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A sample that has been prepared for chemical analysis by NMR. NMR samples are usually liquid solutions contained in glass tubes. NMR solution sample volume ranges from 50ul to 5ml depending on the NMR probe. Sample concentrations of solute for 1H NMR are usually in the range of 100ug to 5g, with 10 to 50mg being typical. NMR is not a chemical trace analysis technique. The NMR signal of solids and gases can be recorded but to measure solid-state NMR additional specialized hardware is required.
-synonym: NMR sample</rdfs:comment>
+   synonym: NMR sample</rdfs:comment>
     </owl:Class>
     
 
@@ -7011,7 +6633,7 @@ synonym: NMR sample</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">magic angle spinning rotor</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400129"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: MAS rotor</rdfs:comment>
+   synonym: MAS rotor</rdfs:comment>
     </owl:Class>
     
 
@@ -7060,16 +6682,6 @@ synonym: MAS rotor</rdfs:comment>
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1400136 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400136">
-        <rdfs:label rdf:datatype="&xsd;string">spectrum post-processing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1400137 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400137">
@@ -7086,18 +6698,8 @@ synonym: MAS rotor</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">bucketing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000015"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A post-processing method that divides a pre-processed NMR spectrum into a series of buckets (or bins) along the x-axis, and then integrates the spectral intensity within each bucket. 
-altdef: A type of automated integration which occurs across pre-defined regions for a spectrum.</rdfs:comment>
+   altdef: A type of automated integration which occurs across pre-defined regions for a spectrum.</rdfs:comment>
         <oboInOwl:hasExactSynonym>binning</oboInOwl:hasExactSynonym>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400139 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400139">
-        <rdfs:label rdf:datatype="&xsd;string">water suppression parameter</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">delete as captured by water suppression method</rdfs:comment>
     </owl:Class>
     
 
@@ -7108,7 +6710,7 @@ altdef: A type of automated integration which occurs across pre-defined regions 
         <rdfs:label rdf:datatype="&xsd;string">presat</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: presaturation</rdfs:comment>
+   synonym: presaturation</rdfs:comment>
         <oboInOwl:hasExactSynonym>presaturation of the solvent resonance</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -7120,8 +6722,8 @@ synonym: presaturation</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">water suppression enhanced through T1 effects</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: An improved water-suppression technique called WET (water suppression enhanced through T1 effects), developed from a Bloch equation analysis of the longitudinal magnetization over the T1 and B1 ranges of interest, achieves T1- and B1-insensitive suppression with four RF pulses, each having a numerically optimized flip angle. Once flip angles have been optimized for a given sequence, time-consuming flip-angle adjustments during clinical examinations are eliminated.
-defprov: Daniel Schober
-synonym: WET</rdfs:comment>
+   defprov: Daniel Schober
+   synonym: WET</rdfs:comment>
         <skos:altLabel xml:lang="en">WET</skos:altLabel>
     </owl:Class>
     
@@ -7133,8 +6735,8 @@ synonym: WET</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">nuclear overhauser and exchange spectroscopy-presat</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400140"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: The presat for an nuclear overhauser and exchange spectroscopy experiment. A 2D method used to map NOE correlations between protons within a molecule.  The nuclear Overhauser effect (NOE) causes changes in peak areas, as a secondary effect of decoupling.
-defprov: Daniel Schober
-synonym: NOESY-presat</rdfs:comment>
+   defprov: Daniel Schober
+   synonym: NOESY-presat</rdfs:comment>
         <oboInOwl:hasExactSynonym>NOESY presat</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -7156,7 +6758,7 @@ synonym: NOESY-presat</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">excitation sculpting</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400066"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A specific technique used to suppress the solvent signal in a spectrum. 
-altdef:: A type of pulse sequence (or part of it) used to suppress a frequency (most commonly solvent).</rdfs:comment>
+   altdef:: A type of pulse sequence (or part of it) used to suppress a frequency (most commonly solvent).</rdfs:comment>
     </owl:Class>
     
 
@@ -7167,7 +6769,7 @@ altdef:: A type of pulse sequence (or part of it) used to suppress a frequency (
         <rdfs:label rdf:datatype="&xsd;string">coherence pathway rejection</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400066"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A water suppression method which is used to suppress the natural water signal in a gradient selection experiment (e.g. echo/antiecho), where the water coherence is not &quot;refocused&quot; by the refocus gradient (therefore, is not selected).
-defprov: Daniel Schober</rdfs:comment>
+   defprov: Daniel Schober</rdfs:comment>
     </owl:Class>
     
 
@@ -7188,7 +6790,7 @@ defprov: Daniel Schober</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">jump and return</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A jump and return pulse sequence method is a water suppression method that uses a defined pulse sequences to make fast exchanging protons visible.
-synonym: jump and return pulse sequence</rdfs:comment>
+   synonym: jump and return pulse sequence</rdfs:comment>
     </owl:Class>
     
 
@@ -7217,9 +6819,9 @@ synonym: jump and return pulse sequence</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400151">
         <rdfs:label rdf:datatype="&xsd;string">1H</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
         <rdfs:comment xml:lang="en">def: The nucleus of the element Hydrogen, a proton. 
-rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
+   rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
     </owl:Class>
     
 
@@ -7228,7 +6830,7 @@ rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400152">
         <rdfs:label rdf:datatype="&xsd;string">2H</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
         <owl:versionInfo rdf:datatype="&xsd;string">TODO: Do we need definitions here?</owl:versionInfo>
     </owl:Class>
     
@@ -7238,7 +6840,7 @@ rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400153">
         <rdfs:label rdf:datatype="&xsd;string">11B</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -7247,7 +6849,7 @@ rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400154">
         <rdfs:label rdf:datatype="&xsd;string">13C</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -7256,7 +6858,7 @@ rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400155">
         <rdfs:label rdf:datatype="&xsd;string">17O</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -7265,7 +6867,7 @@ rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400156">
         <rdfs:label rdf:datatype="&xsd;string">19F</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -7274,7 +6876,7 @@ rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400157">
         <rdfs:label rdf:datatype="&xsd;string">29Si</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -7283,7 +6885,7 @@ rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400158">
         <rdfs:label rdf:datatype="&xsd;string">31P</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -7294,7 +6896,7 @@ rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">1D FID</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000119"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Having been excited by the RF pulse, the nuclei turn back (&quot;relax&quot;) to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
-synonym: 1D FID</rdfs:comment>
+   synonym: 1D FID</rdfs:comment>
     </owl:Class>
     
 
@@ -7305,7 +6907,7 @@ synonym: 1D FID</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">2D FID</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000119"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Having been excited by the RF pulse, the nuclei turn back (&quot;relax&quot;) to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
-synonym: 2D FID</rdfs:comment>
+   synonym: 2D FID</rdfs:comment>
     </owl:Class>
     
 
@@ -7316,7 +6918,7 @@ synonym: 2D FID</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">1D spectrum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000117"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: 1D spectrum</rdfs:comment>
+   synonym: 1D spectrum</rdfs:comment>
     </owl:Class>
     
 
@@ -7327,33 +6929,7 @@ synonym: 1D spectrum</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">2D spectrum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000117"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: 2D spectrum</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400163 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400163">
-        <rdfs:label rdf:datatype="&xsd;string">1D NMR configuration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400184"/>
-        <owl:versionInfo rdf:datatype="&xsd;string">TODO: Definition depends on sprcls.</owl:versionInfo>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: The process of configuring an NMR instrument for 1D NMR analysis.
-defprov: Daniel Schober
-synonym: 1D NMR configuration</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400164 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400164">
-        <rdfs:label rdf:datatype="&xsd;string">2D NMR configuration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400184"/>
-        <owl:versionInfo rdf:datatype="&xsd;string">TODO:  depends on superclass view.</owl:versionInfo>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: The process  of configuring an NMR instrument for 2D NMR analysis.
-defprov: Daniel Schober
-synonym: 2D NMR configuration</rdfs:comment>
+   synonym: 2D spectrum</rdfs:comment>
     </owl:Class>
     
 
@@ -7364,7 +6940,7 @@ synonym: 2D NMR configuration</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">1D NMR acquisition parameter set</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400061"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: 1D NMR acquisition parameter set</rdfs:comment>
+   synonym: 1D NMR acquisition parameter set</rdfs:comment>
     </owl:Class>
     
 
@@ -7375,7 +6951,7 @@ synonym: 1D NMR acquisition parameter set</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">2D NMR acquisition parameter set</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400061"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: 2D NMR acquisition parameter set</rdfs:comment>
+   synonym: 2D NMR acquisition parameter set</rdfs:comment>
     </owl:Class>
     
 
@@ -7386,8 +6962,8 @@ synonym: 2D NMR acquisition parameter set</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">1D carr purcell meiboom gill pulse sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A modification of Carr-Purcell RF pulse sequence with 90° phase shift in the rotating frame of reference between the 90° pulse and the subsequent 180° pulses to reduce accumulating effects of imperfections in the 180° pulses. Suppression of effects of pulse error accumulation can alternatively be achieved by alternating phases of the 180° pulses by 180°.
-defprov: Daniel Schober
-synonym: 1D CPMG</rdfs:comment>
+   defprov: Daniel Schober
+   synonym: 1D CPMG</rdfs:comment>
         <skos:altLabel xml:lang="en">CPMG</skos:altLabel>
     </owl:Class>
     
@@ -7399,8 +6975,8 @@ synonym: 1D CPMG</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">2D total correlation spectroscopy pulse sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: Total Correlation Spectroscopy. A 2D homonuclear correlation experiment used to analyse scalar (J) coupling networks between protons. TOCSY is able to relay magnetisation between spins, A-B-C-D.., and can therefore show correlations amongst spins that are not directly coupled (eg A-C and A-D) but exist within the same spin system.
-defprov: Daniel Schober
-synonym:2D TOCSY</rdfs:comment>
+   defprov: Daniel Schober
+   synonym:2D TOCSY</rdfs:comment>
     </owl:Class>
     
 
@@ -7411,7 +6987,7 @@ synonym:2D TOCSY</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">1D pulse sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: One dimensional (referring to a FID, pre-processed spectrum, or post-processed spectrum).
-synonym: 1D</rdfs:comment>
+   synonym: 1D</rdfs:comment>
     </owl:Class>
     
 
@@ -7422,8 +6998,8 @@ synonym: 1D</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">2D J-resolved pulse sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: In 1D NMR, as the multiplets from different chemically shifted nuclei overlap, spectral assignments become too difficult. In order to resolve the chemical shift and spin-spin coupling parameters along the different axis, 2D and 3D J-resolved NMR spectroscopies are used.
-defprov: Daniel Schober
-synonym: 2D J-resolved</rdfs:comment>
+   defprov: Daniel Schober
+   synonym: 2D J-resolved</rdfs:comment>
     </owl:Class>
     
 
@@ -7434,7 +7010,7 @@ synonym: 2D J-resolved</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">2D hadamard total correlation spectroscopy pulse sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: 2D hadamard TOCSY</rdfs:comment>
+   synonym: 2D hadamard TOCSY</rdfs:comment>
     </owl:Class>
     
 
@@ -7445,7 +7021,7 @@ synonym: 2D hadamard TOCSY</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">1D diffusion edited pulse sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed
-synonym: 1D diffusion edited</rdfs:comment>
+   synonym: 1D diffusion edited</rdfs:comment>
     </owl:Class>
     
 
@@ -7456,18 +7032,7 @@ synonym: 1D diffusion edited</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">quality check result</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000031"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A quality check result is the usefull outcome of a quality check.
-defprov: Daniel Schober</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400182 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400182">
-        <rdfs:label rdf:datatype="&xsd;string">quality check</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400115"/>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A quality check is a quality control method, which is applied to data after they have been processed. It is applied to get information about the quality of the data processing methods.
-defprov: Daniel Schober</rdfs:comment>
+   defprov: Daniel Schober</rdfs:comment>
     </owl:Class>
     
 
@@ -7476,22 +7041,10 @@ defprov: Daniel Schober</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400183">
         <rdfs:label rdf:datatype="&xsd;string">NMR spectrum</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or &apos;lines&apos;.
-def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
-synonym: NMR spectrum</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400184 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400184">
-        <rdfs:label rdf:datatype="&xsd;string">NMR instrument configuration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The configuration of an NMR Instrument.
-synonym: NMR instrument configuration</rdfs:comment>
-        <oboInOwl:consider>use spectrum types</oboInOwl:consider>
+        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or &apos;lines&apos;.
+   def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
+   synonym: NMR spectrum</rdfs:comment>
     </owl:Class>
     
 
@@ -7502,7 +7055,7 @@ synonym: NMR instrument configuration</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400011"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A magnet which induces a certain frequency (MHz) and which has a certain bore diameter.
-altdef: The NMR signal is a natural physical property of the certain atomic nuclei but it can only be detected with an external magnetic field. A magnet is a fundamental part of an NMR instrument which induces an electromagnetic force field (RF pulse) and by this excites and aligns the spins of the electrons of the NMR acquisition nucleus. It is usually a big (superconducting) electromagnet which is cooled by liquid helium and can be adjusted to a frequency between 200 and 950 MHz. The magnetic field strength is measured in Tesla or Gauss.</rdfs:comment>
+   altdef: The NMR signal is a natural physical property of the certain atomic nuclei but it can only be detected with an external magnetic field. A magnet is a fundamental part of an NMR instrument which induces an electromagnetic force field (RF pulse) and by this excites and aligns the spins of the electrons of the NMR acquisition nucleus. It is usually a big (superconducting) electromagnet which is cooled by liquid helium and can be adjusted to a frequency between 200 and 950 MHz. The magnetic field strength is measured in Tesla or Gauss.</rdfs:comment>
     </owl:Class>
     
 
@@ -7562,15 +7115,15 @@ altdef: The NMR signal is a natural physical property of the certain atomic nucl
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000324"/>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400231"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The Bruker BioSpin CryoProbe is a high-performance cryogenically cooled probe developed for high-resolution applications. It has improved signal/noise (S/N) ratios obtained by reducing the operating temperature of the coil and the pre-amplifier. As a result, the efficiency of the coil is improved and the noise of the coil and the pre-amplifier are reduced.The dramatic increase in the S/N ratio by a factor of 3-4, as compared to conventional probes, leads to a possible reduction in experiment time of up to 16 or a reduction in required sample concentration by a factor of up to 4. The CryoProbes possess key characteristics for NMR analysis:
-Significant S/N gains (with moderately salty samples also)
-Short pulse widths
-Short ring down times
-Linear behavior in power response
-Gradient capability
-CryoProbes are available as Triple Resonance, Dual, Selective X Detection, MicroImaging, and Quad Nucleus Probes configurations at 400 MHz and higher
-All high resolution probes have a lock circuit
-All high resolution probes have Z-gradient
-defprov: Bruker website</rdfs:comment>
+   Significant S/N gains (with moderately salty samples also)
+   Short pulse widths
+   Short ring down times
+   Linear behavior in power response
+   Gradient capability
+   CryoProbes are available as Triple Resonance, Dual, Selective X Detection, MicroImaging, and Quad Nucleus Probes configurations at 400 MHz and higher
+   All high resolution probes have a lock circuit
+   All high resolution probes have Z-gradient
+   defprov: Bruker website</rdfs:comment>
     </owl:Class>
     
 
@@ -7581,9 +7134,9 @@ defprov: Bruker website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">high resolution magic angle spin probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400223"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Samples that are neither solid nor liquid, being of biological, chemical, and/or pharmaceutical interest, reveal highly resolved spectra when magic angle spinning is applied. The correct solution is a gradient, such that the field varies along the spinner axis. This so-called Magic Angle Gradient is employed in Bruker’s high resolution Magic Angle Spinning (hr-MAS) probes, and is implemented in such a way that it is compatible with the stator and does not interfere with the sample eject/insert. Bruker BioSpin has developed a series of dedicated probes for standard bore magnets to accommodate the rapidly expanding field of hr-MAS. These probes are available in double (e.g. 1H and 13C) and triple resonance (e.g., 1H, 13C, 15N) modes and come equipped with a deuterium lock channel. The probes have automatic sample ejection and insertion capability, with the availability of an optional sample changer, enabling fully automated sample runs. Probes can be equipped with an optional B0 gradient, directed along the magic angle, so that gradient spectroscopy can be done used.
-defprov: Bruker website
-altdef: High resolution MAS (hr-MAS) provides an easy means of obtaining high resolution spectra for a variety of samples that would otherwise result in poorly resolved spectra. The addition of an hr-MAS probe and a MAS pneumatic unit to a standard high resolution spectrometer is all that is needed to open the gate to the world of hr-MAS spectroscopy and gain access to a vast amount of highly interesting samples.
-synonyms: High resolution MAS, hr-MAS</rdfs:comment>
+   defprov: Bruker website
+   altdef: High resolution MAS (hr-MAS) provides an easy means of obtaining high resolution spectra for a variety of samples that would otherwise result in poorly resolved spectra. The addition of an hr-MAS probe and a MAS pneumatic unit to a standard high resolution spectrometer is all that is needed to open the gate to the world of hr-MAS spectroscopy and gain access to a vast amount of highly interesting samples.
+   synonyms: High resolution MAS, hr-MAS</rdfs:comment>
     </owl:Class>
     
 
@@ -7594,8 +7147,8 @@ synonyms: High resolution MAS, hr-MAS</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">solid magic angle spinning probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400231"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Magic angle spinning, nowadays a routine technique for solids NMR, still offers the capability of innovation. The high mechanical performance of MAS probes in conjunction with efficient rf pulse techniques open new exciting fields in solids NMR of biological samples and in the field of quadrupolar nuclei.
-defprov: Bruker website
-synonym: solid MAS probe</rdfs:comment>
+   defprov: Bruker website
+   synonym: solid MAS probe</rdfs:comment>
     </owl:Class>
     
 
@@ -7606,12 +7159,12 @@ synonym: solid MAS probe</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">1mm MicroProbe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400231"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Over the past few years there has been a significantly growing demand for miniaturization in all areas ofmodern research and development. Evoked by many exciting applications, there is a need for analytical methods which require less amounts of sample. Bruker BioSpin meets this challenge with a revolutionary NMR probe design: The 1mm MicroProbe. It operates with disposable 1mm capillary sample tubes and the sample volume of 5 microliters enables the use of lowest amounts of sample to run all high resolution NMR experiments with outstanding sensitivity and up to 16 times faster measurements. Due to the TXI-type probe design, the z-gradient coil and the automatic matching and tuning accessory, the 1mm MicroProbe can be used for a wide variety of NMR experiments. The key advantages of this probe include:
-up to 4 times higher mass sensitivity than 5mm conventional probes (with respect to the same sample amount)
-excellent solvent suppression properties
-virtually no salt effect
-discrete samples in tubes that can be sealed and stored
-automation accessory for sample preparation and handling available
-defprov: Bruker website</rdfs:comment>
+   up to 4 times higher mass sensitivity than 5mm conventional probes (with respect to the same sample amount)
+   excellent solvent suppression properties
+   virtually no salt effect
+   discrete samples in tubes that can be sealed and stored
+   automation accessory for sample preparation and handling available
+   defprov: Bruker website</rdfs:comment>
     </owl:Class>
     
 
@@ -7622,8 +7175,8 @@ defprov: Bruker website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">flow high resolution probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400223"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Hyphenated analytical techniques combining mass spectrometry and chromatography are well-established laboratory tools. The combination of chromatography and NMR has also made its way into the analytical laboratory. Further developments even combine all three techniques into an LC-NMR/NMR-MS system. The use of solid phase extraction provides an efficient interface between chromatography and NMR with demands for special type of flow probes.
-defprov: Bruker website
-synonym: flow HR-probe</rdfs:comment>
+   defprov: Bruker website
+   synonym: flow HR-probe</rdfs:comment>
     </owl:Class>
     
 
@@ -7705,7 +7258,7 @@ synonym: flow HR-probe</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">NMR Case</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400209"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The NMR Case is an economical NMR sample changer for laboratories with modest automation needs. It expands the maximum number of samples your spectrometer can process during unattended operation to 24. The NMR Case consists of multiple components. The NMR Case exchange module installed atop your cryostat. The two front legs are adjustable, making the NMR Case compatible with many different cryostats.
-defprov: Bruker website</rdfs:comment>
+   defprov: Bruker website</rdfs:comment>
     </owl:Class>
     
 
@@ -7726,7 +7279,7 @@ defprov: Bruker website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">Bruker AutoClean</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400204"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: In today&apos;s fast-paced research environment, NMR tubes are often used once and discarded, creating needless waste. With the Bruker BioSpin Autoclean™ system you can now recycle 5mm, 3mm, or 5mm/3mm step-down (Wilmad 520-1B) NMR tubes. AutoClean NMR Tube Washing System is a simple way to recoup the substantial investment your organization makes in quality NMR tubes, and cut back on needless waste material.
-defprov: Bruker website</rdfs:comment>
+   defprov: Bruker website</rdfs:comment>
     </owl:Class>
     
 
@@ -7737,8 +7290,8 @@ defprov: Bruker website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">Bruker BEST NMR</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400209"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The introduction of biological screening and combinatorial chemistry for chemical synthesis has also introduced new requirements for NMR automation, e.g., the use of well plates for sample input, increased demands on throughput, and the need for quick and simple interpretation of the acquired NMR data.
-defprov: Bruker website
-synonym: Bruker Efficient Sample Transfer NMR</rdfs:comment>
+   defprov: Bruker website
+   synonym: Bruker Efficient Sample Transfer NMR</rdfs:comment>
     </owl:Class>
     
 
@@ -7749,8 +7302,8 @@ synonym: Bruker Efficient Sample Transfer NMR</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">SampleRail</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400002"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: This system automatically prepares an NMR sample, inserts it into an NMR magnet, performs NMR experiments on the sample, and transports it back to the preparation system.
-The SampleRail fulfills the transporting tasks from the preparation system into the NMR magnet and back
-defprov: website</rdfs:comment>
+   The SampleRail fulfills the transporting tasks from the preparation system into the NMR magnet and back
+   defprov: website</rdfs:comment>
     </owl:Class>
     
 
@@ -7761,8 +7314,8 @@ defprov: website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">SampleJet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400209"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Bruker BioSpin introduces the SampleJet, a robot for NMR tube automation. The SampleJet has been consciously designed to meet the growing customer demand for simplicity, versatility and higher throughput in NMR sample tube automation.
-The SampleJet utilizes the modern-day industry standard for sample arrangements—the 96 well plate array. Therefore, the samples may be handled by standard lab automation devices before or after the NMR measurement.
-defprov: Bruker website</rdfs:comment>
+   The SampleJet utilizes the modern-day industry standard for sample arrangements—the 96 well plate array. Therefore, the samples may be handled by standard lab automation devices before or after the NMR measurement.
+   defprov: Bruker website</rdfs:comment>
     </owl:Class>
     
 
@@ -7783,7 +7336,7 @@ defprov: Bruker website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">B-ACS</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400209"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The Bruker Automatic Sample Changer (B-ACS 60/120), used in conjunction with Bruker DISNMR, UXNMR or XWIN-NMR software, provides dialog-guided facilities which allow the user to easily and effectively perform automatic (continuous) experiments. Features include a 60 or 120 sample capacity, random accessing of samples, positive sample identification with the optional bar code reader, and temperature control of individual samples with the optional sample heater unit.
-defprov: Bruker website</rdfs:comment>
+   defprov: Bruker website</rdfs:comment>
     </owl:Class>
     
 
@@ -7794,9 +7347,9 @@ defprov: Bruker website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">Bruker MATCH</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400212"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The Bruker Multiple Adjustable Tube Clamp Holder MATCH™ system is a holder for 100 mm long NMR sample tubes with diameters ranging from micro tubes up to 5 mm NMR tubes. The MATCH insert fits into a standard 10 mm Bruker spinner and is suitable for all non-spinning applications.
-The MATCH system provides an easy and cost efficient means of optimizing the signal-to-noise ratio of each sample. By matching the NMR tube diameter to the size of the sample, most of the sample can be placed in the active column of the NMR coil. This leads to an enhanced signal detection compared to diluting the same sample quantity in a larger tube.
-defprov: Bruker website
-synonym: Bruker Multiple Adjustable Tube Clamp Holder</rdfs:comment>
+   The MATCH system provides an easy and cost efficient means of optimizing the signal-to-noise ratio of each sample. By matching the NMR tube diameter to the size of the sample, most of the sample can be placed in the active column of the NMR coil. This leads to an enhanced signal detection compared to diluting the same sample quantity in a larger tube.
+   defprov: Bruker website
+   synonym: Bruker Multiple Adjustable Tube Clamp Holder</rdfs:comment>
     </owl:Class>
     
 
@@ -7837,15 +7390,6 @@ synonym: Bruker Multiple Adjustable Tube Clamp Holder</rdfs:comment>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400215">
         <rdfs:label rdf:datatype="&xsd;string">TopSpin 1.3 software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400214"/>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400216 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400216">
-        <rdfs:label rdf:datatype="&xsd;string">NMR Suite</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
     </owl:Class>
     
 
@@ -7901,8 +7445,8 @@ synonym: Bruker Multiple Adjustable Tube Clamp Holder</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">high resolution probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400231"/>
         <rdfs:comment rdf:datatype="&xsd;string">def:BRUKER BIOSPIN&apos;s experienced Research &amp; Development group not only delivers top-performance probes for the more common experiments, but also a wealth of special probes for almost any application. For high resolution (HR) NMR we offer probes with a variety of important characteristics and features.
-defprov: Bruker website
-synonym: HR Probe</rdfs:comment>
+   defprov: Bruker website
+   synonym: HR Probe</rdfs:comment>
     </owl:Class>
     
 
@@ -7913,9 +7457,9 @@ synonym: HR Probe</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">high resolution probe with ATM</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400223"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The ATM option for AVANCE spectrometers is available for:
-Double resonance probes in fixed-frequency and broadband tunable configurations with either direct or indirect detection. Thus, for multinuclear operation, as often required for applications in inorganic chemistry, ATM facilitates the accurate setting of 90° pulsewidths on both observe and decoupling channels for each chosen nucleus and each individual sample - even with full automation. Triple resonance probes in fixed-frequency configurations, as typically used for inverse detection with high-field systems.
-defprov: Bruker website
-synonym: High Resolution Probes with Automatic Tuning and Matching, HR probe with ATM</rdfs:comment>
+   Double resonance probes in fixed-frequency and broadband tunable configurations with either direct or indirect detection. Thus, for multinuclear operation, as often required for applications in inorganic chemistry, ATM facilitates the accurate setting of 90° pulsewidths on both observe and decoupling channels for each chosen nucleus and each individual sample - even with full automation. Triple resonance probes in fixed-frequency configurations, as typically used for inverse detection with high-field systems.
+   defprov: Bruker website
+   synonym: High Resolution Probes with Automatic Tuning and Matching, HR probe with ATM</rdfs:comment>
     </owl:Class>
     
 
@@ -8121,7 +7665,7 @@ synonym: High Resolution Probes with Automatic Tuning and Matching, HR probe wit
         <rdfs:label rdf:datatype="&xsd;string">DISCOVERY console</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400246"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The Discovery™ is a Windows XP Professional-based, integrated console designed especially for Solid-State NMR. The console includes everything needed to interface to any magnet and solids probe - from computer to cables to duplexing network
-defprov: tecmag website</rdfs:comment>
+   defprov: tecmag website</rdfs:comment>
     </owl:Class>
     
 
@@ -8132,7 +7676,7 @@ defprov: tecmag website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">tecmag EAGLE probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400243"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The Eagle™ is a 4 mm 1H/X solid-state MAS probe with a top spinning speed of 18 kHz. Its simple design is robust, reliable and easy to spin. Configurations are available for 200 to 600 MHz widebore magnets on Tecmag, Bruker, Chemagnetics, JEOL and Varian spectrometers.
-defprov: website</rdfs:comment>
+   defprov: website</rdfs:comment>
     </owl:Class>
     
 
@@ -8285,17 +7829,11 @@ defprov: website</rdfs:comment>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400267">
         <rdfs:label rdf:datatype="&xsd;string">data file</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000031"/>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://nmrML.org/nmrCV#NMR:1400268 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400268">
-        <rdfs:label rdf:datatype="&xsd;string">literature reference</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
+        <skos:scopeNote>In the NMR case a file generated by an NMR acquisition computer, console or NMR processing software.</skos:scopeNote>
+        <skos:example>an FID raw data file</skos:example>
+        <skos:editorialNote>This is a class annotation exemplifying skos usage. We assume the rdfs:label to capture the skos:preferedLabel.</skos:editorialNote>
+        <skos:definition>Any data file as generated by some acquisition computer or console.</skos:definition>
+        <skos:altLabel>file</skos:altLabel>
     </owl:Class>
     
 
@@ -8372,7 +7910,7 @@ defprov: website</rdfs:comment>
         <rdfs:label rdf:datatype="&xsd;string">continuous wave NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000012"/>
         <rdfs:comment rdf:datatype="&xsd;string">Continuous wave NMR spectrometers are similar in principle to optical spectrometers. The sample is held in a strong magnetic field, and the frequency of the source is slowly scanned (in some instruments, the source frequency is held constant, and the field is scanned).
-Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdfs:comment>
+   Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdfs:comment>
     </owl:Class>
     
 
@@ -8383,7 +7921,7 @@ Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdf
         <rdfs:label rdf:datatype="&xsd;string">fourier transformation NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000012"/>
         <rdfs:comment rdf:datatype="&xsd;string">In FT-NMR, all frequencies in a spectrum are irradiated simultaneously with a radio frequency pulse. Following the pulse, the nuclei return to thermal equilibrium. A time domain emission signal is recorded by the instrument as the nuclei relax. A frequency domain spectrum is obtained by Fourier transformation.
-Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdfs:comment>
+   Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdfs:comment>
     </owl:Class>
     
 
@@ -8726,7 +8264,7 @@ Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdf
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400324">
         <rdfs:label rdf:datatype="&xsd;string">27Al</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
     </owl:Class>
     
 
@@ -8735,6 +8273,7 @@ Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdf
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#_purgatory">
         <rdfs:label>_purgatory</rdfs:label>
+        <skos:scopeNote>This administrative helper class contains the classes which might be revived at some point in time or from which the definitions could be harvested these are at the moment not deleted form the release file.</skos:scopeNote>
     </owl:Class>
     
 
@@ -8756,11 +8295,41 @@ Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdf
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:Class rdf:about="&obo;BFO_0000015"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
+
+    <owl:Class rdf:about="&obo;BFO_0000017"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="&obo;BFO_0000019"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
+
+    <owl:Class rdf:about="&obo;BFO_0000030"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
+
+    <owl:Class rdf:about="&obo;BFO_0000031"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
 
-    <rdf:Description rdf:about="&obo;PATO_0000001">
+    <owl:Class rdf:about="&obo;PATO_0000001">
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000019"/>
-    </rdf:Description>
+    </owl:Class>
 </rdf:RDF>
 
 
