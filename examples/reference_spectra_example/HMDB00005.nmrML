@@ -4,11 +4,13 @@
  file:/Users/mike/Projects/nmrML/nmrML/xml-schemata/nmrML.xsd"
     version="v1.0.1">
 
-    <cvList count="2">
+    <cvList count="3">
         <cv id="NMRCV" fullName="nmrML Controlled Vocabulary"
             URI="file://../../ontologies/nmrMLv1.1.owl" version="0.0.1"/>
         <cv id="UO" fullName="Unit Ontology"
             URI="http://unit-ontology.googlecode.com/svn/trunk/uo.owl/" version="3.2.0"/>
+	<cv id="ChEBI" fullName="Chemical entities of biological interest" 
+	    URI="http://purl.obolibrary.org/obo/chebi.owl" version="ChEBI Release version 108"/>
     </cvList>
 
     <fileDescription>
@@ -128,10 +130,7 @@
  -->
                 
                 <DirectDimensionParameterSet decoupled="true" numberOfDataPoints="57804">
-                    <acquisitionNucleus name="1H" cvRef="NMRCV" accession="NMR:400151"/>
-
-                    <sweepWidth value="7200.07200072" unitName="hertz" unitCvRef="UO"
-                        unitAccession="UO:0000106"/>
+                    <acquisitionNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
 
                     <!-- need to figure out how to calculate this, maybe email Christian -->
                     <gammaB1PulseFieldStrength value="?" unitName="tesla" unitCvRef="UO"
@@ -139,13 +138,18 @@
 
                     <!-- must be in hertz, TODO investigate this value, as it seems to be the wrong
                     one according to Reza -->
+
+                    <sweepWidth value="7200.07200072" unitName="hertz" unitCvRef="UO"
+                        unitAccession="UO:0000106"/>
+
                     <irradiationFrequency value="599.4094446" unitName="hertz" unitCvRef="UO"
                         unitAccession="UO:0000106"/>
 
                     <!-- make this a CVTerm, add to CV -->
                     <!-- add a rule for this  -->
-                    <decouplingMethod name="homonuclear decoupling" accession="NMR:1000046"
-                        cvRef="NMRCV"/>
+                    <!-- <decouplingMethod name="homonuclear decoupling" accession="NMR:1000046" -->
+                    <!--     cvRef="NMRCV"/> -->
+                    <decouplingNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
 
                     <!-- must add the mapping for this -->
                     <samplingStrategy accession="?" cvRef="NMRCV" name="uniform"/>
