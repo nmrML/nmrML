@@ -14,8 +14,8 @@ You can view the documentation and download current and past releases here:
 <tbody>
 <tr>
 <td>v1.0.rc1</td>
-<td><a href="/schema/v1.0.rc1/design-doc">View Design Specification</a></td>
-<td><a href="/schema/v1.0.rc1/doc" >View XSD Documentation</a> (<a href="/schema/v1.0.rc1/design-doc/specification/NMR-ML1.0_specificationDoc.docx">docx</a>)</td>
+<td><a href="/schema/v1.0.rc1/design-doc">View Design Specification (<a href="/schema/v1.0.rc1/design-doc/specification/NMR-ML1.0_specificationDoc.docx">docx</a>)</a></td>
+<td><a href="/schema/v1.0.rc1/doc" >View XSD Documentation</a></td>
 <td><a href="/schema/v1.0.rc1/nmrML.xsd">nmrML XSD</a></td>
 </tr>
 </tbody>
