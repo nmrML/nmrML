@@ -24,7 +24,6 @@ import org.nmrml.model.SourceFileListType;
 import org.nmrml.model.SourceFileType;
 
 import java.io.File;
-import java.math.BigInteger;
 
 public class BrukerSourceFileListLoader {
     private NmrMLType nmrMLType;
@@ -42,7 +41,6 @@ public class BrukerSourceFileListLoader {
     public NmrMLType loadSourceFileList() {
 
         SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
-        sourceFileListType.setCount(BigInteger.valueOf(0));
         //get the name of the folder with the bruker data
         String foldername = inputFile.isFile()?inputFile.getParent():inputFile.getPath();
         //check if the filepath ends with /
@@ -54,7 +52,6 @@ public class BrukerSourceFileListLoader {
                 sourceFileType.setId(key);
                 sourceFileType.setLocation(file.toURI().toString());
                 sourceFileType.setName(file.getName());
-                sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
                 sourceFileListType.getSourceFile().add(sourceFileType);
             }
         }

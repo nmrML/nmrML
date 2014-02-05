@@ -5,9 +5,11 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
+import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.nmrml.converter.BrukerAcquAbstractReader;
+import org.nmrml.model.ContactType;
 import org.nmrml.model.NmrMLType;
 import org.nmrml.model.ObjectFactory;
 
@@ -29,11 +31,17 @@ import java.nio.file.Paths;
 public class Converter {
     static Options options;
     public static void main(String[] args) {
+
         options = new Options();
-        Option help = new Option( "help", "print this message" );
+        Option help = new Option( "help","print this message" );
         options.addOption(help);
-        options.addOption("w", false, "overwrite output file");
-        options.addOption("s", false, "print xml in the stdout");
+        options.addOption("w","overwrite", false, "overwrite output file");
+        options.addOption("s", "stdout", false, "print xml in the stdout");
+        options.addOption(OptionBuilder.withLongOpt("contact")
+                .withDescription("add contact")
+                .hasArg()
+                .withArgName("\"FULL NAME EMAIL\"")
+                .create());
 
         CommandLineParser parser = new BasicParser();
         CommandLine cmd = null;
@@ -43,7 +51,7 @@ public class Converter {
             // oops, something went wrong
             System.err.println( "Parsing failed.  Reason: " + e.getMessage() );
         }
-        System.out.println(args.length +" " +cmd.getArgs().length+" "+ cmd.getOptions().length);
+//        System.out.println(args.length +" " +cmd.getArgs().length+" "+ cmd.getOptions().length);
         if((args.length  - cmd.getOptions().length) < 1 || cmd.hasOption("help")){
             callHelp(options);
         } else {convert(args, cmd);}
@@ -57,7 +65,7 @@ public class Converter {
     }
 
     private static void convert(String[] args, CommandLine cmd) {
-        System.out.println(args.length +" " +cmd.getArgs().length+" "+ cmd.getOptions().length);
+//        System.out.println(args.length +" " +cmd.getArgs().length+" "+ cmd.getOptions().length);
         int filenameIndex=(cmd.getOptions().length>0)? args.length  - cmd.getArgs().length : 0;
 
         String fileInPath = (new File(args[filenameIndex]).isFile())?
@@ -86,7 +94,34 @@ public class Converter {
         } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+        ContactType contactType = objFactory.createContactType();
+        if(nmrMLElement.getContactList() == null){
+            nmrMLElement.setContactList(objFactory.createContactListType());
+        }
+        if( cmd.hasOption( "contact" ) ) {
+            // add contacts to the nmrML
+            String name = "";
+            for (String contacts : cmd.getOptionValue("contact").split("\"")){
+                contactType = objFactory.createContactType();
+                for(String details : contacts.split(" ")){
+                    if(details.contains("@")){
+                        contactType.setEmail(details);
+                    } else {
+                        contactType.setFullname((contactType.getFullname() == null )?
+                                details:
+                                contactType.getFullname()+" "+details);
+                    }
+                }
+                nmrMLElement.getContactList().getContact().add(contactType);
+            }
 
+
+        } else {
+            contactType.setFullname("anonymous");
+            contactType.setEmail("anonymous@net.com");
+            nmrMLElement.getContactList().getContact().add(contactType);
+            System.err.println("No contact provided! Please provide a contact for the nmrML file.");
+        }
         /* Generate XML */
         try{
 

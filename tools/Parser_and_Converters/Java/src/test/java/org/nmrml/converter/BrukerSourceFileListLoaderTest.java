@@ -52,12 +52,12 @@ public class BrukerSourceFileListLoaderTest {
 
         Assert.assertNotNull(nmrMLType.getSourceFileList().getSourceFile());
 
-        Assert.assertTrue(nmrMLType.getSourceFileList().getCount().intValue() > 0);
+        Assert.assertTrue(nmrMLType.getSourceFileList().getSourceFile().size()> 0);
 
         //TODO find a better way to test these values
-        Assert.assertEquals("FID_FILE",nmrMLType.getSourceFileList().getSourceFile().get(0).getId());
+        Assert.assertEquals("ACQUISITION_FILE",nmrMLType.getSourceFileList().getSourceFile().get(0).getId());
 
-        Assert.assertEquals("fid",nmrMLType.getSourceFileList().getSourceFile().get(0).getName());
+        Assert.assertEquals("acqus",nmrMLType.getSourceFileList().getSourceFile().get(0).getName());
 
 
     }
