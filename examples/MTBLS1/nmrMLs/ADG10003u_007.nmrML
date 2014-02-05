@@ -2,6 +2,7 @@
 <nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nmrML.org/schema/nmrML.xsd">
     <cvList>
         <cv id="UO" fullName="Unit Ontology" version="3.2.0" URI="http://purl.obolibrary.org/obo/"/>
+        <cv id="CHEBI" fullName="Chemical Entities of Biological Interest Ontology" version="105" URI="http://purl.obolibrary.org/obo/"/>
         <cv id="NMRCV" fullName="Nuclear Magnetic Resonance CV" version="1.0.rc1" URI="http://nmrml.org/cv/v1.0.rc1/nmrCV.owl"/>
     </cvList>
     <contactList>
@@ -44,6 +45,7 @@
                 </acquisitionParameterFileRefList>
                 <sampleContainer cvRef="NMRCV" accession="NMR:400128" name="tube"/>
                 <sampleAcquisitionTemperature value="300.0" unitAccession="UO_0000012" unitName="kelvin" unitCvRef="UO"/>
+                <spinningRate value="0.0" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
                 <relaxationDelay value="0" unitAccession="UO_0000010" unitName="second" unitCvRef="UO"/>
                 <pulseSequence>
                     <pulseSequenceFileRefList>
@@ -51,7 +53,7 @@
                     </pulseSequenceFileRefList>
                 </pulseSequence>
                 <DirectDimensionParameterSet decoupled="false" numberOfDataPoints="65536">
-                    <acquisitionNucleus name="1H"/>
+                    <acquisitionNucleus cvRef="CHEBI" accession="CHEBI_49637" name="hydrogen atom"/>
                     <effectiveExcitationField value="16.44" unitAccession="UO_0000228" unitName="tesla" unitCvRef="UO"/>
                     <sweepWidth value="14005.6022408964" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
                     <irradiationFrequency value="6.9987E8" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
