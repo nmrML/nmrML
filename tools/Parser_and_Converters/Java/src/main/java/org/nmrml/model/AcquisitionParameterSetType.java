@@ -11,7 +11,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Base type for the list with the descriptions of the acquisition settings applied prior to the start of data acquisition.
+ * Base type for the list with the descriptions of the acquisition settings
+ *         applied prior to the start of data acquisition.
  * 
  * <p>Java class for AcquisitionParameterSetType complex type.
  * 
@@ -22,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="contactRefList" type="{http://nmrml.org/schema}ContactRefListType"/>
+ *         &lt;element name="contactRefList" type="{http://nmrml.org/schema}ContactRefListType" minOccurs="0"/>
  *         &lt;element name="acquisitionParameterFileRefList" type="{http://nmrml.org/schema}SourceFileRefListType"/>
  *         &lt;element name="softwareRef" type="{http://nmrml.org/schema}SoftwareRefType" minOccurs="0"/>
  *         &lt;element name="sampleContainer" type="{http://nmrml.org/schema}CVTermType"/>
@@ -61,7 +62,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AcquisitionParameterSetType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema")
     protected ContactRefListType contactRefList;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected SourceFileRefListType acquisitionParameterFileRefList;

@@ -10,7 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Uncontrolled user parameters (essentially allowing free text). Before using these, one should verify whether there is an appropriate CV term available, and if so, use the CV term instead
+ * Uncontrolled user parameters (essentially allowing free text). Before using
+ *         these, one should verify whether there is an appropriate CV term available, and if so, use
+ *         the CV term instead
  * 
  * <p>Java class for UserParamType complex type.
  * 

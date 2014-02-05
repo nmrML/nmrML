@@ -1,19 +1,19 @@
 
 package org.nmrml.model;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * List and descriptions of instrument configurations. At least one instrument configuration must be specified, even if it is only to specify that the instrument is unknown. In that case, the "instrument model" term is used to indicate the unknown instrument in the instrumentConfiguration.
+ * List and descriptions of instrument configurations. At least one instrument
+ *         configuration must be specified, even if it is only to specify that the instrument is
+ *         unknown. In that case, the "instrument model" term is used to indicate the unknown
+ *         instrument in the instrumentConfiguration.
  * 
  * <p>Java class for InstrumentConfigurationListType complex type.
  * 
@@ -26,7 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="instrumentConfiguration" type="{http://nmrml.org/schema}InstrumentConfigurationType" maxOccurs="unbounded"/>
  *       &lt;/sequence>
- *       &lt;attribute name="count" use="required" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -42,9 +41,6 @@ public class InstrumentConfigurationListType {
 
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected List<InstrumentConfigurationType> instrumentConfiguration;
-    @XmlAttribute(name = "count", required = true)
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger count;
 
     /**
      * Gets the value of the instrumentConfiguration property.
@@ -73,30 +69,6 @@ public class InstrumentConfigurationListType {
             instrumentConfiguration = new ArrayList<InstrumentConfigurationType>();
         }
         return this.instrumentConfiguration;
-    }
-
-    /**
-     * Gets the value of the count property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getCount() {
-        return count;
-    }
-
-    /**
-     * Sets the value of the count property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setCount(BigInteger value) {
-        this.count = value;
     }
 
 }

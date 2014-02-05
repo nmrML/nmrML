@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+import sys, os, argparse
+
+# add the converter tools to the syspath
+sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
+from pynmrml import io
+
+parser = argparse.ArgumentParser(
+    description='Convert a NMR vendor file to nmrML')
+parser.add_argument('input_file',
+    help="Folder with acquisition data")
+parser.add_argument('output_file',
+    help="name of the nmrML output file")
+#parser.add_argument('-t','--type', required=True,
+#    dest='input', help='Type of input file: (varian,bruker)')
+
+# Get files from args
+args = parser.parse_args()
+input_filename  = os.path.abspath(args.input_file)
+output_file = open(args.output_file,"w")
+
+# Build a nmrML writer and convert the file
+writer = io.factory.varian_converter(input_filename)
+writer.write(output_file)
+

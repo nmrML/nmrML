@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * Description of a particular hardware configuration of a NMR spectrometer. For software configuration, use a ReferenceableParamGroup element.
+ * Description of a particular hardware configuration of a NMR spectrometer.
+ *         For software configuration, use a ReferenceableParamGroup element.
  * 
  * <p>Java class for InstrumentConfigurationType complex type.
  * 

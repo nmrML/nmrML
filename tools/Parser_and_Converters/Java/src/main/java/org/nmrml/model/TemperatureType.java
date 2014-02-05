@@ -12,7 +12,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * A temperature and references to a unit from the unit ontology.
+ * A temperature and references to a unit from the unit
+ *         ontology.
  * 
  * <p>Java class for TemperatureType complex type.
  * 

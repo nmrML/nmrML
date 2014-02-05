@@ -1,7 +1,6 @@
 
 package org.nmrml.model;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -28,7 +27,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="spectrum1D" type="{http://nmrml.org/schema}Spectrum1DType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="spectrumMultiD" type="{http://nmrml.org/schema}SpectrumMultiDType" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/choice>
- *       &lt;attribute name="count" use="required" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" />
  *       &lt;attribute name="defaultDataProcessingRef" use="required" type="{http://www.w3.org/2001/XMLSchema}IDREF" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -48,9 +46,6 @@ public class SpectrumListType {
     protected List<Spectrum1DType> spectrum1D;
     @XmlElement(namespace = "http://nmrml.org/schema")
     protected List<SpectrumMultiDType> spectrumMultiD;
-    @XmlAttribute(name = "count", required = true)
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger count;
     @XmlAttribute(name = "defaultDataProcessingRef", required = true)
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -112,30 +107,6 @@ public class SpectrumListType {
             spectrumMultiD = new ArrayList<SpectrumMultiDType>();
         }
         return this.spectrumMultiD;
-    }
-
-    /**
-     * Gets the value of the count property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getCount() {
-        return count;
-    }
-
-    /**
-     * Sets the value of the count property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setCount(BigInteger value) {
-        this.count = value;
     }
 
     /**

@@ -1,0 +1,62 @@
+<html><head>
+<title>Class: 'continuant fiat boundary'</title>
+<meta http-equiv='content-type' content='text/html;charset=utf8'>
+<link rel='stylesheet' href='../default.css' type='text/css' />
+</head>
+<body>
+<h1>Class: 'continuant fiat boundary'</h1>
+<h2 class='summaryURI'>http://purl.obolibrary.org/obo/BFO_0000140</h2>
+<h2>Annotations (10)</h2>
+<div class='codebox' id='annotations_(10)'>
+<ul>
+<li>
+<a href="../annotationproperties/BFO0000179___-324347505.html" title="http://purl.obolibrary.org/obo/BFO_0000179">'BFO OWL specification label'</a> <span class='literal'>"cf-boundary" <span style='color: black;'>()</span></span></li>
+<li>
+<a href="../annotationproperties/BFO0000180___-324347483.html" title="http://purl.obolibrary.org/obo/BFO_0000180">'BFO CLIF specification label'</a> <span class='literal'>"ContinuantFiatBoundary" <span style='color: black;'>()</span></span></li>
+<li>
+<a href="../annotationproperties/IAO0000115___964462205.html" title="http://purl.obolibrary.org/obo/IAO_0000115">definition</a> <span class='literal'>"b is a continuant fiat boundary = Def. b is an immaterial entity that is of zero, one or two dimensions and does not include a spatial region as part. (axiom label in BFO2 Reference: [029-001])" <span style='color: black;'>(en)</span></span></li>
+<li>
+<a href="../annotationproperties/IAO0000116___964462206.html" title="http://purl.obolibrary.org/obo/IAO_0000116">'editor note'</a> <span class='literal'>"BFO 2 Reference: In BFO 1.1 the assumption was made that the external surface of a material entity such as a cell could be treated as if it were a boundary in the mathematical sense. The new document propounds the view that when we talk about external surfaces of material objects in this way then we are talking about something fiat. To be dealt with in a future version: fiat boundaries at different levels of granularity.More generally, the focus in discussion of boundaries in BFO 2.0 is now on fiat boundaries, which means: boundaries for which there is no assumption that they coincide with physical discontinuities. The ontology of boundaries becomes more closely allied with the ontology of regions." <span style='color: black;'>(en)</span></span></li>
+<li>
+<a href="../annotationproperties/IAO0000116___964462206.html" title="http://purl.obolibrary.org/obo/IAO_0000116">'editor note'</a> <span class='literal'>"BFO 2 Reference: a continuant fiat boundary is a boundary of some material entity (for example: the plane separating the Northern and Southern hemispheres; the North Pole), or it is a boundary of some immaterial entity (for example of some portion of airspace). Three basic kinds of continuant fiat boundary can be distinguished (together with various combination kinds [29" <span style='color: black;'>(en)</span></span></li>
+<li>
+<a href="../annotationproperties/IAO0000116___964462206.html" title="http://purl.obolibrary.org/obo/IAO_0000116">'editor note'</a> <span class='literal'>"Continuant fiat boundary doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. An example would be the mereological sum of two-dimensional continuant fiat boundary and a one dimensional continuant fiat boundary that doesn't overlap it. The situation is analogous to temporal and spatial regions." <span style='color: black;'>(en)</span></span></li>
+<li>
+<a href="../annotationproperties/IAO0000601___964466975.html" title="http://purl.obolibrary.org/obo/IAO_0000601">'has associated axiom(nl)'</a> <span class='literal'>"Every continuant fiat boundary is located at some spatial region at every time at which it exists" <span style='color: black;'>(en)</span></span></li>
+<li>
+<a href="../annotationproperties/IAO0000602___964466976.html" title="http://purl.obolibrary.org/obo/IAO_0000602">'has associated axiom(fol)'</a> <span class='literal'>"(iff (ContinuantFiatBoundary a) (and (ImmaterialEntity a) (exists (b) (and (or (ZeroDimensionalSpatialRegion b) (OneDimensionalSpatialRegion b) (TwoDimensionalSpatialRegion b)) (forall (t) (locatedInAt a b t)))) (not (exists (c t) (and (SpatialRegion c) (continuantPartOfAt c a t)))))) // axiom label in BFO2 CLIF: [029-001] " <span style='color: black;'>()</span></span></li>
+<li>
+<a href="../annotationproperties/isDefinedBy___449337134.html" title="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">isDefinedBy</a> http://purl.obolibrary.org/obo/<b>bfo.owl</b></li>
+<li>
+<a href="../annotationproperties/label___653429740.html" title="http://www.w3.org/2000/01/rdf-schema#label">label</a> <span class='literal'>"continuant fiat boundary" <span style='color: black;'>(en)</span></span></li>
+</ul>
+</div><!-- annotations (10) -->
+<h2>Superclasses (6)</h2>
+<div class='codebox' id='superclasses_(6)'>
+<ul>
+<li>
+<a href="BFO0000141___-324347606.html" title="http://purl.obolibrary.org/obo/BFO_0000141">'immaterial entity'</a></li>
+<li>
+<a href="../objectproperties/BFO0000083___-324348441.html" title="http://purl.obolibrary.org/obo/BFO_0000083">'occupies spatial region at some time'</a> <span class='only'>only</span> (<a href="BFO0000009___-324348683.html" title="http://purl.obolibrary.org/obo/BFO_0000009">'two-dimensional spatial region'</a> <span class='keyword'>or</span> <a href="BFO0000018___-324348653.html" title="http://purl.obolibrary.org/obo/BFO_0000018">'zero-dimensional spatial region'</a> <span class='keyword'>or</span> <a href="BFO0000026___-324348624.html" title="http://purl.obolibrary.org/obo/BFO_0000026">'one-dimensional spatial region'</a>)</li>
+<li>
+<a href="../objectproperties/BFO0000176___-324347508.html" title="http://purl.obolibrary.org/obo/BFO_0000176">'part of continuant at some time'</a> <span class='only'>only</span> (<span class='keyword'>not</span> <a href="BFO0000006___-324348686.html" title="http://purl.obolibrary.org/obo/BFO_0000006">'spatial region'</a>)</li>
+<li>
+<a href="../objectproperties/BFO0000178___-324347506.html" title="http://purl.obolibrary.org/obo/BFO_0000178">'has continuant part at some time'</a> <span class='only'>only</span> <span class='active-entity'>'continuant fiat boundary'</span></li>
+<li>
+<a href="../objectproperties/BFO0000186___-324347477.html" title="http://purl.obolibrary.org/obo/BFO_0000186">'part of continuant at all times that whole exists'</a> <span class='only'>only</span> (<span class='keyword'>not</span> <a href="BFO0000006___-324348686.html" title="http://purl.obolibrary.org/obo/BFO_0000006">'spatial region'</a>)</li>
+<li>
+<a href="../objectproperties/BFO0000187___-324347476.html" title="http://purl.obolibrary.org/obo/BFO_0000187">'has continuant part at all times that part exists'</a> <span class='only'>only</span> <span class='active-entity'>'continuant fiat boundary'</span></li>
+</ul>
+</div><!-- superclasses (6) -->
+<h2>Disjoints (2)</h2>
+<div class='codebox' id='disjoints_(2)'>
+<a href="BFO0000006___-324348686.html" title="http://purl.obolibrary.org/obo/BFO_0000006">'spatial region'</a>, <a href="BFO0000029___-324348621.html" title="http://purl.obolibrary.org/obo/BFO_0000029">site</a></div><!-- disjoints (2) -->
+<h2>Usage (1)</h2>
+<div class='codebox' id='usage_(1)'>
+<ul>
+<li>
+<span class='keyword'>Class</span>: <span class='active-entity'>'continuant fiat boundary'</span></li>
+</ul>
+</div><!-- usage (1) -->
+<p class='footer'>
+</body></html>

@@ -16,10 +16,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="AcquisitionType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
+ *       &lt;choice>
  *         &lt;element name="acquisition1D" type="{http://nmrml.org/schema}Acquisition1DType"/>
  *         &lt;element name="acquisitionMultiD" type="{http://nmrml.org/schema}AcquisitionMultiDType"/>
- *       &lt;/sequence>
+ *       &lt;/choice>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,9 +34,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AcquisitionType {
 
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema")
     protected Acquisition1DType acquisition1D;
-    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    @XmlElement(namespace = "http://nmrml.org/schema")
     protected AcquisitionMultiDType acquisitionMultiD;
 
     /**

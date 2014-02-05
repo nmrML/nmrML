@@ -32,15 +32,16 @@ public class CVLoaderTest {
     @Test
     public void testBrukerMapping() throws Exception {
         String brukerTag = "WDW";
-        String ontology = "NMR";
+        String ontology = "NMRCV";
         String value = "1";
-        String cvTerm = "MSI_400069";
+        String cvTerm = "NMR:1400069";
 
         BrukerMapper brukerMapper = new BrukerMapper();
 
         Assert.assertNotNull(brukerMapper);
 
         CVLoader cvLoader = new CVLoader();
+        // test already the Bruker mapping and the use of the ontology term
         CVParamType cvParamType = cvLoader.fetchCVParam(ontology,brukerMapper.getTerm(brukerTag,value));
 
         Assert.assertNotNull(cvParamType);

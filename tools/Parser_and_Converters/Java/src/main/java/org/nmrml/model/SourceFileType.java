@@ -12,7 +12,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * Description of the source file, including location and type. The SourceFileType element is intended to be a generic element that points to a file that was used to produce the spectrum or the nmrML file. It could point to an FID file, a procpar file, a pulse program file etc. nmrExperimentSourceFile could be a good name but I personally think that SourceFile is an intuitive name already.
+ * Description of the source file, including location and type. The
+ *         SourceFileType element is intended to be a generic element that points to a file that was
+ *         used to produce the spectrum or the nmrML file. It could point to an FID file, a procpar
+ *         file, a pulse program file etc. nmrExperimentSourceFile could be a good name but I
+ *         personally think that SourceFile is an intuitive name already.
  * 
  * <p>Java class for SourceFileType complex type.
  * 

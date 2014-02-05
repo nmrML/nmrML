@@ -8,7 +8,8 @@
 #' @return A vector with the numeric values of the processed data
 #' @author Steffen Neumann
 #' @examples
-#' length(readNMRMLProcessed(system.file("examples/HMDB00005.nmrML", package = "nmRIO")))
+#' # TODO: re-enable once we have an example file with preprocessed data
+#' # length(readNMRMLProcessed(system.file("examples/HMDB00005.nmrML", package = "nmRIO")))
 #' @export
 
 readNMRMLProcessed <- function (filename) {
@@ -38,4 +39,17 @@ readNMRMLProcessed <- function (filename) {
     datamatrix <- cbind(ppm, intensities)
     names(datamatrix) <- c("ppm", basename(filename))
     datamatrix
+}
+
+if (FALSE) {
+    ## This section contains test snippets during development
+    library(nmRIO)
+    library(XML)
+    library(caTools)
+    
+    files <- list.files("../../../../../examples/IPB_HopExample/nmrMLs/",
+                        full.names=TRUE)
+
+    filename <- files[1]
+    
 }

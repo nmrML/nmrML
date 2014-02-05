@@ -1,624 +1,703 @@
 format-version: 1.2
-date: 02:10:2013 17:07
+date: 04:02:2014 13:43
 saved-by: dschober
 auto-generated-by: The OWL API (version 3.4.2)
-import: http://purl.obolibrary.org/obo/uo.owl
-import: http://purl.obolibrary.org/obo/pato.owl
-import: http://purl.org/biotop/btl2.owl
-id_space: NMR82 http://nmrML.org/nmrCV#NMR:1000173
-id_space: NMR385 http://nmrML.org/nmrCV#NMR:1400226
-id_space: NMR196 http://nmrML.org/nmrCV#NMR:1400040
-id_space: NMR147 http://nmrML.org/nmrCV#NMR:1000189
-id_space: NMR139 http://nmrML.org/nmrCV#NMR:1002013
-id_space: NMR452 http://nmrML.org/nmrCV#NMR:1400246
-id_space: NMR187 http://nmrML.org/nmrCV#NMR:1400054
-id_space: NMR464 http://nmrML.org/nmrCV#NMR:1000040
-id_space: NMR414 http://nmrML.org/nmrCV#NMR:1000022
-id_space: NMR40 http://nmrML.org/nmrCV#NMR:1000131
-id_space: NMR501 http://nmrML.org/nmrCV#NMR:1001180
-id_space: NMR533 http://nmrML.org/nmrCV#NMR:1400255
-id_space: NMR327 http://nmrML.org/nmrCV#NMR:1400140
-id_space: NMR104 http://nmrML.org/nmrCV#NMR:1000193
-id_space: NMR63 http://nmrML.org/nmrCV#NMR:1000155
-id_space: NMR559 http://nmrML.org/nmrCV#NMR:1000914
-id_space: NMR227 http://nmrML.org/nmrCV#NMR:1001269
-id_space: NMR151 http://nmrML.org/nmrCV#NMR:1000187
-id_space: NMR561 http://nmrML.org/nmrCV#NMR:1001270
-id_space: NMR522 http://nmrML.org/nmrCV#NMR:1400315
-id_space: NMR32 http://nmrML.org/nmrCV#NMR:1400004
-id_space: NMR317 http://nmrML.org/nmrCV#NMR:1400281
-id_space: NMR382 http://nmrML.org/nmrCV#NMR:1000096
-id_space: NMR266 http://nmrML.org/nmrCV#NMR:1400161
-id_space: NMR511 http://nmrML.org/nmrCV#NMR:1000052
-id_space: NMR568 http://nmrML.org/nmrCV#NMR:1000006
-id_space: NMR541 http://nmrML.org/nmrCV#NMR:1000531
-id_space: NMR144 http://nmrML.org/nmrCV#NMR:1002010
-id_space: NMR434 http://nmrML.org/nmrCV#NMR:1400131
-id_space: NMR437 http://nmrML.org/nmrCV#NMR:1000038
-id_space: NMR439 http://nmrML.org/nmrCV#NMR:1001954
-id_space: NMR237 http://nmrML.org/nmrCV#NMR:1400181
-id_space: NMR287 http://nmrML.org/nmrCV#NMR:1400270
-id_space: NMR521 http://nmrML.org/nmrCV#NMR:1000058
-id_space: NMR284 http://nmrML.org/nmrCV#NMR:1400268
-id_space: NMR206 http://nmrML.org/nmrCV#NMR:1400034
-id_space: NMR329 http://nmrML.org/nmrCV#NMR:1400143
-id_space: NMR197 http://nmrML.org/nmrCV#NMR:1400045
-id_space: NMR39 http://nmrML.org/nmrCV#NMR:1000134
-id_space: NMR140 http://nmrML.org/nmrCV#NMR:1002012
-id_space: NMR280 http://nmrML.org/nmrCV#NMR:1400168
-id_space: NMR515 http://nmrML.org/nmrCV#NMR:1000055
-id_space: NMR198 http://nmrML.org/nmrCV#NMR:1400043
-id_space: NMR121 http://nmrML.org/nmrCV#NMR:1400090
-id_space: NMR549 http://nmrML.org/nmrCV#NMR:1400204
-id_space: NMR65 http://nmrML.org/nmrCV#NMR:1000153
-id_space: NMR285 http://nmrML.org/nmrCV#NMR:1400170
-id_space: NMR119 http://nmrML.org/nmrCV#NMR:1400091
-id_space: NMR150 http://nmrML.org/nmrCV#NMR:1400080
-id_space: NMR239 http://nmrML.org/nmrCV#NMR:1400196
-id_space: NMR429 http://nmrML.org/nmrCV#NMR:1400136
-id_space: NMR179 http://nmrML.org/nmrCV#NMR:1400063
-id_space: NMR38 http://nmrML.org/nmrCV#NMR:1000133
-id_space: NMR25 http://nmrML.org/nmrCV#NMR:1000106
-id_space: NMR365 http://nmrML.org/nmrCV#NMR:1400150
-id_space: NMR536 http://nmrML.org/nmrCV#NMR:1400251
-id_space: NMR69 http://nmrML.org/nmrCV#NMR:1000496
-id_space: NMR288 http://nmrML.org/nmrCV#NMR:1400277
+import: http://purl.obolibrary.org/obo/bfo.owl
+id_space: NMR37 http://nmrML.org/nmrCV#NMR:1000244
+id_space: NMR475 http://nmrML.org/nmrCV#NMR:1400220
+id_space: NMR480 http://nmrML.org/nmrCV#NMR:1400236
+id_space: NMR429 http://nmrML.org/nmrCV#NMR:1400154
+id_space: NMR241 http://nmrML.org/nmrCV#NMR:1400075
+id_space: NMR385 http://nmrML.org/nmrCV#NMR:1400140
+id_space: NMR240 http://nmrML.org/nmrCV#NMR:1400072
+id_space: NMR25 http://nmrML.org/nmrCV#NMR:1000251
+id_space: NMR44 http://nmrML.org/nmrCV#NMR:1000108
+id_space: NMR672 http://nmrML.org/nmrCV#NMR:1000319
+id_space: NMR359 http://nmrML.org/nmrCV#NMR:1400171
+id_space: NMR474 http://nmrML.org/nmrCV#NMR:1000029
+id_space: NMR187 http://nmrML.org/nmrCV#NMR:1000195
+id_space: NMR245 http://nmrML.org/nmrCV#NMR:1001456
+id_space: NMR628 http://nmrML.org/nmrCV#NMR:1000001
+id_space: NMR556 http://nmrML.org/nmrCV#NMR:1400119
+id_space: NMR441 http://nmrML.org/nmrCV#NMR:1000094
+id_space: NMR613 http://nmrML.org/nmrCV#NMR:1000009
+id_space: NMR492 http://nmrML.org/nmrCV#NMR:1000038
+id_space: NMR515 http://nmrML.org/nmrCV#NMR:1000040
+id_space: NMR355 http://nmrML.org/nmrCV#NMR:1000079
+id_space: NMR530 http://nmrML.org/nmrCV#NMR:1000047
+id_space: NMR218 http://nmrML.org/nmrCV#NMR:1002010
+id_space: NMR618 http://nmrML.org/nmrCV#NMR:1000302
+id_space: NMR79 http://nmrML.org/nmrCV#NMR:1000228
+id_space: NMR457 http://nmrML.org/nmrCV#NMR:1000568
+id_space: NMR511 http://nmrML.org/nmrCV#NMR:1000042
+id_space: NMR217 http://nmrML.org/nmrCV#NMR:1002014
+id_space: NMR15 http://nmrML.org/nmrCV#NMR:1000259
+id_space: NMR96 http://nmrML.org/nmrCV#NMR:1000157
+id_space: NMR141 http://nmrML.org/nmrCV#NMR:1000274
+id_space: NMR413 http://nmrML.org/nmrCV#NMR:1001000
+id_space: NMR297 http://nmrML.org/nmrCV#NMR:1400189
+id_space: NMR59 http://nmrML.org/nmrCV#NMR:1000238
+id_space: NMR586 http://nmrML.org/nmrCV#NMR:1000320
+id_space: NMR293 http://nmrML.org/nmrCV#NMR:1400185
+id_space: NMR415 http://nmrML.org/nmrCV#NMR:1000881
+id_space: NMR51 http://nmrML.org/nmrCV#NMR:1400009
+id_space: NMR316 http://nmrML.org/nmrCV#NMR:1400165
+id_space: NMR509 http://nmrML.org/nmrCV#NMR:1000548
+id_space: NMR670 http://nmrML.org/nmrCV#NMR:1000012
+id_space: NMR238 http://nmrML.org/nmrCV#NMR:1400079
+id_space: NMR184 http://nmrML.org/nmrCV#NMR:1002007
+id_space: NMR280 http://nmrML.org/nmrCV#NMR:1400024
+id_space: NMR634 http://nmrML.org/nmrCV#NMR:1000200
+id_space: NMR123 http://nmrML.org/nmrCV#NMR:1000347
+id_space: NMR247 http://nmrML.org/nmrCV#NMR:1001458
+id_space: NMR421 http://nmrML.org/nmrCV#NMR:1400290
+id_space: NMR117 http://nmrML.org/nmrCV#NMR:1000142
+id_space: NMR619 http://nmrML.org/nmrCV#NMR:1000207
+id_space: NMR351 http://nmrML.org/nmrCV#NMR:1000868
+id_space: NMR137 http://nmrML.org/nmrCV#NMR:1000278
+id_space: NMR547 http://nmrML.org/nmrCV#NMR:1000457
+id_space: NMR29 http://nmrML.org/nmrCV#NMR:1000103
+id_space: NMR194 http://nmrML.org/nmrCV#NMR:1002001
+id_space: NMR384 http://nmrML.org/nmrCV#NMR:1000089
+id_space: NMR477 http://nmrML.org/nmrCV#NMR:1400234
+id_space: NMR464 http://nmrML.org/nmrCV#NMR:1400120
+id_space: NMR399 http://nmrML.org/nmrCV#NMR:1000084
+id_space: NMR183 http://nmrML.org/nmrCV#NMR:1000193
+id_space: NMR33 http://nmrML.org/nmrCV#NMR:1000101
+id_space: NMR295 http://nmrML.org/nmrCV#NMR:1400187
+id_space: NMR125 http://nmrML.org/nmrCV#NMR:1000340
+id_space: NMR72 http://nmrML.org/nmrCV#NMR:1000120
+id_space: NMR127 http://nmrML.org/nmrCV#NMR:1000343
+id_space: NMR587 http://nmrML.org/nmrCV#NMR:1000933
+id_space: NMR143 http://nmrML.org/nmrCV#NMR:1000177
 id_space: meta http://www.co-ode.org/ontologies/meta.owl#
-id_space: NMR276 http://nmrML.org/nmrCV#NMR:1000061
-id_space: NMR309 http://nmrML.org/nmrCV#NMR:1000071
-id_space: NMR274 http://nmrML.org/nmrCV#NMR:1000067
-id_space: NMR565 http://nmrML.org/nmrCV#NMR:1000001
-id_space: NMR293 http://nmrML.org/nmrCV#NMR:1000861
-id_space: NMR91 http://nmrML.org/nmrCV#NMR:1000160
-id_space: NMR8 http://nmrML.org/nmrCV#NMR:1400013
-id_space: NMR532 http://nmrML.org/nmrCV#NMR:1400254
-id_space: ru-meta http://purl.org/imbi/ru-meta.owl#
-id_space: NMR207 http://nmrML.org/nmrCV#NMR:1400035
-id_space: NMR294 http://nmrML.org/nmrCV#NMR:1000868
-id_space: NMR219 http://nmrML.org/nmrCV#NMR:1001755
-id_space: NMR61 http://nmrML.org/nmrCV#NMR:1000157
-id_space: NMR524 http://nmrML.org/nmrCV#NMR:1400110
-id_space: NMR408 http://nmrML.org/nmrCV#NMR:1000026
-id_space: NMR328 http://nmrML.org/nmrCV#NMR:1000089
-id_space: NMR402 http://nmrML.org/nmrCV#NMR:1000027
-id_space: NMR442 http://nmrML.org/nmrCV#NMR:1000033
-id_space: NMR93 http://nmrML.org/nmrCV#NMR:1000162
-id_space: NMR516 http://nmrML.org/nmrCV#NMR:1400312
-id_space: NMR572 http://nmrML.org/nmrCV#NMR:1000003
-id_space: NMR115 http://nmrML.org/nmrCV#NMR:1000191
-id_space: NMR305 http://nmrML.org/nmrCV#NMR:1000075
-id_space: NMR72 http://nmrML.org/nmrCV#NMR:1000144
-id_space: NMR260 http://nmrML.org/nmrCV#NMR:1001924
-id_space: NMR391 http://nmrML.org/nmrCV#NMR:1400228
-id_space: NMR205 http://nmrML.org/nmrCV#NMR:1400033
-id_space: NMR557 http://nmrML.org/nmrCV#NMR:1000208
-id_space: NMR484 http://nmrML.org/nmrCV#NMR:1400305
+id_space: NMR651 http://nmrML.org/nmrCV#NMR:1000900
+id_space: NMR309 http://nmrML.org/nmrCV#NMR:1400190
+id_space: NMR87 http://nmrML.org/nmrCV#NMR:1000225
+id_space: NMR39 http://nmrML.org/nmrCV#NMR:1000106
+id_space: NMR345 http://nmrML.org/nmrCV#NMR:1400277
+id_space: NMR468 http://nmrML.org/nmrCV#NMR:1400324
+id_space: NMR467 http://nmrML.org/nmrCV#NMR:1000023
+id_space: NMR151 http://nmrML.org/nmrCV#NMR:1000172
+id_space: NMR540 http://nmrML.org/nmrCV#NMR:1400240
+id_space: NMR626 http://nmrML.org/nmrCV#NMR:1000306
+id_space: NMR86 http://nmrML.org/nmrCV#NMR:1000224
+id_space: NMR209 http://nmrML.org/nmrCV#NMR:1002017
+id_space: NMR393 http://nmrML.org/nmrCV#NMR:1400147
+id_space: NMR522 http://nmrML.org/nmrCV#NMR:1400300
+id_space: NMR419 http://nmrML.org/nmrCV#NMR:1400291
+id_space: NMR285 http://nmrML.org/nmrCV#NMR:1001756
+id_space: NMR660 http://nmrML.org/nmrCV#NMR:1000213
+id_space: NMR208 http://nmrML.org/nmrCV#NMR:1400098
+id_space: NMR225 http://nmrML.org/nmrCV#NMR:1000187
+id_space: NMR176 http://nmrML.org/nmrCV#NMR:1000586
+id_space: NMR69 http://nmrML.org/nmrCV#NMR:1000230
+id_space: NMR23 http://nmrML.org/nmrCV#NMR:1400014
+id_space: NMR307 http://nmrML.org/nmrCV#NMR:1400191
+id_space: NMR353 http://nmrML.org/nmrCV#NMR:1000866
+id_space: NMR58 http://nmrML.org/nmrCV#NMR:1000135
+id_space: NMR10 http://nmrML.org/nmrCV#NMR:1000252
 id_space: doap http://usefulinc.com/ns/doap#
-id_space: NMR57 http://nmrML.org/nmrCV#NMR:1000128
-id_space: NMR392 http://nmrML.org/nmrCV#NMR:1400227
-id_space: NMR70 http://nmrML.org/nmrCV#NMR:1000143
-id_space: NMR586 http://nmrML.org/nmrCV#NMR:1000011
-id_space: NMR454 http://nmrML.org/nmrCV#NMR:1000548
-id_space: NMR220 http://nmrML.org/nmrCV#NMR:1001757
-id_space: NMR438 http://nmrML.org/nmrCV#NMR:1000039
-id_space: NMR384 http://nmrML.org/nmrCV#NMR:1000094
-id_space: NMR448 http://nmrML.org/nmrCV#NMR:1400233
-id_space: NMR166 http://nmrML.org/nmrCV#NMR:1400073
-id_space: NMR85 http://nmrML.org/nmrCV#NMR:1000172
-id_space: NMR96 http://nmrML.org/nmrCV#NMR:1000587
-id_space: NMR430 http://nmrML.org/nmrCV#NMR:1400135
-id_space: NMR590 http://nmrML.org/nmrCV#NMR:1000012
-id_space: NMR326 http://nmrML.org/nmrCV#NMR:1400141
-id_space: NMR58 http://nmrML.org/nmrCV#NMR:1000129
-id_space: NMR37 http://nmrML.org/nmrCV#NMR:1400009
-id_space: NMR398 http://nmrML.org/nmrCV#NMR:1400126
-id_space: NMR14 http://nmrML.org/nmrCV#NMR:1400017
-id_space: NMR535 http://nmrML.org/nmrCV#NMR:1001044
-id_space: NMR465 http://nmrML.org/nmrCV#NMR:1400106
-id_space: NMR321 http://nmrML.org/nmrCV#NMR:1400283
-id_space: NMR110 http://nmrML.org/nmrCV#NMR:1002004
-id_space: NMR275 http://nmrML.org/nmrCV#NMR:1001926
-id_space: NMR240 http://nmrML.org/nmrCV#NMR:1400193
-id_space: NMR76 http://nmrML.org/nmrCV#NMR:1000178
-id_space: NMR413 http://nmrML.org/nmrCV#NMR:1400322
-id_space: NMR494 http://nmrML.org/nmrCV#NMR:1400256
-id_space: NMR579 http://nmrML.org/nmrCV#NMR:1400214
-id_space: NMR509 http://nmrML.org/nmrCV#NMR:1400310
-id_space: NMR449 http://nmrML.org/nmrCV#NMR:1400249
-id_space: NMR203 http://nmrML.org/nmrCV#NMR:1400038
-id_space: NMR303 http://nmrML.org/nmrCV#NMR:1000076
-id_space: NMR277 http://nmrML.org/nmrCV#NMR:1000062
-id_space: NMR581 http://nmrML.org/nmrCV#NMR:1000019
-id_space: NMR416 http://nmrML.org/nmrCV#NMR:1000831
-id_space: NMR304 http://nmrML.org/nmrCV#NMR:1000074
+id_space: NMR290 http://nmrML.org/nmrCV#NMR:1001269
+id_space: NMR448 http://nmrML.org/nmrCV#NMR:1400228
+id_space: NMR92 http://nmrML.org/nmrCV#NMR:1000298
+id_space: NMR375 http://nmrML.org/nmrCV#NMR:1000890
+id_space: NMR616 http://nmrML.org/nmrCV#NMR:1000303
+id_space: NMR449 http://nmrML.org/nmrCV#NMR:1400227
+id_space: NMR157 http://nmrML.org/nmrCV#NMR:1000267
+id_space: NMR197 http://nmrML.org/nmrCV#NMR:1400091
+id_space: NMR478 http://nmrML.org/nmrCV#NMR:1400237
+id_space: NMR277 http://nmrML.org/nmrCV#NMR:1400026
+id_space: NMR491 http://nmrML.org/nmrCV#NMR:1000037
+id_space: NMR387 http://nmrML.org/nmrCV#NMR:1400143
+id_space: NMR115 http://nmrML.org/nmrCV#NMR:1000289
+id_space: NMR93 http://nmrML.org/nmrCV#NMR:1000297
+id_space: NMR644 http://nmrML.org/nmrCV#NMR:1400213
+id_space: NMR250 http://nmrML.org/nmrCV#NMR:1400064
+id_space: NMR412 http://nmrML.org/nmrCV#NMR:1000882
+id_space: NMR592 http://nmrML.org/nmrCV#NMR:1000334
+id_space: NMR272 http://nmrML.org/nmrCV#NMR:1400034
+id_space: NMR186 http://nmrML.org/nmrCV#NMR:1000196
+id_space: NMR414 http://nmrML.org/nmrCV#NMR:1400295
+id_space: NMR533 http://nmrML.org/nmrCV#NMR:1400305
+id_space: NMR49 http://nmrML.org/nmrCV#NMR:1400007
+id_space: NMR246 http://nmrML.org/nmrCV#NMR:1001457
+id_space: NMR276 http://nmrML.org/nmrCV#NMR:1400027
+id_space: NMR612 http://nmrML.org/nmrCV#NMR:1400200
+id_space: NMR60 http://nmrML.org/nmrCV#NMR:1000136
+id_space: NMR11 http://nmrML.org/nmrCV#NMR:1000253
+id_space: NMR456 http://nmrML.org/nmrCV#NMR:1000569
+id_space: NMR479 http://nmrML.org/nmrCV#NMR:1000577
+id_space: NMR275 http://nmrML.org/nmrCV#NMR:1400028
+id_space: NMR172 http://nmrML.org/nmrCV#NMR:1000261
+id_space: NMR669 http://nmrML.org/nmrCV#NMR:1000214
+id_space: NMR383 http://nmrML.org/nmrCV#NMR:1400280
+id_space: NMR452 http://nmrML.org/nmrCV#NMR:1400320
+id_space: NMR128 http://nmrML.org/nmrCV#NMR:1000280
+id_space: NMR643 http://nmrML.org/nmrCV#NMR:1400212
+id_space: NMR566 http://nmrML.org/nmrCV#NMR:1000058
+id_space: NMR328 http://nmrML.org/nmrCV#NMR:1000065
+id_space: NMR320 http://nmrML.org/nmrCV#NMR:1400167
+id_space: NMR499 http://nmrML.org/nmrCV#NMR:1400130
+id_space: NMR110 http://nmrML.org/nmrCV#NMR:1000293
+id_space: NMR596 http://nmrML.org/nmrCV#NMR:1000330
+id_space: NMR231 http://nmrML.org/nmrCV#NMR:1400087
+id_space: NMR510 http://nmrML.org/nmrCV#NMR:1000547
+id_space: NMR111 http://nmrML.org/nmrCV#NMR:1000286
+id_space: NMR164 http://nmrML.org/nmrCV#NMR:1000164
 id_space: NMR6 http://nmrML.org/nmrCV#NMR:1000112
-id_space: NMR502 http://nmrML.org/nmrCV#NMR:1000559
-id_space: NMR475 http://nmrML.org/nmrCV#NMR:1000049
-id_space: NMR238 http://nmrML.org/nmrCV#NMR:1400195
-id_space: NMR451 http://nmrML.org/nmrCV#NMR:1400247
-id_space: NMR194 http://nmrML.org/nmrCV#NMR:1400041
-id_space: NMR169 http://nmrML.org/nmrCV#NMR:1400074
-id_space: NMR111 http://nmrML.org/nmrCV#NMR:1000190
-id_space: NMR588 http://nmrML.org/nmrCV#NMR:1000010
-id_space: NMR334 http://nmrML.org/nmrCV#NMR:1400146
-id_space: NMR44 http://nmrML.org/nmrCV#NMR:1000135
-id_space: NMR60 http://nmrML.org/nmrCV#NMR:1000158
-id_space: NMR167 http://nmrML.org/nmrCV#NMR:1400072
+id_space: NMR288 http://nmrML.org/nmrCV#NMR:1001267
+id_space: NMR175 http://nmrML.org/nmrCV#NMR:1000587
+id_space: NMR70 http://nmrML.org/nmrCV#NMR:1000231
+id_space: NMR403 http://nmrML.org/nmrCV#NMR:1400289
+id_space: NMR516 http://nmrML.org/nmrCV#NMR:1400107
+id_space: NMR398 http://nmrML.org/nmrCV#NMR:1000083
+id_space: NMR147 http://nmrML.org/nmrCV#NMR:1000170
+id_space: NMR640 http://nmrML.org/nmrCV#NMR:1400217
+id_space: NMR630 http://nmrML.org/nmrCV#NMR:1000202
 id_space: NMR7 http://nmrML.org/nmrCV#NMR:1000110
-id_space: NMR160 http://nmrML.org/nmrCV#NMR:1400070
-id_space: NMR395 http://nmrML.org/nmrCV#NMR:1400320
-id_space: NMR45 http://nmrML.org/nmrCV#NMR:1000136
-id_space: NMR143 http://nmrML.org/nmrCV#NMR:1002014
-id_space: NMR546 http://nmrML.org/nmrCV#NMR:1400205
-id_space: NMR48 http://nmrML.org/nmrCV#NMR:1000130
-id_space: NMR456 http://nmrML.org/nmrCV#NMR:1000547
-id_space: NMR478 http://nmrML.org/nmrCV#NMR:1000857
-id_space: NMR342 http://nmrML.org/nmrCV#NMR:1000084
-id_space: NMR35 http://nmrML.org/nmrCV#NMR:1400007
-id_space: NMR497 http://nmrML.org/nmrCV#NMR:1400114
-id_space: NMR548 http://nmrML.org/nmrCV#NMR:1400203
-id_space: NMR527 http://nmrML.org/nmrCV#NMR:1400317
-id_space: NMR54 http://nmrML.org/nmrCV#NMR:1000125
-id_space: NMR576 http://nmrML.org/nmrCV#NMR:1400219
-id_space: NMR202 http://nmrML.org/nmrCV#NMR:1400039
-id_space: NMR83 http://nmrML.org/nmrCV#NMR:1000174
-id_space: NMR485 http://nmrML.org/nmrCV#NMR:1400243
-id_space: NMR558 http://nmrML.org/nmrCV#NMR:1000207
-id_space: NMR156 http://nmrML.org/nmrCV#NMR:1400089
-id_space: NMR341 http://nmrML.org/nmrCV#NMR:1000083
-id_space: NMR106 http://nmrML.org/nmrCV#NMR:1002006
-id_space: NMR469 http://nmrML.org/nmrCV#NMR:1000046
-id_space: NMR228 http://nmrML.org/nmrCV#NMR:1000767
-id_space: NMR363 http://nmrML.org/nmrCV#NMR:1400290
-id_space: NMR245 http://nmrML.org/nmrCV#NMR:1001107
-id_space: NMR145 http://nmrML.org/nmrCV#NMR:1002011
-id_space: NMR578 http://nmrML.org/nmrCV#NMR:1400213
-id_space: NMR366 http://nmrML.org/nmrCV#NMR:1000099
-id_space: NMR36 http://nmrML.org/nmrCV#NMR:1400008
-id_space: NMR213 http://nmrML.org/nmrCV#NMR:1400025
-id_space: NMR21 http://nmrML.org/nmrCV#NMR:1000104
-id_space: NMR325 http://nmrML.org/nmrCV#NMR:1400280
-id_space: NMR11 http://nmrML.org/nmrCV#NMR:1000117
-id_space: NMR486 http://nmrML.org/nmrCV#NMR:1400244
-id_space: NMR181 http://nmrML.org/nmrCV#NMR:1400061
-id_space: NMR264 http://nmrML.org/nmrCV#NMR:1000878
-id_space: NMR218 http://nmrML.org/nmrCV#NMR:1400020
-id_space: NMR265 http://nmrML.org/nmrCV#NMR:1001922
-id_space: NMR404 http://nmrML.org/nmrCV#NMR:1000028
-id_space: NMR531 http://nmrML.org/nmrCV#NMR:1400253
-id_space: NMR244 http://nmrML.org/nmrCV#NMR:1400198
-id_space: NMR230 http://nmrML.org/nmrCV#NMR:1400183
-id_space: NMR176 http://nmrML.org/nmrCV#NMR:1400066
-id_space: NMR225 http://nmrML.org/nmrCV#NMR:1001267
-id_space: NMR352 http://nmrML.org/nmrCV#NMR:1000884
-id_space: NMR356 http://nmrML.org/nmrCV#NMR:1000882
-id_space: NMR86 http://nmrML.org/nmrCV#NMR:1000165
-id_space: NMR231 http://nmrML.org/nmrCV#NMR:1400184
-id_space: NMR210 http://nmrML.org/nmrCV#NMR:1400028
-id_space: NMR441 http://nmrML.org/nmrCV#NMR:1000032
-id_space: NMR64 http://nmrML.org/nmrCV#NMR:1000154
-id_space: NMR444 http://nmrML.org/nmrCV#NMR:1400130
-id_space: NMR208 http://nmrML.org/nmrCV#NMR:1400031
-id_space: NMR129 http://nmrML.org/nmrCV#NMR:1400099
-id_space: NMR132 http://nmrML.org/nmrCV#NMR:1000185
-id_space: NMR177 http://nmrML.org/nmrCV#NMR:1400065
-id_space: NMR584 http://nmrML.org/nmrCV#NMR:1000900
-id_space: NMR422 http://nmrML.org/nmrCV#NMR:1000577
-id_space: NMR544 http://nmrML.org/nmrCV#NMR:1400207
-id_space: NMR526 http://nmrML.org/nmrCV#NMR:1400111
-id_space: NMR74 http://nmrML.org/nmrCV#NMR:1000141
-id_space: NMR543 http://nmrML.org/nmrCV#NMR:1400209
-id_space: NMR170 http://nmrML.org/nmrCV#NMR:1001459
-id_space: NMR386 http://nmrML.org/nmrCV#NMR:1400225
-id_space: NMR462 http://nmrML.org/nmrCV#NMR:1400108
-id_space: NMR518 http://nmrML.org/nmrCV#NMR:1400313
-id_space: NMR345 http://nmrML.org/nmrCV#NMR:1000799
-id_space: NMR29 http://nmrML.org/nmrCV#NMR:1400001
-id_space: NMR191 http://nmrML.org/nmrCV#NMR:1400049
-id_space: NMR377 http://nmrML.org/nmrCV#NMR:1000093
-id_space: NMR577 http://nmrML.org/nmrCV#NMR:1400212
-id_space: NMR477 http://nmrML.org/nmrCV#NMR:1400306
-id_space: NMR17 http://nmrML.org/nmrCV#NMR:1400018
-id_space: NMR563 http://nmrML.org/nmrCV#NMR:1000204
-id_space: NMR340 http://nmrML.org/nmrCV#NMR:1000082
-id_space: NMR519 http://nmrML.org/nmrCV#NMR:1000057
-id_space: NMR281 http://nmrML.org/nmrCV#NMR:1400169
-id_space: NMR589 http://nmrML.org/nmrCV#NMR:1000013
-id_space: NMR560 http://nmrML.org/nmrCV#NMR:1000206
-id_space: NMR267 http://nmrML.org/nmrCV#NMR:1000066
-id_space: NMR148 http://nmrML.org/nmrCV#NMR:1400081
-id_space: NMR432 http://nmrML.org/nmrCV#NMR:1400137
-id_space: NMR13 http://nmrML.org/nmrCV#NMR:1000118
-id_space: NMR158 http://nmrML.org/nmrCV#NMR:1400087
-id_space: NMR133 http://nmrML.org/nmrCV#NMR:1002016
-id_space: NMR424 http://nmrML.org/nmrCV#NMR:1400239
-id_space: NMR109 http://nmrML.org/nmrCV#NMR:1000195
-id_space: NMR412 http://nmrML.org/nmrCV#NMR:1000024
-id_space: NMR373 http://nmrML.org/nmrCV#NMR:1400153
-id_space: NMR193 http://nmrML.org/nmrCV#NMR:1400047
-id_space: NMR491 http://nmrML.org/nmrCV#NMR:1400240
+id_space: NMR57 http://nmrML.org/nmrCV#NMR:1000138
+id_space: NMR554 http://nmrML.org/nmrCV#NMR:1400310
+id_space: NMR61 http://nmrML.org/nmrCV#NMR:1000239
+id_space: NMR471 http://nmrML.org/nmrCV#NMR:1000022
+id_space: NMR591 http://nmrML.org/nmrCV#NMR:1000530
+id_space: NMR363 http://nmrML.org/nmrCV#NMR:1000072
+id_space: NMR607 http://nmrML.org/nmrCV#NMR:1400203
+id_space: NMR454 http://nmrML.org/nmrCV#NMR:1400128
+id_space: NMR162 http://nmrML.org/nmrCV#NMR:1000265
+id_space: NMR603 http://nmrML.org/nmrCV#NMR:1400207
+id_space: NMR546 http://nmrML.org/nmrCV#NMR:1400114
+id_space: NMR410 http://nmrML.org/nmrCV#NMR:1000883
+id_space: NMR282 http://nmrML.org/nmrCV#NMR:1400020
+id_space: NMR439 http://nmrML.org/nmrCV#NMR:1000096
+id_space: NMR489 http://nmrML.org/nmrCV#NMR:1400131
+id_space: NMR14 http://nmrML.org/nmrCV#NMR:1000258
+id_space: NMR636 http://nmrML.org/nmrCV#NMR:1000309
+id_space: NMR274 http://nmrML.org/nmrCV#NMR:1400029
+id_space: NMR140 http://nmrML.org/nmrCV#NMR:1000275
+id_space: NMR380 http://nmrML.org/nmrCV#NMR:1000088
+id_space: NMR102 http://nmrML.org/nmrCV#NMR:1000152
+id_space: NMR476 http://nmrML.org/nmrCV#NMR:1400235
+id_space: NMR64 http://nmrML.org/nmrCV#NMR:1000139
+id_space: NMR308 http://nmrML.org/nmrCV#NMR:1400192
+id_space: NMR74 http://nmrML.org/nmrCV#NMR:1000122
+id_space: NMR527 http://nmrML.org/nmrCV#NMR:1400306
+id_space: NMR498 http://nmrML.org/nmrCV#NMR:1000035
+id_space: NMR501 http://nmrML.org/nmrCV#NMR:1400231
+id_space: NMR97 http://nmrML.org/nmrCV#NMR:1000156
+id_space: NMR656 http://nmrML.org/nmrCV#NMR:1000219
+id_space: NMR271 http://nmrML.org/nmrCV#NMR:1400033
+id_space: NMR104 http://nmrML.org/nmrCV#NMR:1000290
+id_space: NMR54 http://nmrML.org/nmrCV#NMR:1000134
+id_space: NMR207 http://nmrML.org/nmrCV#NMR:1400096
+id_space: NMR627 http://nmrML.org/nmrCV#NMR:1000203
+id_space: NMR346 http://nmrML.org/nmrCV#NMR:1000864
+id_space: NMR148 http://nmrML.org/nmrCV#NMR:1000173
+id_space: NMR557 http://nmrML.org/nmrCV#NMR:1000052
+id_space: NMR168 http://nmrML.org/nmrCV#NMR:1000161
+id_space: NMR230 http://nmrML.org/nmrCV#NMR:1400088
+id_space: NMR48 http://nmrML.org/nmrCV#NMR:1400006
+id_space: NMR381 http://nmrML.org/nmrCV#NMR:1000087
+id_space: NMR395 http://nmrML.org/nmrCV#NMR:1400148
+id_space: NMR340 http://nmrML.org/nmrCV#NMR:1000060
+id_space: NMR114 http://nmrML.org/nmrCV#NMR:1000287
+id_space: NMR55 http://nmrML.org/nmrCV#NMR:1000131
+id_space: NMR100 http://nmrML.org/nmrCV#NMR:1000153
+id_space: NMR366 http://nmrML.org/nmrCV#NMR:1000071
+id_space: NMR377 http://nmrML.org/nmrCV#NMR:1000893
+id_space: NMR486 http://nmrML.org/nmrCV#NMR:1400138
+id_space: NMR372 http://nmrML.org/nmrCV#NMR:1400287
+id_space: NMR364 http://nmrML.org/nmrCV#NMR:1000073
+id_space: NMR139 http://nmrML.org/nmrCV#NMR:1000276
+id_space: NMR291 http://nmrML.org/nmrCV#NMR:1000767
+id_space: NMR181 http://nmrML.org/nmrCV#NMR:1000194
+id_space: NMR579 http://nmrML.org/nmrCV#NMR:1400250
+id_space: NMR469 http://nmrML.org/nmrCV#NMR:1000024
+id_space: NMR292 http://nmrML.org/nmrCV#NMR:1400183
+id_space: NMR390 http://nmrML.org/nmrCV#NMR:1400144
+id_space: NMR222 http://nmrML.org/nmrCV#NMR:1000189
+id_space: NMR676 http://nmrML.org/nmrCV#NMR:1000016
+id_space: NMR91 http://nmrML.org/nmrCV#NMR:1000222
+id_space: NMR224 http://nmrML.org/nmrCV#NMR:1000186
+id_space: NMR325 http://nmrML.org/nmrCV#NMR:1400161
+id_space: NMR563 http://nmrML.org/nmrCV#NMR:1400313
+id_space: NMR243 http://nmrML.org/nmrCV#NMR:1001459
+id_space: NMR34 http://nmrML.org/nmrCV#NMR:1000241
+id_space: NMR571 http://nmrML.org/nmrCV#NMR:1400111
+id_space: NMR620 http://nmrML.org/nmrCV#NMR:1000206
+id_space: NMR198 http://nmrML.org/nmrCV#NMR:1000197
+id_space: NMR234 http://nmrML.org/nmrCV#NMR:1002021
+id_space: NMR9 http://nmrML.org/nmrCV#NMR:1000255
+id_space: NMR281 http://nmrML.org/nmrCV#NMR:1400022
+id_space: NMR569 http://nmrML.org/nmrCV#NMR:1400110
+id_space: NMR420 http://nmrML.org/nmrCV#NMR:1400151
+id_space: NMR526 http://nmrML.org/nmrCV#NMR:1000049
+id_space: NMR352 http://nmrML.org/nmrCV#NMR:1000867
+id_space: NMR120 http://nmrML.org/nmrCV#NMR:1000345
+id_space: NMR667 http://nmrML.org/nmrCV#NMR:1000013
+id_space: NMR565 http://nmrML.org/nmrCV#NMR:1400314
+id_space: NMR20 http://nmrML.org/nmrCV#NMR:1000118
+id_space: NMR356 http://nmrML.org/nmrCV#NMR:1000078
+id_space: NMR405 http://nmrML.org/nmrCV#NMR:1400299
+id_space: NMR455 http://nmrML.org/nmrCV#NMR:1400126
+id_space: NMR600 http://nmrML.org/nmrCV#NMR:1000337
+id_space: NMR434 http://nmrML.org/nmrCV#NMR:1000093
+id_space: NMR192 http://nmrML.org/nmrCV#NMR:1002002
+id_space: NMR212 http://nmrML.org/nmrCV#NMR:1000184
+id_space: NMR578 http://nmrML.org/nmrCV#NMR:1400255
+id_space: NMR544 http://nmrML.org/nmrCV#NMR:1400259
+id_space: NMR650 http://nmrML.org/nmrCV#NMR:1400211
+id_space: NMR411 http://nmrML.org/nmrCV#NMR:1400296
+id_space: NMR342 http://nmrML.org/nmrCV#NMR:1400170
+id_space: NMR66 http://nmrML.org/nmrCV#NMR:1000235
+id_space: NMR124 http://nmrML.org/nmrCV#NMR:1000141
+id_space: NMR109 http://nmrML.org/nmrCV#NMR:1000292
+id_space: NMR185 http://nmrML.org/nmrCV#NMR:1002006
+id_space: NMR433 http://nmrML.org/nmrCV#NMR:1400159
+id_space: NMR161 http://nmrML.org/nmrCV#NMR:1000266
+id_space: NMR623 http://nmrML.org/nmrCV#NMR:1001270
+id_space: NMR203 http://nmrML.org/nmrCV#NMR:1400092
 id_space: nmrCV http://nmrML.org/nmrCV#
-id_space: NMR595 http://nmrML.org/nmrCV#NMR:1000016
-id_space: NMR332 http://nmrML.org/nmrCV#NMR:1000898
-id_space: NMR94 http://nmrML.org/nmrCV#NMR:1000163
-id_space: NMR55 http://nmrML.org/nmrCV#NMR:1000126
-id_space: NMR499 http://nmrML.org/nmrCV#NMR:1000457
-id_space: NMR271 http://nmrML.org/nmrCV#NMR:1000068
-id_space: NMR299 http://nmrML.org/nmrCV#NMR:1000078
-id_space: NMR517 http://nmrML.org/nmrCV#NMR:1000056
-id_space: NMR420 http://nmrML.org/nmrCV#NMR:1400234
-id_space: NMR20 http://nmrML.org/nmrCV#NMR:1000103
-id_space: NMR506 http://nmrML.org/nmrCV#NMR:1400117
-id_space: NMR246 http://nmrML.org/nmrCV#NMR:1400191
-id_space: NMR79 http://nmrML.org/nmrCV#NMR:1000175
-id_space: NMR30 http://nmrML.org/nmrCV#NMR:1000109
-id_space: NMR212 http://nmrML.org/nmrCV#NMR:1400026
-id_space: NMR209 http://nmrML.org/nmrCV#NMR:1400029
-id_space: NMR443 http://nmrML.org/nmrCV#NMR:1000035
-id_space: NMR397 http://nmrML.org/nmrCV#NMR:1400128
-id_space: NMR184 http://nmrML.org/nmrCV#NMR:1400051
-id_space: NMR318 http://nmrML.org/nmrCV#NMR:1000890
-id_space: NMR174 http://nmrML.org/nmrCV#NMR:1001458
-id_space: NMR162 http://nmrML.org/nmrCV#NMR:1002020
-id_space: NMR34 http://nmrML.org/nmrCV#NMR:1400006
-id_space: NMR180 http://nmrML.org/nmrCV#NMR:1400062
-id_space: NMR155 http://nmrML.org/nmrCV#NMR:1400083
-id_space: NMR23 http://nmrML.org/nmrCV#NMR:1000100
-id_space: NMR587 http://nmrML.org/nmrCV#NMR:1000212
-id_space: NMR479 http://nmrML.org/nmrCV#NMR:1400101
-id_space: NMR117 http://nmrML.org/nmrCV#NMR:1002000
-id_space: NMR455 http://nmrML.org/nmrCV#NMR:1400104
-id_space: NMR278 http://nmrML.org/nmrCV#NMR:1000063
-id_space: NMR195 http://nmrML.org/nmrCV#NMR:1400042
-id_space: NMR552 http://nmrML.org/nmrCV#NMR:1001271
-id_space: NMR291 http://nmrML.org/nmrCV#NMR:1000863
-id_space: NMR163 http://nmrML.org/nmrCV#NMR:1400077
-id_space: NMR583 http://nmrML.org/nmrCV#NMR:1400211
-id_space: NMR447 http://nmrML.org/nmrCV#NMR:1400232
-id_space: NMR290 http://nmrML.org/nmrCV#NMR:1400276
-id_space: NMR141 http://nmrML.org/nmrCV#NMR:1000180
-id_space: NMR387 http://nmrML.org/nmrCV#NMR:1400224
-id_space: NMR282 http://nmrML.org/nmrCV#NMR:1000060
-id_space: NMR582 http://nmrML.org/nmrCV#NMR:1000018
-id_space: NMR172 http://nmrML.org/nmrCV#NMR:1001456
-id_space: NMR425 http://nmrML.org/nmrCV#NMR:1400238
-id_space: NMR9 http://nmrML.org/nmrCV#NMR:1000119
-id_space: NMR134 http://nmrML.org/nmrCV#NMR:1000184
-id_space: NMR393 http://nmrML.org/nmrCV#NMR:1000020
-id_space: NMR401 http://nmrML.org/nmrCV#NMR:1400124
-id_space: NMR503 http://nmrML.org/nmrCV#NMR:1400115
-id_space: NMR241 http://nmrML.org/nmrCV#NMR:1400194
-id_space: NMR344 http://nmrML.org/nmrCV#NMR:1000086
-id_space: NMR107 http://nmrML.org/nmrCV#NMR:1000196
-id_space: NMR66 http://nmrML.org/nmrCV#NMR:1000151
-id_space: NMR12 http://nmrML.org/nmrCV#NMR:1400010
-id_space: NMR214 http://nmrML.org/nmrCV#NMR:1400023
-id_space: NMR400 http://nmrML.org/nmrCV#NMR:1000568
-id_space: NMR380 http://nmrML.org/nmrCV#NMR:1000091
-id_space: NMR396 http://nmrML.org/nmrCV#NMR:1400129
-id_space: NMR31 http://nmrML.org/nmrCV#NMR:1400003
-id_space: NMR545 http://nmrML.org/nmrCV#NMR:1400208
-id_space: NMR550 http://nmrML.org/nmrCV#NMR:1400201
-id_space: NMR224 http://nmrML.org/nmrCV#NMR:1001266
-id_space: NMR466 http://nmrML.org/nmrCV#NMR:1000045
-id_space: NMR435 http://nmrML.org/nmrCV#NMR:1000037
-id_space: NMR22 http://nmrML.org/nmrCV#NMR:1000105
-id_space: NMR200 http://nmrML.org/nmrCV#NMR:1400037
-id_space: NMR157 http://nmrML.org/nmrCV#NMR:1400088
-id_space: NMR248 http://nmrML.org/nmrCV#NMR:1400190
-id_space: NMR103 http://nmrML.org/nmrCV#NMR:1000194
-id_space: NMR229 http://nmrML.org/nmrCV#NMR:1400182
-id_space: NMR388 http://nmrML.org/nmrCV#NMR:1400223
-id_space: NMR423 http://nmrML.org/nmrCV#NMR:1400236
-id_space: NMR468 http://nmrML.org/nmrCV#NMR:1001176
-id_space: NMR460 http://nmrML.org/nmrCV#NMR:1400109
-id_space: NMR123 http://nmrML.org/nmrCV#NMR:1400093
-id_space: NMR102 http://nmrML.org/nmrCV#NMR:1002008
-id_space: NMR381 http://nmrML.org/nmrCV#NMR:1400158
-id_space: NMR389 http://nmrML.org/nmrCV#NMR:1400229
-id_space: NMR472 http://nmrML.org/nmrCV#NMR:1000859
-id_space: NMR149 http://nmrML.org/nmrCV#NMR:1000186
-id_space: NMR481 http://nmrML.org/nmrCV#NMR:1000047
-id_space: NMR525 http://nmrML.org/nmrCV#NMR:1400316
-id_space: NMR355 http://nmrML.org/nmrCV#NMR:1400295
-id_space: NMR308 http://nmrML.org/nmrCV#NMR:1000070
-id_space: NMR555 http://nmrML.org/nmrCV#NMR:1000008
-id_space: NMR216 http://nmrML.org/nmrCV#NMR:1400021
-id_space: NMR127 http://nmrML.org/nmrCV#NMR:1400097
-id_space: NMR505 http://nmrML.org/nmrCV#NMR:1400118
-id_space: NMR490 http://nmrML.org/nmrCV#NMR:1400309
+id_space: NMR675 http://nmrML.org/nmrCV#NMR:1000210
+id_space: NMR425 http://nmrML.org/nmrCV#NMR:1400156
+id_space: NMR490 http://nmrML.org/nmrCV#NMR:1400132
+id_space: NMR485 http://nmrML.org/nmrCV#NMR:1400135
+id_space: NMR81 http://nmrML.org/nmrCV#NMR:1000229
+id_space: NMR237 http://nmrML.org/nmrCV#NMR:1400076
+id_space: NMR674 http://nmrML.org/nmrCV#NMR:1000017
+id_space: NMR652 http://nmrML.org/nmrCV#NMR:1400210
+id_space: NMR389 http://nmrML.org/nmrCV#NMR:1400142
+id_space: NMR269 http://nmrML.org/nmrCV#NMR:1400038
+id_space: NMR30 http://nmrML.org/nmrCV#NMR:1000104
+id_space: NMR103 http://nmrML.org/nmrCV#NMR:1000150
+id_space: NMR301 http://nmrML.org/nmrCV#NMR:1400193
+id_space: NMR606 http://nmrML.org/nmrCV#NMR:1400206
+id_space: NMR503 http://nmrML.org/nmrCV#NMR:1400233
+id_space: NMR360 http://nmrML.org/nmrCV#NMR:1000076
+id_space: NMR535 http://nmrML.org/nmrCV#NMR:1400244
+id_space: NMR244 http://nmrML.org/nmrCV#NMR:1400069
+id_space: NMR506 http://nmrML.org/nmrCV#NMR:1400247
+id_space: NMR400 http://nmrML.org/nmrCV#NMR:1000085
+id_space: NMR77 http://nmrML.org/nmrCV#NMR:1000227
+id_space: NMR287 http://nmrML.org/nmrCV#NMR:1000773
+id_space: NMR13 http://nmrML.org/nmrCV#NMR:1400013
+id_space: NMR67 http://nmrML.org/nmrCV#NMR:1000232
+id_space: NMR94 http://nmrML.org/nmrCV#NMR:1000296
+id_space: NMR532 http://nmrML.org/nmrCV#NMR:1000048
+id_space: NMR85 http://nmrML.org/nmrCV#NMR:1000129
+id_space: NMR401 http://nmrML.org/nmrCV#NMR:1000086
+id_space: NMR40 http://nmrML.org/nmrCV#NMR:1000246
+id_space: NMR621 http://nmrML.org/nmrCV#NMR:1000914
+id_space: NMR22 http://nmrML.org/nmrCV#NMR:1400017
+id_space: NMR268 http://nmrML.org/nmrCV#NMR:1400036
+id_space: NMR582 http://nmrML.org/nmrCV#NMR:1000524
+id_space: NMR298 http://nmrML.org/nmrCV#NMR:1400181
+id_space: NMR31 http://nmrML.org/nmrCV#NMR:1000105
+id_space: NMR45 http://nmrML.org/nmrCV#NMR:1000248
+id_space: NMR332 http://nmrML.org/nmrCV#NMR:1400162
+id_space: NMR572 http://nmrML.org/nmrCV#NMR:1400317
+id_space: NMR568 http://nmrML.org/nmrCV#NMR:1000059
+id_space: NMR326 http://nmrML.org/nmrCV#NMR:1000066
+id_space: NMR17 http://nmrML.org/nmrCV#NMR:1000117
+id_space: NMR98 http://nmrML.org/nmrCV#NMR:1000155
+id_space: NMR99 http://nmrML.org/nmrCV#NMR:1000154
+id_space: NMR134 http://nmrML.org/nmrCV#NMR:1000283
+id_space: NMR374 http://nmrML.org/nmrCV#NMR:1400281
+id_space: NMR83 http://nmrML.org/nmrCV#NMR:1000128
+id_space: NMR322 http://nmrML.org/nmrCV#NMR:1400166
+id_space: NMR493 http://nmrML.org/nmrCV#NMR:1000039
+id_space: NMR107 http://nmrML.org/nmrCV#NMR:1000294
+id_space: NMR299 http://nmrML.org/nmrCV#NMR:1400195
+id_space: NMR562 http://nmrML.org/nmrCV#NMR:1000056
+id_space: NMR84 http://nmrML.org/nmrCV#NMR:1000223
+id_space: NMR458 http://nmrML.org/nmrCV#NMR:1400124
+id_space: NMR267 http://nmrML.org/nmrCV#NMR:1400037
+id_space: NMR266 http://nmrML.org/nmrCV#NMR:1400044
+id_space: NMR397 http://nmrML.org/nmrCV#NMR:1400149
+id_space: NMR570 http://nmrML.org/nmrCV#NMR:1400316
+id_space: NMR265 http://nmrML.org/nmrCV#NMR:1400045
+id_space: NMR215 http://nmrML.org/nmrCV#NMR:1000180
+id_space: NMR196 http://nmrML.org/nmrCV#NMR:1002000
+id_space: NMR431 http://nmrML.org/nmrCV#NMR:1400153
+id_space: NMR539 http://nmrML.org/nmrCV#NMR:1400309
+id_space: NMR495 http://nmrML.org/nmrCV#NMR:1400134
+id_space: NMR145 http://nmrML.org/nmrCV#NMR:1000175
+id_space: NMR373 http://nmrML.org/nmrCV#NMR:1000891
+id_space: NMR577 http://nmrML.org/nmrCV#NMR:1400254
+id_space: NMR542 http://nmrML.org/nmrCV#NMR:1400257
+id_space: NMR472 http://nmrML.org/nmrCV#NMR:1400221
+id_space: NMR163 http://nmrML.org/nmrCV#NMR:1000165
+id_space: NMR461 http://nmrML.org/nmrCV#NMR:1400123
+id_space: NMR615 http://nmrML.org/nmrCV#NMR:1000209
+id_space: NMR646 http://nmrML.org/nmrCV#NMR:1400215
+id_space: NMR306 http://nmrML.org/nmrCV#NMR:1001107
+id_space: NMR216 http://nmrML.org/nmrCV#NMR:1002015
+id_space: NMR376 http://nmrML.org/nmrCV#NMR:1400284
+id_space: NMR174 http://nmrML.org/nmrCV#NMR:1000463
+id_space: NMR502 http://nmrML.org/nmrCV#NMR:1400232
+id_space: NMR112 http://nmrML.org/nmrCV#NMR:1000285
+id_space: NMR512 http://nmrML.org/nmrCV#NMR:1400109
+id_space: NMR482 http://nmrML.org/nmrCV#NMR:1400238
+id_space: NMR450 http://nmrML.org/nmrCV#NMR:1000020
 id_space: NMR2 http://nmrML.org/nmrCV#NMR:1000116
-id_space: NMR322 http://nmrML.org/nmrCV#NMR:1000892
 id_space: rdfs http://www.w3.org/2000/01/rdf-schema#
-id_space: NMR319 http://nmrML.org/nmrCV#NMR:1400284
-id_space: NMR215 http://nmrML.org/nmrCV#NMR:1400024
-id_space: NMR313 http://nmrML.org/nmrCV#NMR:1400285
-id_space: NMR594 http://nmrML.org/nmrCV#NMR:1000210
-id_space: NMR571 http://nmrML.org/nmrCV#NMR:1000004
+id_space: NMR358 http://nmrML.org/nmrCV#NMR:1000077
+id_space: NMR432 http://nmrML.org/nmrCV#NMR:1000092
+id_space: NMR235 http://nmrML.org/nmrCV#NMR:1002020
+id_space: NMR191 http://nmrML.org/nmrCV#NMR:1002003
+id_space: NMR121 http://nmrML.org/nmrCV#NMR:1000346
+id_space: NMR605 http://nmrML.org/nmrCV#NMR:1400205
+id_space: NMR525 http://nmrML.org/nmrCV#NMR:1400301
+id_space: NMR575 http://nmrML.org/nmrCV#NMR:1400319
+id_space: NMR428 http://nmrML.org/nmrCV#NMR:1000888
 id_space: rdf http://www.w3.org/1999/02/22-rdf-syntax-ns#
-id_space: NMR15 http://nmrML.org/nmrCV#NMR:1400014
-id_space: NMR359 http://nmrML.org/nmrCV#NMR:1000881
-id_space: NMR337 http://nmrML.org/nmrCV#NMR:1400148
-id_space: NMR538 http://nmrML.org/nmrCV#NMR:1000524
-id_space: NMR226 http://nmrML.org/nmrCV#NMR:1001268
-id_space: NMR361 http://nmrML.org/nmrCV#NMR:1400291
+id_space: NMR296 http://nmrML.org/nmrCV#NMR:1400188
+id_space: NMR524 http://nmrML.org/nmrCV#NMR:1000859
+id_space: NMR365 http://nmrML.org/nmrCV#NMR:1000070
+id_space: NMR368 http://nmrML.org/nmrCV#NMR:1400279
+id_space: NMR442 http://nmrML.org/nmrCV#NMR:1400226
+id_space: NMR388 http://nmrML.org/nmrCV#NMR:1000898
+id_space: NMR436 http://nmrML.org/nmrCV#NMR:1400157
+id_space: NMR21 http://nmrML.org/nmrCV#NMR:1000257
+id_space: NMR604 http://nmrML.org/nmrCV#NMR:1400208
+id_space: NMR339 http://nmrML.org/nmrCV#NMR:1400169
+id_space: NMR305 http://nmrML.org/nmrCV#NMR:1400198
+id_space: NMR113 http://nmrML.org/nmrCV#NMR:1000288
+id_space: NMR118 http://nmrML.org/nmrCV#NMR:1000144
+id_space: NMR303 http://nmrML.org/nmrCV#NMR:1400199
+id_space: NMR659 http://nmrML.org/nmrCV#NMR:1000316
+id_space: NMR213 http://nmrML.org/nmrCV#NMR:1002018
+id_space: NMR648 http://nmrML.org/nmrCV#NMR:1000018
+id_space: NMR453 http://nmrML.org/nmrCV#NMR:1400129
 id_space: NMR5 http://nmrML.org/nmrCV#NMR:1000111
-id_space: NMR51 http://nmrML.org/nmrCV#NMR:1000122
-id_space: NMR130 http://nmrML.org/nmrCV#NMR:1400098
-id_space: NMR431 http://nmrML.org/nmrCV#NMR:1400138
-id_space: NMR253 http://nmrML.org/nmrCV#NMR:1400264
-id_space: NMR95 http://nmrML.org/nmrCV#NMR:1000463
-id_space: NMR135 http://nmrML.org/nmrCV#NMR:1002019
-id_space: NMR188 http://nmrML.org/nmrCV#NMR:1400055
-id_space: NMR222 http://nmrML.org/nmrCV#NMR:1000630
-id_space: NMR296 http://nmrML.org/nmrCV#NMR:1000866
-id_space: NMR492 http://nmrML.org/nmrCV#NMR:1001040
+id_space: NMR642 http://nmrML.org/nmrCV#NMR:1400219
+id_space: NMR673 http://nmrML.org/nmrCV#NMR:1000014
+id_space: NMR279 http://nmrML.org/nmrCV#NMR:1400023
+id_space: NMR443 http://nmrML.org/nmrCV#NMR:1400225
+id_space: NMR406 http://nmrML.org/nmrCV#NMR:1000885
+id_space: NMR446 http://nmrML.org/nmrCV#NMR:1400229
+id_space: NMR625 http://nmrML.org/nmrCV#NMR:1000204
+id_space: NMR253 http://nmrML.org/nmrCV#NMR:1400061
+id_space: NMR573 http://nmrML.org/nmrCV#NMR:1400112
+id_space: NMR101 http://nmrML.org/nmrCV#NMR:1000151
+id_space: NMR36 http://nmrML.org/nmrCV#NMR:1000243
+id_space: NMR466 http://nmrML.org/nmrCV#NMR:1400121
 id_space: protege http://protege.stanford.edu/plugins/owl/protege#
-id_space: NMR105 http://nmrML.org/nmrCV#NMR:1002007
-id_space: NMR236 http://nmrML.org/nmrCV#NMR:1400189
-id_space: NMR310 http://nmrML.org/nmrCV#NMR:1400278
-id_space: NMR372 http://nmrML.org/nmrCV#NMR:1000888
-id_space: NMR292 http://nmrML.org/nmrCV#NMR:1000862
-id_space: NMR339 http://nmrML.org/nmrCV#NMR:1400149
-id_space: NMR520 http://nmrML.org/nmrCV#NMR:1400314
-id_space: NMR529 http://nmrML.org/nmrCV#NMR:1400318
-id_space: NMR530 http://nmrML.org/nmrCV#NMR:1400319
-id_space: NMR221 http://nmrML.org/nmrCV#NMR:1001756
-id_space: NMR564 http://nmrML.org/nmrCV#NMR:1000203
-id_space: NMR217 http://nmrML.org/nmrCV#NMR:1400022
-id_space: NMR390 http://nmrML.org/nmrCV#NMR:1000561
+id_space: NMR394 http://nmrML.org/nmrCV#NMR:1000081
+id_space: NMR188 http://nmrML.org/nmrCV#NMR:1002005
+id_space: NMR529 http://nmrML.org/nmrCV#NMR:1400307
+id_space: NMR343 http://nmrML.org/nmrCV#NMR:1000860
+id_space: NMR254 http://nmrML.org/nmrCV#NMR:1400059
+id_space: NMR294 http://nmrML.org/nmrCV#NMR:1400186
+id_space: NMR160 http://nmrML.org/nmrCV#NMR:1000263
+id_space: NMR426 http://nmrML.org/nmrCV#NMR:1000889
+id_space: NMR654 http://nmrML.org/nmrCV#NMR:1000216
+id_space: NMR129 http://nmrML.org/nmrCV#NMR:1000348
+id_space: NMR41 http://nmrML.org/nmrCV#NMR:1000107
+id_space: NMR318 http://nmrML.org/nmrCV#NMR:1001924
+id_space: NMR594 http://nmrML.org/nmrCV#NMR:1000336
+id_space: NMR597 http://nmrML.org/nmrCV#NMR:1000332
+id_space: NMR653 http://nmrML.org/nmrCV#NMR:1000217
+id_space: NMR617 http://nmrML.org/nmrCV#NMR:1000208
+id_space: NMR555 http://nmrML.org/nmrCV#NMR:1000452
+id_space: NMR95 http://nmrML.org/nmrCV#NMR:1000350
+id_space: NMR248 http://nmrML.org/nmrCV#NMR:1400068
+id_space: NMR178 http://nmrML.org/nmrCV#NMR:1000588
+id_space: NMR133 http://nmrML.org/nmrCV#NMR:1000489
+id_space: NMR312 http://nmrML.org/nmrCV#NMR:1400262
+id_space: NMR514 http://nmrML.org/nmrCV#NMR:1400108
+id_space: NMR149 http://nmrML.org/nmrCV#NMR:1000174
+id_space: NMR531 http://nmrML.org/nmrCV#NMR:1400304
+id_space: NMR537 http://nmrML.org/nmrCV#NMR:1400308
+id_space: NMR440 http://nmrML.org/nmrCV#NMR:1000097
+id_space: NMR47 http://nmrML.org/nmrCV#NMR:1400001
+id_space: NMR202 http://nmrML.org/nmrCV#NMR:1000199
+id_space: NMR204 http://nmrML.org/nmrCV#NMR:1400095
 id_space: dc http://purl.org/dc/elements/1.1/
-id_space: NMR368 http://nmrML.org/nmrCV#NMR:1400156
-id_space: NMR512 http://nmrML.org/nmrCV#NMR:1400119
-id_space: NMR446 http://nmrML.org/nmrCV#NMR:1400231
-id_space: NMR514 http://nmrML.org/nmrCV#NMR:1400311
-id_space: NMR476 http://nmrML.org/nmrCV#NMR:1400100
-id_space: NMR165 http://nmrML.org/nmrCV#NMR:1400079
-id_space: NMR406 http://nmrML.org/nmrCV#NMR:1000025
-id_space: NMR42 http://nmrML.org/nmrCV#NMR:1000137
-id_space: NMR324 http://nmrML.org/nmrCV#NMR:1000087
-id_space: NMR473 http://nmrML.org/nmrCV#NMR:1000044
-id_space: NMR592 http://nmrML.org/nmrCV#NMR:1000014
-id_space: NMR182 http://nmrML.org/nmrCV#NMR:1400059
-id_space: NMR323 http://nmrML.org/nmrCV#NMR:1000088
-id_space: NMR26 http://nmrML.org/nmrCV#NMR:1000107
-id_space: NMR67 http://nmrML.org/nmrCV#NMR:1000152
-id_space: NMR114 http://nmrML.org/nmrCV#NMR:1000192
-id_space: NMR124 http://nmrML.org/nmrCV#NMR:1400092
-id_space: NMR52 http://nmrML.org/nmrCV#NMR:1000123
-id_space: NMR77 http://nmrML.org/nmrCV#NMR:1000177
-id_space: NMR164 http://nmrML.org/nmrCV#NMR:1400076
-id_space: NMR347 http://nmrML.org/nmrCV#NMR:1400299
-id_space: NMR243 http://nmrML.org/nmrCV#NMR:1400197
-id_space: NMR270 http://nmrML.org/nmrCV#NMR:1400163
-id_space: NMR528 http://nmrML.org/nmrCV#NMR:1400112
+id_space: NMR349 http://nmrML.org/nmrCV#NMR:1000862
+id_space: NMR257 http://nmrML.org/nmrCV#NMR:1400054
+id_space: NMR214 http://nmrML.org/nmrCV#NMR:1002013
+id_space: NMR382 http://nmrML.org/nmrCV#NMR:1400141
+id_space: NMR65 http://nmrML.org/nmrCV#NMR:1000234
+id_space: NMR239 http://nmrML.org/nmrCV#NMR:1400073
+id_space: NMR229 http://nmrML.org/nmrCV#NMR:1400089
+id_space: NMR220 http://nmrML.org/nmrCV#NMR:1000188
+id_space: NMR260 http://nmrML.org/nmrCV#NMR:1400057
+id_space: NMR610 http://nmrML.org/nmrCV#NMR:1400202
+id_space: NMR341 http://nmrML.org/nmrCV#NMR:1400267
+id_space: NMR180 http://nmrML.org/nmrCV#NMR:1002009
+id_space: NMR584 http://nmrML.org/nmrCV#NMR:1000324
+id_space: NMR595 http://nmrML.org/nmrCV#NMR:1000335
+id_space: NMR38 http://nmrML.org/nmrCV#NMR:1000245
+id_space: NMR500 http://nmrML.org/nmrCV#NMR:1400230
+id_space: NMR567 http://nmrML.org/nmrCV#NMR:1400315
+id_space: NMR223 http://nmrML.org/nmrCV#NMR:1400080
+id_space: NMR135 http://nmrML.org/nmrCV#NMR:1000284
+id_space: NMR71 http://nmrML.org/nmrCV#NMR:1000130
+id_space: NMR146 http://nmrML.org/nmrCV#NMR:1000179
+id_space: NMR444 http://nmrML.org/nmrCV#NMR:1400224
+id_space: NMR559 http://nmrML.org/nmrCV#NMR:1400311
 id_space: xsd http://www.w3.org/2001/XMLSchema#
-id_space: NMR190 http://nmrML.org/nmrCV#NMR:1400057
-id_space: NMR268 http://nmrML.org/nmrCV#NMR:1400160
-id_space: NMR410 http://nmrML.org/nmrCV#NMR:1000023
-id_space: NMR312 http://nmrML.org/nmrCV#NMR:1400286
-id_space: NMR116 http://nmrML.org/nmrCV#NMR:1002001
-id_space: NMR159 http://nmrML.org/nmrCV#NMR:1400071
-id_space: NMR580 http://nmrML.org/nmrCV#NMR:1400215
-id_space: NMR403 http://nmrML.org/nmrCV#NMR:1400122
-id_space: NMR450 http://nmrML.org/nmrCV#NMR:1400248
-id_space: NMR10 http://nmrML.org/nmrCV#NMR:1400011
-id_space: NMR49 http://nmrML.org/nmrCV#NMR:1000120
-id_space: NMR315 http://nmrML.org/nmrCV#NMR:1400287
-id_space: NMR349 http://nmrML.org/nmrCV#NMR:1400298
-id_space: NMR286 http://nmrML.org/nmrCV#NMR:1000860
-id_space: NMR89 http://nmrML.org/nmrCV#NMR:1000166
-id_space: NMR360 http://nmrML.org/nmrCV#NMR:1400292
-id_space: NMR71 http://nmrML.org/nmrCV#NMR:1000142
-id_space: NMR146 http://nmrML.org/nmrCV#NMR:1000188
-id_space: NMR81 http://nmrML.org/nmrCV#NMR:1000170
-id_space: NMR301 http://nmrML.org/nmrCV#NMR:1000077
-id_space: NMR346 http://nmrML.org/nmrCV#NMR:1400289
-id_space: NMR131 http://nmrML.org/nmrCV#NMR:1002017
-id_space: NMR204 http://nmrML.org/nmrCV#NMR:1400032
-id_space: NMR343 http://nmrML.org/nmrCV#NMR:1000085
-id_space: NMR161 http://nmrML.org/nmrCV#NMR:1002021
-id_space: NMR556 http://nmrML.org/nmrCV#NMR:1000209
-id_space: NMR178 http://nmrML.org/nmrCV#NMR:1400064
-id_space: NMR523 http://nmrML.org/nmrCV#NMR:1000059
-id_space: NMR418 http://nmrML.org/nmrCV#NMR:1400220
-id_space: NMR409 http://nmrML.org/nmrCV#NMR:1400121
-id_space: NMR496 http://nmrML.org/nmrCV#NMR:1400258
-id_space: NMR489 http://nmrML.org/nmrCV#NMR:1400242
-id_space: NMR507 http://nmrML.org/nmrCV#NMR:1000050
-id_space: NMR573 http://nmrML.org/nmrCV#NMR:1400216
-id_space: NMR534 http://nmrML.org/nmrCV#NMR:1400250
-id_space: NMR62 http://nmrML.org/nmrCV#NMR:1000156
+id_space: NMR386 http://nmrML.org/nmrCV#NMR:1000899
+id_space: NMR310 http://nmrML.org/nmrCV#NMR:1000747
+id_space: NMR319 http://nmrML.org/nmrCV#NMR:1000069
+id_space: NMR46 http://nmrML.org/nmrCV#NMR:1000109
+id_space: NMR26 http://nmrML.org/nmrCV#NMR:1000250
+id_space: NMR378 http://nmrML.org/nmrCV#NMR:1000892
+id_space: NMR649 http://nmrML.org/nmrCV#NMR:1000310
+id_space: NMR165 http://nmrML.org/nmrCV#NMR:1000167
+id_space: NMR210 http://nmrML.org/nmrCV#NMR:1000185
+id_space: NMR404 http://nmrML.org/nmrCV#NMR:1000886
+id_space: NMR658 http://nmrML.org/nmrCV#NMR:1000218
+id_space: NMR236 http://nmrML.org/nmrCV#NMR:1400077
+id_space: NMR152 http://nmrML.org/nmrCV#NMR:1000272
+id_space: NMR132 http://nmrML.org/nmrCV#NMR:1000282
+id_space: NMR666 http://nmrML.org/nmrCV#NMR:1000215
+id_space: NMR585 http://nmrML.org/nmrCV#NMR:1000934
+id_space: NMR330 http://nmrML.org/nmrCV#NMR:1000068
+id_space: NMR73 http://nmrML.org/nmrCV#NMR:1000121
+id_space: NMR538 http://nmrML.org/nmrCV#NMR:1400242
+id_space: NMR534 http://nmrML.org/nmrCV#NMR:1400243
+id_space: NMR193 http://nmrML.org/nmrCV#NMR:1000192
+id_space: NMR171 http://nmrML.org/nmrCV#NMR:1000260
+id_space: NMR270 http://nmrML.org/nmrCV#NMR:1400032
+id_space: NMR182 http://nmrML.org/nmrCV#NMR:1002008
+id_space: NMR89 http://nmrML.org/nmrCV#NMR:1000220
+id_space: NMR362 http://nmrML.org/nmrCV#NMR:1000075
+id_space: NMR631 http://nmrML.org/nmrCV#NMR:1000304
+id_space: NMR543 http://nmrML.org/nmrCV#NMR:1400256
+id_space: NMR136 http://nmrML.org/nmrCV#NMR:1000279
+id_space: NMR497 http://nmrML.org/nmrCV#NMR:1000033
+id_space: NMR228 http://nmrML.org/nmrCV#NMR:1000590
+id_space: NMR494 http://nmrML.org/nmrCV#NMR:1001954
+id_space: NMR324 http://nmrML.org/nmrCV#NMR:1000878
+id_space: NMR548 http://nmrML.org/nmrCV#NMR:1400116
+id_space: NMR367 http://nmrML.org/nmrCV#NMR:1400278
+id_space: NMR460 http://nmrML.org/nmrCV#NMR:1400122
+id_space: NMR321 http://nmrML.org/nmrCV#NMR:1000879
+id_space: NMR645 http://nmrML.org/nmrCV#NMR:1400214
+id_space: NMR589 http://nmrML.org/nmrCV#NMR:1000326
+id_space: NMR624 http://nmrML.org/nmrCV#NMR:1000307
+id_space: NMR629 http://nmrML.org/nmrCV#NMR:1000305
 id_space: obo http://purl.obolibrary.org/obo/
-id_space: NMR262 http://nmrML.org/nmrCV#NMR:1000879
-id_space: NMR551 http://nmrML.org/nmrCV#NMR:1400202
-id_space: NMR493 http://nmrML.org/nmrCV#NMR:1400257
-id_space: NMR272 http://nmrML.org/nmrCV#NMR:1001925
-id_space: NMR500 http://nmrML.org/nmrCV#NMR:1400116
-id_space: NMR463 http://nmrML.org/nmrCV#NMR:1400107
-id_space: NMR407 http://nmrML.org/nmrCV#NMR:1400120
-id_space: NMR378 http://nmrML.org/nmrCV#NMR:1000090
-id_space: NMR175 http://nmrML.org/nmrCV#NMR:1400068
-id_space: NMR440 http://nmrML.org/nmrCV#NMR:1400134
-id_space: NMR537 http://nmrML.org/nmrCV#NMR:1000529
-id_space: NMR136 http://nmrML.org/nmrCV#NMR:1002018
-id_space: NMR19 http://nmrML.org/nmrCV#NMR:1000102
-id_space: NMR46 http://nmrML.org/nmrCV#NMR:1000139
-id_space: NMR539 http://nmrML.org/nmrCV#NMR:1000934
-id_space: NMR458 http://nmrML.org/nmrCV#NMR:1000442
-id_space: NMR73 http://nmrML.org/nmrCV#NMR:1000140
-id_space: NMR283 http://nmrML.org/nmrCV#NMR:1400267
-id_space: NMR426 http://nmrML.org/nmrCV#NMR:1400139
-id_space: NMR247 http://nmrML.org/nmrCV#NMR:1400192
-id_space: NMR570 http://nmrML.org/nmrCV#NMR:1000005
-id_space: NMR289 http://nmrML.org/nmrCV#NMR:1000864
-id_space: NMR417 http://nmrML.org/nmrCV#NMR:1000029
-id_space: NMR258 http://nmrML.org/nmrCV#NMR:1400164
-id_space: NMR257 http://nmrML.org/nmrCV#NMR:1001923
-id_space: NMR436 http://nmrML.org/nmrCV#NMR:1400132
-id_space: NMR320 http://nmrML.org/nmrCV#NMR:1000893
-id_space: NMR41 http://nmrML.org/nmrCV#NMR:1000132
-id_space: NMR199 http://nmrML.org/nmrCV#NMR:1400044
-id_space: NMR173 http://nmrML.org/nmrCV#NMR:1001457
-id_space: NMR92 http://nmrML.org/nmrCV#NMR:1000161
-id_space: NMR223 http://nmrML.org/nmrCV#NMR:1000773
-id_space: NMR273 http://nmrML.org/nmrCV#NMR:1400162
-id_space: NMR338 http://nmrML.org/nmrCV#NMR:1000081
+id_space: NMR18 http://nmrML.org/nmrCV#NMR:1000256
+id_space: NMR641 http://nmrML.org/nmrCV#NMR:1400218
+id_space: NMR68 http://nmrML.org/nmrCV#NMR:1000233
+id_space: NMR504 http://nmrML.org/nmrCV#NMR:1400249
+id_space: NMR116 http://nmrML.org/nmrCV#NMR:1000143
+id_space: NMR195 http://nmrML.org/nmrCV#NMR:1000191
+id_space: NMR52 http://nmrML.org/nmrCV#NMR:1000240
+id_space: NMR614 http://nmrML.org/nmrCV#NMR:1000008
+id_space: NMR255 http://nmrML.org/nmrCV#NMR:1400051
+id_space: NMR598 http://nmrML.org/nmrCV#NMR:1000331
+id_space: NMR574 http://nmrML.org/nmrCV#NMR:1400318
+id_space: NMR42 http://nmrML.org/nmrCV#NMR:1000247
+id_space: NMR576 http://nmrML.org/nmrCV#NMR:1400253
+id_space: NMR523 http://nmrML.org/nmrCV#NMR:1000044
+id_space: NMR336 http://nmrML.org/nmrCV#NMR:1000063
+id_space: NMR496 http://nmrML.org/nmrCV#NMR:1000032
+id_space: NMR379 http://nmrML.org/nmrCV#NMR:1400283
+id_space: NMR24 http://nmrML.org/nmrCV#NMR:1400015
+id_space: NMR560 http://nmrML.org/nmrCV#NMR:1000055
+id_space: NMR190 http://nmrML.org/nmrCV#NMR:1000190
+id_space: NMR315 http://nmrML.org/nmrCV#NMR:1400265
+id_space: NMR409 http://nmrML.org/nmrCV#NMR:1400297
+id_space: NMR106 http://nmrML.org/nmrCV#NMR:1000291
+id_space: NMR601 http://nmrML.org/nmrCV#NMR:1000339
+id_space: NMR583 http://nmrML.org/nmrCV#NMR:1000325
+id_space: NMR590 http://nmrML.org/nmrCV#NMR:1000531
+id_space: NMR550 http://nmrML.org/nmrCV#NMR:1400118
+id_space: NMR422 http://nmrML.org/nmrCV#NMR:1000099
+id_space: NMR481 http://nmrML.org/nmrCV#NMR:1400239
+id_space: NMR156 http://nmrML.org/nmrCV#NMR:1000268
+id_space: NMR465 http://nmrML.org/nmrCV#NMR:1000026
+id_space: NMR593 http://nmrML.org/nmrCV#NMR:1000333
+id_space: NMR438 http://nmrML.org/nmrCV#NMR:1400158
+id_space: NMR264 http://nmrML.org/nmrCV#NMR:1400042
+id_space: NMR357 http://nmrML.org/nmrCV#NMR:1400172
+id_space: NMR78 http://nmrML.org/nmrCV#NMR:1000125
+id_space: NMR424 http://nmrML.org/nmrCV#NMR:1000098
+id_space: NMR179 http://nmrML.org/nmrCV#NMR:1000585
+id_space: NMR249 http://nmrML.org/nmrCV#NMR:1400066
+id_space: NMR189 http://nmrML.org/nmrCV#NMR:1002004
+id_space: NMR155 http://nmrML.org/nmrCV#NMR:1000271
+id_space: NMR144 http://nmrML.org/nmrCV#NMR:1000176
+id_space: NMR311 http://nmrML.org/nmrCV#NMR:1400260
+id_space: NMR126 http://nmrML.org/nmrCV#NMR:1000341
+id_space: NMR56 http://nmrML.org/nmrCV#NMR:1000132
+id_space: NMR661 http://nmrML.org/nmrCV#NMR:1000011
+id_space: NMR581 http://nmrML.org/nmrCV#NMR:1000529
+id_space: NMR200 http://nmrML.org/nmrCV#NMR:1000198
 id_space: NMR3 http://nmrML.org/nmrCV#NMR:1000113
-id_space: NMR113 http://nmrML.org/nmrCV#NMR:1002002
-id_space: NMR427 http://nmrML.org/nmrCV#NMR:1000031
-id_space: NMR371 http://nmrML.org/nmrCV#NMR:1400154
-id_space: NMR333 http://nmrML.org/nmrCV#NMR:1400144
-id_space: NMR369 http://nmrML.org/nmrCV#NMR:1400155
-id_space: NMR297 http://nmrML.org/nmrCV#NMR:1000865
-id_space: NMR504 http://nmrML.org/nmrCV#NMR:1000051
-id_space: NMR374 http://nmrML.org/nmrCV#NMR:1000887
-id_space: NMR112 http://nmrML.org/nmrCV#NMR:1002003
-id_space: NMR171 http://nmrML.org/nmrCV#NMR:1400069
-id_space: NMR16 http://nmrML.org/nmrCV#NMR:1400015
-id_space: NMR279 http://nmrML.org/nmrCV#NMR:1000064
-id_space: NMR183 http://nmrML.org/nmrCV#NMR:1400050
-id_space: NMR99 http://nmrML.org/nmrCV#NMR:1000588
-id_space: NMR307 http://nmrML.org/nmrCV#NMR:1000073
-id_space: NMR56 http://nmrML.org/nmrCV#NMR:1000127
-id_space: NMR554 http://nmrML.org/nmrCV#NMR:1000009
-id_space: NMR335 http://nmrML.org/nmrCV#NMR:1400147
-id_space: NMR234 http://nmrML.org/nmrCV#NMR:1400187
-id_space: NMR508 http://nmrML.org/nmrCV#NMR:1000053
-id_space: NMR357 http://nmrML.org/nmrCV#NMR:1001000
-id_space: NMR575 http://nmrML.org/nmrCV#NMR:1400218
+id_space: NMR519 http://nmrML.org/nmrCV#NMR:1400302
+id_space: NMR283 http://nmrML.org/nmrCV#NMR:1001755
+id_space: NMR300 http://nmrML.org/nmrCV#NMR:1400196
+id_space: NMR27 http://nmrML.org/nmrCV#NMR:1400019
+id_space: NMR541 http://nmrML.org/nmrCV#NMR:1001040
+id_space: NMR657 http://nmrML.org/nmrCV#NMR:1000313
+id_space: NMR599 http://nmrML.org/nmrCV#NMR:1000338
+id_space: NMR518 http://nmrML.org/nmrCV#NMR:1000045
+id_space: NMR451 http://nmrML.org/nmrCV#NMR:1400321
+id_space: NMR391 http://nmrML.org/nmrCV#NMR:1400146
+id_space: NMR632 http://nmrML.org/nmrCV#NMR:1000201
+id_space: NMR19 http://nmrML.org/nmrCV#NMR:1400010
+id_space: NMR350 http://nmrML.org/nmrCV#NMR:1000861
+id_space: NMR226 http://nmrML.org/nmrCV#NMR:1400086
+id_space: NMR459 http://nmrML.org/nmrCV#NMR:1000027
+id_space: NMR43 http://nmrML.org/nmrCV#NMR:1400002
+id_space: NMR488 http://nmrML.org/nmrCV#NMR:1000036
+id_space: NMR167 http://nmrML.org/nmrCV#NMR:1000168
+id_space: NMR28 http://nmrML.org/nmrCV#NMR:1000102
+id_space: NMR483 http://nmrML.org/nmrCV#NMR:1000031
+id_space: NMR16 http://nmrML.org/nmrCV#NMR:1400011
+id_space: NMR153 http://nmrML.org/nmrCV#NMR:1000273
+id_space: NMR427 http://nmrML.org/nmrCV#NMR:1400155
+id_space: NMR258 http://nmrML.org/nmrCV#NMR:1400055
+id_space: NMR639 http://nmrML.org/nmrCV#NMR:1000003
+id_space: NMR337 http://nmrML.org/nmrCV#NMR:1000064
+id_space: NMR262 http://nmrML.org/nmrCV#NMR:1400048
+id_space: NMR211 http://nmrML.org/nmrCV#NMR:1002016
+id_space: NMR521 http://nmrML.org/nmrCV#NMR:1400303
+id_space: NMR314 http://nmrML.org/nmrCV#NMR:1400266
+id_space: NMR370 http://nmrML.org/nmrCV#NMR:1400285
+id_space: foaf http://xmlns.com/foaf/0.1/
+id_space: NMR63 http://nmrML.org/nmrCV#NMR:1000237
+id_space: NMR131 http://nmrML.org/nmrCV#NMR:1000349
+id_space: NMR263 http://nmrML.org/nmrCV#NMR:1400041
 id_space: NMR http://nmrML.org/nmrCV#NMR:1000115
-id_space: NMR483 http://nmrML.org/nmrCV#NMR:1000048
-id_space: NMR211 http://nmrML.org/nmrCV#NMR:1400027
-id_space: NMR336 http://nmrML.org/nmrCV#NMR:1000080
-id_space: NMR488 http://nmrML.org/nmrCV#NMR:1400308
-id_space: NMR311 http://nmrML.org/nmrCV#NMR:1400279
-id_space: NMR185 http://nmrML.org/nmrCV#NMR:1400052
-id_space: NMR50 http://nmrML.org/nmrCV#NMR:1000121
-id_space: NMR78 http://nmrML.org/nmrCV#NMR:1000176
-id_space: NMR316 http://nmrML.org/nmrCV#NMR:1000891
-id_space: NMR459 http://nmrML.org/nmrCV#NMR:1000042
-id_space: NMR394 http://nmrML.org/nmrCV#NMR:1400321
-id_space: NMR300 http://nmrML.org/nmrCV#NMR:1400172
-id_space: NMR405 http://nmrML.org/nmrCV#NMR:1400123
-id_space: NMR353 http://nmrML.org/nmrCV#NMR:1400296
-id_space: btl2 http://purl.org/biotop/btl2.owl#
-id_space: NMR118 http://nmrML.org/nmrCV#NMR:1000197
-id_space: NMR27 http://nmrML.org/nmrCV#NMR:1400002
-id_space: NMR350 http://nmrML.org/nmrCV#NMR:1000885
-id_space: NMR547 http://nmrML.org/nmrCV#NMR:1400206
-id_space: NMR192 http://nmrML.org/nmrCV#NMR:1400048
-id_space: NMR367 http://nmrML.org/nmrCV#NMR:1000098
-id_space: NMR375 http://nmrML.org/nmrCV#NMR:1400159
-id_space: NMR18 http://nmrML.org/nmrCV#NMR:1400019
-id_space: NMR125 http://nmrML.org/nmrCV#NMR:1400095
-id_space: NMR186 http://nmrML.org/nmrCV#NMR:1400053
-id_space: NMR47 http://nmrML.org/nmrCV#NMR:1000231
-id_space: NMR591 http://nmrML.org/nmrCV#NMR:1000015
-id_space: NMR411 http://nmrML.org/nmrCV#NMR:1400324
-id_space: NMR379 http://nmrML.org/nmrCV#NMR:1400157
-id_space: NMR574 http://nmrML.org/nmrCV#NMR:1400217
-id_space: NMR28 http://nmrML.org/nmrCV#NMR:1000108
-id_space: NMR314 http://nmrML.org/nmrCV#NMR:1400288
-id_space: NMR487 http://nmrML.org/nmrCV#NMR:1400241
-id_space: NMR120 http://nmrML.org/nmrCV#NMR:1000198
-id_space: NMR470 http://nmrML.org/nmrCV#NMR:1400303
+id_space: NMR371 http://nmrML.org/nmrCV#NMR:1400288
+id_space: NMR122 http://nmrML.org/nmrCV#NMR:1000140
+id_space: NMR473 http://nmrML.org/nmrCV#NMR:1000831
+id_space: NMR635 http://nmrML.org/nmrCV#NMR:1000005
+id_space: NMR580 http://nmrML.org/nmrCV#NMR:1400251
+id_space: NMR551 http://nmrML.org/nmrCV#NMR:1000050
+id_space: NMR418 http://nmrML.org/nmrCV#NMR:1400152
+id_space: NMR317 http://nmrML.org/nmrCV#NMR:1001923
+id_space: NMR12 http://nmrML.org/nmrCV#NMR:1000119
+id_space: NMR622 http://nmrML.org/nmrCV#NMR:1000205
+id_space: NMR338 http://nmrML.org/nmrCV#NMR:1400168
+id_space: NMR289 http://nmrML.org/nmrCV#NMR:1001268
+id_space: NMR633 http://nmrML.org/nmrCV#NMR:1000006
+id_space: NMR369 http://nmrML.org/nmrCV#NMR:1400286
+id_space: NMR221 http://nmrML.org/nmrCV#NMR:1400081
+id_space: NMR286 http://nmrML.org/nmrCV#NMR:1000630
+id_space: NMR142 http://nmrML.org/nmrCV#NMR:1000178
+id_space: NMR329 http://nmrML.org/nmrCV#NMR:1001925
+id_space: NMR416 http://nmrML.org/nmrCV#NMR:1400294
+id_space: NMR507 http://nmrML.org/nmrCV#NMR:1400246
+id_space: NMR105 http://nmrML.org/nmrCV#NMR:1000496
+id_space: NMR608 http://nmrML.org/nmrCV#NMR:1400204
+id_space: NMR76 http://nmrML.org/nmrCV#NMR:1000124
+id_space: NMR80 http://nmrML.org/nmrCV#NMR:1000126
+id_space: NMR261 http://nmrML.org/nmrCV#NMR:1400049
+id_space: NMR347 http://nmrML.org/nmrCV#NMR:1400276
+id_space: NMR508 http://nmrML.org/nmrCV#NMR:1400105
+id_space: NMR435 http://nmrML.org/nmrCV#NMR:1000090
+id_space: NMR219 http://nmrML.org/nmrCV#NMR:1002011
+id_space: NMR423 http://nmrML.org/nmrCV#NMR:1400150
+id_space: NMR201 http://nmrML.org/nmrCV#NMR:1400093
+id_space: NMR302 http://nmrML.org/nmrCV#NMR:1400194
+id_space: NMR513 http://nmrML.org/nmrCV#NMR:1000041
+id_space: NMR417 http://nmrML.org/nmrCV#NMR:1400292
+id_space: NMR159 http://nmrML.org/nmrCV#NMR:1000264
+id_space: NMR108 http://nmrML.org/nmrCV#NMR:1000295
+id_space: NMR430 http://nmrML.org/nmrCV#NMR:1000887
+id_space: NMR206 http://nmrML.org/nmrCV#NMR:1400097
+id_space: NMR166 http://nmrML.org/nmrCV#NMR:1000166
+id_space: NMR90 http://nmrML.org/nmrCV#NMR:1000221
+id_space: NMR487 http://nmrML.org/nmrCV#NMR:1400137
+id_space: NMR259 http://nmrML.org/nmrCV#NMR:1400056
+id_space: NMR484 http://nmrML.org/nmrCV#NMR:1000030
+id_space: NMR273 http://nmrML.org/nmrCV#NMR:1400031
+id_space: NMR334 http://nmrML.org/nmrCV#NMR:1000061
+id_space: NMR361 http://nmrML.org/nmrCV#NMR:1000074
+id_space: NMR671 http://nmrML.org/nmrCV#NMR:1000015
+id_space: NMR205 http://nmrML.org/nmrCV#NMR:1400094
+id_space: NMR528 http://nmrML.org/nmrCV#NMR:1400101
+id_space: NMR447 http://nmrML.org/nmrCV#NMR:1000561
+id_space: NMR150 http://nmrML.org/nmrCV#NMR:1000171
+id_space: NMR75 http://nmrML.org/nmrCV#NMR:1000123
+id_space: NMR462 http://nmrML.org/nmrCV#NMR:1000028
+id_space: NMR637 http://nmrML.org/nmrCV#NMR:1000004
 id_space: oboInOwl http://www.geneontology.org/formats/oboInOwl#
-id_space: NMR513 http://nmrML.org/nmrCV#NMR:1000054
-id_space: NMR100 http://nmrML.org/nmrCV#NMR:1000585
-id_space: NMR553 http://nmrML.org/nmrCV#NMR:1400200
-id_space: NMR562 http://nmrML.org/nmrCV#NMR:1000205
-id_space: NMR383 http://nmrML.org/nmrCV#NMR:1000097
-id_space: NMR88 http://nmrML.org/nmrCV#NMR:1000167
-id_space: NMR482 http://nmrML.org/nmrCV#NMR:1400304
-id_space: NMR298 http://nmrML.org/nmrCV#NMR:1000079
-id_space: NMR269 http://nmrML.org/nmrCV#NMR:1000065
-id_space: NMR474 http://nmrML.org/nmrCV#NMR:1400301
-id_space: NMR201 http://nmrML.org/nmrCV#NMR:1400036
-id_space: NMR254 http://nmrML.org/nmrCV#NMR:1400266
-id_space: NMR189 http://nmrML.org/nmrCV#NMR:1400056
-id_space: NMR137 http://nmrML.org/nmrCV#NMR:1000182
-id_space: NMR421 http://nmrML.org/nmrCV#NMR:1400237
-id_space: NMR153 http://nmrML.org/nmrCV#NMR:1400085
-id_space: NMR566 http://nmrML.org/nmrCV#NMR:1000202
-id_space: NMR43 http://nmrML.org/nmrCV#NMR:1000138
-id_space: NMR108 http://nmrML.org/nmrCV#NMR:1002005
-id_space: NMR354 http://nmrML.org/nmrCV#NMR:1000883
-id_space: NMR59 http://nmrML.org/nmrCV#NMR:1000159
+id_space: NMR242 http://nmrML.org/nmrCV#NMR:1400074
+id_space: NMR520 http://nmrML.org/nmrCV#NMR:1000046
+id_space: NMR561 http://nmrML.org/nmrCV#NMR:1400312
+id_space: NMR278 http://nmrML.org/nmrCV#NMR:1400025
+id_space: NMR536 http://nmrML.org/nmrCV#NMR:1400241
+id_space: NMR437 http://nmrML.org/nmrCV#NMR:1000091
+id_space: NMR177 http://nmrML.org/nmrCV#NMR:1000589
+id_space: NMR396 http://nmrML.org/nmrCV#NMR:1000082
+id_space: NMR668 http://nmrML.org/nmrCV#NMR:1000317
+id_space: NMR169 http://nmrML.org/nmrCV#NMR:1000162
+id_space: NMR35 http://nmrML.org/nmrCV#NMR:1000242
+id_space: NMR50 http://nmrML.org/nmrCV#NMR:1400008
+id_space: NMR344 http://nmrML.org/nmrCV#NMR:1400270
 id_space: owl http://www.w3.org/2002/07/owl#
-id_space: NMR53 http://nmrML.org/nmrCV#NMR:1000124
-id_space: NMR101 http://nmrML.org/nmrCV#NMR:1002009
-id_space: NMR348 http://nmrML.org/nmrCV#NMR:1000886
-id_space: NMR471 http://nmrML.org/nmrCV#NMR:1400300
-id_space: NMR306 http://nmrML.org/nmrCV#NMR:1000072
-id_space: NMR261 http://nmrML.org/nmrCV#NMR:1400167
-id_space: NMR302 http://nmrML.org/nmrCV#NMR:1400171
-id_space: NMR415 http://nmrML.org/nmrCV#NMR:1400221
-id_space: NMR256 http://nmrML.org/nmrCV#NMR:1400165
-id_space: NMR376 http://nmrML.org/nmrCV#NMR:1000092
-id_space: NMR138 http://nmrML.org/nmrCV#NMR:1000181
-id_space: NMR295 http://nmrML.org/nmrCV#NMR:1000867
-id_space: NMR542 http://nmrML.org/nmrCV#NMR:1000530
-id_space: NMR232 http://nmrML.org/nmrCV#NMR:1400185
-id_space: NMR75 http://nmrML.org/nmrCV#NMR:1000489
-id_space: NMR242 http://nmrML.org/nmrCV#NMR:1400199
-id_space: NMR480 http://nmrML.org/nmrCV#NMR:1400307
-id_space: NMR569 http://nmrML.org/nmrCV#NMR:1000200
-id_space: NMR457 http://nmrML.org/nmrCV#NMR:1400103
-id_space: NMR152 http://nmrML.org/nmrCV#NMR:1400086
-id_space: NMR98 http://nmrML.org/nmrCV#NMR:1000589
-id_space: NMR68 http://nmrML.org/nmrCV#NMR:1000150
-id_space: NMR97 http://nmrML.org/nmrCV#NMR:1000586
-id_space: NMR84 http://nmrML.org/nmrCV#NMR:1000171
+id_space: NMR647 http://nmrML.org/nmrCV#NMR:1000019
+id_space: NMR552 http://nmrML.org/nmrCV#NMR:1400117
+id_space: NMR611 http://nmrML.org/nmrCV#NMR:1001271
+id_space: NMR8 http://nmrML.org/nmrCV#NMR:1000254
+id_space: NMR335 http://nmrML.org/nmrCV#NMR:1000062
+id_space: NMR564 http://nmrML.org/nmrCV#NMR:1000057
+id_space: NMR170 http://nmrML.org/nmrCV#NMR:1000163
+id_space: NMR558 http://nmrML.org/nmrCV#NMR:1000054
+id_space: NMR62 http://nmrML.org/nmrCV#NMR:1000236
+id_space: NMR517 http://nmrML.org/nmrCV#NMR:1400106
+id_space: NMR154 http://nmrML.org/nmrCV#NMR:1000270
+id_space: NMR553 http://nmrML.org/nmrCV#NMR:1000053
+id_space: NMR119 http://nmrML.org/nmrCV#NMR:1000344
+id_space: NMR130 http://nmrML.org/nmrCV#NMR:1000281
+id_space: NMR138 http://nmrML.org/nmrCV#NMR:1000277
+id_space: NMR655 http://nmrML.org/nmrCV#NMR:1000314
+id_space: NMR638 http://nmrML.org/nmrCV#NMR:1000308
+id_space: NMR663 http://nmrML.org/nmrCV#NMR:1000212
+id_space: NMR199 http://nmrML.org/nmrCV#NMR:1400090
+id_space: NMR402 http://nmrML.org/nmrCV#NMR:1000799
+id_space: NMR588 http://nmrML.org/nmrCV#NMR:1000328
+id_space: NMR88 http://nmrML.org/nmrCV#NMR:1000226
+id_space: NMR227 http://nmrML.org/nmrCV#NMR:1400083
 id_space: NMR4 http://nmrML.org/nmrCV#NMR:1000114
-id_space: NMR593 http://nmrML.org/nmrCV#NMR:1000017
-id_space: NMR498 http://nmrML.org/nmrCV#NMR:1400113
-id_space: NMR567 http://nmrML.org/nmrCV#NMR:1000201
-id_space: NMR330 http://nmrML.org/nmrCV#NMR:1000899
-id_space: NMR128 http://nmrML.org/nmrCV#NMR:1400096
-id_space: NMR358 http://nmrML.org/nmrCV#NMR:1400294
-id_space: NMR362 http://nmrML.org/nmrCV#NMR:1400152
-id_space: NMR585 http://nmrML.org/nmrCV#NMR:1400210
-id_space: NMR461 http://nmrML.org/nmrCV#NMR:1000041
-id_space: NMR87 http://nmrML.org/nmrCV#NMR:1000164
-id_space: NMR142 http://nmrML.org/nmrCV#NMR:1002015
-id_space: NMR510 http://nmrML.org/nmrCV#NMR:1000452
-id_space: NMR445 http://nmrML.org/nmrCV#NMR:1400230
-id_space: NMR399 http://nmrML.org/nmrCV#NMR:1000569
-id_space: NMR364 http://nmrML.org/nmrCV#NMR:1400151
-id_space: NMR331 http://nmrML.org/nmrCV#NMR:1400142
-id_space: NMR351 http://nmrML.org/nmrCV#NMR:1400297
-id_space: NMR122 http://nmrML.org/nmrCV#NMR:1000199
-id_space: NMR250 http://nmrML.org/nmrCV#NMR:1001249
-id_space: NMR419 http://nmrML.org/nmrCV#NMR:1400235
-id_space: NMR33 http://nmrML.org/nmrCV#NMR:1400005
-id_space: NMR433 http://nmrML.org/nmrCV#NMR:1000036
-id_space: NMR126 http://nmrML.org/nmrCV#NMR:1400094
-id_space: NMR80 http://nmrML.org/nmrCV#NMR:1000179
-id_space: NMR255 http://nmrML.org/nmrCV#NMR:1400265
-id_space: NMR370 http://nmrML.org/nmrCV#NMR:1000889
-id_space: NMR168 http://nmrML.org/nmrCV#NMR:1400075
-id_space: NMR453 http://nmrML.org/nmrCV#NMR:1400105
-id_space: NMR540 http://nmrML.org/nmrCV#NMR:1000933
-id_space: NMR154 http://nmrML.org/nmrCV#NMR:1000590
-id_space: NMR251 http://nmrML.org/nmrCV#NMR:1400260
-id_space: NMR252 http://nmrML.org/nmrCV#NMR:1400262
-id_space: NMR90 http://nmrML.org/nmrCV#NMR:1000168
-id_space: NMR233 http://nmrML.org/nmrCV#NMR:1400186
-id_space: NMR263 http://nmrML.org/nmrCV#NMR:1400166
-id_space: NMR259 http://nmrML.org/nmrCV#NMR:1000069
-id_space: NMR428 http://nmrML.org/nmrCV#NMR:1000030
-id_space: NMR249 http://nmrML.org/nmrCV#NMR:1000747
-id_space: NMR467 http://nmrML.org/nmrCV#NMR:1400302
-id_space: NMR235 http://nmrML.org/nmrCV#NMR:1400188
-id_space: NMR495 http://nmrML.org/nmrCV#NMR:1400259
-id_space: NMR24 http://nmrML.org/nmrCV#NMR:1000101
+id_space: NMR445 http://nmrML.org/nmrCV#NMR:1400223
+id_space: NMR505 http://nmrML.org/nmrCV#NMR:1400248
+id_space: NMR252 http://nmrML.org/nmrCV#NMR:1400062
+id_space: NMR470 http://nmrML.org/nmrCV#NMR:1400322
+id_space: NMR545 http://nmrML.org/nmrCV#NMR:1400258
+id_space: NMR665 http://nmrML.org/nmrCV#NMR:1000318
+id_space: NMR173 http://nmrML.org/nmrCV#NMR:1000262
+id_space: NMR233 http://nmrML.org/nmrCV#NMR:1400070
+id_space: NMR32 http://nmrML.org/nmrCV#NMR:1000100
+id_space: NMR323 http://nmrML.org/nmrCV#NMR:1001922
+id_space: NMR602 http://nmrML.org/nmrCV#NMR:1400209
+id_space: NMR348 http://nmrML.org/nmrCV#NMR:1000863
+id_space: NMR354 http://nmrML.org/nmrCV#NMR:1000865
+id_space: NMR549 http://nmrML.org/nmrCV#NMR:1000051
+id_space: NMR232 http://nmrML.org/nmrCV#NMR:1400071
+id_space: NMR392 http://nmrML.org/nmrCV#NMR:1000080
+id_space: NMR304 http://nmrML.org/nmrCV#NMR:1400197
+id_space: NMR82 http://nmrML.org/nmrCV#NMR:1000127
+id_space: NMR463 http://nmrML.org/nmrCV#NMR:1000025
+id_space: NMR664 http://nmrML.org/nmrCV#NMR:1000010
+id_space: NMR284 http://nmrML.org/nmrCV#NMR:1001757
+id_space: NMR331 http://nmrML.org/nmrCV#NMR:1001926
+id_space: NMR333 http://nmrML.org/nmrCV#NMR:1000067
+id_space: NMR327 http://nmrML.org/nmrCV#NMR:1400160
+id_space: NMR256 http://nmrML.org/nmrCV#NMR:1400053
+id_space: NMR662 http://nmrML.org/nmrCV#NMR:1000315
+id_space: NMR408 http://nmrML.org/nmrCV#NMR:1000884
+id_space: NMR251 http://nmrML.org/nmrCV#NMR:1400063
+id_space: NMR53 http://nmrML.org/nmrCV#NMR:1000133
+id_space: NMR313 http://nmrML.org/nmrCV#NMR:1400264
+id_space: skos http://www.w3.org/2004/02/skos/core#
+id_space: NMR158 http://nmrML.org/nmrCV#NMR:1000269
+id_space: NMR407 http://nmrML.org/nmrCV#NMR:1400298
+id_space: NMR609 http://nmrML.org/nmrCV#NMR:1400201
+remark: This version uses the Basic Formal Ontology (BFO) as its top level ontology. All previosous versions used the BiotopLight (btl2) bio upper level ontology. We might close the resulting semantic gap by using OBI and IAO as intermediate bridges later.
+created_by: Daniel Schober
 created_by: COSMOS consortium
 deprecated: http://www.metabolomicscentre.ca/nmrML/msi-nmr.obo
 deprecated: http://bioportal.bioontology.org/ontologies/1033
 audience: This CV is to be used by metabolomics researchers who apply the  nmrML xml to store their NMR experimental results and metadata.
-bookmark: http://nmrML.org/nmrCV#NMR:1400212
-bookmark: http://nmrML.org/nmrCV#NMR:1400048
 bookmark: http://nmrML.org/nmrCV#NMR:1400033
 bookmark: http://nmrML.org/nmrCV#NMR:1400128
 bookmark: http://nmrML.org/nmrCV#NMR:1400068
@@ -634,28 +713,26 @@ bookmark: http://nmrML.org/nmrCV#NMR:1400075
 bookmark: http://nmrML.org/nmrCV#NMR:1400062
 bookmark: http://nmrML.org/nmrCV#NMR:1400042
 bookmark: http://nmrML.org/nmrCV#NMR:1400043
-bookmark: http://nmrML.org/nmrCV#NMR:1400031
 bookmark: http://nmrML.org/nmrCV#NMR:1400032
 bookmark: http://nmrML.org/nmrCV#NMR:1002010
-versionInfo: 1.6
+versionInfo: 1.0.0
 location: https://github.com/nmrML/nmrML/tree/master/ontologies
 bug-database: https://github.com/nmrML/nmrML/issues?labels=enhancement&state=open
-Please label your issue 'CVenhancement'
+Please label your CV issues 'CVenhancement' or add the "CV:" prefix into the subject line. For more general critisism and recommendations please use our nmrML email list.
 rights: Creative Commons Public Domain Mark 1.0
 defaultLanguage: en
 format: Rather flat CV. Taxonomic backbone with few relations used. No OWL DL complexity such as cardinalities, blank nodes, nested class definitions.
-date: 26:06:2013 09:26
 saved-by: dschober
 auto-generated-by: OBO-Edit 2.2
 mailing-list: https://groups.google.com/forum/?hl=en#!forum/nmrml/join
 hasOBOFormatVersion: 1.2
 documenter: Daniel Schober
-IAO_0000115: This artefact is an MSI approved controlled vocabulary developed under COSMOS governance. This CV was derived from two predecessors (The NMR CV from the David Wishard Group, developed by Joseph Cruz) and the MSI nmr CV developed by Daniel Schober at the EBI.
+homepage: http://nmrml.org/cv/
+maintainer: http://www.cosmos-fp7.eu/WP2
+IAO_0000115: This artefact is an MSI approved controlled vocabulary developed under COSMOS WP2 governance. This CV was derived from two predecessors (The NMR CV from the David Wishard Group, developed by Joseph Cruz) and the MSI nmr CV developed by Daniel Schober at the EBI.
  This simple taxonomy of terms (no DL semantics used, for a short overview on the differences of Cv, taxonomy and ontology look at http://infogrid.org/trac/wiki/Reference/PidcockArticle) serves the nuclear magnetic resonance markup language (nmrML) with meaningful descriptors to amend the nmrML xml. Metabolomics scientists are encouraged to use this CV to annotrate their raw and experimental context data. The approach to have an exchange syntax mixed of an xsd and CV stems from the PSI mzML effort. The reason to branch out from an xsd into a CV is, that in areas where the terminology is likely to change faster than the nmrML xsd could be updated and aligned, an externally and possably decentrallised maintained CV can accompensate for such dynamics in a more flexible way. A second reason for this set-up is that semantic validity of CV terms used in a valid nmrML XML instance (allowed CV terms, position/relation to each other, cardinality) can be validated by rule-based proprietary validators:
  By means of cardinality specifications and XPath expressions defined in an XML mapping file (an instances of the CvMappingRules.xsd ), one can define what ontology terms are allowed in a specific location of the data model.
-maintainer: http://www.cosmos-fp7.eu
-WP2
-creation_date: 25.07.2013
+creation_date: 04.02.2014
 title: nuclear magnetic resonance CV
 coverage: Nuclear magnetic resonance (NMR) data annotation as required by the nmrML developed by the COSMOS EU project.
 contributor: People involved in the term creation from ID >1400000 :
@@ -741,7 +818,7 @@ hasOBONamespace: NMR
 
 [Term]
 id: NMR:1000003
-name: sample state
+name: sample state information
 is_a: NMR:1000548
 id: NMR:1000003
 IAO_0000115: The chemical phase of a pure sample, or the state of a mixed sample.
@@ -749,7 +826,7 @@ hasOBONamespace: NMR
 
 [Term]
 id: NMR:1000004
-name: sample mass
+name: sample mass information
 is_a: NMR:1000548
 id: NMR:1000004
 hasDbXref: value-type:xsd:float
@@ -768,7 +845,6 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1000006
 name: sample concentration
-is_a: NMR:1400018
 is_a: NMR:1000548
 id: NMR:1000006
 hasDbXref: value-type:xsd:float
@@ -777,13 +853,14 @@ hasOBONamespace: NMR
 
 [Term]
 id: NMR:1000008
-name: quadrature detection method
+name: quadrature detection
 is_a: NMR:1400048
 
 [Term]
 id: NMR:1000009
 name: _obsolete
 is_a: Thing
+scopeNote: This administrative helper class contains the deleted classes which will be physically deleted form the release file.
 
 [Term]
 id: NMR:1000010
@@ -793,7 +870,7 @@ is_a: NMR:1000585
 [Term]
 id: NMR:1000011
 name: data file attribute
-is_a: InformationObject
+is_a: BFO_0000031
 
 [Term]
 id: NMR:1000012
@@ -807,29 +884,29 @@ is_a: NMR:1000172
 
 [Term]
 id: NMR:1000014
-name: solvent suppression method
+name: solvent suppression
 is_a: NMR:1400063
 
 [Term]
 id: NMR:1000015
-name: peak processing method
+name: peak processing
 is_a: NMR:1400038
 
 [Term]
 id: NMR:1000016
 name: Hexafluorobenzene
-is_a: NMR:1400035
+is_a: NMR:1000330
 
 [Term]
 id: NMR:1000017
 name: Chloroform-d
-is_a: NMR:1400035
+is_a: NMR:1000330
 hasExactSynonym: CDCl3
 
 [Term]
 id: NMR:1000018
 name: heavy water
-is_a: NMR:1400035
+is_a: NMR:1000330
 hasExactSynonym: D2O
 
 [Term]
@@ -844,12 +921,14 @@ is_a: NMR:1002011
 
 [Term]
 id: NMR:1000022
-name: metabolomics database reference
+name: metabolomics database identifier
+comment: PRS: rename 'reference' to 'identifier'
 is_a: NMR:1000878
+source: http://www.metabolomicssociety.org/databases
 
 [Term]
 id: NMR:1000023
-name: metabolights accession
+name: Metabolights identifier
 is_a: NMR:1000022
 
 [Term]
@@ -956,10 +1035,11 @@ is_a: NMR:1000036
 
 [Term]
 id: NMR:1000044
-name: decoupling method
+name: decoupling
+comment: PRS: used to be suffixed with 'method', now removed to cast all as processes
 is_a: NMR:1400063
 source: http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling
-definition: Nuclear magnetic resonance decoupling (NMR decoupling for short) is a special method used in nuclear magnetic resonance (NMR) spectroscopy where a sample to be analyzed is irradiated at a certain frequency or frequency range to eliminate fully or partially the effect of coupling between certain nuclei. NMR coupling refers to the effect of nuclei on each other in atoms within a couple of bonds distance of each other in molecules. This effect causes NMR signals in a spectrum to be split into multiple peaks which are up to several hertz frequency from each other. Decoupling fully or partially eliminates splitting of the signal between the nuclei irradiated and other nuclei such as the nuclei being analyzed in a certain spectrum. NMR spectroscopy and sometimes decoupling can help determine structures of chemical compounds.
+IAO_0000115: Nuclear magnetic resonance decoupling (NMR decoupling for short) is a special method used in nuclear magnetic resonance (NMR) spectroscopy where a sample to be analyzed is irradiated at a certain frequency or frequency range to eliminate fully or partially the effect of coupling between certain nuclei. NMR coupling refers to the effect of nuclei on each other in atoms within a couple of bonds distance of each other in molecules. This effect causes NMR signals in a spectrum to be split into multiple peaks which are up to several hertz frequency from each other. Decoupling fully or partially eliminates splitting of the signal between the nuclei irradiated and other nuclei such as the nuclei being analyzed in a certain spectrum. NMR spectroscopy and sometimes decoupling can help determine structures of chemical compounds.
 
 [Term]
 id: NMR:1000045
@@ -1021,7 +1101,7 @@ hasOBONamespace: NMR
 
 [Term]
 id: NMR:1000053
-name: sample batch
+name: sample batch information
 is_a: NMR:1000548
 id: NMR:1000053
 hasDbXref: value-type:xsd:string
@@ -1040,7 +1120,7 @@ is_a: NMR:1000044
 
 [Term]
 id: NMR:1000056
-name: specific proton decoupling
+name: specific decoupling
 is_a: NMR:1000044
 hasExactSynonym: narowband decoupling
 hasExactSynonym: band-selective decoupling
@@ -1107,23 +1187,23 @@ is_a: NMR:1400041
 
 [Term]
 id: NMR:1000068
-name: linear prediction
+name: scaling by linear prediction
 is_a: NMR:1000079
 
 [Term]
 id: NMR:1000069
 name: multiplying FID by window function
-is_a: NMR:1400038
+is_a: NMR:1400041
 
 [Term]
 id: NMR:1000070
-name: FID fourier transformation method
+name: FID fourier transformation
 is_a: NMR:1400042
 
 [Term]
 id: NMR:1000071
 name: phase correction
-is_a: NMR:1400038
+is_a: NMR:1400042
 hasExactSynonym: phasing
 hasExactSynonym: spectral phasing
 
@@ -1140,7 +1220,7 @@ is_a: NMR:1000015
 [Term]
 id: NMR:1000074
 name: peak shape fitting
-is_a: NMR:1000015
+is_a: NMR:1000258
 
 [Term]
 id: NMR:1000075
@@ -1149,7 +1229,7 @@ is_a: NMR:1400038
 
 [Term]
 id: NMR:1000076
-name: glog transform optimisation
+name: scaling by glog transform optimisation
 is_a: NMR:1000083
 
 [Term]
@@ -1162,17 +1242,20 @@ hasExactSynonym: trimethylsilyl propanoic acid
 
 [Term]
 id: NMR:1000078
-name: linear scaling algorithm
+name: linear scaling
+comment: used to be 'linear scaling algorithm'
 is_a: NMR:1000079
 
 [Term]
 id: NMR:1000079
-name: scaling algorithm
+name: scaling
+comment: used to be called 'scaling algorithm'
 is_a: NMR:1400038
 
 [Term]
 id: NMR:1000080
-name: non-linear scaling algorithm
+name: non-linear scaling
+comment: used to be postfixed with algorithm
 is_a: NMR:1000079
 
 [Term]
@@ -1188,13 +1271,13 @@ source: Dieterle F, Ross A, Schlotterbeck G, Senn H: Probabilistic quotient norm
 
 [Term]
 id: NMR:1000083
-name: generalized logarithmic transformation
+name: scaling by generalized logarithmic transformation
 is_a: NMR:1000080
 hasExactSynonym: glog
 
 [Term]
 id: NMR:1000084
-name: pareto
+name: pareto scaling
 is_a: NMR:1000080
 
 [Term]
@@ -1279,8 +1362,9 @@ is_a: NMR:1400075
 
 [Term]
 id: NMR:1000101
-name: shifted sine window
+name: shifted sine window function
 is_a: NMR:1400071
+hasExactSynonym: shifted sine apodization
 
 [Term]
 id: NMR:1000102
@@ -1298,7 +1382,18 @@ hasExactSynonym: combined sine-bell–exponential window function
 [Term]
 id: NMR:1000104
 name: trapezoid window function
+comment: Functional form:
+       0:t1        linear increase from 0.0 to 1.0
+       t1:size-t2  1.0
+       -t2:        linear decrease from 1.0 to 0.0
+   
+   Parameters:
+   * data  Array of spectral data.
+   * t1    Left ramp length.
+   * t2    Right ramp length.
+   * inv   Set True for inverse apodization.
 is_a: NMR:1400068
+hasExactSynonym: trapezoid apodization
 
 [Term]
 id: NMR:1000105
@@ -1307,7 +1402,7 @@ is_a: NMR:1400070
 
 [Term]
 id: NMR:1000106
-name: spline function
+name: baseline correction using spline function
 is_a: NMR:1400074
 
 [Term]
@@ -1475,12 +1570,6 @@ is_a: NMR:1400213
 source: http://nmr.cit.nih.gov/xplor-nih/
 
 [Term]
-id: NMR:1000137
-name: Chenomix NMR suite
-is_a: NMR:1002001
-source: http://www.chenomx.com/software/
-
-[Term]
 id: NMR:1000138
 name: XEASY software
 is_a: NMR:1000090
@@ -1519,7 +1608,7 @@ is_a: NMR:1400213
 
 [Term]
 id: NMR:1000150
-name: forward linear prediction
+name: scaling by forward linear prediction
 is_a: NMR:1000068
 
 [Term]
@@ -1529,7 +1618,7 @@ is_a: NMR:1000068
 
 [Term]
 id: NMR:1000152
-name: mirror image linear prediction
+name: scaling by mirror image linear prediction
 is_a: NMR:1000068
 
 [Term]
@@ -1556,22 +1645,6 @@ is_a: NMR:1000031
 id: NMR:1000157
 name: tecmag instrument model
 is_a: NMR:1000031
-
-[Term]
-id: NMR:1000158
-name: magnetic field strength unit
-is_a: NMR:1000009
-consider: use terms from Unit ontology (UO), Use UO:tesla, rather than Gauss
-
-[Term]
-id: NMR:1000159
-name: Tesla
-is_a: NMR:1000158
-
-[Term]
-id: NMR:1000160
-name: Gauss
-is_a: NMR:1000158
 
 [Term]
 id: NMR:1000161
@@ -1632,7 +1705,7 @@ is_a: NMR:1000170
 [Term]
 id: NMR:1000172
 name: NMR spectrum descriptor
-is_a: InformationObject
+is_a: BFO_0000031
 
 [Term]
 id: NMR:1000173
@@ -1678,17 +1751,7 @@ hasExactSynonym: bucket x center
 id: NMR:1000180
 name: spectral quantitation algorithm
 is_a: NMR:1002014
-
-[Term]
-id: NMR:1000181
-name: reference standard
-is_a: NMR:1400032
-hasExactSynonym: calibration standard
-
-[Term]
-id: NMR:1000182
-name: acquisition time
-is_a: NMR:1001954
+hasExactSynonym: NMR spectrum quantification method
 
 [Term]
 id: NMR:1000184
@@ -1709,6 +1772,7 @@ is_a: NMR:1400006
 id: NMR:1000187
 name: clustering of buckets
 is_a: NMR:1000015
+IAO_0000115: Taking advantage of the concentration variability of each compound in a series of samples, buckets are linked together into clusters based on significant correlations.This is done i.g. in ERVA-based bucketing
 
 [Term]
 id: NMR:1000188
@@ -1834,6 +1898,102 @@ name: BML-NMR identifier
 is_a: NMR:1000022
 
 [Term]
+id: NMR:1000213
+name: 15N
+is_a: _purgatory
+
+[Term]
+id: NMR:1000214
+name: creatinine
+comment: will be further specified via a concentration value
+is_a: NMR:1000167
+
+[Term]
+id: NMR:1000215
+name: 14N
+is_a: _purgatory
+
+[Term]
+id: NMR:1000216
+name: 10B
+is_a: _purgatory
+
+[Term]
+id: NMR:1000217
+name: 12C
+is_a: _purgatory
+
+[Term]
+id: NMR:1000218
+name: 23Na
+is_a: _purgatory
+
+[Term]
+id: NMR:1000219
+name: 35Cl
+is_a: _purgatory
+
+[Term]
+id: NMR:1000220
+name: 2D pulse sequence
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1000221
+name: data simulation
+comment: used to be labeled 'NMR spectrum simulation'
+is_a: NMR:1400063
+
+[Term]
+id: NMR:1000222
+name: DNP NMR instrument
+is_a: NMR:1000012
+hasExactSynonym: dynamic nuclear polarization enhanced NMR system
+
+[Term]
+id: NMR:1000223
+name: chemical shift
+is_a: NMR:1000172
+source: http://en.wikipedia.org/wiki/Chemical_shift
+IAO_0000115: Chemical shift is the resonance frequency of a nucleus related to a chemical shift standard. in ppm along x-axis
+
+[Term]
+id: NMR:1000224
+name: nmr signal intensity
+is_a: NMR:1000172
+IAO_0000115: an information object that describes the strength of the NMR signal
+
+[Term]
+id: NMR:1000225
+name: baseline correction using polynomial function
+is_a: NMR:1400074
+
+[Term]
+id: NMR:1000226
+name: first transient of the tnnoesy-presaturation pulse sequence
+is_a: NMR:1000220
+
+[Term]
+id: NMR:1000227
+name: Varian acquisition parameter file
+is_a: NMR:1002006
+
+[Term]
+id: NMR:1000228
+name: procpar
+is_a: NMR:1000252
+
+[Term]
+id: NMR:1000229
+name: acqus
+is_a: NMR:1000230
+
+[Term]
+id: NMR:1000230
+name: Bruker acquisition parameter file
+is_a: NMR:1002006
+
+[Term]
 id: NMR:1000231
 name: peak
 is_a: NMR:1000172
@@ -1841,17 +2001,611 @@ id: NMR:1000231
 hasOBONamespace: NMR
 
 [Term]
-id: NMR:1000442
-name: spectrum
-is_a: _purgatory
-id: NMR:1000442
-IAO_0000115: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
-hasOBONamespace: NMR
+id: NMR:1000232
+name: global
+is_a: NMR:1000227
+
+[Term]
+id: NMR:1000233
+name: Varian autosampler
+is_a: NMR:1400002
+
+[Term]
+id: NMR:1000234
+name: Varian SMS 50
+is_a: NMR:1000233
+
+[Term]
+id: NMR:1000235
+name: Varian probe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1000236
+name: 5mm HCN probe
+is_a: NMR:1000237
+
+[Term]
+id: NMR:1000237
+name: Varian liquid cold probe
+is_a: NMR:1000235
+
+[Term]
+id: NMR:1000238
+name: reference compound NMR spectrum
+comment: e.g as in HMDB
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000239
+name: Mestrelab software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000240
+name: ACD spectrus software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000241
+name: Mat NMR 3 software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000242
+name: NMRLab software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000243
+name: Spinworks NMR software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000244
+name: NMR software vendor
+is_a: NMR:1001267
+
+[Term]
+id: NMR:1000245
+name: Spinworks
+is_a: NMR:1000244
+
+[Term]
+id: NMR:1000246
+name: iNMR software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000247
+name: NMR pipe
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000248
+name: cule NMR software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000250
+name: Bruker processing parameter file
+is_a: NMR:1400123
+
+[Term]
+id: NMR:1000251
+name: procs
+is_a: NMR:1000250
+
+[Term]
+id: NMR:1000252
+name: Varian processing parameter file
+is_a: NMR:1400123
+
+[Term]
+id: NMR:1000253
+name: Madison Metabolomics Consortium Database MMCD identifier
+comment: PRS: rename 'identifyer' to 'identifier'
+is_a: NMR:1000022
+source: http://mmcd.nmrfam.wisc.edu/
+
+[Term]
+id: NMR:1000254
+name: Bigg metabolomics database identifier
+comment: PRS: rename 'identifyer' to 'identifier'
+is_a: NMR:1000022
+source: http://bigg.ucsd.edu/
+
+[Term]
+id: NMR:1000255
+name: Lorentz Gaussian window function
+comment: Functional form:
+       gm(x_i) = exp(e - g*g)
+   Where:  e = pi*i*g1
+           g = 0.6*pi*g2*(g3*(size-1)-i)
+   Parameters:
+   * data  Array of spectral data.
+   * g1    Inverse exponential width.
+   * g2    Gaussian broaden width.
+   * g3    Location of gauss maximum.
+   * inv   Set True for inverse apodization.
+is_a: NMR:1400068
+hasExactSynonym: Lorentz-to-Gauss apodization
+
+[Term]
+id: NMR:1000256
+name: traf window function
+is_a: NMR:1000104
+
+[Term]
+id: NMR:1000257
+name: trafs window function
+is_a: NMR:1000104
+
+[Term]
+id: NMR:1000258
+name: peak fitting
+is_a: NMR:1000015
+
+[Term]
+id: NMR:1000259
+name: peak assignment
+is_a: NMR:1000015
+
+[Term]
+id: NMR:1000260
+name: deconvolution
+is_a: NMR:1000015
+
+[Term]
+id: NMR:1000261
+name: chemical shift sorting
+is_a: NMR:1400038
+IAO_0000115: A method of sorting multiple spectra by position of chemical shift peaks. This method is used in Batman and improves the fit for shifted/overlapped peaks.
+
+[Term]
+id: NMR:1000262
+name: fid file
+is_a: NMR:1000264
+
+[Term]
+id: NMR:1000263
+name: Varian FID file
+is_a: NMR:1400119
+
+[Term]
+id: NMR:1000264
+name: Bruker FID file
+is_a: NMR:1400119
+
+[Term]
+id: NMR:1000265
+name: ERVA-based bucketing
+is_a: NMR:1400138
+source: Jacob D. et al (2013) Analytical and Bioanalytical Chemistry, 405, 5049-5061
+
+[Term]
+id: NMR:1000266
+name: cluster of peaks
+is_a: NMR:1002014
+
+[Term]
+id: NMR:1000267
+name: Match NMR tube
+is_a: NMR:1000271
+
+[Term]
+id: NMR:1000268
+name: shaped tube
+is_a: NMR:1000271
+
+[Term]
+id: NMR:1000269
+name: Shigemi tube
+is_a: NMR:1400132
+
+[Term]
+id: NMR:1000270
+name: standard tube
+is_a: NMR:1000271
+
+[Term]
+id: NMR:1000271
+name: Bruker tube
+is_a: NMR:1400132
+
+[Term]
+id: NMR:1000272
+name: JEOL magnet
+is_a: NMR:1400185
+
+[Term]
+id: NMR:1000273
+name: JEOL ECS spectrometer
+is_a: NMR:1000272
+
+[Term]
+id: NMR:1000274
+name: JEOL ECA spectrometer
+is_a: NMR:1000272
+
+[Term]
+id: NMR:1000275
+name: JEOL ECX spectrometer
+is_a: NMR:1000272
+
+[Term]
+id: NMR:1000276
+name: Varian NMR software
+is_a: NMR:1000091
+
+[Term]
+id: NMR:1000277
+name: VnmrJ software
+is_a: NMR:1000276
+
+[Term]
+id: NMR:1000278
+name: Wilmad tube
+is_a: NMR:1400132
+
+[Term]
+id: NMR:1000279
+name: NMR spectrum by phase state
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000280
+name: liquid phase NMR spectrum
+is_a: NMR:1000279
+
+[Term]
+id: NMR:1000281
+name: gas phase NMR spectrum
+is_a: NMR:1000279
+
+[Term]
+id: NMR:1000282
+name: solid phase NMR spectrum
+is_a: NMR:1000279
+
+[Term]
+id: NMR:1000283
+name: 4mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000284
+name: 2.5mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000285
+name: 3mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000286
+name: 5mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000287
+name: 1mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000288
+name: 1.7mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000289
+name: 2mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000290
+name: 4.25mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000291
+name: 3mm standard tube
+is_a: NMR:1000270
+
+[Term]
+id: NMR:1000292
+name: 5mm standard tube
+is_a: NMR:1000270
+
+[Term]
+id: NMR:1000293
+name: 1mm standard tube
+is_a: NMR:1000270
+
+[Term]
+id: NMR:1000294
+name: 1.7mm standard tube
+is_a: NMR:1000270
+
+[Term]
+id: NMR:1000295
+name: Wilmad economy tube
+is_a: NMR:1000278
+
+[Term]
+id: NMR:1000296
+name: Wilmad precision tube
+is_a: NMR:1000278
+
+[Term]
+id: NMR:1000297
+name: Norell tube
+is_a: NMR:1400132
+
+[Term]
+id: NMR:1000298
+name: JEOL FID file
+is_a: NMR:1400119
+
+[Term]
+id: NMR:1000302
+name: Varian magnet
+is_a: NMR:1400185
+hasExactSynonym: Agilent magnet
+
+[Term]
+id: NMR:1000303
+name: premium compact narrow bore magnet
+is_a: NMR:1000302
+
+[Term]
+id: NMR:1000304
+name: premium shielded narrow bore magnet
+is_a: NMR:1000302
+
+[Term]
+id: NMR:1000305
+name: premium shielded wide bore magnet
+is_a: NMR:1000302
+
+[Term]
+id: NMR:1000306
+name: modified Gaussian window function
+comment: Functional form:
+       gmb(x_i) = exp(-a*i - b*i*i)
+   Parameters:
+   * data  Array of spectral data.
+   * a     Exponential term.
+   * b     Gaussian term.
+   * inv   Set True for inverse apodization.
+is_a: NMR:1400070
+hasExactSynonym: modified gaussian apodization
+
+[Term]
+id: NMR:1000307
+name: exponentially damped J-modulation window function
+comment: Functional form:
+       jmod(x_i) = exp(-e)*sin( pi*off + pi*(end-off)*i/(size-1))
+   Parameters:
+   * data  Array of spectral data.
+   * e     Exponential term.
+   * off   Start of  modulation in fraction of pi radians.
+   * end   End of modulation in fraction of pi radians.
+   * inv   Set True for inverse apodization
+is_a: NMR:1400068
+hasExactSynonym: exponentially damped J-modulation apodization
+
+[Term]
+id: NMR:1000308
+name: shifted sine bell window function
+comment: Functional form:
+       sp(x_i) = sin( (pi*off + pi*(end-off)*i/(size-1) )**pow
+   Parameters:
+   * data  Array of spectral data.
+   * start Start of Sine-Bell as percent of vector (0.0 -> 1.0)
+   * end   End of Sine-Bell as percent of vector (0.0 -> 1.0 )
+   * pow   Power of Sine-Bell
+   * inv   Set True for inverse apodization.
+is_a: NMR:1400071
+hasExactSynonym: shifted sine-bell apodization
+
+[Term]
+id: NMR:1000309
+name: triangle window function
+comment: Functional form:
+       0:loc   linear increase/decrease from lHi to 1.0   
+       loc:    linear increase/decrease from 1.0 to rHi
+   
+   Parameters:
+   * data  Array of spectral data.
+   * loc   Location of apex, "auto" sets to middle.
+   * lHi   Left side starting height.
+   * rHi   Right side starting height.
+   * inv   Set True for inverse apodization.
+is_a: NMR:1400068
+hasExactSynonym: triangle apodization
+
+[Term]
+id: NMR:1000310
+name: acquisition log file
+is_a: NMR:1400267
+IAO_0000115: The acquisition log file is a created during an acquisition and could useful for debugging an acquisition that has gone awry.
+
+[Term]
+id: NMR:1000313
+name: acqu2s
+is_a: NMR:1000230
+
+[Term]
+id: NMR:1000314
+name: acqu3s
+is_a: NMR:1000230
+
+[Term]
+id: NMR:1000315
+name: proc2s
+is_a: NMR:1000250
+
+[Term]
+id: NMR:1000316
+name: proc3s
+is_a: NMR:1000250
+
+[Term]
+id: NMR:1000317
+name: NMR spectrum file
+is_a: NMR:1400267
+
+[Term]
+id: NMR:1000318
+name: Bruker NMR spectrum file
+is_a: NMR:1000317
+
+[Term]
+id: NMR:1000319
+name: 1R file
+is_a: NMR:1000318
+
+[Term]
+id: NMR:1000320
+name: title file
+is_a: NMR:1000250
+
+[Term]
+id: NMR:1000324
+name: cryoprobe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1000325
+name: inverse detection NMR probe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1000326
+name: 5mm inverse detection cryoprobe
+is_a: NMR:1000325
+is_a: NMR:1400243
+is_a: NMR:1000324
+is_a: NMR:1000236
+
+[Term]
+id: NMR:1000328
+name: material processing
+is_a: BFO_0000015
+
+[Term]
+id: NMR:1000330
+name: NMR solvent
+is_a: BFO_0000030
+
+[Term]
+id: NMR:1000331
+name: NMR buffer
+is_a: BFO_0000030
+
+[Term]
+id: NMR:1000332
+name: presat water suppression
+is_a: NMR:1400066
+
+[Term]
+id: NMR:1000333
+name: Varian VNMRS 600
+is_a: NMR:1400059
+
+[Term]
+id: NMR:1000334
+name: data content encoding
+is_a: NMR:1000343
+
+[Term]
+id: NMR:1000335
+name: data compression scheme
+is_a: NMR:1000343
+
+[Term]
+id: NMR:1000336
+name: byte format
+is_a: NMR:1000334
+
+[Term]
+id: NMR:1000337
+name: zlib
+is_a: NMR:1000341
+
+[Term]
+id: NMR:1000338
+name: complex64
+is_a: NMR:1000336
+
+[Term]
+id: NMR:1000339
+name: complex128
+is_a: NMR:1000336
+
+[Term]
+id: NMR:1000340
+name: complexInteger
+is_a: NMR:1000336
+
+[Term]
+id: NMR:1000341
+name: binary data compression type
+is_a: NMR:1000335
+
+[Term]
+id: NMR:1000343
+name: data encoding parameter
+is_a: NMR:1400101
+
+[Term]
+id: NMR:1000344
+name: uncompressed data
+is_a: NMR:1000341
+
+[Term]
+id: NMR:1000345
+name: digital signal processing firmware version
+is_a: NMR:1000496
+hasExactSynonym: DSPFVS
+IAO_0000115: DSPFVS - DSP (Digital signal processing) firmware version corresponds to the version of the digital filter, a hardware component used by the spectrometer
+
+[Term]
+id: NMR:1000346
+name: decimation factor
+is_a: NMR:1001954
+IAO_0000115: DECIM - decimation factor is a (bruker) acquisition parameter that captures the number of raw analog points that are averaged in order to obtain a digital signal recorded in the fid.
+hasExactSynonym: DECIM
+
+[Term]
+id: NMR:1000347
+name: group time delay
+is_a: NMR:1001954
+hasExactSynonym: GRPDLY
+IAO_0000115: GRPDLY - is the time delay (in number of points?) between acquiring the analog signal and producing the digital signal (i.e. "The group delay is the time necessary for the digital filter function to “walk into” the raw FID and start generating significant intensity.")
+
+[Term]
+id: NMR:1000348
+name: NMR sampling strategy
+is_a: NMR:1400101
+
+[Term]
+id: NMR:1000349
+name: uniform sampling
+is_a: NMR:1000348
+
+[Term]
+id: NMR:1000350
+name: non-uniform sampling
+is_a: NMR:1000348
+source: http://link.springer.com/chapter/10.1007%2F1-4020-3910-7_142#page-1
 
 [Term]
 id: NMR:1000452
-name: NMR data conversions
-is_a: NMR:1400038
+name: NMR data conversion
+is_a: NMR:1000530
 id: NMR:1000452
 hasExactSynonym: data processing
 IAO_0000115: Terms used to describe types of data processing.
@@ -1860,16 +2614,16 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1000457
 name: sample
-is_a: Role
+is_a: BFO_0000030
 id: NMR:1000457
 IAO_0000115: tempdef: A sample is a role that is played by an object of interest in an investigation used to obtain generalizable information about the sample source.
-defprov: Daniel Schober
+   defprov: Daniel Schober
 hasOBONamespace: NMR
 
 [Term]
 id: NMR:1000463
 name: instrument
-is_a: CompoundOfCollectiveMaterialEntities
+is_a: BFO_0000030
 id: NMR:1000463
 IAO_0000115: Description of the instrument or the mass spectrometer.
 hasExactSynonym: instrument configuration
@@ -1911,7 +2665,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1000530
 name: file format conversion
-is_a: NMR:1000452
+is_a: NMR:1400063
 id: NMR:1000530
 IAO_0000115: Conversion of one file format to another.
 hasOBONamespace: NMR
@@ -1919,7 +2673,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1000531
 name: software
-is_a: Plan
+is_a: BFO_0000017
 id: NMR:1000531
 IAO_0000115: Software related to the recording or transformation of spectra.
 hasOBONamespace: NMR
@@ -1927,7 +2681,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1000547
 name: object attribute
-is_a: ObjectQuality
+is_a: BFO_0000031
 id: NMR:1000547
 IAO_0000115: Object Attribute.
 hasOBONamespace: NMR
@@ -1938,14 +2692,6 @@ name: sample attribute
 is_a: NMR:1000547
 id: NMR:1000548
 IAO_0000115: Sample properties that are associated with a value.
-hasOBONamespace: NMR
-
-[Term]
-id: NMR:1000559
-name: spectrum type
-is_a: _purgatory
-id: NMR:1000559
-IAO_0000115: Spectrum type.
 hasOBONamespace: NMR
 
 [Term]
@@ -1976,7 +2722,7 @@ hasOBONamespace: NMR
 
 [Term]
 id: NMR:1000577
-name: raw data file format
+name: NMR raw data file format
 is_a: NMR:1001459
 id: NMR:1000577
 IAO_0000115: Describes the type of file and its content.
@@ -2047,7 +2793,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1000747
 name: data processing completion time
-is_a: ProcessQuality
+is_a: BFO_0000019
 id: NMR:1000747
 hasDbXref: value-type:xsd:date
 IAO_0000115: The time that a data processing action was finished.
@@ -2082,25 +2828,16 @@ hasOBONamespace: NMR
 
 [Term]
 id: NMR:1000831
-name: sample preparation
+name: sample preparation information
 is_a: NMR:1000548
 id: NMR:1000831
-IAO_0000115: Properties of the preparation steps which took place before the measurement was performed.
-hasOBONamespace: NMR
-
-[Term]
-id: NMR:1000857
-name: run attribute
-comment: use acquisition parameter
-is_a: _purgatory
-id: NMR:1000857
-IAO_0000115: Properties of the described run.
+IAO_0000115: Description of the preparation steps which took place before the measurement was performed.
 hasOBONamespace: NMR
 
 [Term]
 id: NMR:1000859
 name: molecule
-is_a: MonoMolecularEntity
+is_a: NMR:1000881
 id: NMR:1000859
 IAO_0000115: A molecules is a fundamental component of a chemical compound that is the smallest part of the compound that can participate in a chemical reaction.
 hasOBONamespace: NMR
@@ -2145,7 +2882,6 @@ hasOBONamespace: NMR
 id: NMR:1000864
 name: chemical compound formula
 is_a: NMR:1000861
-is_a: InformationObject
 id: NMR:1000864
 IAO_0000115: A combination of symbols used to express the chemical composition of a compound.
 hasOBONamespace: NMR
@@ -2206,7 +2942,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1000881
 name: chemical compound
-is_a: PolyMolecularCompositeEntity
+is_a: BFO_0000030
 id: NMR:1000881
 IAO_0000115: A substance formed by chemical union of two or more elements or ingredients in definite proportion by weight.
 hasOBONamespace: NMR
@@ -2317,7 +3053,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1000898
 name: standard
-is_a: InformationObject
+is_a: BFO_0000031
 id: NMR:1000898
 IAO_0000115: Something, such as a practice or a product, that is widely recognized or employed, especially because of its excellence.
 hasOBONamespace: NMR
@@ -2381,49 +3117,11 @@ IAO_0000115: Type of the source file, the nmrIdentML was created from.
 hasOBONamespace: NMR
 
 [Term]
-id: NMR:1001044
-name: cleavage agent details
-is_a: NMR:1001249
-id: NMR:1001044
-IAO_0000115: Details of cleavage agent (enzyme).
-hasOBONamespace: NMR
-
-[Term]
 id: NMR:1001107
 name: data stored in database
 is_a: NMR:1001459
 id: NMR:1001107
 IAO_0000115: Source file for this nmrIdentML was a data set in a database.
-hasOBONamespace: NMR
-
-[Term]
-id: NMR:1001176
-name: (?<=[KR])(?!P)
-is_a: NMR:1001180
-id: NMR:1001176
-hasOBONamespace: NMR
-
-[Term]
-id: NMR:1001180
-name: cleavage agent regular expression
-is_a: NMR:1000009
-id: NMR:1001180
-IAO_0000115: Branch containing regular expressions for cleavage enzymes.
-hasOBONamespace: NMR
-
-[Term]
-id: NMR:1001249
-name: search input details
-is_a: _purgatory
-id: NMR:1001249
-hasOBONamespace: NMR
-
-[Term]
-id: NMR:1001266
-name: role type
-is_a: _purgatory
-id: NMR:1001266
-IAO_0000115: Role of a Person or Organization.
 hasOBONamespace: NMR
 
 [Term]
@@ -2535,7 +3233,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1001923
 name: external reference keyword
-is_a: NMR:1000878
+is_a: keyword
 id: NMR:1001923
 hasDbXref: value-type:xsd:string
 IAO_0000115: Free text attribute that can enrich the information about an entity.
@@ -2544,7 +3242,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1001924
 name: journal article keyword
-is_a: NMR:1000878
+is_a: keyword
 id: NMR:1001924
 hasDbXref: value-type:xsd:string
 IAO_0000115: Keyword present in a scientific publication.
@@ -2553,7 +3251,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1001925
 name: submitter keyword
-is_a: NMR:1001923
+is_a: keyword
 id: NMR:1001925
 hasDbXref: value-type:xsd:string
 IAO_0000115: Keyword assigned by the data submitter.
@@ -2562,7 +3260,7 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1001926
 name: curator keyword
-is_a: NMR:1001923
+is_a: keyword
 id: NMR:1001926
 hasDbXref: value-type:xsd:string
 IAO_0000115: Keyword assigned by a data curator.
@@ -2589,16 +3287,17 @@ hasOBONamespace: NMR
 [Term]
 id: NMR:1002001
 name: Chenomx software
-is_a: NMR:1400213
+is_a: NMR:1000091
 id: NMR:1002001
 IAO_0000115: Chenomx software for data acquisition and analysis.
 hasOBONamespace: NMR
 
 [Term]
 id: NMR:1002002
-name: NMR Suite software
-is_a: NMR:1000091
+name: Chenomx NMR Suite software
+is_a: NMR:1002001
 id: NMR:1002002
+source: http://www.chenomx.com/software/
 IAO_0000115: Chenomx software for data analysis.
 hasOBONamespace: NMR
 
@@ -2629,8 +3328,8 @@ hasOBONamespace: NMR
 
 [Term]
 id: NMR:1002006
-name: acquisition parameter file format
-is_a: NMR:1001459
+name: acquisition parameter file
+is_a: NMR:1400267
 id: NMR:1002006
 IAO_0000115: Parameter file used to configure the acquisition of raw data on the instrument.
 hasOBONamespace: NMR
@@ -2641,9 +3340,9 @@ name: NMR spectrum
 is_a: NMR:1000524
 id: NMR:1002007
 source: as designated Experiment type on http://www.bmrb.wisc.edu/tools/choose_pulse_info.php 
-definition: tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or 'lines'.
-def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
-synonym: NMR spectrum
+IAO_0000115: tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or 'lines'.
+   def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
+   synonym: NMR spectrum
 hasOBONamespace: NMR
 
 [Term]
@@ -2664,7 +3363,7 @@ hasOBONamespace: NMR
 
 [Term]
 id: NMR:1002010
-name: solvent
+name: NMR solvent information
 is_a: NMR:1000548
 id: NMR:1002010
 hasDbXref: value-type:xsd:string
@@ -2677,15 +3376,6 @@ is_a: NMR:1000548
 id: NMR:1002011
 hasDbXref: value-type:xsd:string
 IAO_0000115: pH.
-hasOBONamespace: NMR
-
-[Term]
-id: NMR:1002012
-name: temperature
-is_a: NMR:1000547
-id: NMR:1002012
-hasDbXref: value-type:xsd:decimal
-IAO_0000115: Temperature.
 hasOBONamespace: NMR
 
 [Term]
@@ -2745,16 +3435,6 @@ IAO_0000115: Bin area.
 hasOBONamespace: NMR
 
 [Term]
-id: NMR:1002019
-name: metabolite concentrations
-comment: remove plural forms. Redundant to metabolite concentration.
-is_a: _purgatory
-id: NMR:1002019
-hasDbXref: value-type:xsd:string
-IAO_0000115: Identified and quantified metabolites.
-hasOBONamespace: NMR
-
-[Term]
 id: NMR:1002020
 name: metabolite name
 is_a: NMR:1002014
@@ -2775,8 +3455,8 @@ hasOBONamespace: NMR
 id: NMR:1400001
 name: optional part of NMR instrument
 comment: def: Part of an NMR instrument which is not cardinally important and hence optional / facultative for the proper intended function of the instrument.
-synonym: optional part of NMR instrument
-clsdel: ontologically there is no such universal which characteristic is a possible (!) state of being a part of something...
+   synonym: optional part of NMR instrument
+   clsdel: ontologically there is no such universal which characteristic is a possible (!) state of being a part of something...
 is_a: NMR:1000463
 versionInfo: TODO: Discuss "obligatory_part_of".
 
@@ -2784,50 +3464,30 @@ versionInfo: TODO: Discuss "obligatory_part_of".
 id: NMR:1400002
 name: autosampler
 comment: def: An optional  part of an NMR instrument used to hold samples prior to NMR analysis and that sequentially loads these samples into the analytical part of the NMR instrument. 
-altdef: The autosampler is an automatic sample changer.
+   altdef: The autosampler is an automatic sample changer.
 is_a: NMR:1400001
-
-[Term]
-id: NMR:1400003
-name: algorithm
-comment: def: An algorithm is a procedure (a finite set of well-defined instructions) for accomplishing some task which, given an initial state, will terminate in a defined end-state.
-defprov:wiki
-is_a: _purgatory
-
-[Term]
-id: NMR:1400004
-name: post-processing algorithm
-comment: def: An algorithm for achieving a post-processed spectrum.
-is_a: _purgatory
-
-[Term]
-id: NMR:1400005
-name: analysis
-comment: def: An investigation of the component parts of a whole and their relations in making up the whole.
-defprov: Google define
-altdef: A systematic approach to problem solving. Complex problems are made simpler by separating them into more understandable elements. This involves the identification of purposes and facts, the statement of defensible assumptions, and the formulation of conclusions.
-is_a: _purgatory
 
 [Term]
 id: NMR:1400006
 name: multiplet feature
 comment: def: The analysis of one NMR sample at one time by NMR producing one raw dataset (a FID).
-synonym: NMR analysis
+   synonym: NMR analysis
 is_a: NMR:1000172
+hasExactSynonym: multiplicity
 
 [Term]
 id: NMR:1400007
 name: cardinal part of NMR data set
 comment: tempdef: An immanent important, non-obligatory part of any NMR data set.
-defprov: Daniel Schober
-synonym: cardinal part of NMR data set
-is_a: NMR:1000009
+   defprov: Daniel Schober
+   synonym: cardinal part of NMR data set
+is_a: _purgatory
 
 [Term]
 id: NMR:1400008
 name: projected spectrum
 comment: tempdef: The data matrix a spectrum consists of can be projected from a higher dimension onto a lower dimension, e.g. a 3D NMR spectrum can be converted (projected) into a 2D NMR spectrum.
-defprov: Daniel Schober
+   defprov: Daniel Schober
 is_a: NMR:1000200
 
 [Term]
@@ -2849,7 +3509,7 @@ versionInfo: TODO: has spectral post processing parameter.
 id: NMR:1400011
 name: cardinal part of NMR instrument
 comment: def: A part of an NMR instrument which is cardinally important and hence obligatory and compulsatory for the proper intended function of the instrument.
-synonym: cardinal part of NMR instrument
+   synonym: cardinal part of NMR instrument
 is_a: NMR:1000463
 
 [Term]
@@ -2862,7 +3522,7 @@ is_a: NMR:1400011
 id: NMR:1400014
 name: NMR probe
 comment: def: Part of an NMR instrument that detects the signals emitted from a sample. No single probe can perform the full range of experiments, and probes that are designed to perform more than one type of measurement usually suffer from performance compromises. The probe represents a rather fragile “single point of failure” that can render an NMR system completely unusable if the probe is dropped or otherwise damaged. Probes are usually characterised by Sample diameter and Frequency.
-altdef: The instrument that transmits and recieves radiofrequency to and from the NMR sample.
+   altdef: The instrument that transmits and recieves radiofrequency to and from the NMR sample.
 is_a: NMR:1400011
 
 [Term]
@@ -2879,12 +3539,6 @@ comment: tempdef: The number of data points in a data set.
 is_a: NMR:1001954
 
 [Term]
-id: NMR:1400018
-name: concentration
-comment: def: The ratio of the mass or volume of a solute to the mass or volume of the solution or solvent.
-is_a: ObjectQuality
-
-[Term]
 id: NMR:1400019
 name: hadamard frequency
 comment: def: A frequency used during Hadamard encoding.
@@ -2897,25 +3551,17 @@ comment: def: The axis onto which the spectrum was projected.
 is_a: NMR:1001954
 
 [Term]
-id: NMR:1400021
-name: calibration reference shift
-comment: Same as chemical shift reference.
-
-def: The parts-per-million value of the peak used to reference a spectrum.
-is_a: _purgatory
-
-[Term]
 id: NMR:1400022
 name: ninety degree pulse duration
 comment: def: The duration of the excitation pulse needed to rotate the magnetisation vector by 90 degrees.
-synonym: 90 degree pulse duration
+   synonym: 90 degree pulse duration
 is_a: NMR:1000190
 
 [Term]
 id: NMR:1400023
 name: dwell time
 comment: def: A digital sampling interval.
-alsprcls: time interval
+   alsprcls: time interval
 is_a: NMR:1001954
 
 [Term]
@@ -2950,13 +3596,13 @@ is_a: NMR:1001954
 
 [Term]
 id: NMR:1400029
-name: decoupled nucleus
+name: decoupled nucleus flag
 comment: def: An indication of whether the nucleus being studied is the acquitsition nucleus.
 is_a: NMR:1001954
 
 [Term]
 id: NMR:1400031
-name: buffer
+name: buffer information
 comment: def: A compound added to a sample to alter its pH value.
 is_a: NMR:1000548
 
@@ -2964,14 +3610,14 @@ is_a: NMR:1000548
 id: NMR:1400032
 name: calibration compound
 comment: def: The compound that produced the peak used to reference a spectrum during data pre-processing.
-is_a: NMR:1001954
+is_a: NMR:1000881
 hasExactSynonym: reference standard
 
 [Term]
 id: NMR:1400033
 name: chemical shift standard
 comment: def: A compound that is added to an NMR sample to enable the alignment of spectra. The power of NMR is that for most nuclei the NMR frequency changes very slightly with different molecular environment or chemical bonding. These shifts are very small, on the order of 1 part in 10+9.  This is referred to as "Chemical Shift." Tables of chemical shifts are tabulated and used to determine molecular structure. Combining NMR chemical shift information with other NMR information such as peak integration, coupling constants and Nuclear Overhauser Enhancement (NOE) can result in complete three-dimensional molecular structures of molecules in solution without using X-ray crystallography.
-is_a: NMR:1001954
+is_a: NMR:1000881
 source: http://www.nmrnotes.org/NMRPages/refcomps.html
 bug-database: https://github.com/nmrML/nmrML/issues/33
 hasExactSynonym: chemical shift reference compound
@@ -2983,17 +3629,10 @@ comment: def: The compound that produced a peak that is measured to assess the q
 is_a: NMR:1400107
 
 [Term]
-id: NMR:1400035
-name: NMR solvent
-comment: def: A compound added to a sample to an NMR sample to align the spectrometer frequency.
-synonym: NMR solvent
-is_a: NMR:1002010
-
-[Term]
 id: NMR:1400036
 name: complex datatype
 comment: def: A complex datatype (or complex value) is a datatype that is not a primitive one (like string or integer) and that references to more primitive values. Often, these are called reference data types. Complex datatypes can belong to the object data type. Data types that define sets of complex values include Array, Date, Error, Function, and XML and others.
-is_a: NMR:1000009
+is_a: _purgatory
 
 [Term]
 id: NMR:1400037
@@ -3005,68 +3644,44 @@ bug-database: https://github.com/nmrML/nmrML/issues/40
 
 [Term]
 id: NMR:1400038
-name: post-FT data processing method
+name: post-FT data processing
+name: frequency domain data processing
 comment: def: Automatic or manual procedures performed upon pre-processed NMR data sets that aim to summarise them or annotate them with speculative values.
 is_a: NMR:1400042
 
 [Term]
-id: NMR:1400039
-name: NMR data post-processing
-comment: def: The process of producing an annotated spectrum from a pre-processed spectrum.
-synonym: NMR spectral post processing
-is_a: NMR:1000009
-
-[Term]
-id: NMR:1400040
-name: data pre-processing
-comment: defneed
-is_a: NMR:1000009
-
-[Term]
 id: NMR:1400041
-name: pre-FT data processing method
+name: pre-FT data processing
+name: time domain data processing
 comment: def: The post acquisition process of producing or refining a spectrum from raw data.
-defprov: Daniel Schober
+   defprov: Daniel Schober
 is_a: NMR:1400042
 
 [Term]
 id: NMR:1400042
-name: NMR data processing method
-comment: def: A method or algorithm that converts an NMR input data set into an output data set in a tracable and useful manner.
+name: NMR data processing
+comment: def: A data transformation that converts an NMR input data set into an output data set in a tracable and useful manner.
 is_a: NMR:1400063
-
-[Term]
-id: NMR:1400043
-name: data transformation method
-comment: def: A method for transforming the time-based acquisition data into frequency-based data.
-is_a: NMR:1000009
 
 [Term]
 id: NMR:1400044
 name: fourier transformation
 comment: tempdef: An integral data transformation that re-expresses a function in terms of sinusoidal basis functions, i.e. as a sum or integral of sinusoidal functions multiplied by some coefficients ("amplitudes").
-defprov: Daniel Schober
+   defprov: Daniel Schober
 is_a: _purgatory
 
 [Term]
 id: NMR:1400045
-name: non-fourier FID transformation method
+name: non-fourier FID transformation
 comment: tempdef: A non FT based method for converting from the time to the frequency domain.
 is_a: NMR:1400042
 versionInfo: TODO:Exclusion guided definition.
 
 [Term]
-id: NMR:1400047
-name: NMR data set
-comment: def: A data set that was generated within, from or for an NMR experiment.
-synonym: NMR data set
-is_a: _purgatory
-
-[Term]
 id: NMR:1400048
-name: encoding method
-comment: tempdef: A data processing method which compresses a data file for a specific purpose.
-defprov: Daniel Schober
+name: encoding
+comment: tempdef: A data processing  which compresses a data file for a specific purpose.
+   defprov: Daniel Schober
 is_a: NMR:1400042
 bug-database: https://github.com/nmrML/nmrML/issues/37
 
@@ -3074,36 +3689,22 @@ bug-database: https://github.com/nmrML/nmrML/issues/37
 id: NMR:1400049
 name: G matrix fourier transform projection
 comment: tempdef:GFT NMR allows for rapid multidimensional FT NMR spectral information gathering, avoiding sampling limitations without compromising on the precision of chemicalshift.
-defprov: ttp://www.nsm.buffalo.edu/Research/GFT/szyperski_publications_1st_page/Szyperski%2067.pdf
-synonym: GFT-projection
+   defprov: ttp://www.nsm.buffalo.edu/Research/GFT/szyperski_publications_1st_page/Szyperski%2067.pdf
+   synonym: GFT-projection
 is_a: NMR:1400075
-
-[Term]
-id: NMR:1400050
-name: quantum momentum field gradient
-comment: tempdef: Quantum Moment/Field Gradient interaction or relaxation mechanism.
-defprov: Daniel Schober
-synonym: QF
-is_a: NMR:1400048
 
 [Term]
 id: NMR:1400051
 name: time proportional phase incrementation
 comment: defneed
-synonym: TPPI
+   synonym: TPPI
 is_a: NMR:1400048
-
-[Term]
-id: NMR:1400052
-name: states
-comment: defneed
-is_a: NMR:1000009
 
 [Term]
 id: NMR:1400053
 name: states-time proportional phase incrementation
 comment: def: A method for quadrature detection.
-synonym: S-TPPI
+   synonym: S-TPPI
 is_a: NMR:1400048
 
 [Term]
@@ -3135,68 +3736,71 @@ is_a: NMR:1000008
 id: NMR:1400059
 name: NMR instrument
 comment: def: An Instrument which is used to carry out a NMR analysis of some sample.
-synonym: NMR instrument
+   synonym: NMR instrument
 is_a: NMR:1000463
 
 [Term]
 id: NMR:1400061
 name: NMR instrument acquisition parameter set
 comment: def: The list of parameters that describe the instrument settings used for the acquisition of a spectrum.
-altdef: The set of variables dependent on a given pulse sequence that will be optimised in order to acquire a spectrum.
-synonym: NMR instrument acquisition parameter set
+   altdef: The set of variables dependent on a given pulse sequence that will be optimised in order to acquire a spectrum.
+   synonym: NMR instrument acquisition parameter set
 is_a: NMR:1400196
 
 [Term]
 id: NMR:1400062
 name: instrument configuration
 comment: tempdef: An instrument configuration is the description for the setting of an instrument or a machine in order to archive a certain intended goal or task.
-altdef: An instrument configuration is the process of setting the possible parameters of an instrument in order to archive a certain intended goal.
+   altdef: An instrument configuration is the process of setting the possible parameters of an instrument in order to archive a certain intended goal.
 is_a: NMR:1001954
 
 [Term]
 id: NMR:1400063
-name: method
+name: data transformation
 comment: defneed
-is_a: InformationObject
+is_a: BFO_0000015
 versionInfo: altspcls: process ???
+hasBroadSynonym: method
 
 [Term]
 id: NMR:1400064
-name: normalisation method
+name: normalisation
 comment: def: A strategy for normalising a data set.
-is_a: NMR:1400042
-
-[Term]
-id: NMR:1400065
-name: sample introduction method
-comment: redundant to sample introduction parameter
-is_a: NMR:1000009
+is_a: NMR:1000079
 
 [Term]
 id: NMR:1400066
-name: water suppression method
+name: water suppression
 comment: tempdef: A technique used to suppress the water resonance peak in a spectrum. Suppression of the strong solvent signal is necessary in order to obtain high signal to noise for the peaks of the sample under investiogation, e.g. protein peaks.
-defprov: Daniel Schober
+   defprov: Daniel Schober
 is_a: NMR:1000014
 
 [Term]
 id: NMR:1400068
-name: window function
-comment: def: A function applied to a FID to increase the signal-to-noise ratio or the resolution.
-is_a: NMR:1400041
+name: window function for apodization
+is_a: NMR:1400096
 source: http://www.uwyo.edu/wheelernmr/nmr/window_functions.pdf
+bug-database: https://github.com/nmrML/nmrML/issues/67
 bug-database: https://github.com/nmrML/nmrML/issues/39
+IAO_0000115: A function applied to a FID to increase the signal-to-noise ratio or the resolution.
 hasExactSynonym: apodization function
 
 [Term]
 id: NMR:1400069
 name: exponential multiplication window function
-comment: def: The exponential function used to multiply a FID by to produce a desitred amount of line broadening.
+comment: Functional form:
+       em(x_i) = exp(-pi*i*lb)
+   Parameters:
+   * data  Array of spectral data.
+   * lp    Exponential line broadening.
+   * inv   Set True for inverse apodization.
 is_a: NMR:1400068
+hasExactSynonym: exponential apodization
+IAO_0000115: The exponential function used to multiply a FID by to produce a desitred amount of line broadening.
 
 [Term]
 id: NMR:1400070
-name: gaussian window function
+name: Gaussian window function
 comment: defneed
 is_a: NMR:1400068
 hasExactSynonym: gaussian broadening
@@ -3216,7 +3820,7 @@ is_a: NMR:1400071
 
 [Term]
 id: NMR:1400073
-name: spectral denoising method
+name: spectral denoising
 comment: def: A method for eliminating or reducing the noise in a spectrum.
 is_a: NMR:1400038
 
@@ -3228,7 +3832,7 @@ is_a: NMR:1400038
 
 [Term]
 id: NMR:1400075
-name: spectral projection method
+name: spectral projection
 comment: A method of spectral projection.
 is_a: NMR:1400048
 
@@ -3242,14 +3846,14 @@ is_a: NMR:1400075
 id: NMR:1400077
 name: summation projection
 comment: def: .A projection method that sums the intensities of a pre-processed 2D J-resolved NMR spectrum to obtain a projected spectrum. 
-altdef: The adding of spectra together to produce a composite avergaed spectrum.
+   altdef: The adding of spectra together to produce a composite avergaed spectrum.
 is_a: NMR:1400075
 
 [Term]
 id: NMR:1400079
 name: zero order phase correction
 comment: def: A parameter used to mix real and imaginary part of an NMR spectrum that the real part of the spectrum is in pure absorption mode. 
-altdef: The number of degrees that a central peak must be moved in order to achieve an absorptive mode line width.
+   altdef: The number of degrees that a central peak must be moved in order to achieve an absorptive mode line width.
 is_a: NMR:1000071
 
 [Term]
@@ -3268,13 +3872,7 @@ is_a: NMR:1400038
 id: NMR:1400083
 name: acquisition nucleus
 comment: def: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.
-is_a: NMR:1001954
-
-[Term]
-id: NMR:1400085
-name: tilt
-comment: defneed
-is_a: _purgatory
+is_a: BFO_0000030
 
 [Term]
 id: NMR:1400086
@@ -3310,7 +3908,7 @@ is_a: NMR:1001954
 id: NMR:1400091
 name: x-axis unit
 comment: def: The units of measure for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum. 
-altdef: The units used to represent either time domain (for a FID) or the frequency domain (for a spectrum).
+   altdef: The units used to represent either time domain (for a FID) or the frequency domain (for a spectrum).
 is_a: NMR:1000013
 
 [Term]
@@ -3329,7 +3927,7 @@ is_a: NMR:1400101
 id: NMR:1400094
 name: x start value
 comment: def: The starting value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.
-altdef: The initial time or frequency a FID or spectrum is recorded from.
+   altdef: The initial time or frequency a FID or spectrum is recorded from.
 is_a: NMR:1000013
 
 [Term]
@@ -3348,61 +3946,32 @@ is_a: NMR:1400101
 id: NMR:1400097
 name: line broadening
 comment: defneed
-is_a: NMR:1400096
+is_a: NMR:1400063
 
 [Term]
 id: NMR:1400098
 name: line sharpening
 comment: defneed
-is_a: NMR:1400096
-
-[Term]
-id: NMR:1400099
-name: shifted bell
-comment: defneed
-synonym: sb
-is_a: NMR:1400096
-
-[Term]
-id: NMR:1400100
-name: shifted sine bell
-comment: tenpdef: A function used to multiply a FID by to produce a desired amount of line broadening and spectral resolution.
-defprov: Daniel Schober
-synonym: ssb
-is_a: NMR:1400096
+is_a: NMR:1400063
 
 [Term]
 id: NMR:1400101
 name: parameter
 comment: defneed
-is_a: InformationObject
-
-[Term]
-id: NMR:1400103
-name: NMR data pre-processing parameter set by dimension
-comment: def: The set of variables dependent on a given pulse sequence for a given dimension that will be optimised in order to acquire a spectrum.
-synonym: NMR data pre-processing parameter set by dimension
-is_a: _purgatory
-
-[Term]
-id: NMR:1400104
-name: NMR 2D J-resolved processing parameter set
-comment: def: The list of parameters that describe the settings used to process a 2D J-resolved NMR spectrum. altdeft: The set of variables associated with adjusting the spectrum in the frequency domain to phase, baseline correct and integrate a spectrum.
-synonym: NMR 2D J-resolved processing parameter set
-is_a: _purgatory
+is_a: BFO_0000031
 
 [Term]
 id: NMR:1400105
 name: NMR spectral projection parameter set
 comment: def: The data processing parameters that describe a method of translating a 2D NMR pre-processed spectrum into a 1D NMR spectrum.
-synonym: NMR spectral projection parameter set
+   synonym: NMR spectral projection parameter set
 is_a: NMR:1400106
 
 [Term]
 id: NMR:1400106
 name: NMR data post-processing parameter set
 comment: def: A description of the post-processing strategy used to convert a pre-processed NMR spectrum into a suitable data format for chemometric analysis.
-synonym: NMR spectrum post-processing parameter set
+   synonym: NMR spectrum post-processing parameter set
 is_a: NMR:1000630
 versionInfo: TODO: altsprcls: process, not clear wether set is plural (list) or process.
 
@@ -3410,14 +3979,14 @@ versionInfo: TODO: altsprcls: process, not clear wether set is plural (list) or 
 id: NMR:1400107
 name: NMR quality check parameter set
 comment: tempdef: A nuclear magnetic resonance spectroscopy quality check parameter set is a parameter set used for the quality check method for an NMR analysis
-synonym: NMR quality check parameter set
+   synonym: NMR quality check parameter set
 is_a: NMR:1400106
 
 [Term]
 id: NMR:1400108
-name: post-acquisition water suppression method
+name: post-acquisition water suppression
 comment: tempdef: A data processing technique used to suppress the water peak in a spectrum in order to get clearer results.
-defprov: Daniel Schober
+   defprov: Daniel Schober
 is_a: NMR:1400066
 is_a: NMR:1400038
 
@@ -3425,7 +3994,7 @@ is_a: NMR:1400038
 id: NMR:1400109
 name: hankel singular value decomposition
 comment: def: This Method removes the residual water and its side lobes, thereby reducing the baseline for the metabolites of interest and allowing subsequent data analysis using more sophisticated nonlinear least squares algorithms.
-synonym: HSVD
+   synonym: HSVD
 is_a: NMR:1400108
 
 [Term]
@@ -3447,49 +4016,37 @@ comment: def: A computational method that archieves water suppression via wavlet
 is_a: NMR:1400108
 
 [Term]
-id: NMR:1400113
-name: pre-processing parameter set
-comment: use NMR data pre-processing parameter set
-is_a: NMR:1000009
-
-[Term]
 id: NMR:1400114
 name: NMR data pre-processing parameter set
 comment: defneed
-synonym: NMR data pre-processing parameter set
+   synonym: NMR data pre-processing parameter set
 is_a: NMR:1000630
-
-[Term]
-id: NMR:1400115
-name: quality control method
-comment: tempdef: A quality control method is a method, which is applied to ensure or to verify for a good quality outcome.
-defprov: Daniel Schober
-is_a: _purgatory
 
 [Term]
 id: NMR:1400116
 name: NMR quality check
 comment: def: The process of ensuring the quality of the raw data that results from an NMR analysis.
-synonym: NMR quality check
+   synonym: NMR quality check
 is_a: NMR:1400063
 
 [Term]
 id: NMR:1400117
 name: reference
 comment: def: A reference is a label which refers to data elsewhere, as opposed to containing the data itself. Accessing the value that a reference refers to is called dereferencing it. References are fundamental in constructing many data structures and in exchanging information between different parts of programs and databases.
-is_a: InformationObject
+is_a: BFO_0000031
 
 [Term]
 id: NMR:1400118
 name: acquisition parameter set file reference
 comment: def: A reference to the file of acquisition parameters produced by a machine.
-is_a: NMR:1400267
+is_a: _purgatory
+consider: use acquisition parameter file
 
 [Term]
 id: NMR:1400119
-name: FID file reference
+name: FID file
 comment: def: A reference to a file containing the raw FID.
-synonym: FID file reference
+   synonym: FID file reference
 is_a: NMR:1400267
 hasExactSynonym: FID file reference
 
@@ -3501,44 +4058,43 @@ is_a: NMR:1000878
 
 [Term]
 id: NMR:1400121
-name: shaped pulse file reference
+name: shaped pulse file
 comment: def: A reference to a file containing a specfication of the shape of an excitation pulse.
 is_a: NMR:1400122
 
 [Term]
 id: NMR:1400122
-name: pulse sequence file reference
+name: pulse sequence file
 comment: def: A reference to a file containing a specification of a pulse sequence.
 is_a: NMR:1400267
 
 [Term]
 id: NMR:1400123
-name: processing parameter set file reference
+name: processing parameter file
 comment: def: A reference to a file of data pre-processing parameters produced by the machine.
 is_a: NMR:1400267
 
 [Term]
 id: NMR:1400124
-name: NMR sample reference
+name: NMR sample identifier
 comment: def: A reference to information on the provenance of the NMR sample.
-synonym: NMR sample reference
-is_a: NMR:1400117
+   synonym: NMR sample reference
+comment: PRS: rename 'reference' to 'identifier'
+is_a: NMR:1000878
 
 [Term]
 id: NMR:1400126
 name: NMR quality check result
 comment: def: A result of an NMR quality check.
-synonym: NMR quality check result
+   synonym: NMR quality check result
 is_a: NMR:1400181
 
 [Term]
 id: NMR:1400128
 name: NMR sample
 comment: def: A sample that has been prepared for chemical analysis by NMR. NMR samples are usually liquid solutions contained in glass tubes. NMR solution sample volume ranges from 50ul to 5ml depending on the NMR probe. Sample concentrations of solute for 1H NMR are usually in the range of 100ug to 5g, with 10 to 50mg being typical. NMR is not a chemical trace analysis technique. The NMR signal of solids and gases can be recorded but to measure solid-state NMR additional specialized hardware is required.
-synonym: NMR sample
+   synonym: NMR sample
 is_a: NMR:1000457
-relationship: isBearerOf NMR:1000548
-
 
 [Term]
 id: NMR:1400129
@@ -3550,7 +4106,7 @@ is_a: NMR:1000548
 id: NMR:1400130
 name: magic angle spinning rotor
 comment: defneed
-synonym: MAS rotor
+   synonym: MAS rotor
 is_a: NMR:1400129
 
 [Term]
@@ -3562,26 +4118,24 @@ is_a: NMR:1400129
 [Term]
 id: NMR:1400132
 name: NMR sample tube
-comment: tempdef: The sample-tube holds the NMR sample and sits in the NMR probe. It is usually a glass tube of 5-20mm diameter.
+comment: sortal dimensions are Vendor, Size (Diameter, length), Material (glass, quarz, pyrex ...), Frequency, Concentricity, OD and ID
 is_a: NMR:1400011
+source: http://en.wikipedia.org/wiki/NMR_tube
+bug-database: https://github.com/nmrML/nmrML/issues/54
+IAO_0000115: The sample-tube holds the NMR sample and sits in the NMR probe. It is usually a glass tube of 5-20mm diameter.
+hasExactSynonym: sample tube
 
 [Term]
 id: NMR:1400134
-name: data pre-processing software
+name: spectrum pre-processing software
 comment: def: A software artifact used during data pre-processing.
-is_a: NMR:1000531
+is_a: NMR:1400213
 
 [Term]
 id: NMR:1400135
 name: spectrum post-processing software
 comment: def: A software artifact used during spectral post-processing.
-is_a: NMR:1000531
-
-[Term]
-id: NMR:1400136
-name: spectrum post-processing
-comment: defneed
-is_a: NMR:1000009
+is_a: NMR:1400213
 
 [Term]
 id: NMR:1400137
@@ -3593,37 +4147,33 @@ is_a: NMR:1000015
 id: NMR:1400138
 name: bucketing
 comment: def: A post-processing method that divides a pre-processed NMR spectrum into a series of buckets (or bins) along the x-axis, and then integrates the spectral intensity within each bucket. 
-altdef: A type of automated integration which occurs across pre-defined regions for a spectrum.
+   altdef: A type of automated integration which occurs across pre-defined regions for a spectrum.
 is_a: NMR:1000015
-
-[Term]
-id: NMR:1400139
-name: water suppression parameter
-comment: delete as captured by water suppression method
-is_a: NMR:1000009
+hasExactSynonym: binning
 
 [Term]
 id: NMR:1400140
 name: presat
 comment: defneed
-synonym: presaturation
-is_a: NMR:1400066
+   synonym: presaturation
+is_a: NMR:1400037
 hasExactSynonym: presaturation of the solvent resonance
 
 [Term]
 id: NMR:1400141
 name: water suppression enhanced through T1 effects
 comment: tempdef: An improved water-suppression technique called WET (water suppression enhanced through T1 effects), developed from a Bloch equation analysis of the longitudinal magnetization over the T1 and B1 ranges of interest, achieves T1- and B1-insensitive suppression with four RF pulses, each having a numerically optimized flip angle. Once flip angles have been optimized for a given sequence, time-consuming flip-angle adjustments during clinical examinations are eliminated.
-defprov: Daniel Schober
-synonym: WET
-is_a: NMR:1400066
+   defprov: Daniel Schober
+   synonym: WET
+is_a: NMR:1400037
+altLabel: WET
 
 [Term]
 id: NMR:1400142
 name: nuclear overhauser and exchange spectroscopy-presat
 comment: tempdef: The presat for an nuclear overhauser and exchange spectroscopy experiment. A 2D method used to map NOE correlations between protons within a molecule.  The nuclear Overhauser effect (NOE) causes changes in peak areas, as a secondary effect of decoupling.
-defprov: Daniel Schober
-synonym: NOESY-presat
+   defprov: Daniel Schober
+   synonym: NOESY-presat
 is_a: NMR:1400140
 hasExactSynonym: NOESY presat
 
@@ -3631,20 +4181,20 @@ hasExactSynonym: NOESY presat
 id: NMR:1400143
 name: watergate
 comment: defneed
-is_a: NMR:1400066
+is_a: NMR:1400037
 
 [Term]
 id: NMR:1400144
 name: excitation sculpting
 comment: def: A specific technique used to suppress the solvent signal in a spectrum. 
-altdef:: A type of pulse sequence (or part of it) used to suppress a frequency (most commonly solvent).
+   altdef:: A type of pulse sequence (or part of it) used to suppress a frequency (most commonly solvent).
 is_a: NMR:1400066
 
 [Term]
 id: NMR:1400146
 name: coherence pathway rejection
 comment: tempdef: A water suppression method which is used to suppress the natural water signal in a gradient selection experiment (e.g. echo/antiecho), where the water coherence is not "refocused" by the refocus gradient (therefore, is not selected).
-defprov: Daniel Schober
+   defprov: Daniel Schober
 is_a: NMR:1400066
 
 [Term]
@@ -3657,8 +4207,8 @@ is_a: NMR:1400143
 id: NMR:1400148
 name: jump and return
 comment: tempdef: A jump and return pulse sequence method is a water suppression method that uses a defined pulse sequences to make fast exchanging protons visible.
-synonym: jump and return pulse sequence
-is_a: NMR:1400066
+   synonym: jump and return pulse sequence
+is_a: NMR:1400037
 
 [Term]
 id: NMR:1400149
@@ -3676,185 +4226,153 @@ is_a: NMR:1400148
 id: NMR:1400151
 name: 1H
 comment: def: The nucleus of the element Hydrogen, a proton. 
-rem1: The nucleus most often studied in NMR metabolomics.
-is_a: NMR:1400083
+   rem1: The nucleus most often studied in NMR metabolomics.
+is_a: _purgatory
 
 [Term]
 id: NMR:1400152
 name: 2H
-is_a: NMR:1400083
+is_a: _purgatory
 versionInfo: TODO: Do we need definitions here?
 
 [Term]
 id: NMR:1400153
 name: 11B
-is_a: NMR:1400083
+is_a: _purgatory
 
 [Term]
 id: NMR:1400154
 name: 13C
-is_a: NMR:1400083
+is_a: _purgatory
 
 [Term]
 id: NMR:1400155
 name: 17O
-is_a: NMR:1400083
+is_a: _purgatory
 
 [Term]
 id: NMR:1400156
 name: 19F
-is_a: NMR:1400083
+is_a: _purgatory
 
 [Term]
 id: NMR:1400157
 name: 29Si
-is_a: NMR:1400083
+is_a: _purgatory
 
 [Term]
 id: NMR:1400158
 name: 31P
-is_a: NMR:1400083
+is_a: _purgatory
 
 [Term]
 id: NMR:1400159
 name: 1D FID
 comment: def: Having been excited by the RF pulse, the nuclei turn back ("relax") to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
-synonym: 1D FID
+   synonym: 1D FID
 is_a: NMR:1000119
 
 [Term]
 id: NMR:1400160
 name: 2D FID
 comment: def: Having been excited by the RF pulse, the nuclei turn back ("relax") to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
-synonym: 2D FID
+   synonym: 2D FID
 is_a: NMR:1000119
 
 [Term]
 id: NMR:1400161
 name: 1D spectrum
 comment: defneed
-synonym: 1D spectrum
+   synonym: 1D spectrum
 is_a: NMR:1000117
 
 [Term]
 id: NMR:1400162
 name: 2D spectrum
 comment: defneed
-synonym: 2D spectrum
+   synonym: 2D spectrum
 is_a: NMR:1000117
-
-[Term]
-id: NMR:1400163
-name: 1D NMR configuration
-comment: tempdef: The process of configuring an NMR instrument for 1D NMR analysis.
-defprov: Daniel Schober
-synonym: 1D NMR configuration
-is_a: NMR:1400184
-versionInfo: TODO: Definition depends on sprcls.
-
-[Term]
-id: NMR:1400164
-name: 2D NMR configuration
-comment: tempdef: The process  of configuring an NMR instrument for 2D NMR analysis.
-defprov: Daniel Schober
-synonym: 2D NMR configuration
-is_a: NMR:1400184
-versionInfo: TODO:  depends on superclass view.
 
 [Term]
 id: NMR:1400165
 name: 1D NMR acquisition parameter set
 comment: defneed
-synonym: 1D NMR acquisition parameter set
+   synonym: 1D NMR acquisition parameter set
 is_a: NMR:1400061
 
 [Term]
 id: NMR:1400166
 name: 2D NMR acquisition parameter set
 comment: defneed
-synonym: 2D NMR acquisition parameter set
+   synonym: 2D NMR acquisition parameter set
 is_a: NMR:1400061
 
 [Term]
 id: NMR:1400167
 name: 1D carr purcell meiboom gill pulse sequence
 comment: tempdef: A modification of Carr-Purcell RF pulse sequence with 90° phase shift in the rotating frame of reference between the 90° pulse and the subsequent 180° pulses to reduce accumulating effects of imperfections in the 180° pulses. Suppression of effects of pulse error accumulation can alternatively be achieved by alternating phases of the 180° pulses by 180°.
-defprov: Daniel Schober
-synonym: 1D CPMG
+   defprov: Daniel Schober
+   synonym: 1D CPMG
 is_a: NMR:1400037
+altLabel: CPMG
 
 [Term]
 id: NMR:1400168
 name: 2D total correlation spectroscopy pulse sequence
 comment: tempdef: Total Correlation Spectroscopy. A 2D homonuclear correlation experiment used to analyse scalar (J) coupling networks between protons. TOCSY is able to relay magnetisation between spins, A-B-C-D.., and can therefore show correlations amongst spins that are not directly coupled (eg A-C and A-D) but exist within the same spin system.
-defprov: Daniel Schober
-synonym:2D TOCSY
+   defprov: Daniel Schober
+   synonym:2D TOCSY
 is_a: NMR:1400037
 
 [Term]
 id: NMR:1400169
 name: 1D pulse sequence
 comment: def: One dimensional (referring to a FID, pre-processed spectrum, or post-processed spectrum).
-synonym: 1D
+   synonym: 1D
 is_a: NMR:1400037
 
 [Term]
 id: NMR:1400170
 name: 2D J-resolved pulse sequence
 comment: tempdef: In 1D NMR, as the multiplets from different chemically shifted nuclei overlap, spectral assignments become too difficult. In order to resolve the chemical shift and spin-spin coupling parameters along the different axis, 2D and 3D J-resolved NMR spectroscopies are used.
-defprov: Daniel Schober
-synonym: 2D J-resolved
+   defprov: Daniel Schober
+   synonym: 2D J-resolved
 is_a: NMR:1400037
 
 [Term]
 id: NMR:1400171
 name: 2D hadamard total correlation spectroscopy pulse sequence
 comment: defneed
-synonym: 2D hadamard TOCSY
+   synonym: 2D hadamard TOCSY
 is_a: NMR:1400037
 
 [Term]
 id: NMR:1400172
 name: 1D diffusion edited pulse sequence
 comment: defneed
-synonym: 1D diffusion edited
+   synonym: 1D diffusion edited
 is_a: NMR:1400037
 
 [Term]
 id: NMR:1400181
 name: quality check result
 comment: tempdef: A quality check result is the usefull outcome of a quality check.
-defprov: Daniel Schober
-is_a: InformationObject
-
-[Term]
-id: NMR:1400182
-name: quality check
-comment: tempdef: A quality check is a quality control method, which is applied to data after they have been processed. It is applied to get information about the quality of the data processing methods.
-defprov: Daniel Schober
-is_a: NMR:1400115
+   defprov: Daniel Schober
+is_a: BFO_0000031
 
 [Term]
 id: NMR:1400183
 name: NMR spectrum
 comment: tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or 'lines'.
-def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
-synonym: NMR spectrum
-is_a: NMR:1000009
-
-[Term]
-id: NMR:1400184
-name: NMR instrument configuration
-comment: def: The configuration of an NMR Instrument.
-synonym: NMR instrument configuration
+   def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
+   synonym: NMR spectrum
 is_a: _purgatory
-consider: use spectrum types
 
 [Term]
 id: NMR:1400185
 name: NMR magnet
 comment: def: A magnet which induces a certain frequency (MHz) and which has a certain bore diameter.
-altdef: The NMR signal is a natural physical property of the certain atomic nuclei but it can only be detected with an external magnetic field. A magnet is a fundamental part of an NMR instrument which induces an electromagnetic force field (RF pulse) and by this excites and aligns the spins of the electrons of the NMR acquisition nucleus. It is usually a big (superconducting) electromagnet which is cooled by liquid helium and can be adjusted to a frequency between 200 and 950 MHz. The magnetic field strength is measured in Tesla or Gauss.
+   altdef: The NMR signal is a natural physical property of the certain atomic nuclei but it can only be detected with an external magnetic field. A magnet is a fundamental part of an NMR instrument which induces an electromagnetic force field (RF pulse) and by this excites and aligns the spins of the electrons of the NMR acquisition nucleus. It is usually a big (superconducting) electromagnet which is cooled by liquid helium and can be adjusted to a frequency between 200 and 950 MHz. The magnetic field strength is measured in Tesla or Gauss.
 is_a: NMR:1400011
 
 [Term]
@@ -3877,7 +4395,6 @@ is_a: NMR:1400186
 [Term]
 id: NMR:1400189
 name: US 2
-comment: 
 is_a: NMR:1400186
 versionInfo: ??? How to model "hoch 2"?
 
@@ -3888,54 +4405,55 @@ is_a: NMR:1400186
 
 [Term]
 id: NMR:1400191
-name: CryoProbe
+name: Bruker CryoProbe
 comment: def: The Bruker BioSpin CryoProbe is a high-performance cryogenically cooled probe developed for high-resolution applications. It has improved signal/noise (S/N) ratios obtained by reducing the operating temperature of the coil and the pre-amplifier. As a result, the efficiency of the coil is improved and the noise of the coil and the pre-amplifier are reduced.The dramatic increase in the S/N ratio by a factor of 3-4, as compared to conventional probes, leads to a possible reduction in experiment time of up to 16 or a reduction in required sample concentration by a factor of up to 4. The CryoProbes possess key characteristics for NMR analysis:
-Significant S/N gains (with moderately salty samples also)
-Short pulse widths
-Short ring down times
-Linear behavior in power response
-Gradient capability
-CryoProbes are available as Triple Resonance, Dual, Selective X Detection, MicroImaging, and Quad Nucleus Probes configurations at 400 MHz and higher
-All high resolution probes have a lock circuit
-All high resolution probes have Z-gradient
-defprov: Bruker website
+   Significant S/N gains (with moderately salty samples also)
+   Short pulse widths
+   Short ring down times
+   Linear behavior in power response
+   Gradient capability
+   CryoProbes are available as Triple Resonance, Dual, Selective X Detection, MicroImaging, and Quad Nucleus Probes configurations at 400 MHz and higher
+   All high resolution probes have a lock circuit
+   All high resolution probes have Z-gradient
+   defprov: Bruker website
 is_a: NMR:1400231
+is_a: NMR:1000324
 
 [Term]
 id: NMR:1400192
 name: high resolution magic angle spin probe
 comment: def: Samples that are neither solid nor liquid, being of biological, chemical, and/or pharmaceutical interest, reveal highly resolved spectra when magic angle spinning is applied. The correct solution is a gradient, such that the field varies along the spinner axis. This so-called Magic Angle Gradient is employed in Bruker’s high resolution Magic Angle Spinning (hr-MAS) probes, and is implemented in such a way that it is compatible with the stator and does not interfere with the sample eject/insert. Bruker BioSpin has developed a series of dedicated probes for standard bore magnets to accommodate the rapidly expanding field of hr-MAS. These probes are available in double (e.g. 1H and 13C) and triple resonance (e.g., 1H, 13C, 15N) modes and come equipped with a deuterium lock channel. The probes have automatic sample ejection and insertion capability, with the availability of an optional sample changer, enabling fully automated sample runs. Probes can be equipped with an optional B0 gradient, directed along the magic angle, so that gradient spectroscopy can be done used.
-defprov: Bruker website
-altdef: High resolution MAS (hr-MAS) provides an easy means of obtaining high resolution spectra for a variety of samples that would otherwise result in poorly resolved spectra. The addition of an hr-MAS probe and a MAS pneumatic unit to a standard high resolution spectrometer is all that is needed to open the gate to the world of hr-MAS spectroscopy and gain access to a vast amount of highly interesting samples.
-synonyms: High resolution MAS, hr-MAS
+   defprov: Bruker website
+   altdef: High resolution MAS (hr-MAS) provides an easy means of obtaining high resolution spectra for a variety of samples that would otherwise result in poorly resolved spectra. The addition of an hr-MAS probe and a MAS pneumatic unit to a standard high resolution spectrometer is all that is needed to open the gate to the world of hr-MAS spectroscopy and gain access to a vast amount of highly interesting samples.
+   synonyms: High resolution MAS, hr-MAS
 is_a: NMR:1400223
 
 [Term]
 id: NMR:1400193
 name: solid magic angle spinning probe
 comment: def: Magic angle spinning, nowadays a routine technique for solids NMR, still offers the capability of innovation. The high mechanical performance of MAS probes in conjunction with efficient rf pulse techniques open new exciting fields in solids NMR of biological samples and in the field of quadrupolar nuclei.
-defprov: Bruker website
-synonym: solid MAS probe
+   defprov: Bruker website
+   synonym: solid MAS probe
 is_a: NMR:1400231
 
 [Term]
 id: NMR:1400194
 name: 1mm MicroProbe
 comment: def: Over the past few years there has been a significantly growing demand for miniaturization in all areas ofmodern research and development. Evoked by many exciting applications, there is a need for analytical methods which require less amounts of sample. Bruker BioSpin meets this challenge with a revolutionary NMR probe design: The 1mm MicroProbe. It operates with disposable 1mm capillary sample tubes and the sample volume of 5 microliters enables the use of lowest amounts of sample to run all high resolution NMR experiments with outstanding sensitivity and up to 16 times faster measurements. Due to the TXI-type probe design, the z-gradient coil and the automatic matching and tuning accessory, the 1mm MicroProbe can be used for a wide variety of NMR experiments. The key advantages of this probe include:
-up to 4 times higher mass sensitivity than 5mm conventional probes (with respect to the same sample amount)
-excellent solvent suppression properties
-virtually no salt effect
-discrete samples in tubes that can be sealed and stored
-automation accessory for sample preparation and handling available
-defprov: Bruker website
+   up to 4 times higher mass sensitivity than 5mm conventional probes (with respect to the same sample amount)
+   excellent solvent suppression properties
+   virtually no salt effect
+   discrete samples in tubes that can be sealed and stored
+   automation accessory for sample preparation and handling available
+   defprov: Bruker website
 is_a: NMR:1400231
 
 [Term]
 id: NMR:1400195
 name: flow high resolution probe
 comment: def: Hyphenated analytical techniques combining mass spectrometry and chromatography are well-established laboratory tools. The combination of chromatography and NMR has also made its way into the analytical laboratory. Further developments even combine all three techniques into an LC-NMR/NMR-MS system. The use of solid phase extraction provides an efficient interface between chromatography and NMR with demands for special type of flow probes.
-defprov: Bruker website
-synonym: flow HR-probe
+   defprov: Bruker website
+   synonym: flow HR-probe
 is_a: NMR:1400223
 
 [Term]
@@ -3985,7 +4503,7 @@ versionInfo: TODO: What is the differrence to NMR instrument?
 id: NMR:1400203
 name: NMR Case
 comment: def: The NMR Case is an economical NMR sample changer for laboratories with modest automation needs. It expands the maximum number of samples your spectrometer can process during unattended operation to 24. The NMR Case consists of multiple components. The NMR Case exchange module installed atop your cryostat. The two front legs are adjustable, making the NMR Case compatible with many different cryostats.
-defprov: Bruker website
+   defprov: Bruker website
 is_a: NMR:1400209
 
 [Term]
@@ -3998,31 +4516,31 @@ is_a: NMR:1400001
 id: NMR:1400205
 name: Bruker AutoClean
 comment: def: In today's fast-paced research environment, NMR tubes are often used once and discarded, creating needless waste. With the Bruker BioSpin Autoclean™ system you can now recycle 5mm, 3mm, or 5mm/3mm step-down (Wilmad 520-1B) NMR tubes. AutoClean NMR Tube Washing System is a simple way to recoup the substantial investment your organization makes in quality NMR tubes, and cut back on needless waste material.
-defprov: Bruker website
+   defprov: Bruker website
 is_a: NMR:1400204
 
 [Term]
 id: NMR:1400206
 name: Bruker BEST NMR
 comment: def: The introduction of biological screening and combinatorial chemistry for chemical synthesis has also introduced new requirements for NMR automation, e.g., the use of well plates for sample input, increased demands on throughput, and the need for quick and simple interpretation of the acquired NMR data.
-defprov: Bruker website
-synonym: Bruker Efficient Sample Transfer NMR
+   defprov: Bruker website
+   synonym: Bruker Efficient Sample Transfer NMR
 is_a: NMR:1400209
 
 [Term]
 id: NMR:1400207
 name: SampleRail
 comment: def: This system automatically prepares an NMR sample, inserts it into an NMR magnet, performs NMR experiments on the sample, and transports it back to the preparation system.
-The SampleRail fulfills the transporting tasks from the preparation system into the NMR magnet and back
-defprov: website
+   The SampleRail fulfills the transporting tasks from the preparation system into the NMR magnet and back
+   defprov: website
 is_a: NMR:1400002
 
 [Term]
 id: NMR:1400208
 name: SampleJet
 comment: def: Bruker BioSpin introduces the SampleJet, a robot for NMR tube automation. The SampleJet has been consciously designed to meet the growing customer demand for simplicity, versatility and higher throughput in NMR sample tube automation.
-The SampleJet utilizes the modern-day industry standard for sample arrangements—the 96 well plate array. Therefore, the samples may be handled by standard lab automation devices before or after the NMR measurement.
-defprov: Bruker website
+   The SampleJet utilizes the modern-day industry standard for sample arrangements—the 96 well plate array. Therefore, the samples may be handled by standard lab automation devices before or after the NMR measurement.
+   defprov: Bruker website
 is_a: NMR:1400209
 
 [Term]
@@ -4035,16 +4553,16 @@ is_a: NMR:1400002
 id: NMR:1400210
 name: B-ACS
 comment: def: The Bruker Automatic Sample Changer (B-ACS 60/120), used in conjunction with Bruker DISNMR, UXNMR or XWIN-NMR software, provides dialog-guided facilities which allow the user to easily and effectively perform automatic (continuous) experiments. Features include a 60 or 120 sample capacity, random accessing of samples, positive sample identification with the optional bar code reader, and temperature control of individual samples with the optional sample heater unit.
-defprov: Bruker website
+   defprov: Bruker website
 is_a: NMR:1400209
 
 [Term]
 id: NMR:1400211
 name: Bruker MATCH
 comment: def: The Bruker Multiple Adjustable Tube Clamp Holder MATCH™ system is a holder for 100 mm long NMR sample tubes with diameters ranging from micro tubes up to 5 mm NMR tubes. The MATCH insert fits into a standard 10 mm Bruker spinner and is suitable for all non-spinning applications.
-The MATCH system provides an easy and cost efficient means of optimizing the signal-to-noise ratio of each sample. By matching the NMR tube diameter to the size of the sample, most of the sample can be placed in the active column of the NMR coil. This leads to an enhanced signal detection compared to diluting the same sample quantity in a larger tube.
-defprov: Bruker website
-synonym: Bruker Multiple Adjustable Tube Clamp Holder
+   The MATCH system provides an easy and cost efficient means of optimizing the signal-to-noise ratio of each sample. By matching the NMR tube diameter to the size of the sample, most of the sample can be placed in the active column of the NMR coil. This leads to an enhanced signal detection compared to diluting the same sample quantity in a larger tube.
+   defprov: Bruker website
+   synonym: Bruker Multiple Adjustable Tube Clamp Holder
 is_a: NMR:1400212
 
 [Term]
@@ -4070,11 +4588,6 @@ versionInfo: TODO: May need no definition.
 id: NMR:1400215
 name: TopSpin 1.3 software
 is_a: NMR:1400214
-
-[Term]
-id: NMR:1400216
-name: NMR Suite
-is_a: NMR:1000009
 
 [Term]
 id: NMR:1400217
@@ -4105,17 +4618,17 @@ is_a: NMR:1400214
 id: NMR:1400223
 name: high resolution probe
 comment: def:BRUKER BIOSPIN's experienced Research & Development group not only delivers top-performance probes for the more common experiments, but also a wealth of special probes for almost any application. For high resolution (HR) NMR we offer probes with a variety of important characteristics and features.
-defprov: Bruker website
-synonym: HR Probe
+   defprov: Bruker website
+   synonym: HR Probe
 is_a: NMR:1400231
 
 [Term]
 id: NMR:1400224
 name: high resolution probe with ATM
 comment: def: The ATM option for AVANCE spectrometers is available for:
-Double resonance probes in fixed-frequency and broadband tunable configurations with either direct or indirect detection. Thus, for multinuclear operation, as often required for applications in inorganic chemistry, ATM facilitates the accurate setting of 90° pulsewidths on both observe and decoupling channels for each chosen nucleus and each individual sample - even with full automation. Triple resonance probes in fixed-frequency configurations, as typically used for inverse detection with high-field systems.
-defprov: Bruker website
-synonym: High Resolution Probes with Automatic Tuning and Matching, HR probe with ATM
+   Double resonance probes in fixed-frequency and broadband tunable configurations with either direct or indirect detection. Thus, for multinuclear operation, as often required for applications in inorganic chemistry, ATM facilitates the accurate setting of 90° pulsewidths on both observe and decoupling channels for each chosen nucleus and each individual sample - even with full automation. Triple resonance probes in fixed-frequency configurations, as typically used for inverse detection with high-field systems.
+   defprov: Bruker website
+   synonym: High Resolution Probes with Automatic Tuning and Matching, HR probe with ATM
 is_a: NMR:1400223
 
 [Term]
@@ -4146,7 +4659,7 @@ is_a: NMR:1000091
 
 [Term]
 id: NMR:1400230
-name: Delta software
+name: Delta NMR software
 is_a: NMR:1400229
 
 [Term]
@@ -4169,7 +4682,7 @@ is_a: NMR:1400232
 
 [Term]
 id: NMR:1400234
-name: Varian NMR_instrument
+name: Varian NMR instrument
 is_a: NMR:1000489
 
 [Term]
@@ -4233,14 +4746,14 @@ is_a: NMR:1400015
 id: NMR:1400247
 name: DISCOVERY console
 comment: def: The Discovery™ is a Windows XP Professional-based, integrated console designed especially for Solid-State NMR. The console includes everything needed to interface to any magnet and solids probe - from computer to cables to duplexing network
-defprov: tecmag website
+   defprov: tecmag website
 is_a: NMR:1400246
 
 [Term]
 id: NMR:1400248
 name: tecmag EAGLE probe
 comment: def: The Eagle™ is a 4 mm 1H/X solid-state MAS probe with a top spinning speed of 18 kHz. Its simple design is robust, reliable and easy to spin. Configurations are available for 200 to 600 MHz widebore magnets on Tecmag, Bruker, Chemagnetics, JEOL and Varian spectrometers.
-defprov: website
+   defprov: website
 is_a: NMR:1400243
 
 [Term]
@@ -4274,7 +4787,7 @@ versionInfo: TODO: Belongs in Ref Ontol.
 
 [Term]
 id: NMR:1400255
-name: NMR vendor
+name: NMR instrument vendor
 comment: defneed
 is_a: NMR:1001269
 
@@ -4307,9 +4820,8 @@ is_a: NMR:1400255
 
 [Term]
 id: NMR:1400262
-name: sample temperature
+name: sample temperature information
 comment: def: In some cases, it is necessary or advisable to control the temperature of the sample at some value other than ambient. The sample may be only slightly solubility at room temperatures, or it may be desirable to control some aspect of the dynamics of the system. In such cases, a default temperature, or some means of selecting this parameter, can be built into the experiment.
-is_a: NMR:1002012
 is_a: NMR:1000548
 
 [Term]
@@ -4329,15 +4841,13 @@ is_a: NMR:1400255
 
 [Term]
 id: NMR:1400267
-name: file reference
-comment: defneed
-is_a: NMR:1400117
-
-[Term]
-id: NMR:1400268
-name: literature reference
-comment: defneed
-is_a: _purgatory
+name: data file
+is_a: BFO_0000031
+editorialNote: This is a class annotation exemplifying skos usage. We assume the rdfs:label to capture the skos:preferedLabel.
+scopeNote: In the NMR case a file generated by an NMR acquisition computer, console or NMR processing software.
+definition: Any data file as generated by some acquisition computer or console.
+example: an FID raw data file
+altLabel: file
 
 [Term]
 id: NMR:1400270
@@ -4381,14 +4891,14 @@ is_a: NMR:1400014
 id: NMR:1400283
 name: continuous wave NMR instrument
 comment: Continuous wave NMR spectrometers are similar in principle to optical spectrometers. The sample is held in a strong magnetic field, and the frequency of the source is slowly scanned (in some instruments, the source frequency is held constant, and the field is scanned).
-Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm
+   Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm
 is_a: NMR:1000012
 
 [Term]
 id: NMR:1400284
 name: fourier transformation NMR instrument
 comment: In FT-NMR, all frequencies in a spectrum are irradiated simultaneously with a radio frequency pulse. Following the pulse, the nuclei return to thermal equilibrium. A time domain emission signal is recorded by the instrument as the nuclei relax. A frequency domain spectrum is obtained by Fourier transformation.
-Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm
+   Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm
 is_a: NMR:1000012
 
 [Term]
@@ -4580,69 +5090,63 @@ is_a: NMR:1400255
 [Term]
 id: NMR:1400324
 name: 27Al
-is_a: NMR:1400083
+is_a: _purgatory
 
 [Term]
 id: _purgatory
 name: _purgatory
 is_a: Thing
+scopeNote: This administrative helper class contains the classes which might be revived at some point in time or from which the definitions could be harvested these are at the moment not deleted form the release file.
 
 [Term]
-id: CompoundOfCollectiveMaterialEntities
-name: CompoundOfCollectiveMaterialEntities
-namespace: btl2
+id: apodization
+name: apodization
+comment: apodization
+is_a: NMR:1400041
+
+[Term]
+id: keyword
+name: keyword
+is_a: NMR:1400117
+
+[Term]
+id: BFO_0000015
+name: BFO_0000015
+namespace: obo
 is_a: Thing
 
 [Term]
-id: InformationObject
-name: InformationObject
-namespace: btl2
+id: BFO_0000017
+name: BFO_0000017
+namespace: obo
 is_a: Thing
 
 [Term]
-id: MonoMolecularEntity
-name: MonoMolecularEntity
-namespace: btl2
+id: BFO_0000019
+name: BFO_0000019
+namespace: obo
 is_a: Thing
 
 [Term]
-id: ObjectQuality
-name: ObjectQuality
-namespace: btl2
+id: BFO_0000030
+name: BFO_0000030
+namespace: obo
 is_a: Thing
 
 [Term]
-id: Plan
-name: Plan
-namespace: btl2
+id: BFO_0000031
+name: BFO_0000031
+namespace: obo
 is_a: Thing
 
 [Term]
-id: PolyMolecularCompositeEntity
-name: PolyMolecularCompositeEntity
-namespace: btl2
-is_a: Thing
-
-[Term]
-id: ProcessQuality
-name: ProcessQuality
-namespace: btl2
-is_a: Thing
-
-[Term]
-id: Role
-name: Role
-namespace: btl2
-is_a: Thing
+id: PATO_0000001
+name: PATO_0000001
+namespace: obo
+is_a: BFO_0000019
 
 
 ! ----------------------  PROPERTIES  -------------------------
-
-[Typedef]
-id: isBearerOf
-name: isBearerOf
-namespace: btl2
-is_metadata_tag: false
 
 
 ! ----------------------  INSTANCES  -------------------------

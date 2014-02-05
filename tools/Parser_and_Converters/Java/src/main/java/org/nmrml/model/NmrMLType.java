@@ -10,7 +10,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * This is the root element for the COordination Of Standards In MetabOlomicS nmrML schema, which is intended to capture the use of a nuclear magnetic resonance spectrometer, the data generated, and the initial processing of that data (to the level of the peak list).
+ * This is the root element for the COordination Of Standards In MetabOlomicS
+ *         nmrML schema, which is intended to capture the use of a nuclear magnetic resonance
+ *         spectrometer, the data generated, and the initial processing of that data (to the level of
+ *         the peak list).
  * 
  * <p>Java class for nmrMLType complex type.
  * 
