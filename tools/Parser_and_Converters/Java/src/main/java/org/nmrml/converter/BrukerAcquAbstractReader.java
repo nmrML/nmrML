@@ -445,7 +445,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     matcher = REGEXP_NUC.matcher(line);
                     matcher.find();
                     String atom = matcher.group(1).replace("<", "").replace(">", "");
-                    if (atom.matches("H")) {
+                    //TODO check if there the atom could also be defined simply as H
+                    if (atom.matches("1H")) {
                         try {
                             // TODO check why one uses cvTermType instead of cvParamType
                             CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI", "H");
