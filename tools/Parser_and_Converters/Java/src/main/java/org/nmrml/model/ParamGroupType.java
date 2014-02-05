@@ -11,7 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Structure allowing the use of a controlled (cvParam) or uncontrolled vocabulary (userParam), or a reference to a predefined set of these in this nmrML file (paramGroupRef).
+ * Structure allowing the use of a controlled (cvParam) or uncontrolled
+ *         vocabulary (userParam), or a reference to a predefined set of these in this nmrML file
+ *         (paramGroupRef).
  * 
  * <p>Java class for ParamGroupType complex type.
  * 

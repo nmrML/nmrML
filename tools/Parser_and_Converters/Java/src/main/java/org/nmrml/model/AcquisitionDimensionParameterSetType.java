@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.
+ * Descriptions of the acquisition parameters set prior to the start of data
+ *         acquisition specific to each NMR analysis dimension.
  * 
  * <p>Java class for AcquisitionDimensionParameterSetType complex type.
  * 
@@ -21,11 +22,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="acquisitionNucleus" type="{http://nmrml.org/schema}CVTermType"/>
- *         &lt;element name="gammaB1PulseFieldStrength" type="{http://nmrml.org/schema}ValueWithUnitType"/>
- *         &lt;element name="sweepWidth" type="{http://nmrml.org/schema}ValueWithUnitType"/>
- *         &lt;element name="irradiationFrequency" type="{http://nmrml.org/schema}ValueWithUnitType"/>
  *         &lt;element name="decouplingMethod" type="{http://nmrml.org/schema}CVTermType" minOccurs="0"/>
+ *         &lt;element name="acquisitionNucleus" type="{http://nmrml.org/schema}CVTermType"/>
+ *         &lt;element name="effectiveExcitationField" type="{http://nmrml.org/schema}ValueWithUnitType"/>
+ *         &lt;element name="sweepWidth" type="{http://nmrml.org/schema}ValueWithUnitType"/>
+ *         &lt;element name="pulseWidth" type="{http://nmrml.org/schema}ValueWithUnitType"/>
+ *         &lt;element name="irradiationFrequency" type="{http://nmrml.org/schema}ValueWithUnitType"/>
+ *         &lt;element name="decouplingNucleus" type="{http://nmrml.org/schema}CVTermType"/>
  *         &lt;element name="samplingStrategy" type="{http://nmrml.org/schema}CVTermType"/>
  *         &lt;element name="samplingTimePoints" type="{http://nmrml.org/schema}BinaryDataArrayType" minOccurs="0"/>
  *       &lt;/sequence>
@@ -40,26 +43,32 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AcquisitionDimensionParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
-    "acquisitionNucleus",
-    "gammaB1PulseFieldStrength",
-    "sweepWidth",
-    "irradiationFrequency",
     "decouplingMethod",
+    "acquisitionNucleus",
+    "effectiveExcitationField",
+    "sweepWidth",
+    "pulseWidth",
+    "irradiationFrequency",
+    "decouplingNucleus",
     "samplingStrategy",
     "samplingTimePoints"
 })
 public class AcquisitionDimensionParameterSetType {
 
+    @XmlElement(namespace = "http://nmrml.org/schema")
+    protected CVTermType decouplingMethod;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected CVTermType acquisitionNucleus;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
-    protected ValueWithUnitType gammaB1PulseFieldStrength;
+    protected ValueWithUnitType effectiveExcitationField;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType sweepWidth;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    protected ValueWithUnitType pulseWidth;
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType irradiationFrequency;
-    @XmlElement(namespace = "http://nmrml.org/schema")
-    protected CVTermType decouplingMethod;
+    @XmlElement(namespace = "http://nmrml.org/schema", required = true)
+    protected CVTermType decouplingNucleus;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected CVTermType samplingStrategy;
     @XmlElement(namespace = "http://nmrml.org/schema")
@@ -68,6 +77,30 @@ public class AcquisitionDimensionParameterSetType {
     protected boolean decoupled;
     @XmlAttribute(name = "numberOfDataPoints", required = true)
     protected BigInteger numberOfDataPoints;
+
+    /**
+     * Gets the value of the decouplingMethod property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CVTermType }
+     *     
+     */
+    public CVTermType getDecouplingMethod() {
+        return decouplingMethod;
+    }
+
+    /**
+     * Sets the value of the decouplingMethod property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CVTermType }
+     *     
+     */
+    public void setDecouplingMethod(CVTermType value) {
+        this.decouplingMethod = value;
+    }
 
     /**
      * Gets the value of the acquisitionNucleus property.
@@ -94,27 +127,27 @@ public class AcquisitionDimensionParameterSetType {
     }
 
     /**
-     * Gets the value of the gammaB1PulseFieldStrength property.
+     * Gets the value of the effectiveExcitationField property.
      * 
      * @return
      *     possible object is
      *     {@link ValueWithUnitType }
      *     
      */
-    public ValueWithUnitType getGammaB1PulseFieldStrength() {
-        return gammaB1PulseFieldStrength;
+    public ValueWithUnitType getEffectiveExcitationField() {
+        return effectiveExcitationField;
     }
 
     /**
-     * Sets the value of the gammaB1PulseFieldStrength property.
+     * Sets the value of the effectiveExcitationField property.
      * 
      * @param value
      *     allowed object is
      *     {@link ValueWithUnitType }
      *     
      */
-    public void setGammaB1PulseFieldStrength(ValueWithUnitType value) {
-        this.gammaB1PulseFieldStrength = value;
+    public void setEffectiveExcitationField(ValueWithUnitType value) {
+        this.effectiveExcitationField = value;
     }
 
     /**
@@ -142,6 +175,30 @@ public class AcquisitionDimensionParameterSetType {
     }
 
     /**
+     * Gets the value of the pulseWidth property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ValueWithUnitType }
+     *     
+     */
+    public ValueWithUnitType getPulseWidth() {
+        return pulseWidth;
+    }
+
+    /**
+     * Sets the value of the pulseWidth property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ValueWithUnitType }
+     *     
+     */
+    public void setPulseWidth(ValueWithUnitType value) {
+        this.pulseWidth = value;
+    }
+
+    /**
      * Gets the value of the irradiationFrequency property.
      * 
      * @return
@@ -166,27 +223,27 @@ public class AcquisitionDimensionParameterSetType {
     }
 
     /**
-     * Gets the value of the decouplingMethod property.
+     * Gets the value of the decouplingNucleus property.
      * 
      * @return
      *     possible object is
      *     {@link CVTermType }
      *     
      */
-    public CVTermType getDecouplingMethod() {
-        return decouplingMethod;
+    public CVTermType getDecouplingNucleus() {
+        return decouplingNucleus;
     }
 
     /**
-     * Sets the value of the decouplingMethod property.
+     * Sets the value of the decouplingNucleus property.
      * 
      * @param value
      *     allowed object is
      *     {@link CVTermType }
      *     
      */
-    public void setDecouplingMethod(CVTermType value) {
-        this.decouplingMethod = value;
+    public void setDecouplingNucleus(CVTermType value) {
+        this.decouplingNucleus = value;
     }
 
     /**

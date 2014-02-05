@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * A reference to a previously defined ParamGroup, which is a reusable container of one or more cvParams.
+ * A reference to a previously defined ParamGroup, which is a reusable
+ *         container of one or more cvParams.
  * 
  * <p>Java class for ReferenceableParamGroupRefType complex type.
  * 

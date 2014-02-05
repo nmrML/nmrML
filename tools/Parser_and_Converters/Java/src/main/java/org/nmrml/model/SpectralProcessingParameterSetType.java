@@ -11,7 +11,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Parameters recorded when raw data set is processed to create a spectra.
+ * Parameters recorded when raw data set is processed to create a
+ *         spectra.
  * 
  * <p>Java class for SpectralProcessingParameterSetType complex type.
  * 

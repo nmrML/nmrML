@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Parameters recorded when raw data set is processed to create a 2D spectra.
+ * Parameters recorded when raw data set is processed to create a 2D
+ *         spectra.
  * 
  * <p>Java class for SpectralProcessingParameterSet2DType complex type.
  * 

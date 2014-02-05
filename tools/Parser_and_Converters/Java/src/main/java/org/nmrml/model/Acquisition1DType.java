@@ -17,17 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="acquisitionParameterSet">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;extension base="{http://nmrml.org/schema}AcquisitionParameterSet1DType">
- *                 &lt;sequence>
- *                   &lt;element name="DirectDimensionParameterSet" type="{http://nmrml.org/schema}AcquisitionDimensionParameterSetType"/>
- *                 &lt;/sequence>
- *               &lt;/extension>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
+ *         &lt;element name="acquisitionParameterSet" type="{http://nmrml.org/schema}AcquisitionParameterSet1DType"/>
  *         &lt;element name="fidData" type="{http://nmrml.org/schema}BinaryDataArrayType"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -45,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 public class Acquisition1DType {
 
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
-    protected Acquisition1DType.AcquisitionParameterSet acquisitionParameterSet;
+    protected AcquisitionParameterSet1DType acquisitionParameterSet;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected BinaryDataArrayType fidData;
 
@@ -54,10 +44,10 @@ public class Acquisition1DType {
      * 
      * @return
      *     possible object is
-     *     {@link Acquisition1DType.AcquisitionParameterSet }
+     *     {@link AcquisitionParameterSet1DType }
      *     
      */
-    public Acquisition1DType.AcquisitionParameterSet getAcquisitionParameterSet() {
+    public AcquisitionParameterSet1DType getAcquisitionParameterSet() {
         return acquisitionParameterSet;
     }
 
@@ -66,10 +56,10 @@ public class Acquisition1DType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Acquisition1DType.AcquisitionParameterSet }
+     *     {@link AcquisitionParameterSet1DType }
      *     
      */
-    public void setAcquisitionParameterSet(Acquisition1DType.AcquisitionParameterSet value) {
+    public void setAcquisitionParameterSet(AcquisitionParameterSet1DType value) {
         this.acquisitionParameterSet = value;
     }
 
@@ -95,63 +85,6 @@ public class Acquisition1DType {
      */
     public void setFidData(BinaryDataArrayType value) {
         this.fidData = value;
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;extension base="{http://nmrml.org/schema}AcquisitionParameterSet1DType">
-     *       &lt;sequence>
-     *         &lt;element name="DirectDimensionParameterSet" type="{http://nmrml.org/schema}AcquisitionDimensionParameterSetType"/>
-     *       &lt;/sequence>
-     *     &lt;/extension>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "directDimensionParameterSet"
-    })
-    public static class AcquisitionParameterSet
-        extends AcquisitionParameterSet1DType
-    {
-
-        @XmlElement(name = "DirectDimensionParameterSet", namespace = "http://nmrml.org/schema", required = true)
-        protected AcquisitionDimensionParameterSetType directDimensionParameterSet;
-
-        /**
-         * Gets the value of the directDimensionParameterSet property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link AcquisitionDimensionParameterSetType }
-         *     
-         */
-        public AcquisitionDimensionParameterSetType getDirectDimensionParameterSet() {
-            return directDimensionParameterSet;
-        }
-
-        /**
-         * Sets the value of the directDimensionParameterSet property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link AcquisitionDimensionParameterSetType }
-         *     
-         */
-        public void setDirectDimensionParameterSet(AcquisitionDimensionParameterSetType value) {
-            this.directDimensionParameterSet = value;
-        }
-
     }
 
 }
