@@ -28,6 +28,8 @@ import org.nmrml.model.BinaryDataArrayType;
 import org.nmrml.model.CVListType;
 import org.nmrml.model.CVParamType;
 import org.nmrml.model.CVTermType;
+import org.nmrml.model.ContactListType;
+import org.nmrml.model.ContactType;
 import org.nmrml.model.InstrumentConfigurationListType;
 import org.nmrml.model.InstrumentConfigurationType;
 import org.nmrml.model.NmrMLType;
@@ -197,6 +199,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
     //TODO review REGEXP_OWNER
     // examples of REGEXP_OWNER : guest; basically the used ID
     private final static Pattern REGEXP_OWNER = Pattern.compile("\\#\\#OWNER= (.+)"); // owner
+    private final static Pattern REGEXP_METAINFO = Pattern.compile("\\$\\$ (.+)"); // owner
 
     private final static Pattern REGEXP_TEMPERATURE = Pattern.compile("\\#\\#\\$TE= (\\d+\\.?\\d?)"); // temperature in Kelvin
 
@@ -388,6 +391,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
             PulseSequenceType pulseSequence =objectFactory.createPulseSequenceType();
             SoftwareListType softwareListType = objectFactory.createSoftwareListType();
             TemperatureType temperatureType = objectFactory.createTemperatureType();
+            ContactType contactType = objectFactory.createContactType();
 
             InstrumentConfigurationType instrumentConfigurationType = objectFactory.createInstrumentConfigurationType();
             instrumentConfigurationType.getCvParam().add(cvLoader.fetchCVParam("NMRCV","BRUKER"));
@@ -654,8 +658,24 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     userParamType.setValue(matcher.group(1));
                     instrumentConfigurationType.getUserParam().add(userParamType);
                 }
-                //TODO get this parameters working
-//            parameterSet.setContactRefList(); // is this available in the acqu file?
+                /* extract contact */
+                if(REGEXP_OWNER.matcher(line).find()){
+                    matcher=REGEXP_OWNER.matcher(line);
+                    matcher.find();
+                    contactType.setFullname(matcher.group(1));
+                }
+                /* extract email from "metadata" */
+                if(REGEXP_METAINFO.matcher(line).find()){
+                    matcher=REGEXP_METAINFO.matcher(line);
+                    matcher.find();
+                    for(String token : matcher.group(1).split(" ")){
+                        if(token.contains("@")){
+                            contactType.setEmail(token);
+                            break;
+                        }
+                    }
+                }
+
 
                 line = inputAcqReader.readLine();
 
@@ -687,7 +707,10 @@ public class BrukerAcquAbstractReader implements AcquReader {
             parameterSet.setPulseSequence(pulseSequence);
 
 
-
+            /* set contact information */
+            ContactListType contactListType = objectFactory.createContactListType();
+            contactListType.getContact().add(contactType);
+            nmrMLType.setContactList(contactListType);
 
             /* set other parameters */
             nmrMLType.setSoftwareList(softwareListType);
