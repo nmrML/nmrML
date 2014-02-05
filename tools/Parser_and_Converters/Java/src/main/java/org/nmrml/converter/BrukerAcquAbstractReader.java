@@ -38,6 +38,7 @@ import org.nmrml.model.SourceFileListType;
 import org.nmrml.model.SourceFileRefListType;
 import org.nmrml.model.SourceFileRefType;
 import org.nmrml.model.SourceFileType;
+import org.nmrml.model.TemperatureType;
 import org.nmrml.model.UserParamType;
 import org.nmrml.model.ValueWithUnitType;
 
@@ -166,7 +167,10 @@ public class BrukerAcquAbstractReader implements AcquReader {
     // variables not yet defined in Experiment
     private final static Pattern REGEXP_AQ_MODE = Pattern.compile("\\#\\#\\$AQ\\_mod= (\\d+)"); //acquisition mode
     private final static Pattern REGEXP_DIGMOD = Pattern.compile("\\#\\#\\$DIGMOD= (\\d+)"); //filter type
-    private final static Pattern REGEXP_NS = Pattern.compile("\\#\\#\\$NS= (\\d+)"); //number of scans
+    private final static Pattern REGEXP_NUMBEROFSCANS = Pattern.compile("\\#\\#\\$NS= (\\d+)"); //number of scans
+    private final static Pattern REGEXP_DUMMYSCANS = Pattern.compile("\\#\\#\\$DS= (\\d+)"); //number of dummy (steady state) scans
+    private final static Pattern REGEXP_RELAXATIONDELAY = Pattern.compile("\\#\\#\\$RD= (\\d+\\.?\\d?)"); // relaxation delay
+    private final static Pattern REGEXP_SPINNINGRATE = Pattern.compile("\\#\\#\\$MARS= (\\d+)"); // spinning rate
     //TODO review REGEXP_PULPROG
     // examples of REGEXP_PULPROG : <zg> <cosydfph> <bs_hsqcetgpsi>; basically a word between < >
     private final static Pattern REGEXP_PULPROG = Pattern.compile("\\#\\#\\$PULPROG= (.+)"); //pulse program
@@ -192,6 +196,9 @@ public class BrukerAcquAbstractReader implements AcquReader {
     //TODO review REGEXP_OWNER
     // examples of REGEXP_OWNER : guest; basically the used ID
     private final static Pattern REGEXP_OWNER = Pattern.compile("\\#\\#OWNER= (.+)"); // owner
+
+    private final static Pattern REGEXP_TEMPERATURE = Pattern.compile("\\#\\#\\$TE= (\\d+\\.?\\d?)"); // temperature in Kelvin
+
 
     private static enum CvParam {
         FILE_FORMAT
@@ -378,6 +385,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
             PulseSequenceType pulseSequence =objectFactory.createPulseSequenceType();
             SoftwareListType softwareListType = objectFactory.createSoftwareListType();
+            TemperatureType temperatureType = objectFactory.createTemperatureType();
 
             InstrumentConfigurationType instrumentConfigurationType = objectFactory.createInstrumentConfigurationType();
             instrumentConfigurationType.getCvParam().add(cvLoader.fetchCVParam("NMRCV","BRUKER"));
@@ -524,10 +532,55 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //                pulseSequence.setName(matcher.group(1).replaceAll("<", "").replaceAll(">", ""));
                 }
             /* number of scans */
-                if (REGEXP_NS.matcher(line).find()) {
-                    matcher = REGEXP_NS.matcher(line);
+                if (REGEXP_NUMBEROFSCANS.matcher(line).find()) {
+                    matcher = REGEXP_NUMBEROFSCANS.matcher(line);
                     matcher.find();
                     parameterSet.setNumberOfScans(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
+                    //debug
+//                    System.out.println("Number of scans: "+matcher.group(1));
+                }
+                /* number of dummy (steady state) scans */
+                if (REGEXP_DUMMYSCANS.matcher(line).find()) {
+                    matcher = REGEXP_DUMMYSCANS.matcher(line);
+                    matcher.find();
+                    parameterSet.setNumberOfSteadyStateScans(BigInteger.valueOf(Long.parseLong(matcher.group(1))));
+                    //debug
+//                    System.out.println("Number of dummy scans: "+matcher.group(1));
+                }
+                /* relaxation delay */
+                if(REGEXP_RELAXATIONDELAY.matcher(line).find()){
+                    matcher = REGEXP_RELAXATIONDELAY.matcher(line);
+                    matcher.find();
+                    value = objectFactory.createValueWithUnitType();
+                    value.setValue(matcher.group(1));
+                    // TODO move CVParam definition to a separate method...
+                    try {
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "SECOND");
+                        value.setUnitCvRef(cvParamType.getCvRef());
+                        value.setUnitName(cvParamType.getName());
+                        value.setUnitAccession(cvParamType.getAccession());
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    parameterSet.setRelaxationDelay(value);
+
+                }
+                /* spinning rate */
+                if(REGEXP_SPINNINGRATE.matcher(line).find()){
+                    matcher = REGEXP_SPINNINGRATE.matcher(line);
+                    matcher.find();
+                    value = objectFactory.createValueWithUnitType();
+                    Double spiningRate = Double.parseDouble(matcher.group(1));
+                    value.setValue(spiningRate.toString());
+                    try {
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "HERTZ");
+                        value.setUnitCvRef(cvParamType.getCvRef());
+                        value.setUnitName(cvParamType.getName());
+                        value.setUnitAccession(cvParamType.getAccession());
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    parameterSet.setSpinningRate(value);
                 }
 
                 if (REGEXP_BF1.matcher(line).find()) {
@@ -546,6 +599,27 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     }
                     acquParameters.setIrradiationFrequency(value);
                 }
+                /* temperature of the experiment */
+                if(REGEXP_TEMPERATURE.matcher(line).find()) {
+                    matcher = REGEXP_TEMPERATURE.matcher(line);
+                    matcher.find();
+                    value = objectFactory.createValueWithUnitType();
+                    Double temperature = Double.parseDouble(matcher.group(1));
+                    value.setValue(temperature.toString());
+                    //TODO temperature should be a CV parameter...
+                    try {
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "KELVIN");
+                        value.setUnitCvRef(cvParamType.getCvRef());
+                        value.setUnitName(cvParamType.getName());
+                        value.setUnitAccession(cvParamType.getAccession());
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    parameterSet.setSampleAcquisitionTemperature(value);
+                    //debug
+//                    System.out.println("Temperature: "+matcher.group(1));
+                }
+
                 /* add the file format to the source files*/
                 if (REGEXP_ORIGIN.matcher(line).find()) {
                     matcher = REGEXP_ORIGIN.matcher(line);
@@ -597,6 +671,16 @@ public class BrukerAcquAbstractReader implements AcquReader {
             AcquisitionType acquisitionType = objectFactory.createAcquisitionType();
             acquisitionType.setAcquisition1D(acquisition1DType);
             parameterSet.setPulseSequence(pulseSequence);
+
+            /* default values */
+            // check if this information is in the acqus (doubt)
+            CVTermType cvTerm = objectFactory.createCVTermType();
+            cvTerm.setCvRef(cvLoader.fetchCVParam("NMRCV", "TUBE").getCvRef());
+            cvTerm.setName(cvLoader.fetchCVParam("NMRCV", "TUBE").getName());
+            cvTerm.setAccession(cvLoader.fetchCVParam("NMRCV", "TUBE").getAccession());
+            parameterSet.setSampleContainer(cvTerm);
+
+
             /* set other parameters */
             nmrMLType.setSoftwareList(softwareListType);
 
@@ -607,6 +691,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
             nmrMLType.setInstrumentConfigurationList(instrumentConfigurationListType);
 
             nmrMLType.setAcquisition(acquisitionType);
+
             return nmrMLType;
         }
 
