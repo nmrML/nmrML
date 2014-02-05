@@ -11,7 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * This element holds additional data or annotation as a simple CV term with no further values (Parameters) associated with it. Only controlled CV terms values are allowed here.
+ * This element holds additional data or annotation as a simple CV term with no
+ *         further values (Parameters) associated with it. Only controlled CV terms values are allowed
+ *         here.
  * 
  * <p>Java class for CVTermType complex type.
  * 

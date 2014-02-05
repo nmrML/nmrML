@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * This element holds additional data or annotation. Only controlled values are allowed here.
+ * This element holds additional data or annotation. Only controlled values are
+ *         allowed here.
  * 
  * <p>Java class for ValueWithUnitType complex type.
  * 

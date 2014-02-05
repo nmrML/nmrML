@@ -10,7 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * This element holds additional data or annotation. In contrast to CVTermType, here a pair of CV term plus a value (=Parameter) is captured. Only controlled values are allowed here.
+ * This element holds additional data or annotation. In contrast to CVTermType,
+ *         here a pair of CV term plus a value (=Parameter) is captured. Only controlled values are
+ *         allowed here.
  * 
  * <p>Java class for CVParamType complex type.
  * 

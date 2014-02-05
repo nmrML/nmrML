@@ -15,7 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * A collection of CVParam and UserParam elements that can be referenced from elsewhere in this nmrML document by using the 'paramGroupRef' element in that location to reference the 'id' attribute value of this element.
+ * A collection of CVParam and UserParam elements that can be referenced from
+ *         elsewhere in this nmrML document by using the 'paramGroupRef' element in that location to
+ *         reference the 'id' attribute value of this element.
  * 
  * <p>Java class for ReferenceableParamGroupType complex type.
  * 

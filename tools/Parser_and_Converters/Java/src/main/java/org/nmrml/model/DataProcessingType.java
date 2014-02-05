@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * Description of the way in which a particular software was used.
+ * Description of the way in which a particular software was
+ *         used.
  * 
  * <p>Java class for DataProcessingType complex type.
  * 

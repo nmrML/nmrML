@@ -22,6 +22,7 @@ import org.nmrml.cv.BrukerMapper;
 import org.nmrml.cv.CVLoader;
 import org.nmrml.model.Acquisition1DType;
 import org.nmrml.model.AcquisitionDimensionParameterSetType;
+import org.nmrml.model.AcquisitionParameterSet1DType;
 import org.nmrml.model.AcquisitionType;
 import org.nmrml.model.BinaryDataArrayType;
 import org.nmrml.model.CVListType;
@@ -327,7 +328,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
     private SourceFileListType loadSourceFileList() throws NoSuchAlgorithmException, IOException {
 
         SourceFileListType sourceFileListType = objectFactory.createSourceFileListType();
-        sourceFileListType.setCount(BigInteger.valueOf(0));
+//        sourceFileListType.setCount(BigInteger.valueOf(0));
         String foldername = inputFile.getParent().concat("/");
         for (String key : brukerMapper.getSection("FILES").keySet()) {
             File file = new File(foldername + brukerMapper.getTerm("FILES", key));
@@ -352,7 +353,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
                 sourceFileType.setName(file.getName());
-                sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
+//                sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
                 sourceFileListType.getSourceFile().add(sourceFileType);
             }
         }
@@ -381,7 +382,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
         private NmrMLType read() throws Exception {
             AcquisitionDimensionParameterSetType acquParameters=
                     objectFactory.createAcquisitionDimensionParameterSetType();
-            Acquisition1DType.AcquisitionParameterSet parameterSet = new Acquisition1DType.AcquisitionParameterSet();
+
+            AcquisitionParameterSet1DType parameterSet = objectFactory.createAcquisitionParameterSet1DType();
 
             PulseSequenceType pulseSequence =objectFactory.createPulseSequenceType();
             SoftwareListType softwareListType = objectFactory.createSoftwareListType();
@@ -522,7 +524,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     } catch (Exception e) {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
-                    acquParameters.setGammaB1PulseFieldStrength(value);
+                    acquParameters.setEffectiveExcitationField(value);
                 }
                 if (REGEXP_PULPROG.matcher(line).find()) {
                     matcher = REGEXP_PULPROG.matcher(line);
@@ -653,16 +655,27 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 }
                 //TODO get this parameters working
 //            parameterSet.setContactRefList(); // is this available in the acqu file?
-//            parameterSet.setNumberOfSteadyStateScans();
-//            parameterSet.setRelaxationDelay();
-//            parameterSet.setSampleAcquisitionTemperature();
-//            parameterSet.setSpinningRate();
-//            parameterSet.setSampleContainer();
-
 
                 line = inputAcqReader.readLine();
 
             }
+
+            /* default values */
+            // check if this information is in the acqus (doubt)
+            CVTermType cvTerm = objectFactory.createCVTermType();
+            cvTerm.setCvRef(cvLoader.fetchCVParam("NMRCV", "TUBE").getCvRef());
+            cvTerm.setName(cvLoader.fetchCVParam("NMRCV", "TUBE").getName());
+            cvTerm.setAccession(cvLoader.fetchCVParam("NMRCV", "TUBE").getAccession());
+            parameterSet.setSampleContainer(cvTerm);
+
+            cvTerm = objectFactory.createCVTermType();
+            cvTerm.setCvRef(cvLoader.fetchCVParam("NMRCV", "UNIFORM").getCvRef());
+            cvTerm.setName(cvLoader.fetchCVParam("NMRCV", "UNIFORM").getName());
+            cvTerm.setAccession(cvLoader.fetchCVParam("NMRCV", "UNIFORM").getAccession());
+            acquParameters.setSamplingStrategy(cvTerm);
+
+            //////////////////////
+
             /* fill in the data */
             /* set acquisition parameters */
             parameterSet.setDirectDimensionParameterSet(acquParameters);
@@ -672,13 +685,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
             acquisitionType.setAcquisition1D(acquisition1DType);
             parameterSet.setPulseSequence(pulseSequence);
 
-            /* default values */
-            // check if this information is in the acqus (doubt)
-            CVTermType cvTerm = objectFactory.createCVTermType();
-            cvTerm.setCvRef(cvLoader.fetchCVParam("NMRCV", "TUBE").getCvRef());
-            cvTerm.setName(cvLoader.fetchCVParam("NMRCV", "TUBE").getName());
-            cvTerm.setAccession(cvLoader.fetchCVParam("NMRCV", "TUBE").getAccession());
-            parameterSet.setSampleContainer(cvTerm);
+
 
 
             /* set other parameters */
@@ -714,7 +721,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
                 PulseSequenceType.PulseSequenceFileRefList pulseSequenceFileRefList =
                         objectFactory.createPulseSequenceTypePulseSequenceFileRefList();
-                pulseSequenceFileRefList.getPulseSequenceFileRef().add(sourceFileRefType);
+                pulseSequenceFileRefList.getSourceFileRef().add(sourceFileRefType);
 
                 nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().getPulseSequence()
                         .setPulseSequenceFileRefList(pulseSequenceFileRefList);

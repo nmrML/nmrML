@@ -13,7 +13,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * A spectrum that is the result of processing the acquisition and a description of the process used to create it.
+ * A spectrum that is the result of processing the acquisition and a
+ *         description of the process used to create it.
  * 
  * <p>Java class for SpectrumType complex type.
  * 

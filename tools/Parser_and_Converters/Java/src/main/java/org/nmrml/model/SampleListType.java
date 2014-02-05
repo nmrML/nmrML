@@ -1,14 +1,11 @@
 
 package org.nmrml.model;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -26,7 +23,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="sample" type="{http://nmrml.org/schema}SampleType" maxOccurs="unbounded"/>
  *       &lt;/sequence>
- *       &lt;attribute name="count" use="required" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -42,9 +38,6 @@ public class SampleListType {
 
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected List<SampleType> sample;
-    @XmlAttribute(name = "count", required = true)
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger count;
 
     /**
      * Gets the value of the sample property.
@@ -73,30 +66,6 @@ public class SampleListType {
             sample = new ArrayList<SampleType>();
         }
         return this.sample;
-    }
-
-    /**
-     * Gets the value of the count property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getCount() {
-        return count;
-    }
-
-    /**
-     * Sets the value of the count property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setCount(BigInteger value) {
-        this.count = value;
     }
 
 }

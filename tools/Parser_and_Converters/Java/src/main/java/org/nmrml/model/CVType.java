@@ -12,7 +12,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * Information about an ontology or CV source and a short 'lookup' tag to refer to.
+ * Information about an ontology or CV source and a short 'lookup' tag to refer
+ *         to.
  * 
  * <p>Java class for CVType complex type.
  * 

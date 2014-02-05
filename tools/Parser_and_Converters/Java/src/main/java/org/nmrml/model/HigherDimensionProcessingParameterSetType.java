@@ -7,7 +7,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Parameters recorded when raw data set is processed to create a spectra that are specific to the second dimension.
+ * Parameters recorded when raw data set is processed to create a spectra that
+ *         are specific to the second dimension.
  * 
  * <p>Java class for HigherDimensionProcessingParameterSetType complex type.
  * 

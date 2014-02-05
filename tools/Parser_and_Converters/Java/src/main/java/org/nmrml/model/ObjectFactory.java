@@ -58,14 +58,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Acquisition1DType }
-     * 
-     */
-    public Acquisition1DType createAcquisition1DType() {
-        return new Acquisition1DType();
-    }
-
-    /**
      * Create an instance of {@link SampleType }
      * 
      */
@@ -402,6 +394,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Acquisition1DType }
+     * 
+     */
+    public Acquisition1DType createAcquisition1DType() {
+        return new Acquisition1DType();
+    }
+
+    /**
      * Create an instance of {@link ContactListType }
      * 
      */
@@ -503,14 +503,6 @@ public class ObjectFactory {
      */
     public SpectrumType.ProcessingParameterSet createSpectrumTypeProcessingParameterSet() {
         return new SpectrumType.ProcessingParameterSet();
-    }
-
-    /**
-     * Create an instance of {@link Acquisition1DType.AcquisitionParameterSet }
-     * 
-     */
-    public Acquisition1DType.AcquisitionParameterSet createAcquisition1DTypeAcquisitionParameterSet() {
-        return new Acquisition1DType.AcquisitionParameterSet();
     }
 
     /**
