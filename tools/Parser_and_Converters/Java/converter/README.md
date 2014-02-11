@@ -5,11 +5,11 @@ nmrML converter: development version 1.0
 
 Only 'bruker' is support. TODO: 'varian' support
 
-Linux Usage:
-   sh ./converter.sh <bruker raw data directory> <nmrML output file>
+Linux example usage:
+    sh ./converter.sh ./examples/bmse000325.fid/1H/ ./examples/bmse000325.nmrML
 
 Windows Usage:
-   converter.bat <bruker raw data directory> <nmrML output file>
+   converter.bat examples\bmse000325.fid\1H\ examples\bmse000325.nmrML
 
 
 
