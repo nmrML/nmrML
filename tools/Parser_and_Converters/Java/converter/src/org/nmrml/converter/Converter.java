@@ -273,11 +273,20 @@ public class Converter {
             CVTermType cvUnitT = cvLoader.fetchCVTerm("UO","TESLA");
             CVTermType cvUnitK = cvLoader.fetchCVTerm("UO","KELVIN");
             CVTermType cvUnitDeg = cvLoader.fetchCVTerm("UO","DEGREE");
+            CVTermType cvUnitSec = cvLoader.fetchCVTerm("UO","SECOND");
 
             /* AcquisitionParameterSet1D object */
             AcquisitionParameterSet1DType acqparam = objFactory.createAcquisitionParameterSet1DType();
             acqparam.setNumberOfScans(acq.getNumberOfScans());
             acqparam.setNumberOfSteadyStateScans(acq.getNumberOfSteadyStateScans());
+
+            /* Relaxation Delay */
+            ValueWithUnitType  relaxationDelay = objFactory.createValueWithUnitType();
+            relaxationDelay.setValue(String.format("%f",acq.getRelaxationDelay()));
+            relaxationDelay.setUnitCvRef(cvUnitSec.getCvRef());
+            relaxationDelay.setUnitAccession(cvUnitSec.getAccession());
+            relaxationDelay.setUnitName(cvUnitSec.getName());
+            acqparam.setRelaxationDelay(relaxationDelay);
 
             /* PulseSequenceType object */
             PulseSequenceType.PulseSequenceFileRefList pulseFileRefList = objFactory.createPulseSequenceTypePulseSequenceFileRefList();

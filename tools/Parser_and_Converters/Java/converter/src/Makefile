@@ -16,11 +16,6 @@ PKG_BRUKER = org/nmrml/parser/bruker
 PKG_CONV   = org/nmrml/converter
 DIR_BIN    = ../bin
 
-#EXAMPLE = examples/MMBBI_10M12-CE01-1a
-#EXPNO   = 1
-EXAMPLE = examples/bmse000325.fid
-EXPNO   = 1H
-
 all: xsd parser cv converter jar
 
 parser:
@@ -42,7 +37,6 @@ schema_class:
 
 converter:
 	@make install PROG=$(PKG_CONV)/*
-	$(JAVA) $(JAVAFLAGS) $(PKG_CONV)/Converter -i $(EXAMPLE)/$(EXPNO)
 
 install: $(PROG).class
 
@@ -51,7 +45,7 @@ $(PROG).class: $(PROG).java
 
 jar:
 	@rm -f ./converter.jar
-	@$(JAR) cvfm $(DIR_BIN)/converter.jar ./META-INF/MANIFEST.MF ./org/ ./resources/ ./xsd/
+	@$(JAR) cvfm $(DIR_BIN)/converter.jar ./META-INF/MANIFEST.MF  `find ./org/ -name "*.class"` ./resources/ ./xsd/
 
 clean:
 	@find ./org/nmrml -type f -name "*class" -exec rm {} \;

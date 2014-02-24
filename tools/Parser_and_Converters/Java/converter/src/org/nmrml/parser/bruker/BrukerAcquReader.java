@@ -63,8 +63,10 @@ public class BrukerAcquReader implements AcquReader {
     private final static Pattern REGEXP_AQ_MODE = Pattern.compile("\\#\\#\\$AQ\\_mod= (\\d+)"); //acquisition mode
     private final static Pattern REGEXP_DIGMOD = Pattern.compile("\\#\\#\\$DIGMOD= (\\d+)"); //filter type
     private final static Pattern REGEXP_NUMBEROFSCANS = Pattern.compile("\\#\\#\\$NS= (\\d+)"); //number of scans
-    private final static Pattern REGEXP_DUMMYSCANS = Pattern.compile("\\#\\#\\$DS= (\\d+)"); //number of dummy (steady state) scans
-    private final static Pattern REGEXP_RELAXATIONDELAY = Pattern.compile("\\#\\#\\$RD= (\\d+\\.?\\d?)"); // relaxation delay
+    private final static Pattern REGEXP_DUMMYSCANS = Pattern.compile("\\#\\#\\$DS= (\\d+)"); //number of dummy (steady state) scans    
+    private final static Pattern REGEXP_RELAXATIONDELAY = Pattern.compile("\\#\\#\\$D= (.+)"); // relaxation delay ##$D= (0..63)
+    private final static Pattern REGEXP_RELAXATIONDELAY_VALUES = Pattern.compile("\\d+ (\\d+).+"); // relaxation delay D1
+
     private final static Pattern REGEXP_SPINNINGRATE = Pattern.compile("\\#\\#\\$MASR= (\\d+)"); // spinning rate
     //TODO review REGEXP_PULPROG
     // examples of REGEXP_PULPROG : <zg> <cosydfph> <bs_hsqcetgpsi>; basically a word between < >
@@ -225,9 +227,12 @@ public class BrukerAcquReader implements AcquReader {
             }
             /* relaxation delay */
             if(REGEXP_RELAXATIONDELAY.matcher(line).find()){
-                matcher = REGEXP_RELAXATIONDELAY.matcher(line);
-                matcher.find();
-                acquisition.setRelaxationDelay(Double.parseDouble(matcher.group(1)));
+                line = inputAcqReader.readLine();
+                if(REGEXP_RELAXATIONDELAY_VALUES.matcher(line).find()){
+                    matcher = REGEXP_RELAXATIONDELAY_VALUES.matcher(line);
+                    matcher.find();
+                    acquisition.setRelaxationDelay(Double.parseDouble(matcher.group(1)));
+                }
             }
             /* spinning rate */
             if(REGEXP_SPINNINGRATE.matcher(line).find()){
