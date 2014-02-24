@@ -46,3 +46,24 @@ pH 7.4 in D<sub>2</sub>O and refereced to DSS and was collected on a Bruker DMX 
 
 Download FID here (3e537ca7a351c8e34fad813b0060cd6b18090bf1):
 > http://www.bmrb.wisc.edu/metabolomics/standards/2_ketobutyric_acid/nmr/bmse000325/1H.tar
+
+
+## BrukerTopSpin_GABA
+
+### Explanation of files/directory:
+- VZBBI_13R03_GABA : Acquisition directories from Bruker TopSpin software (EXPNO from 1 to 9)
+- VZBBI_13R03_GABA_4.nmrML: nmrML instance created from the Experimen NO 4
+- GABA_NMR_analytical_metadata.odt : Complete Analytical Metadata (Open Text format) (https://drive.google.com/file/d/0B-G26AwbdABgM3ZoazNjczhkMEk)
+- GABA.xlsx : Peaks List file (MS Excel format)
+
+### Overview
+
+This reference is one of the reference specra created by the Bordeaux Metabolomics Platform (INRA Villenane d'Ornon - FRANCE).
+The spectra is a reference 1H NMR of Aminobutytic acic (gamma-). The sample was collected at a concentration of 20 mM at 
+pH 6 in D<sub>2</sub>O and referenced to TSP and was collected on a Bruker Advanced III - 500 MHz spectrometer.
+
+### Source
+> Contribution to the MetaboHUB infrastructure (WP3 Bioinformatics, http://www.metabohub.fr/en/). Complete NMR compound library online (soon).
+
+Download Complete Dataset here
+> https://docs.google.com/file/d/0B-G26AwbdABgcjVHUmhhamx4eVU

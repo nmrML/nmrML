@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://nmrML.org/schema/nmrML.xsd">
+    <cvList>
+        <cv id="NMRCV" fullName="Nuclear Magnetic Resonance CV" version="1.01" URI="http://nmrml.org/cv/v1.01/nmrCV.owl"/>
+        <cv id="OBI" fullName="Ontology for Biomedical Investigations" version="2012.07.01" URI="http://purl.obolibrary.org/obo/obi"/>
+        <cv id="UO" fullName="Unit Ontology" version="3.2.0" URI="http://purl.obolibrary.org/obo/"/>
+        <cv id="CHEBI" fullName="Chemical Entities of Biological Interest Ontology" version="105" URI="http://purl.obolibrary.org/obo/"/>
+    </cvList>
+    <fileDescription>
+        <fileContent>
+            <cvParam cvRef="NMRCV" accession="NMR:1400165" name="one dimensional NMR acquisition parameter set"/>
+        </fileContent>
+    </fileDescription>
+    <contactList>
+        <contact id="ID00001" fullname="mica" email="mica@mhpbf141"/>
+    </contactList>
+    <sourceFileList>
+        <sourceFile id="ID00002" name="fid" location="file:/C:/Users/DJ/Documents/GitHub/nmrML/tools/Parser_and_Converters/Java/converter/./examples/VZBBI_13R03_GABA/4/fid" sha1="7f01170cfaa2bdb8af6b3c9f4582590ebc2db65b">
+            <cvParam cvRef="NMRCV" accession="NMR:140019" name="FID file"/>
+        </sourceFile>
+        <sourceFile id="ID00003" name="pulseprogram" location="file:/C:/Users/DJ/Documents/GitHub/nmrML/tools/Parser_and_Converters/Java/converter/./examples/VZBBI_13R03_GABA/4/pulseprogram" sha1="6c34e8da59a9ea08b19a9d5c0991bac8b92c28ac">
+            <cvParam cvRef="NMRCV" accession="NMR:1400122" name="pulse sequence file"/>
+        </sourceFile>
+        <sourceFile id="ID00004" name="acqus" location="file:/C:/Users/DJ/Documents/GitHub/nmrML/tools/Parser_and_Converters/Java/converter/./examples/VZBBI_13R03_GABA/4/acqus" sha1="0fd3e09dad22b78b09f2e4312372b70702b8dac4">
+            <cvParam cvRef="NMRCV" accession="NMR:1002006" name="acquisition parameter file"/>
+        </sourceFile>
+        <sourceFile id="ID00005" name="procs" location="file:/C:/Users/DJ/Documents/GitHub/nmrML/tools/Parser_and_Converters/Java/converter/./examples/VZBBI_13R03_GABA/4/pdata/1/procs" sha1="5a72cd354810e41d08cd7e30958114fbe219b054">
+            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="processing parameters file"/>
+        </sourceFile>
+        <sourceFile id="ID00006" name="1r" location="file:/C:/Users/DJ/Documents/GitHub/nmrML/tools/Parser_and_Converters/Java/converter/./examples/VZBBI_13R03_GABA/4/pdata/1/1r" sha1="94436a42a6a2b74b27b7f066a9e4c1a4cfae92be">
+            <cvParam cvRef="NMRCV" accession="NMR:?" name="real processed data points file"/>
+        </sourceFile>
+        <sourceFile id="ID00007" name="1i" location="file:/C:/Users/DJ/Documents/GitHub/nmrML/tools/Parser_and_Converters/Java/converter/./examples/VZBBI_13R03_GABA/4/pdata/1/1i" sha1="3ba6c00577d3db5f60b880f3e63907ddb8125905">
+            <cvParam cvRef="NMRCV" accession="NMR:?" name="imaginary processed data points file"/>
+        </sourceFile>
+    </sourceFileList>
+    <softwareList>
+        <software id="ID00008" version="Version 3.0" cvRef="NMRCV" accession="NMR:1400320" name="TOPSPIN"/>
+    </softwareList>
+    <instrumentConfigurationList>
+        <instrumentConfiguration id="ID00009">
+            <cvParam cvRef="NMRCV" accession="NMR:1400198" name="Bruker NMR instrument"/>
+            <userParam name="ProbeHead" value="5 mm PABBI 1H/D-BB Z-GRD Z859201/0037"/>
+            <softwareRef ref="ID00008"/>
+        </instrumentConfiguration>
+    </instrumentConfigurationList>
+    <dataProcessingList>
+        <dataProcessing id="ID00010">
+            <processingMethod order="1" softwareRef="ID00008">
+                <cvParam cvRef="NMRCV" accession="NMR:1400043" name="data_transformation"/>
+            </processingMethod>
+        </dataProcessing>
+    </dataProcessingList>
+    <sampleList>
+        <sample>
+            <solventType cvRef="CHEBI" accession="CHEBI_41981" name="D2O"/>
+        </sample>
+    </sampleList>
+    <acquisition>
+        <acquisition1D>
+            <acquisitionParameterSet numberOfSteadyStateScans="0" numberOfScans="64">
+                <acquisitionParameterFileRefList>
+                    <sourceFileRef ref="ID00004"/>
+                </acquisitionParameterFileRefList>
+                <relaxationDelay value="25,000000" unitAccession="UO_0000010" unitName="second" unitCvRef="UO"/>
+                <pulseSequence>
+                    <userParam name="Pulse Program" value="zg"/>
+                    <pulseSequenceFileRefList>
+                        <sourceFileRef ref="ID00003"/>
+                    </pulseSequenceFileRefList>
+                </pulseSequence>
+                <DirectDimensionParameterSet decoupled="false" numberOfDataPoints="32768">
+                    <acquisitionNucleus cvRef="CHEBI" accession="CHEBI_49637" name="hydrogen atom"/>
+                    <effectiveExcitationField value="500,160000" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
+                    <sweepWidth value="6002,400960" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
+                    <pulseWidth value="9,070000" unitAccession="UO_0000029" unitName="microsecond" unitCvRef="UO"/>
+                    <irradiationFrequency value="500,162501" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
+                </DirectDimensionParameterSet>
+            </acquisitionParameterSet>
+            <fidData compressed="false" encodedLength="32768" byteFormat="class java.lang.Integer"/>
+        </acquisition1D>
+    </acquisition>
+    <spectrumList>
+        <spectrum1D numberOfDataPoints="32768">
+            <processingSoftwareRefList>
+                <softwareRef ref="ID00008"/>
+            </processingSoftwareRefList>
+            <processingContactRefList>
+                <contactRef ref="ID00001"/>
+            </processingContactRefList>
+            <spectrumDataArray compressed="false" encodedLength="32768" byteFormat="class java.lang.Integer"/>
+            <xAxis unitAccession="UO_0000169" unitName="parts per million" unitCvRef="UO" startValue="11,077470" endValue="-0,923492"/>
+            <yAxisType cvRef="UO" accession="UO_0000169" name="dimensionless"/>
+            <processingParameterSet>
+                <dataTransformationMethod cvRef="NMRCV" accession="NMR:1400044" name="fourier transformation"/>
+            </processingParameterSet>
+            <firstDimensionProcessingParameterSet>
+                <zeroOrderPhaseCorrection value="-144,493100" unitAccession="UO_0000185" unitName="degree" unitCvRef="UO"/>
+                <firstOrderPhaseCorrection value="1,224797" unitAccession="UO_0000185" unitName="degree" unitCvRef="UO"/>
+                <windowFunction>
+                    <windowFunctionMethod cvRef="NMRCV" accession="NMR:1400069" name="exponential multiplication window function"/>
+                    <windowFunctionParameter cvRef="NMRCV" accession="NMR:1400097" name="Line Broadening" value="0,000000"/>
+                </windowFunction>
+                <parameterFileRef ref="ID00005"/>
+            </firstDimensionProcessingParameterSet>
+        </spectrum1D>
+    </spectrumList>
+</nmrML>
