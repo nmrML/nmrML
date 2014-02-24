@@ -63,9 +63,13 @@ public class BrukerAcquReader implements AcquReader {
     private final static Pattern REGEXP_AQ_MODE = Pattern.compile("\\#\\#\\$AQ\\_mod= (\\d+)"); //acquisition mode
     private final static Pattern REGEXP_DIGMOD = Pattern.compile("\\#\\#\\$DIGMOD= (\\d+)"); //filter type
     private final static Pattern REGEXP_NUMBEROFSCANS = Pattern.compile("\\#\\#\\$NS= (\\d+)"); //number of scans
-    private final static Pattern REGEXP_DUMMYSCANS = Pattern.compile("\\#\\#\\$DS= (\\d+)"); //number of dummy (steady state) scans    
+    private final static Pattern REGEXP_DUMMYSCANS = Pattern.compile("\\#\\#\\$DS= (\\d+)"); //number of dummy (steady state) scans
+
     private final static Pattern REGEXP_RELAXATIONDELAY = Pattern.compile("\\#\\#\\$D= (.+)"); // relaxation delay ##$D= (0..63)
-    private final static Pattern REGEXP_RELAXATIONDELAY_VALUES = Pattern.compile("\\d+ (\\d+).+"); // relaxation delay D1
+    private final static Pattern REGEXP_RELAXATIONDELAY_VALUES = Pattern.compile("\\d+\\.?\\d? (\\d+\\.?\\d?).+"); // relaxation delay D1
+
+    private final static Pattern REGEXP_PULSEWIDTH = Pattern.compile("\\#\\#\\$P= (.+)"); // pulseWidth ##$P= (0..63)
+    private final static Pattern REGEXP_PULSEWIDTH_VALUES = Pattern.compile("\\d+\\.?\\d?\\d? (\\d+\\.?\\d?\\d?).+"); // pulseWidth P1
 
     private final static Pattern REGEXP_SPINNINGRATE = Pattern.compile("\\#\\#\\$MASR= (\\d+)"); // spinning rate
     //TODO review REGEXP_PULPROG
@@ -232,6 +236,15 @@ public class BrukerAcquReader implements AcquReader {
                     matcher = REGEXP_RELAXATIONDELAY_VALUES.matcher(line);
                     matcher.find();
                     acquisition.setRelaxationDelay(Double.parseDouble(matcher.group(1)));
+                }
+            }
+            /* pulse width */
+            if(REGEXP_PULSEWIDTH.matcher(line).find()){
+                line = inputAcqReader.readLine();
+                if(REGEXP_PULSEWIDTH_VALUES.matcher(line).find()){
+                    matcher = REGEXP_PULSEWIDTH_VALUES.matcher(line);
+                    matcher.find();
+                    acquisition.setPulseWidth(Double.parseDouble(matcher.group(1)));
                 }
             }
             /* spinning rate */

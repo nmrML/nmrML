@@ -47,7 +47,8 @@ public class Acqu {
     private int dspFirmware;                     //dspfvs        DSP firmware version
     private double dspGroupDelay;                //grpdly        DSP group delay
     private int filterType;                      //digmod        filter type
-    private double relaxationDelay;              //rd            relaxation delay
+    private double relaxationDelay;              //d[1]          relaxation delay D1
+    private double pulseWidth;                   //p[1]          pulse width P1
     private int spiningRate;                     //masr          spinning rate
     private double temperature;                  //te            temperature of the experiment
     private BigInteger numberOfScans;            //ns            number of scans
@@ -200,6 +201,14 @@ public class Acqu {
 
     public void setRelaxationDelay(double relaxationDelay) {
         this.relaxationDelay = relaxationDelay;
+    }
+
+    public double getPulseWidth() {
+        return pulseWidth;
+    }
+
+    public void setPulseWidth(double pulseWidth) {
+        this.pulseWidth = pulseWidth;
     }
 
     public int getSpiningRate() {

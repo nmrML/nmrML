@@ -163,7 +163,7 @@ public class Converter {
                 cvList.getCv().add(cv);
                 cvCount = cvCount + 1;
             }
-            cvList.setCount(getBigInteger(cvCount));
+            //cvList.setCount(getBigInteger(cvCount));
             nmrMLtype.setCvList(cvList);
 
 
@@ -211,7 +211,7 @@ public class Converter {
                    sourceFileCount = sourceFileCount + 1;
                }
             }
-            srcfilelist.setCount(getBigInteger(sourceFileCount));
+            //srcfilelist.setCount(getBigInteger(sourceFileCount));
             nmrMLtype.setSourceFileList(srcfilelist);
 
 
@@ -225,7 +225,7 @@ public class Converter {
             software1.setName(acq.getSoftware());
             software1.setVersion(acq.getSoftVersion());
             softwareList.getSoftware().add(software1);
-            softwareList.setCount(getBigInteger(1));
+            //softwareList.setCount(getBigInteger(1));
             nmrMLtype.setSoftwareList(softwareList);
 
        /* Software Ref List */
@@ -250,7 +250,7 @@ public class Converter {
             probeParam.setValue(acq.getProbehead());
             instrumentConf.getUserParam().add(probeParam);
             instrumentConfList.getInstrumentConfiguration().add(instrumentConf);
-            instrumentConfList.setCount(getBigInteger(1));
+            //instrumentConfList.setCount(getBigInteger(1));
             nmrMLtype.setInstrumentConfigurationList(instrumentConfList);
 
 
@@ -260,7 +260,7 @@ public class Converter {
             /* Solvent */
             sample.setSolventType(cvLoader.fetchCVTerm("CHEBI",acq.getSolvent()));
             samplelist.getSample().add(sample);
-            samplelist.setCount(getBigInteger(1));
+            //samplelist.setCount(getBigInteger(1));
             nmrMLtype.setSampleList(samplelist);
 
 
@@ -274,6 +274,7 @@ public class Converter {
             CVTermType cvUnitK = cvLoader.fetchCVTerm("UO","KELVIN");
             CVTermType cvUnitDeg = cvLoader.fetchCVTerm("UO","DEGREE");
             CVTermType cvUnitSec = cvLoader.fetchCVTerm("UO","SECOND");
+            CVTermType cvUnitmSec = cvLoader.fetchCVTerm("UO","MICROSEC");
 
             /* AcquisitionParameterSet1D object */
             AcquisitionParameterSet1DType acqparam = objFactory.createAcquisitionParameterSet1DType();
@@ -292,7 +293,7 @@ public class Converter {
             PulseSequenceType.PulseSequenceFileRefList pulseFileRefList = objFactory.createPulseSequenceTypePulseSequenceFileRefList();
             SourceFileRefType pulseFileRef = objFactory.createSourceFileRefType();
             pulseFileRef.setRef(hSourceFileObj.get("PULSEPROGRAM_FILE"));
-            pulseFileRefList.getPulseSequenceFileRef().add(pulseFileRef);
+            pulseFileRefList.getSourceFileRef().add(pulseFileRef);
             PulseSequenceType pulse_sequence = objFactory.createPulseSequenceType();
             pulse_sequence.setPulseSequenceFileRefList(pulseFileRefList);
             UserParamType pulseParam = objFactory.createUserParamType();
@@ -319,13 +320,20 @@ public class Converter {
             IrradiationFrequency.setUnitAccession(cvUnitHz.getAccession());
             IrradiationFrequency.setUnitName(cvUnitHz.getName());
             acqdimparam.setIrradiationFrequency(IrradiationFrequency);
-            // Gamma B1 Pulse Field Strength (Hz)
-            ValueWithUnitType  gammaB1PulseFieldStrength = objFactory.createValueWithUnitType();
-            gammaB1PulseFieldStrength.setValue(String.format("%f",acq.getSpectralFrequency()));
-            gammaB1PulseFieldStrength.setUnitCvRef(cvUnitHz.getCvRef());
-            gammaB1PulseFieldStrength.setUnitAccession(cvUnitHz.getAccession());
-            gammaB1PulseFieldStrength.setUnitName(cvUnitHz.getName());
-            acqdimparam.setGammaB1PulseFieldStrength(gammaB1PulseFieldStrength);
+            // setEffectiveExcitationField (Hz)
+            ValueWithUnitType  effectiveExcitationField = objFactory.createValueWithUnitType();
+            effectiveExcitationField.setValue(String.format("%f",acq.getSpectralFrequency()));
+            effectiveExcitationField.setUnitCvRef(cvUnitHz.getCvRef());
+            effectiveExcitationField.setUnitAccession(cvUnitHz.getAccession());
+            effectiveExcitationField.setUnitName(cvUnitHz.getName());
+            acqdimparam.setEffectiveExcitationField(effectiveExcitationField);
+            /* Pulse Width */
+            ValueWithUnitType  pulseWidth = objFactory.createValueWithUnitType();
+            pulseWidth.setValue(String.format("%f",acq.getPulseWidth()));
+            pulseWidth.setUnitCvRef(cvUnitmSec.getCvRef());
+            pulseWidth.setUnitAccession(cvUnitmSec.getAccession());
+            pulseWidth.setUnitName(cvUnitmSec.getName());
+            acqdimparam.setPulseWidth(pulseWidth);
 
             acqparam.setDirectDimensionParameterSet(acqdimparam);
 
@@ -334,7 +342,7 @@ public class Converter {
             SourceFileRefType acqFileRef = objFactory.createSourceFileRefType();
             acqFileRef.setRef(hSourceFileObj.get("ACQUISITION_FILE"));
             acqFileRefList.getSourceFileRef().add(acqFileRef);
-            acqFileRefList.setCount(getBigInteger(1));
+            //acqFileRefList.setCount(getBigInteger(1));
             acqparam.setAcquisitionParameterFileRefList(acqFileRefList);
 
             /* Acquisition1D object */
@@ -367,7 +375,7 @@ public class Converter {
             dataproc.getProcessingMethod().add(procmethod);
             dataproc.setId(getNewIdentifier());
             dataproclist.getDataProcessing().add(dataproc);
-            dataproclist.setCount(getBigInteger(1));
+            //dataproclist.setCount(getBigInteger(1));
             nmrMLtype.setDataProcessingList(dataproclist);
 
 
@@ -444,7 +452,7 @@ public class Converter {
 
             spectrum1D.setNumberOfDataPoints(getBigInteger(proc.getTransformSize()));
             spectrumList.getSpectrum1D().add(spectrum1D);
-            spectrumList.setCount(getBigInteger(1));
+            //spectrumList.setCount(getBigInteger(1));
             nmrMLtype.setSpectrumList(spectrumList);
 
        /* Generate XML */
