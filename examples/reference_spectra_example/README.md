@@ -48,22 +48,25 @@ Download FID here (3e537ca7a351c8e34fad813b0060cd6b18090bf1):
 > http://www.bmrb.wisc.edu/metabolomics/standards/2_ketobutyric_acid/nmr/bmse000325/1H.tar
 
 
-## BrukerTopSpin_GABA
+## VZBBI_13R03_GABA
 
 ### Explanation of files/directory:
-- VZBBI_13R03_GABA : Acquisition directories from Bruker TopSpin software (EXPNO from 1 to 9)
-- VZBBI_13R03_GABA_4.nmrML: nmrML instance created from the Experimen NO 4
-- GABA_NMR_analytical_metadata.odt : Complete Analytical Metadata (Open Text format) (https://drive.google.com/file/d/0B-G26AwbdABgM3ZoazNjczhkMEk)
-- GABA.xlsx : Peaks List file (MS Excel format)
+- VZBBI_13R03_GABA : Acquisition directories from Bruker TopSpin software (1H & 13C)
+- VZBBI_13R03_GABA_1H.nmrML: nmrML instance created from the 1H Experiment
+- VZBBI_13R03_GABA_13C.nmrML: nmrML instance created from the 13C Experiment
 
 ### Overview
 
 This reference is one of the reference specra created by the Bordeaux Metabolomics Platform (INRA Villenane d'Ornon - FRANCE).
-The spectra is a reference 1H NMR of Aminobutytic acic (gamma-). The sample was collected at a concentration of 20 mM at 
+The spectra is a reference of Aminobutytic acic (gamma-) including different NMR analytical parameters, 1D (1H & 13C) and 2D (1H/13C, 1H/1H). The analytical parameters file and peaks list file are provided too. The sample was collected at a concentration of 20 mM at 
 pH 6 in D<sub>2</sub>O and referenced to TSP and was collected on a Bruker Advanced III - 500 MHz spectrometer.
 
 ### Source
-> Contribution to the MetaboHUB infrastructure (WP3 Bioinformatics, http://www.metabohub.fr/en/). Complete NMR compound library online (soon).
+> Contribution to the MetaboHUB infrastructure (http://www.metabohub.fr/en/). Complete NMR compound library online (soon).
 
 Download Complete Dataset here
-> https://docs.google.com/file/d/0B-G26AwbdABgcjVHUmhhamx4eVU
+> https://drive.google.com/#folders/0B-G26AwbdABgN3ZyYWlIS0RvaDg
+
+### Note
+> the sample nmrML files were generated with the JAVA tool deposit on GitHub nmrML (tools/Parser_and_Converters/Java/converter)
+

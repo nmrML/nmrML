@@ -154,6 +154,7 @@ public class Converter {
 
             nmrMLtype.setVersion("1.0");
 
+    /* ACQUISITION PARAMETERS */
 
        /* CV List : used as references for all CV in the document */
             int cvCount = 0;
@@ -191,7 +192,6 @@ public class Converter {
             contactRef.setRef(contact1);
             contactRefList.getContactRef().add(contactRef);
 
-
        /* SourceFile List */
             int sourceFileCount = 0;
             SourceFileListType srcfilelist = objFactory.createSourceFileListType();
@@ -202,6 +202,7 @@ public class Converter {
                    srcfile.setId(getNewIdentifier());
                    srcfile.setName(sourceFile.getName());
                    srcfile.setLocation(sourceFile.toURI().toString());
+                   srcfile.getCvParam().add(cvLoader.fetchCVParam("NMRCV",acq.getSoftware()));
                    srcfile.getCvParam().add(cvLoader.fetchCVParam("NMRCV",sourceName));
                    hSourceFileObj.put(sourceName, srcfile);
                    BinaryData binaryData = new BinaryData(sourceFile, acq);
@@ -270,16 +271,27 @@ public class Converter {
             CVTermType cvUnitNone = cvLoader.fetchCVTerm("UO","NONE");
             CVTermType cvUnitPpm = cvLoader.fetchCVTerm("UO","PPM");
             CVTermType cvUnitHz = cvLoader.fetchCVTerm("UO","HERTZ");
+            CVTermType cvUnitmHz = cvLoader.fetchCVTerm("UO","MEGAHERTZ");
             CVTermType cvUnitT = cvLoader.fetchCVTerm("UO","TESLA");
             CVTermType cvUnitK = cvLoader.fetchCVTerm("UO","KELVIN");
             CVTermType cvUnitDeg = cvLoader.fetchCVTerm("UO","DEGREE");
             CVTermType cvUnitSec = cvLoader.fetchCVTerm("UO","SECOND");
-            CVTermType cvUnitmSec = cvLoader.fetchCVTerm("UO","MICROSEC");
+            CVTermType cvUnitmSec = cvLoader.fetchCVTerm("UO","MICROSECOND");
 
             /* AcquisitionParameterSet1D object */
             AcquisitionParameterSet1DType acqparam = objFactory.createAcquisitionParameterSet1DType();
             acqparam.setNumberOfScans(acq.getNumberOfScans());
             acqparam.setNumberOfSteadyStateScans(acq.getNumberOfSteadyStateScans());
+            /* sample container */
+            acqparam.setSampleContainer(cvLoader.fetchCVTerm("NMRCV","TUBE"));
+
+            /* sample temperature */
+            ValueWithUnitType  temperature = objFactory.createValueWithUnitType();
+            temperature.setValue(String.format("%f",acq.getTemperature()));
+            temperature.setUnitCvRef(cvUnitK.getCvRef());
+            temperature.setUnitAccession(cvUnitK.getAccession());
+            temperature.setUnitName(cvUnitK.getName());
+            acqparam.setSampleAcquisitionTemperature(temperature);
 
             /* Relaxation Delay */
             ValueWithUnitType  relaxationDelay = objFactory.createValueWithUnitType();
@@ -305,7 +317,7 @@ public class Converter {
            /* DirectDimensionParameterSet object */
             AcquisitionDimensionParameterSetType acqdimparam = objFactory.createAcquisitionDimensionParameterSetType();
             acqdimparam.setNumberOfDataPoints(getBigInteger(acq.getAquiredPoints()));
-            acqdimparam.setAcquisitionNucleus(cvLoader.fetchCVTerm("CHEBI","1H"));
+            acqdimparam.setAcquisitionNucleus(cvLoader.fetchCVTerm("CHEBI",acq.getObservedNucleus()));
             // Spectral Width (Hz)
             ValueWithUnitType  SweepWidth = objFactory.createValueWithUnitType();
             SweepWidth.setValue(String.format("%f",acq.getSpectralWidthHz()));
@@ -323,9 +335,9 @@ public class Converter {
             // setEffectiveExcitationField (Hz)
             ValueWithUnitType  effectiveExcitationField = objFactory.createValueWithUnitType();
             effectiveExcitationField.setValue(String.format("%f",acq.getSpectralFrequency()));
-            effectiveExcitationField.setUnitCvRef(cvUnitHz.getCvRef());
-            effectiveExcitationField.setUnitAccession(cvUnitHz.getAccession());
-            effectiveExcitationField.setUnitName(cvUnitHz.getName());
+            effectiveExcitationField.setUnitCvRef(cvUnitmHz.getCvRef());
+            effectiveExcitationField.setUnitAccession(cvUnitmHz.getAccession());
+            effectiveExcitationField.setUnitName(cvUnitmHz.getName());
             acqdimparam.setEffectiveExcitationField(effectiveExcitationField);
             /* Pulse Width */
             ValueWithUnitType  pulseWidth = objFactory.createValueWithUnitType();
@@ -342,6 +354,9 @@ public class Converter {
             SourceFileRefType acqFileRef = objFactory.createSourceFileRefType();
             acqFileRef.setRef(hSourceFileObj.get("ACQUISITION_FILE"));
             acqFileRefList.getSourceFileRef().add(acqFileRef);
+            SourceFileRefType fidFileRef = objFactory.createSourceFileRefType();
+            fidFileRef.setRef(hSourceFileObj.get("FID_FILE"));
+            acqFileRefList.getSourceFileRef().add(fidFileRef);
             //acqFileRefList.setCount(getBigInteger(1));
             acqparam.setAcquisitionParameterFileRefList(acqFileRefList);
 
@@ -350,12 +365,12 @@ public class Converter {
             acq1Dtype.setAcquisitionParameterSet(acqparam);
 
             /* fidData object */
-            if (hBinaryDataObj.get("FID_FILE").isExists()) {
+            if (hBinaryDataObj.containsKey("FID_FILE") && hBinaryDataObj.get("FID_FILE").isExists()) {
                 BinaryDataArrayType fidData = objFactory.createBinaryDataArrayType();
                 fidData.setEncodedLength(hBinaryDataObj.get("FID_FILE").getEncodedLength());
                 fidData.setByteFormat(hBinaryDataObj.get("FID_FILE").getByteFormat());
                 fidData.setCompressed(false);
-                //fidData.setValue(hBinaryDataObj.get("FID_FILE").getData());
+                fidData.setValue(hBinaryDataObj.get("FID_FILE").getData());
                 acq1Dtype.setFidData(fidData);
             }
 
@@ -363,6 +378,9 @@ public class Converter {
             AcquisitionType acqtype = objFactory.createAcquisitionType();
             acqtype.setAcquisition1D(acq1Dtype);
             nmrMLtype.setAcquisition(acqtype);
+
+    /* PROCESSING PARAMETERS */
+    if (hBinaryDataObj.containsKey("PROCESSING_FILE")) {
 
        /* DataProcessing List */
 
@@ -441,7 +459,7 @@ public class Converter {
             spectrum1D.setProcessingParameterSet(procParamSet);
 
             /* SpectrumDataArray object */
-            if (hBinaryDataObj.get("REAL_DATA_FILE").isExists()) {
+            if (hBinaryDataObj.containsKey("REAL_DATA_FILE") && hBinaryDataObj.get("REAL_DATA_FILE").isExists()) {
                 BinaryDataArrayType RealData = objFactory.createBinaryDataArrayType();
                 RealData.setEncodedLength(hBinaryDataObj.get("REAL_DATA_FILE").getEncodedLength());
                 RealData.setByteFormat(hBinaryDataObj.get("REAL_DATA_FILE").getByteFormat());
@@ -454,6 +472,7 @@ public class Converter {
             spectrumList.getSpectrum1D().add(spectrum1D);
             //spectrumList.setCount(getBigInteger(1));
             nmrMLtype.setSpectrumList(spectrumList);
+    }
 
        /* Generate XML */
             JAXBElement<NmrMLType> nmrML = (JAXBElement<NmrMLType>) objFactory.createNmrML(nmrMLtype);
