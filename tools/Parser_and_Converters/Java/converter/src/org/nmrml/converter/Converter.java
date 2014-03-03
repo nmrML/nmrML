@@ -98,6 +98,8 @@ public class Converter {
            .withDescription("output file")
            .withLongOpt("outputfile")
            .create("o"));
+        options.addOption("d","with-data",false,"include data such as fid and spectrum values");
+
 /*
         options.addOption(OptionBuilder
            .withArgName("file")
@@ -119,6 +121,7 @@ public class Converter {
             String onto_ini = prop.getProperty("onto_ini_file");
             Vendor_Type vendor_type = Vendor_Type.valueOf(prop.getProperty("vendor_type"));
             String vendor_ini = prop.getProperty("vendor_ini_file");
+            String schemaLocation = prop.getProperty("schemaLocation");
 
 
         /* CVLoader object */
@@ -166,7 +169,6 @@ public class Converter {
             }
             //cvList.setCount(getBigInteger(cvCount));
             nmrMLtype.setCvList(cvList);
-
 
        /* FileDescription */
             FileDescriptionType filedesc = objFactory.createFileDescriptionType();
@@ -262,7 +264,7 @@ public class Converter {
             sample.setSolventType(cvLoader.fetchCVTerm("CHEBI",acq.getSolvent()));
             samplelist.getSample().add(sample);
             //samplelist.setCount(getBigInteger(1));
-            nmrMLtype.setSampleList(samplelist);
+            //nmrMLtype.setSampleList(samplelist);
 
 
        /* Acquition */
@@ -300,6 +302,14 @@ public class Converter {
             relaxationDelay.setUnitAccession(cvUnitSec.getAccession());
             relaxationDelay.setUnitName(cvUnitSec.getName());
             acqparam.setRelaxationDelay(relaxationDelay);
+
+            /* Spinning Rate */
+            ValueWithUnitType  spinningRate = objFactory.createValueWithUnitType();
+            spinningRate.setValue("0");
+            spinningRate.setUnitCvRef(cvUnitNone.getCvRef());
+            spinningRate.setUnitAccession(cvUnitNone.getAccession());
+            spinningRate.setUnitName(cvUnitNone.getName());
+            acqparam.setSpinningRate(spinningRate);
 
             /* PulseSequenceType object */
             PulseSequenceType.PulseSequenceFileRefList pulseFileRefList = objFactory.createPulseSequenceTypePulseSequenceFileRefList();
@@ -346,6 +356,19 @@ public class Converter {
             pulseWidth.setUnitAccession(cvUnitmSec.getAccession());
             pulseWidth.setUnitName(cvUnitmSec.getName());
             acqdimparam.setPulseWidth(pulseWidth);
+            /* decouplingNucleus */
+            CVTermType cvDecoupledNucleus = null;
+            if ( acq.getDecoupledNucleus().equals("off") ) {
+                acqdimparam.setDecoupled(false);
+                cvDecoupledNucleus = cvLoader.fetchCVTerm("NMRCV","OFF_DECOUPLE");
+            }
+            else {
+                acqdimparam.setDecoupled(true);
+                cvDecoupledNucleus = cvLoader.fetchCVTerm("CHEBI",acq.getDecoupledNucleus());
+            }
+            acqdimparam.setDecouplingNucleus(cvDecoupledNucleus);
+            /* TODO: samplingStrategy */
+            acqdimparam.setSamplingStrategy(cvLoader.fetchCVTerm("NMRCV","UNIFORM_SAMPLING"));
 
             acqparam.setDirectDimensionParameterSet(acqdimparam);
 
@@ -370,7 +393,9 @@ public class Converter {
                 fidData.setEncodedLength(hBinaryDataObj.get("FID_FILE").getEncodedLength());
                 fidData.setByteFormat(hBinaryDataObj.get("FID_FILE").getByteFormat());
                 fidData.setCompressed(false);
-                fidData.setValue(hBinaryDataObj.get("FID_FILE").getData());
+                if(cmd.hasOption("d")) {
+                   fidData.setValue(hBinaryDataObj.get("FID_FILE").getData());
+                }
                 acq1Dtype.setFidData(fidData);
             }
 
@@ -399,6 +424,7 @@ public class Converter {
 
        /* Spectrum List */
             SpectrumListType spectrumList = objFactory.createSpectrumListType();
+            spectrumList.setDefaultDataProcessingRef(dataproc);
             Spectrum1DType spectrum1D = objFactory.createSpectrum1DType();
 
             /* Spectrum1D - FirstDimensionProcessingParameterSet object */
@@ -414,6 +440,7 @@ public class Converter {
             cvWinParam.setValue(String.format("%f",proc.getLineBroadening()));
             windowFunction.getWindowFunctionParameter().add(cvWinParam);
             ProcParam1D.getWindowFunction().add(windowFunction);
+            ProcParam1D.setNoOfDataPoints(getBigInteger(proc.getTransformSize()));
 
 
             /* Spectrum1D - Phasing */
@@ -429,7 +456,18 @@ public class Converter {
             firstOrderPhaseCorrection.setUnitAccession(cvUnitDeg.getAccession());
             firstOrderPhaseCorrection.setUnitName(cvUnitDeg.getName());
             ProcParam1D.setFirstOrderPhaseCorrection(firstOrderPhaseCorrection);
+            /* Calibration Reference Shift */
+            ValueWithUnitType  calibrationReferenceShift = objFactory.createValueWithUnitType();
+            calibrationReferenceShift.setValue("undefined");
+            calibrationReferenceShift.setUnitCvRef(cvUnitNone.getCvRef());
+            calibrationReferenceShift.setUnitAccession(cvUnitNone.getAccession());
+            calibrationReferenceShift.setUnitName(cvUnitNone.getName());
+            ProcParam1D.setCalibrationReferenceShift(calibrationReferenceShift);
 
+            /* spectralDenoisingMethod */
+            ProcParam1D.setSpectralDenoisingMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
+            /* baselineCorrectionMethod */
+            ProcParam1D.setBaselineCorrectionMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
 
             /* Spectrum1D - Source File Ref */
             SourceFileRefType procFileRef = objFactory.createSourceFileRefType();
@@ -456,6 +494,8 @@ public class Converter {
             /* SpectrumType - ProcessingParameterSet */
             SpectrumType.ProcessingParameterSet procParamSet = objFactory.createSpectrumTypeProcessingParameterSet();
             procParamSet.setDataTransformationMethod(cvLoader.fetchCVTerm("NMRCV","FFT_TRANSFORM"));
+            procParamSet.setPostAcquisitionSolventSuppressionMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
+            procParamSet.setCalibrationCompound(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
             spectrum1D.setProcessingParameterSet(procParamSet);
 
             /* SpectrumDataArray object */
@@ -464,7 +504,9 @@ public class Converter {
                 RealData.setEncodedLength(hBinaryDataObj.get("REAL_DATA_FILE").getEncodedLength());
                 RealData.setByteFormat(hBinaryDataObj.get("REAL_DATA_FILE").getByteFormat());
                 RealData.setCompressed(false);
-                //RealData.setValue(hBinaryDataObj.get("REAL_DATA_FILE").getData());
+                if(cmd.hasOption("d")) {
+                   RealData.setValue(hBinaryDataObj.get("REAL_DATA_FILE").getData());
+                }
                 spectrum1D.setSpectrumDataArray(RealData);
             }
 
@@ -483,7 +525,7 @@ public class Converter {
             // create a Marshaller and marshal to a file / stdout
             Marshaller m = jc.createMarshaller();
             m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, new Boolean(true) );
-            m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, "http://nmrML.org/schema/nmrML.xsd");
+            m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, schemaLocation);
             if(cmd.hasOption("o")) {
                 m.marshal( nmrML, new File(cmd.getOptionValue("o","output.nmrML")) );
             } else {

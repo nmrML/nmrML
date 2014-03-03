@@ -50,7 +50,7 @@ public class BrukerProcReader implements ProcReader {
     private final static Pattern REGEXP_SI = Pattern.compile("\\#\\#\\$SI= (\\d+)"); //transform size (complex)
     private final static Pattern REGEXP_SF = Pattern.compile("\\#\\#\\$SF= (\\d+\\.\\d+)"); //frequency of 0 ppm (???)
     private final static Pattern REGEXP_GB = Pattern.compile("\\#\\#\\$GB= (\\d+\\.\\d+)"); //GB-factor (Gain?)
-    private final static Pattern REGEXP_LB = Pattern.compile("\\#\\#\\$LB= (\\d+)"); //line broadening
+    private final static Pattern REGEXP_LB = Pattern.compile("\\#\\#\\$LB= (\\S+)"); //line broadening
     private final static Pattern REGEXP_WDW = Pattern.compile("\\#\\#\\$WDW= (\\d+)"); //window function type
     private final static Pattern REGEXP_PH_MODE = Pattern.compile("\\#\\#\\$PH\\_mod= (\\d+)"); //phasing type
     private final static Pattern REGEXP_PHC0 = Pattern.compile("\\#\\#\\$PHC0= (-?\\d+\\.\\d+)"); //zero order phase

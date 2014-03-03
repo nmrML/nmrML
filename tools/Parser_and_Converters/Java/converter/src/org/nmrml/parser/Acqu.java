@@ -56,6 +56,7 @@ public class Acqu {
     private boolean integerType;                 //dtypa         data type (0 -> 32 bit int, 1 -> 64 bit double)
     private String pulseProgram;                 //pulprog       pulse program
     private String observedNucleus;              //nuc1          observed nucleus
+    private String decoupledNucleus;             //nuc2          decoupled nucleus
     private String instrumentName;               //instrum       instrument name
     private String solvent;                      //solvent       solvent
     private String probehead;                    //probehead     probehead
@@ -257,6 +258,14 @@ public class Acqu {
 
     public void setObservedNucleus(String observedNucleus) {
         this.observedNucleus = observedNucleus;
+    }
+
+    public String getDecoupledNucleus() {
+        return decoupledNucleus;
+    }
+
+    public void setDecoupledNucleus(String decoupledNucleus) {
+        this.decoupledNucleus = decoupledNucleus;
     }
 
     public String getInstrumentName() {

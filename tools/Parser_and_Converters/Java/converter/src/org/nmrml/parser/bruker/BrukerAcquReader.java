@@ -79,6 +79,7 @@ public class BrukerAcquReader implements AcquReader {
     // examples of REGEXP_NUC1 : <1H>; basically <isotope number + element>
     private final static Pattern REGEXP_NUC_INDEX = Pattern.compile("\\#\\#\\$NUC(\\d)=.+"); // index of the nucleus
     private final static Pattern REGEXP_NUC1 = Pattern.compile("\\#\\#\\$NUC1= (.+)"); // observed nucleus
+    private final static Pattern REGEXP_NUC2 = Pattern.compile("\\#\\#\\$NUC2= (.+)"); // decoupled Nucleus
     //TODO review REGEXP_INSTRUM
     // examples of REGEXP_INSTRUM : <amx500> ; basically <machine name>
     private final static Pattern REGEXP_INSTRUM = Pattern.compile("\\#\\#\\$INSTRUM= (.+)"); // instrument name
@@ -281,6 +282,12 @@ public class BrukerAcquReader implements AcquReader {
                 matcher = REGEXP_NUC1.matcher(line);
                 matcher.find();
                 acquisition.setObservedNucleus(matcher.group(1).replace("<", "").replace(">", ""));
+            }
+            /* observed nucleus */
+            if (REGEXP_NUC2.matcher(line).find()) {
+                matcher = REGEXP_NUC2.matcher(line);
+                matcher.find();
+                acquisition.setDecoupledNucleus(matcher.group(1).replace("<", "").replace(">", ""));
             }
             if (REGEXP_INSTRUM.matcher(line).find()) {
                 matcher = REGEXP_INSTRUM.matcher(line);
