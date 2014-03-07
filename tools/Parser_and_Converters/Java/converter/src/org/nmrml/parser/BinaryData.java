@@ -27,6 +27,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -35,8 +39,14 @@ import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import java.net.*;
-import java.io.*;
+//import java.util.List;
+//import java.util.Map;
+import java.util.zip.DataFormatException;
+import java.util.zip.Deflater;
+import java.util.zip.Inflater;
+//import java.util.zip.GZIPInputStream;
+//import java.util.zip.GZIPOutputStream;
+
 import java.util.*;
 import java.lang.*;
 
@@ -47,9 +57,24 @@ public class BinaryData {
     private BigInteger encodedLength ;
     private String byteFormat;
     private boolean exists = false;
+    private boolean compressed = false;
     private String sha1;
 
-    public BinaryData() {}
+    private String convertToHex(byte[] data) {
+       StringBuffer buffer = new StringBuffer();
+       for (int i=0; i<data.length; i++)
+       {
+          if (i % 4 == 0 && i != 0)
+              buffer.append("");
+          int x = (int) data[i];
+          if (x<0)
+              x+=256;
+          if (x<16)
+              buffer.append("0");
+          buffer.append(Integer.toString(x,16));
+       }
+       return buffer.toString();
+    }
 
     public BigInteger getEncodedLength() {
         return encodedLength;
@@ -78,24 +103,91 @@ public class BinaryData {
     public boolean isExists() {
         return exists;
     }
-
-    private String convertToHex(byte[] data) {
-       StringBuffer buffer = new StringBuffer();
-       for (int i=0; i<data.length; i++)
-       {
-          if (i % 4 == 0 && i != 0)
-              buffer.append("");
-          int x = (int) data[i];
-          if (x<0)
-              x+=256;
-          if (x<16)
-              buffer.append("0");
-          buffer.append(Integer.toString(x,16));
-       }
-       return buffer.toString();
+    public void setCompressed(boolean compressed) {
+        this.compressed=compressed;
+    }
+    public boolean isCompressed() {
+        return compressed;
     }
 
+    public double[] getDataAsDouble() {
+        int encodedSize = (int)( this.data.length / this.encodedLength.intValue() );
+        double[] doubles = new double[this.data.length / encodedSize];
+System.out.println(" - DATA Length = " + this.data.length);
+System.out.println(" - EncodedLength = " + this.encodedLength.intValue());
+System.out.println(" - EncodedSize = " + encodedSize);
+        for(int i=0;i<doubles.length;i++){
+           ByteBuffer buffer = ByteBuffer.wrap(this.data, i*encodedSize, encodedSize);
+           buffer.order(ByteOrder.LITTLE_ENDIAN);
+           //buffer.order(ByteOrder.BIG_ENDIAN);
+           if (encodedSize == 4)
+              doubles[i] = (double)buffer.getInt();
+           else
+              doubles[i] = (double)buffer.getLong();
+        }
+        return doubles;
+    }
+
+/*
+    public static byte[] compress(byte[] data) throws IOException {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        GZIPOutputStream gzipOutputStream = new GZIPOutputStream(byteArrayOutputStream);
+        gzipOutputStream.write(data);
+        gzipOutputStream.close();
+        return byteArrayOutputStream.toByteArray();
+    }
+    public static byte[] decompress(byte[] data) throws IOException {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
+        GZIPInputStream gZIPInputStream = new GZIPInputStream(byteArrayInputStream);
+        byte[] tmpBuffer = new byte[256];
+        int n;
+        while ((n = gZIPInputStream.read(tmpBuffer)) >= 0)
+            byteArrayOutputStream.write(tmpBuffer, 0, n);
+        gZIPInputStream.close();
+        return byteArrayOutputStream.toByteArray();
+    }
+*/
+
+    public static byte[] compress(byte[] data) throws IOException {
+        Deflater deflater = new Deflater();
+        deflater.setInput(data);
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream(data.length);
+
+        deflater.finish();
+        byte[] buffer = new byte[1024];
+        while (!deflater.finished()) {
+            int count = deflater.deflate(buffer); // returns the generated code... index
+            outputStream.write(buffer, 0, count);
+        }
+        outputStream.close();
+        byte[] output = outputStream.toByteArray();
+       return output;
+    }
+
+    public static byte[] decompress(byte[] data) throws IOException, DataFormatException {
+        Inflater inflater = new Inflater();
+        inflater.setInput(data);
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream(data.length);
+        byte[] buffer = new byte[1024];
+        while (!inflater.finished()) {
+            int count = inflater.inflate(buffer);
+            outputStream.write(buffer, 0, count);
+        }
+        outputStream.close();
+        byte[] output = outputStream.toByteArray();
+        return output;
+    }
+
+    public BinaryData() {}
+
     public BinaryData (File inputFileData, Acqu acq) throws IOException {
+        this(inputFileData,acq,false);
+    }
+
+    public BinaryData (File inputFileData, Acqu acq, boolean isCompressed) throws IOException {
         BinaryData binaryData = new BinaryData();
         if(inputFileData.isFile() && inputFileData.canRead()) {
            FileInputStream fidInput = new FileInputStream(inputFileData);
@@ -104,11 +196,16 @@ public class BinaryData {
            ByteBuffer buffer = ByteBuffer.allocate((int) inChannel.size());
            buffer.order(acq.getByteOrder());
            int bytesRead = inChannel.read(buffer);
-           String byteFormat = Long.class.toString(); // 64 bit integer
+           String byteFormat = "Integer64"; // 64 bit integer
            if (acq.getBiteSyze() == 4) { // values as 32 bit integer
-               byteFormat = Integer.class.toString();
+               byteFormat = "Integer32";
            }
-           this.setData(buffer.array());
+           if (isCompressed) {
+              this.setData(compress(buffer.array()));
+           } else {
+              this.setData(buffer.array());
+           }
+           this.compressed=isCompressed;
            this.setEncodedLength(encodedLength);
            this.setByteFormat(byteFormat);
            this.exists = true;

@@ -29,6 +29,7 @@ import java.io.InputStreamReader;
 import java.nio.ByteOrder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Locale;
 
 /**
  * Reader for Bruker's acqu and acqus files
@@ -124,6 +125,7 @@ public class BrukerAcquReader implements AcquReader {
     @Override
     public Acqu read() throws Exception {
         Matcher matcher;
+        Locale.setDefault(new Locale("en", "US"));
         Acqu acquisition = new Acqu(Acqu.Spectrometer.BRUKER);
         String line = inputAcqReader.readLine();
         while (inputAcqReader.ready() && (line != null)) {

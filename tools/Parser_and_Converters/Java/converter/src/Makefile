@@ -31,6 +31,7 @@ xsd: xjc schema_class
 xjc:
 	@rm -f $(PKG_XSD)/*
 	@$(XJC) $(XJCFLAGS) $(XSD)
+	@sed -i -e 's#^\(import javax.xml.bind.annotation.XmlType;\)#\1\nimport javax.xml.bind.annotation.XmlRootElement;#' -e  's#^\(@XmlAccessorType.*\)#\1\n@XmlRootElement(name = \"$(SCHEMA_NS)\", namespace = \"$(SCHEMA_URI)\")#' $(PKG_XSD)/NmrMLType.java
 
 schema_class:
 	@make install PROG=$(PKG_XSD)/*

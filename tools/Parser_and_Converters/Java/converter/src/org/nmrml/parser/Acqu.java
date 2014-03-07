@@ -74,6 +74,8 @@ public class Acqu {
 
     public enum Spectrometer {BRUKER, VARIAN, JEOL}
 
+    public Acqu() { }
+
     public Acqu(Spectrometer spectrometer) {
         this.spectrometer=spectrometer;
     }

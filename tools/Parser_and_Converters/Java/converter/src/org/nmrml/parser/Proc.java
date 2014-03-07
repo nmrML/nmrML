@@ -64,6 +64,7 @@ public class Proc {
 
     public enum WindowFunctions{EXPONENTIAL,GAUSSIAN,LORENTZGAUS,SINE,SINESQUARED,TRAF,TRAFS}
 
+    public Proc() {}
 
     public Proc(Acqu acquisition) throws Exception{
 
