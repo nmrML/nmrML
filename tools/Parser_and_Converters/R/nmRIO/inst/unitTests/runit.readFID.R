@@ -9,3 +9,10 @@ test.openDJconverter <- function() {
     fid <- readNMRMLFID(file)
     checkEqualsNumeric(as.double(fid)[1:2], c(1,-11))
   }
+
+test.openLuisFFconverter <- function() {
+    file <- system.file('examples//bmse000325.nmrML', package = "nmRIO")
+    fid <- readNMRMLFID(file)
+    checkEqualsNumeric(as.double(fid)[27:28], c(100663296, -117440513))
+  }
+

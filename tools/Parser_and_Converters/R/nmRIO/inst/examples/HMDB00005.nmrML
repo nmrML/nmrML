@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://nmrml.org/schema 
- file:/Users/mike/Projects/nmrML/nmrML/xml-schemata/nmrML.xsd"
-    version="v1.0.1">
+    xsi:schemaLocation="http://nmrml.org/schema http://nmrml.org/schema/v1.0.rc1/nmrML.xsd"
+    version="v1.0.rc1" >
 
-    <cvList count="2">
+    <cvList>
         <cv id="NMRCV" fullName="nmrML Controlled Vocabulary"
-            URI="file://../../ontologies/nmrMLv1.1.owl" version="0.0.1"/>
+            URI="http://nmrml.org/cv/v1.0.rc1/nmrCV.owl" version="v1.0.rc1"/>
         <cv id="UO" fullName="Unit Ontology"
             URI="http://unit-ontology.googlecode.com/svn/trunk/uo.owl/" version="3.2.0"/>
+        <cv id="ChEBI" fullName="Chemical entities of biological interest" 
+	    URI="http://purl.obolibrary.org/obo/chebi.owl" version="ChEBI Release version 108"/>
     </cvList>
-
     <fileDescription>
         <fileContent>
-            <!-- include chebi ID ??-->
             <cvParam cvRef="NMRCV" name="reference compound NMR spectrum" accession="NMR:1000238"/>
-            <!-- TODO describe it as a reference spectrum -->
-            <!-- get rid of user params -->
-            <userParam name="1D FID"/>
-            <userParam name="Processed 1D Spectrum"/>
+            <cvParam cvRef="NMRCV" name="1D FID" accession="NMR:1400159"/>
         </fileContent>
     </fileDescription>
 
@@ -28,7 +24,7 @@
         <contact id="contact3" fullname="Philip Liu"      email="pbliu@ualberta.ca"/>
     </contactList>
 
-    <sourceFileList count="6">
+    <sourceFileList>
         <sourceFile id="FID_FILE" name="fid" location="file://HMDB00005.fid/fid"
             sha1="856a38dcffeeec46e79520cd290485f7826f89b2">
             <cvTerm cvRef="NMRCV" accession="NMR:1400119" name="FID file"/>
@@ -41,74 +37,61 @@
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
 
-        <!-- replace these descriptions from the CV -->
         <sourceFile id="PARAMETER_FILE_2" name="global" location="file://HMDB00005.fid/global"
             sha1="29833e1a9aaed80b55f8a3513748fc9e952bb708">
-            <cvTerm cvRef="NMRCV" accession="NMR:1002006" name="acquisition parameter file"/>
+            <cvTerm cvRef="NMRCV" accession="NMR:1002006" name="processing parameter file"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
         
-        <!-- include shapedPulseFile as a pulse sequence file type -->
         <sourceFile id="PULSE_SEQ_PARAM" name="tnnoesy" location="file://HMDB00005.fid/tnnoesy"
             sha1="8354697e6d843c36f414dfc10f754b59bfc0f218">
-            <cvTerm cvRef="NMRCV" accession="?" name="Pulse Seqence Parameter file"/>
+            <cvTerm cvRef="NMRCV" accession="NMR:1400122" name="pulse sequence file"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
 
         <sourceFile id="PULSE_SEQ_SRC" name="tnnoesy.c" location="file://HMDB00005.fid/tnnoesy.c"
             sha1="614e2747e37a20cd6f686827ec8a440d5d50575c">
-            <cvTerm cvRef="NMRCV" accession="?" name="Pulse Sequence Source Code file"/>
+            <cvTerm cvRef="NMRCV" accession="NMR:1400122" name="Pulse Sequence Source Code file"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
         
         <sourceFile id="ACQUISITON_LOG" name="log" location="file://HMDB00005.fid/log"
             sha1="dc779194f62e3cd431b28c76bbf069b2212f2fc4">
-            <cvTerm cvRef="NMRCV" accession="?" name="Acquisition Log file"/>
+            <cvTerm cvRef="NMRCV" accession="NMR:1000310" name="acquisition log file"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400297" name="Varian VNMR Format"/>
         </sourceFile>
     </sourceFileList>
 
-    <softwareList count="1">
+    <softwareList >
         <software id="software1" cvRef="NMRCV" accession="NMR:1000277" name="VnmrJ software" version="1.1"/>
     </softwareList>
 
-    <!-- must report instument model -->
-    <!-- must report probe type -->
-    <instrumentConfigurationList count="1">
+    <!-- Must report instrument model and probe type here -->
+    <instrumentConfigurationList >
         <instrumentConfiguration id="IC1">
-            <cvTerm cvRef="NMRCV" accession="NMR:400234" name="Varian NMR instrument"/>
+            <cvTerm cvRef="NMRCV" accession="NMR:1400234" name="Varian NMR instrument"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1400236" name="INOVA"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1000234" name="Varian SMS 50"/>
             <cvTerm cvRef="NMRCV" accession="NMR:1000236" name="Varian 5mm HCN cold probe"/>
         </instrumentConfiguration>
     </instrumentConfigurationList>
 
-
-    <!-- should reference the instrument configuration -->
-    <!-- double check about dwell time -->
     <acquisition>
         <acquisition1D>
             <acquisitionParameterSet numberOfSteadyStateScans="2" numberOfScans="64">
-                <contactRefList count="2">
-                    <contactRef ref="contact1"/>
-                    <contactRef ref="contact2"/>
-                </contactRefList>
 
-                <acquisitionParameterFileRefList count="2">
+                <acquisitionParameterFileRefList >
                     <sourceFileRef ref="PARAMETER_FILE_1"/>
                     <sourceFileRef ref="PARAMETER_FILE_2"/>
                 </acquisitionParameterFileRefList>
 
                 <sampleContainer name="tube" cvRef="NMRCV" accession="NMR:400128"/>
 
-                <!-- must be in degree kelvin -->
-                <!-- NOTE need to make the ids be either a colon or an underscore -->
                 <sampleAcquisitionTemperature value="298" unitName="kelvin"
                     unitAccession="UO:0000012" unitCvRef="UO"/>
 
                 <spinningRate value="0" unitName="hertz" unitAccession="UO:0000106" unitCvRef="UO"/>
 
-                <!-- must be in seconds -->
                 <relaxationDelay value="1" unitName="second" unitCvRef="UO"
                     unitAccession="UO:0000010"/>
 
@@ -116,48 +99,31 @@
                     <cvTerm name="first transient of the tnnoesy-presaturation pulse sequence"
                         accession="NMR:1000226" cvRef="NMRCV"/>
 
-                    <!-- Add this to the CV -->
                     <pulseSequenceFileRefList>
-                        <!-- change this to source file ref -->
-                        <pulseSequenceFileRef ref="PULSE_SEQ_SRC" />
+                        <sourceFileRef ref="PULSE_SEQ_SRC" />
+                        <sourceFileRef ref="PULSE_SEQ_PARAM" />              
                     </pulseSequenceFileRefList>
                 </pulseSequence>
-
-                <!-- must check for decouplingMethod if decouple id true -->
-                   <!--  decoupled definition needs to be clarified  >
- -->
                 
                 <DirectDimensionParameterSet decoupled="true" numberOfDataPoints="57804">
-                    <acquisitionNucleus name="1H" cvRef="NMRCV" accession="NMR:400151"/>
+                    <acquisitionNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
 
+                    <effectiveExcitationField value="39682.54" unitName="megaHertz" unitCvRef="UO"
+                        unitAccession="UO:0000325"/>
+
+                    <!-- NOTE dwell time is just the inverse of sweep width -->
                     <sweepWidth value="7200.07200072" unitName="hertz" unitCvRef="UO"
                         unitAccession="UO:0000106"/>
+                    
+                    <pulseWidth value="6.3" unitName="ppm" unitCvRef="UO" unitAccession="UO:0000169"/>
 
-                    <!-- need to figure out how to calculate this, maybe email Christian -->
-                    <gammaB1PulseFieldStrength value="?" unitName="tesla" unitCvRef="UO"
-                        unitAccession="UO:0000228"/>
-
-                    <!-- must be in hertz, TODO investigate this value, as it seems to be the wrong
-                    one according to Reza -->
                     <irradiationFrequency value="599.4094446" unitName="hertz" unitCvRef="UO"
                         unitAccession="UO:0000106"/>
 
-                    <!-- make this a CVTerm, add to CV -->
-                    <!-- add a rule for this  -->
-                    <decouplingMethod name="homonuclear decoupling" accession="NMR:1000046"
-                        cvRef="NMRCV"/>
+                    <decouplingNucleus name="1H" cvRef="ChEBI" accession="CHEBI_29236"/>
 
-                    <!-- must add the mapping for this -->
                     <samplingStrategy accession="?" cvRef="NMRCV" name="uniform"/>
 
-                    <!-- Moved the representation of time points to the fid -->
-                    <!-- dwell time instead?? NO dwell time is just the inverse of sweep width -->
-                    <!-- representing sampling strategy needs to be asked about in mailing list
-                    
-                    <samplingTimePoints encodedLength="20" compressed="false" byteFormat="Float64" >
-                        <binary>ZGVmYXVsdA</binary>        
-                    </samplingTimePoints>
-                    -->
                 </DirectDimensionParameterSet>
             </acquisitionParameterSet>
 
@@ -166,8 +132,7 @@
     </acquisition>
 
     <!--
-    <spectrumList count="1" defaultDataProcessingRef="1" >
-        
+    <spectrumList defaultDataProcessingRef="1" >
     </spectrumList>
     -->
 </nmrML>

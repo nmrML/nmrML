@@ -12,6 +12,9 @@
 #' @export
 
 readNMRMLFID <- function (filename) {
+    if (!file.exists(filename))
+        stop("File ", filename, " does not exist\n")
+    
     tree <- xmlTreeParse(filename)
     root <- xmlRoot(tree)
 
@@ -30,6 +33,7 @@ readNMRMLFID <- function (filename) {
                    Complex64 = "double",
                    Integer32 = "integer",
                    Complex32int = "integer",
+                   "class java.lang.Integer" = "integer",
                    Complex64int = "currentlynotsupported")
     
     compression <- ifelse(xmlAttrs(fidData)["compressed"]=="true", "gzip", "none")
@@ -244,6 +248,11 @@ if (FALSE) {
     fid <- readNMRMLFID(filename)
     str(fid)
     plot(as.double(fid), pch=".")
+
+    filename <- "../inst/examples/bmse000325.nmrML"
+    fid <- readNMRMLFID(filename)
+    str(fid)
+    plot(as.double(fid), type="l", pch=".")
     
 }
 
