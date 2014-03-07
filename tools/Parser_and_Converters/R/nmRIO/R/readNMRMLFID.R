@@ -15,13 +15,28 @@ readNMRMLFID <- function (filename) {
     tree <- xmlTreeParse(filename)
     root <- xmlRoot(tree)
 
+    ## Currently reads only the FIRST fidData from file:
+    fidData <- xmlElementsByTagName(root, "fidData", recursive = TRUE)[["acquisition.acquisition1D.fidData"]]
+    
     ## Extract base64encoded data 
-    b64s <- gsub("\n", "", sapply (xmlElementsByTagName(root, "fidData", recursive = TRUE),
-                                   xmlValue))
+    b64s <- gsub("\n", "", xmlValue(fidData))
 
+    ## byteFormat="Integer32" Used by Daniel Jacobs, should change into cvParam as complex64int
+    ## byteFormat="complex128" Used by Michael should change into cvParam as complex64 as 128 is misleading
+
+    byteFormat <- xmlAttrs(fidData)["byteFormat"]
+    what <- switch(byteFormat,
+                   Complex128 = "double", # that's because complex128 is misleading
+                   Complex64 = "double",
+                   Integer32 = "integer",
+                   Complex32int = "integer",
+                   Complex64int = "currentlynotsupported")
+    
+    compression <- ifelse(xmlAttrs(fidData)["compressed"]=="true", "gzip", "none")
+    
     ## Decode. TODO: Check cvParam about the encoding
-    dfid <- binaryArrayDecode(b64s["acquisition.acquisition1D.fidData"],
-                      what="double", compression="gzip")
+    dfid <- binaryArrayDecode(b64s,
+                      what=what, compression=compression)
     
     fid <- fidvector2complex(dfid)
 
@@ -218,12 +233,17 @@ if (FALSE) {
     
     ## from Bruker 
     library(nmRIO)
-    filename <- "../../../../examples/reference_spectra_example/HMDB00005.nmrML"
+    filename <- "../../../../../examples/reference_spectra_example/HMDB00005.nmrML"
     filename
     
     fid <- readNMRMLFID(filename)
     str(fid)
+    plot(as.double(fid), pch=".")
     
+    filename <- "../inst/examples/MMBBI_10M12-CE01-1a.nmrML"
+    fid <- readNMRMLFID(filename)
+    str(fid)
+    plot(as.double(fid), pch=".")
     
 }
 
