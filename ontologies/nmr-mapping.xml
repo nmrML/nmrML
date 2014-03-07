@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="https://psidev.svn.sourceforge.net/svnroot/psidev/psi/tools/current/xsl/cv-mapping/CvMappingRules.xsl" type="text/xsl"?>
 <!-- 
+To generate the HTNL documentation, use the following OpenMS tool:
 CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -html mapping_and_cv.html
+
+Another convenient tool to create MappingRules is to extract all XPaths with:
+xsltproc xpath.xsl examples/reference_spectra_example/HMDB00005.nmrML | grep accession
+where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700.html
 -->
 
 <CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvMapping.xsd" modelName="nmrML.xsd" modelURI="https://raw.github.com/nmrML/nmrML/master/xml-schemata/nmrML.xsd" modelVersion="0.1.0">
@@ -13,6 +18,19 @@ CVInspector -cv_files msi-nmr.obo -cv_names NMR -mapping_file nmr-mapping.xml -h
     </CvReferenceList>
 
     <CvMappingRuleList>
+
+      <CvMappingRule id="fileContent_may" 
+		     cvElementPath="/nmrML/fileDescription/fileContent/cvParam@accession" 
+		     requirementLevel="MAY" 
+		     scopePath="/nmrML/fileDescription/fileContent/"
+		     cvTermsCombinationLogic="AND">
+	<CvTerm termAccession="NMR:1400285" 
+		useTerm="false" 
+		termName="NMR software data format" 
+		isRepeatable="false" 
+		allowChildren="true" 
+		cvIdentifierRef="NMR"></CvTerm>
+      </CvMappingRule>
 
       <!-- sourceFile -->
 
