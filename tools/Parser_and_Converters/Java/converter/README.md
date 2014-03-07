@@ -32,7 +32,7 @@ nmrML reader: development version 1.0
 
 
 ```
-usage: reader
+usage: nmrMLread
     --fid <output text file>             extract FID data onto a text file
  -h,--help                               prints the help content
  -i,--input <nmrML file>                 input  nmrML file
