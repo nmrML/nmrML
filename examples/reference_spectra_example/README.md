@@ -70,3 +70,19 @@ Download Complete Dataset here
 ### Note
 > the sample nmrML files were generated with the JAVA tool deposit on GitHub nmrML (tools/Parser_and_Converters/Java/converter)
 
+Contact: Daniel Jacob(djacob65@gmail.com)
+
+## MMBBI_10M12-CE01
+
+### Explanation of files/directory:
+- VZBBI_13R03_GABA : Acquisition directories from Bruker TopSpin software (1H & 13C)
+- VZBBI_13R03_GABA_1H.nmrML: nmrML instance created from the 1H Experiment
+- VZBBI_13R03_GABA_13C.nmrML: nmrML instance created from the 13C Experiment
+
+### Overview
+Metabolome analyses were performed at the Metabolome Facility of Bordeaux, using quantitative proton NMR ( 1H-NMR) profiling of  polar extracts. Polar metabolites were extracted on lyophilized powder (50 mg DW per biological replicate) with an ethanol–water series at 80 °C. The lyophilized extracts were titrated to pH 6 and lyophilized again. Each dried titrated extract was solubilized in 0.5 ml of D O with tri-methylsilyl-propionic-2,2,3,3-d  acid (TSP) sodium salt (0.01% final concentration) for chemical shift calibration and EDTA (5 mM final concentration for the CE and 2 mM for the OR stage). H-NMR spectra were recorded at 500.162 MHz on a Bruker Avance III spectrometer (Bruker, Karlsruhe, Germany) using an ATMA inverse weight basis to be comparable. All the analyses were performed 5 mm probe flushed with nitrogen gas and an electronic reference for quantification (ERETIC2). Sixty-four scans of  32 000 data points each were acquired with a 90 ° pulse angle, a 6000 Hz spectral width, a 2.73 s acquisition time, and a 25 s recycle delay.
+
+### Source
+The 144 H-NMR spectra of  the data set were converted into JCAMP-DX format and deposited with associated metadata into the Metabolomics Repository of  Bordeaux MeRy-B (<a href=" http://www.cbib.u-bordeaux2.fr/MERYB/res/project/T10001" target="_blank">T10001</a>). 
+
+Contact: Daniel Jacob(djacob65@gmail.com)
