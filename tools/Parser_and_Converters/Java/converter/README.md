@@ -1,7 +1,7 @@
 JAVA converter
 ==============
 
-nmrML converter: development version 1.0
+nmrML converter: development version 1.0b
 
 Only 'bruker' is support today. TODO: 'varian' support
 ```
@@ -28,7 +28,7 @@ To see Windows usage:
 JAVA reader
 ==============
 
-nmrML reader: development version 1.0
+nmrML reader: development version 0.1a
 
 
 ```
@@ -36,6 +36,6 @@ usage: nmrMLread
     --fid <output text file>             extract FID data onto a text file
  -h,--help                               prints the help content
  -i,--input <nmrML file>                 input  nmrML file
-    --real-spectrum <output text file>   extract Real Spectrum data onto a
+    --real-spectrum <output text file>   extract Real Spectrum data onto a text file
 ```
 

@@ -225,7 +225,7 @@ public class BinaryData {
               this.setData(buffer.array());
            }
            this.compressed=isCompressed;
-           this.setEncodedLength(encodedLength);
+           this.setEncodedLength(BigInteger.valueOf(this.getData().length));
            this.setByteFormat(byteFormat);
            this.exists = true;
            MessageDigest md = null;
