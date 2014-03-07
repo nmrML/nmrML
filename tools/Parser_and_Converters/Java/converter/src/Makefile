@@ -14,9 +14,13 @@ PKG_CV     = org/nmrml/cv
 PKG_PARSER = org/nmrml/parser
 PKG_BRUKER = org/nmrml/parser/bruker
 PKG_CONV   = org/nmrml/converter
+PKG_READ   = org/nmrml/reader
+SCHEMA_NS  = nmrML
+SCHEMA_URI = http://nmrml.org/schema
+
 DIR_BIN    = ../bin
 
-all: xsd parser cv converter jar
+all: xsd parser cv converter reader jar
 
 parser:
 bruker:
@@ -38,6 +42,9 @@ schema_class:
 
 converter:
 	@make install PROG=$(PKG_CONV)/*
+
+reader:
+	@make install PROG=$(PKG_READ)/*
 
 install: $(PROG).class
 

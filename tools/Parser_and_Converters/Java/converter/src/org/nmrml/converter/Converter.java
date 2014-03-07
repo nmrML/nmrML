@@ -386,7 +386,7 @@ public class Converter {
             if (hBinaryDataObj.containsKey("FID_FILE") && hBinaryDataObj.get("FID_FILE").isExists()) {
                 BinaryDataArrayType fidData = objFactory.createBinaryDataArrayType();
                 fidData.setEncodedLength(hBinaryDataObj.get("FID_FILE").getEncodedLength());
-                fidData.setByteFormat(hBinaryDataObj.get("FID_FILE").getByteFormat());
+                fidData.setByteFormat(vendorMapper.getTerm("BYTEFORMAT","FID_FILE"));
                 fidData.setCompressed(hBinaryDataObj.get("FID_FILE").isCompressed());
                 if(cmd.hasOption("d")) {
                    fidData.setValue(hBinaryDataObj.get("FID_FILE").getData());
@@ -497,7 +497,7 @@ public class Converter {
             if (hBinaryDataObj.containsKey("REAL_DATA_FILE") && hBinaryDataObj.get("REAL_DATA_FILE").isExists()) {
                 BinaryDataArrayType RealData = objFactory.createBinaryDataArrayType();
                 RealData.setEncodedLength(hBinaryDataObj.get("REAL_DATA_FILE").getEncodedLength());
-                RealData.setByteFormat(hBinaryDataObj.get("REAL_DATA_FILE").getByteFormat());
+                RealData.setByteFormat(vendorMapper.getTerm("BYTEFORMAT","REAL_DATA_FILE"));
                 RealData.setCompressed(hBinaryDataObj.get("REAL_DATA_FILE").isCompressed());
                 if(cmd.hasOption("d")) {
                    RealData.setValue(hBinaryDataObj.get("REAL_DATA_FILE").getData());

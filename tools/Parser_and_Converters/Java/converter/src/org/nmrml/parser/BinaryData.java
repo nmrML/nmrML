@@ -40,7 +40,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 //import java.util.List;
-//import java.util.Map;
+import java.util.Map;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
@@ -60,6 +60,20 @@ public class BinaryData {
     private boolean compressed = false;
     private String sha1;
 
+    private static final int tInteger = 1;
+    private static final int tLong = 2;
+    private static final int tFloat = 3;
+
+    private static final Map<String, int[]> hByteFormat;
+    static
+    {
+        hByteFormat = new HashMap<String, int[]>();
+        hByteFormat.put("Integer32", new int[] {4, 1, tInteger });
+        hByteFormat.put("Complex64Int", new int[] {4, 2, tInteger });
+        hByteFormat.put("Complex128", new int[] {8, 2, tFloat });
+        hByteFormat.put("class java.lang.Integer", new int[] {4, 1, tInteger });
+    }
+
     private String convertToHex(byte[] data) {
        StringBuffer buffer = new StringBuffer();
        for (int i=0; i<data.length; i++)
@@ -74,6 +88,10 @@ public class BinaryData {
           buffer.append(Integer.toString(x,16));
        }
        return buffer.toString();
+    }
+
+    public int[] getEncodedSize () {
+       return this.hByteFormat.get(this.getByteFormat());
     }
 
     public BigInteger getEncodedLength() {
@@ -111,19 +129,20 @@ public class BinaryData {
     }
 
     public double[] getDataAsDouble() {
-        int encodedSize = (int)( this.data.length / this.encodedLength.intValue() );
+        int[] encoded = this.getEncodedSize();
+        int encodedSize = encoded[0];
         double[] doubles = new double[this.data.length / encodedSize];
-System.out.println(" - DATA Length = " + this.data.length);
-System.out.println(" - EncodedLength = " + this.encodedLength.intValue());
-System.out.println(" - EncodedSize = " + encodedSize);
         for(int i=0;i<doubles.length;i++){
            ByteBuffer buffer = ByteBuffer.wrap(this.data, i*encodedSize, encodedSize);
            buffer.order(ByteOrder.LITTLE_ENDIAN);
-           //buffer.order(ByteOrder.BIG_ENDIAN);
-           if (encodedSize == 4)
-              doubles[i] = (double)buffer.getInt();
-           else
-              doubles[i] = (double)buffer.getLong();
+           switch (encoded[2]) {
+                  case tInteger: doubles[i] = (double)buffer.getInt();
+                      break;
+                  case tLong: doubles[i] = (double)buffer.getLong();
+                      break;
+                  case tFloat: doubles[i] = (double)buffer.getFloat();
+                      break;
+           }
         }
         return doubles;
     }
