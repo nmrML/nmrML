@@ -20,7 +20,7 @@
     <xs:sequence>
       <xs:element name="cvList" type="dx:CVListType"/>
       <xs:element name="fileDescription" type="FileDescriptionType"/>
-      <xs:element maxOccurs="1" minOccurs="1" name="contactList" type="ContactListType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="contactList" type="ContactListType"/>
       <xs:element minOccurs="0" name="referenceableParamGroupList"
         type="ReferenceableParamGroupListType"/>
       <xs:element minOccurs="0" name="sourceFileList" type="SourceFileListType"/>
@@ -784,7 +784,6 @@ Parsed from Excitation width ?</xs:documentation>
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element name="contactRefList" type="ContactRefListType" minOccurs="0"/>
-      <xs:element name="acquisitionParameterFileRefList" type="SourceFileRefListType"> </xs:element>
       <xs:element minOccurs="0" name="softwareRef" type="SoftwareRefType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="sampleContainer" type="CVTermType">
         <xs:annotation>
