@@ -18,18 +18,20 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
     </CvReferenceList>
 
     <CvMappingRuleList>
-
-      <CvMappingRule id="fileContent_may" <!-- This node specifies the rule name (id), the CV element in consideration (cvElementPath),the requirement level, the XML element it refers to (scopePath), and the boolean combination logics allowed for multiple CV terms -->
+<!-- The following CvMapping node attributes specify the rule and its conditions, i.e. the rule name (id), the CV element in consideration (cvElementPath),the requirement level, the XML element it refers to (scopePath), and the boolean combination logics allowed for multiple CV terms -->
+      <CvMappingRule id="fileContent_may" 
 		     cvElementPath="/nmrML/fileDescription/fileContent/cvParam@accession" 
 		     requirementLevel="MAY" 
 		     scopePath="/nmrML/fileDescription/fileContent/"
 		     cvTermsCombinationLogic="AND">
+<!-- The following nested CvTerm node attributes define the specific allowed CV terms applicable to the path specified before, i.e. its ID, an indication whether child terms are enforced (useTerm=false),  -->
 	<CvTerm termAccession="NMR:1400285" 
 		useTerm="false" 
 		termName="NMR software data format" 
 		isRepeatable="false" 
 		allowChildren="true" 
 		cvIdentifierRef="NMR"></CvTerm>
+		 <!-- In short, this rule constraints valid data entry types for the XML fileContent node to be of CV terms from nmrCV under the 'NMR software data format' class, i.e. 'Bruker WIN NMR format'  -->
       </CvMappingRule>
 
       <!-- sourceFile -->
@@ -39,12 +41,6 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 		     requirementLevel="MAY" 
 		     scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/" 
 		     cvTermsCombinationLogic="AND">
-	<CvTerm termAccession="NMR:1400285" 
-		useTerm="false" 
-		termName="NMR software data format" 
-		isRepeatable="false" 
-		allowChildren="true" 
-		cvIdentifierRef="NMR"></CvTerm>
 	<CvTerm termAccession="NMR:1400285" 
 		useTerm="false" 
 		termName="NMR software data format" 
