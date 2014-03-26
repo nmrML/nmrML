@@ -11,7 +11,7 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 
 <CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvMapping.xsd" modelName="nmrML.xsd" modelURI="https://raw.github.com/nmrML/nmrML/master/xml-schemata/nmrML.xsd" modelVersion="0.1.0">
 
-    <CvReferenceList>
+    <CvReferenceList><!-- This node defines the used CV resources that the validator will be aware of -->
       <CvReference cvName="NMR" cvIdentifier="NMR"/>
       <CvReference cvName="PATO" cvIdentifier="PATO"/>
       <CvReference cvName="UO" cvIdentifier="UO"/>    
@@ -19,7 +19,7 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 
     <CvMappingRuleList>
 
-      <CvMappingRule id="fileContent_may" 
+      <CvMappingRule id="fileContent_may" <!-- This node specifies the rule name (id), the CV element in consideration (cvElementPath),the requirement level, the XML element it refers to (scopePath), and the boolean combination logics allowed for multiple CV terms -->
 		     cvElementPath="/nmrML/fileDescription/fileContent/cvParam@accession" 
 		     requirementLevel="MAY" 
 		     scopePath="/nmrML/fileDescription/fileContent/"
