@@ -881,18 +881,7 @@ Parsed from Excitation width ?</xs:documentation>
         etc.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="ParamGroupType">
-        <xs:sequence minOccurs="0">
-          <xs:element name="pulseSequenceFileRefList">
-            <xs:complexType>
-              <xs:sequence>
-                <xs:element minOccurs="0" name="sourceFileRef" type="SourceFileRefType"
-                  maxOccurs="unbounded"/>
-              </xs:sequence>
-            </xs:complexType>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
+      <xs:extension base="ParamGroupType"> </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AcquisitionType">
