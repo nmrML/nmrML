@@ -725,7 +725,7 @@
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
-      <xs:element name="decouplingNucleus" type="CVTermType"/>
+      <xs:element name="decouplingNucleus" type="CVTermType" minOccurs="0"/>
       <xs:element name="samplingStrategy" type="CVTermType"/>
       <xs:element name="samplingTimePoints" type="BinaryDataArrayType" minOccurs="0">
         <xs:annotation>
