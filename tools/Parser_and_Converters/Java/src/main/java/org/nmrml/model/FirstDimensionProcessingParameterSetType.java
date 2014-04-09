@@ -13,7 +13,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Parameters recorded when raw data set is processed to create a spectra that are specific to a dimension.
+ * Parameters recorded when raw data set is processed to create a spectra that
+ *         are specific to a dimension.
  * 
  * <p>Java class for FirstDimensionProcessingParameterSetType complex type.
  * 

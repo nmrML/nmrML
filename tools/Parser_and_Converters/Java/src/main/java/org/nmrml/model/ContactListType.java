@@ -18,8 +18,8 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="ContactListType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence maxOccurs="unbounded">
- *         &lt;element name="contact" type="{http://nmrml.org/schema}ContactType"/>
+ *       &lt;sequence>
+ *         &lt;element name="contact" type="{http://nmrml.org/schema}ContactType" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>

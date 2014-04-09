@@ -24,6 +24,7 @@ SEMANTICVALIDATOR=/bin/true
 
 OPENMSSHARE := $(shell which FileInfo | sed -e s!bin[/]\\+FileInfo!share/OpenMS!g )
 
+NMRIOEXAMPLES="tools/Parser_and_Converters/R/nmRIO/inst/examples/"
 
 
 .PHONY: docs docs_clean docs_rebuild tidy undo_tag show_tags \
@@ -134,7 +135,7 @@ ontologies/nmrCV.obo: ontologies/nmrCV.owl
 
 # Validate our examples against Schema, Ontology and the mapping
 #validate-all: validate-nmrml-schema validate-nmrml-mapping update-openms validate-HMDB00005 validate-bmse000325
-validate-all: validate-nmrml-schema validate-nmrml-mapping validate-HMDB00005 validate-bmse000325
+validate-all: validate-nmrml-schema validate-nmrml-mapping validate-HMDB00005 validate-bmse000325 validate-MMBBI_10M12-CE01-1a
 
 validate-nmrml-schema: 
 	xmllint --noout --schema xml-schemata/XMLSchema.xsd xml-schemata/nmrML.xsd
@@ -151,6 +152,17 @@ validate-HMDB00005:
 
 validate-bmse000325: 
 	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/bmse000325.nmrML
+
+validate-MMBBI_10M12-CE01-1a: 
+	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/MMBBI_10M12-CE01-1a.nmrML
+
+updateNmRIOexamples:
+	cp examples/reference_spectra_example/bmse000325.nmrML ${NMRIOEXAMPLES}
+	cp examples/reference_spectra_example/HMDB00005.nmrML ${NMRIOEXAMPLES}
+	cp examples/reference_spectra_example/MMBBI_10M12-CE01-1a.nmrML ${NMRIOEXAMPLES}
+
+NmRIOcheck: updateNmRIOexamples
+	cd tools/Parser_and_Converters/R/ ; R CMD check nmRIO
 
 # Check for broken links and other problems with linkchecker:
 # Homepage: http://linkchecker.sourceforge.net/

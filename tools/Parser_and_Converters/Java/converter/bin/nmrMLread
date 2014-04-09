@@ -1,0 +1,9 @@
+#!/bin/bash
+MYDIR=$(dirname $0)
+
+JAVA=$(which java)
+
+READER="$JAVA -cp $MYDIR/converter.jar org.nmrml.reader.Reader"
+
+$READER $*
+

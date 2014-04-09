@@ -72,7 +72,7 @@ public class BrukerAcquReaderTest {
             m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, new Boolean(true) );
             m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, "http://nmrML.org/schema/nmrML.xsd");
             m.marshal( nmrML, System.out );
-            m.marshal( nmrML, new File("/Users/ldpf/Dev/cosmos/nmrML/examples/reference_spectra_example/bmse000325.nmrML"));
+            //m.marshal( nmrML, new File("/Users/ldpf/Dev/cosmos/nmrML/examples/reference_spectra_example/bmse000325.nmrML"));
 
 
         } catch( JAXBException je ) {

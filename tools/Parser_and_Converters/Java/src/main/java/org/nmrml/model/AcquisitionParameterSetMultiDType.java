@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;/element>
  *         &lt;element name="directDimensionParameterSet" type="{http://nmrml.org/schema}AcquisitionDimensionParameterSetType"/>
  *         &lt;element name="encodingScheme" type="{http://nmrml.org/schema}CVParamType"/>
- *         &lt;element name="indirectDimensionParameterSet" type="{http://nmrml.org/schema}AcquisitionDimensionParameterSetType" maxOccurs="2"/>
+ *         &lt;element name="indirectDimensionParameterSet" type="{http://nmrml.org/schema}AcquisitionDimensionParameterSetType" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>

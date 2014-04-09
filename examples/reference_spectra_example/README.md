@@ -46,3 +46,43 @@ pH 7.4 in D<sub>2</sub>O and refereced to DSS and was collected on a Bruker DMX 
 
 Download FID here (3e537ca7a351c8e34fad813b0060cd6b18090bf1):
 > http://www.bmrb.wisc.edu/metabolomics/standards/2_ketobutyric_acid/nmr/bmse000325/1H.tar
+
+
+## VZBBI_13R03_GABA
+
+### Explanation of files/directory:
+- VZBBI_13R03_GABA : Acquisition directories from Bruker TopSpin software (1H & 13C)
+- VZBBI_13R03_GABA_1H.nmrML: nmrML instance created from the 1H Experiment
+- VZBBI_13R03_GABA_13C.nmrML: nmrML instance created from the 13C Experiment
+
+### Overview
+
+This reference is one of the reference specra created by the Bordeaux Metabolomics Platform (INRA Villenane d'Ornon - FRANCE).
+The spectra is a reference of Aminobutytic acic (gamma-) including different NMR analytical parameters, 1D (1H & 13C) and 2D (1H/13C, 1H/1H). The analytical parameters file and peaks list file are provided too. The sample was collected at a concentration of 20 mM at 
+pH 6 in D<sub>2</sub>O and referenced to TSP and was collected on a Bruker Advanced III - 500 MHz spectrometer.
+
+### Source
+> Contribution to the MetaboHUB infrastructure (http://www.metabohub.fr/en/). Complete NMR compound library online (soon).
+
+Download Complete Dataset here
+> https://drive.google.com/#folders/0B-G26AwbdABgN3ZyYWlIS0RvaDg
+
+### Note
+> the sample nmrML files were generated with the JAVA tool deposit on GitHub nmrML (tools/Parser_and_Converters/Java/converter)
+
+Contact: Daniel Jacob(djacob65@gmail.com)
+
+## MMBBI_10M12-CE01
+
+### Explanation of files/directory:
+- MBBI_10M12-CE01 : Acquisition directories from Bruker TopSpin software (1H)
+- MBBI_10M12-CE01.nmrML: nmrML instance created from the 1H Experiment
+
+
+### Overview
+Metabolome analyses were performed at the Metabolome Facility of Bordeaux, using quantitative proton NMR ( 1H-NMR) profiling of  polar extracts. Polar metabolites were extracted on lyophilized powder (50 mg DW per biological replicate) with an ethanol–water series at 80 °C. The lyophilized extracts were titrated to pH 6 and lyophilized again. Each dried titrated extract was solubilized in 0.5 ml of D O with tri-methylsilyl-propionic-2,2,3,3-d  acid (TSP) sodium salt (0.01% final concentration) for chemical shift calibration and EDTA (5 mM final concentration for the CE and 2 mM for the OR stage). H-NMR spectra were recorded at 500.162 MHz on a Bruker Avance III spectrometer (Bruker, Karlsruhe, Germany) using an ATMA inverse weight basis to be comparable. All the analyses were performed 5 mm probe flushed with nitrogen gas and an electronic reference for quantification (ERETIC2). Sixty-four scans of  32 000 data points each were acquired with a 90 ° pulse angle, a 6000 Hz spectral width, a 2.73 s acquisition time, and a 25 s recycle delay.
+
+### Source
+The 144 H-NMR spectra of  the data set were converted into JCAMP-DX format and deposited with associated metadata into the Metabolomics Repository of  Bordeaux MeRy-B (<a href=" http://www.cbib.u-bordeaux2.fr/MERYB/res/project/T10001" target="_blank">T10001</a>). 
+
+Contact: Daniel Jacob(djacob65@gmail.com)

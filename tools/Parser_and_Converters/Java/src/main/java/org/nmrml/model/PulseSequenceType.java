@@ -10,7 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * A list of references to the  source files that define the pulse sequence, including pulse shape files, pulse sequence source code, pulse sequence parameter files, etc.
+ * A list of references to the source files that define the pulse sequence,
+ *         including pulse shape files, pulse sequence source code, pulse sequence parameter files,
+ *         etc.
  * 
  * <p>Java class for PulseSequenceType complex type.
  * 
@@ -26,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="pulseSequenceFileRef" type="{http://nmrml.org/schema}SourceFileRefType" maxOccurs="unbounded" minOccurs="0"/>
+ *                   &lt;element name="sourceFileRef" type="{http://nmrml.org/schema}SourceFileRefType" maxOccurs="unbounded" minOccurs="0"/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -86,7 +88,7 @@ public class PulseSequenceType
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="pulseSequenceFileRef" type="{http://nmrml.org/schema}SourceFileRefType" maxOccurs="unbounded" minOccurs="0"/>
+     *         &lt;element name="sourceFileRef" type="{http://nmrml.org/schema}SourceFileRefType" maxOccurs="unbounded" minOccurs="0"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -97,26 +99,26 @@ public class PulseSequenceType
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "pulseSequenceFileRef"
+        "sourceFileRef"
     })
     public static class PulseSequenceFileRefList {
 
         @XmlElement(namespace = "http://nmrml.org/schema")
-        protected List<SourceFileRefType> pulseSequenceFileRef;
+        protected List<SourceFileRefType> sourceFileRef;
 
         /**
-         * Gets the value of the pulseSequenceFileRef property.
+         * Gets the value of the sourceFileRef property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the pulseSequenceFileRef property.
+         * This is why there is not a <CODE>set</CODE> method for the sourceFileRef property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getPulseSequenceFileRef().add(newItem);
+         *    getSourceFileRef().add(newItem);
          * </pre>
          * 
          * 
@@ -126,11 +128,11 @@ public class PulseSequenceType
          * 
          * 
          */
-        public List<SourceFileRefType> getPulseSequenceFileRef() {
-            if (pulseSequenceFileRef == null) {
-                pulseSequenceFileRef = new ArrayList<SourceFileRefType>();
+        public List<SourceFileRefType> getSourceFileRef() {
+            if (sourceFileRef == null) {
+                sourceFileRef = new ArrayList<SourceFileRefType>();
             }
-            return this.pulseSequenceFileRef;
+            return this.sourceFileRef;
         }
 
     }

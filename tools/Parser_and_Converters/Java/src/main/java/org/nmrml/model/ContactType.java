@@ -12,7 +12,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * A person's name and information on how to communicate with them.
+ * A person's name and information on how to communicate with
+ *         them.
  * 
  * <p>Java class for ContactType complex type.
  * 

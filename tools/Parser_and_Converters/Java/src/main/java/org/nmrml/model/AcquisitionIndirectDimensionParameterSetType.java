@@ -11,7 +11,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Descriptions of the acquisition parameters set prior to the start of data acquisition specific to each NMR analysis dimension.
+ * Descriptions of the acquisition parameters set prior to the start of data
+ *         acquisition specific to each NMR analysis dimension.
  * 
  * <p>Java class for AcquisitionIndirectDimensionParameterSetType complex type.
  * 
@@ -23,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="acquisitionNucleus" type="{http://nmrml.org/schema}CVTermType"/>
- *         &lt;element name="gammaB1PulseFieldStrength" type="{http://nmrml.org/schema}ValueWithUnitType"/>
+ *         &lt;element name="effectiveExcitationField" type="{http://nmrml.org/schema}ValueWithUnitType"/>
  *         &lt;element name="sweepWidth" type="{http://nmrml.org/schema}ValueWithUnitType"/>
  *         &lt;element name="timeDomain" type="{http://nmrml.org/schema}BinaryDataArrayType"/>
  *         &lt;element name="encodingMethod" type="{http://nmrml.org/schema}CVTermType"/>
@@ -42,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AcquisitionIndirectDimensionParameterSetType", namespace = "http://nmrml.org/schema", propOrder = {
     "acquisitionNucleus",
-    "gammaB1PulseFieldStrength",
+    "effectiveExcitationField",
     "sweepWidth",
     "timeDomain",
     "encodingMethod",
@@ -53,7 +54,7 @@ public class AcquisitionIndirectDimensionParameterSetType {
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected CVTermType acquisitionNucleus;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
-    protected ValueWithUnitType gammaB1PulseFieldStrength;
+    protected ValueWithUnitType effectiveExcitationField;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
     protected ValueWithUnitType sweepWidth;
     @XmlElement(namespace = "http://nmrml.org/schema", required = true)
@@ -95,27 +96,27 @@ public class AcquisitionIndirectDimensionParameterSetType {
     }
 
     /**
-     * Gets the value of the gammaB1PulseFieldStrength property.
+     * Gets the value of the effectiveExcitationField property.
      * 
      * @return
      *     possible object is
      *     {@link ValueWithUnitType }
      *     
      */
-    public ValueWithUnitType getGammaB1PulseFieldStrength() {
-        return gammaB1PulseFieldStrength;
+    public ValueWithUnitType getEffectiveExcitationField() {
+        return effectiveExcitationField;
     }
 
     /**
-     * Sets the value of the gammaB1PulseFieldStrength property.
+     * Sets the value of the effectiveExcitationField property.
      * 
      * @param value
      *     allowed object is
      *     {@link ValueWithUnitType }
      *     
      */
-    public void setGammaB1PulseFieldStrength(ValueWithUnitType value) {
-        this.gammaB1PulseFieldStrength = value;
+    public void setEffectiveExcitationField(ValueWithUnitType value) {
+        this.effectiveExcitationField = value;
     }
 
     /**
