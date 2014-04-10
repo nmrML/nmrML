@@ -441,7 +441,7 @@
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="1" minOccurs="0" name="originalBiologicalSamplepH" type="PhType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="postBufferpH" type="PhType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="buffer" type="CVTermType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="buffer" type="CVTermType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="fieldFrequencyLock">
         <xs:complexType>
           <xs:attribute name="fieldFrequencyLockName" type="xs:string" use="required"/>
@@ -818,7 +818,11 @@ Parsed from Excitation width ?</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required"/>
+    <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required">
+      <xs:annotation>
+        <xs:documentation>Steady state scans taken in an NMR acquisition without collecting data. Also known as dummy scans. The pulse sequence is the same for a steady state scan, the only difference is that data is not collected. (More info here: http://u-of-o-nmr-facility.blogspot.ca/2010/04/dummy-scans.html )</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="numberOfScans" type="xs:integer" use="required">
       <xs:annotation>
         <xs:documentation>The number of transients/scans.</xs:documentation>
