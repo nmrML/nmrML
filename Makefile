@@ -128,10 +128,11 @@ ontologies/nmrCV.obo: ontologies/nmrCV.owl
 
 # Make sure OpenMS is using the latest versions of Schema, Ontology and the mapping
 # Requires the OpenMS fork from https://github.com/sneumann/OpenMS/tree/nmrML
-#update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
-#	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrCV.obo
-#	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
-#	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmrCV.obo
+
+update-openms: #xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
+	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrML.xsd
+	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
+	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmr-mapping.xml
 
 # Validate our examples against Schema, Ontology and the mapping
 #validate-all: validate-nmrml-schema validate-nmrml-mapping update-openms validate-HMDB00005 validate-bmse000325
