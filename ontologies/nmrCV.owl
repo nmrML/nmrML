@@ -770,10 +770,9 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000044 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000044">
-        <rdfs:label xml:lang="en">decoupling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400063"/>
+        <rdfs:label xml:lang="en">decoupling method</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Nuclear magnetic resonance decoupling (NMR decoupling for short) is a special method used in nuclear magnetic resonance (NMR) spectroscopy where a sample to be analyzed is irradiated at a certain frequency or frequency range to eliminate fully or partially the effect of coupling between certain nuclei. NMR coupling refers to the effect of nuclei on each other in atoms within a couple of bonds distance of each other in molecules. This effect causes NMR signals in a spectrum to be split into multiple peaks which are up to several hertz frequency from each other. Decoupling fully or partially eliminates splitting of the signal between the nuclei irradiated and other nuclei such as the nuclei being analyzed in a certain spectrum. NMR spectroscopy and sometimes decoupling can help determine structures of chemical compounds.</obo:IAO_0000115>
-        <rdfs:comment xml:lang="en">PRS: used to be suffixed with &apos;method&apos;, now removed to cast all as processes</rdfs:comment>
         <dc:source>http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</dc:source>
     </owl:Class>
     
