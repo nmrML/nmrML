@@ -9,6 +9,7 @@ xsltproc xpath.xsl examples/reference_spectra_example/HMDB00005.nmrML | grep acc
 where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700.html
 -->
 
+<!-- Add tests for validity of mapping file, e.g. check if CV term ID really maps to term label, Check if an ID is found in the specified CV, check if the mapping rule namme reflects the actual requirement level specified. Other things are dependent on each other, e.g. a useTerm="false" statement already implies the allowChildren="true" statement, so why make it? ;I wonder if we could enforce a  requirementLevel="MUST” for all XSD positions that do not allow userParam as uncontrolled Data ? ;We only have useTerm examples. We should add one example where we use the useTermName attribute (whether the check is done on the termName (TRUE) or on the termAccession (FALSE) as well.-->
 
 <!-- The following basic data describe where the grammar for this xml file can be looked up (i.e. the corresponding CvMapping.xsd and its version) -->
 <CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -17,7 +18,9 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 	modelURI="https://raw.github.com/nmrML/nmrML/master/xml-schemata/nmrML.xsd" modelVersion="0.1.0">
 
 	<CvReferenceList>
-		<!-- This node defines the used CV resources that the validator will be aware of and which are needed for the validation. Where are these CV prefixes resolved into URLs? In the XML cvList we specyfy the CV not as NMR but fullName="nmrML Controlled Vocabulary" version="0.0.1" id="NMRCV" URI="http://www.nmrml.org/nmrml-cv.0.0.1.owl" -->
+		<!-- This node defines the used CV resources that the validator will be aware of and which are needed for the validation. Where are these CV prefixes resolved into URLs? In the XML cvList we specyfy the CV not as NMR but fullName="nmrML Controlled Vocabulary" version="0.0.1" id="NMRCV" URI="http://www.nmrml.org/nmrml-cv.0.0.1.owl"  At the moment these seem not to be verified as no errors are thrown if a term does not come from a specified CV-->
+		
+		<!-- Why are name and identifyer identical here ? -->
 		<CvReference cvName="NMR" cvIdentifier="NMR"/>
 		<CvReference cvName="PATO" cvIdentifier="PATO"/>
 		<CvReference cvName="UO" cvIdentifier="UO"/>
@@ -37,7 +40,7 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 		</CvMappingRule>
 
 
-		<!-- sourceFile -->
+		<!-- sourceFile: Why here pulse seq in xpath ? -->
 		<CvMappingRule id="sourceFile_may"
 			cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/cvParam@accession"
 			requirementLevel="MAY"
@@ -52,18 +55,24 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 
 		<!-- software-->
 
-		<CvMappingRule id="software_should"
+		<CvMappingRule id="NMRsoftware_should"
 			cvElementPath="/nmrML/softwareList/software/cvParam/@accession" requirementLevel="SHOULD"
 			scopePath="/nmrML/softwareList/software" cvTermsCombinationLogic="AND">
 			<CvTerm termAccession="NMR:1400213" useTerm="false" termName="NMR software"
 				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
 
+		<CvMappingRule id="software_should"
+			cvElementPath="/nmrML/softwareList/software/cvParam/@accession" requirementLevel="SHOULD"
+			scopePath="/nmrML/softwareList/software" cvTermsCombinationLogic="AND">
+			<CvTerm termAccession="NMR:1000531" useTerm="false" termName="software"
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
+		</CvMappingRule>
+		
 		<!-- instrumentConfiguration -->
-
 		<CvMappingRule id="instrumentConfiguration_must"
 			cvElementPath="/nmrML/instrumentConfigurationList/instrumentConfiguration/cvParam/@accession"
-			requirementLevel="MAY"
+			requirementLevel="MUST"
 			scopePath="/nmrML/instrumentConfigurationList/instrumentConfiguration/"
 			cvTermsCombinationLogic="AND">
 			<CvTerm termAccession="NMR:1000031" useTerm="false" termName="instrument model"
@@ -115,38 +124,38 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 			requirementLevel="MAY"
 			scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence"
 			cvTermsCombinationLogic="AND">
-			<CvTerm termAccession="NMR:1000226" useTerm="false"
-				termName="first transient of the tnnoesy-presaturation pulse sequence UPDATE TO PARENT TERM !!"
-				isRepeatable="false" allowChildren="true" cvIdentifierRef="UO"/>
+			<CvTerm termAccession="NMR:1400037" useTerm="false"
+				termName="NMR pulse sequence"
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
 
 		<CvMappingRule id="acquisitionNucleus_must"
 			cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/acquisitionNucleus@accession"
-			requirementLevel="MAY"
+			requirementLevel="MUST"
 			scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/acquisitionNucleus"
 			cvTermsCombinationLogic="AND">
 			<CvTerm termAccession="NMR:1400083" useTerm="false" termName="acquisition nucleus"
-				isRepeatable="false" allowChildren="true" cvIdentifierRef="UO"/>
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
 
-		<CvMappingRule id="decouplingMethod_must"
+		<CvMappingRule id="decouplingMethod_may"
 			cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/decouplingMethod@accession"
 			requirementLevel="MAY"
 			scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/decouplingMethod"
 			cvTermsCombinationLogic="AND">
-			<CvTerm termAccession="NMR:1000000" useTerm="false" termName="decoupling method"
-				isRepeatable="false" allowChildren="true" cvIdentifierRef="UO"/>
+			<CvTerm termAccession="NMR:1000044" useTerm="false" termName="decoupling method"
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
 
 		<!-- must add the mapping for this -->
 		<!-- <samplingStrategy accession="?" cvRef="NMRCV" name="uniform"/> -->
-		<CvMappingRule id="samplingStrategy_must"
+		<CvMappingRule id="samplingStrategy_may"
 			cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/samplingStrategy@accession"
 			requirementLevel="MAY"
 			scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/DirectDimensionParameterSet/samplingStrategy"
 			cvTermsCombinationLogic="AND">
-			<CvTerm termAccession="NMR:1000000" useTerm="false" termName="sampling strategy"
-				isRepeatable="false" allowChildren="true" cvIdentifierRef="UO"/>
+			<CvTerm termAccession="NMR:1000348" useTerm="false" termName="NMR sampling strategy"
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
 
 		<CvMappingRule id="gammaB1PulseFieldStrength_must"
