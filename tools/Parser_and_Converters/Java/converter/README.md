@@ -11,6 +11,7 @@ usage: converter
  -i,--inputdir <directory>   input directory
  -o,--outputfile <file>      output file
  -z,--compress               compress binary data
+ -v,--version                prints the version
 ```
 
 
@@ -37,5 +38,6 @@ usage: nmrMLread
  -h,--help                               prints the help content
  -i,--input <nmrML file>                 input  nmrML file
     --real-spectrum <output text file>   extract Real Spectrum data onto a text file
+ -v,--version                            prints the version
 ```
 
