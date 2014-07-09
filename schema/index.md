@@ -24,7 +24,7 @@ You can view the documentation and download current and past releases here:
 
 ### nmrML Example Files
 
-We will have more tutorials and example files with explanations availble here soon. For now if you are interested in taking a look at the format, the best place is the [examples directory in the nmrML github repository](https://github.com/nmrML/nmrML/tree/master/examples).
+We will have more tutorials and example files with explanations availble here soon. For now if you are interested in taking a look at the format, the best place is the [examples directory in the nmrML github repository](https://github.com/nmrML/nmrML/tree/master/examples). For a quick look on the scope of nmrML we recommend [this powerpoint presentation.](https://github.com/nmrML/nmrML/blob/master/docs/SchemaDocumentation/COSMOS_nmrML_Basics.pptx?raw=true)
 
 ### nmrML Overview
 
