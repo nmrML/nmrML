@@ -10,6 +10,118 @@
         the peak list).</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="quantifiedCompound" type="CompoundQuantificationType"/>
+  <xs:complexType name="CompoundStructureType">
+    <xs:annotation>
+      <xs:documentation>Captures the compound structure as an InChI</xs:documentation>
+    </xs:annotation>
+  </xs:complexType>
+  <xs:complexType name="SpectrumAnnotationListType">
+    <xs:sequence>
+      <xs:element name="peakAssignment" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="chemicalStructure">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="atomArray"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="multipletList">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" name="multiplet">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="equivalentHydrogens">
+                          <xs:complexType>
+                            <xs:attribute name="atomRefs"/>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="peakList">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element maxOccurs="unbounded" name="peak">
+                                <xs:complexType>
+                                  <xs:attribute name="center"/>
+                                  <xs:attribute name="amplitude"/>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="multiplicity" type="CVTermType"/>
+                      </xs:sequence>
+                      <xs:attribute name="center"/>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="quantification">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="quantificationMethod" type="CVTermType"/>
+            <xs:element name="quantifiedCompoundList">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" ref="quantifiedCompound"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CompoundQuantificationType">
+    <xs:sequence>
+      <xs:element name="compoundStructure" type="CompoundStructureType"/>
+      <xs:element minOccurs="0" name="compoundIdentifierList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="compoundIdentifier"
+              type="CVTermType"/>
+            <xs:element maxOccurs="unbounded" name="compoundDatabaseIdentifier">
+              <xs:complexType>
+                <xs:attribute name="identifier" use="required"/>
+                <xs:attribute name="URI" use="required"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="concentration" type="ValueWithUnitType"/>
+      <xs:element minOccurs="0" name="peakList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="peak">
+              <xs:complexType mixed="false">
+                <xs:sequence>
+                  <xs:element name="center" type="ValueWithUnitType"/>
+                  <xs:element name="amplitude">
+                    <xs:complexType>
+                      <xs:attribute name="value"/>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="width">
+                    <xs:complexType>
+                      <xs:attribute name="value"/>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" use="required"/>
+  </xs:complexType>
   <xs:complexType name="nmrMLType">
     <xs:annotation>
       <xs:documentation>This is the root element for the COordination Of Standards In MetabOlomicS
@@ -34,6 +146,8 @@
           <xs:documentation>TODO</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="spectrumAssignment"/>
+      <xs:element minOccurs="0" name="spectrumAnnotationList" type="SpectrumAnnotationListType"/>
     </xs:sequence>
     <xs:attribute name="version" type="xs:string" use="required">
       <xs:annotation>
@@ -970,8 +1084,7 @@ Parsed from Excitation width ?</xs:documentation>
             <xs:element name="calibrationCompound" type="CVTermType"/>
             <xs:element name="dataTransformationMethod" type="CVTermType">
               <xs:annotation>
-                <xs:documentation>The method used for time-based to frequency-based data
-                  tranformation.</xs:documentation>
+                <xs:documentation>The method used for time-based to frequency-based data transformation.</xs:documentation>
               </xs:annotation>
             </xs:element>
           </xs:sequence>
