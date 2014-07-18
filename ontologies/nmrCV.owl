@@ -393,7 +393,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000002">
         <rdfs:label xml:lang="en">baseline correction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400063"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
     </owl:Class>
     
 
@@ -488,6 +488,16 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000006"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000007 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000007">
+        <rdfs:label xml:lang="en">Hilbert transformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400045"/>
+        <skos:definition xml:lang="en">For time domain data this data transformation reconstructs the imaginary part of the spectra in frequency domain.</skos:definition>
+    </owl:Class>
     
 
 
@@ -607,6 +617,15 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000020">
         <rdfs:label xml:lang="en">post buffer pH</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000021 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000021">
+        <rdfs:label xml:lang="en">water signal deletion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400108"/>
     </owl:Class>
     
 
@@ -750,6 +769,16 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     
 
 
+    <!-- http://nmrML.org/nmrCV#NMR:1000034 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000034">
+        <rdfs:label xml:lang="en">baseline correction using Whittaker smoothing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
+        <skos:definition xml:lang="en">http://nmr-analysis.blogspot.ca/2013/12/nmr-baseline-correction-new-method-in.html</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- http://nmrML.org/nmrCV#NMR:1000035 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000035">
@@ -819,6 +848,16 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000042">
         <rdfs:label xml:lang="en">sodium nitrate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000036"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000043 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000043">
+        <rdfs:label xml:lang="en">baseline correction using linear segments</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
+        <skos:definition xml:lang="en">http://nmr-analysis.blogspot.ca/2013/12/nmr-baseline-correction-new-method-in.html</skos:definition>
     </owl:Class>
     
 
@@ -1131,7 +1170,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000069">
         <rdfs:label xml:lang="en">multiplying FID by window function</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <oboInOwl:consider xml:lang="en">apodization</oboInOwl:consider>
     </owl:Class>
     
 
@@ -1372,6 +1412,16 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <rdfs:label xml:lang="en">matNMR software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000090"/>
         <dc:source>van Beek JD: matNMR: a flexible toolbox for processing, analyzing and visualizing magnetic resonance data in Matlab. J Magn Reson 2007, 187:19-26. </dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000095 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000095">
+        <rdfs:label xml:lang="en">baseline correction using smoothed linear segments</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
+        <skos:definition xml:lang="en">http://nmr-analysis.blogspot.ca/2013/12/nmr-baseline-correction-new-method-in.html</skos:definition>
     </owl:Class>
     
 
@@ -1768,6 +1818,15 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <rdfs:label xml:lang="en">XPLOR-NIH software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
         <dc:source>http://nmr.cit.nih.gov/xplor-nih/</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000137 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000137">
+        <rdfs:label xml:lang="en">urea signal deletion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400108"/>
     </owl:Class>
     
 
