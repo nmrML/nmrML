@@ -12,7 +12,7 @@ You can view the documentation and download current and past releases here:
 <tr><th>nmvCV Version</th><th>Documenation</th><th>Download</th></tr>
 </thead>
 <tbody>
-<tr><td>v1.0.rc1</td><td><a href="/cv/v1.0.rc1/doc">Documentation</a>&nbsp;/&nbsp;<a href="/cv/jOWL/index.html" target="blank">Browse Ontology</a></td><td><a href="/cv/v1.0.rc1/nmrCV.owl">nmrCV.owl</a></td></tr>
+<tr><td>v1.0.rc1</td><td><a href="/cv/v1.0.rc1/doc">Documentation</a>&nbsp;/&nbsp;<a href="/cv/jOWL/nmrCVBrowser.html" target="blank">Browse Ontology</a></td><td><a href="/cv/v1.0.rc1/nmrCV.owl">nmrCV.owl</a></td></tr>
 </tbody>
 </table>
 
