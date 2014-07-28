@@ -1,0 +1,47 @@
+/**
+* jOWL CSS Generic Style Settings.
+* Creator - David Decraene
+* Version 1.0
+* http://jowl.ontologyonline.org
+*/
+
+/** bordered box */
+.ui-widget-content {border:1px solid steelblue;text-align:center;}
+/** shaded titlebar */
+.ui-dialog-titlebar {margin:0px;padding:3px;text-align:center;background-color:#F8F8FF}
+
+.jowl-content {padding:5px;min-height:200px;}
+
+/** jowl-navbar */
+.jowl-navbar span {margin-right:5px;cursor:pointer;}
+.jowl-navbar div {margin-bottom:5px;}
+.jowl-navbar .external {font-weight:bold;color:red;font-style:italic;}
+
+/** jowl_autocomplete */
+.jowl_autocomplete_results{
+	display:none;min-height:20px;text-align:left;width:250px;z-index:20;position:absolute;
+	border: 1px solid WindowFrame; background-color: Window;
+	list-style-position: outside; list-style: none; margin: 0px;padding-left:0px;
+	}
+.jowl_autocomplete_results li {margin: 0px;cursor: pointer;display: block;font: menu;font-size: 12px;padding: 2px 5px;margin-bottom:2px;}
+.jowl_autocomplete_results .type{font-style:italic;float:right}
+.jowl_autocomplete_results .termlabel{font-size:8px}
+.jowl_autocomplete_results .name{font-weight:bold}
+
+/*Treeview*/
+.jowl-tree {text-align: left}
+.jowl-treeview{list-style-type: none;}
+.jowl-treeview .root > .name{ font-weight:bold;}
+.jowl-treeview .focus>.name{font-weight:bold;color:steelblue}
+.jowl-treeview ul.tv, .jowl-treeview .tv ul { list-style-image:none; list-style-position:outside; list-style-type:none; margin:0pt; padding:0pt; }
+.jowl-treeview .tv li { margin:0pt; padding:1px 0pt 3px 20px; position:relative; z-index:10; }
+.jowl-treeview .tvie .name, .jowl-treeview .tvic .name, .jowl-treeview .tvilc .name, .jowl-treeview .tvile .name, .jowl-treeview .root .name { cursor:pointer; position:relative;}
+.jowl-treeview .tv li, .jowl-treeview .tv .tvi { background:transparent url(../img/treeView/dotted/tvi.gif) no-repeat scroll top left;}
+.jowl-treeview .tv .tvic { background-image:url(../img/treeView/dotted/tvic.gif) ;}
+.jowl-treeview .tv .tvie { background-image:url(../img/treeView/dotted/tvie.gif); }
+.jowl-treeview .tv .tvil  { background-image:url(../img/treeView/dotted/tvil.gif); }
+.jowl-treeview .tv .tvilc  { background-image:url(../img/treeView/dotted/tvilc.gif); }
+.jowl-treeview .tv .tvile   { background-image:url(../img/treeView/dotted/tvile.gif); }
+.jowl-treeview .tvload { background-image:url(../img/treeView/dotted/tviload.gif);}
+
+

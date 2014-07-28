@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:DC="http://purl.org/metadata/dublin_core_elements#" xml:lang="en" lang="en">
+<head>
+    <meta name="DC.creator" content="David Decraene" />
+	<meta name="DC.publisher" content="Ontology Online" />
+    <meta name="Keywords" content="OWL, Ubiquity, jQuery, jOWL, ontology, semantic web"/>
+    <meta name="Description" content="jOWL Ontology Browser, visualizes ontologies loaded with the ubiquity command 'view_ontology'"/>
+    <title>jOWL nmrCV Browser</title>
+	<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection"/>
+	<link rel="stylesheet" href="css/jOWL.css" type="text/css"/>
+	<link type="text/css" rel="stylesheet" href="css/jq/custom-theme/jquery-ui-1.7.custom.css"></link>
+
+    <style type="text/css">
+		img {border:0pt none;display:block}	
+
+		/** custom widget settings */
+		.jowl_link {text-decoration:underline;color:blue;cursor:pointer;}
+		.jowl_tooltip {text-decoration:underline;color:steelblue;}
+		#thingtooltip {border:0px;}
+		.stats {text-align:right;font-size:smaller;}
+		.resourcebox {text-align:left}
+    </style>
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>	
+	<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.tooltip.js"></script>
+	<script type="text/javascript" src="scripts/jOWL.js"></script>
+	<script type="text/javascript" src="scripts/jOWL_UI.js"></script>
+	<script type="text/javascript" src="scripts/jOWLBrowser.js"></script>
+    <script type="text/javascript">
+/** 
+Modify this configuration object to fine-tune the visualisation of the jOWL browser.
+*/
+	var configuration = {
+		ontology : "data/nmrCV.owl", //the ontology to load
+		owlClass       : "http://nmrML.org/nmrCV#BFO_0000001", //The class to show when loading
+		classOverview  : false, //show or hide the class overview list.
+		propertiesTab  : true, //show or hide the properties panel
+		individualsTab : false, //show or hide the individuals panel
+		sparqldlTab    : false  //show or hide the sparq-dl panel
+	}
+
+/** 
+Do not Modify the code below unless you know what you are doing.
+*/
+$(document).ready(function() {
+	if(!configuration.propertiesTab) { $('#propertyPanel').remove();   $('#tab2').remove(); }
+	if(!configuration.individualsTab){ $('#thingwidget').appendTo("body").hide(); $('#individualPanel').remove(); $('#tab3').remove(); }
+	if(!configuration.sparqldlTab)   { $('#sparqldlPanel').remove();   $('#tab4').remove(); }
+
+	$("#tabs").tabs();
+
+	jOWL.load(configuration.ontology, initjOWL, {reason : false, locale : 'en' });
+});
+
+function initjOWL(){
+
+		createOntologyWidget();
+		var conceptWidget = createConceptWidget();
+
+		if(configuration.classOverview){
+			jOWLBrowser.views.push({query: "Class(?x)", element : $('#classlist'), widget : conceptWidget}); 
+			}
+
+		if(configuration.propertiesTab){
+			var propertyWidget = createPropertyWidget(); 
+			jOWLBrowser.views.push({query: "ObjectProperty(?x)", element : $('#OPlist'), widget : propertyWidget});
+			jOWLBrowser.views.push({query: "DatatypeProperty(?x)", element : $('#DPlist'), widget : propertyWidget});
+			}
+
+		if(configuration.individualsTab){
+			var thingWidget = createIndividualsWidget();
+
+			setTimeout(function(){//show individuals asynchronously
+				var arr = new jOWL.Ontology.Array();
+				for(key in jOWL.index('Thing')){
+						arr.concat(jOWL.index('Thing')[key], true);
+					}
+				showOverviewResults(arr, $('#thinglist'), thingWidget);
+			}, 200);
+			
+			}
+
+		if(configuration.sparqldlTab){
+			createSparqlDLWidget(); 
+			}
+
+		createOverviewWidget();
+}
+</script>
+	</head>
+	<body>
+	<div class="container">
+		<div class="column span-24">
+			<div class="resourcebox owl_UI" data-jowl="owl:Ontology" id="title" style="min-height:50px;">
+			<table><tr><td style="vertical-align: bottom;"><img src="img/nmrML.jpg" height="40px"/></td><td>
+				<h2 class="propertybox title" data-jowl="rdfs:label"><a href="http://nmrml.org/cv/" style="text-decoration:none;" target="_blank">${rdfs:label}</a></h2>
+				</td></tr></table>
+				<div class="propertybox owl_UI_content" data-jowl="rdfs:comment">${rdfs:comment}</div>
+			</div>
+			<hr class="space"/><hr /> 
+		</div>
+		<div class="column span-24">
+		<div id="tabs">
+			<ul>
+				<li><a href="#tab1">Classes</a></li>
+				<li id="propertyPanel"><a href="#tab2">Properties</a></li>
+				<li id="individualPanel"><a href="#tab3">Individuals</a></li>
+				<li id="sparqldlPanel"><a href="#tab4">SPARQL-DL</a></li>
+			</ul>
+			<div id="tab1">
+					<div id="classlist"></div>
+					<hr class="space"/>
+					<div id="conceptwidget">
+						<form action="">
+							Treeview: <input type="radio" name="visualisation" value="treeview" checked="checked"/>
+							Navigation Bar: <input type="radio" name="visualisation" value="navbar"/>
+						</form>
+						<table id="browser" style="width:100%"><tr>
+							<td style="width:50%;">
+								<div id="treeview" class="ui-widget-content">
+									<h4 class="ui-dialog-titlebar ui-state-default">Treeview</h4>
+								</div>
+								<div id="navbar" style="display:none" class="ui-widget-content">
+									<h4 class="ui-dialog-titlebar ui-state-default">Navbar</h4>
+								</div>
+								<input id="owlauto" type="text" size="40" style="display:block;width:99%;margin:5px 0px;" title="enter a search term"/>
+								<div style="color:#DCDCDC" class="info">Enter Search Terms here</div>
+							</td>
+							<td>
+								<div id="description" class="resourcebox ui-widget-content" data-jowl="owl:Class">
+									<h4 class="ui-dialog-titlebar  ui-state-default propertybox" data-jowl="rdfs:label">Description of <span>${rdfs:label}</span></h4>
+									<div class="jowl-content">
+										<div class="propertybox" data-jowl="rdfs:comment">${rdfs:comment}</div>
+										<div class="propertybox">
+											<b>Terms</b>: <span data-jowl="term">${term}</span>
+										</div>
+										<div class="propertybox" id="disjoints">
+											<b>Disjoint With</b>: <span data-jowl="owl:disjointWith">${owl:disjointWith}</span>
+										</div>
+										<div class="propertybox">
+											<b>Relations</b> 
+											<ul>
+												<li data-jowl="sparql-dl:PropertyValue(owl:Class, ?p, ?t)">
+													<span>${?p}</span><span>: </span><span>${?t}</span>
+												</li>
+											</ul>
+										</div>
+										<div id="individualsPropertyBox" class="propertybox" style="padding:5px;">
+											<b>Instances</b><br/>
+											<span class="valuebox" data-jowl="sparql-dl:DirectType(?i, owl:Class)">${?i}</span>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr></table>
+					</div>
+			</div>
+			<div id="tab2">
+				<div>
+					<p>
+						<b>ObjectProperties</b>
+						<div id="OPlist"></div>
+					</p>
+					<p>
+						<b>DatatypeProperties</b>
+						<div id="DPlist"></div>
+					</p>
+				</div>
+				<hr class="space"/>
+				<div id="propertywidget">
+					<div class="resourcebox ui-widget-content" data-jowl="rdf:Property">
+						<h4 class="ui-dialog-titlebar ui-state-default propertybox" data-jowl="rdfs:label">Description of <span>${rdfs:label}</span></h4>
+						<div class="jowl-content">
+							<div class="propertybox" data-jowl="rdfs:comment">${rdfs:comment}</div>
+							<div class="propertybox">
+								<b>Terms</b>: <span data-jowl="term">${term}</span>
+							</div>
+							<div class="propertybox">
+								<b>Domain</b>: <span data-jowl="rdfs:domain">${rdfs:domain}</span>
+							</div>
+							<div class="propertybox">
+								<b>Range</b>: <span data-jowl="rdfs:range">${rdfs:range}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tab3">
+				<div id="thinglist"></div>
+				<hr class="space"/>
+				<div id="thingwidget">
+					<div class="resourcebox ui-widget-content" data-jowl="owl:Thing">
+						<h4 class="ui-dialog-titlebar ui-state-default propertybox" data-jowl="rdfs:label">Description of <span>${rdfs:label}</span></h4>			
+						<div class="jowl-content">
+							<div class="propertybox" style="margin-bottom:5px"><b>owl:Class</b> <span data-jowl="rdf:type">${rdf:type}</span></div>
+							<div class="propertybox" data-jowl="rdfs:comment">${rdfs:comment}</div>
+							<div class="propertybox" data-jowl="sparql-dl:PropertyValue(owl:Thing, ?p, ?t)">	
+								<span class="alt">${?p}</span><span>: </span><span>${?t}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tab4">
+				<h4>Enter a query:</h4>
+				<form id="sparql"><input type="text" size="100"/></form>
+				<hr class="space"/>
+				<table style="width:100%"><tr>
+				<td style="width:50%;">
+					<h3>Results</h3>
+					<div class="loader hide" >
+						<div style="color:black">Querying, Please Stand By</div>
+						<img src="img/ajax-loader.gif" alt="Loading Image"/>
+					</div>
+					<div id="sparqlresults" class="box"></div>
+				</td>
+				<td>
+					<h3>Syntax</h3>
+					<ul>
+						<li>Type(?a, ?b)</li>
+						<li>PropertyValue(?a, ?b, ?c)</li>
+						<li>Class(?a)</li>
+						<li>ObjectProperty(?a)</li>
+						<li>DatatypeProperty(?a)</li>
+					</ul>
+					Examples: see <a href="http://jowl.ontologyonline.org/SPARQL-DL.html">jOWL SPARQL-DL Test Suite page</a>
+				</td>
+				</tr></table>
+			</div>
+		</div>
+		</div>
+		<a href="http://ontologyonline.org/" style="text-decoration:none;" target="_blank">(C) ontologyonline.org</a>	
+	</div>
+	</body>
+</html>
