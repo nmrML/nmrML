@@ -95,7 +95,7 @@ public class BrukerProcReader implements ProcReader {
             if(REGEXP_OFFSET.matcher(line).find()){
                 matcher=REGEXP_OFFSET.matcher(line);
                 matcher.find();
-                processing.setOffset(Double.parseDouble(matcher.group(1)));
+                processing.setMaxPpm(Double.parseDouble(matcher.group(1)));
             }
             if(REGEXP_WDW.matcher(line).find()){
                 matcher=REGEXP_WDW.matcher(line);

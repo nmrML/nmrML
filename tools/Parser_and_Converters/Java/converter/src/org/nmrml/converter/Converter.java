@@ -49,6 +49,7 @@ import java.lang.*;
 
 import org.nmrml.parser.*;
 import org.nmrml.parser.bruker.*;
+import org.nmrml.parser.varian.*;
 
 import org.nmrml.schema.*;
 import org.nmrml.cv.*;
@@ -68,6 +69,8 @@ public class Converter {
 
     private static final String Version = "1.0b";
 
+    private static final String nmrMLVersion = "1.0.rc1";
+
     public static int ID_count;
 
     public static String getNewIdentifier ( ) { return String.format("ID%05d",++ID_count); }
@@ -76,12 +79,14 @@ public class Converter {
 
     private enum Vendor_Type { bruker, varian; }
 
+    private enum BinaryFile_Type { FID_FILE, REAL_DATA_FILE; }
+
     public static void main( String[] args ) {
 
         /* Containers of Acquisition/Processing Parameters  */
         Acqu acq = null;
         Proc proc = null;
-        String Vendor_Label = "";
+        String Vendor = "bruker";
 
         /* HashMap for Source Files */
         HashMap<String,SourceFileType> hSourceFileObj = new HashMap<String,SourceFileType>();
@@ -92,6 +97,13 @@ public class Converter {
         options.addOption("v", "version", false, "prints the version");
         options.addOption("d","binary-data",false,"include binary data such as fid and spectrum values");
         options.addOption("z","compress",false,"compress binary data");
+        options.addOption(null,"only-fid",false,"exclude all spectrum processing parameters and corresponding binary data");
+        options.addOption(OptionBuilder
+           .withArgName("vendor")
+           .hasArg()
+           .withDescription("type")
+           .withLongOpt("vendortype")
+           .create("t"));
         options.addOption(OptionBuilder
            .withArgName("directory")
            .hasArg()
@@ -117,43 +129,42 @@ public class Converter {
             Properties prop = new Properties();
             prop.load(Converter.class.getClassLoader().getResourceAsStream("resources/config.properties"));
             String onto_ini = prop.getProperty("onto_ini_file");
-            Vendor_Type vendor_type = Vendor_Type.valueOf(prop.getProperty("vendor_type"));
-            String vendor_ini = prop.getProperty("vendor_ini_file");
             String schemaLocation = prop.getProperty("schemaLocation");
-
 
         /* CVLoader object */
             CVLoader cvLoader = (new File(onto_ini)).isFile() ? 
                                  new CVLoader(Converter.class.getClassLoader().getResourceAsStream(onto_ini)) : new CVLoader();
 
+            if(cmd.hasOption("t")) {
+                 Vendor = cmd.getOptionValue("t").toLowerCase();
+            }
+            String Vendor_Label = Vendor.toUpperCase();
+            String vendor_ini = prop.getProperty(Vendor);
+            Vendor_Type vendor_type = Vendor_Type.valueOf(Vendor);
+
+       /* Vendor terms file */
+            SpectrometerMapper vendorMapper = new SpectrometerMapper(vendor_ini);
 
         /* Get Acquisition & Processing Parameters depending on the vendor type */
             switch (vendor_type) {
                   case bruker:
-                       Vendor_Label = "BRUKER";
-                       BrukerReader brukerValues = new BrukerReader(inputFolder);
+                       BrukerReader brukerValues = new BrukerReader(inputFolder,vendorMapper);
                        acq = brukerValues.acq;
                        proc = brukerValues.proc;
                        break;
                   case varian:
-                       Vendor_Label = "VARIAN";
-                       // TODO:
-                       //VarianReader brukerValues = new VarianReader(inputFolder);
-                       //acq = VarianValues.acq;
-                       //proc = VarianValues.proc;
+                       VarianReader varianValues = new VarianReader(inputFolder,vendorMapper);
+                       acq = varianValues.acq;
+                       proc = varianValues.proc;
                        break;
             }
-
-       /* Vendor terms file */
-            SpectrometerMapper vendorMapper = (new File(vendor_ini)).isFile() ? 
-                      new SpectrometerMapper(Converter.class.getClassLoader().getResourceAsStream(vendor_ini)) : new SpectrometerMapper();
 
 
        /* NmrMLType object */
             ObjectFactory objFactory = new ObjectFactory();
             NmrMLType nmrMLtype = objFactory.createNmrMLType();
 
-            nmrMLtype.setVersion("1.0");
+            nmrMLtype.setVersion(nmrMLVersion);
 
     /* ACQUISITION PARAMETERS */
 
@@ -165,7 +176,6 @@ public class Converter {
                 cvList.getCv().add(cv);
                 cvCount = cvCount + 1;
             }
-            //cvList.setCount(getBigInteger(cvCount));
             nmrMLtype.setCvList(cvList);
 
        /* FileDescription */
@@ -205,14 +215,21 @@ public class Converter {
                    srcfile.getCvParam().add(cvLoader.fetchCVParam("NMRCV",acq.getSoftware()));
                    srcfile.getCvParam().add(cvLoader.fetchCVParam("NMRCV",sourceName));
                    hSourceFileObj.put(sourceName, srcfile);
-                   BinaryData binaryData = new BinaryData(sourceFile, acq, cmd.hasOption("z"));
-                   hBinaryDataObj.put(sourceName, binaryData);
-                   if (binaryData.isExists()) { srcfile.setSha1(binaryData.getSha1()); }
+                   boolean doBinData = false;
+                   for(BinaryFile_Type choice:BinaryFile_Type.values()) if (choice.name().equals(sourceName)) doBinData = true;
+                   if (doBinData) {
+                       boolean bComplexData = false;
+                       if ( BinaryFile_Type.FID_FILE.name().equals(sourceName) ) {
+                           bComplexData = true;
+                       }
+                       BinaryData binaryData = new BinaryData(sourceFile, acq, bComplexData, cmd.hasOption("z"));
+                       hBinaryDataObj.put(sourceName, binaryData);
+                       if (binaryData.isExists()) { srcfile.setSha1(binaryData.getSha1()); }
+                   }
                    srcfilelist.getSourceFile().add(srcfile);
                    sourceFileCount = sourceFileCount + 1;
                }
             }
-            //srcfilelist.setCount(getBigInteger(sourceFileCount));
             nmrMLtype.setSourceFileList(srcfilelist);
 
 
@@ -226,7 +243,6 @@ public class Converter {
             software1.setName(acq.getSoftware());
             software1.setVersion(acq.getSoftVersion());
             softwareList.getSoftware().add(software1);
-            //softwareList.setCount(getBigInteger(1));
             nmrMLtype.setSoftwareList(softwareList);
 
        /* Software Ref List */
@@ -234,11 +250,6 @@ public class Converter {
             SoftwareRefType softref1 = objFactory.createSoftwareRefType();
             softref1.setRef(software1);
             softwareRefList.getSoftwareRef().add(softref1);
-
-
-       /* ReferenceableParamGroup List */
-            /* TODO */
-
 
        /* InstrumentConfiguration List */
             InstrumentConfigurationListType instrumentConfList = objFactory.createInstrumentConfigurationListType();
@@ -251,19 +262,7 @@ public class Converter {
             probeParam.setValue(acq.getProbehead());
             instrumentConf.getUserParam().add(probeParam);
             instrumentConfList.getInstrumentConfiguration().add(instrumentConf);
-            //instrumentConfList.setCount(getBigInteger(1));
             nmrMLtype.setInstrumentConfigurationList(instrumentConfList);
-
-
-       /* Sample List */
-            SampleListType samplelist = objFactory.createSampleListType();
-            SampleType sample = objFactory.createSampleType();
-            /* Solvent */
-            sample.setSolventType(cvLoader.fetchCVTerm("CHEBI",acq.getSolvent()));
-            samplelist.getSample().add(sample);
-            //samplelist.setCount(getBigInteger(1));
-            //nmrMLtype.setSampleList(samplelist);
-
 
        /* Acquition */
 
@@ -336,9 +335,9 @@ public class Converter {
             // Irradiation Frequency (Hz)
             ValueWithUnitType  IrradiationFrequency = objFactory.createValueWithUnitType();
             IrradiationFrequency.setValue(String.format("%f",acq.getTransmiterFreq()));
-            IrradiationFrequency.setUnitCvRef(cvUnitHz.getCvRef());
-            IrradiationFrequency.setUnitAccession(cvUnitHz.getAccession());
-            IrradiationFrequency.setUnitName(cvUnitHz.getName());
+            IrradiationFrequency.setUnitCvRef(cvUnitmHz.getCvRef());
+            IrradiationFrequency.setUnitAccession(cvUnitmHz.getAccession());
+            IrradiationFrequency.setUnitName(cvUnitmHz.getName());
             acqdimparam.setIrradiationFrequency(IrradiationFrequency);
             // setEffectiveExcitationField (Hz)
             ValueWithUnitType  effectiveExcitationField = objFactory.createValueWithUnitType();
@@ -378,7 +377,6 @@ public class Converter {
             SourceFileRefType fidFileRef = objFactory.createSourceFileRefType();
             fidFileRef.setRef(hSourceFileObj.get("FID_FILE"));
             acqFileRefList.getSourceFileRef().add(fidFileRef);
-            //acqFileRefList.setCount(getBigInteger(1));
             acqparam.setAcquisitionParameterFileRefList(acqFileRefList);
 
             /* Acquisition1D object */
@@ -389,7 +387,8 @@ public class Converter {
             if (hBinaryDataObj.containsKey("FID_FILE") && hBinaryDataObj.get("FID_FILE").isExists()) {
                 BinaryDataArrayType fidData = objFactory.createBinaryDataArrayType();
                 fidData.setEncodedLength(hBinaryDataObj.get("FID_FILE").getEncodedLength());
-                fidData.setByteFormat(vendorMapper.getTerm("BYTEFORMAT","FID_FILE"));
+                //fidData.setByteFormat(vendorMapper.getTerm("BYTEFORMAT","FID_FILE"));
+                fidData.setByteFormat(hBinaryDataObj.get("FID_FILE").getByteFormat());
                 fidData.setCompressed(hBinaryDataObj.get("FID_FILE").isCompressed());
                 if(cmd.hasOption("d")) {
                    fidData.setValue(hBinaryDataObj.get("FID_FILE").getData());
@@ -403,116 +402,114 @@ public class Converter {
             nmrMLtype.setAcquisition(acqtype);
 
     /* PROCESSING PARAMETERS */
-    if (hBinaryDataObj.containsKey("PROCESSING_FILE")) {
-
-       /* DataProcessing List */
-
-            DataProcessingListType dataproclist = objFactory.createDataProcessingListType();
-            DataProcessingType dataproc = objFactory.createDataProcessingType();
-            ProcessingMethodType procmethod = objFactory.createProcessingMethodType();
-            procmethod.setOrder(getBigInteger(1));
-            procmethod.setSoftwareRef(software1);
-            procmethod.getCvParam().add(cvLoader.fetchCVParam("NMRCV","DATA_TRANSFORM"));
-            dataproc.getProcessingMethod().add(procmethod);
-            dataproc.setId(getNewIdentifier());
-            dataproclist.getDataProcessing().add(dataproc);
-            //dataproclist.setCount(getBigInteger(1));
-            nmrMLtype.setDataProcessingList(dataproclist);
-
-
-       /* Spectrum List */
-            SpectrumListType spectrumList = objFactory.createSpectrumListType();
-            spectrumList.setDefaultDataProcessingRef(dataproc);
-            Spectrum1DType spectrum1D = objFactory.createSpectrum1DType();
-
+            if ( ! cmd.hasOption("only-fid") && hBinaryDataObj.containsKey("REAL_DATA_FILE")) {
+            
+            /* DataProcessing List */
+            
+                    DataProcessingListType dataproclist = objFactory.createDataProcessingListType();
+                    DataProcessingType dataproc = objFactory.createDataProcessingType();
+                    ProcessingMethodType procmethod = objFactory.createProcessingMethodType();
+                    procmethod.setOrder(getBigInteger(1));
+                    procmethod.setSoftwareRef(software1);
+                    procmethod.getCvParam().add(cvLoader.fetchCVParam("NMRCV","DATA_TRANSFORM"));
+                    dataproc.getProcessingMethod().add(procmethod);
+                    dataproc.setId(getNewIdentifier());
+                    dataproclist.getDataProcessing().add(dataproc);
+                    nmrMLtype.setDataProcessingList(dataproclist);
+            
+            
+            /* Spectrum List */
+                    SpectrumListType spectrumList = objFactory.createSpectrumListType();
+                    spectrumList.setDefaultDataProcessingRef(dataproc);
+                    Spectrum1DType spectrum1D = objFactory.createSpectrum1DType();
+            
             /* Spectrum1D - FirstDimensionProcessingParameterSet object */
-            FirstDimensionProcessingParameterSetType ProcParam1D = objFactory.createFirstDimensionProcessingParameterSetType();
-
+                    FirstDimensionProcessingParameterSetType ProcParam1D = objFactory.createFirstDimensionProcessingParameterSetType();
+            
             /* Spectrum1D - WindowFunction */
-            FirstDimensionProcessingParameterSetType.WindowFunction windowFunction = 
-                    objFactory.createFirstDimensionProcessingParameterSetTypeWindowFunction();
-
-            CVTermType cvWinFunc = cvLoader.fetchCVTerm("NMRCV",vendorMapper.getTerm("WDW", String.format("%d",proc.getWindowFunctionType())));
-            windowFunction.setWindowFunctionMethod(cvWinFunc);
-            CVParamType cvWinParam = cvLoader.fetchCVParam("NMRCV","LINE_BROADENING");
-            cvWinParam.setValue(String.format("%f",proc.getLineBroadening()));
-            windowFunction.getWindowFunctionParameter().add(cvWinParam);
-            ProcParam1D.getWindowFunction().add(windowFunction);
-            ProcParam1D.setNoOfDataPoints(getBigInteger(proc.getTransformSize()));
-
-
+                    FirstDimensionProcessingParameterSetType.WindowFunction windowFunction = 
+                            objFactory.createFirstDimensionProcessingParameterSetTypeWindowFunction();
+            
+                    CVTermType cvWinFunc = cvLoader.fetchCVTerm("NMRCV",vendorMapper.getTerm("WDW", String.format("%d",proc.getWindowFunctionType())));
+                    windowFunction.setWindowFunctionMethod(cvWinFunc);
+                    CVParamType cvWinParam = cvLoader.fetchCVParam("NMRCV","LINE_BROADENING");
+                    cvWinParam.setValue(String.format("%f",proc.getLineBroadening()));
+                    windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                    ProcParam1D.getWindowFunction().add(windowFunction);
+                    ProcParam1D.setNoOfDataPoints(getBigInteger(proc.getTransformSize()));
+            
+            
             /* Spectrum1D - Phasing */
-            ValueWithUnitType  zeroOrderPhaseCorrection = objFactory.createValueWithUnitType();
-            zeroOrderPhaseCorrection.setValue(String.format( "%f", proc.getZeroOrderPhase() ));
-            zeroOrderPhaseCorrection.setUnitCvRef(cvUnitDeg.getCvRef());
-            zeroOrderPhaseCorrection.setUnitAccession(cvUnitDeg.getAccession());
-            zeroOrderPhaseCorrection.setUnitName(cvUnitDeg.getName());
-            ProcParam1D.setZeroOrderPhaseCorrection(zeroOrderPhaseCorrection);
-            ValueWithUnitType  firstOrderPhaseCorrection = objFactory.createValueWithUnitType();
-            firstOrderPhaseCorrection.setValue(String.format( "%f", proc.getFirstOrderPhase() ));
-            firstOrderPhaseCorrection.setUnitCvRef(cvUnitDeg.getCvRef());
-            firstOrderPhaseCorrection.setUnitAccession(cvUnitDeg.getAccession());
-            firstOrderPhaseCorrection.setUnitName(cvUnitDeg.getName());
-            ProcParam1D.setFirstOrderPhaseCorrection(firstOrderPhaseCorrection);
+                    ValueWithUnitType  zeroOrderPhaseCorrection = objFactory.createValueWithUnitType();
+                    zeroOrderPhaseCorrection.setValue(String.format( "%f", proc.getZeroOrderPhase() ));
+                    zeroOrderPhaseCorrection.setUnitCvRef(cvUnitDeg.getCvRef());
+                    zeroOrderPhaseCorrection.setUnitAccession(cvUnitDeg.getAccession());
+                    zeroOrderPhaseCorrection.setUnitName(cvUnitDeg.getName());
+                    ProcParam1D.setZeroOrderPhaseCorrection(zeroOrderPhaseCorrection);
+                    ValueWithUnitType  firstOrderPhaseCorrection = objFactory.createValueWithUnitType();
+                    firstOrderPhaseCorrection.setValue(String.format( "%f", proc.getFirstOrderPhase() ));
+                    firstOrderPhaseCorrection.setUnitCvRef(cvUnitDeg.getCvRef());
+                    firstOrderPhaseCorrection.setUnitAccession(cvUnitDeg.getAccession());
+                    firstOrderPhaseCorrection.setUnitName(cvUnitDeg.getName());
+                    ProcParam1D.setFirstOrderPhaseCorrection(firstOrderPhaseCorrection);
+
             /* Calibration Reference Shift */
-            ValueWithUnitType  calibrationReferenceShift = objFactory.createValueWithUnitType();
-            calibrationReferenceShift.setValue("undefined");
-            calibrationReferenceShift.setUnitCvRef(cvUnitNone.getCvRef());
-            calibrationReferenceShift.setUnitAccession(cvUnitNone.getAccession());
-            calibrationReferenceShift.setUnitName(cvUnitNone.getName());
-            ProcParam1D.setCalibrationReferenceShift(calibrationReferenceShift);
-
+                    ValueWithUnitType  calibrationReferenceShift = objFactory.createValueWithUnitType();
+                    calibrationReferenceShift.setValue("undefined");
+                    calibrationReferenceShift.setUnitCvRef(cvUnitNone.getCvRef());
+                    calibrationReferenceShift.setUnitAccession(cvUnitNone.getAccession());
+                    calibrationReferenceShift.setUnitName(cvUnitNone.getName());
+                    ProcParam1D.setCalibrationReferenceShift(calibrationReferenceShift);
+            
             /* spectralDenoisingMethod */
-            ProcParam1D.setSpectralDenoisingMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
-            /* baselineCorrectionMethod */
-            ProcParam1D.setBaselineCorrectionMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
-
+                    ProcParam1D.setSpectralDenoisingMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
+                    /* baselineCorrectionMethod */
+                    ProcParam1D.setBaselineCorrectionMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
+            
             /* Spectrum1D - Source File Ref */
-            SourceFileRefType procFileRef = objFactory.createSourceFileRefType();
-            procFileRef.setRef(hSourceFileObj.get("PROCESSING_FILE"));
-            ProcParam1D.setParameterFileRef(procFileRef);
-            spectrum1D.setFirstDimensionProcessingParameterSet(ProcParam1D);
-
+                    SourceFileRefType procFileRef = objFactory.createSourceFileRefType();
+                    procFileRef.setRef(hSourceFileObj.get("PROCESSING_FILE"));
+                    ProcParam1D.setParameterFileRef(procFileRef);
+                    spectrum1D.setFirstDimensionProcessingParameterSet(ProcParam1D);
+            
             /* SpectrumType - X Axis */
-            AxisWithUnitType Xaxis = objFactory.createAxisWithUnitType();
-            Xaxis.setUnitCvRef(cvUnitPpm.getCvRef());
-            Xaxis.setUnitAccession(cvUnitPpm.getAccession());
-            Xaxis.setUnitName(cvUnitPpm.getName());
-            Xaxis.setStartValue(String.format( "%f", proc.getOffset() ));
-            Xaxis.setEndValue(String.format( "%f", proc.getOffset() - acq.getSpectralWidthHz()/acq.getSpectralFrequency()));
-            spectrum1D.setXAxis(Xaxis);
-
+                    AxisWithUnitType Xaxis = objFactory.createAxisWithUnitType();
+                    Xaxis.setUnitCvRef(cvUnitPpm.getCvRef());
+                    Xaxis.setUnitAccession(cvUnitPpm.getAccession());
+                    Xaxis.setUnitName(cvUnitPpm.getName());
+                    Xaxis.setStartValue(String.format( "%f", proc.getMaxPpm() ));
+                    Xaxis.setEndValue(String.format( "%f", proc.getMaxPpm() - acq.getSpectralWidthHz()/acq.getSpectralFrequency()));
+                    spectrum1D.setXAxis(Xaxis);
+            
             /* SpectrumType - Y Axis */
-            spectrum1D.setYAxisType(cvUnitNone);
-
+                    spectrum1D.setYAxisType(cvUnitNone);
+            
             /* SpectrumType - Software, Contact Ref List */
-            spectrum1D.getProcessingSoftwareRefList().add(softwareRefList);
-            spectrum1D.setProcessingContactRefList(contactRefList);
-
+                    spectrum1D.getProcessingSoftwareRefList().add(softwareRefList);
+                    spectrum1D.setProcessingContactRefList(contactRefList);
+            
             /* SpectrumType - ProcessingParameterSet */
-            SpectrumType.ProcessingParameterSet procParamSet = objFactory.createSpectrumTypeProcessingParameterSet();
-            procParamSet.setDataTransformationMethod(cvLoader.fetchCVTerm("NMRCV","FFT_TRANSFORM"));
-            procParamSet.setPostAcquisitionSolventSuppressionMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
-            procParamSet.setCalibrationCompound(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
-            spectrum1D.setProcessingParameterSet(procParamSet);
-
+                    SpectrumType.ProcessingParameterSet procParamSet = objFactory.createSpectrumTypeProcessingParameterSet();
+                    procParamSet.setDataTransformationMethod(cvLoader.fetchCVTerm("NMRCV","FFT_TRANSFORM"));
+                    procParamSet.setPostAcquisitionSolventSuppressionMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
+                    procParamSet.setCalibrationCompound(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
+                    spectrum1D.setProcessingParameterSet(procParamSet);
+            
             /* SpectrumDataArray object */
-            if (hBinaryDataObj.containsKey("REAL_DATA_FILE") && hBinaryDataObj.get("REAL_DATA_FILE").isExists()) {
-                BinaryDataArrayType RealData = objFactory.createBinaryDataArrayType();
-                RealData.setEncodedLength(hBinaryDataObj.get("REAL_DATA_FILE").getEncodedLength());
-                RealData.setByteFormat(vendorMapper.getTerm("BYTEFORMAT","REAL_DATA_FILE"));
-                RealData.setCompressed(hBinaryDataObj.get("REAL_DATA_FILE").isCompressed());
-                if(cmd.hasOption("d")) {
-                   RealData.setValue(hBinaryDataObj.get("REAL_DATA_FILE").getData());
-                }
-                spectrum1D.setSpectrumDataArray(RealData);
+                    if (hBinaryDataObj.containsKey("REAL_DATA_FILE") && hBinaryDataObj.get("REAL_DATA_FILE").isExists()) {
+                        BinaryDataArrayType RealData = objFactory.createBinaryDataArrayType();
+                        RealData.setEncodedLength(hBinaryDataObj.get("REAL_DATA_FILE").getEncodedLength());
+                        RealData.setByteFormat(vendorMapper.getTerm("BYTEFORMAT","REAL_DATA_FILE"));
+                        RealData.setCompressed(hBinaryDataObj.get("REAL_DATA_FILE").isCompressed());
+                        if(cmd.hasOption("d")) {
+                           RealData.setValue(hBinaryDataObj.get("REAL_DATA_FILE").getData());
+                        }
+                        spectrum1D.setSpectrumDataArray(RealData);
+                    }
+                    spectrum1D.setNumberOfDataPoints(getBigInteger(proc.getTransformSize()));
+                    spectrumList.getSpectrum1D().add(spectrum1D);
+                    nmrMLtype.setSpectrumList(spectrumList);
             }
-
-            spectrum1D.setNumberOfDataPoints(getBigInteger(proc.getTransformSize()));
-            spectrumList.getSpectrum1D().add(spectrum1D);
-            //spectrumList.setCount(getBigInteger(1));
-            nmrMLtype.setSpectrumList(spectrumList);
-    }
 
        /* Generate XML */
             JAXBElement<NmrMLType> nmrML = (JAXBElement<NmrMLType>) objFactory.createNmrML(nmrMLtype);
@@ -544,10 +541,10 @@ public class Converter {
             if(!help && !version) System.err.println(e.getMessage());
             if (help) {
                 HelpFormatter formatter = new HelpFormatter();
-                formatter.printHelp( "reader" , options );
+                formatter.printHelp( "converter" , options );
             }
             if (version) {
-                System.out.println("nmrML Converter vereion = " + Version);
+                System.out.println("nmrML Converter version = " + Version);
             }
             System.exit(1);
         } catch(MissingArgumentException e){
