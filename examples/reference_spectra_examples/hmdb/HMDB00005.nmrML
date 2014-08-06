@@ -135,4 +135,66 @@
     <spectrumList defaultDataProcessingRef="1" >
     </spectrumList>
     -->
+
+  <spectrumAnnotation>
+    <compound  compoundName="alanine" compoundId="CHEBI:16449" >
+      <atomArray>
+        <atom id="a1" elementType="C" x2="0.6667733333333334" y2="-0.38490666666666673"/>
+        <atom id="a2" elementType="C" x2="-0.6667733333333334" y2="-1.1550933333333335"/>
+        <atom id="a3" elementType="C" x2="-2.0005066666666673" y2="-0.38490666666666673"/>                       
+        <atom id="a4" elementType="O" x2="0.6667733333333334" y2="1.1550933333333335"/>
+        <atom id="a5" elementType="O" x2="2.0005066666666673" y2="-1.1550933333333335"/>
+        <atom id="a6" elementType="H" x2="0.0562914171777148" y2="-2.514790860935850"/>
+        <atom id="a7" elementType="H" x2="-1.3897556629928918" y2="-2.5148346877827885"/>                                   
+        <atom id="a8" elementType="H" x2="-1.2303901544895832" y2="0.9487051800384392"/>
+        <atom id="a9" elementType="H" x2="-3.3341185133717732" y2="0.3852098455104175"/>
+        <atom id="a10" elementType="H" x2="-2.770623178843752" y2="-1.7185185133717726"/>
+        <atom id="a11" elementType="H" x2="2.000372126599997" y2="-2.6950933274563758"/>
+      </atomArray>
+      <bondArray>
+        <bond atomRefs2="a1 a2" order="1"/>
+        <bond atomRefs2="a2 a3" order="1"/>
+        <bond atomRefs2="a1 a4" order="2"/>
+        <bond atomRefs2="a1 a5" order="1"/>           
+        <bond atomRefs2="a2 a6" order="1"/>
+        <bond atomRefs2="a2 a7" order="1"/>            
+        <bond atomRefs2="a3 a8" order="1"/>
+        <bond atomRefs2="a3 a9" order="1"/>
+        <bond atomRefs2="a3 a10" order="1"/>            
+        <bond atomRefs2="a5 a11" order="1"/>
+      </bondArray>
+    </compound>
+
+    <multiplet center="1.04" >
+      <equivalentHydrogens atomRefs="a8 a9 a10"/>
+      <multiplicity cvRef="NMRCV" accession="NMR:1000185" name="triplet feature"/>
+      <peaks>
+        <peak center="1.03" amplitude="514.0" />
+        <peak center="1.04" amplitude="521.7" />
+        <peak center="1.06" amplitude="529.4" />
+      </peaks>
+    </multiplet>       
+    <multiplet center="2.17" >
+      <equivalentHydrogens atomRefs="a6 a7"/>
+      <!-- what about for multiplets with a high order, example 15 -->
+      <multiplicity cvRef="NMRCV" accession="NMR:1000186" name="quadruplet feature"/>
+      <!-- peak must be in ppm -->
+      <!-- should we capture width?? it is non trivial so we decided not to capture it..-->
+      <peaks>
+        <peak center="2.15" amplitude="1073.9" />
+        <peak center="2.16" amplitude="1018.5" />
+        <peak center="2.18" amplitude="1089.2" />
+        <peak center="2.19" amplitude="1096.2" />
+      </peaks>
+    </multiplet>        
+    <multiplet center="11.7" >
+      <equivalentHydrogens atomRefs="a11"/>
+      <multiplicity cvRef="NMRCV" accession="NMR:1000194" name="singlet feature"/>
+      <peaks>
+        <peak center="11.7" amplitude="560.0" />               
+      </peaks>
+    </multiplet>
+  </spectrumAnnotation>
+
+
 </nmrML>
