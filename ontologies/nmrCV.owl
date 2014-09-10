@@ -19,25 +19,25 @@
 
 <rdf:RDF xmlns="http://nmrML.org/nmrCV#"
      xml:base="http://nmrML.org/nmrCV"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:meta="http://www.co-ode.org/ontologies/meta.owl#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:doap="http://usefulinc.com/ns/doap#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     xmlns:meta="http://www.co-ode.org/ontologies/meta.owl#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://nmrML.org/nmrCV">
         <oboInOwl:creation_date rdf:datatype="&xsd;dateTime">04.02.2014</oboInOwl:creation_date>
         <owl:versionInfo rdf:datatype="&xsd;string">1.0.0</owl:versionInfo>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="&xsd;string">1.2</oboInOwl:hasOBOFormatVersion>
         <oboInOwl:created_by rdf:datatype="&xsd;string">COSMOS consortium</oboInOwl:created_by>
-        <doap:documenter rdf:datatype="&xsd;string">Daniel Schober</doap:documenter>
         <oboInOwl:created_by rdf:datatype="&xsd;string">Daniel Schober</oboInOwl:created_by>
+        <doap:documenter rdf:datatype="&xsd;string">Daniel Schober</doap:documenter>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">In case we like to be able to convert this owl CV back into the obo format, we should only use DL/owl constructs that are supported by obo. Hence, editors of this CV should take care not to use any higher descriptrion logics semantics, i.e. cardinality restrictions or defined terms using constructors. We should start to build the taxonomic backbone first and later connect the main axis via relations. 
 If we want to use restrictions, we should only use existential quantifiers as the OBO format does not support universal quantification.
 
@@ -124,25 +124,25 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <doap:location rdf:datatype="&xsd;string">https://github.com/nmrML/nmrML/tree/master/ontologies</doap:location>
         <doap:mailing-list rdf:datatype="&xsd;string">https://groups.google.com/forum/?hl=en#!forum/nmrml/join</doap:mailing-list>
         <dc:title rdf:datatype="&xsd;string">nuclear magnetic resonance CV</dc:title>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400032</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000531</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400033</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400073</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000011</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400074</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400075</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000014</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000013</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400096</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400128</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000524</meta:bookmark>
         <dc:rights>Creative Commons Public Domain Mark 1.0</dc:rights>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400062</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400042</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400068</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400043</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1002010</meta:bookmark>
         <dc:format xml:lang="en">Rather flat CV. Taxonomic backbone with few relations used. No OWL DL complexity such as cardinalities, blank nodes, nested class definitions.</dc:format>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400033</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400032</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000524</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400075</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400096</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400074</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400073</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400128</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1002010</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000014</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000531</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000013</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400068</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000011</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400043</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400042</meta:bookmark>
+        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400062</meta:bookmark>
         <owl:imports rdf:resource="&obo;bfo.owl"/>
     </owl:Ontology>
     
@@ -318,6 +318,32 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     
 
 
+    <!-- http://nmrML.org/nmrCV#_purgatory -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#_purgatory">
+        <rdfs:label>_purgatory</rdfs:label>
+        <skos:scopeNote>This administrative helper class contains the classes which might be revived at some point in time or from which the definitions could be harvested these are at the moment not deleted form the release file.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#apodization -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#apodization">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+        <rdfs:comment xml:lang="en">apodization</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#keyword -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#keyword">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400117"/>
+    </owl:Class>
+    
+
+
     <!-- http://nmrML.org/nmrCV#MBCO:0000035 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#MBCO:0000035">
@@ -358,17 +384,26 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A reference number relevant to the sample under study.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000002 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000002">
+        <rdfs:label xml:lang="en">baseline correction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+    </owl:Class>
     
 
 
@@ -477,8 +512,14 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000007 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000007">
+<<<<<<< HEAD
         <rdfs:label>_purgatory</rdfs:label>
         <skos:scopeNote>This administrative helper class contains the classes which might be revived at some point in time or from which the definitions could be harvested these are at the moment not deleted form the release file.</skos:scopeNote>
+=======
+        <rdfs:label xml:lang="en">Hilbert transformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400045"/>
+        <skos:definition xml:lang="en">For time domain data this data transformation reconstructs the imaginary part of the spectra in frequency domain.</skos:definition>
+>>>>>>> 3201aec335661d69f517b3a1f7991a5c4f084cdc
     </owl:Class>
     
 
@@ -606,8 +647,13 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000021 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000021">
+<<<<<<< HEAD
         <rdfs:label>apodization</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+=======
+        <rdfs:label xml:lang="en">water signal deletion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400108"/>
+>>>>>>> 3201aec335661d69f517b3a1f7991a5c4f084cdc
     </owl:Class>
     
 
@@ -617,8 +663,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000022">
         <rdfs:label xml:lang="en">metabolomics database identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000878"/>
-        <rdfs:comment xml:lang="en">PRS: rename &apos;reference&apos; to &apos;identifier&apos;</rdfs:comment>
         <dc:source>http://www.metabolomicssociety.org/databases</dc:source>
+        <rdfs:comment xml:lang="en">PRS: rename &apos;reference&apos; to &apos;identifier&apos;</rdfs:comment>
     </owl:Class>
     
 
@@ -754,8 +800,14 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000034 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000034">
+<<<<<<< HEAD
         <rdfs:label>keyword</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400117"/>
+=======
+        <rdfs:label xml:lang="en">baseline correction using Whittaker smoothing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
+        <skos:definition xml:lang="en">http://nmr-analysis.blogspot.ca/2013/12/nmr-baseline-correction-new-method-in.html</skos:definition>
+>>>>>>> 3201aec335661d69f517b3a1f7991a5c4f084cdc
     </owl:Class>
     
 
@@ -836,8 +888,14 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000043 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000043">
+<<<<<<< HEAD
         <rdfs:label xml:lang="de">post-acquisition solvent suppression</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400066"/>
+=======
+        <rdfs:label xml:lang="en">baseline correction using linear segments</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
+        <skos:definition xml:lang="en">http://nmr-analysis.blogspot.ca/2013/12/nmr-baseline-correction-new-method-in.html</skos:definition>
+>>>>>>> 3201aec335661d69f517b3a1f7991a5c4f084cdc
     </owl:Class>
     
 
@@ -1027,8 +1085,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000056">
         <rdfs:label xml:lang="en">specific decoupling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000044"/>
-        <oboInOwl:hasExactSynonym>narowband decoupling</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>band-selective decoupling</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>narowband decoupling</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -1150,7 +1208,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000069">
         <rdfs:label xml:lang="en">multiplying FID by window function</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <oboInOwl:consider xml:lang="en">apodization</oboInOwl:consider>
     </owl:Class>
     
 
@@ -1169,8 +1228,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000071">
         <rdfs:label xml:lang="en">phase correction</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
-        <oboInOwl:hasExactSynonym>spectral phasing</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>phasing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>spectral phasing</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -1226,8 +1285,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
         <rdfs:label xml:lang="en">sodium trimethylsilyl-propionate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000030"/>
         <oboInOwl:hasExactSynonym>TMSP</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>trimethylsilyl propanoic acid</oboInOwl:hasExactSynonym>
         <dc:source>Pohl, L.; Eckle, M. (1969). &quot;Sodium 3-(trimethylsilyl)tetradeuteriopropionate, a new water-soluble standard for 1H.N.M.R.&quot;. Angewandte Chemie, International Edition in English 8 (5): 381. doi:10.1002/anie.196903811</dc:source>
+        <oboInOwl:hasExactSynonym>trimethylsilyl propanoic acid</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -1398,8 +1457,14 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000095 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000095">
+<<<<<<< HEAD
         <rdfs:label xml:lang="de">concentration of chemical compound</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000861"/>
+=======
+        <rdfs:label xml:lang="en">baseline correction using smoothed linear segments</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
+        <skos:definition xml:lang="en">http://nmr-analysis.blogspot.ca/2013/12/nmr-baseline-correction-new-method-in.html</skos:definition>
+>>>>>>> 3201aec335661d69f517b3a1f7991a5c4f084cdc
     </owl:Class>
     
 
@@ -1473,9 +1538,9 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000103">
         <rdfs:label xml:lang="en">SEM window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400068"/>
-        <doap:bug-database>https://github.com/nmrML/nmrML/issues/36</doap:bug-database>
         <dc:source>http://www.sciencedirect.com/science/article/pii/S0003267008000950</dc:source>
         <oboInOwl:hasExactSynonym>combined sine-bell–exponential window function</oboInOwl:hasExactSynonym>
+        <doap:bug-database>https://github.com/nmrML/nmrML/issues/36</doap:bug-database>
     </owl:Class>
     
 
@@ -1803,9 +1868,14 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000137 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000137">
+<<<<<<< HEAD
         <rdfs:label xml:lang="de">computed concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000095"/>
         <skos:editorialNote>request these in UO ?</skos:editorialNote>
+=======
+        <rdfs:label xml:lang="en">urea signal deletion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400108"/>
+>>>>>>> 3201aec335661d69f517b3a1f7991a5c4f084cdc
     </owl:Class>
     
 
@@ -1878,6 +1948,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000145 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000145">
+<<<<<<< HEAD
         <rdfs:label xml:lang="de">library based computed concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000137"/>
     </owl:Class>
@@ -1910,6 +1981,11 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000148">
         <rdfs:label xml:lang="de">time-domain amplitude computed concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000137"/>
+=======
+        <rdfs:label xml:lang="en">baseline correction using Bernstein polynomial function</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000225"/>
+        <skos:definition xml:lang="en">http://nmr-analysis.blogspot.ca/2013/12/nmr-baseline-correction-new-method-in.html</skos:definition>
+>>>>>>> 3201aec335661d69f517b3a1f7991a5c4f084cdc
     </owl:Class>
     
 
@@ -2124,8 +2200,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000176">
         <rdfs:label xml:lang="en">number of data points</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000013"/>
-        <oboInOwl:hasExactSynonym>number of data points in spectrum</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>number of first dimension data points</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>number of data points in spectrum</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -2172,7 +2248,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000184 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000184">
-        <rdfs:label xml:lang="en">dublet feature</rdfs:label>
+        <rdfs:label xml:lang="en">doublet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
     </owl:Class>
     
@@ -2190,7 +2266,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <!-- http://nmrML.org/nmrCV#NMR:1000186 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000186">
-        <rdfs:label xml:lang="en">quatruplet feature</rdfs:label>
+        <rdfs:label xml:lang="en">quadruplet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
     </owl:Class>
     
@@ -2211,8 +2287,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000188">
         <rdfs:label xml:lang="en">cluster of peaks across samples</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000524"/>
-        <obo:IAO_0000115>a set of peaks that are highly correlated in a series of samples</obo:IAO_0000115>
         <dc:coverage>a feature request by Daniel Jacobs inserted at IBP hackathon</dc:coverage>
+        <obo:IAO_0000115>a set of peaks that are highly correlated in a series of samples</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2790,8 +2866,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000253">
         <rdfs:label xml:lang="en">Madison Metabolomics Consortium Database MMCD identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000022"/>
-        <rdfs:comment xml:lang="en">PRS: rename &apos;identifyer&apos; to &apos;identifier&apos;</rdfs:comment>
         <dc:source>http://mmcd.nmrfam.wisc.edu/</dc:source>
+        <rdfs:comment xml:lang="en">PRS: rename &apos;identifyer&apos; to &apos;identifier&apos;</rdfs:comment>
     </owl:Class>
     
 
@@ -2801,8 +2877,8 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000254">
         <rdfs:label xml:lang="en">Bigg metabolomics database identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000022"/>
-        <dc:source>http://bigg.ucsd.edu/</dc:source>
         <rdfs:comment xml:lang="en">PRS: rename &apos;identifyer&apos; to &apos;identifier&apos;</rdfs:comment>
+        <dc:source>http://bigg.ucsd.edu/</dc:source>
     </owl:Class>
     
 
@@ -3293,6 +3369,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000308">
         <rdfs:label xml:lang="en">shifted sine bell window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400071"/>
+        <oboInOwl:hasExactSynonym>shifted sine-bell apodization</oboInOwl:hasExactSynonym>
         <rdfs:comment>Functional form:
        sp(x_i) = sin( (pi*off + pi*(end-off)*i/(size-1) )**pow
    Parameters:
@@ -3301,7 +3378,6 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
    * end   End of Sine-Bell as percent of vector (0.0 -&gt; 1.0 )
    * pow   Power of Sine-Bell
    * inv   Set True for inverse apodization.</rdfs:comment>
-        <oboInOwl:hasExactSynonym>shifted sine-bell apodization</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -3311,6 +3387,7 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000309">
         <rdfs:label xml:lang="en">triangle window function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400068"/>
+        <oboInOwl:hasExactSynonym>triangle apodization</oboInOwl:hasExactSynonym>
         <rdfs:comment>Functional form:
        0:loc   linear increase/decrease from lHi to 1.0   
        loc:    linear increase/decrease from 1.0 to rHi
@@ -3321,7 +3398,6 @@ Please label your CV issues &apos;CVenhancement&apos; or add the &quot;CV:&quot;
    * lHi   Left side starting height.
    * rHi   Right side starting height.
    * inv   Set True for inverse apodization.</rdfs:comment>
-        <oboInOwl:hasExactSynonym>triangle apodization</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -3582,8 +3658,8 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000345">
         <rdfs:label xml:lang="en">digital signal processing firmware version</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000496"/>
-        <oboInOwl:hasExactSynonym>DSPFVS</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>DSPFVS - DSP (Digital signal processing) firmware version corresponds to the version of the digital filter, a hardware component used by the spectrometer</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>DSPFVS</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -3604,8 +3680,8 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000347">
         <rdfs:label xml:lang="en">group time delay</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
-        <obo:IAO_0000115>GRPDLY - is the time delay (in number of points?) between acquiring the analog signal and producing the digital signal (i.e. &quot;The group delay is the time necessary for the digital filter function to “walk into” the raw FID and start generating significant intensity.&quot;)</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>GRPDLY</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>GRPDLY - is the time delay (in number of points?) between acquiring the analog signal and producing the digital signal (i.e. &quot;The group delay is the time necessary for the digital filter function to “walk into” the raw FID and start generating significant intensity.&quot;)</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3625,9 +3701,9 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000349">
         <rdfs:label xml:lang="en">uniform sampling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000348"/>
-        <skos:editorialNote>With uniform sampling we don&apos;t need to record the time points because we know the dwell time. We may add named strategies to the CV over time that are more specific than non-uniform</skos:editorialNote>
         <skos:definition>With uniform sampling, each sample is separated by the &quot;dwell time&quot;.</skos:definition>
         <oboInOwl:hasExactSynonym>continuous sampling</oboInOwl:hasExactSynonym>
+        <skos:editorialNote>With uniform sampling we don&apos;t need to record the time points because we know the dwell time. We may add named strategies to the CV over time that are more specific than non-uniform</skos:editorialNote>
     </owl:Class>
     
 
@@ -3637,10 +3713,10 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000350">
         <rdfs:label xml:lang="en">non-uniform sampling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000348"/>
-        <oboInOwl:hasExactSynonym>sparse sampling</oboInOwl:hasExactSynonym>
-        <skos:definition>with non-uniform, some samples are skipped, there are different strategies for which to skip, but we can simply record the time point as well as the complex data point in order to represent this type of data.</skos:definition>
         <skos:editorialNote>Non-uniform sampling is something likely to become more important in the future, because it allows you to capture higher dimension spectra much more quickly</skos:editorialNote>
         <dc:source>http://link.springer.com/chapter/10.1007%2F1-4020-3910-7_142#page-1</dc:source>
+        <skos:definition>with non-uniform, some samples are skipped, there are different strategies for which to skip, but we can simply record the time point as well as the complex data point in order to represent this type of data.</skos:definition>
+        <oboInOwl:hasExactSynonym>sparse sampling</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -3687,8 +3763,8 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000409">
         <rdfs:label xml:lang="en">complex128 Integer</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000336"/>
-        <skos:definition>This byte format uses a consecutive array of two 64bit long integer numbers to represent the real and imaginary part of the complex values (2x64bits =&gt; 2x8bytes =&gt; 2 longs) for the FID datatype.</skos:definition>
         <rdfs:comment></rdfs:comment>
+        <skos:definition>This byte format uses a consecutive array of two 64bit long integer numbers to represent the real and imaginary part of the complex values (2x64bits =&gt; 2x8bytes =&gt; 2 longs) for the FID datatype.</skos:definition>
     </owl:Class>
     
 
@@ -3698,8 +3774,8 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000411">
         <rdfs:label xml:lang="en">thirty degree pulse duration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000190"/>
-        <oboInOwl:hasExactSynonym>30 degree pulse duration</oboInOwl:hasExactSynonym>
         <skos:definition>The duration of the excitation pulse needed to rotate the magnetisation vector by 30 degrees.</skos:definition>
+        <oboInOwl:hasExactSynonym>30 degree pulse duration</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -4000,16 +4076,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000529"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Serial Number of the instrument.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000529"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000529"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4227,16 +4303,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000587"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Postal address of the contact person or organization.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000587"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000587"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4600,16 +4676,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical compound formula expressing the number of atoms of each element present in a compound, without indicating how they are linked.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000866"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000866"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical compound formula expressing the number of atoms of each element present in a compound, without indicating how they are linked.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000866"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -4650,16 +4726,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000868"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">The simplified molecular input line entry specification or SMILES is a specification for unambiguously describing the structure of a chemical compound using a short ASCII string.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000868"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000868"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4754,16 +4830,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000883"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A short name or symbol of a protein (e.g., HSF 1 or HSF1_HUMAN).</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000883"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000883"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4865,16 +4941,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A sequence of letter symbols denoting the order of amino acids that compose the peptide, without encoding any amino acid mass modifications that might be present.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000888"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000888"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A sequence of letter symbols denoting the order of amino acids that compose the peptide, without encoding any amino acid mass modifications that might be present.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000888"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5396,16 +5472,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001922"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">DOI unique identifier.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001922"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001922"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5521,16 +5597,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Parameters used in the NMR spectrometry acquisition.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5546,16 +5622,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:integer</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A unique identifier for a metabolite in the HMDB database (HMDB00001).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:integer</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A unique identifier for a metabolite in the HMDB database (HMDB00001).</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5827,16 +5903,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002015"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Bin label.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002015"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002015"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5852,16 +5928,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin start.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002016"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002016"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin start.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002016"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5877,16 +5953,16 @@ complex128long</oboInOwl:consider>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin end.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002017"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002017"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin end.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002017"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -6223,9 +6299,9 @@ complex128long</oboInOwl:consider>
         <rdfs:label rdf:datatype="&xsd;string">chemical shift standard</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000881"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A compound that is added to an NMR sample to enable the alignment of spectra. The power of NMR is that for most nuclei the NMR frequency changes very slightly with different molecular environment or chemical bonding. These shifts are very small, on the order of 1 part in 10+9.  This is referred to as &quot;Chemical Shift.&quot; Tables of chemical shifts are tabulated and used to determine molecular structure. Combining NMR chemical shift information with other NMR information such as peak integration, coupling constants and Nuclear Overhauser Enhancement (NOE) can result in complete three-dimensional molecular structures of molecules in solution without using X-ray crystallography.</rdfs:comment>
-        <oboInOwl:hasExactSynonym>chemical shift reference compound</oboInOwl:hasExactSynonym>
-        <doap:bug-database>https://github.com/nmrML/nmrML/issues/31</doap:bug-database>
         <dc:source>http://www.nmrnotes.org/NMRPages/refcomps.html</dc:source>
+        <doap:bug-database>https://github.com/nmrML/nmrML/issues/31</doap:bug-database>
+        <oboInOwl:hasExactSynonym>chemical shift reference compound</oboInOwl:hasExactSynonym>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/33</doap:bug-database>
     </owl:Class>
     
@@ -6477,11 +6553,11 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400068">
         <rdfs:label rdf:datatype="&xsd;string">window function for apodization</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400096"/>
-        <obo:IAO_0000115>A function applied to a FID to increase the signal-to-noise ratio or the resolution.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>apodization function</oboInOwl:hasExactSynonym>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/67</doap:bug-database>
-        <dc:source>http://www.uwyo.edu/wheelernmr/nmr/window_functions.pdf</dc:source>
+        <oboInOwl:hasExactSynonym>apodization function</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>A function applied to a FID to increase the signal-to-noise ratio or the resolution.</obo:IAO_0000115>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/39</doap:bug-database>
+        <dc:source>http://www.uwyo.edu/wheelernmr/nmr/window_functions.pdf</dc:source>
     </owl:Class>
     
 
@@ -7023,9 +7099,9 @@ complex128long</oboInOwl:consider>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400011"/>
         <rdfs:comment rdf:datatype="&xsd;string">sortal dimensions are Vendor, Size (Diameter, length), Material (glass, quarz, pyrex ...), Frequency, Concentricity, OD and ID</rdfs:comment>
         <oboInOwl:hasExactSynonym>sample tube</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>The sample-tube holds the NMR sample and sits in the NMR probe. It is usually a glass tube of 5-20mm diameter.</obo:IAO_0000115>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/54</doap:bug-database>
         <dc:source>http://en.wikipedia.org/wiki/NMR_tube</dc:source>
-        <obo:IAO_0000115>The sample-tube holds the NMR sample and sits in the NMR probe. It is usually a glass tube of 5-20mm diameter.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -8197,11 +8273,11 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400267">
         <rdfs:label rdf:datatype="&xsd;string">data file</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000031"/>
+        <skos:editorialNote>This is a class annotation exemplifying skos usage. We assume the rdfs:label to capture the skos:preferedLabel.</skos:editorialNote>
         <skos:scopeNote>In the NMR case a file generated by an NMR acquisition computer, console or NMR processing software.</skos:scopeNote>
         <skos:example>an FID raw data file</skos:example>
-        <skos:editorialNote>This is a class annotation exemplifying skos usage. We assume the rdfs:label to capture the skos:preferedLabel.</skos:editorialNote>
-        <skos:definition>Any data file as generated by some acquisition computer or console.</skos:definition>
         <skos:altLabel>file</skos:altLabel>
+        <skos:definition>Any data file as generated by some acquisition computer or console.</skos:definition>
     </owl:Class>
     
 
@@ -8632,7 +8708,11 @@ complex128long</oboInOwl:consider>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400324">
         <rdfs:label rdf:datatype="&xsd;string">27Al</rdfs:label>
+<<<<<<< HEAD
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+=======
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
+>>>>>>> 3201aec335661d69f517b3a1f7991a5c4f084cdc
     </owl:Class>
     
 
@@ -8676,5 +8756,5 @@ complex128long</oboInOwl:consider>
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
 
