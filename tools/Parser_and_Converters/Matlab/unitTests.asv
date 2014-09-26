@@ -1,0 +1,4 @@
+testSpec = [1.37930,1.00010,2.09823,2.00010,3.80324,3.00010];
+raw = base64encode(testSpec, '', 'java');
+testSpecResult = base64decode(raw,'','java');
+setdiff(testSpec, raw2)
