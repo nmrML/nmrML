@@ -5,7 +5,7 @@ nav:
   about: active
 ---
 
-### Contributors
+# Contributors
 
 Several individuals and groups have collaborated to creaet nmrML. Thanks to all of our contributors who have provided input, written code, debated and used the format.
 
