@@ -37,7 +37,6 @@ London" target="_blank">
     <img src="/images/other-logos/bordeaux.jpg" />
   </a></li>
 
-
 </ul>
 
 ### Project Partners
@@ -63,4 +62,7 @@ London" target="_blank">
 </ul>
 
 <!--# Industry partners-->
+
+
+{% include contribute.html %}
 
