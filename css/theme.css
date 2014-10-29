@@ -101,3 +101,29 @@ ul#examples li h3 {
 }
 
 
+.contributor-list {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.contributor-list > li {
+  float: left;
+}
+
+.contributor-list li a {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.contributor-list li a:hover {
+  border: 1px solid #CAE1F5;
+  margin: 9px;
+  box-shadow: 0 0 10px 4px rgba(202, 225, 245, 0.26);
+}
+
+.contributor-list li img {
+  width: 250px;
+}
+
