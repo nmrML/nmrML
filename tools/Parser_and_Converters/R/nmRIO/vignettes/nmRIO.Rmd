@@ -1,0 +1,84 @@
+---
+title: "A Parser for nmrML"
+bibliography: nmRIO.bib
+output: word_document
+---
+
+Steffen Neumann (sneumann@ipb-halle.de), 
+  Luis Filipe de Figueiredo (Luis.deFigueiredo@ebi.ac.uk)
+  Jie Hao (j.hao@imperial.ac.uk)
+
+## Introduction
+
+The nmRIO package aims at providing a common interface to
+several NMR data formats.
+
+Cool R packages for NMR processing are e.g. rNMR [@Lewis09rNMRopensource]
+and Batman [@Hao12BATMANRpackage].
+
+## Example
+
+A short example sequence to read data from a nmrML raw data file. 
+First open the file:
+
+```{r open the file}
+library(nmRIO)
+
+nmrMLfile <- system.file("examples/HMDB00005.nmrML", package = "nmRIO")
+
+fid <- readNMRMLFID(nmrMLfile)
+
+```` 
+ 
+```{r plotFID, fig = TRUE, width = 5, height = 4 }
+plot(Re(fid), type="l")
+````
+ 
+Luis: I also need to access the following parameters:
+spectral width (ideally in ppm but can work out the one in Hz)
+transmitter frequency. Later, for bruker files I also need the following data
+group delay, dsp firmware version
+
+```{r Mockup-nmrML-parameters}
+  tree <- xmlTreeParse(nmrMLfile)
+  root <- xmlRoot(tree)
+  ## Get required parameters from nmrML
+  irradiationFrequency <- as.double(xmlAttrs(xmlElementsByTagName(root, "irradiationFrequency", recursive = TRUE)[[1]])["value"])
+
+  sweepWidth <- as.double(xmlAttrs(xmlElementsByTagName(root, "sweepWidth", recursive = TRUE)[[1]])["value"])
+
+  numberOfDataPoints <- as.integer(xmlAttrs(xmlElementsByTagName(root, "DirectDimensionParameterSet", recursive = TRUE)[[1]])["numberOfDataPoints"])
+
+  irradiationFrequency
+  sweepWidth
+  numberOfDataPoints
+
+  spectrum <- Re(fft(fid, inverse=TRUE))
+````
+
+The rudimentary processing results in:
+
+```{r plotSpectrum, fig = TRUE, width = 5, height = 4 }
+plot(spectrum, type="l")
+````
+
+
+```{r writeNmrML}
+## Mockup to write the spectrum back into the nmrML 
+## as "processed data"
+
+#b64string <- nmRIO:::binaryArrayEncode(spectrum, byteFormat="complex64", compression="gzip")
+  
+````
+
+
+## Future plans
+
+A lot.
+
+## Session information
+
+```{r label=sessioninfo,echo=FALSE,cache=FALSE}
+  sessionInfo()
+```` 
+
