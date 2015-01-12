@@ -10,77 +10,9 @@
         the peak list).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="quantifiedCompound" type="CompoundQuantificationType"/>
-  <xs:complexType name="CompoundStructureType">
-    <xs:annotation>
-      <xs:documentation>Captures the compound structure as an InChI</xs:documentation>
-    </xs:annotation>
-  </xs:complexType>
-  <xs:complexType name="SpectrumAnnotationListType">
+  <xs:complexType name="QuantifiedCompoundType">
     <xs:sequence>
-      <xs:element name="peakAssignment" minOccurs="0">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="chemicalStructure">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element name="atomArray"/>
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="multipletList">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element maxOccurs="unbounded" name="multiplet">
-                    <xs:complexType>
-                      <xs:sequence>
-                        <xs:element name="equivalentHydrogens">
-                          <xs:complexType>
-                            <xs:attribute name="atomRefs"/>
-                          </xs:complexType>
-                        </xs:element>
-                        <xs:element name="peakList">
-                          <xs:complexType>
-                            <xs:sequence>
-                              <xs:element maxOccurs="unbounded" name="peak">
-                                <xs:complexType>
-                                  <xs:attribute name="center"/>
-                                  <xs:attribute name="amplitude"/>
-                                </xs:complexType>
-                              </xs:element>
-                            </xs:sequence>
-                          </xs:complexType>
-                        </xs:element>
-                        <xs:element name="multiplicity" type="CVTermType"/>
-                      </xs:sequence>
-                      <xs:attribute name="center"/>
-                    </xs:complexType>
-                  </xs:element>
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element minOccurs="0" name="quantification">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="quantificationMethod" type="CVTermType"/>
-            <xs:element name="quantifiedCompoundList">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element maxOccurs="unbounded" ref="quantifiedCompound"/>
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="CompoundQuantificationType">
-    <xs:sequence>
-      <xs:element name="compoundStructure" type="CompoundStructureType"/>
+      <xs:element name="compoundStructure" type="ChemicalStructureType"/>
       <xs:element minOccurs="0" name="compoundIdentifierList">
         <xs:complexType>
           <xs:sequence>
@@ -122,6 +54,145 @@
     </xs:sequence>
     <xs:attribute name="name" use="required"/>
   </xs:complexType>
+  <xs:complexType name="ChemicalStructureType">
+    <xs:annotation>
+      <xs:documentation/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="atomList" maxOccurs="1" minOccurs="1" type="AtomListType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="bondList" type="BondListType"/>
+    </xs:sequence>
+    <xs:attribute name="name" use="required">
+      <xs:annotation>
+        <xs:documentation>The common name of the chemical. This name may not be good enough for unique identification, which is why we also have the  ChEBI ID.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="compoundID" use="required">
+      <xs:annotation>
+        <xs:documentation>Must be a ChEBI ID to allow for exact identification of a structure.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="AtomListType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="atom" type="AtomType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AtomType">
+    <xs:attribute name="id" type="xs:ID" use="required">
+      <xs:annotation>
+        <xs:documentation>An identifier unique to the file only, so that it can be referenced by the bond elements as well as by the spectrum annotations. Most people use "a1", "a2", ... , "aN"</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="elementType" use="required">
+      <xs:annotation>
+        <xs:documentation>The symbol for the element. For example: "H","C" or "Fe"</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="x" use="required">
+      <xs:annotation>
+        <xs:documentation>The x position of the element in cartesian coordinates. The cordinates along with the bond information in the bond list should allow for software to draw a 2D representation of the chemical structure.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="y" use="required">
+      <xs:annotation>
+        <xs:documentation>The y position of the element in cartesian coordinates. The cordinates along with the bond information in the bond list should allow for software to draw a 2D representation of the chemical structure.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="BondListType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="bond" type="BondType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BondType">
+    <xs:attribute name="atomRefs" use="required">
+      <xs:annotation>
+        <xs:documentation>Contains a list of atom IDs seperated by a space. The atom ids are the atoms connected by the bond. For example: "a1 a2"</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="order" use="required">
+      <xs:annotation>
+        <xs:documentation>The order of the bond connecting two atoms. A single bond should be "1", a double bond should be "2", a triple bond should be "3".</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="MultipletListType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="multiplet" type="MultipletType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultipletType">
+    <xs:sequence>
+      <xs:element name="contributingAtoms" type="ContributingAtomsType">
+        <xs:annotation>
+          <xs:documentation>Lists the atomRefs for atoms in the chemical structure that contribute to the multiplet. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="multiplicity" type="CVTermType">
+        <xs:annotation>
+          <xs:documentation>A description of the type of multiplet that is annotated. For exmample a singlet, a doublet, a doublet of doublets, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="peakList" type="PeakListType">
+        <xs:annotation>
+          <xs:documentation>A list of the positions and amplitudes of the peaks in the multiplet</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="center" use="required">
+      <xs:annotation>
+        <xs:documentation>The center of the multiplet in ppm.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="ContributingAtomsType">
+    <xs:attribute name="atomRefs"/>
+  </xs:complexType>
+  <xs:complexType name="PeakType">
+    <xs:attribute name="center" use="required"/>
+    <xs:attribute name="amplitude"/>
+  </xs:complexType>
+  <xs:complexType name="PeakListType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="peak" type="PeakType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PeakAssingmentType">
+    <xs:sequence>
+      <xs:element name="chemicalStructure" type="ChemicalStructureType"> </xs:element>
+      <xs:element name="multipletList" minOccurs="0" type="MultipletListType">
+        <xs:annotation>
+          <xs:documentation>A list of annotated multiplets in the spectrum.  Useful for assinging equivalent hydrogens in a hydrogen NMR spectrum to hydrogens in a compound.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="peakList">
+        <xs:annotation>
+          <xs:documentation>A list of annotated peaks in the spectrum. Useful for assinging carbons in a  Carbon NMR spectrum to carbons in a compound.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpectrumAnnotationListType">
+    <xs:sequence>
+      <xs:element name="peakAssignment" minOccurs="0" type="PeakAssingmentType"> </xs:element>
+      <xs:element minOccurs="0" name="quantification">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="quantificationMethod" type="CVTermType"/>
+            <xs:element name="quantifiedCompoundList">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" name="quantifiedCompound"
+                    type="QuantifiedCompoundType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="nmrMLType">
     <xs:annotation>
       <xs:documentation>This is the root element for the COordination Of Standards In MetabOlomicS
@@ -146,7 +217,6 @@
           <xs:documentation>TODO</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="spectrumAssignment"/>
       <xs:element minOccurs="0" name="spectrumAnnotationList" type="SpectrumAnnotationListType"/>
     </xs:sequence>
     <xs:attribute name="version" type="xs:string" use="required">
