@@ -870,20 +870,14 @@ Example:
               base64</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
-          <xs:annotation>
-            <xs:documentation>This optional attribute may reference the 'id' attribute of the
-              appropriate dataProcessing.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
         <xs:attribute name="encodedLength" type="xs:nonNegativeInteger" use="required">
           <xs:annotation>
-            <xs:documentation>The encoded length of the binary data array.</xs:documentation>
+            <xs:documentation>The number of characters in the base64 string. This is useful for skipping over the string in high throughput applications.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="byteFormat" type="xs:string" use="required">
           <xs:annotation>
-            <xs:documentation>64-bit or 32-bit precision floats</xs:documentation>
+            <xs:documentation>TODO format as little endian 64 bit pairs of floats, or 32 bit pairs of floats. See online documentation for decoding examples. </xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -1160,7 +1154,6 @@ Parsed from Excitation width ?</xs:documentation>
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
         type="SoftwareRefListType"> </xs:element>
-      <xs:element name="processingContactRefList" type="ContactRefListType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal
@@ -1169,17 +1162,21 @@ Parsed from Excitation width ?</xs:documentation>
       </xs:element>
       <xs:element name="xAxis" type="AxisWithUnitType"/>
       <xs:element name="yAxisType" type="CVTermType"/>
-      <xs:element name="processingParameterSet">
+      <xs:element name="processingParameterSet" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Optional information about processing that was used to create the frequency domain spectrum.</xs:documentation>
+        </xs:annotation>
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
+            <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType"
+              minOccurs="0">
               <xs:annotation>
                 <xs:documentation>The method used for post acquisition solvent
                   suppression.</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="calibrationCompound" type="CVTermType"/>
-            <xs:element name="dataTransformationMethod" type="CVTermType">
+            <xs:element name="calibrationCompound" type="CVTermType" minOccurs="0"/>
+            <xs:element name="dataTransformationMethod" type="CVTermType" minOccurs="0">
               <xs:annotation>
                 <xs:documentation>The method used for time-based to frequency-based data transformation.</xs:documentation>
               </xs:annotation>
@@ -1188,14 +1185,22 @@ Parsed from Excitation width ?</xs:documentation>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required"/>
+    <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required">
+      <xs:annotation>
+        <xs:documentation>The number of (x,y) points in the spectrum. This is needed to read the binary data.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="Spectrum1DType">
     <xs:complexContent>
       <xs:extension base="SpectrumType">
         <xs:sequence>
           <xs:element name="firstDimensionProcessingParameterSet"
-            type="FirstDimensionProcessingParameterSetType"/>
+            type="FirstDimensionProcessingParameterSetType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Optional additional information about processing that was used to create the frequency domain spectrum. This information is relevant to the first dimension of data only.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1269,10 +1274,10 @@ Parsed from Excitation width ?</xs:documentation>
         type="ValueWithUnitType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="firstOrderPhaseCorrection"
         type="ValueWithUnitType"> </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="calibrationReferenceShift"
+      <xs:element maxOccurs="1" minOccurs="0" name="calibrationReferenceShift"
         type="ValueWithUnitType"> </xs:element>
-      <xs:element name="spectralDenoisingMethod" type="CVTermType"/>
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="windowFunction">
+      <xs:element name="spectralDenoisingMethod" type="CVTermType" minOccurs="0"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="windowFunction">
         <xs:complexType>
           <xs:sequence maxOccurs="1" minOccurs="1">
             <xs:element name="windowFunctionMethod" type="CVTermType"/>
@@ -1286,14 +1291,8 @@ Parsed from Excitation width ?</xs:documentation>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="baselineCorrectionMethod" type="CVTermType"/>
-      <xs:element name="parameterFileRef" type="SourceFileRefType"/>
+      <xs:element name="baselineCorrectionMethod" type="CVTermType" minOccurs="0"/>
     </xs:sequence>
-    <xs:attribute name="noOfDataPoints" type="xs:integer" use="required">
-      <xs:annotation>
-        <xs:documentation>This number will also reflect the zero filling.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="AxisWithUnitType">
     <xs:attribute name="unitAccession" type="xs:string" use="optional">
