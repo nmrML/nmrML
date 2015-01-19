@@ -1,0 +1,225 @@
+# 1 "/opt/topspin/exp/stan/nmr/lists/pp/zg"
+;zg
+;avance-version (06/11/09)
+;1D sequence
+;
+;$CLASS=HighRes
+;$DIM=1D
+;$TYPE=
+;$SUBTYPE=
+;$COMMENT=
+
+
+# 1 "/opt/topspin/exp/stan/nmr/lists/pp/Avance.incl" 1
+;Avance3.incl
+;   for AV III
+;
+;avance-version (07/12/14)
+;
+;$CLASS=HighRes Incl
+;$COMMENT=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;$Id: Avance3.incl,v 1.6.2.2 2007/12/14 16:06:46 ber Exp $
+# 12 "/opt/topspin/exp/stan/nmr/lists/pp/zg" 2
+
+
+
+"acqt0=-p1*2/3.1416"
+
+
+# 1 "mc_line 18 file /opt/topspin/exp/stan/nmr/lists/pp/zg expanding definition part of mc command before ze"
+define delay MCWRK
+define delay MCREST
+"MCWRK = 0.333333*30m"
+"MCREST = 30m - 30m"
+    dccorr
+# 18 "/opt/topspin/exp/stan/nmr/lists/pp/zg"
+1 ze
+# 1 "mc_line 18 file /opt/topspin/exp/stan/nmr/lists/pp/zg expanding definition of mc command after ze"
+# 19 "/opt/topspin/exp/stan/nmr/lists/pp/zg"
+# 1 "mc_line 19 file /opt/topspin/exp/stan/nmr/lists/pp/zg expanding start label for mc command"
+2 MCWRK  * 2
+LBLF0, MCWRK
+  MCREST
+# 20 "/opt/topspin/exp/stan/nmr/lists/pp/zg"
+  d1
+  p1 ph1
+  go=2 ph31
+# 1 "mc_line 23 file /opt/topspin/exp/stan/nmr/lists/pp/zg expanding mc command in line"
+  MCWRK wr #0
+  MCWRK zd 
+  lo to LBLF0 times td0
+
+  MCWRK
+# 24 "/opt/topspin/exp/stan/nmr/lists/pp/zg"
+exit
+
+
+ph1=0 2 2 0 1 3 3 1
+ph31=0 2 2 0 1 3 3 1
+
+
+;pl1 : f1 channel - power level for pulse (default)
+;p1 : f1 channel -  high power pulse
+;d1 : relaxation delay; 1-5 * T1
+;NS: 1 * n, total number of scans: NS * TD0
+
+
+
+;$Id: zg,v 1.9 2006/11/10 10:56:44 ber Exp $

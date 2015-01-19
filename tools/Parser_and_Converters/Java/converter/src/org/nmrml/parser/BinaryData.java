@@ -63,15 +63,20 @@ public class BinaryData {
     private static final int tInteger = 1;
     private static final int tLong = 2;
     private static final int tFloat = 3;
+    private static final int tDouble = 4;
 
     private static final Map<String, int[]> hByteFormat;
     static
     {
         hByteFormat = new HashMap<String, int[]>();
-        hByteFormat.put("Integer32", new int[] {4, 1, tInteger });
-        hByteFormat.put("Complex64Int", new int[] {4, 2, tInteger });
-        hByteFormat.put("Complex128", new int[] {8, 2, tFloat });
-        hByteFormat.put("class java.lang.Integer", new int[] {4, 1, tInteger });
+        hByteFormat.put("integer32", new int[] {4, 1, tInteger });
+        hByteFormat.put("integer64", new int[] {8, 1, tLong });
+        hByteFormat.put("float32", new int[] {4, 1, tFloat });
+        hByteFormat.put("float64", new int[] {8, 1, tDouble });
+        hByteFormat.put("complex64int", new int[] {4, 2, tInteger });
+        hByteFormat.put("complex128int", new int[] {8, 2, tLong });
+        hByteFormat.put("complex64", new int[] {4, 2, tFloat });
+        hByteFormat.put("complex128", new int[] {8, 2, tDouble });
     }
 
     private String convertToHex(byte[] data) {
@@ -142,6 +147,8 @@ public class BinaryData {
                       break;
                   case tFloat: doubles[i] = (double)buffer.getFloat();
                       break;
+                  case tDouble: doubles[i] = (double)buffer.getDouble();
+                      break;
            }
         }
         return doubles;
@@ -167,6 +174,36 @@ public class BinaryData {
         return byteArrayOutputStream.toByteArray();
     }
 */
+    public int[] toInt(byte buf[], ByteOrder byteOrder) {
+       int intArr[] = new int[buf.length / 4];
+       int offset = 0;
+       for(int i = 0; i < intArr.length; i++) {
+          if (byteOrder.equals(ByteOrder.BIG_ENDIAN)) {
+               intArr[i] = (buf[3 + offset] & 0xFF) | ((buf[2 + offset] & 0xFF) << 8) |
+                           ((buf[1 + offset] & 0xFF) << 16) | ((buf[0 + offset] & 0xFF) << 24);
+          }
+          else {
+               intArr[i] = (buf[0 + offset] & 0xFF) | ((buf[1 + offset] & 0xFF) << 8) |
+                           ((buf[2 + offset] & 0xFF) << 16) | ((buf[3 + offset] & 0xFF) << 24);
+          }
+          offset += 4;
+       }
+       return intArr;
+    }
+
+    public byte[] BigToLittle(byte buf[]) {
+       byte[] newbuf = new byte[buf.length];
+       int  bytesize = buf.length / 4;
+       int offset = 0;
+       for(int i = 0; i < bytesize; i++) {
+          newbuf[0 + offset] = buf[3 + offset];
+          newbuf[1 + offset] = buf[2 + offset];
+          newbuf[2 + offset] = buf[1 + offset];
+          newbuf[3 + offset] = buf[0 + offset];
+          offset += 4;
+       }
+       return newbuf;
+    }
 
     public static byte[] compress(byte[] data) throws IOException {
         Deflater deflater = new Deflater();
@@ -202,27 +239,63 @@ public class BinaryData {
 
     public BinaryData() {}
 
-    public BinaryData (File inputFileData, Acqu acq) throws IOException {
-        this(inputFileData,acq,false);
+    public BinaryData (File inputFileData, Acqu acq, boolean isComplex) throws IOException {
+        this(inputFileData,acq,isComplex,false);
     }
 
-    public BinaryData (File inputFileData, Acqu acq, boolean isCompressed) throws IOException {
+    public BinaryData (File inputFileData, Acqu acq, boolean isComplex, boolean isCompressed) throws IOException {
         BinaryData binaryData = new BinaryData();
         if(inputFileData.isFile() && inputFileData.canRead()) {
            FileInputStream fidInput = new FileInputStream(inputFileData);
            FileChannel inChannel = fidInput.getChannel();
-           BigInteger encodedLength = BigInteger.valueOf(inChannel.size() / acq.getBiteSyze());
-           ByteBuffer buffer = ByteBuffer.allocate((int) inChannel.size());
+
+           int bytes2read = 0;
+           boolean floattype=false;
+           switch (acq.getSpectrometer()){
+              case VARIAN :
+                  // Read File Header (8*4 bytes + Block Header (7*4 bytes) = 60 bytes
+                  // see http://qa.nmrwiki.org/question/74/varian-data-storage-float-vs-int
+                  //     http://cbi.nyu.edu/svn/mrTools/trunk/mrUtilities/File/Varian/vnmrdata.h
+                  ByteBuffer bHeader = ByteBuffer.allocate(60);
+                  bHeader.order(acq.getByteOrder());
+                  int bytesHeader = inChannel.read(bHeader);
+                  int[] dataHeader = toInt(bHeader.array(),acq.getByteOrder());
+                  if ( (dataHeader[6] & 0x08) !=0 ) floattype=true;
+                  acq.setBiteSyze(dataHeader[3]);
+                  bytes2read = dataHeader[4];
+                  break;
+              case BRUKER :
+                  bytes2read = (int) inChannel.size();
+                  break;
+              default:
+                  break;
+           }
+           ByteBuffer buffer = ByteBuffer.allocate(bytes2read);
            buffer.order(acq.getByteOrder());
            int bytesRead = inChannel.read(buffer);
-           String byteFormat = "Integer64"; // 64 bit integer
-           if (acq.getBiteSyze() == 4) { // values as 32 bit integer
-               byteFormat = "Integer32";
+
+           String byteFormat = "";
+           switch (acq.getBiteSyze()) {
+              case 4: 
+                 if (floattype) {
+                     if (isComplex) byteFormat = "complex64"; else byteFormat = "float32";
+                 } else {
+                     if (isComplex) byteFormat = "complex64int"; else byteFormat = "integer32";
+                 }
+                 break;
+              case 8: 
+                 if (isComplex) byteFormat = "complex128"; else byteFormat = "float64";
+                 break;
+           }
+
+           byte[] buf = buffer.array();
+           if (acq.getByteOrder().equals(ByteOrder.BIG_ENDIAN)) {
+               buf = BigToLittle(buffer.array());
            }
            if (isCompressed) {
-              this.setData(compress(buffer.array()));
+              this.setData(compress(buf));
            } else {
-              this.setData(buffer.array());
+              this.setData(buf);
            }
            this.compressed=isCompressed;
            this.setEncodedLength(BigInteger.valueOf(this.getData().length));

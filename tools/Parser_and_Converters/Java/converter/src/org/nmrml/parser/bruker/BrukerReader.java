@@ -22,6 +22,7 @@ import org.nmrml.parser.Proc;
 import org.nmrml.parser.BinaryData;
 import org.nmrml.parser.bruker.BrukerAcquReader;
 import org.nmrml.parser.bruker.BrukerProcReader;
+import org.nmrml.cv.SpectrometerMapper;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -64,17 +65,23 @@ public class BrukerReader {
     public BrukerReader() {
     }
 
-    public BrukerReader(String inputFolder) throws FileNotFoundException {
+    public BrukerReader(String inputFolder, SpectrometerMapper vendorMapper) throws FileNotFoundException {
 
         try{
-           File dataFolder = new File(inputFolder);
 
-           this.acquFile = new File(dataFolder.getAbsolutePath()+"/acqus");
+           File dataFolder = new File(inputFolder);
+           String acqFstr = dataFolder.getAbsolutePath() + "/" + vendorMapper.getTerm("FILES", "ACQUISITION_FILE");
+           this.acquFile = new File(acqFstr);
            if(acquFile.isFile() && acquFile.canRead()) {
                AcquReader acqObj = new BrukerAcquReader(acquFile);
                this.acq = acqObj.read();
            }
-           this.procFile = new File(dataFolder.getAbsolutePath()+"/pdata/1/procs");
+           else {
+               System.err.println("ACQUISITION_FILE not available or readable: " + acqFstr);
+               System.exit(1);
+           }
+           String procFstr = dataFolder.getAbsolutePath() + "/" + vendorMapper.getTerm("FILES", "PROCESSING_FILE");
+           this.procFile = new File(procFstr);
            if(procFile.isFile() && procFile.canRead()) {
                ProcReader procObj = new BrukerProcReader(procFile, acq);
                this.proc = procObj.read();

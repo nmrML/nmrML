@@ -5,5 +5,7 @@ JAVA=$(which java)
 
 CONVERTER="$JAVA -jar $MYDIR/converter.jar"
 
+echo "$CONVERTER $*"
+
 $CONVERTER $*
 

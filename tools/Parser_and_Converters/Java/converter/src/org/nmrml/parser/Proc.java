@@ -46,13 +46,14 @@ public class Proc {
     private boolean integerType;         //dtypp             data type (0 -> 32 bit int, 1 -> 64 bit double)
 
     // obtained after reading the FID but could it be obtained from the Bruker?
-    private int transformSize;           //si                transform size (complex)    bruker_read::get_fid
-    private double dwellTime;            //dw                dwell time (in s)           bruker_read::get_fid
-    private double hertzPerPoint;        //hzperpt                                       bruker_read::get_fid
-    private double ppmPerPoint;          //ppmperpt                                      bruker_read::get_fid
-    private double spectraWidthHertz;    //sw_h                                          bruker_read::get_fid
+    private int transformSize;           //si                transform size (complex)
+    private double dwellTime;            //dw                dwell time (in s)
+    private double hertzPerPoint;        //hzperpt
+    private double ppmPerPoint;          //ppmperpt
+    private double spectraWidthHertz;    //sw_h
 
-    private double offset;               //offset                                        bruker_read::get_fid
+    private double maxPpm;               //offset
+    private double minPpm;               //maxPpm - spectralWidthHz/spectralFrequency
     //TODO consider moving this to the Fourier Transformed class or processing class....
     // variables required later...
     private int tdEffective;             //td_eff        apodization::transform::do_fft
@@ -87,7 +88,7 @@ public class Proc {
         this.hertzPerPoint = acquisition.getSpectralWidth() * acquisition.getTransmiterFreq() / transformSize;
         this.ppmPerPoint = acquisition.getSpectralWidth() / transformSize;
         this.spectraWidthHertz = acquisition.getSpectralWidth() * acquisition.getTransmiterFreq();
-        this.offset = (acquisition.getTransmiterFreq()- zeroFrequency) * 1.0e06 +
+        this.maxPpm = (acquisition.getTransmiterFreq()- zeroFrequency) * 1.0e06 +
                 (acquisition.getSpectralWidth()* acquisition.getTransmiterFreq()) / 2.0;
 
         // set the position where the shift starts???
@@ -182,12 +183,20 @@ public class Proc {
         this.firstOrderPhase = firstOrderPhase;
     }
 
-    public double getOffset() {
-        return offset;
+    public double getMaxPpm() {
+        return maxPpm;
     }
 
-    public void setOffset(double offset) {
-        this.offset = offset;
+    public void setMaxPpm(double maxPpm) {
+        this.maxPpm = maxPpm;
+    }
+
+    public double getMinPpm() {
+        return minPpm;
+    }
+
+    public void setMinPpm(double minPpm) {
+        this.minPpm = minPpm;
     }
 
     public double getSsb() {
