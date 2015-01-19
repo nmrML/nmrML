@@ -1093,8 +1093,7 @@ Parsed from Excitation width ?</xs:documentation>
         description of the process used to create it.</xs:documentation>
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
-        type="SoftwareRefListType"> </xs:element>
+      <xs:element minOccurs="0" name="processingSoftwareRefList" type="SoftwareRefListType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal
