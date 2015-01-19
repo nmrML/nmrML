@@ -63,11 +63,6 @@
       <xs:element name="atomList" maxOccurs="1" minOccurs="1" type="AtomListType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="bondList" type="BondListType"/>
     </xs:sequence>
-    <xs:attribute name="name" use="required">
-      <xs:annotation>
-        <xs:documentation>The common name of the chemical compound which. This name is not always good enough for unique identification, which is why the identifier element provides a means to uniquely identify the chmical compound.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="AtomListType">
     <xs:sequence>
@@ -115,10 +110,10 @@
   </xs:complexType>
   <xs:complexType name="AtomAssignmentListType">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="atomAssignment" type="AtomAssignmentType"/>
+      <xs:element maxOccurs="unbounded" name="multiplet" type="MultipletType"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AtomAssignmentType">
+  <xs:complexType name="MultipletType">
     <xs:sequence>
       <xs:element name="atoms" type="AtomRefsType">
         <xs:annotation>
@@ -157,7 +152,7 @@
   <xs:complexType name="AtomAssingmentAnnotationType">
     <xs:sequence>
       <xs:element name="chemicalStructure" type="ChemicalStructureType"> </xs:element>
-      <xs:element name="atomAssignmentsList" minOccurs="0" type="AtomAssignmentListType">
+      <xs:element name="atomAssignmentList" minOccurs="0" type="AtomAssignmentListType">
         <xs:annotation>
           <xs:documentation>A list of annotated multiplets in the spectrum.  Useful for assinging equivalent hydrogens in a hydrogen NMR spectrum to hydrogens in a compound.</xs:documentation>
         </xs:annotation>
