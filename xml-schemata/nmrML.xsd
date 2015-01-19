@@ -227,7 +227,6 @@ Example:
       <xs:element minOccurs="0" name="sourceFileList" type="SourceFileListType"/>
       <xs:element name="softwareList" type="SoftwareListType" minOccurs="0"/>
       <xs:element name="instrumentConfigurationList" type="InstrumentConfigurationListType"/>
-      <xs:element name="dataProcessingList" type="DataProcessingListType" minOccurs="0"/>
       <xs:element minOccurs="0" name="sampleList" type="SampleListType"/>
       <xs:element name="acquisition" type="AcquisitionType"/>
       <xs:element minOccurs="0" name="spectrumList" type="SpectrumListType">
@@ -808,56 +807,6 @@ Example:
         type="dx:InstrumentConfigurationType"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DataProcessingType">
-    <xs:annotation>
-      <xs:documentation>Description of the way in which a particular software was
-        used.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="processingMethod" type="ProcessingMethodType">
-        <xs:annotation>
-          <xs:documentation>Description of the default peak processing method. This element
-            describes the base method used in the generation of a particular nmrML file. Variable
-            methods should be described in the appropriate acquisition section - if no
-            acquisition-specific details are found, then this information serves as the
-            default.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="id" type="xs:ID" use="required">
-      <xs:annotation>
-        <xs:documentation>A unique identifier for this data processing that is unique across all
-          DataProcessingTypes.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:complexType name="DataProcessingListType">
-    <xs:annotation>
-      <xs:documentation>List and descriptions of data processing applied to this
-        data.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="dataProcessing" type="dx:DataProcessingType"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ProcessingMethodType">
-    <xs:complexContent mixed="false">
-      <xs:extension base="dx:ParamGroupType">
-        <xs:attribute name="order" type="xs:nonNegativeInteger" use="required">
-          <xs:annotation>
-            <xs:documentation>This attributes allows a series of consecutive steps to be placed in
-              the correct order.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="softwareRef" type="xs:IDREF" use="required">
-          <xs:annotation>
-            <xs:documentation>This attribute must reference the 'id' of the appropriate
-              SoftwareType.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="BinaryDataArrayType">
     <xs:annotation>
       <xs:documentation/>
@@ -1137,14 +1086,6 @@ Parsed from Excitation width ?</xs:documentation>
       <xs:element name="spectrumMultiD" type="SpectrumMultiDType" maxOccurs="unbounded"
         minOccurs="0"/>
     </xs:choice>
-    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="required">
-      <xs:annotation>
-        <xs:documentation>This attribute MUST reference the 'id' of the default data processing for
-          the spectrum list. If an acquisition does not reference any data processing, it implicitly
-          refers to this data processing. This attribute is required because the minimum amount of
-          data processing that any format will undergo is "conversion to nmrML".</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SpectrumType">
     <xs:annotation>
