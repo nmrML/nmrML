@@ -110,14 +110,20 @@
   </xs:complexType>
   <xs:complexType name="AtomAssignmentListType">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="multiplet" type="MultipletType"/>
+      <xs:element maxOccurs="unbounded" name="multiplet" type="MultipletType">
+        <xs:annotation>
+          <xs:documentation>A cluster of 1 or more peaks that corresponds to specific atoms in a chemical structure.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="MultipletType">
     <xs:sequence>
       <xs:element name="atoms" type="AtomRefsType">
         <xs:annotation>
-          <xs:documentation>Lists the atomRefs for atoms in the chemical structure that contribute to the multiplet. </xs:documentation>
+          <xs:documentation>Lists the atomRefs for atoms in the chemical structure that contribute to the multiplet.
+
+If the corresponding atoms are unknown than the list can be blank.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="multiplicity" type="CVTermType">
@@ -152,12 +158,17 @@
   <xs:complexType name="AtomAssingmentAnnotationType">
     <xs:sequence>
       <xs:element name="chemicalStructure" type="ChemicalStructureType"> </xs:element>
-      <xs:element name="atomAssignmentList" minOccurs="0" type="AtomAssignmentListType">
+      <xs:element name="atomAssignmentList" type="AtomAssignmentListType">
         <xs:annotation>
-          <xs:documentation>A list of annotated multiplets in the spectrum.  Useful for assinging equivalent hydrogens in a hydrogen NMR spectrum to hydrogens in a compound.</xs:documentation>
+          <xs:documentation>A list of annotated peak clusters in the spectrum and the atoms that they correspond to. </xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
+    <xs:attribute name="spectrumRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>A reference to the id of the spectrum that this annotation is for.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="InChiStringType">
     <xs:annotation>
@@ -231,7 +242,7 @@ Example:
       <xs:element name="acquisition" type="AcquisitionType"/>
       <xs:element minOccurs="0" name="spectrumList" type="SpectrumListType">
         <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
+          <xs:documentation>A list of frequency domain spectrum data as well as information about how the spectrum was processed. There can be more than one do to different techniques for processing the FID data.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="spectrumAnnotationList" type="SpectrumAnnotationListType"/>
@@ -1126,6 +1137,11 @@ Parsed from Excitation width ?</xs:documentation>
     <xs:attribute name="numberOfDataPoints" type="xs:integer" use="required">
       <xs:annotation>
         <xs:documentation>The number of (x,y) points in the spectrum. This is needed to read the binary data.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="id" type="xs:ID" use="required">
+      <xs:annotation>
+        <xs:documentation>An ID for the spectrum so that it can be referenced within the file for spectrum annotations.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
