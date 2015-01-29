@@ -16,7 +16,7 @@ Several individuals and groups have collaborated to creaet nmrML. Thanks to all 
   </a></li>
 
   <li><a href="http://ec.europa.eu/research/fp7/" title="Funding by EU FP7" target="_blank">
-    <img src="/images/other-logos/fp7.jpg" />
+    <img src="/images/other-logos/fp7.png" />
   </a></li>
 
   <li><a href="http://www.cosmos-fp7.eu/" title="COSMOS - COordination of Standards in MetabOlomicS" target="_blank">
