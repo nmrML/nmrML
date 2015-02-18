@@ -39,12 +39,8 @@ public class SpectrometerMapper {
 
     Wini spectrometerIni;
 
-    public SpectrometerMapper() throws IOException {
-        this(ClassLoader.getSystemResourceAsStream("resources/ontologies/spectrometer.ini"));
-    }
-
     public SpectrometerMapper (String vendor_ini) throws IOException {
-        this(ClassLoader.getSystemResourceAsStream(vendor_ini));
+        this(new FileInputStream(vendor_ini));
     }
 
     public SpectrometerMapper (InputStream inputStream) throws IOException {

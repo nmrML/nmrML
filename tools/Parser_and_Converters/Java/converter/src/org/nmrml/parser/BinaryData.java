@@ -73,8 +73,6 @@ public class BinaryData {
         hByteFormat.put("integer64", new int[] {8, 1, tLong });
         hByteFormat.put("float32", new int[] {4, 1, tFloat });
         hByteFormat.put("float64", new int[] {8, 1, tDouble });
-        hByteFormat.put("complex64int", new int[] {4, 2, tInteger });
-        hByteFormat.put("complex128int", new int[] {8, 2, tLong });
         hByteFormat.put("complex64", new int[] {4, 2, tFloat });
         hByteFormat.put("complex128", new int[] {8, 2, tDouble });
     }
@@ -133,13 +131,17 @@ public class BinaryData {
         return compressed;
     }
 
-    public double[] getDataAsDouble() {
+    //public double[] getDataAsDouble() {
+    //    this(ByteOrder.LITTLE_ENDIAN);
+    //}
+
+    public double[] getDataAsDouble(ByteOrder... byteOrder) {
         int[] encoded = this.getEncodedSize();
         int encodedSize = encoded[0];
         double[] doubles = new double[this.data.length / encodedSize];
         for(int i=0;i<doubles.length;i++){
            ByteBuffer buffer = ByteBuffer.wrap(this.data, i*encodedSize, encodedSize);
-           buffer.order(ByteOrder.LITTLE_ENDIAN);
+           buffer.order( byteOrder.length > 0 ? byteOrder[0] : ByteOrder.LITTLE_ENDIAN );
            switch (encoded[2]) {
                   case tInteger: doubles[i] = (double)buffer.getInt();
                       break;
@@ -191,18 +193,17 @@ public class BinaryData {
        return intArr;
     }
 
-    public byte[] BigToLittle(byte buf[]) {
-       byte[] newbuf = new byte[buf.length];
-       int  bytesize = buf.length / 4;
-       int offset = 0;
-       for(int i = 0; i < bytesize; i++) {
-          newbuf[0 + offset] = buf[3 + offset];
-          newbuf[1 + offset] = buf[2 + offset];
-          newbuf[2 + offset] = buf[1 + offset];
-          newbuf[3 + offset] = buf[0 + offset];
-          offset += 4;
-       }
-       return newbuf;
+    public byte[] DoublesToByteArray(double values[]) {
+        byte[] buf = new byte[8*values.length];
+        int offset = 0;
+        for(int i = 0; i < values.length; i++) {
+            ByteBuffer buffer = ByteBuffer.allocate(8);
+            buffer.order(ByteOrder.LITTLE_ENDIAN);
+            byte [] bytes = buffer.putDouble(values[i]).array();
+            for (int j=0; j<8; j++) buf[offset+j] = bytes[j];
+            offset += 8;
+        }
+       return buf;
     }
 
     public static byte[] compress(byte[] data) throws IOException {
@@ -274,24 +275,49 @@ public class BinaryData {
            buffer.order(acq.getByteOrder());
            int bytesRead = inChannel.read(buffer);
 
+           // First step: convert bytes to doubles
            String byteFormat = "";
            switch (acq.getBiteSyze()) {
               case 4: 
                  if (floattype) {
-                     if (isComplex) byteFormat = "complex64"; else byteFormat = "float32";
+                     byteFormat = "float32";
                  } else {
-                     if (isComplex) byteFormat = "complex64int"; else byteFormat = "integer32";
+                     byteFormat = "integer32";
                  }
                  break;
               case 8: 
-                 if (isComplex) byteFormat = "complex128"; else byteFormat = "float64";
+                 byteFormat = "float64";
                  break;
            }
+           this.setData(buffer.array());
+           this.setEncodedLength(BigInteger.valueOf(this.getData().length));
+           this.setByteFormat(byteFormat);
 
-           byte[] buf = buffer.array();
-           if (acq.getByteOrder().equals(ByteOrder.BIG_ENDIAN)) {
-               buf = BigToLittle(buffer.array());
+//System.err.println( String.format( "BinData: byteFormat = %s", byteFormat ) );
+
+           double [] dataValues = this.getDataAsDouble(acq.getByteOrder());
+//System.err.println( String.format( "BinData: Doubles Length = %d", dataValues.length ) );
+
+//System.err.println( String.format( "BinData: DATA[0] = %f", dataValues[0] ) );
+//System.err.println( String.format( "BinData: DATA[1] = %f", dataValues[1] ) );
+//System.err.println( String.format( "BinData: DATA[2] = %f", dataValues[2] ) );
+//System.err.println( String.format( "BinData: DATA[3] = %f", dataValues[3] ) );
+
+
+           // Second step: convert doubles to 64bits, LITTLE ENDIAN
+           byte[] buf = DoublesToByteArray(dataValues);
+           this.setData(buf);
+//System.err.println( String.format( "BinData: buf Length = %d", buf.length ) );
+
+           if (isComplex) {
+               byteFormat="Complex128";
            }
+           else {
+               byteFormat="float64";
+           }
+           acq.setBiteSyze(8);
+           acq.setByteOrder(ByteOrder.LITTLE_ENDIAN);
+
            if (isCompressed) {
               this.setData(compress(buf));
            } else {

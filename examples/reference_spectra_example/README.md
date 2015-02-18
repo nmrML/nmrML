@@ -75,8 +75,8 @@ Contact: Daniel Jacob(djacob65@gmail.com)
 ## MMBBI_10M12-CE01
 
 ### Explanation of files/directory:
-- MBBI_10M12-CE01 : Acquisition directories from Bruker TopSpin software (1H)
-- MBBI_10M12-CE01.nmrML: nmrML instance created from the 1H Experiment
+- MBBI_10M12-CE01-1a : Acquisition directories from Bruker TopSpin software (1H)
+- MBBI_10M12-CE01-1a.nmrML: nmrML instance created from the 1H Experiment
 
 
 ### Overview
