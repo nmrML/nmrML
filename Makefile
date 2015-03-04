@@ -18,6 +18,10 @@ GHP_CV = ${GHP}/cv/${VERSION}
 # XMLVALIDATOR=/vol/openms/src/OpenMS/bin/XMLValidator
 # SEMANTICVALIDATOR=/vol/openms/src/OpenMS/bin/SemanticValidator
 
+## Conversion from nmrCV to nmrML.obo
+## using https://github.com/owlcollab/owltools
+OWLTOOL=/home/sneumann/src/owltools/OWLTools-Runner/bin/owltools
+
 # The fallback if no OpenMS is available:
 XMLVALIDATOR=/bin/true
 SEMANTICVALIDATOR=/bin/true
@@ -31,6 +35,11 @@ NMRIOEXAMPLES="tools/Parser_and_Converters/R/nmRIO/inst/examples/"
 	show_tags bump_build bump_minor bump_major prepare_release \
 	release_major release_minor release_build \
 	gh-pages-install
+	 
+##
+## The following targets copy generated files into the gh-pages branch
+## that powers http://nmrml.org/
+##
 
 gh-pages-install: gh-pages-xsd-install gh-pages-specdoc-install gh-pages-cv-install gh-pages-mapping-install
 
@@ -116,11 +125,12 @@ docs/SchemaDocumentation/HTML_Serialisations/nmrML_xsd.html: xml-schemata/nmrML.
 	/bin/false
 
 # Build the Ontology as OBO from the OWL version.
+
 # Until https://github.com/nmrML/nmrML/issues/42
 # is fixed, this requires manual intervention
+
 ontologies/nmrCV.obo: ontologies/nmrCV.owl
-	echo "You need to manually save ontologies/nmrCV.owl as ontologies/nmrCV.obo"
-	/bin/false
+	${OWLTOOL} ontologies/nmrCV.owl -o -f obo --no-check ontologies/nmrCV.obo
 
 # We'd love to be able to use https://code.google.com/p/oboformat/
 # for the conversion:
