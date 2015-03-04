@@ -35,7 +35,17 @@ NMRIOEXAMPLES="tools/Parser_and_Converters/R/nmRIO/inst/examples/"
 	show_tags bump_build bump_minor bump_major prepare_release \
 	release_major release_minor release_build \
 	gh-pages-install
-	 
+
+
+##
+## Create the nmrML example files with the converters
+##
+##	 
+
+./examples/MTBLS1/nmrMLs/ADG10003u_007-jnmrML.nmrML:
+	tools/Parser_and_Converters/Java/converter/bin/nmrMLcreate -b -z -t bruker -i ./examples/MTBLS1/FIDs/ADG10003u_007/10/  | tools/Parser_and_Converters/Java/converter/bin/nmrMLproc -b -z -t bruker -d ./examples/MTBLS1/FIDs/ADG10003u_007/10/pdata/1/ -o ./examples/MTBLS1/nmrMLs/ADG10003u_007-jnmrML.nmrML
+
+
 ##
 ## The following targets copy generated files into the gh-pages branch
 ## that powers http://nmrml.org/
@@ -139,7 +149,7 @@ ontologies/nmrCV.obo: ontologies/nmrCV.owl
 # Make sure OpenMS is using the latest versions of Schema, Ontology and the mapping
 # Requires the OpenMS fork from https://github.com/sneumann/OpenMS/tree/nmrML
 
-update-openms: #xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
+update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
 	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrML.xsd
 	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
 	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmr-mapping.xml
