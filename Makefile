@@ -171,6 +171,12 @@ validate-HMDB00005:
 
 #	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
 
+validate-mtbls1: examples/MTBLS1/nmrMLs/ADG10003u_007-jnmrML.nmrML
+	xmllint --noout --schema xml-schemata/nmrML.xsd $<
+	SemanticValidator -in $< -cv ontologies/nmrCV.obo -mapping_file ontologies/nmr-mapping.xml 
+
+#	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
+
 validate-bmse000325: 
 	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/bmse000325.nmrML
 
