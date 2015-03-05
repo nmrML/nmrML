@@ -137,6 +137,8 @@ public class Proc2nmrML {
             CVTermType cvUnitmSec = cvLoader.fetchCVTerm("UO","MICROSECOND");
             CVTermType cvUnitCount = cvLoader.fetchCVTerm("UO","COUNT");
 
+            boolean bstop=false;
+
         /* SourceFile List */
             int sourceFileCount = 0;
             SourceFileListType srcfilelist = nmrMLtype.getSourceFileList();
@@ -179,21 +181,24 @@ public class Proc2nmrML {
             ContactListType contactlist = (nmrMLtype.getContactList().getContact().size()>0) ? 
                                            nmrMLtype.getContactList() : objFactory.createContactListType();
             ContactType contact1 = objFactory.createContactType();
-            contact1.setId(getNewIdentifier());
-            contact1.setFullname(proc.getUser());
-            contact1.setEmail(proc.getEmail());
-            boolean bstop=false;
-            for(int i=0; i<contactlist.getContact().size(); i++){
-                ContactType contact = contactlist.getContact().get(i);
-                if (contact.getFullname().equals(contact1.getFullname()) && contact.getEmail().equals(contact1.getEmail()) ) {
-                    contact1=contact;
-                    bstop=true;
-                    break;
+            if (proc.getUser()!=null) {
+                contact1.setId(getNewIdentifier());
+                contact1.setFullname(proc.getUser());
+                contact1.setEmail(proc.getEmail());
+                for(int i=0; i<contactlist.getContact().size(); i++){
+                    ContactType contact = contactlist.getContact().get(i);
+                    if (contact.getFullname().equals(contact1.getFullname()) && contact.getEmail().equals(contact1.getEmail()) ) {
+                        contact1=contact;
+                        bstop=true;
+                        break;
+                    }
                 }
-            }
-            if (!bstop) {
-               contactlist.getContact().add(contact1);
-               nmrMLtype.setContactList(contactlist);
+                if (!bstop) {
+                   contactlist.getContact().add(contact1);
+                   nmrMLtype.setContactList(contactlist);
+                }
+            } else {
+                contact1 = contactlist.getContact().get(0);
             }
 
        /* Contact Ref List */
