@@ -124,8 +124,8 @@ docs/CvMapping-schema.html: ./xml-schemata/CvMapping.xsd tidy
 # Build the html file explaining the mapping between schema and Ontology.
 # Requires CVInspector http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS-release/html/UTILS_CVInspector.html
 # from http://sourceforge.net/projects/open-ms/files/OpenMS/
-docs/mapping_and_cv.html: ontologies/nmrCV.obo xml-schemata/nmrML.xsd tidy tidy
-	CVInspector -cv_files ontologies/nmrCV-protege.obo -cv_names NMR \
+docs/mapping_and_cv.html: ontologies/nmrCV.obo xml-schemata/nmrML.xsd tidy
+	CVInspector -cv_files ontologies/nmrCV.obo -cv_names NMR \
 	-mapping_file ontologies/nmr-mapping.xml \
 	-html docs/mapping_and_cv.html
 
