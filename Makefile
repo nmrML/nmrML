@@ -45,6 +45,11 @@ NMRIOEXAMPLES="tools/Parser_and_Converters/R/nmRIO/inst/examples/"
 ./examples/MTBLS1/nmrMLs/ADG10003u_007-jnmrML.nmrML:
 	tools/Parser_and_Converters/Java/converter/bin/nmrMLcreate -b -z -t bruker -i ./examples/MTBLS1/FIDs/ADG10003u_007/10/  | tools/Parser_and_Converters/Java/converter/bin/nmrMLproc -b -z -t bruker -d ./examples/MTBLS1/FIDs/ADG10003u_007/10/pdata/1/ -o ./examples/MTBLS1/nmrMLs/ADG10003u_007-jnmrML.nmrML
 
+examples/reference_spectra_example/HMDB00005-pynmrml.nmrML:
+	/home/sneumann/nmrML/code/tools/Parser_and_Converters/python/pynmrml/bin/var2nmrML \
+		examples/reference_spectra_example/HMDB00005.fid/ \
+		examples/reference_spectra_example/HMDB00005-pynmrml.nmrML
+
 
 ##
 ## The following targets copy generated files into the gh-pages branch
