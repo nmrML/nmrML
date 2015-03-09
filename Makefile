@@ -18,6 +18,10 @@ GHP_CV = ${GHP}/cv/${VERSION}
 # XMLVALIDATOR=/vol/openms/src/OpenMS/bin/XMLValidator
 # SEMANTICVALIDATOR=/vol/openms/src/OpenMS/bin/SemanticValidator
 
+## Conversion from nmrCV to nmrML.obo
+## using https://github.com/owlcollab/owltools
+OWLTOOL=/home/sneumann/src/owltools/OWLTools-Runner/bin/owltools
+
 # The fallback if no OpenMS is available:
 XMLVALIDATOR=/bin/true
 SEMANTICVALIDATOR=/bin/true
@@ -31,6 +35,26 @@ NMRIOEXAMPLES="tools/Parser_and_Converters/R/nmRIO/inst/examples/"
 	show_tags bump_build bump_minor bump_major prepare_release \
 	release_major release_minor release_build \
 	gh-pages-install
+
+
+##
+## Create the nmrML example files with the converters
+##
+##	 
+
+./examples/MTBLS1/nmrMLs/ADG10003u_007-jnmrML.nmrML:
+	tools/Parser_and_Converters/Java/converter/bin/nmrMLcreate -b -z -t bruker -i ./examples/MTBLS1/FIDs/ADG10003u_007/10/  | tools/Parser_and_Converters/Java/converter/bin/nmrMLproc -b -z -t bruker -d ./examples/MTBLS1/FIDs/ADG10003u_007/10/pdata/1/ -o ./examples/MTBLS1/nmrMLs/ADG10003u_007-jnmrML.nmrML
+
+examples/reference_spectra_example/HMDB00005-pynmrml.nmrML:
+	/home/sneumann/nmrML/code/tools/Parser_and_Converters/python/pynmrml/bin/var2nmrML \
+		examples/reference_spectra_example/HMDB00005.fid/ \
+		examples/reference_spectra_example/HMDB00005-pynmrml.nmrML
+
+
+##
+## The following targets copy generated files into the gh-pages branch
+## that powers http://nmrml.org/
+##
 
 gh-pages-install: gh-pages-xsd-install gh-pages-specdoc-install gh-pages-cv-install gh-pages-mapping-install
 
@@ -100,8 +124,8 @@ docs/CvMapping-schema.html: ./xml-schemata/CvMapping.xsd tidy
 # Build the html file explaining the mapping between schema and Ontology.
 # Requires CVInspector http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS-release/html/UTILS_CVInspector.html
 # from http://sourceforge.net/projects/open-ms/files/OpenMS/
-docs/mapping_and_cv.html: ontologies/nmrCV.obo xml-schemata/nmrML.xsd tidy tidy
-	CVInspector -cv_files ontologies/nmrCV-protege.obo -cv_names NMR \
+docs/mapping_and_cv.html: ontologies/nmrCV.obo xml-schemata/nmrML.xsd tidy
+	CVInspector -cv_files ontologies/nmrCV.obo -cv_names NMR \
 	-mapping_file ontologies/nmr-mapping.xml \
 	-html docs/mapping_and_cv.html
 
@@ -116,11 +140,12 @@ docs/SchemaDocumentation/HTML_Serialisations/nmrML_xsd.html: xml-schemata/nmrML.
 	/bin/false
 
 # Build the Ontology as OBO from the OWL version.
+
 # Until https://github.com/nmrML/nmrML/issues/42
 # is fixed, this requires manual intervention
+
 ontologies/nmrCV.obo: ontologies/nmrCV.owl
-	echo "You need to manually save ontologies/nmrCV.owl as ontologies/nmrCV.obo"
-	/bin/false
+	${OWLTOOL} ontologies/nmrCV.owl -o -f obo --no-check ontologies/nmrCV.obo
 
 # We'd love to be able to use https://code.google.com/p/oboformat/
 # for the conversion:
@@ -129,7 +154,7 @@ ontologies/nmrCV.obo: ontologies/nmrCV.owl
 # Make sure OpenMS is using the latest versions of Schema, Ontology and the mapping
 # Requires the OpenMS fork from https://github.com/sneumann/OpenMS/tree/nmrML
 
-update-openms: #xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
+update-openms: xml-schemata/nmrML.xsd ontologies/nmrCV.obo ontologies/nmr-mapping.xml
 	cp xml-schemata/nmrML.xsd ${OPENMSSHARE}/SCHEMAS/nmrML.xsd
 	cp ontologies/nmrCV.obo ${OPENMSSHARE}/CV/nmrCV.obo
 	cp ontologies/nmr-mapping.xml ${OPENMSSHARE}/MAPPING/nmr-mapping.xml
@@ -148,6 +173,12 @@ validate-HMDB00005:
 	xmllint --noout --schema xml-schemata/nmrML.xsd examples/reference_spectra_example/HMDB00005.nmrML
 	XMLValidator -in examples/reference_spectra_example/HMDB00005.nmrML -schema xml-schemata/nmrML.xsd 
 	SemanticValidator -in examples/reference_spectra_example/HMDB00005.nmrML -cv ontologies/nmrCV.obo -mapping_file ontologies/nmr-mapping.xml 
+
+#	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
+
+validate-mtbls1: examples/MTBLS1/nmrMLs/ADG10003u_007-jnmrML.nmrML
+	xmllint --noout --schema xml-schemata/nmrML.xsd $<
+	SemanticValidator -in $< -cv ontologies/nmrCV.obo -mapping_file ontologies/nmr-mapping.xml 
 
 #	FileInfo -v -in examples/reference_spectra_example/HMDB00005.nmrML
 

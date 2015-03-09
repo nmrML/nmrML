@@ -24,6 +24,7 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 		<CvReference cvName="NMR" cvIdentifier="NMR"/>
 		<CvReference cvName="PATO" cvIdentifier="PATO"/>
 		<CvReference cvName="UO" cvIdentifier="UO"/>
+		<CvReference cvName="CHEBI" cvIdentifier="CHEBI"/>
 	</CvReferenceList>
 
 	<CvMappingRuleList>
@@ -184,6 +185,15 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 			<CvTerm termAccession="UO:0000106" useTerm="true" termName="hertz" isRepeatable="false"
 				allowChildren="false" cvIdentifierRef="UO"/>
 		</CvMappingRule>
-
+		
+		<CvMappingRule id="calibrationCompound_should"
+			cvElementPath="/nmrML/processingParameterSet/calibrationCompound/CVTermType/@accession" requirementLevel="SHOULD"
+			scopePath="/nmrML/processingParameterSet/calibrationCompound" cvTermsCombinationLogic="OR">
+			<CvTerm termAccession="CHEBI:16737" useTerm="true" termName="creatinine"
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="CHEBI"/>
+			<CvTerm termAccession="CHEBI:38589" useTerm="true" termName="hexafluorobenzene"
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="CHEBI"/>
+		</CvMappingRule>
+		
 	</CvMappingRuleList>
 </CvMapping>

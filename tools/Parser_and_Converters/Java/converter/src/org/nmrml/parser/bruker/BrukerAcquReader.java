@@ -60,6 +60,7 @@ public class BrukerAcquReader implements AcquReader {
     // obtain the GRPDLY from the acqus and not from acqu...
     private final static Pattern REGEXP_GRPDLY = Pattern.compile("\\#\\#\\$GRPDLY= (-?\\d+)"); //DSP group delay
     private final static Pattern REGEXP_BYTORDA = Pattern.compile("\\#\\#\\$BYTORDA= (\\d+)"); //byte order
+    private final static Pattern REGEXP_DTYPA = Pattern.compile("\\#\\#\\$DTYPA= (\\d+)"); //data type (0 -> 32 bit int, 1 -> 64 bit double)
     // variables not yet defined in Experiment
     private final static Pattern REGEXP_AQ_MODE = Pattern.compile("\\#\\#\\$AQ\\_mod= (\\d+)"); //acquisition mode
     private final static Pattern REGEXP_DIGMOD = Pattern.compile("\\#\\#\\$DIGMOD= (\\d+)"); //filter type
@@ -84,7 +85,6 @@ public class BrukerAcquReader implements AcquReader {
     //TODO review REGEXP_INSTRUM
     // examples of REGEXP_INSTRUM : <amx500> ; basically <machine name>
     private final static Pattern REGEXP_INSTRUM = Pattern.compile("\\#\\#\\$INSTRUM= (.+)"); // instrument name
-    private final static Pattern REGEXP_DTYPA = Pattern.compile("\\#\\#\\$DTYPA= (\\d+)"); //data type (0 -> 32 bit int, 1 -> 64 bit double)
     // examples of REGEXP_SOLVENT : <DMSO> ; basically <solvent name>
     private final static Pattern REGEXP_SOLVENT = Pattern.compile("\\#\\#\\$SOLVENT= (.+)"); // solvent name
     //TODO review REGEXP_PROBHD

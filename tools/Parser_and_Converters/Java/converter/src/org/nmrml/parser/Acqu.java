@@ -60,6 +60,7 @@ public class Acqu {
     private String instrumentName;               //instrum       instrument name
     private String solvent;                      //solvent       solvent
     private String probehead;                    //probehead     probehead
+    private String dataFormat;                   //              Data Format
     private String software;                     //title         software contained in title
     private String softVersion;                  //title         software version contained in title
     private String origin;                       //origin        origin

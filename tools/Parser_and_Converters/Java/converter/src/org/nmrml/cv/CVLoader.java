@@ -44,10 +44,6 @@ public class CVLoader {
     private HashMap<String,CVType> cvTypeHashMap;
     private Wini ontologyIni;
 
-    public CVLoader() throws IOException {
-        this(ClassLoader.getSystemResourceAsStream("resources/ontologies/onto.ini"));
-    }
-
     public CVLoader(InputStream inputStream) throws IOException {
         this.ontologyIni = new Wini(inputStream);
         this.cvTypeHashMap = new HashMap<String, CVType>();
