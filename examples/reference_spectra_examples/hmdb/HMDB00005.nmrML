@@ -148,14 +148,15 @@
 
     <spectrumAnnotationList>
         <atomAssignment spectrumRef="spectrum1">
-            <chemicalStructure>
-                <compoundIdentifierList>
+            <chemicalCompound>
+                <identifierList>
                     <identifier name="2-oxobutanoic acid" accession="CHEBI:30831" cvRef="ChEBI"/>
-                    <compoundDatabaseIdentifier identifier="HMDB00005"
+                    <databaseIdentifier identifier="HMDB00005"
                         URI="http://www.hmdb.ca/metabolites/HMDB00005"/>
-                    <compoundDatabaseIdentifier identifier="MTBLC30831"
+                    <databaseIdentifier identifier="MTBLC30831"
                         URI="http://www.ebi.ac.uk/metabolights/MTBLC30831"/>
-                </compoundIdentifierList>
+                </identifierList>
+                <structure>
                 <atomList>
                     <atom id="a1" elementType="C" x="0.6667733333333334" y="-0.38490666666666673"/>
                     <atom id="a2" elementType="C" x="-0.6667733333333334" y="-1.1550933333333335"/>
@@ -181,7 +182,8 @@
                     <bond atomRefs="a3 a10" order="1"/>
                     <bond atomRefs="a5 a11" order="1"/>
                 </bondList>
-            </chemicalStructure>
+                </structure>
+            </chemicalCompound>
             <atomAssignmentList>
                 <multiplet center="1.04">
                     <atoms atomRefs="a8 a9 a10"/>

@@ -12,54 +12,51 @@
   </xs:element>
   <xs:complexType name="QuantifiedCompoundType">
     <xs:sequence>
-      <xs:element name="compoundStructure" type="ChemicalStructureType"/>
-      <xs:element minOccurs="0" name="compoundIdentifierList">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="1" name="compoundIdentifier"
-              type="CVTermType"/>
-            <xs:element maxOccurs="unbounded" name="compoundDatabaseIdentifier">
-              <xs:complexType>
-                <xs:attribute name="identifier" use="required"/>
-                <xs:attribute name="URI" use="required"/>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
+      <xs:element name="chemicalCompound" type="ChemicalCompoundType">
+        <xs:annotation>
+          <xs:documentation>Description of the chemical compound that was quantified.</xs:documentation>
+        </xs:annotation>
       </xs:element>
       <xs:element name="concentration" type="ValueWithUnitType"/>
-      <xs:element minOccurs="0" name="peakList">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="peak">
-              <xs:complexType mixed="false">
-                <xs:sequence>
-                  <xs:element name="center" type="ValueWithUnitType"/>
-                  <xs:element name="amplitude">
-                    <xs:complexType>
-                      <xs:attribute name="value"/>
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element minOccurs="0" name="width">
-                    <xs:complexType>
-                      <xs:attribute name="value"/>
-                    </xs:complexType>
-                  </xs:element>
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
+      <xs:element minOccurs="0" name="clusterList" type="ClusterListType">
+        <xs:annotation>
+          <xs:documentation>A list of clusters of peaks that are aligned with the spectrum for quantification.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="peakList" type="PeakListType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>A list of the positions and amplitudes of the peaks that are associated with the compound. This is an alternative to the cluster list for the case where you want to record a fit but discard some of the information about the library you used to fit the spectrum.</xs:documentation>
+        </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="name" use="required"/>
   </xs:complexType>
-  <xs:complexType name="ChemicalStructureType">
+  <xs:complexType name="ClusterListType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="cluster" type="ClusterType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ClusterType">
+    <xs:sequence>
+      <xs:element name="peakList" type="PeakListType">
+        <xs:annotation>
+          <xs:documentation>A list of the positions and amplitudes of the peaks in the multiplet. Optional if the peaks are not identified. In which case the 'center' attribute offers a hint for annotation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="center"/>
+    <xs:attribute name="shift"/>
+  </xs:complexType>
+  <xs:complexType name="ChemicalCompoundType">
+    <xs:sequence minOccurs="1">
+      <xs:element name="identifierList" type="CompoundIdentifierListType" minOccurs="0"> </xs:element>
+      <xs:element name="structure" type="CompoundStructureType" minOccurs="0"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CompoundStructureType">
     <xs:annotation>
       <xs:documentation/>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="compoundIdentifierList" type="CompoundIdentifierListType"> </xs:element>
       <xs:element name="atomList" maxOccurs="1" minOccurs="1" type="AtomListType"/>
       <xs:element maxOccurs="1" minOccurs="1" name="bondList" type="BondListType"/>
     </xs:sequence>
@@ -149,6 +146,7 @@ If the corresponding atoms are unknown than the list can be blank.</xs:documenta
   <xs:complexType name="PeakType">
     <xs:attribute name="center" use="required"/>
     <xs:attribute name="amplitude"/>
+    <xs:attribute name="width"/>
   </xs:complexType>
   <xs:complexType name="PeakListType">
     <xs:sequence>
@@ -157,8 +155,8 @@ If the corresponding atoms are unknown than the list can be blank.</xs:documenta
   </xs:complexType>
   <xs:complexType name="AtomAssingmentAnnotationType">
     <xs:sequence>
-      <xs:element name="chemicalStructure" type="ChemicalStructureType"> </xs:element>
-      <xs:element name="atomAssignmentList" type="AtomAssignmentListType">
+      <xs:element name="chemicalCompound" type="ChemicalCompoundType"/>
+      <xs:element name="atomAssignmentList" type="AtomAssignmentListType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>A list of annotated peak clusters in the spectrum and the atoms that they correspond to. </xs:documentation>
         </xs:annotation>
@@ -179,7 +177,7 @@ InChI=1S/C7H11N3O2/c1-10-3-5(9-4-10)2-6(8)7(11)12/h3-4,6H,2,8H2,1H3,(H,11,12)/t6
   </xs:complexType>
   <xs:complexType name="CompoundIdentifierListType">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="identifier" type="CVTermType">
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="identifier" type="CVTermType">
         <xs:annotation>
           <xs:documentation>Captures compound identifiers coming from an ontology. Usually CHEBI. 
 
@@ -187,7 +185,7 @@ Example:
 <compoundIdentifier accession="CHEBI:16449" cvRef="CHEBI"/></xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="compoundDatabaseIdentifier"
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="databaseIdentifier"
         type="CompoundDatabaseIdentifierType"> </xs:element>
     </xs:sequence>
   </xs:complexType>
@@ -205,7 +203,11 @@ Example:
   <xs:complexType name="QuantificationAnnotationType">
     <xs:sequence>
       <xs:element name="quantificationMethod" type="CVTermType"/>
-      <xs:element name="quantifiedCompoundList" type="QuantifiedCompoundListType"> </xs:element>
+      <xs:element name="quantifiedCompoundList" type="QuantifiedCompoundListType">
+        <xs:annotation>
+          <xs:documentation>A list of the quantified chemical compounds and the associated information about clusters of peaks in the spectrum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="QuantifiedCompoundListType">
@@ -218,8 +220,16 @@ Example:
   </xs:complexType>
   <xs:complexType name="SpectrumAnnotationListType">
     <xs:sequence>
-      <xs:element name="atomAssignment" minOccurs="0" type="AtomAssingmentAnnotationType"> </xs:element>
-      <xs:element minOccurs="0" name="quantification" type="QuantificationAnnotationType"/>
+      <xs:element name="atomAssignment" minOccurs="0" type="AtomAssingmentAnnotationType">
+        <xs:annotation>
+          <xs:documentation>An annotation for assigning atoms in a chemical structure to peaks in a spectrum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="quantification" type="QuantificationAnnotationType">
+        <xs:annotation>
+          <xs:documentation>An annotation for capturing the quantification of a complex mixture in an NMR experiment. The annotation captures the alighnment of clusters of peaks to the spectrum, the associated chemical compounds, and the quantification information. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="nmrMLType">
