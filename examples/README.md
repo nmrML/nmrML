@@ -6,9 +6,9 @@ describing the instance and the sources where the data was obtained.
 
 ## File list
 
-* reference_spectra_example
-  An example of a reference spectra instance created from a reference
-  sample obtained from the HMDB  
+* reference_spectra_examples
+  Examples of reference spectra instances from various NMR spectra
+  databases.
 
 * working.tmp
   A directory for files that will be turned into examples, should be
