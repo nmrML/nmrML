@@ -209,6 +209,11 @@ Example:
         </xs:annotation>
       </xs:element>
     </xs:sequence>
+    <xs:attribute name="spectrumRef" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>A reference to the id of the spectrum that this annotation is for.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="QuantifiedCompoundListType">
     <xs:annotation>
