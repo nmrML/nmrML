@@ -11,24 +11,23 @@
     </xs:annotation>
   </xs:element>
   <xs:complexType name="QuantifiedCompoundType">
-    <xs:sequence>
-      <xs:element name="chemicalCompound" type="ChemicalCompoundType">
-        <xs:annotation>
-          <xs:documentation>Description of the chemical compound that was quantified.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="concentration" type="ValueWithUnitType"/>
-      <xs:element minOccurs="0" name="clusterList" type="ClusterListType">
-        <xs:annotation>
-          <xs:documentation>A list of clusters of peaks that are aligned with the spectrum for quantification.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="peakList" type="PeakListType" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>A list of the positions and amplitudes of the peaks that are associated with the compound. This is an alternative to the cluster list for the case where you want to record a fit but discard some of the information about the library you used to fit the spectrum.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
+    <xs:complexContent>
+      <xs:extension base="ChemicalCompoundType">
+        <xs:sequence>
+          <xs:element name="concentration" type="ValueWithUnitType"/>
+          <xs:element minOccurs="0" name="clusterList" type="ClusterListType">
+            <xs:annotation>
+              <xs:documentation>A list of clusters of peaks that are aligned with the spectrum for quantification.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="peakList" type="PeakListType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A list of the positions and amplitudes of the peaks that are associated with the compound. This is an alternative to the cluster list for the case where you want to record a fit but discard some of the information about the library you used to fit the spectrum.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="ClusterListType">
     <xs:sequence>
@@ -51,6 +50,7 @@
       <xs:element name="identifierList" type="CompoundIdentifierListType" minOccurs="0"> </xs:element>
       <xs:element name="structure" type="CompoundStructureType" minOccurs="0"> </xs:element>
     </xs:sequence>
+    <xs:attribute name="name"/>
   </xs:complexType>
   <xs:complexType name="CompoundStructureType">
     <xs:annotation>
