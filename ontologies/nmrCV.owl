@@ -3079,10 +3079,11 @@ Parameters:
     <!-- http://nmrML.org/nmrCV#NMR:1000260 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000260">
-        <rdfs:label xml:lang="en">deconvolution</rdfs:label>
+        <rdfs:label xml:lang="en">peak deconvolution</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000015"/>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">deconvolution</obo:IAO_0000118>
         <obo:IAO_0000116 xml:lang="en">fluxomics meeting: Teresa Fan indicates it should be renamed to  &apos;peak deconvolution&apos; (takes the whole spectrum as input)</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">peak deconvolution</obo:IAO_0000118>
     </owl:Class>
     
 
