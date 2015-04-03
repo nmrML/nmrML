@@ -894,6 +894,11 @@ CHEBI:85364</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000045">
         <rdfs:label xml:lang="en">homonuclear decoupling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000044"/>
+        <owl:disjointWith rdf:resource="http://nmrML.org/nmrCV#NMR:1000046"/>
+        <obo:IAO_0000115 xml:lang="en">Homonuclear decoupling is when the nuclei being radio frequency (rf) irradiated are the same isotope as the nuclei being observed (analyzed) in the spectrum.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">adapted from:
+http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -903,6 +908,10 @@ CHEBI:85364</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000046">
         <rdfs:label xml:lang="en">heteronuclear decoupling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000044"/>
+        <obo:IAO_0000115 xml:lang="en">Heteronuclear decoupling is when the nuclei being rf irradiated are of a different isotope than the nuclei being observed in the spectrum.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">adapted from:
+http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -1045,6 +1054,11 @@ CHEBI:85364</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000054">
         <rdfs:label xml:lang="en">broad band decoupling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000044"/>
+        <owl:disjointWith rdf:resource="http://nmrML.org/nmrCV#NMR:1000056"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">adapted from:
+http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">broad band decoupling is performed for a given isotope where the entire range for all nuclei of that isotope can be irradiated to achieve decoupling</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1061,10 +1075,10 @@ CHEBI:85364</obo:IAO_0000116>
     <!-- http://nmrML.org/nmrCV#NMR:1000056 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000056">
-        <rdfs:label xml:lang="en">specific proton decoupling</rdfs:label>
+        <rdfs:label>narowband decoupling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000044"/>
-        <oboInOwl:hasExactSynonym>narowband decoupling</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>band-selective decoupling</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000118 xml:lang="en">specific proton decoupling</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -1199,6 +1213,12 @@ tetraphosphorus</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000067">
         <rdfs:label xml:lang="en">FID zero filling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">Zero-filling is a data processing technique where zero points are appended to the free induction decay before Fourier transformation. The effect of zero filling is to increase the digital resolution in the spectrum,  without requiring long acquisition times by simply adding data points with zero intensity to the end of the FID. This will add data points to the FID without adding additional noise. It is important to note, however, that zerofilling does not improve true resolution; it only improves the apparent resolution.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">adapted from:
+http://u-of-o-nmr-facility.blogspot.co.uk/2007/11/zero-filling.html
+and
+https://www2.chemistry.msu.edu/facilities/nmr/handouts/DH%20NMR%20Basics.pdf</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -1350,7 +1370,7 @@ CHEBI:85363</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000081">
         <rdfs:label xml:lang="en">total spectral area scaling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000078"/>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0200185"/>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">integral spectrum normalization</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">page 57, Chapter 2 section 3.1.1 Spectral Processing
@@ -1371,7 +1391,7 @@ Length:	323 pages</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000082">
         <rdfs:label xml:lang="en">probabilistic quotient normalization</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000078"/>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0200185"/>
         <obo:IAO_0000119>adapted from:
 
 10.1021/ac051632c
@@ -1412,8 +1432,8 @@ Length:	323 pages</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000084">
         <rdfs:label xml:lang="en">pareto scaling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000080"/>
-        <obo:IAO_0000115 xml:lang="en">Pareto scaling is a scaling data transformation which uses he square root of the standard deviation  as the scaling factor. Following the transformation, large fold changes are decreased more than small fold changes, thus the large fold changes are less dominant compared to clean data. Furthermore, the data does not become dimensionless as after autoscaling.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0200185"/>
+        <obo:IAO_0000115 xml:lang="en">Pareto scaling is a scaling data transformation which uses the square root of the standard deviation  as the scaling factor. Following the transformation, large fold changes are decreased more than small fold changes, thus the large fold changes are less dominant compared to clean data. Furthermore, the data does not become dimensionless as after autoscaling.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">adapted from:
 
@@ -1430,7 +1450,7 @@ doi: 10.1186/1471-2164-7-142
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000085">
         <rdfs:label xml:lang="en">autoscaling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000080"/>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0200185"/>
         <obo:IAO_0000115 xml:lang="en">Autoscaling, also called unit or unit variance scaling, is commonly applied and uses the standard deviation as the scaling factor. After autoscaling, all entities have a standard deviation of one and therefore the data is analyzed on the basis of correlations instead of covariances, as is the case with centering.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">adapted from:
@@ -2118,8 +2138,14 @@ Parameters:
     <!-- http://nmrML.org/nmrCV#NMR:1000150 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000150">
-        <rdfs:label xml:lang="en">scaling by forward linear prediction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000068"/>
+        <rdfs:label xml:lang="en">data extrapolation using forward linear prediction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+        <obo:IAO_0000115 xml:lang="en">Linear prediction is a software processing  that examines a periodic function, such as an NMR free induction decay, extracts a set of coefficients, and extrapolates, either forward or backward to predict what the data would have done had it been collected. This is a potentially valuable technique for extracting useful information from marginal data, but it is also easily subject to abuse as well. It is not possible to collect a very small data set and then extrapolate that data set in order to get high resolution, just as if you had collected the data. If the data is not sampled sufficiently long to determine the difference in two frequencies, they will extrapolate as a single frequency with no improvement in resolution. There are two cases where linear prediction is very useful. The first is to backward calculate the first several data points of a data set that are severely distorted by either receiver recovery problems or shaped excitation pulses.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">forward linear prediction</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.tamu.edu/NMR_notes/notes_13.pdf
+and
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.135.3069&amp;rep=rep1&amp;type=pdf</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -2128,7 +2154,14 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000151">
         <rdfs:label xml:lang="en">back calculation of first points by linear-prediction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000068"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+        <obo:IAO_0000115 xml:lang="en">Linear prediction is a software processing  that examines a periodic function, such as an NMR free induction decay, extracts a set of coefficients, and extrapolates, either forward or backward to predict what the data would have done had it been collected. This is a potentially valuable technique for extracting useful information from marginal data, but it is also easily subject to abuse as well. It is not possible to collect a very small data set and then extrapolate that data set in order to get high resolution, just as if you had collected the data. If the data is not sampled sufficiently long to determine the difference in two frequencies, they will extrapolate as a single frequency with no improvement in resolution. There are two cases where linear prediction is very useful. The first is to backward calculate the first several data points of a data set that are severely distorted by either receiver recovery problems or shaped excitation pulses.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">backward linear prediction</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">data extrapolation by backward linear prediction</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">http://triton.iqfr.csic.es/guide/nmr/smanual/8_6_proc2d.html
+and
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.135.3069&amp;rep=rep1&amp;type=pdf</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -2136,8 +2169,13 @@ Parameters:
     <!-- http://nmrML.org/nmrCV#NMR:1000152 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000152">
-        <rdfs:label xml:lang="en">scaling by mirror image linear prediction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000068"/>
+        <rdfs:label xml:lang="en">data extrapolation by mirror image linear prediction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+        <obo:IAO_0000115 xml:lang="en">Linear prediction is a software processing  that examines a periodic function, such as an NMR free induction decay, extracts a set of coefficients, and extrapolates, either forward or backward to predict what the data would have done had it been collected. This is a potentially valuable technique for extracting useful information from marginal data, but it is also easily subject to abuse as well. It is not possible to collect a very small data set and then extrapolate that data set in order to get high resolution, just as if you had collected the data. If the data is not sampled sufficiently long to determine the difference in two frequencies, they will extrapolate as a single frequency with no improvement in resolution. There are two cases where linear prediction is very useful. The first is to backward calculate the first several data points of a data set that are severely distorted by either receiver recovery problems or shaped excitation pulses.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.tamu.edu/NMR_notes/notes_13.pdf
+and
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.135.3069&amp;rep=rep1&amp;type=pdf</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -7049,12 +7087,11 @@ altdef: The initial time or frequency a FID or spectrum is recorded from.</obo:I
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400097">
         <rdfs:label rdf:datatype="&xsd;string">line broadening</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#apodization"/>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000116 xml:lang="en">definition added by PRS on April, 2nd, 2015</obo:IAO_0000116>
         <obo:IAO_0000119 xml:lang="en">http://www.chem.wisc.edu/areas/reich/nmr/08-tech-01-relax.htm</obo:IAO_0000119>
-        <obo:IAO_0000115 xml:lang="en">line broadening is a process resulting in spectral peak 
-signal becoming hard to interpret and analysed. Line broadening is affected by spin-spin relaxation and/or spin-lattice relaxation processes.
+        <obo:IAO_0000115 xml:lang="en">line broadening is a process resulting in spectral peak signal becoming hard to interpret and analysed. Line broadening is affected by spin-spin relaxation and/or spin-lattice relaxation processes.
 When relaxation is very fast, NMR lines are broad, J-coupling may not be resolved or the signal may even be difficult or impossible to detect. 
 The maximum repetition rate during acquisition of an NMR signal is governed by T1 - short T1 means the magnetization recovers more rapidly, and a spectrum can be acquired in less time.
 Line broadening may be caused by:
@@ -7067,7 +7104,7 @@ Sample inhomogeneity (poor mixing. solid particles), Temperature gradients acros
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400098">
         <rdfs:label rdf:datatype="&xsd;string">line sharpening</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#apodization"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">definition needed</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">http://www.chem.wisc.edu/areas/reich/nmr/08-tech-01-relax.htm.
@@ -9213,6 +9250,16 @@ defprov: tecmag website</obo:IAO_0000115>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#apodization">
         <rdfs:label xml:lang="en">apodization</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400041"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000118"/>
+                <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#NMR:1000069"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Apodization is an umbrella term that is used to refer to signal processing covering the manipulation of the FID to either increase signal-to-noise (S/N) or resolution. it is usually possible to gain either S/N or resolution, but not both.
+Apodization is usually performed by applying a window function to the FID</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://www.scs.illinois.edu/nmr/handouts/general_pdf/ugi034.pdf</obo:IAO_0000119>
     </owl:Class>
     
 
