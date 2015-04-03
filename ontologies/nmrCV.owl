@@ -1480,12 +1480,6 @@ doi: 10.1186/1471-2164-7-142</obo:IAO_0000117>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#NMR:1400104"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
@@ -1496,6 +1490,35 @@ doi: 10.1186/1471-2164-7-142</obo:IAO_0000117>
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://nmrML.org/nmrCV#NMR:1400104"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                                <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#NMR:1400170"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">2D J-resolved NMR spectrum is a NMR spectrum which is acquired using a specific pulse sequence known as J-resolve and according to 2 orthogonal dimensions and was introduced 1976 by Ernst and co-workers (Aue et al., 1976a).
+it is used to separate the effects of chemical shift and J-coupling into two
+independent dimensions. The most basic variant of a homonuclear
+2D JRES pulse sequence comprises [relaxation delay—90°—(t1/2)—180°—(t1/2)—acquisition] (Fig. 1a), where t1 is an incremented time delay used to create an indirect time axis for the second dimension. Chemical shift evolution during the first t1/2 delay is refocused during the second t1/2 delay by the 180° pulse. J-coupling however is active during the entire t1 delay. As a consequence signals appear at an off set according to their
+J-coupling constant in the indirect dimension. During the acquisition
+period (direct dimension) both chemical shift and J-coupling
+evolution are active.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">JRES spectrum</obo:IAO_0000118>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">adapted from: 
+Two-dimensional J-resolved NMR Spectroscopy: Review of a Key
+Methodology in the Metabolomics Toolbox. Christian Ludwig and Mark R. Viant
+10.1002/pca.1186</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -1819,13 +1842,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000118">
         <rdfs:label xml:lang="en">J-resolved spectrum</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#NMR:1400104"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000199"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
         <oboInOwl:hasExactSynonym>JRES spectrum</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -1986,7 +2003,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000128">
         <rdfs:label xml:lang="en">homonuclear J-resolved spectrum</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002007"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000086"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
@@ -2001,7 +2018,7 @@ Parameters:
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000129">
         <rdfs:label xml:lang="en">heteronuclear J-resolved spectrum</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002007"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000086"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
@@ -2464,7 +2481,12 @@ concentration standard name	we here see a use-mention problem arising for the CV
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000182">
         <rdfs:label xml:lang="en">acquisition time</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#_purgatory"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">acquisition time is a key parameter describing an NMR spectroscopy data acquisition and corresponds to the time over which the free induction decay following the radio frequency is recorded. Increasing the acquisition time is advantageous up to a point to increase digital resolution, but will be detrimental if extended too far at it may reduce the signal to noise ratio.
+</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">adapted from:
+https://www2.chemistry.msu.edu/facilities/nmr/handouts/DH%20NMR%20Basics.pdf</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -2522,6 +2544,11 @@ concentration standard name	we here see a use-mention problem arising for the CV
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000189">
         <rdfs:label xml:lang="en">simulated spectrum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000200"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">adapted from:
+Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for the Simulation of NMR spectra of Large Spin Systems. Journal of Magnetic Resonance 2011.
+10.1016/j.jmr.2010.12.008</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">simulated spectrum is a type of NMR spectrum resulting from a simulation rather than a real data acquisition. Simulated spectra are used for testing signal processing methods against real data by providing a known reference point and for predicted the NMR spectrum associated to new molecules (predicted or synthesized).</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2611,6 +2638,12 @@ concentration standard name	we here see a use-mention problem arising for the CV
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000199">
         <rdfs:label xml:lang="en">NMR spectrum by pulse sequence</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#NMR:1400104"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002007"/>
     </owl:Class>
     
@@ -2801,9 +2834,13 @@ concentration standard name	we here see a use-mention problem arising for the CV
     <!-- http://nmrML.org/nmrCV#NMR:1000221 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000221">
-        <rdfs:label xml:lang="en">data simulation</rdfs:label>
+        <rdfs:label xml:lang="en">NMR spectrum simulation</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
-        <rdfs:comment>used to be labeled &apos;NMR spectrum simulation&apos;</rdfs:comment>
+        <rdfs:comment>used to be labeled &apos;data simulation&apos;</rdfs:comment>
+        <obo:IAO_0000115 xml:lang="en">NMR spectrum simulation is a data transformation which aims at predicting the NMR spectrum profile of a chemical knowing its structure using computational and modeling approaches. The output is a simulated spectra which may be used to validate the prediction with real acquisition spectrum on samples.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">adapted from:
+10.1016/j.jmr.2010.12.008</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -7770,6 +7807,7 @@ synonym: 2D FID</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000117"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">defneed
 synonym: 1D spectrum</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">1D spectrum is an NMR spectrum which</obo:IAO_0000118>
     </owl:Class>
     
 
