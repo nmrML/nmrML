@@ -880,11 +880,11 @@ CHEBI:85364</obo:IAO_0000116>
     <!-- http://nmrML.org/nmrCV#NMR:1000044 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000044">
-        <rdfs:label xml:lang="en">decoupling</rdfs:label>
+        <rdfs:label xml:lang="en">NMR decoupling</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
         <ru-meta:definition>Nuclear magnetic resonance decoupling (NMR decoupling for short) is a special method used in nuclear magnetic resonance (NMR) spectroscopy where a sample to be analyzed is irradiated at a certain frequency or frequency range to eliminate fully or partially the effect of coupling between certain nuclei. NMR coupling refers to the effect of nuclei on each other in atoms within a couple of bonds distance of each other in molecules. This effect causes NMR signals in a spectrum to be split into multiple peaks which are up to several hertz frequency from each other. Decoupling fully or partially eliminates splitting of the signal between the nuclei irradiated and other nuclei such as the nuclei being analyzed in a certain spectrum. NMR spectroscopy and sometimes decoupling can help determine structures of chemical compounds.</ru-meta:definition>
+        <obo:IAO_0000119>http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000119>
         <rdfs:comment xml:lang="en">PRS: used to be suffixed with &apos;method&apos;, now removed to cast all as processes</rdfs:comment>
-        <dc:source>http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</dc:source>
     </owl:Class>
     
 
@@ -898,7 +898,9 @@ CHEBI:85364</obo:IAO_0000116>
         <obo:IAO_0000115 xml:lang="en">Homonuclear decoupling is when the nuclei being radio frequency (rf) irradiated are the same isotope as the nuclei being observed (analyzed) in the spectrum.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">adapted from:
-http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000119>
+http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling
+and from:
+http://u-of-o-nmr-facility.blogspot.co.uk/2008/01/homonuclear-decoupling.html</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -1075,9 +1077,12 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000
     <!-- http://nmrML.org/nmrCV#NMR:1000056 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000056">
-        <rdfs:label>narowband decoupling</rdfs:label>
+        <rdfs:label>narrow band decoupling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000044"/>
-        <oboInOwl:hasExactSynonym>band-selective decoupling</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000118>band-selective decoupling</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">narrowband decoupling, also known as &apos;specific proton decoupling&apos; is a kind of radio frequency irradiation whereby  the selected &quot;narrow&quot; 1H frequency band of the (soft) decoupling RF pulse covers only a certain part of all 1H signals present in the spectrum. This can serve two purposes: (1) decreasing the deposited energy through additionally adjusting the RF pulse shapes/using composite pulses, (2) elucidating connectivities of NMR nuclei (applicable with both heteronuclear and homonuclear decoupling). Point 2 can be accomplished via decoupling e.g. of a single 1H signal which then leads to the collapse of the J coupling pattern of only those observed heteronuclear or non-decoupled 1H signals which are J coupled to the irradiated 1H signal. Other parts of the spectrum remain unaffected. In other words this specific decoupling method is useful for signal assignments which is a crucial step for further analyses e.g. with the aim of solving a molecular structure. Note that more complex phenomena might be observed when for example the decoupled 1H nuclei are exchanging with non-decoupled 1H nuclei in the sample with the exchange process taking place on the NMR time scale. This is exploited e.g. with chemical exchange saturation transfer (CEST) contrast agents in in vivo magnetic resonance spectroscopy</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">specific proton decoupling</obo:IAO_0000118>
     </owl:Class>
     
