@@ -487,7 +487,7 @@ T2 is less than or equal to T1 (R = relaxation rate, R2 = 1/T2, R2 ≥ R1), sinc
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000014">
         <rdfs:label xml:lang="en">solvent suppression</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
         <obo:IAO_0000116 xml:lang="en">nmrML CVParamType XSD element: solvent suppression method --&gt; CV class: solvent suppression method</obo:IAO_0000116>
     </owl:Class>
     
@@ -881,7 +881,7 @@ CHEBI:85364</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000044">
         <rdfs:label xml:lang="en">NMR decoupling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
         <ru-meta:definition>Nuclear magnetic resonance decoupling (NMR decoupling for short) is a special method used in nuclear magnetic resonance (NMR) spectroscopy where a sample to be analyzed is irradiated at a certain frequency or frequency range to eliminate fully or partially the effect of coupling between certain nuclei. NMR coupling refers to the effect of nuclei on each other in atoms within a couple of bonds distance of each other in molecules. This effect causes NMR signals in a spectrum to be split into multiple peaks which are up to several hertz frequency from each other. Decoupling fully or partially eliminates splitting of the signal between the nuclei irradiated and other nuclei such as the nuclei being analyzed in a certain spectrum. NMR spectroscopy and sometimes decoupling can help determine structures of chemical compounds.</ru-meta:definition>
         <obo:IAO_0000119>http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000119>
         <rdfs:comment xml:lang="en">PRS: used to be suffixed with &apos;method&apos;, now removed to cast all as processes</rdfs:comment>
@@ -1232,6 +1232,7 @@ https://www2.chemistry.msu.edu/facilities/nmr/handouts/DH%20NMR%20Basics.pdf</ob
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000068">
         <rdfs:label xml:lang="en">scaling by linear prediction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
         <rdfs:subClassOf rdf:resource="&obo;OBI_0200185"/>
     </owl:Class>
     
@@ -1346,6 +1347,8 @@ CHEBI:85363</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000078">
         <rdfs:label xml:lang="en">linear scaling</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;OBI_0200185"/>
+        <obo:IAO_0000116 xml:lang="en">Earmarked for deprecation:
+reason for deprecation: not useful nor meaninful</obo:IAO_0000116>
         <rdfs:comment>used to be &apos;linear scaling algorithm&apos;</rdfs:comment>
     </owl:Class>
     
@@ -7304,7 +7307,7 @@ defprov: Daniel Schober</rdfs:comment>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400116">
         <rdfs:label rdf:datatype="&xsd;string">NMR quality check</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">def: The process of ensuring the quality of the raw data that results from an NMR analysis.
 </obo:IAO_0000115>
         <obo:IAO_0000118>synonym: NMR quality check</obo:IAO_0000118>
