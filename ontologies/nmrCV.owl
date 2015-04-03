@@ -1809,7 +1809,12 @@ Parameters:
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000115">
         <rdfs:label xml:lang="en">3D spectrum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000117"/>
+        <obo:IAO_0000115 xml:lang="en">A three dimensional NMR experiment (see picture above) can easily be constructed from a two dimensional one by inserting an additional indirect evolution time and a second mixing period between the first mixing period and the direct data acqusition. Each of the different indirect time periods (t1, t2) is incremented separately. There are two principal classes of 3D experiments:
+-Experiments consisting of &apos;two 2D experiments after another&apos;
+-The triple resonance experiments.
+</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://www.cryst.bbk.ac.uk/PPS2/projects/schirra/html/3dnmr.htm</obo:IAO_0000119>
         <obo:IAO_0000118 xml:lang="en">three dimensional spectrum</obo:IAO_0000118>
     </owl:Class>
     
@@ -7051,7 +7056,7 @@ Common NMR requirements include direct 1D and 2D proton-only NMR, direct observa
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400089">
         <rdfs:label rdf:datatype="&xsd;string">atom environment encoding</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: A scheme for producing a numerical representation of the environment of an atom.</rdfs:comment>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">atom environment encoding is an acquisition parameter which defines a scheme for producing a numerical representation of the environment of an atom.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -7806,9 +7811,15 @@ synonym: 2D FID</rdfs:comment>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000117"/>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">defneed
-synonym: 1D spectrum</obo:IAO_0000115>
-        <obo:IAO_0000118 xml:lang="en">1D spectrum is an NMR spectrum which</obo:IAO_0000118>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">adapted from:
+http://www.cryst.bbk.ac.uk/PPS2/projects/schirra/html/1dnmr.htm
+and 
+http://www-keeler.ch.cam.ac.uk/lectures/2d_a4.pdf</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">one dimensional spectrum, also known as conventional NMR spectrum is an NMR spectrum which plots of signal intensity versus frequency. 1D NMR spectrum is usually acquired following a 2 step process: preparation followed by detection. 
+-During the preparation, the spin system is set to a defined state. 
+-During detection, the resulting signal is recorded. In the simplest case, the preparation is a 90° pulse, which rotates the equillibrium magnetization Mz onto the y axis (My). After this pulse,  each spin processes with its own larmor frequency around the z axis and induces a signal in the receiver coil. The signal decays due to T2 relaxation and is therefore called free induction decay (FID).</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">one-dimensional NMR spectrum</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -7830,10 +7841,24 @@ synonym: 1D spectrum</obo:IAO_0000115>
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://nmrML.org/nmrCV#NMR:1000125"/>
+                            <rdf:Description rdf:about="http://nmrML.org/nmrCV#NMR:1000127"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000117"/>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">defneed
-synonym: 2D spectrum</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://www-keeler.ch.cam.ac.uk/lectures/2d_a4.pdf</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">in spectroscopy, 2D NMR spectrum is an information entity where signal  intensity  is plotted as a function of two frequencies, usually called F1 and F2. There are various ways of representing such a spectrum on paper, but the one most usually used is to make a &apos;contour plot&apos; in which the intensity of the peaks is represented by contour lines drawn at suitable intervals, in the same way as a topographical map. The position of each peak is specified by two frequency co-ordinates corresponding to F1 and F2. Two-dimensional NMR spectra are always arranged so that the F2 coordinates of the peaks correspond to those found in the normal one-dimensional spectrum, and this relation is often emphasized by plotting the one-dimensional spectrum alongside the F2 axis.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">two-dimensional NMR spectrum</obo:IAO_0000118>
     </owl:Class>
     
 
