@@ -309,14 +309,24 @@ T2 is less than or equal to T1 (R = relaxation rate, R2 = 1/T2, R2 ≥ R1), sinc
     
 
 
+    <!-- http://nmrML.org/nmrCV#NMR:0000002 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:0000002">
+        <rdfs:label xml:lang="en">1i file</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000318"/>
+        <obo:IAO_0000115 xml:lang="en">1i file is a Bruker instrument generated file holding spectrum&apos;s imaginary part data points.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.cemhti.cnrs-orleans.fr/dmfit/help/fileformat.aspx</obo:IAO_0000119>
+    </owl:Class>
+    
+
+
     <!-- http://nmrML.org/nmrCV#NMR:1000001 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000001">
         <rdfs:label rdf:datatype="&xsd;string">sample number</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A reference number relevant to the sample under study.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000001</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
@@ -339,7 +349,6 @@ T2 is less than or equal to T1 (R = relaxation rate, R2 = 1/T2, R2 ≥ R1), sinc
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000003">
         <rdfs:label rdf:datatype="&xsd;string">sample state information</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000003</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">The chemical phase of a pure sample, or the state of a mixed sample.</obo:IAO_0000115>
     </owl:Class>
@@ -357,7 +366,6 @@ T2 is less than or equal to T1 (R = relaxation rate, R2 = 1/T2, R2 ≥ R1), sinc
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000004">
         <rdfs:label rdf:datatype="&xsd;string">sample mass information</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000004</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Total mass of sample used.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
@@ -382,7 +390,6 @@ T2 is less than or equal to T1 (R = relaxation rate, R2 = 1/T2, R2 ≥ R1), sinc
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000005">
         <rdfs:label rdf:datatype="&xsd;string">sample volume</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000005</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Total volume of solution used.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
@@ -408,7 +415,6 @@ T2 is less than or equal to T1 (R = relaxation rate, R2 = 1/T2, R2 ≥ R1), sinc
         <rdfs:label rdf:datatype="&xsd;string">sample concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Concentration of sample in picomol/ul, femtomol/ul or attomol/ul solution used.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000006</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
@@ -711,7 +717,6 @@ CHEBI:85361</obo:IAO_0000116>
         <rdfs:label rdf:datatype="&xsd;string">instrument model</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000496"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Instrument model name not including the vendor&apos;s name.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000031</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -729,7 +734,6 @@ CHEBI:85361</obo:IAO_0000116>
         <rdfs:label rdf:datatype="&xsd;string">instrument customization</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000496"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Free text description of a single customization made to the instrument; for several modifications, use several entries.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000032</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -926,7 +930,6 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000047">
         <rdfs:label rdf:datatype="&xsd;string">emulsion</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000049"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000047</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">State if the sample is in emulsion form.</obo:IAO_0000115>
     </owl:Class>
@@ -944,7 +947,6 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000048">
         <rdfs:label rdf:datatype="&xsd;string">gas</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000003"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000048</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">State if the sample is in gaseous form.</obo:IAO_0000115>
     </owl:Class>
@@ -962,7 +964,6 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000049">
         <rdfs:label rdf:datatype="&xsd;string">liquid</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000003"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000049</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">State if the sample is in liquid form.</obo:IAO_0000115>
     </owl:Class>
@@ -980,7 +981,6 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000050">
         <rdfs:label rdf:datatype="&xsd;string">solid</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000003"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000050</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">State if the sample is in solid form.</obo:IAO_0000115>
     </owl:Class>
@@ -998,7 +998,6 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000051">
         <rdfs:label rdf:datatype="&xsd;string">solution</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000049"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000051</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">State if the sample is in solution form.</obo:IAO_0000115>
     </owl:Class>
@@ -1016,7 +1015,6 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000052">
         <rdfs:label rdf:datatype="&xsd;string">suspension</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000049"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000052</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">State if the sample is in suspension form.</obo:IAO_0000115>
     </owl:Class>
@@ -1034,7 +1032,6 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling</obo:IAO_0000
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000053">
         <rdfs:label rdf:datatype="&xsd;string">sample batch information</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000053</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Sample batch lot identifier.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -1919,7 +1916,6 @@ Parameters:
         <rdfs:label rdf:datatype="&xsd;string">Bruker instrument model</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000031"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Bruker instrument model.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000122</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -2361,11 +2357,11 @@ http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.135.3069&amp;rep=rep1&a
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400032"/>
-        <obo:IAO_0000116 xml:lang="en"> what is chemical shift reference ?  What calibration_reference_shift under calibration compound ?
-concentration standard name	we here see a use-mention problem arising for the CV. The xsd should probably change here to avoid this.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000116 xml:lang="en">nmrML CVTerm XSD element: concentration standard type --&gt; CV class: concentration standard</obo:IAO_0000116>
-        <oboInOwl:hasExactSynonym>quantitation standard</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000118>quantitation standard</obo:IAO_0000118>
+        <obo:IAO_0000116 xml:lang="en"> what is chemical shift reference ?  What calibration_reference_shift under calibration compound ?
+concentration standard name	we here see a use-mention problem arising for the CV. The xsd should probably change here to avoid this.</obo:IAO_0000116>
     </owl:Class>
     
 
@@ -2868,7 +2864,6 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000223">
         <rdfs:label xml:lang="en">chemical shift</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
-        <obo:IAO_0000117></obo:IAO_0000117>
         <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000115 xml:lang="en">Chemical shift is the resonant frequency of a nucleus relative to a chemical shift standard. It is usually stated in part per millions (ppm)</obo:IAO_0000115>
         <obo:IAO_0000119>http://en.wikipedia.org/wiki/Chemical_shift</obo:IAO_0000119>
@@ -2918,6 +2913,9 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000228">
         <rdfs:label xml:lang="en">procpar</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000252"/>
+        <obo:IAO_0000119 xml:lang="en">COSMOS NMRCV working group</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a file of data pre-processing parameters produced by a Varian NMR instrument. Such file has a procs, proc2s or proc3s file extension.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2927,6 +2925,9 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000229">
         <rdfs:label xml:lang="en">acqus</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000230"/>
+        <obo:IAO_0000115 xml:lang="en">.acqus file is a kind of data acquisition parameter file generated by Bruker software when dealing with NMR spectra, and holding acquisition parameter data for the first dimension.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.cemhti.cnrs-orleans.fr/dmfit/help/fileformat.aspx</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -2945,8 +2946,6 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000231">
         <rdfs:label rdf:datatype="&xsd;string">peak</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000231</oboInOwl:id>
     </owl:Class>
     
 
@@ -3010,7 +3009,11 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000238">
         <rdfs:label xml:lang="en">reference compound NMR spectrum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002007"/>
-        <rdfs:comment>e.g as in HMDB</rdfs:comment>
+        <obo:IAO_0000119 xml:lang="en">PRS for the COSMOS nmrML-CV working group</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000112>e.g as in HMDB</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">a reference compound NMR spectrum is an NMR spectrum which contains the chemical shifts representing a known chemical compound, the reference (for instance TMS).
+</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3132,6 +3135,9 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000251">
         <rdfs:label xml:lang="en">procs</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000250"/>
+        <obo:IAO_0000115 xml:lang="en">.procs file is a kind of data processing parameter file generated by Bruker software when dealing with 1D NMR spectra, and holding parameter data for the first dimension.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.cemhti.cnrs-orleans.fr/dmfit/help/fileformat.aspx</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -3706,10 +3712,9 @@ Parameters:
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000310">
         <rdfs:label xml:lang="en">acquisition log file</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400267"/>
+        <obo:IAO_0000115 xml:lang="en">An acquisition log file is a data file created during an acquisition event and which records instrument functioning parameters as well as operational metadata as well any system error which may be met. An acquisition log file can be used for quality control purpose and for detecting and understanding instrument behavior departing from nominal and expected performance. </obo:IAO_0000115>
         <obo:IAO_0000119 xml:lang="en">COSMOS NMRML-CV Working Group</obo:IAO_0000119>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000115 xml:lang="en">an acquisition log file is a data file created during an acquisition event and which records instrument functioning parameters as well as operational metadata as well any system error which may be met. 
-acquisition log file can be used for quality control purpose and for detecting and understanding instrument behavior departing from nominal and expected performance. </obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3719,6 +3724,9 @@ acquisition log file can be used for quality control purpose and for detecting a
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000313">
         <rdfs:label xml:lang="en">acqu2s</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000230"/>
+        <obo:IAO_0000115 xml:lang="en">.acqu2s file is a kind of data acquisition parameter file generated by Bruker software when dealing with NMR spectra, and holding acquisition parameter data for the second dimension.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.cemhti.cnrs-orleans.fr/dmfit/help/fileformat.aspx</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -3728,6 +3736,9 @@ acquisition log file can be used for quality control purpose and for detecting a
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000314">
         <rdfs:label xml:lang="en">acqu3s</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000230"/>
+        <obo:IAO_0000115 xml:lang="en">.acqu3s file is a kind of data acquisition parameter file generated by Bruker software when dealing with NMR spectra, and holding acquisition parameter data for the third dimension.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.cemhti.cnrs-orleans.fr/dmfit/help/fileformat.aspx</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -3737,6 +3748,9 @@ acquisition log file can be used for quality control purpose and for detecting a
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000315">
         <rdfs:label xml:lang="en">proc2s</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000250"/>
+        <obo:IAO_0000115 xml:lang="en">.proc2s file is a kind of data processing parameter file generated by Bruker software when dealing with 2D NMR spectra and holding parameter data for the second dimension.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.cemhti.cnrs-orleans.fr/dmfit/help/fileformat.aspx</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -3746,6 +3760,9 @@ acquisition log file can be used for quality control purpose and for detecting a
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000316">
         <rdfs:label xml:lang="en">proc3s</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000250"/>
+        <obo:IAO_0000115 xml:lang="en">.proc3s file is a kind of data processing parameter file generated by Bruker software when dealing with 3D NMR spectra and holding parameter data for the third dimension.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">COSMOS NMRCV working group</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3779,8 +3796,11 @@ http://en.wikipedia.org/wiki/Free_induction_decay</obo:IAO_0000119>
     <!-- http://nmrML.org/nmrCV#NMR:1000319 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000319">
-        <rdfs:label xml:lang="en">1R file</rdfs:label>
+        <rdfs:label xml:lang="en">1r file</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000318"/>
+        <obo:IAO_0000115 xml:lang="en">1r file is a Bruker instrument generated file holding spectrum&apos;s real part data points.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://nmr.cemhti.cnrs-orleans.fr/dmfit/help/fileformat.aspx</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -3888,7 +3908,6 @@ http://en.wikipedia.org/wiki/Free_induction_decay</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000452">
         <rdfs:label rdf:datatype="&xsd;string">NMR data conversion</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000530"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000452</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Terms used to describe types of data processing.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">data processing</oboInOwl:hasExactSynonym>
@@ -3907,7 +3926,6 @@ http://en.wikipedia.org/wiki/Free_induction_decay</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000457">
         <rdfs:label rdf:datatype="&xsd;string">sample</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000457</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">tempdef: A sample is a role that is played by an object of interest in an investigation used to obtain generalizable information about the sample source.
 </obo:IAO_0000115>
@@ -3932,7 +3950,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
         <rdfs:label rdf:datatype="&xsd;string">instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Description of the instrument or the mass spectrometer.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000463</oboInOwl:id>
         <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">instrument configuration</oboInOwl:hasExactSynonym>
     </owl:Class>
@@ -3950,7 +3967,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000489">
         <rdfs:label rdf:datatype="&xsd;string">Varian instrument model</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000031"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000489</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Varian instrument model.</obo:IAO_0000115>
     </owl:Class>
@@ -3975,7 +3991,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Instrument properties that are associated with a value.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000496</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4010,7 +4025,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000529">
         <rdfs:label rdf:datatype="&xsd;string">instrument serial number</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000496"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000529</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Serial Number of the instrument.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -4036,7 +4050,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
         <rdfs:label rdf:datatype="&xsd;string">file format conversion</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Conversion of one file format to another.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000530</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4053,7 +4066,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000531">
         <rdfs:label rdf:datatype="&xsd;string">software</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000017"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000531</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Software related to the recording or transformation of spectra.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">nmrML CVParam XSD element: software type --&gt; CV class: software</obo:IAO_0000116>
@@ -4072,7 +4084,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000547">
         <rdfs:label rdf:datatype="&xsd;string">object attribute</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000020"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000547</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Object Attribute.</obo:IAO_0000115>
     </owl:Class>
@@ -4096,7 +4107,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#NMR:1000457"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000548</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Sample properties that are associated with a value.</obo:IAO_0000115>
     </owl:Class>
@@ -4132,7 +4142,6 @@ Philippe Rocca-Serra: March2015</obo:IAO_0000116>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000561">
         <rdfs:label rdf:datatype="&xsd;string">data file checksum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000011"/>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000561</oboInOwl:id>
         <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000115 xml:lang="en">a data file checksum is a digital file fingerprint which can be generated and verified by a variety of hash sum algorithm and which are used to perform a check on the integrity of data by detecting errors in data, for instance during a file transfer.</obo:IAO_0000115>
         <obo:IAO_0000119>adapted from wikipedia:
@@ -4155,7 +4164,6 @@ http://en.wikipedia.org/wiki/Checksum</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000561"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">MD5 checksum is a kind of data file checksum computed using  the Message-Digest algorithm 5 (MD5) cryptographic hash function, which relies on a 128-bit hash value used to check the integrity of files, as described in the RFC1321 (http://tools.ietf.org/html/rfc1321).
 </obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000568</oboInOwl:id>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">adapted from wikipedia:
 http://en.wikipedia.org/wiki/Md5sum
@@ -4177,7 +4185,6 @@ http://en.wikipedia.org/wiki/MD5</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000569">
         <rdfs:label rdf:datatype="&xsd;string">SHA-1 checksum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000561"/>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000569</oboInOwl:id>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra
 </obo:IAO_0000117>
         <obo:IAO_0000115 xml:lang="en">SHA-1 checksum is a kind of data file checksum computed using the Secure Hash Algorithm-1 (SHA-1) cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is used to verify file integrity, for instance during transmission. SHA-1 produces a 160-bit (20-byte) hash value. A SHA-1 hash value is typically rendered as a hexadecimal number, 40 digits long.</obo:IAO_0000115>
@@ -4199,7 +4206,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">NMR raw data file format</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001459"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Describes the type of file and its content.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000577</oboInOwl:id>
         <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">source file</oboInOwl:hasExactSynonym>
     </owl:Class>
@@ -4218,7 +4224,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">contact attribute</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000547"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Details about a person or organization to contact in case of concern or discussion about the file.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000585</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4235,7 +4240,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000586">
         <rdfs:label rdf:datatype="&xsd;string">contact name</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000585"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000586</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Name of the contact person or organization.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -4260,7 +4264,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000587">
         <rdfs:label rdf:datatype="&xsd;string">contact address</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000585"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000587</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Postal address of the contact person or organization.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -4285,7 +4288,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000588">
         <rdfs:label rdf:datatype="&xsd;string">contact URL</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000585"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000588</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Uniform Resource Locator related to the contact person or organization.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -4311,7 +4313,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">contact email</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000585"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Email address of the contact person or organization.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000589</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4336,7 +4337,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">contact organization</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000585"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Home institution of the contact person.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000590</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4361,7 +4361,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">data processing parameter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400101"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Data processing parameter used in the data processing performed on the data file.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000630</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4378,7 +4377,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000747">
         <rdfs:label rdf:datatype="&xsd;string">data processing completion time</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000019"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000747</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">The time that a data processing action was finished.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:date</oboInOwl:hasDbXref>
@@ -4404,7 +4402,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">FID format</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000577"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Describes how the native spectrum identifiers are formated.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000767</oboInOwl:id>
         <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">nativeID format</oboInOwl:hasExactSynonym>
     </owl:Class>
@@ -4442,7 +4439,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">custom unreleased software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000531"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the MSI-NMR working group in order to have another CV term added.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000799</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4467,7 +4463,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">sample preparation information</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Description of the preparation steps which took place before the measurement was performed.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000831</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4548,7 +4543,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A describable property of a chemical compound.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000861</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4565,7 +4559,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000862">
         <rdfs:label rdf:datatype="&xsd;string">isoelectric point</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000861"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000862</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">The pH of a solution at which a charged molecule does not migrate in an electric field.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">pI</oboInOwl:hasExactSynonym>
@@ -4591,7 +4584,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000863">
         <rdfs:label rdf:datatype="&xsd;string">predicted isoelectric point</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000861"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000863</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">predicted pI</oboInOwl:hasExactSynonym>
@@ -4618,7 +4610,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">chemical compound formula</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000861"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A combination of symbols used to express the chemical composition of a compound.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000864</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4636,7 +4627,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">empirical formula</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000864"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A chemical formula which expresses the proportions of the elements present in a substance.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000865</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4661,7 +4651,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">molecular formula</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000864"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A chemical compound formula expressing the number of atoms of each element present in a compound, without indicating how they are linked.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000866</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4686,7 +4675,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">structural formula</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000864"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A chemical formula showing the number of atoms of each element in a molecule, their spatial arrangement, and their linkage to each other.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000867</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4710,7 +4698,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000868">
         <rdfs:label rdf:datatype="&xsd;string">SMILES string</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000864"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000868</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">The simplified molecular input line entry specification or SMILES is a specification for unambiguously describing the structure of a chemical compound using a short ASCII string.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -4736,7 +4723,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">external reference identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400117"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">An identifier/accession number to an external reference database.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000878</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4754,7 +4740,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">PubMed identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000878"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A unique identifier for a publication in the PubMed database (MIR:00000015).</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000879</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:integer</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4817,7 +4802,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">protein short name</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000884"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A short name or symbol of a protein (e.g., HSF 1 or HSF1_HUMAN).</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000883</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4842,7 +4826,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">protein attribute</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000547"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">An nonphysical attribute describing a specific protein.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000884</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4860,7 +4843,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">protein accession</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000884"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Accession number for a specific protein in a database.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000885</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4910,7 +4892,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">peptide attribute</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000547"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">An nonphysical attribute that can be used to describe a peptide.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000887</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4928,7 +4909,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">unmodified peptide sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000887"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of letter symbols denoting the order of amino acids that compose the peptide, without encoding any amino acid mass modifications that might be present.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000888</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4953,7 +4933,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">modified peptide sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000887"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of letter symbols denoting the order of amino acids that compose the peptide plus the encoding any amino acid mass modifications that are present using the notation where the total mass of the modified amino acid is specified in square bracketed numbers following the letter (e.g. R[162.10111] indicates an arginine whose final modified mass is 162.10111 amu).</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000889</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -4978,7 +4957,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">peptide labeling state</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000887"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A state description of how a peptide might be isotopically or isobarically labelled.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000890</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -4996,7 +4974,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">heavy labeled peptide</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000887"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A peptide that has been created or labeled with some heavier-than-usual isotopes.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000891</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -5014,7 +4991,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">unlabeled peptide</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000887"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A peptide that has not been labeled with heavier-than-usual isotopes. This is often referred to as &quot;light&quot; to distinguish from &quot;heavy&quot;.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000892</oboInOwl:id>
         <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">light labeled peptide</oboInOwl:hasExactSynonym>
     </owl:Class>
@@ -5033,7 +5009,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">peptide group label</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000887"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">An arbitrary string label used to mark a set of peptides that belong together in a set, whereby the members are differentiated by different isotopic labels. For example, the heavy and light forms of the same peptide will both be assigned the same peptide group label.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000893</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5112,7 +5087,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">tab delimited text file</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002005"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A file that has two or more columns of tabular data where each column is separated by a TAB character.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000914</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -5130,8 +5104,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">protein modification</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000884"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Encoding of modifications of the protein sequence from the specified accession, written in PEFF notation.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000933</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
@@ -5154,7 +5126,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000934">
         <rdfs:label rdf:datatype="&xsd;string">gene name</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000884"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000934</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Name of the gene from which the protein is translated.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -5233,7 +5204,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001107">
         <rdfs:label rdf:datatype="&xsd;string">data stored in database</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001459"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001107</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Source file for this nmrIdentML was a data set in a database.</obo:IAO_0000115>
     </owl:Class>
@@ -5309,7 +5279,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001267">
         <rdfs:label rdf:datatype="&xsd;string">software vendor</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400254"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001267</oboInOwl:id>
     </owl:Class>
     
@@ -5320,7 +5289,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001268">
         <rdfs:label rdf:datatype="&xsd;string">programmer</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000010"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001268</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5338,7 +5306,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001269">
         <rdfs:label rdf:datatype="&xsd;string">instrument vendor</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400254"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001269</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5356,7 +5323,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001270">
         <rdfs:label rdf:datatype="&xsd;string">lab personnel</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000010"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001270</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5386,7 +5352,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">analysis software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000531"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Analysis software.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001456</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -5404,7 +5369,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">data processing software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000531"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Conversion software.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001457</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -5440,7 +5404,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">data file format</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000011"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Format of data files.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001459</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -5457,7 +5420,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001755">
         <rdfs:label rdf:datatype="&xsd;string">contact phone number</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000585"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001755</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Phone number of the contact person or organization.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -5483,7 +5445,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">contact fax number</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000585"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Fax number for the contact person or organization.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001756</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5507,7 +5468,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001757">
         <rdfs:label rdf:datatype="&xsd;string">contact toll-free phone number</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000585"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001757</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Toll-free phone number of the contact person or organization.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -5533,7 +5493,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">Digital Object Identifier (DOI)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000878"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">DOI unique identifier.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001922</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5558,8 +5517,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">external reference keyword</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#keyword"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Free text attribute that can enrich the information about an entity.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001923</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
@@ -5583,7 +5540,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">journal article keyword</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#keyword"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Keyword present in a scientific publication.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001924</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5608,7 +5564,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">submitter keyword</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#keyword"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Keyword assigned by the data submitter.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001925</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5633,7 +5588,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">curator keyword</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#keyword"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Keyword assigned by a data curator.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001926</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5657,7 +5611,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001954">
         <rdfs:label rdf:datatype="&xsd;string">acquisition parameter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400101"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001954</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Parameters used in the NMR spectrometry acquisition.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -5683,7 +5636,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">HMDB identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000022"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A unique identifier for a metabolite in the HMDB database (HMDB00001).</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002000</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:integer</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5744,7 +5696,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002003">
         <rdfs:label rdf:datatype="&xsd;string">Varian FID format</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000767"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002003</oboInOwl:id>
         <rdfs:comment rdf:datatype="&xsd;string">The nativeID must be the same as the source file ID.</rdfs:comment>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">file=xsd:IDREF.</obo:IAO_0000115>
@@ -5763,7 +5714,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002004">
         <rdfs:label rdf:datatype="&xsd;string">NMR spectrometer file format</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400285"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002004</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">The format of the file being used. This could be a instrument or vendor specific proprietary file format or a converted open file format.</obo:IAO_0000115>
     </owl:Class>
@@ -5781,7 +5731,6 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002005">
         <rdfs:label rdf:datatype="&xsd;string">text file</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001459"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002005</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Simple text file of peaks.</obo:IAO_0000115>
     </owl:Class>
@@ -5816,12 +5765,10 @@ http://en.wikipedia.org/wiki/SHA-1</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002007">
         <rdfs:label rdf:datatype="&xsd;string">NMR spectrum</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000524"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002007</oboInOwl:id>
-        <dc:source>as designated Experiment type on http://www.bmrb.wisc.edu/tools/choose_pulse_info.php </dc:source>
-        <ru-meta:definition>tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or &apos;lines&apos;.
-def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
-synonym: NMR spectrum</ru-meta:definition>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119>as designated Experiment type on http://www.bmrb.wisc.edu/tools/choose_pulse_info.php </obo:IAO_0000119>
+        <ru-meta:definition>an NMR spectrum is a frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks (or &apos;lines&apos;) at different corresponding frequencies plotted along the x-axis of the spectrum. An NMR spectrum in the frequency domain results from the transformation from the time domain Free Induction Decay. </ru-meta:definition>
     </owl:Class>
     
 
@@ -5832,7 +5779,6 @@ synonym: NMR spectrum</ru-meta:definition>
         <rdfs:label rdf:datatype="&xsd;string">Conversion to nmrML</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000452"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Conversion of a file format to Metabolomics Standards Initiative nmrData file format.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002008</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -5850,7 +5796,6 @@ synonym: NMR spectrum</ru-meta:definition>
         <rdfs:label rdf:datatype="&xsd;string">Conversion to JCAMP-DX</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000452"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Conversion of a file format to JCAMP-DX file format.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002009</oboInOwl:id>
     </owl:Class>
     <owl:Axiom>
@@ -5867,7 +5812,6 @@ synonym: NMR spectrum</ru-meta:definition>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002010">
         <rdfs:label rdf:datatype="&xsd;string">NMR solvent information</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002010</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -5885,7 +5829,6 @@ synonym: NMR spectrum</ru-meta:definition>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002011">
         <rdfs:label rdf:datatype="&xsd;string">pH</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000548"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002011</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">pH.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -5936,7 +5879,6 @@ synonym: NMR spectrum</ru-meta:definition>
         <rdfs:label rdf:datatype="&xsd;string">chemical shift reference</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400034"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Chemical shift reference is a run attribute to designate the parts-per-million value of the peak used to reference a spectrum. It points to a fix chemical shift number, for examples 0 ppm for DSS or TSP. It can also have a calculated concentration, for examples 0.1 mM.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002013</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/29#issue</doap:bug-database>
@@ -5962,7 +5904,6 @@ synonym: NMR spectrum</ru-meta:definition>
         <rdfs:label rdf:datatype="&xsd;string">binned spectrum descriptor</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">A bin for a spectrum.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002014</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>bucketed spectrum descriptor</oboInOwl:hasExactSynonym>
@@ -5988,7 +5929,6 @@ synonym: NMR spectrum</ru-meta:definition>
         <rdfs:label rdf:datatype="&xsd;string">bin label</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Bin label.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002015</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
@@ -6013,7 +5953,6 @@ synonym: NMR spectrum</ru-meta:definition>
         <rdfs:label rdf:datatype="&xsd;string">bin start</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Bin start.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002016</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
@@ -6038,7 +5977,6 @@ synonym: NMR spectrum</ru-meta:definition>
         <rdfs:label rdf:datatype="&xsd;string">bin end</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Bin end.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002017</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
@@ -6063,7 +6001,6 @@ synonym: NMR spectrum</ru-meta:definition>
         <rdfs:label rdf:datatype="&xsd;string">bin area</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Bin area.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002018</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
@@ -6113,7 +6050,6 @@ synonym: NMR spectrum</ru-meta:definition>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002020">
         <rdfs:label rdf:datatype="&xsd;string">metabolite name</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002020</oboInOwl:id>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Name of metabolite.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
@@ -6138,7 +6074,6 @@ synonym: NMR spectrum</ru-meta:definition>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002021">
         <rdfs:label rdf:datatype="&xsd;string">metabolite concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
-        <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002021</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
@@ -6217,7 +6152,6 @@ altdef: A systematic approach to problem solving. Complex problems are made simp
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Multiplicity is the quantification of the amount of unpaired electron spin. Multiplicity is a result of Hund&apos;s rule which favors the single filling of degenerate (same energy) orbitals
 Multiplicity in quantum chemistry is used to distinguish between several degenerate wavefunctions that differ only in the orientation of their angular spin momenta. It is defined as 2S+1, where S is the angular spin momentum.[1] Multiplicity is the number of possible orientations of spin angular momenta.
 </obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>multiplicity</oboInOwl:hasExactSynonym>
         <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">multiplicty</obo:IAO_0000118>
     </owl:Class>
@@ -7432,7 +7366,6 @@ http://en.wikipedia.org/wiki/Free_induction_decay</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">shaped pulse file</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400122"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">a file containing a specification of a pulse sequence defining the shape of an excitation pulse.</obo:IAO_0000115>
-        <obo:IAO_0000119 xml:lang="en"></obo:IAO_0000119>
         <obo:IAO_0000119 xml:lang="en">COSMOS NMRCV working group</obo:IAO_0000119>
     </owl:Class>
     
@@ -7455,7 +7388,7 @@ http://en.wikipedia.org/wiki/Free_induction_decay</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400123">
         <rdfs:label rdf:datatype="&xsd;string">processing parameter file</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400267"/>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">a file of data pre-processing parameters produced by an NMR instrument.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">a processing parameter file is a data file which stores data pre-processing parameters produced by an NMR instrument for converting FID data into NMR spectrum.</obo:IAO_0000115>
         <obo:IAO_0000119 xml:lang="en">COSMOS NMRCV working group</obo:IAO_0000119>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
     </owl:Class>
@@ -7550,7 +7483,7 @@ http://en.wikipedia.org/wiki/Free_induction_decay</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400134">
         <rdfs:label rdf:datatype="&xsd;string">spectrum pre-processing software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: A software artifact used during data pre-processing.</rdfs:comment>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">def: A software artifact used during data pre-processing.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -7560,7 +7493,7 @@ http://en.wikipedia.org/wiki/Free_induction_decay</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400135">
         <rdfs:label rdf:datatype="&xsd;string">spectrum post-processing software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: A software artifact used during spectral post-processing.</rdfs:comment>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">def: A software artifact used during spectral post-processing.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -8385,7 +8318,6 @@ defprov: Bruker website</obo:IAO_0000115>
 The MATCH system provides an easy and cost efficient means of optimizing the signal-to-noise ratio of each sample. By matching the NMR tube diameter to the size of the sample, most of the sample can be placed in the active column of the NMR coil. This leads to an enhanced signal detection compared to diluting the same sample quantity in a larger tube.
 </obo:IAO_0000115>
         <obo:IAO_0000119>defprov: Bruker website</obo:IAO_0000119>
-        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
         <obo:IAO_0000118>synonym: Bruker Multiple Adjustable Tube Clamp Holder</obo:IAO_0000118>
     </owl:Class>
     
