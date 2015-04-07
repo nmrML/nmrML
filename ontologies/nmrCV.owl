@@ -2498,8 +2498,18 @@ https://www2.chemistry.msu.edu/facilities/nmr/handouts/DH%20NMR%20Basics.pdf</ob
     <!-- http://nmrML.org/nmrCV#NMR:1000184 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000184">
-        <rdfs:label xml:lang="en">dublet feature</rdfs:label>
+        <rdfs:label xml:lang="en">doublet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity defined by a set of 2 lines in the NMR peak signal corresponding to spin-spin splitting</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">d</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">duplet</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -2509,6 +2519,16 @@ https://www2.chemistry.msu.edu/facilities/nmr/handouts/DH%20NMR%20Basics.pdf</ob
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000185">
         <rdfs:label xml:lang="en">triplet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity defined by a set of 3 lines in the NMR peak signal corresponding to spin-spin splitting</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">t</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -2516,8 +2536,19 @@ https://www2.chemistry.msu.edu/facilities/nmr/handouts/DH%20NMR%20Basics.pdf</ob
     <!-- http://nmrML.org/nmrCV#NMR:1000186 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000186">
-        <rdfs:label xml:lang="en">quatruplet feature</rdfs:label>
+        <rdfs:label xml:lang="en">quadruplet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity defined by a set of 4 lines in the NMR peak signal corresponding to spin-spin splitting</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">q</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">quartet</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -2580,6 +2611,15 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000192">
         <rdfs:label xml:lang="en">doublet of doublets feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity defined by a set of 2 doublets in the NMR peak signal corresponding to spin-spin splitting</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">dd</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -2589,6 +2629,19 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000193">
         <rdfs:label xml:lang="en">ABX feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The Pople notation is named after the Nobel laureate John Pople and is a simple method of presenting second-order spin coupling systems in NMR. 
+
+The notation labels each (NMR active) nucleus with a letter of the alphabet. The difference in chemical shift, δ, relative to the J-coupling between nuclei mirrors the separation of the letter labels in the Latin alphabet. The letters used tend to be limited to A,B,M,N,X,Y.
+
+For example, AB indicates two nuclei which have similar chemical shifts (Δδ similar to or smaller than J), whereas AX indicates two which lie further apart on the spectrum (Δδ significantly larger than J). A2B would similarly indicate a spin system containing two equivalent nuclei (A) and a third, inequivalent one (B). Nuclei which are in equivalent chemical environments (that is, symmetry-related), but inequivalent magnetic environments are distinguished with a prime; e.g. AA&apos;.
+
+The notation can be used to represent systems of more than two nuclei, for example AMX represents three nuclei, each moderately separated from the others, and ABX represents two nuclei whose peaks are closely spaced and one other nucleus which is more distant.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://www.chem.wisc.edu/areas/reich/chem605/index.htm
+
+and
+
+http://en.wikipedia.org/wiki/Pople_notation</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -2598,6 +2651,17 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000194">
         <rdfs:label xml:lang="en">singlet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a singlet is the simplest type of multiplicity</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+
+
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">s</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -2607,6 +2671,16 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000195">
         <rdfs:label xml:lang="en">quintet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity defined by a set of 5 lines in the NMR peak signal corresponding to spin-spin splitting</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">quint</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -2616,6 +2690,15 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000196">
         <rdfs:label xml:lang="en">douplet of triplets</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity defined by a set of 2 triplets in the NMR peak signal corresponding to spin-spin splitting</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">dt</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
     </owl:Class>
     
 
@@ -2623,8 +2706,19 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <!-- http://nmrML.org/nmrCV#NMR:1000197 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000197">
-        <rdfs:label xml:lang="en">triplet of douplets</rdfs:label>
+        <rdfs:label xml:lang="en">triplet of doublets</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity defined by a set of 3 doublets in the NMR peak signal corresponding to spin-spin splitting</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">td</obo:IAO_0000118>
+        <obo:IAO_0000115 xml:lang="en">triple of duplets</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2634,6 +2728,16 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000198">
         <rdfs:label xml:lang="en">triplet of triplets</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity defined by a set of 3 triplets in the NMR peak signal corresponding to spin-spin splitting</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">tt</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -2876,7 +2980,8 @@ Andrés M. Castillo, Luc Patiny and Julien Wist. Fast and Accurate Algorithm for
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000224">
         <rdfs:label xml:lang="en">nmr signal intensity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
-        <obo:IAO_0000115>an information object that describes the strength of the NMR signal</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">an information object that describes the strength of the NMR signal, usually recording as voltage over time in the NMR probe coil registering spin variation following the radio frequency pulse.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -6151,11 +6256,25 @@ altdef: A systematic approach to problem solving. Complex problems are made simp
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400006">
         <rdfs:label rdf:datatype="&xsd;string">multiplet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
-        <obo:IAO_0000115 rdf:datatype="&xsd;string">Multiplicity is the quantification of the amount of unpaired electron spin. Multiplicity is a result of Hund&apos;s rule which favors the single filling of degenerate (same energy) orbitals
-Multiplicity in quantum chemistry is used to distinguish between several degenerate wavefunctions that differ only in the orientation of their angular spin momenta. It is defined as 2S+1, where S is the angular spin momentum.[1] Multiplicity is the number of possible orientations of spin angular momenta.
-</obo:IAO_0000115>
         <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">multiplicty</obo:IAO_0000118>
+        <obo:IAO_0000115 xml:lang="en">Multiplicity is the quantification of the amount of unpaired electron spin. Multiplicity is a result of Hund&apos;s rule which favors the single filling of degenerate (same energy) orbitals
+Multiplicity in quantum chemistry is used to distinguish between several degenerate wavefunctions that differ only in the orientation of their angular spin momenta. It is defined as 2S+1, where S is the angular spin momentum. Multiplicity is the number of possible orientations of spin angular momenta and provides information about J-coupling ( indirect dipole dipole coupling), which contains information about bond distance and angles. J-coupling provides information on the connectivity of molecules
+
+In case of AmBn system, the multiplicity rule is that Nuclei of B element produce a splitting the A signal into nB+1 lines. 
+
+The general formula which applies to all nuclei is 2nI+1, where I is the spin quantum number of the coupled element.
+
+The relative intensities of the each lines are given by the coefficients of the Pascal’s triangle.
+http://en.wikipedia.org/wiki/Pascal%27s_triangle#/media/File:PascalTriangleAnimated2.gif
+</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">adapted from wikipedia:
+http://en.wikipedia.org/wiki/Multiplicity_(chemistry) and from http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">multiplicity</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">spin-spin splitting</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -9101,6 +9220,15 @@ http://en.wikipedia.org/wiki/Data_file</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">multiplet feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
         <rdfs:comment rdf:datatype="&xsd;string">J-coupler</rdfs:comment>
+        <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a type of multiplicity denoting a complex pattern of spin-spin splitting in the NMR peak signal</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://pubs.acs.org/paragonplus/submission/acs_nmr_guidelines.pdf
+and 
+http://chemwiki.ucdavis.edu/Physical_Chemistry/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR%3A_Experimental/NMR%3A_Interpretation#Spin-Spin_Splitting
+and
+
+http://www.chem.wisc.edu/areas/reich/chem605/index.htm</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">m</obo:IAO_0000118>
     </owl:Class>
     
 
