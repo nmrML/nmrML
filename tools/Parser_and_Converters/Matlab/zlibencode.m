@@ -26,4 +26,3 @@ zlib.close();
 output = typecast(buffer.toByteArray(), 'uint8')';
 
 end
-
