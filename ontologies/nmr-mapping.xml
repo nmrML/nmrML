@@ -30,28 +30,25 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 	<CvMappingRuleList>
 		
 		<!-- Each 'CvMappingRule' node has attributes which specify the validation-rule and the conditions where it applies, i.e. the rules name (id); the CV-term-containing xml-element in consideration (cvElementPath); The requirement level indicated, when the XML element exists in the instance data file, i.e. if the association with CV terms is optional (MAY), recommended (SHOULD) or mandatory (MUST); the XML element it refers to (scopePath); and the boolean combination logics (AND, OR, XOR) allowed for multiple CV terms -->
+		
 		<CvMappingRule id="fileContent_may"
 			cvElementPath="/nmrML/fileDescription/fileContent/cvParam@accession"
-			requirementLevel="MAY" scopePath="/nmrML/fileDescription/fileContent/"
-			cvTermsCombinationLogic="AND">
+			requirementLevel="MAY" scopePath="/nmrML/fileDescription/fileContent/">
 			<!-- The following nested 'CvTerm' node attributes define the specific allowed CV terms applicable to the path specified before, i.e. its term ID; an indication whether child terms are enforced (useTerm=false);  -->
-			<CvTerm termAccession="NMR:1400285" useTerm="false" termName="NMR software data format"
+			<CvTerm termAccession="NMR:1000524" useTerm="false" termName="data file content"
 				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
-			<!-- In short, this rule constraints valid data entry types for the XML 'fileContent' node to be of CV term ancestors from nmrCV:NMR software data format, i.e. 'Bruker WIN NMR format'  -->
+			<!-- In short, this rule constraints valid data entry types for the XML 'fileContent' node to be of CV term ancestors from nmrCV:data file content -->
 		</CvMappingRule>
 
 
-		<!-- sourceFile: Why here pulse seq in xpath ? -->
-		<CvMappingRule id="sourceFile_may"
-			cvElementPath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/cvParam@accession"
-			requirementLevel="MAY"
-			scopePath="/nmrML/acquisition/acquisition1D/acquisitionParameterSet/pulseSequence/"
-			cvTermsCombinationLogic="AND">
-			<CvTerm termAccession="NMR:1400285" useTerm="false" termName="NMR software data format"
-				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
-			<CvTerm termAccession="NMR:1002006" useTerm="false"
-				termName="acquisition parameter file format" isRepeatable="false"
-				allowChildren="true" cvIdentifierRef="NMR"/>
+		<!-- sourceFile   A general question: What with all the occurences of non cvParam@accession way of legal XML modeling? Should we add pulse sequence file and the NMR software with which the files were generated i.e. add  <CvTerm termAccession="NMR:1400213" useTerm="false" termName="NMR software" isRepeatable="true" allowChildren="true" cvIdentifierRef="NMR"/>  -->
+		
+		<CvMappingRule id="sourceFile_must"
+			cvElementPath="/nmrML/sourceFileList/sourceFile/cvParam@accession"
+			requirementLevel="MUST"
+			scopePath="/nmrML/sourceFileList/sourceFile/">
+			<CvTerm termAccession="???" useTerm="false" termName="NMR raw data file"
+			 isRepeatable="true" allowChildren="true" cvIdentifierRef="NMR"/>	
 		</CvMappingRule>
 
 		<!-- software-->
@@ -81,14 +78,15 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 			<CvTerm termAccession="NMR:1400014" useTerm="false" termName="NMR probe"
 				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
-
+		
+		<!-- Or less restrictive ... -->
+		
 		<CvMappingRule id="instrumentConfiguration_may"
 			cvElementPath="/nmrML/instrumentConfigurationList/instrumentConfiguration/cvParam/@accession"
 			requirementLevel="MAY"
-			scopePath="/nmrML/instrumentConfigurationList/instrumentConfiguration/"
-			cvTermsCombinationLogic="AND">
+			scopePath="/nmrML/instrumentConfigurationList/instrumentConfiguration/">
 			<CvTerm termAccession="NMR:1000463" useTerm="false" termName="instrument"
-				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
+				isRepeatable="true" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
 
 		<!-- Contact has no mapping, can use whatever seems fit from FOAF or whatever -->
