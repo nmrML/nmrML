@@ -33,7 +33,8 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 		
 		<CvMappingRule id="fileContent_may"
 			cvElementPath="/nmrML/fileDescription/fileContent/cvParam@accession"
-			requirementLevel="MAY" scopePath="/nmrML/fileDescription/fileContent/">
+			requirementLevel="MAY" scopePath="/nmrML/fileDescription/fileContent/"
+			cvTermsCombinationLogic="OR">
 			<!-- The following nested 'CvTerm' node attributes define the specific allowed CV terms applicable to the path specified before, i.e. its term ID; an indication whether child terms are enforced (useTerm=false);  -->
 			<CvTerm termAccession="NMR:1000524" useTerm="false" termName="data file content"
 				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
@@ -46,7 +47,8 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 		<CvMappingRule id="sourceFile_must"
 			cvElementPath="/nmrML/sourceFileList/sourceFile/cvParam@accession"
 			requirementLevel="MUST"
-			scopePath="/nmrML/sourceFileList/sourceFile/">
+			scopePath="/nmrML/sourceFileList/sourceFile/"
+			cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="???" useTerm="false" termName="NMR raw data file"
 			 isRepeatable="true" allowChildren="true" cvIdentifierRef="NMR"/>	
 		</CvMappingRule>
@@ -84,7 +86,8 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 		<CvMappingRule id="instrumentConfiguration_may"
 			cvElementPath="/nmrML/instrumentConfigurationList/instrumentConfiguration/cvParam/@accession"
 			requirementLevel="MAY"
-			scopePath="/nmrML/instrumentConfigurationList/instrumentConfiguration/">
+			scopePath="/nmrML/instrumentConfigurationList/instrumentConfiguration/"
+			cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="NMR:1000463" useTerm="false" termName="instrument"
 				isRepeatable="true" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
