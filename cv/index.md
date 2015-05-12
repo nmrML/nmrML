@@ -79,11 +79,8 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_spectroscopy</obo:IAO_00
 #### Top Level Ontology usage
 
 There are a few top and upper level ontologies (TLO) already established. From BFO, OBILight &
- BioTopLight (btl2), we choose BFO as top level ontology to guide our CV upper level development. The reason was that it is abundantly used within existing bioontology frameworks. At the moment only a few relations from unit ontology (UO) are used. We can at some later point still switch the TLO, as we do not use any axioms (It is only ~10 classes, so rebinning will be quick). It can be argued why we use a TLO when developing a CV not an Ontology. There has already been a case where the TLO provided modeling restrictions that allowed an automatic DL reasoner to discover CV modelling errors, e.g. https://github.com/nmrML/nmrML/issues/62
+ BioTopLight (btl2), we choose BFO as top level ontology to guide our CV upper level development. The reason was that it is abundantly used within existing bioontology frameworks. There has already been a case where the TLO provided modeling restrictions that allowed an automatic DL reasoner to discover CV modelling errors, e.g. https://github.com/nmrML/nmrML/issues/62
 
-Nevertheless, at the moment we avoid any usage of object properties from the CV. E.g. for coding the vendor of an NMR instrument, we could have the following axiom in the CV:  ‘NMR Instrument’ hasVendor Vendor
-
-
-Instead, we say in the mapping file that for an Instrument, the Name and Vendor has to be specified. In an equal way we amend CV information describing Software, e.g. the version info is stored in an XSD attribute.
+Nevertheless, at the moment we avoid frequent usage of object properties from the CV. E.g. for coding the vendor of an NMR instrument, we could have the following axiom in the CV:  ‘NMR Instrument’ hasVendor Vendor. But instead, we say in the mapping file that for an Instrument, the Name and Vendor has to be specified. In an equal way we amend CV information describing Software, e.g. the version info is stored in an XSD attribute.
 
 
