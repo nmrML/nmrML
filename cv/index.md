@@ -47,7 +47,7 @@ Optional fields (good to have) are:
 * dc:creator-->dc:author
 
 
-Here is an example of the definition of the 'acquisition nucleus' term (NMR:1400083) in the old form:
+Here is an example (bold) of the definition of the 'acquisition nucleus' term (NMR:1400083) in the old form (using comments):
 
 ```xml
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400083">
@@ -56,7 +56,7 @@ Here is an example of the definition of the 'acquisition nucleus' term (NMR:1400
         <rdfs:comment rdf:datatype="&xsd;string">def: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</rdfs:comment>
     </owl:Class>
 ```
-Here is an example of the definition of the 'acquisition nucleus' term (NMR:1400083) in the NEW form (using IAO to capture metadata and incl a DL axiom):
+Here is an example (bold) of the definition of the 'acquisition nucleus' term (NMR:1400083) in the NEW form (using IAO_0000115 to capture metadata and incl a DL axiom):
 
 ```xml
      <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400083">
