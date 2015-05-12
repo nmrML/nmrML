@@ -34,28 +34,18 @@ A term batch submission table, i.e. for submitting new CV terms for inclusion in
 
 * term name (rdfs:label)-->skos:prefLabel,ideally adhering to labelling best practice descibed at  http://www.obofoundry.org/wiki/index.php/Naming
 
-* term definition in natural language (IAO_0000115)-->skos:definition
+* term definition in natural language (IAO_0000115), but also currently uses skos:definition and <rdfs:comment>def:
 
 * superclass (ideally a term from the current nmrCV.owl, or an own suggestion)
 
 Optional fields (good to have) are:
 
-* synonym (oboInOwl:hasExactSynonym)-->skos:altLabel
+* synonym (oboInOwl:hasExactSynonym), but also currently uses skos:altLabel
 
-* term definition source-->dc:source
+* term definition source (obo:IAO_0000119), but also currently uses dc:source
 
-* dc:creator-->dc:author
+* term editor (obo:IAO_0000117), but also currently uses dc:creator-->dc:author
 
-
-Here is an example (bold) of the definition of the 'acquisition nucleus' term (NMR:1400083) in the old form (using comments):
-
-```xml
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400083">
-        <rdfs:label rdf:datatype="&xsd;string">acquisition nucleus</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</rdfs:comment>
-    </owl:Class>
-```
 Here is an example (bold) of the definition of the 'acquisition nucleus' term (NMR:1400083) in the NEW form (using IAO_0000115 to capture metadata and incl a DL axiom):
 
 ```xml
@@ -74,7 +64,15 @@ http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_spectroscopy</obo:IAO_00
         <obo:IAO_0000115 xml:lang="en">The nucleus of an element with a non null net sping, whose resonances are being recorded during an NMR spectroscopy experiment. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</obo:IAO_0000115>
     </owl:Class>
 ```
+Here is an example (bold) of the definition of the 'acquisition nucleus' term (NMR:1400083) in the old form (using comments):
 
+```xml
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400083">
+        <rdfs:label rdf:datatype="&xsd;string">acquisition nucleus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
+        <rdfs:comment rdf:datatype="&xsd;string">def: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</rdfs:comment>
+    </owl:Class>
+```
 
 #### Top Level Ontology usage
 
