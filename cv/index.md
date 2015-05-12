@@ -20,11 +20,11 @@ You can view the documentation and download current and past releases here:
 
 ### nmrCV Overview
 
-The nmrCV.owl ontology momentarily contains ~ 600 classes under nmr namespace. Around 2000 terms are imported from the units ontology and BFO top level ontology.
+The nmrCV.owl ontology momentarily contains ~ 900 classes, most of them under nmr namespace but others imported (via MIREOT in Ontofox) from the units ontology, Chebi ontology, ChemO ontology , PSI-MS, OBI and BFO top level ontology.
 
-We choose the OWL Syntax  over the OBO format  as exchange syntax for the CV, as the OBO tools are instable, the OBO format is only established in the biology domain (lack of off-the-shelf development tools, OBO expressivity is not as formal as OWL-DL) and there are hence less resources to integrate with.
+We choose the OWL Syntax  over the OBO format as exchange syntax for the CV, as the OBO tools are instable, the OBO format is only established in the biology domain (lack of off-the-shelf development tools, OBO expressivity is not as formal as OWL-DL) and there are hence less resources to integrate with.
 
-We maintain a pure taxonomy without use of axiomatic definitions. Multiple parenthood is however allowed, but needs to be maintained manually, as DL reasoning is not possible without DL axiomatisations.
+We maintain a simple term taxonomy but have recently added mild Description Logics (DL) axiomatisations to key classes, i.e. for cases where DL-reasoning can help maintaining multiple parenthood and consistency checking of ontological concepts.
 
 #### Minimal metadata on a CV term
 
@@ -46,21 +46,35 @@ Optional fields (good to have) are:
 
 * dc:creator-->dc:author
 
-* example of usage-->skos:example
 
-
-
-Here is an example of the definition of the FID file term (NMR:1400119)
+Here is an example of the definition of the 'acquisition nucleus' term (NMR:1400083) in the old form:
 
 ```xml
-<owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400119">
-    <rdfs:label rdf:datatype="&xsd;string">FID file</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400267"/>
-    <rdfs:comment rdf:datatype="&xsd;string">def: A reference to a file containing the raw FID.
-synonym: FID file reference</rdfs:comment>
-    <oboInOwl:hasExactSynonym>FID file reference</oboInOwl:hasExactSynonym>
-</owl:Class>
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400083">
+        <rdfs:label rdf:datatype="&xsd;string">acquisition nucleus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000030"/>
+        <rdfs:comment rdf:datatype="&xsd;string">def: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</rdfs:comment>
+    </owl:Class>
 ```
+Here is an example of the definition of the 'acquisition nucleus' term (NMR:1400083) in the NEW form (using IAO to capture metadata and incl a DL axiom):
+
+```xml
+     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400083">
+        <rdfs:label rdf:datatype="&xsd;string">acquisition nucleus</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://nmrML.org/nmrCV#acquisition_nucleus_role"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
+        <obo:IAO_0000119>adapted from wikipedia:
+http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_spectroscopy</obo:IAO_0000119>
+        <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The nucleus of an element with a non null net sping, whose resonances are being recorded during an NMR spectroscopy experiment. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.</obo:IAO_0000115>
+    </owl:Class>
+```
+
 
 #### Top Level Ontology usage
 
