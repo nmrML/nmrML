@@ -1,12 +1,25 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/nmrCV-prs/OBI_imports.owl#"
-     xml:base="http://purl.obolibrary.org/obo/nmrCV-prs/OBI_imports.owl"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&obo;nmrCV-prs/OBI_imports.owl#"
+     xml:base="&obo;nmrCV-prs/OBI_imports.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/nmrCV-prs/OBI_imports.owl"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/">
+    <owl:Ontology rdf:about="&obo;nmrCV-prs/OBI_imports.owl"/>
     
 
 
@@ -18,36 +31,40 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">textual definition</rdfs:label>
-        <rdfs:label>definition</rdfs:label>
-        <rdfs:label xml:lang="en">definition</rdfs:label>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000111">
+        <rdfs:label>editor preferred term</rdfs:label>
+        <rdfs:label xml:lang="en">editor preferred label</rdfs:label>
+        <rdfs:label xml:lang="en">editor preferred term</rdfs:label>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
-        <obo:IAO_0000115 xml:lang="en">The official OBI definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
-        <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
-        <obo:IAO_0000111>definition</obo:IAO_0000111>
         <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">The concise, meaningful, and human-friendly name for a class or property preferred by the ontology developers. (US-English)</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">editor preferred label</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116">
-        <rdfs:label xml:lang="en">editor note</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology.</obo:IAO_0000115>
-        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obfoundry.org/obo/obi&gt;</obo:IAO_0000119>
-        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
-        <obo:IAO_0000111 xml:lang="en">editor note</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
-        <rdfs:label xml:lang="en">imported from</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">For external terms/classes, the ontology from which the term was imported</obo:IAO_0000115>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000112">
+        <rdfs:label xml:lang="en">example of usage</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A phrase describing how a class name should be used. May also include other kinds of examples that facilitate immediate understanding of a class semantics, such as widely known prototypical subclasses or instances of the class. Although essential for high level terms, examples for low level terms (e.g., Affymetrix HU133 array) are not</obo:IAO_0000115>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
-        <obo:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000111 xml:lang="en">imported from</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">example of usage</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000114">
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000114 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000114">
         <rdfs:label xml:lang="en">has curation status</rdfs:label>
         <obo:IAO_0000119 xml:lang="en">OBI_0000281</obo:IAO_0000119>
         <obo:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</obo:IAO_0000117>
@@ -55,69 +72,364 @@
         <obo:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</obo:IAO_0000117>
         <obo:IAO_0000111 xml:lang="en">has curation status</obo:IAO_0000111>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232">
-        <rdfs:label xml:lang="en">curator note</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">An administrative note of use for a curator but of no use for a user</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000111 xml:lang="en">curator note</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119">
-        <rdfs:label xml:lang="en">definition source</rdfs:label>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discussion on obo-discuss mailing-list, see http://bit.ly/hgm99w</obo:IAO_0000119>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000115">
+        <rdfs:label rdf:datatype="&xsd;string">definition</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">textual definition</rdfs:label>
+        <rdfs:label>definition</rdfs:label>
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+        <obo:IAO_0000111>definition</obo:IAO_0000111>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
         <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
-        <obo:IAO_0000111 xml:lang="en">definition source</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">formal citation, e.g. identifier in external database to indicate / attribute source(s) for the definition. Free text indicate / attribute source(s) for the definition. EXAMPLE: Author Name, URI, MeSH Term C04, PUBMED ID, Wiki uri on 31.01.2007</obo:IAO_0000115>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">The official OBI definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000117">
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000116">
+        <rdfs:label xml:lang="en">editor note</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obfoundry.org/obo/obi&gt;</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">editor note</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000117">
         <rdfs:label xml:lang="en">term editor</rdfs:label>
         <obo:IAO_0000116 xml:lang="en">20110707, MC: label update to term editor and definition modified accordingly. See http://code.google.com/p/information-artifact-ontology/issues/detail?id=115.</obo:IAO_0000116>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
         <obo:IAO_0000115 xml:lang="en">Name of editor entering the term in the file. The term editor is a point of contact for information regarding the term. The term editor may be, but is not always, the author of the definition, which may have been worked upon by several people</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
         <obo:IAO_0000111 xml:lang="en">term editor</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000118">
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000118 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000118">
         <rdfs:label xml:lang="en">alternative term</rdfs:label>
         <obo:IAO_0000115 xml:lang="en">An alternative name for a class or property which means the same thing as the preferred name (semantically equivalent)</obo:IAO_0000115>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
         <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
         <obo:IAO_0000111 xml:lang="en">alternative term</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111">
-        <rdfs:label xml:lang="en">editor preferred label</rdfs:label>
-        <rdfs:label>editor preferred term</rdfs:label>
-        <rdfs:label xml:lang="en">editor preferred term</rdfs:label>
-        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
-        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
-        <obo:IAO_0000115 xml:lang="en">The concise, meaningful, and human-friendly name for a class or property preferred by the ontology developers. (US-English)</obo:IAO_0000115>
-        <obo:IAO_0000111 xml:lang="en">editor preferred label</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112">
-        <rdfs:label xml:lang="en">example of usage</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">A phrase describing how a class name should be used. May also include other kinds of examples that facilitate immediate understanding of a class semantics, such as widely known prototypical subclasses or instances of the class. Although essential for high level terms, examples for low level terms (e.g., Affymetrix HU133 array) are not</obo:IAO_0000115>
-        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
-        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
-        <obo:IAO_0000111 xml:lang="en">example of usage</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000125"/>
     </owl:AnnotationProperty>
     
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000119">
+        <rdfs:label xml:lang="en">definition source</rdfs:label>
+        <obo:IAO_0000119 rdf:datatype="&xsd;string">Discussion on obo-discuss mailing-list, see http://bit.ly/hgm99w</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">definition source</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">formal citation, e.g. identifier in external database to indicate / attribute source(s) for the definition. Free text indicate / attribute source(s) for the definition. EXAMPLE: Author Name, URI, MeSH Term C04, PUBMED ID, Wiki uri on 31.01.2007</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000232">
+        <rdfs:label xml:lang="en">curator note</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An administrative note of use for a curator but of no use for a user</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">curator note</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000412">
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">For external terms/classes, the ontology from which the term was imported</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">imported from</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000125"/>
+    </owl:AnnotationProperty>
+    
+
+
+
 
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Datatypes
+    // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
     
+    <!-- http://purl.obolibrary.org/obo/OBI_0000304 -->
+    
+    <owl:ObjectProperty rdf:about="&obo;OBI_0000304">
+        <rdfs:label xml:lang="en">is_manufactured_by</rdfs:label>
+        <obo:IAO_0000117 xml:lang="en">Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117 xml:lang="en">Liju Fan</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">c is_manufactured_by o means that there was a process p in which c was built in which a person, or set of people or machines did the work(bore the &quot;Manufacturer Role&quot;, and those people/and or machines were members or of directed by the organization to do this.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">has_make</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">has_manufacturer</obo:IAO_0000118>
+        <obo:IAO_0000112 xml:lang="en">http://www.affymetrix.com/products/arrays/specific/hgu133.affx is_manufactered_by http://www.affymetrix.com/ (if we decide to use these URIs for the actual entities)</obo:IAO_0000112>
+        <obo:IAO_0000111 xml:lang="en">is_manufactured_by</obo:IAO_0000111>
+
+    </owl:ObjectProperty> 
+    
+    
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label xml:lang="en">part of</rdfs:label>
+        <obo:IAO_0000116 xml:lang="en">Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
+        <rdfs:seeAlso>http://www.obofoundry.org/ro/#OBO_REL:part_of</rdfs:seeAlso>
+        <obo:IAO_0000112 xml:lang="en">my brain is part of my body (continuant parthood, two material entities)</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)</obo:IAO_0000112>
+        <obo:IAO_0000111 xml:lang="en">part of</obo:IAO_0000111>
+        <obo:IAO_0000118 xml:lang="en">part_of</obo:IAO_0000118>
+        <obo:IAO_0000112 xml:lang="en">this day is part of this year (occurrent parthood)</obo:IAO_0000112>
+        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+        <obo:IAO_0000116 xml:lang="en">Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">a core relation that holds between a whole and its part</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">has part</obo:IAO_0000111>
+        <obo:IAO_0000118 xml:lang="en">has_part</obo:IAO_0000118>
+        <obo:IAO_0000112 xml:lang="en">my body has part my brain (continuant parthood, two material entities)</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this year has part this day (occurrent parthood)</obo:IAO_0000112>
+        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/BFO_0000054 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000054">
+        <rdfs:label xml:lang="en">realized in</rdfs:label>
+        <rdfs:comment>Paraphrase of elucidation: a relation between a realizable entity and a process, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process</rdfs:comment>
+        <obo:IAO_0000600 xml:lang="en">[copied from inverse property &#39;realizes&#39;] to say that b realizes c at t is to assert that there is some material entity d &amp; b is a process which has participant d at t &amp; c is a disposition or role of which d is bearer_of at t&amp; the type instantiated by b is correlated with the type instantiated by c. (axiom label in BFO2 Reference: [059-003])</obo:IAO_0000600>
+        <obo:IAO_0000118 xml:lang="en">is realized by</obo:IAO_0000118>
+        <obo:IAO_0000111 xml:lang="en">realized in</obo:IAO_0000111>
+        <obo:IAO_0000118 xml:lang="en">realized_in</obo:IAO_0000118>
+        <obo:IAO_0000112 xml:lang="en">this disease is realized in this disease course</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this fragility is realized in this shattering</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this investigator role is realized in this investigation</obo:IAO_0000112>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/BFO_0000055 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000055">
+        <rdfs:label xml:lang="en">realizes</rdfs:label>
+        <rdfs:comment>Paraphrase of elucidation: a relation between a process and a realizable entity, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process</rdfs:comment>
+        <obo:IAO_0000111 xml:lang="en">realizes</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en">this disease course realizes this disease</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this investigation realizes this investigator role</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this shattering realizes this fragility</obo:IAO_0000112>
+        <obo:IAO_0000600 xml:lang="en">to say that b realizes c at t is to assert that there is some material entity d &amp; b is a process which has participant d at t &amp; c is a disposition or role of which d is bearer_of at t&amp; the type instantiated by b is correlated with the type instantiated by c. (axiom label in BFO2 Reference: [059-003])</obo:IAO_0000600>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/BFO_0000062 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000062">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label xml:lang="en">preceded by</rdfs:label>
+        <obo:IAO_0000116 xml:lang="en">An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other.</obo:IAO_0000116>
+        <dc:source>http://www.obofoundry.org/ro/#OBO_REL:preceded_by</dc:source>
+        <obo:IAO_0000118 xml:lang="en">is preceded by</obo:IAO_0000118>
+        <obo:IAO_0000111 xml:lang="en">preceded by</obo:IAO_0000111>
+        <obo:IAO_0000118 xml:lang="en">preceded_by</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/BFO_0000063 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000063">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label xml:lang="en">precedes</rdfs:label>
+        <obo:IAO_0000111 xml:lang="en">precedes</obo:IAO_0000111>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136">
+        <rdfs:label xml:lang="en">is about</rdfs:label>
+        <obo:IAO_0000119 xml:lang="en">Smith, Ceusters, Ruttenberg, 2000 years of philosophy</obo:IAO_0000119>
+        <obo:IAO_0000112 xml:lang="en">This document is about information artifacts and their representations</obo:IAO_0000112>
+        <obo:IAO_0000111 xml:lang="en">is about</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">is_about is a (currently) primitive relation that relates an information artifact to an entity.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">person:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/IAO_0000219 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000219">
+        <rdfs:label xml:lang="en">denotes</rdfs:label>
+        <obo:IAO_0000112 xml:lang="en">A person&#39;s name denotes the person. A variable name in a computer program denotes some piece of memory. Lexically equivalent strings can denote different things, for instance &quot;Alan&quot; can denote different people. In each case of use, there is a case of the denotation relation obtaining, between &quot;Alan&quot; and the person that is being named.</obo:IAO_0000112>
+        <obo:IAO_0000119 xml:lang="en">Conversations with Barry Smith, Werner Ceusters, Bjoern Peters, Michel Dumontier, Melanie Courtot, James Malone, Bill Hogan</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">denotes</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">denotes is a primitive, instance-level, relation obtaining between an information content entity and some portion of reality. Denotation is what happens when someone creates an information content entity E in order to specifically refer to something. The only relation between E and the thing is that E can be used to &#39;pick out&#39; the thing. This relation connects those two together. Freedictionary.com sense 3: To signify directly; refer to specifically</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">person:Alan Ruttenberg</obo:IAO_0000117>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:comment>
+            <rdf:Description/>
+        </rdfs:comment>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/OBI_0000293 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293">
+        <rdfs:label xml:lang="en">has_specified_input</rdfs:label>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how &#39;has participant&#39; works.</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Larry Hunter</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Coutot</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">has_specified_input</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en">see is_input_of example_of_usage</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/OBI_0000295 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000295">
+        <rdfs:label xml:lang="en">is_specified_input_of</rdfs:label>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">is_specified_input_of</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en">some Autologous EBV(Epstein-Barr virus)-transformed B-LCL (B lymphocyte cell line) is_input_for instance of Chromum Release Assay described at https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299">
+        <rdfs:label xml:lang="en">has_specified_output</rdfs:label>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Larry Hunter</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Courtot</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">has_specified_output</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/OBI_0000312 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312">
+        <rdfs:label xml:lang="en">is_specified_output_of</rdfs:label>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">is_specified_output_of</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000056 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000056">
+        <rdfs:label xml:lang="en">participates in</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a relation between a continuant and a process, in which the continuant is somehow involved in the process</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">participates in</obo:IAO_0000111>
+        <obo:IAO_0000118 xml:lang="en">participates_in</obo:IAO_0000118>
+        <obo:IAO_0000112 xml:lang="en">this blood clot participates in this blood coagulation</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this input material (or this output material) participates in this process</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this investigator participates in this investigation</obo:IAO_0000112>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/RO_0000057 -->
+    
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000057">
+        <rdfs:label xml:lang="en">has participant</rdfs:label>
+        <obo:IAO_0000116 xml:lang="en">Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time.</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">a relation between a process and a continuant, in which the continuant is somehow involved in the process</obo:IAO_0000115>
+        <dc:source>http://www.obofoundry.org/ro/#OBO_REL:has_participant</dc:source>
+        <obo:IAO_0000111 xml:lang="en">has participant</obo:IAO_0000111>
+        <obo:IAO_0000118 xml:lang="en">has_participant</obo:IAO_0000118>
+        <obo:IAO_0000112 xml:lang="en">this blood coagulation has participant this blood clot</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this investigation has participant this investigator</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this process has participant this input material (or this output material)</obo:IAO_0000112>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:ObjectProperty>
+    
+
+
 
 
     <!-- 
@@ -133,63 +445,81 @@
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
+    <owl:Class rdf:about="&obo;BFO_0000015">
         <rdfs:label xml:lang="en">process</rdfs:label>
         <obo:IAO_0000115 xml:lang="en">A processual entity  that is a maximally connected spatiotemporal whole and has bona fide beginnings and endings corresponding to real discontinuities.</obo:IAO_0000115>
         <obo:IAO_0000111 xml:lang="en">process</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">the life of an organism</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">the process of cell-division</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">the process of sleeping</obo:IAO_0000112>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="&obo;obi.owl"/>
     </owl:Class>
     
+    <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
+    
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000011">
+        <rdfs:label xml:lang="en">planned process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&#39;Plan&#39; includes a future direction sense. That can be problematic if plans are changed during their execution. There are however implicit contingencies for protocols that an agent has in his mind that can be considered part of the plan, even if the agent didn&#39;t have them in mind before. Therefore, a planned process can diverge from what the agent would have said the plan was before executing it, by adjusting to problems encountered during execution (e.g. choosing another reagent with equivalent properties, if the originally planned one has run out.)</obo:IAO_0000116>
+        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6/11/9: Edited at workshop. Used to include: is initiated by an agent</obo:IAO_0000232>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Injecting mice with a vaccine in order to test its efficacy</obo:IAO_0000112>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branch derived</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">A processual entity that realizes a plan which is the concretization of a plan specification.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">This class merges the previously separated objective driven process and planned process, as they the separation proved hard to maintain. (1/22/09, branch call)</obo:IAO_0000232>
+        <obo:IAO_0000111 xml:lang="en">planned process</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0000094 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000094">
+    <owl:Class rdf:about="&obo;OBI_0000094">
         <rdfs:label xml:lang="en">material processing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell lysis, production of a cloning vector, creating a buffer.</obo:IAO_0000112>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Frank Gibson</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Jennifer Fostel</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Philippe Rocca Serra</obo:IAO_0000117>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000015"/>
+        <obo:IAO_0000112 rdf:datatype="&xsd;string">A cell lysis, production of a cloning vector, creating a buffer.</obo:IAO_0000112>
+        <obo:IAO_0000117 rdf:datatype="&xsd;string">PERSON: Frank Gibson</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="&xsd;string">PERSON: Jennifer Fostel</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="&xsd;string">PERSON: Melanie Courtot</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="&xsd;string">PERSON: Philippe Rocca Serra</obo:IAO_0000117>
         <obo:IAO_0000115 xml:lang="en">A planned process which results in physical changes in a specified input material</obo:IAO_0000115>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
         <obo:IAO_0000117 xml:lang="en">PERSON: Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000111 xml:lang="en">material processing</obo:IAO_0000111>
         <obo:IAO_0000118 xml:lang="en">material transformation</obo:IAO_0000118>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
+        <obo:IAO_0000412 rdf:resource="&obo;obi.owl"/>
     </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0000227 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000227">
+    <owl:Class rdf:about="&obo;OBI_0000227">
         <rdfs:label xml:lang="en">data encoding</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000015"/>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000232 xml:lang="en">We (protocol application branch) placed this term because it kept getting bounced from data transformation and DENRIE</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">a documenting process to encode an information entity into a digital document</obo:IAO_0000115>
         <obo:IAO_0000111 xml:lang="en">data encoding</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">storage of measurement results from an assay into a text file, such as</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="&obo;obi.owl"/>
     </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0200000 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0200000">
+    <owl:Class rdf:about="&obo;OBI_0200000">
         <rdfs:label xml:lang="en">data transformation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The application of a clustering protocol to microarray data or the application of a statistical testing method on a primary data set to determine a p-value.</obo:IAO_0000112>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000015"/>
+        <obo:IAO_0000117 rdf:datatype="&xsd;string">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000112 rdf:datatype="&xsd;string">The application of a clustering protocol to microarray data or the application of a statistical testing method on a primary data set to determine a p-value.</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">A planned process that produces output data from input data.</obo:IAO_0000115>
         <obo:IAO_0000119 xml:lang="en">Branch editors</obo:IAO_0000119>
         <obo:IAO_0000117 xml:lang="en">Elisabetta Manduchi</obo:IAO_0000117>
@@ -202,76 +532,991 @@
         <obo:IAO_0000118 xml:lang="en">data analysis</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">data processing</obo:IAO_0000118>
         <obo:IAO_0000111 xml:lang="en">data transformation</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
+        <obo:IAO_0000412 rdf:resource="&obo;obi.owl"/>
     </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0200169 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0200169">
+    <owl:Class rdf:about="&obo;OBI_0200169">
         <rdfs:label xml:lang="en">normalization data transformation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</obo:IAO_0000117>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
+        <obo:IAO_0000117 rdf:datatype="&xsd;string">James Malone</obo:IAO_0000117>
         <obo:IAO_0000115 xml:lang="en">A normalization data transformation is a data transformation that has objective normalization.</obo:IAO_0000115>
         <obo:IAO_0000119 xml:lang="en">PERSON: James Malone</obo:IAO_0000119>
         <obo:IAO_0000111 xml:lang="en">normalization data transformation</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000123"/>
+        <obo:IAO_0000412 rdf:resource="&obo;obi.owl"/>
     </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0200185 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0200185">
+  <!--  <owl:Class rdf:about="&obo;OBI_0200185">
         <rdfs:label xml:lang="en">scaling data transformation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0200000"/>
         <obo:IAO_0000115 xml:lang="en">A scaling data transformation is a data transformation that has objective scaling.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">James Malone</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">PERSON: James Malone</obo:IAO_0000119>
         <obo:IAO_0000111 xml:lang="en">scaling data transformation</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </owl:Class>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
+        <obo:IAO_0000412 rdf:resource="&obo;obi.owl"/>
+    </owl:Class> -->
     
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0600013 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600013">
+    <owl:Class rdf:about="&obo;OBI_0600013">
         <rdfs:label xml:lang="en">information acquisition</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data collection</obo:IAO_0000118>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000015"/>
+        <obo:IAO_0000118 rdf:datatype="&xsd;string">data collection</obo:IAO_0000118>
         <obo:IAO_0000115 xml:lang="en">An acquisition in which possession of information is gained.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000116>This excludes processes that create or change information, such as assays and data transformations.</obo:IAO_0000116>
         <obo:IAO_0000112 xml:lang="en">Gathering all influenza HA sequences from GenBank, Retrieveing HLA allele frequencies in the North American populations from dbMHC</obo:IAO_0000112>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
+        <obo:IAO_0000116>This excludes processes that create or change information, such as assays and data transformations.</obo:IAO_0000116>
         <obo:IAO_0000111 xml:lang="en">information acquisition</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
+        <obo:IAO_0000412 rdf:resource="&obo;obi.owl"/>
     </owl:Class>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000070 -->
+    
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000070">
+        <rdfs:label xml:lang="en">assay</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house.</obo:IAO_0000112>
+        <obo:OBI_9991118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any method</obo:OBI_9991118>
+        <obo:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study assay</obo:OBI_0001847>
+        <obo:IAO_0000116>12/3/12: BP: the reference to the &#39;physical examination&#39; is included to point out that a prediction is not an assay, as that does not require physical examiniation. </obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">assay</obo:IAO_0000111>
+        <obo:IAO_0000118 xml:lang="en">measuring</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">scientific observation</obo:IAO_0000118>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+    <!-- http://purl.obolibrary.org/obo/OBI_0000366 -->
+    
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000366">
+        <rdfs:label xml:lang="en">metabolite profiling</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI</obo:IAO_0000119>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolite assay</obo:IAO_0000118>
+        <obo:IAO_0000112 xml:lang="en">Metabolite profiling of human colon carcinoma - deregulation of TCA cycle and amino acid turnover. Mol Cancer. 2008 Sep 18;7(1):72. PMID: 18799019</obo:IAO_0000112>
+        <obo:IAO_0000111 xml:lang="en">metabolite profiling</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">metabolite profiling is a process which aims at detecting and identifying chemical entities resulting from biochemical and cellular metabolism</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+    
+    
+    <!-- http://purl.obolibrary.org/obo/OBI_0000443 -->
+    
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000443">
+        <rdfs:label xml:lang="en">analyte assay</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Bjoern Peters, Helen Parkinson, Philippe Rocca-Serra, Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000116>2013-09-23: simplify equivalent axiom</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">An assay with the objective to capture information about the presence, concentration, or amount of an analyte in an evaluant.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">Note: is_realization of some analyte role isn&#39;t always true, for example when there is none of the analyte in the evaluant. For the moment we are writing it this way, but when the information ontology is further worked out this will be replaced with a condition discussing the measurement.</obo:IAO_0000116>
+        <obo:IAO_0000111 xml:lang="en">analyte assay</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en">example of usage: In lab test for blood glucose, the test is the assay, the blood bears evaluant_role and glucose bears the analyte role. The evaluant is considered an input to the assay and the information entity that records the measurement of glucose concentration the output</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>    
+    
+    
+
     <!-- http://purl.obolibrary.org/obo/OBI_0600014 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600014">
+    <owl:Class rdf:about="&obo;OBI_0600014">
         <rdfs:label xml:lang="en">material component separation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0000094"/>
         <obo:IAO_0000117 xml:lang="en">Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
         <obo:IAO_0000112 xml:lang="en">Using a cell sorter to separate a mixture of T cells into two fractions; one with surface receptor CD8 and the other lacking the receptor, or purification</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a material processing in which components of an input material become segregated in space</obo:IAO_0000115>
         <obo:IAO_0000111 xml:lang="en">material component separation</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
+        <obo:IAO_0000412 rdf:resource="&obo;obi.owl"/>
+    </owl:Class>
+
+
+
+
+
+<!-- http://purl.obolibrary.org/obo/OBI_0000968 -->
+
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000968">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material entity that is designed to perform a function in a scientific investigation, but is not a reagent.</obo:IAO_0000115>
+    <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A voltmeter is a measurement device which is intended to perform some measure function.</obo:IAO_0000112>
+    <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An autoclave is a device that sterlizes instruments or contaminated waste by applying high temperature and pressure.</obo:IAO_0000112>
+    <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI development call 2012-12-17.</obo:IAO_0000119>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Helen Parkinson</obo:IAO_0000117>
+    <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device</obo:IAO_0000111>
+    <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">instrument</obo:IAO_0000118>
+    <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+</owl:Class>
+
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000467 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000467">
+        <rdfs:label xml:lang="en">Bruker US 2 NMR magnet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000597"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400189</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An actively-shielded superconducting magnet from Bruker that combines Bruker BioSpin&#39;s advanced, proprietary UltraShield active shielding and UltraStabilized sub-cooling technologies. This shielded and stabilized (US2) magnet system delivers high sensitivity and spectral dispersion.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker US 2 NMR magnet</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.bruker-biospin.com/nmr_magnets_950us2.html&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000477 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000477">
+        <rdfs:label xml:lang="en">Varian GEMINI spectrometer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000611"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400239</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An older Varian Broadband NMR spectrometer.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">Varian GEMINI spectrometer</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000479 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000479">
+        <rdfs:label xml:lang="en">solid NMR probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000516"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400243</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR probe that is designed to hold a solid sample.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR device</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">solid NMR probe</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000480 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000480">
+        <rdfs:label xml:lang="en">Bruker high resolution probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000561"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400223</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">BRUKER BIOSPIN&#39;s experienced Research &amp; Development group not only delivers top-performance probes for the more common experiments, but also a wealth of special probes for almost any application. For high resolution (HR) NMR we offer probes with a variety of important characteristics and features.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker high resolution probe</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">HR Probe</obo:IAO_0000118>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000483 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000483">
+        <rdfs:label xml:lang="en">APOLLO console</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000599"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400249</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">APOLLO console</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument/NMR console</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The APOLLO is a compact, modular, multiple-DSP, Windows XP Professional-based console that can be equipped with up to 8 DDS-based RF transmitter channels configurable from 2 kHz to 3.5 GHz. Each transmitter channel produces a nominal 1V output and has the most agile frequency, phase and amplitude control of any system on the market. An array of additional options are available including multiple RF transmitters, linear high-power RF amplifiers, digital receiver arrays, low noise figure preamplifiers, a gradient control system, shim unit, MAS spin-speed controller, variable temperature unit, digital lock system and probe/coil interface. With its numerous options, the Apollo can be configured for any NMR, NQR or MRI application.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.tecmag.com/apollo.htm&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000486 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000486">
+        <rdfs:label xml:lang="en">continuous wave NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000566"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400283</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">Continuous wave NMR spectrometers are similar to optical spectrometers, but the sample is held in a strong magnetic field, where the frequency of the source is slowly scanned (in some instruments, the source frequency is held constant, and the field is scanned).</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm&gt;</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">continuous wave NMR instrument</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000487 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000487">
+        <rdfs:label xml:lang="en">fourier transformation NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000566"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400284</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm&gt;</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">In fourier transformation NMR, all frequencies in a spectrum are irradiated simultaneously with a radio frequency pulse. Following the pulse, the nuclei return to thermal equilibrium. A time domain emission signal is recorded by the instrument as the nuclei relax. A frequency domain spectrum is obtained by Fourier transformation.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">fourier transformation NMR instrument</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000491 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000491">
+        <rdfs:label xml:lang="en">direct detection NMR probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000516"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400280</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR probe designed to allow the direct detection of acquisition nuclei.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR device</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">direct detection NMR probe</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000499 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000499">
+        <rdfs:label xml:lang="en">NMR console</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400015</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">A component of an NMR instrument that controls the activities of the other components.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">NMR console</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument, TODO: same as or part of acquisition computer?</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000503 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000503">
+        <rdfs:label xml:lang="en">Bruker LC-NMR platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000596"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400276</obo:IAO_0000119>
+        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hyphenated NMR instrument platform</obo:IAO_0000232>
+        <obo:IAO_0000111 xml:lang="en">Bruker LC-NMR platform</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The LC-NMR/MS setup was first introduced by Bruker BioSpin in 1999. An LC-NMR system including a Bruker Peak Sampling Unit (BPSU-36) was coupled with a Bruker Daltonics esquire series ion trap mass spectrometer via a Bruker NMR-MS interface (BNMI). Since October 2004 the Bruker Daltonics microTOF-LC time-of-flight mass spectrometer can also be integrated in an LC-NMR setup.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.bruker-biospin.com/hyphenation_lcnmr_ms.html&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000513 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000513">
+        <rdfs:label xml:lang="en">DISCOVERY console</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000599"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400247</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">DISCOVERY console</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument/NMR console</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The Discovery console is a Windows XP Professional-based, integrated console designed especially for Solid-State NMR. The console includes everything needed to interface to any magnet and solids probe - from computer to cables to duplexing network.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000514 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000514">
+        <rdfs:label xml:lang="en">Bruker AMX series NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000596"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400240</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">A series of older Bruker NMR magnets, now out of production. The Bruker AMX500 has proven an extremely reliable workhorse, with excellent lineshape yielding superior water suppression even without gradients. The Oxford 11.7 Tesla 5.2 cm bore magnet rests on a TMC vibration damping table. Homogeneity is controlled by a BSN-18 and BSN-2 with 19 shim controls. In addition to the 5 mm triple resonance probe, the AMX is equipped with a 10mm broadband observe probe.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker AMX series NMR instrument</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.tufts.edu/med/biochemistry/NMR/amx500.html&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000516 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000516">
+        <rdfs:label xml:lang="en">NMR probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400014</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000111 xml:lang="en">NMR probe</obo:IAO_0000111>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">Part of an NMR instrument that detects the signals emitted from a sample. No single probe can perform the full range of experiments, and probes that are designed to perform more than one type of measurement usually suffer from performance compromises. The probe represents a rather fragile single point of failure that can render an NMR system completely unusable if the probe is dropped or otherwise damaged. Probes are usually characterised by Sample diameter and Frequency.\n  alt The instrument that transmits and receives radiofrequency to and from the NMR sample.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000517 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000517">
+        <rdfs:label xml:lang="en">NMR magnet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400185</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">A magnet which induces a certain frequency (MHz) and which has a certain bore diameter.\n  alt The NMR signal is a natural physical property of the certain atomic nuclei but it can only be detected with an external magnetic field. A magnet is a fundamental part of an NMR instrument which induces an electromagnetic force field (RF pulse) and by this excites and aligns the spins of the electrons of the NMR acquisition nucleus. It is usually a big (superconducting) electromagnet which is cooled by liquid helium and can be adjusted to a frequency between 200 and 950 MHz. The magnetic field strength is measured in Tesla or Gauss.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000111 xml:lang="en">NMR magnet</obo:IAO_0000111>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000527 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000527">
+        <rdfs:label xml:lang="en">flow high resolution probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000480"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400195</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">Hyphenated analytical techniques combining mass spectrometry and chromatography are well-established laboratory tools. The combination of chromatography and NMR has also made its way into the analytical laboratory. Further developments even combine all three techniques into an LC-NMR/NMR-MS system. The use of solid phase extraction provides an efficient interface between chromatography and NMR with demands for special type of flow probes.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">flow HR-probe</obo:IAO_0000118>
+        <obo:IAO_0000111 xml:lang="en">flow high resolution probe</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000529 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000529">
+        <rdfs:label xml:lang="en">JEOL NMR probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000516"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400232</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR probe that is manufactured by JEOL.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">JEOL NMR probe</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR device</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000530 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000530">
+        <rdfs:label xml:lang="en">Bruker UltraShield Plus NMR magnet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000597"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400190</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR magnet of which Brukers claims it is the latest and most advanced self-shielding NMR magnet technology ever developed. These magnets are the ultimate advancement in high performance, actively-shielded NMR solutions. They offer unprecedented shielding performance whilst ensuring no compromise in system homogeneity, stability or cryogenic specifications.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker UltraShield Plus NMR magnet</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.bruker-biospin.com/nmr_magnets_usplus.html&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000531 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000531">
+        <rdfs:label xml:lang="en">Bruker CryoProbe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000561"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400191</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">Bruker CryoProbe</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The Bruker BioSpin CryoProbe is a high-performance cryogenically cooled probe developed for high-resolution applications. It has improved signal/noise (S/N) ratios obtained by reducing the operating temperature of the coil and the pre-amplifier. As a result, the efficiency of the coil is improved and the noise of the coil and the pre-amplifier are reduced.The dramatic increase in the S/N ratio by a factor of 3-4, as compared to conventional probes, leads to a possible reduction in experiment time of up to 16 or a reduction in required sample concentration by a factor of up to 4. The CryoProbes possess key characteristics for NMR analysis:\n   Significant S/N gains (with moderately salty samples also)\n   Short pulse widths\n   Short ring down times\n   Linear behavior in power response\n   Gradient capability\n   CryoProbes are available as Triple Resonance, Dual, Selective X Detection, MicroImaging, and Quad Nucleus Probes configurations at 400 MHz and higher\n   All high resolution probes have a lock circuit\n   All high resolution probes have Z-gradient.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000539 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000539">
+        <rdfs:label xml:lang="en">imaging NMR probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000516"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400244</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR probe that is designed for generating pictures from sample states via NMR imaging.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR device</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">imaging NMR probe</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000541 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000541">
+        <rdfs:label xml:lang="en">Bruker AC series NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000596"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400241</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">A series of older Bruker NMR magnets, now out of production.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker AC series NMR instrument</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000553 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000553">
+        <rdfs:label xml:lang="en">Bruker Capillary LC-NMR platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000596"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400279</obo:IAO_0000119>
+        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hyphenated NMR instrument platform</obo:IAO_0000232>
+        <obo:IAO_0000111 xml:lang="en">Bruker Capillary LC-NMR platform</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">Capillary LC-NMR is a hyphenated technique coupling capillary liquid chromatography and NMR, which increases sensitivity dramatically through the use of miniaturization of the chromatographic techniques and NMR detection volume. LC-NMR hyphenated systems separate a mixture into its pure components and couple the output to NMR for automatic sample analysis. The ever increasing need to measure lower sample amounts and lower level impurities demands the highest NMR sensitivity. Traditional LC-NMR systems with relatively large peak volumes are not optimized for such low levels of detection. Bruker BioSpin, together with Waters and Protasis has developed a Capillary LC-NMR system. The latest capillary LC attributes and highest capillary flow probe sensitivity combine with state of the art NMR systems technology. Greater mass sensitivity and faster spectral analysis with smaller sample volumes is possible. This system is ideal for analysis of metabolites and impurities associated with the drug development process.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.bruker-biospin.com/hyphenation_caplcnmr.html&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000558 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000558">
+        <rdfs:label xml:lang="en">Varian UNITY INOVA spectrometer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000611"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400236</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The UNITY INOVA is also the easiest spectrometer to use and is also the choice of those interested in using advanced NMR techniques in their own research, but without becoming, or hiring, an NMR expert. A complete set of turnkey operating environments is available for the UNITY INOVA covering the structure and dynamics of biological macromolecules, small molecules, solids, and imaging. These packages put the combined NMR expertise of the entire Varian NMR community at your fingertips.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Varian UNITY INOVA spectrometer</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.varianinc.com/cgi-bin/nav?products/NMR/spectromet/inova/index&amp;cid=HFIH&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000559 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000559">
+        <rdfs:label xml:lang="en">liquid NMR probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000516"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400242</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR probe that is designed to hold a liquid sample.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR device</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">liquid NMR probe</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000561 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000561">
+        <rdfs:label xml:lang="en">Bruker NMR probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000516"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400231</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR probe that is manufactured by Bruker.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker NMR probe</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR device, TODO: May need no definition.</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000564 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000564">
+        <rdfs:label xml:lang="en">tecmag EAGLE probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000479"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400248</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The Eagle is a 4 mm 1H/X solid-state MAS probe with a top spinning speed of 18 kHz. Its simple design is robust, reliable and easy to spin. Configurations are available for 200 to 600 MHz wide bore magnets on Tecmag, Bruker, Chemagnetics, JEOL and Varian spectrometers.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">tecmag EAGLE probe</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000566 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000566">
+        <rdfs:label xml:lang="en">NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400059</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An Instrument which is used to carry out a NMR analysis of some sample.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">NMR instrument</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000118 xml:lang="en">NMR instrument</obo:IAO_0000118>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000567 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000567">
+        <rdfs:label xml:lang="en">Bruker UltraShield NMR magnet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000597"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400187</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR magnet manufactured by Bruker that ensures field homogeneity without amplified effects from vibrations or thermal changes. This magnet technology uses active shielding and optimizes coil design.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker UltraShield NMR magnet</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.bruker-biospin.com/nmr_magnets_us.html?&amp;print=http%3A%2Fitsupportunit.com%2Fawstats%2Ficon%2Fnisum%2Fivuj%2F&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000575 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000575">
+        <rdfs:label xml:lang="en">Bruker Ultrastabilized NMR magnet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000597"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400188</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR magnet manufactured by Bruker for Ultra-High Field NMR, available from 750 MHz to 900 MHz, which provides reliable operation at reduced temperature and ambient pressure via being rigidly mounted and stabilized.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker Ultrastabilized NMR magnet</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.bruker-biospin.com/nmr_magnets_ultrastabilized.html?&amp;print=http%3A%2Fitsupportunit.com%2Fawstats%2Ficon%2Fnisum%2Fivuj%2F&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000579 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000579">
+        <rdfs:label xml:lang="en">Varian UNITY spectrometer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000611"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400237</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The predecessor series of the Varian UNITY INOVA spectrometer.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Varian UNITY spectrometer</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.scs.uiuc.edu/NMR/instruments/u400.php&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000580 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000580">
+        <rdfs:label xml:lang="en">AVANCE II spectrometer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000596"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400197</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">A spectrometer suitable for metabolomics and in vivo NMR studies but structural analysis of small molecules and low molecular weight proteins can also be performed. To accomplish these studies there are six probe-heads available. A successor, the AVANCE III came out recently.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">AVANCE II spectrometer</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://cermax.itqb.unl.pt/mambo/en/index.php?option=com_content&amp;task=view&amp;id=36&amp;Itemid=93&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000582 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000582">
+        <rdfs:label xml:lang="en">Bruker LC-NMR/MS platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000596"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400277</obo:IAO_0000119>
+        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hyphenated NMR instrument platform</obo:IAO_0000232>
+        <obo:IAO_0000111 xml:lang="en">Bruker LC-NMR/MS platform</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">Includes the connection to a high-resolution TOF-LC-MS system.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000590 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000590">
+        <rdfs:label xml:lang="en">Bruker 1mm MicroProbe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000561"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400194</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">Bruker 1mm MicroProbe</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000115 xml:lang="en">Over the past few years there has been a significantly growing demand for miniaturization in all areas ofmodern research and development. Evoked by many exciting applications, there is a need for analytical methods which require less amounts of sample. Bruker BioSpin meets this challenge with a revolutionary NMR probe design: The 1mm MicroProbe. It operates with disposable 1mm capillary sample tubes and the sample volume of 5 microliters enables the use of lowest amounts of sample to run all high resolution NMR experiments with outstanding sensitivity and up to 16 times faster measurements. Due to the TXI-type probe design, the z-gradient coil and the automatic matching and tuning accessory, the 1mm MicroProbe can be used for a wide variety of NMR experiments. The key advantages of this probe include:\n   up to 4 times higher mass sensitivity than 5mm conventional probes (with respect to the same sample amount)\n   excellent solvent suppression properties\n   virtually no salt effect\n   discrete samples in tubes that can be sealed and stored\n   automation accessory for sample preparation and handling available.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000596 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000596">
+        <rdfs:label xml:lang="en">Bruker NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000566"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400198</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR instrument that is manufactured by Bruker.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker NMR instrument</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000597 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000597">
+        <rdfs:label xml:lang="en">Bruker NMR magnet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000517"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400186</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR magnet that is manufactured by Bruker.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker NMR magnet</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000599 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000599">
+        <rdfs:label xml:lang="en">tecmag NMR console</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000499"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400246</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR console manufactured by tecmac.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">tecmag NMR console</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000600 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000600">
+        <rdfs:label xml:lang="en">JEOL NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000566"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400226</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR instrument that is manufactured by JEOL.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">JEOL NMR instrument</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000607 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000607">
+        <rdfs:label xml:lang="en">high resolution magic angle spin probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000480"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400192</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">Samples that are neither solid nor liquid, being of biological, chemical, or pharmaceutical interest, reveal highly resolved spectra when magic angle spinning is applied. The correct solution is a gradient, such that the field varies along the spinner axis. This so-called Magic Angle Gradient is employed in Brukers high resolution Magic Angle Spinning (hr-MAS) probes, and is implemented in such a way that it is compatible with the stator and does not interfere with the sample eject or insert. Bruker BioSpin has developed a series of dedicated probes for standard bore magnets to accommodate the rapidly expanding field of hr-MAS. These probes are available in double (e.g. 1H and 13C) and triple resonance (e.g. 1H, 13C, 15N) modes and come equipped with a deuterium lock channel. The probes have automatic sample ejection and insertion capability, with the availability of an optional sample changer, enabling fully automated sample runs. Probes can be equipped with an optional B0 gradient, directed along the magic angle, so that gradient spectroscopy can be done used.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">high resolution MAS, hr-MAS</obo:IAO_0000118>
+        <obo:IAO_0000111 xml:lang="en">high resolution magic angle spin probe</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000611 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000611">
+        <rdfs:label xml:lang="en">Varian NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000566"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400234</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR instrument that is manufactured by Varian.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">Varian NMR instrument</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000613 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000613">
+        <rdfs:label xml:lang="en">Bruker SPE-NMR platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000596"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400278</obo:IAO_0000119>
+        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hyphenated NMR instrument platform</obo:IAO_0000232>
+        <obo:IAO_0000115 xml:lang="en">A Solid Phase Extraction (SPE) system provides an interface between liquid chromatography (LC) and NMR. For the process of LC-SPE  NMR a chromatographic separation is done and the peaks of interest are trapped on an individual SPE cartridge after the column. The peak selection is done either by UV detection or by evaluation of the on-line registered MS or MSn spectra.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker SPE-NMR platform</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000616 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000616">
+        <rdfs:label xml:lang="en">high resolution probe with automatic tuning and matching</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000480"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400224</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">High Resolution Probes with Automatic Tuning and Matching, HR_probe_with_ATM</obo:IAO_0000118>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The Automatic Tuning and Matching (ATM) option for AVANCE spectrometers is available for double resonance probes in fixed-frequency and broadband tunable configurations with either direct or indirect detection. Thus, for multinuclear operation, as often required for applications in inorganic chemistry, ATM facilitates the accurate setting of 90 degree pulse widths on both observe and decoupling channels for each chosen nucleus and each individual sample - even with full automation. Triple resonance probes in fixed-frequency configurations, as typically used for inverse detection with high-field systems.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">high resolution probe with automatic tuning and matching</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000620 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000620">
+        <rdfs:label xml:lang="en">Bruker micro imaging probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000561"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400225</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">Bruker micro imaging probe</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">For medical, biological and material sciences research, avance imaging systems provide optimal object handling and performance with a variety of samples types. Two classes of imaging probes are available: in vivo probes for handling and sustaining live objects such as animals and plants, and conventional imaging probes for materials samples.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.bruker-biospin.com/probes_microimaging.html&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000623 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000623">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR spectroscopy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic profiling studies on the toxicological effects of realgar in rats by (1)H NMR spectroscopy.  Wei L, Liao P, Wu H, Li X, Pei F, Li W, Wu Y. Toxicol Appl Pharmacol. 2008 Nov 25. PMID: 19073202</obo:IAO_0000112>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR spectroscopy</obo:IAO_0000111>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR spectroscopy is a process which exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to deduce  identity of chemical as well as composition of complex chemical mixtures.</obo:IAO_0000115>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear magnetic resonance spectroscopy</obo:IAO_0000118>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adapted from Wikipedia</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000625 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000625">
+        <rdfs:label xml:lang="en">JEOL ECX NMR spectrometer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000600"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400227</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">JEOL ECX NMR spectrometer</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The ECX series of NMR spectrometers is designed for any laboratory needing an easy-to-use, reliable, routine NMR system. The ECX NMR series is available from 300 to 500 MHz. The console is designed around a modular, digital NMR electronics chassis controlled by an intelligent acquisition computer. For unprecedented flexibility, the JEOL NMR system offers a Windows XP, Mac OSX or LINUX. Both the workstation and spectrometer may be connected to a standard network, allowing seamless remote operation anywhere in the world.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.jeol.com/PRODUCTS/AnalyticalInstruments/NuclearMagneticResonance/ECX/tabid/145/Default.aspx&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000629 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000629">
+        <rdfs:label xml:lang="en">Bruker solid magic angle spinning probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000561"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400193</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">Bruker solid magic angle spinning probe</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">Magic angle spinning, nowadays a routine technique for solids NMR, still offers the capability of innovation. The high mechanical performance of MAS probes in conjunction with efficient rf pulse techniques open new exciting fields in solids NMR of biological samples and in the field of quadrupolar nuclei.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">solid MAS probe</obo:IAO_0000118>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000631 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000631">
+        <rdfs:label xml:lang="en">Varian MERCURY spectrometer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000611"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400235</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">MERCURYplus spectrometers provide superior control, stability, and performance for high-productivity environments. Surface-mount electronics enable a small footprint without compromising data quality. Modular design allows flexible configuration. Direct digital synthesis, linear amplifiers, and other innovative RF and digital technologies enable push-button operation.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">Varian MERCURY spectrometer</obo:IAO_0000111>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.varianinc.com/cgi-bin/nav?varinc/docs/products/NMR/spectromet/mercury/index&amp;cid=975JINLIKLRMPGLMNOILJ&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000632 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000632">
+        <rdfs:label xml:lang="en">Bruker Metabolic Profiler</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000596"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400199</obo:IAO_0000119>
+        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hyphenated NMR instrument platform</obo:IAO_0000232>
+        <obo:IAO_0000115 xml:lang="en">An NMR platform for conducting metabonomics studies, traditional metabolism studies, and analysis of complex mixtures, featuring an Avance NMR spectrometer and a microTOF from Bruker Daltonics. By combining the structural resolving power of NMR with mass accuracy of the microTOF Bruker offers a complete system for metabolic research. The Metabolic Profiler provides a simple, easy to use and inexpensive base-system to acquire the spectroscopic data, needed to do basic metabolic profiling including metabonomic statistical analysis.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">Bruker Metabolic Profiler</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.bruker-biospin.com/metabolicprofiler.html&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000635 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000635">
+        <rdfs:label xml:lang="en">JEOL CapNMR probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000529"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400233</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">JEOL CapNMR probe</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR probe</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The JEOL ECA and ECX NMR spectrometers now support the MRM/Protasis CapNMR Probe for well plate-based and microvial-based NMR analysis. The CapNMR probe is available at proton frequencies ranging from 300 MHz to 800 MHz in both indirect configurations (e.g. 1H{13C} and 1H {31P}) and also in triple resonance configurations (e.g. 1H{13C, 15N}, 1H{31P, 15N}). Both employ a high-strength z-directed field gradient. The flowprobes come with the choice of two flowcell volumes: a 5 μl flowcell with an NMR active volume of 2.5 μl, and a 10 μl flowcell with an NMR active volume of 5 μl. The fluidic connections are 75 μm i.d. and 1/32 o.d. FEP Teflon with hastelloy unions for exceptional solvent compatibility.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.jeol.com/PRODUCTS/AnalyticalInstruments/NuclearMagneticResonance/CapNMRProbe/tabid/396/Default.aspx&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000640 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000640">
+        <rdfs:label xml:lang="en">indirect detection probe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000516"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400281</obo:IAO_0000119>
+        <obo:IAO_0000115 xml:lang="en">An NMR probe designed to allow the indirect detection of acquisition nuclei.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:&lt;http://msi-ontology.sourceforge.net&gt;</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">NMR device</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">indirect detection probe</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000641 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000641">
+        <rdfs:label xml:lang="en">JEOL ECA NMR spectrometer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000600"/>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://msi-ontology.sourceforge.net/ontology/NMR.owl#msi_400228</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">JEOL ECA NMR spectrometer</obo:IAO_0000111>
+        <obo:IAO_0000232 xml:lang="en">NMR instrument</obo:IAO_0000232>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The ECA series of NMR spectrometers is a high performance, research grade NMR system configurable to a wide range off applications. The ECA NMR is available from 300 to 930 MHz field strengths and is 1GHz ready. The system is designed around a modular, digital NMR electronics chassis controlled from a UNIX or Windows workstation and acquisition system. Both the workstation and spectrometer may be connected to a standard network, allowing seamless remote operation anywhere in the world.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">WEB:&lt;http://www.jeol.com/PRODUCTS/AnalyticalInstruments/NuclearMagneticResonance/ECA/tabid/146/Default.aspx&gt;</obo:IAO_0000119>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 3.2.4.1806) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 

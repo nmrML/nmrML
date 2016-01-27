@@ -1,13 +1,25 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/nmrCV-prs/CHMO_imports.owl#"
-     xml:base="http://purl.obolibrary.org/obo/nmrCV-prs/CHMO_imports.owl"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY oboInOwl "http://www.geneontology.org/formats/oboInOwl#" >
+]>
+
+
+<rdf:RDF xmlns="&obo;nmrCV-prs/CHMO_imports.owl#"
+     xml:base="&obo;nmrCV-prs/CHMO_imports.owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/nmrCV-prs/CHMO_imports.owl"/>
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/">
+    <owl:Ontology rdf:about="&obo;nmrCV-prs/CHMO_imports.owl"/>
     
 
 
@@ -19,29 +31,48 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</rdfs:label>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
-        <rdfs:label xml:lang="en">imported from</rdfs:label>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#creation_date"/>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_exact_synonym</rdfs:label>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#created_by"/>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000115">
+        <rdfs:label rdf:datatype="&xsd;string">definition</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000412">
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#created_by -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;created_by"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#creation_date -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;creation_date"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;hasExactSynonym">
+        <rdfs:label rdf:datatype="&xsd;string">has_exact_synonym</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;id"/>
     
 
 
@@ -58,8 +89,8 @@
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000118 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000118">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has proper occurrent part</rdfs:label>
+    <owl:ObjectProperty rdf:about="&obo;BFO_0000118">
+        <rdfs:label rdf:datatype="&xsd;string">has proper occurrent part</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -71,6 +102,10 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
+
+    
+
+
     <!-- http://nmrML.org/nmrCV#NMR:1000190 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000190"/>
@@ -79,17 +114,17 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0000718 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0000718">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carr-Purcell-Meiboom-Gill pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse sequence which is applied during nuclear magnetic resonance spectroscopy to measure spin--spin (T2) relaxation times. For the pulse sequence see Rev. Sci. Inst., (1958), 29, pg 688.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0000718</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CPMG</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CPMG pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CPMG sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carr, Purcell,Meiboom,Gill pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carr-Purcell Meiboom-Gill pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carr-Purcell-Meiboom-Gill pulse sequence</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0000718">
+        <rdfs:label rdf:datatype="&xsd;string">Carr-Purcell-Meiboom-Gill pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse sequence which is applied during nuclear magnetic resonance spectroscopy to measure spin--spin (T2) relaxation times. For the pulse sequence see Rev. Sci. Inst., (1958), 29, pg 688.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0000718</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">CPMG</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">CPMG pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">CPMG sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Carr, Purcell,Meiboom,Gill pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Carr-Purcell Meiboom-Gill pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Carr-Purcell-Meiboom-Gill pulse sequence</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -97,17 +132,17 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0000719 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0000719">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quadrupolar Carr-Purcell-Meiboom-Gill pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0000718"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse sequence which is applied during nuclear magnetic resonance spectroscopy of quadrupolar nuclei, to measure spin--spin (T2) relaxation times. In the solid state, the sequence is used to achieve sensitivity enhancement for nuclei with low gyromagnetic ratios. For the pulse sequence see J. Phys. Chem. A, (1997), 101, pg 8597.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0000719</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QCPMG</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QCPMG NMR</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QCPMG pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QCPMG sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quadrupolar Carr, Purcell,Meiboom, Gill pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quadrupolar Carr-Purcell Meiboom-Gill pulse sequence</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0000719">
+        <rdfs:label rdf:datatype="&xsd;string">quadrupolar Carr-Purcell-Meiboom-Gill pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0000718"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse sequence which is applied during nuclear magnetic resonance spectroscopy of quadrupolar nuclei, to measure spin--spin (T2) relaxation times. In the solid state, the sequence is used to achieve sensitivity enhancement for nuclei with low gyromagnetic ratios. For the pulse sequence see J. Phys. Chem. A, (1997), 101, pg 8597.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0000719</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">QCPMG</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">QCPMG NMR</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">QCPMG pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">QCPMG sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">quadrupolar Carr, Purcell,Meiboom, Gill pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">quadrupolar Carr-Purcell Meiboom-Gill pulse sequence</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -115,15 +150,15 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001841 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001841">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclear magnetic resonance pulse sequence</rdfs:label>
-         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000190"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T01:41:59Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of short (microsecond) bursts (pulses) of rf radiation separated by delays (of defined duration) designed to interact with, and manipulate the magnetic moments of spin-active nuclei during NMR spectroscopy.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001841</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pulse sequence</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001841">
+        <rdfs:label rdf:datatype="&xsd;string">nuclear magnetic resonance pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000190"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T01:41:59Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A series of short (microsecond) bursts (pulses) of rf radiation separated by delays (of defined duration) designed to interact with, and manipulate the magnetic moments of spin-active nuclei during NMR spectroscopy.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001841</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">NMR pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">pulse sequence</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -131,15 +166,15 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001843 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001843">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bilinear rotation decoupling pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse cluster (a spin echo on 1H with inversion of 13C in the centre) used to achieve selective inversion of 12C-bound protons, thus achieving the removal of signals due to 12C-bound nuclei. For the pulse sequence see Chem. Phys. Lett., (1982), 93, pg 504</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BIRD</oboInOwl:hasExactSynonym>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001843</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bilinear rotation decoupling</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001843">
+        <rdfs:label rdf:datatype="&xsd;string">bilinear rotation decoupling pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse cluster (a spin echo on 1H with inversion of 13C in the centre) used to achieve selective inversion of 12C-bound protons, thus achieving the removal of signals due to 12C-bound nuclei. For the pulse sequence see Chem. Phys. Lett., (1982), 93, pg 504</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">BIRD</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001843</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">bilinear rotation decoupling</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -147,13 +182,13 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001844 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001844">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decoupling pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An NMR pulse sequence that decouples nuclei i.e. removes the effects of (usually) J-coupling (line splitting) from the spectrum.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001844</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001844">
+        <rdfs:label rdf:datatype="&xsd;string">decoupling pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An NMR pulse sequence that decouples nuclei i.e. removes the effects of (usually) J-coupling (line splitting) from the spectrum.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001844</oboInOwl:id>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -161,14 +196,14 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001845 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001845">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composite pulse decoupling sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001844"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An NMR pulse sequence, employing composite pulses, which decouples nuclei i.e. removes the effects of (usually) J-coupling (line splitting) from the spectrum.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001845</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CPD</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001845">
+        <rdfs:label rdf:datatype="&xsd;string">composite pulse decoupling sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001844"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An NMR pulse sequence, employing composite pulses, which decouples nuclei i.e. removes the effects of (usually) J-coupling (line splitting) from the spectrum.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001845</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">CPD</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -176,16 +211,16 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001846 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001846">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decoupling in the presence of scalar interactions</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001845"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. Also used to allow transfer of magnetisation between nuclei (by making the spins precess with at the same chemical shift and thus enjoy strong coupling---isotropic mixing). For the pulse sequence see J. Magn. Reson., (1988), 77, pg 274.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001846</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DIPSI</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DIPSI pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DIPSI sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001846">
+        <rdfs:label rdf:datatype="&xsd;string">decoupling in the presence of scalar interactions</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001845"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. Also used to allow transfer of magnetisation between nuclei (by making the spins precess with at the same chemical shift and thus enjoy strong coupling---isotropic mixing). For the pulse sequence see J. Magn. Reson., (1988), 77, pg 274.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001846</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DIPSI</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DIPSI pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DIPSI sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -193,17 +228,17 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001847 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001847">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">globally optimized alternating phase rectangular pulse</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001845"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. For the pulse sequence see J. Magn. Reson., (1985), 64, pg 547.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001847</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GARP</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GARP pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GARP sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">globally-optimized alternating phase rectangular pulse</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001847">
+        <rdfs:label rdf:datatype="&xsd;string">globally optimized alternating phase rectangular pulse</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001845"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. For the pulse sequence see J. Magn. Reson., (1985), 64, pg 547.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001847</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">GARP</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">GARP pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">GARP sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">globally-optimized alternating phase rectangular pulse</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -211,16 +246,16 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001848 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001848">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malcolm Levitt pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001845"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. Also used to allow transfer of magnetisation between nuclei (by making the spins precess with at the same chemical shift and thus enjoy strong coupling---isotropic mixing). For the pulse sequence see J. Magn. Reson., (1981), 43, pg 502.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001848</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MLEV</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MLEV pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MLEV sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001848">
+        <rdfs:label rdf:datatype="&xsd;string">Malcolm Levitt pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001845"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. Also used to allow transfer of magnetisation between nuclei (by making the spins precess with at the same chemical shift and thus enjoy strong coupling---isotropic mixing). For the pulse sequence see J. Magn. Reson., (1981), 43, pg 502.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001848</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MLEV</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MLEV pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MLEV sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -228,19 +263,19 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001849 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001849">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phase alternated rotation of magnetisation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001845"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001849</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PAR</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PAR pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PAR sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phase alternated rotation of magnetization</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phase-alternated rotation of magnetisation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phase-alternated rotation of magnetization</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001849">
+        <rdfs:label rdf:datatype="&xsd;string">phase alternated rotation of magnetisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001845"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001849</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">PAR</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">PAR pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">PAR sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">phase alternated rotation of magnetization</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">phase-alternated rotation of magnetisation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">phase-alternated rotation of magnetization</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -248,16 +283,16 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001850 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001850">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spin decoupling employing ultra-broadband-inversion sequences generated via simulated annealing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001845"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. For the pulse sequence see J. Magn. Reson. A, (1994), 106, pg 241.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001850</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SUSAN</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SUSAN pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SUSAN sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001850">
+        <rdfs:label rdf:datatype="&xsd;string">spin decoupling employing ultra-broadband-inversion sequences generated via simulated annealing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001845"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. For the pulse sequence see J. Magn. Reson. A, (1994), 106, pg 241.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001850</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">SUSAN</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">SUSAN pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">SUSAN sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -265,16 +300,16 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001851 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001851">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wideband alternating-phase low-power technique for zero residual splitting</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001845"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. Also used to allow transfer of magnetisation between nuclei (by making the spins precess with at the same chemical shift and thus enjoy strong coupling---isotropic mixing). J. Magn. Reson., (1983), 52, pg 335.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001851</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WALTZ</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WALTZ pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WALTZ sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001851">
+        <rdfs:label rdf:datatype="&xsd;string">wideband alternating-phase low-power technique for zero residual splitting</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001845"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of composite pulses designed to remove signal splitting due to heteronuclear J-couplings in multinuclear liquid NMR experiments. Also used to allow transfer of magnetisation between nuclei (by making the spins precess with at the same chemical shift and thus enjoy strong coupling---isotropic mixing). J. Magn. Reson., (1983), 52, pg 335.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001851</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WALTZ</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WALTZ pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WALTZ sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -282,13 +317,13 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001852 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001852">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magic angle spinning decoupling pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001844"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An NMR pulse sequence, used in magic angle spinning, that decouples nuclei i.e. removes the effects of (usually) J-coupling (line splitting) from the spectrum.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001852</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001852">
+        <rdfs:label rdf:datatype="&xsd;string">magic angle spinning decoupling pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001844"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An NMR pulse sequence, used in magic angle spinning, that decouples nuclei i.e. removes the effects of (usually) J-coupling (line splitting) from the spectrum.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001852</oboInOwl:id>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -296,18 +331,18 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001853 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001853">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burum, Linder, Ernst windowless pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001852"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of pulses used in magic angle spinning NMR to remove the effect of homonuclear dipolar couplings. A train/sequence of pulses is used to cyclically manipulate the signal whilst stroboscopic sampling ensures the effects of coupling are unobserved. For the pulse sequence see J. Magn. Reson., (1981), 44, pg 173.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BLEW</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BLEW pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BLEW sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burum-Linder-Ernst windowless pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burum-Linder-Ernst windowless sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001853</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001853">
+        <rdfs:label rdf:datatype="&xsd;string">Burum, Linder, Ernst windowless pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001852"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of pulses used in magic angle spinning NMR to remove the effect of homonuclear dipolar couplings. A train/sequence of pulses is used to cyclically manipulate the signal whilst stroboscopic sampling ensures the effects of coupling are unobserved. For the pulse sequence see J. Magn. Reson., (1981), 44, pg 173.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">BLEW</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">BLEW pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">BLEW sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Burum-Linder-Ernst windowless pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Burum-Linder-Ernst windowless sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001853</oboInOwl:id>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -315,20 +350,20 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001854 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001854">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decoupling using mind-boggling optimisation pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001852"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of pulses used in magic angle spinning NMR to remove the effect of homonuclear dipolar couplings. For the pulse sequence see Chem. Phys. Lett., (2004), 398, pg 532.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001854</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DUMBO</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DUMBO pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DUMBO sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decoupling using mind boggling optimisation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decoupling using mind boggling optimization</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decoupling using mind-boggling optimisation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decoupling using mind-boggling optimization</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001854">
+        <rdfs:label rdf:datatype="&xsd;string">decoupling using mind-boggling optimisation pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001852"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of pulses used in magic angle spinning NMR to remove the effect of homonuclear dipolar couplings. For the pulse sequence see Chem. Phys. Lett., (2004), 398, pg 532.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001854</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DUMBO</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DUMBO pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DUMBO sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">decoupling using mind boggling optimisation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">decoupling using mind boggling optimization</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">decoupling using mind-boggling optimisation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">decoupling using mind-boggling optimization</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -336,18 +371,18 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001855 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001855">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magic sandwich high-order truncation pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001852"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of pulses used in magic angle spinning NMR to remove the effect of homonuclear dipolar couplings. For the pulse sequence see J. Chem. Phys., (1997), 125, pg 291.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001855</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSHOT3</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSHOT3 pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSHOT3 sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magic sandwich high order truncation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magic sandwich high-order truncation</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001855">
+        <rdfs:label rdf:datatype="&xsd;string">magic sandwich high-order truncation pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001852"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of pulses used in magic angle spinning NMR to remove the effect of homonuclear dipolar couplings. For the pulse sequence see J. Chem. Phys., (1997), 125, pg 291.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001855</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MSHOT3</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MSHOT3 pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MSHOT3 sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">magic sandwich high order truncation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">magic sandwich high-order truncation</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -355,18 +390,18 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001856 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001856">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">two pulse phase modulation pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001852"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A continuous sequence of pulses used in magic angle spinning NMR to remove the effects of heteronuclear dipolar coupling. For the pulse sequence see J. Chem. Phys., (1996), 103, pg 6951.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001856</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TPPM</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TPPM pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TPPM sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">two pulse phase modulation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">two-pulse phase modulation</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001856">
+        <rdfs:label rdf:datatype="&xsd;string">two pulse phase modulation pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001852"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A continuous sequence of pulses used in magic angle spinning NMR to remove the effects of heteronuclear dipolar coupling. For the pulse sequence see J. Chem. Phys., (1996), 103, pg 6951.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001856</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">TPPM</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">TPPM pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">TPPM sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">two pulse phase modulation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">two-pulse phase modulation</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -374,20 +409,20 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001857 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001857">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waugh, Huber, Haeberlin pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001852"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse sequence used in magic angle spinning NMR to remove the effects of homonuclear dipolar coupling. For the pulse sequence see Phys. Rev. Lett., (1968), 20, pg 180.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001857</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WAHUHA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WAHUHA pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WAHUHA sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waugh Huber Haeberlin sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waugh, Huber, Haeberlin pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waugh-Huber-Haeberlin pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waugh-Huber-Haeberlin sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001857">
+        <rdfs:label rdf:datatype="&xsd;string">Waugh, Huber, Haeberlin pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001852"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse sequence used in magic angle spinning NMR to remove the effects of homonuclear dipolar coupling. For the pulse sequence see Phys. Rev. Lett., (1968), 20, pg 180.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001857</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WAHUHA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WAHUHA pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WAHUHA sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Waugh Huber Haeberlin sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Waugh, Huber, Haeberlin pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Waugh-Huber-Haeberlin pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Waugh-Huber-Haeberlin sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -395,20 +430,20 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001858 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001858">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mansfield, Rhim, Elleman, Vaughn pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001852"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse sequence used in magic angle spinning NMR to remove the effects of homonuclear dipolar coupling. For the pulse sequence see J. Chem. Phys., (1973), 59, pg 3740.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001858</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MREV</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MREV pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MREV sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mansfield Rhim Elleman Vaughn sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mansfield, Rhim, Elleman, Vaughn sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mansfield-Rhim-Elleman-Vaughn pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mansfield-Rhim-Elleman-Vaughn sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001858">
+        <rdfs:label rdf:datatype="&xsd;string">Mansfield, Rhim, Elleman, Vaughn pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001852"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse sequence used in magic angle spinning NMR to remove the effects of homonuclear dipolar coupling. For the pulse sequence see J. Chem. Phys., (1973), 59, pg 3740.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001858</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MREV</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MREV pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">MREV sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Mansfield Rhim Elleman Vaughn sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Mansfield, Rhim, Elleman, Vaughn sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Mansfield-Rhim-Elleman-Vaughn pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">Mansfield-Rhim-Elleman-Vaughn sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -416,16 +451,16 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001859 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001859">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">delays alternating with nutation for tailored excitation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse sequence used to selectively excite a frequency range by applying a series of very short pulses to manipulate, or nutate, the magnetisation vectors of the desired spins, interspersed with delays which cause the off-resonance magnetisation to receive a different phase. For the pulse see J. Magn. Reson., (1978), 29, pg 433.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001859</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DANTE</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DANTE pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DANTE sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001859">
+        <rdfs:label rdf:datatype="&xsd;string">delays alternating with nutation for tailored excitation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse sequence used to selectively excite a frequency range by applying a series of very short pulses to manipulate, or nutate, the magnetisation vectors of the desired spins, interspersed with delays which cause the off-resonance magnetisation to receive a different phase. For the pulse see J. Magn. Reson., (1978), 29, pg 433.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001859</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DANTE</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DANTE pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DANTE sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -433,20 +468,20 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001860 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001860">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double pulsed field gradient spin echo pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An NMR pulse sequence in which pulsed field gradients are applied to a doubled spin echo sequence to cleanly and precisely excite particular resonances. For the pulse sequence see J. Magn. Reson. A, (1995), 112, pg 275.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001860</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DPFGSE</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DPFGSE excitation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DPFGSE pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DPFGSE sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double pulsed field gradient spin echo</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double pulsed field gradient spin-echo</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double pulsed field gradient spin-echo pulse sequence</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001860">
+        <rdfs:label rdf:datatype="&xsd;string">double pulsed field gradient spin echo pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An NMR pulse sequence in which pulsed field gradients are applied to a doubled spin echo sequence to cleanly and precisely excite particular resonances. For the pulse sequence see J. Magn. Reson. A, (1995), 112, pg 275.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001860</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DPFGSE</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DPFGSE excitation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DPFGSE pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DPFGSE sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">double pulsed field gradient spin echo</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">double pulsed field gradient spin-echo</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">double pulsed field gradient spin-echo pulse sequence</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -454,16 +489,16 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001861 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001861">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double quantum transitions for finding unresolved lines</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse sequence used to selectively resolve the signals from two coupled nuclei, see J. Am. Chem. Soc., (1982), 104, pg 4286.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001861</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOUBTFUL</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOUBTFUL pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOUBTFUL sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001861">
+        <rdfs:label rdf:datatype="&xsd;string">double quantum transitions for finding unresolved lines</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse sequence used to selectively resolve the signals from two coupled nuclei, see J. Am. Chem. Soc., (1982), 104, pg 4286.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001861</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DOUBTFUL</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DOUBTFUL pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">DOUBTFUL sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -471,15 +506,15 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001862 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001862">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flip flop spectroscopy</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence of composite pulses designed to allow isotropic mixing of magnetisation between nuclei. For the pulse sequence see J. Magn.Reson., (1988), 77, pg 274.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001862</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FLOPSY</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flip-flop spectroscopy</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001862">
+        <rdfs:label rdf:datatype="&xsd;string">flip flop spectroscopy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of composite pulses designed to allow isotropic mixing of magnetisation between nuclei. For the pulse sequence see J. Magn.Reson., (1988), 77, pg 274.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001862</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">FLOPSY</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">flip-flop spectroscopy</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -487,19 +522,19 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001863 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001863">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heteronuclear Hartmann Hahn pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An NMR pulse sequence used to transfer magnetisation between protons and covalently bound (spin active) heteronuclei via isotropic mixing of their magnetisation. Used to e.g. enhance the NMR signal of heteronuclei or to correlate chemical shifts of protons with heteronuclei. For the pulse sequence see J. Magn. Reson., (1991), 91, pg 444.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001863</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HEHAHA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HEHAHA pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HEHAHA sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heteronuclear Hartman-Hahn pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heteronuclear Hartman-Hahn sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heteronuclear Hartmann Hahn</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001863">
+        <rdfs:label rdf:datatype="&xsd;string">heteronuclear Hartmann Hahn pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An NMR pulse sequence used to transfer magnetisation between protons and covalently bound (spin active) heteronuclei via isotropic mixing of their magnetisation. Used to e.g. enhance the NMR signal of heteronuclei or to correlate chemical shifts of protons with heteronuclei. For the pulse sequence see J. Magn. Reson., (1991), 91, pg 444.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001863</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">HEHAHA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">HEHAHA pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">HEHAHA sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">heteronuclear Hartman-Hahn pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">heteronuclear Hartman-Hahn sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">heteronuclear Hartmann Hahn</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -507,13 +542,13 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001864 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001864">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solvent suppression pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An NMR pulse sequence that is used to suppress or remove the solvent signal.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001864</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001864">
+        <rdfs:label rdf:datatype="&xsd;string">solvent suppression pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An NMR pulse sequence that is used to suppress or remove the solvent signal.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001864</oboInOwl:id>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -521,19 +556,19 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001865 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001865">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jump and return pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001864"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse cluster used for solvent suppression consisting of two rf pulses separated by a delay with conditions set such that the solvent signal alone is rendered unobservable by the second pulse. For the pulse sequence see J. Am. Chem. Soc., (1982), 104, pg 7310.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001865</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JR</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JR pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JR sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jump and return</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jump-and-return</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jump-and-return pulse sequence</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001865">
+        <rdfs:label rdf:datatype="&xsd;string">jump and return pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001864"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse cluster used for solvent suppression consisting of two rf pulses separated by a delay with conditions set such that the solvent signal alone is rendered unobservable by the second pulse. For the pulse sequence see J. Am. Chem. Soc., (1982), 104, pg 7310.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001865</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">JR</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">JR pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">JR sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">jump and return</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">jump-and-return</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">jump-and-return pulse sequence</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -541,17 +576,17 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001866 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001866">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">water elimination Fourier transform</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001864"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse cluster used to suppress solvent (water) signals exploiting the differing relaxation properties of solvent and sample. Resonances are inverted and the subsequent recovery period is chosen such that the solvent signal is at a null point when the signal is detected. For the pulse sequence see J. Chem. Phys., (1972), 56, pg 3182.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001866</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WEFT</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WEFT pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WEFT sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">water-elimination Fourier transform</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001866">
+        <rdfs:label rdf:datatype="&xsd;string">water elimination Fourier transform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001864"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse cluster used to suppress solvent (water) signals exploiting the differing relaxation properties of solvent and sample. Resonances are inverted and the subsequent recovery period is chosen such that the solvent signal is at a null point when the signal is detected. For the pulse sequence see J. Chem. Phys., (1972), 56, pg 3182.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001866</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WEFT</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WEFT pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WEFT sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">water-elimination Fourier transform</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -559,16 +594,16 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001867 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001867">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">water suppression through gradient tailored excitation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001864"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse cluster used for solvent (water) suppression. The solvent resonances are selectively excited and pulsed field gradients used to destroy the signal. For the pulse sequence see J. Biomol. NMR, (1992), 2, pg 661.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001867</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WATERGATE</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WATERGATE pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WATERGATE sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001867">
+        <rdfs:label rdf:datatype="&xsd;string">water suppression through gradient tailored excitation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001864"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse cluster used for solvent (water) suppression. The solvent resonances are selectively excited and pulsed field gradients used to destroy the signal. For the pulse sequence see J. Biomol. NMR, (1992), 2, pg 661.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001867</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WATERGATE</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WATERGATE pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">WATERGATE sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -576,16 +611,16 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001868 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001868">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spin echo pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse cluster used in NMR experiments which manipulates signals such that, at the end of the sequence, the effects of chemical shift differences have been compensated/removed. Used most simply to compensate for inhomogeneities in the magnetic field but delays in the sequence also permit various possible manipulations of the magnetisation. For the pulse sequence see Phys. Rev., (1950), 80, pg 580.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001868</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spin echo sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spin-echo pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spin-echo sequence</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="&obo;CHMO_0001868">
+        <rdfs:label rdf:datatype="&xsd;string">spin echo pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse cluster used in NMR experiments which manipulates signals such that, at the end of the sequence, the effects of chemical shift differences have been compensated/removed. Used most simply to compensate for inhomogeneities in the magnetic field but delays in the sequence also permit various possible manipulations of the magnetisation. For the pulse sequence see Phys. Rev., (1950), 80, pg 580.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001868</oboInOwl:id>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">spin echo sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">spin-echo pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">spin-echo sequence</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
     
@@ -593,21 +628,21 @@
 
     <!-- http://purl.obolibrary.org/obo/CHMO_0001869 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0001869">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">total suppression of sidebands pulse sequence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0001841"/>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pulse sequence used in magic angle spinning NMR experiments to remove additional signals resulting from spinning the sample too slowly to obtain a response composed solely of isotropic chemical shifts.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHMO:0001869</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TOSS</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TOSS pulse sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TOSS sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burchh</oboInOwl:created_by>
+    <owl:Class rdf:about="&obo;CHMO_0001869">
+        <rdfs:label rdf:datatype="&xsd;string">total suppression of sidebands pulse sequence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHMO_0001841"/>
+        <oboInOwl:creation_date rdf:datatype="&xsd;string">2009-05-29T12:00:00Z</oboInOwl:creation_date>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pulse sequence used in magic angle spinning NMR experiments to remove additional signals resulting from spinning the sample too slowly to obtain a response composed solely of isotropic chemical shifts.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="&xsd;string">CHMO:0001869</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">TOSS</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">TOSS pulse sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="&xsd;string">TOSS sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by rdf:datatype="&xsd;string">burchh</oboInOwl:created_by>
         <obo:IAO_0000412 rdf:resource="http://rsc-cmo.googlecode.com/svn/trunk/chmo.owl"/>
     </owl:Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.2.4.1806) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 
