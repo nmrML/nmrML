@@ -20,17 +20,17 @@ You can view the documentation and download current and past releases here:
 
 ### nmrCV Overview
 
-The nmrCV.owl ontology momentarily contains ~ 900 classes, most of them under nmr namespace but others imported (via MIREOT in Ontofox) from the units ontology, Chebi ontology, ChemO ontology , PSI-MS, OBI and BFO top level ontology.
+The nmrCV.owl ontology momentarily contains ~ 600 classes, most of them under nmr namespace but others imported (via MIREOT in Ontofox) from the units, Chebi, ChemO, PSI-MS, OBI and BFO top level ontologies.
 
-We choose the OWL Syntax  over the OBO format as exchange syntax for the CV, as the OBO tools are instable, the OBO format is only established in the biology domain (lack of off-the-shelf development tools, OBO expressivity is not as formal as OWL-DL) and there are hence less resources to integrate with.
+We choose the OWL Syntax over the OBO format as exchange syntax for the CV, as the OBO tools are instable, the OBO format is only established in the biology domain (lack of off-the-shelf development tools, OBO expressivity is not as formal as OWL-DL) and there are hence less resources to integrate with.
 
 We maintain a simple term taxonomy but have recently added mild Description Logics (DL) axiomatisations to key classes, i.e. for cases where DL-reasoning can help maintaining multiple parenthood and consistency checking of ontological concepts.
 
 #### Minimal metadata on a CV term
 
-Representational Unit (RU) metadata is captured via standardized owl annotation properties drawn from imported artefacts like DC, SKOS and Information Artefact Ontology (IAO). Not all of our terms currently have natural language definitions as these are time-intensive. None has deeper provenance data explicitly annotated (there is only an implicit indication on from which predecessor CV a term came in the ID ranges). We try to avoid getting stuck in the meta-ether, and have been pragmatic about this.
+Representational Unit (RU) metadata is captured via standardized owl annotation properties drawn from imported artefacts like DC, SKOS and Information Artefact Ontology (IAO). Not all of our terms currently have natural language definitions as these are time-intensive. None has deeper provenance data explicitly annotated (there is only an implicit indication on from which predecessor CV a term came in the ID ranges). We try to avoid getting stuck in the meta-ether, and have been pragmatic here.
 
-A term batch submission table, i.e. for submitting new CV terms for inclusion into nmrCV, should have the following mandatory fields:
+A term batch submission table, i.e. to be gathered by users when requesting a bunch of missing CV terms for inclusion into nmrCV, should have the following mandatory fields:
 
 * term name (rdfs:label)-->skos:prefLabel,ideally adhering to labelling best practice descibed at  http://www.obofoundry.org/wiki/index.php/Naming
 
