@@ -135,8 +135,8 @@ public class Acqu2nmrML {
             ContactListType contactlist = objFactory.createContactListType();
             ContactType contact1 = objFactory.createContactType();
             contact1.setId(getNewIdentifier());
-            contact1.setFullname(acq.getOwner());
-            contact1.setEmail(acq.getEmail());
+            contact1.setFullname(acq.getOwner()!=null ? acq.getOwner() : "undefined");
+            contact1.setEmail(acq.getEmail()!=null ? acq.getEmail() : "undefined");
             contactlist.getContact().add(contact1);
             nmrMLtype.setContactList(contactlist);
 

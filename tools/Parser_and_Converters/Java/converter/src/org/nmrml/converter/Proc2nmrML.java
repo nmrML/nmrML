@@ -121,10 +121,16 @@ public class Proc2nmrML {
             }
             ObjectFactory objFactory = new ObjectFactory();
 
-            if ( nmrMLtype.getSpectrum() != null ) {
-               System.err.println("nmrMLproc: Error - a spectrum section already exists. It must have only one spectrum per nmrML file.");
-               System.exit(1);
+
+        /* Read the Spectrum List - Adjust the range for the identifiers */
+            SpectrumListType spectrumList = null;
+            if ( nmrMLtype.getSpectrumList() != null ) {
+               spectrumList = nmrMLtype.getSpectrumList();
+               ID_count *= ( spectrumList.getSpectrum1D().size() + 1 );
+            } else {
+               spectrumList = objFactory.createSpectrumListType();
             }
+
         /* CV Units */
             CVTermType cvUnitNone = cvLoader.fetchCVTerm("UO","NONE");
             CVTermType cvUnitPpm  = cvLoader.fetchCVTerm("UO","PPM");
@@ -237,98 +243,6 @@ public class Proc2nmrML {
             softref1.setRef(software1);
             softwareRefList.getSoftwareRef().add(softref1);
 
-       /* DataProcessing List */
-            ReferenceableParamGroupListType refParamGroupList = null;
-            if ( nmrMLtype.getReferenceableParamGroupList() != null ) {
-                 refParamGroupList = nmrMLtype.getReferenceableParamGroupList();
-            } else {
-                 refParamGroupList = objFactory.createReferenceableParamGroupListType();
-            }
-            DataProcessingListType dataproclist = objFactory.createDataProcessingListType();
-            DataProcessingType dataproc = objFactory.createDataProcessingType();
-            ProcessingMethodType procmethod = objFactory.createProcessingMethodType();
-            procmethod.setOrder(getBigInteger(1));
-            procmethod.setSoftwareRef(software1);
-            if (proc.getPhasingType()>0) {
-                 procmethod.getCvParam().add(cvLoader.fetchCVParam("NMRCV","PHASE_CORRECTION"));
-            }
-            procmethod.getCvParam().add(cvLoader.fetchCVParam("NMRCV","FFT_TRANSFORM"));
-
-            /* ReferenceableParamGroupRef : Solvent Suppression */
-            if ( proc.getSolventSuppressionType() != null && proc.getSolventSuppressionType().length()>0) {
-                 ReferenceableParamGroupType refParamGroup1 = objFactory.createReferenceableParamGroupType();
-                 refParamGroup1.setId(getNewIdentifier());
-                 refParamGroup1.getCvParam().add(cvLoader.fetchCVParam("NMRCV","SOLVENT_SUPPRESSION"));
-                 UserParamType userParam1 = objFactory.createUserParamType();
-                 userParam1.setName("Method");
-                 userParam1.setValue(proc.getSolventSuppressionType());
-                 refParamGroup1.getUserParam().add(userParam1);
-                 refParamGroupList.getReferenceableParamGroup().add(refParamGroup1);
-                 ReferenceableParamGroupRefType ParamGroupRef1 = objFactory.createReferenceableParamGroupRefType();
-                 ParamGroupRef1.setRef(refParamGroup1);
-                 procmethod.getReferenceableParamGroupRef().add(ParamGroupRef1);
-            }
-            /* ReferenceableParamGroupRef : Baseline Correction */
-            if (proc.getBaselineCorrectionType() != null && proc.getBaselineCorrectionType().length()>0) {
-                 ReferenceableParamGroupType refParamGroup2 = objFactory.createReferenceableParamGroupType();
-                 refParamGroup2.setId(getNewIdentifier());
-                 refParamGroup2.getCvParam().add(cvLoader.fetchCVParam("NMRCV","BASELINE_CORRECTION"));
-                 UserParamType userParam2 = objFactory.createUserParamType();
-                 userParam2.setName("Method");
-                 userParam2.setValue(proc.getBaselineCorrectionType());
-                 refParamGroup2.getUserParam().add(userParam2);
-                 refParamGroupList.getReferenceableParamGroup().add(refParamGroup2);
-                 ReferenceableParamGroupRefType ParamGroupRef2 = objFactory.createReferenceableParamGroupRefType();
-                 ParamGroupRef2.setRef(refParamGroup2);
-                 procmethod.getReferenceableParamGroupRef().add(ParamGroupRef2);
-            }
-            /* ReferenceableParamGroupRef : Group Delay Correction */
-            if (proc.getGroupDelay()>0) {
-                 ReferenceableParamGroupType refParamGroup3 = objFactory.createReferenceableParamGroupType();
-                 refParamGroup3.setId(getNewIdentifier());
-                 refParamGroup3.getCvParam().add(cvLoader.fetchCVParam("NMRCV","GRPDELAY"));
-                 UserParamType userParam3 = objFactory.createUserParamType();
-                 userParam3.setName("group delay");
-                 userParam3.setValue(String.format("%d",proc.getGroupDelay()));
-                 userParam3.setUnitCvRef(cvUnitCount.getCvRef());
-                 userParam3.setUnitAccession(cvUnitCount.getAccession());
-                 userParam3.setUnitName(cvUnitCount.getName());
-                 refParamGroup3.getUserParam().add(userParam3);
-                 refParamGroupList.getReferenceableParamGroup().add(refParamGroup3);
-                 ReferenceableParamGroupRefType ParamGroupRef3 = objFactory.createReferenceableParamGroupRefType();
-                 ParamGroupRef3.setRef(refParamGroup3);
-                 procmethod.getReferenceableParamGroupRef().add(ParamGroupRef3);
-            }
-            /* ReferenceableParamGroupRef : Spectral referecing */
-            if ( proc.getRef_cmpd() != null && proc.getRef_cmpd().length()>0 ) {
-                 ReferenceableParamGroupType refParamGroup4 = objFactory.createReferenceableParamGroupType();
-                 refParamGroup4.setId(getNewIdentifier());
-                 refParamGroup4.getCvParam().add(cvLoader.fetchCVParam("NMRCV","REFERENCING"));
-                 /* compound name */
-                 UserParamType userParam4 = objFactory.createUserParamType();
-                 userParam4.setName("Compound");
-                 userParam4.setValue(proc.getRef_cmpd());
-                 refParamGroup4.getUserParam().add(userParam4);
-                 /* ppm value */
-                 UserParamType userParam5 = objFactory.createUserParamType();
-                 userParam5.setName("ppm");
-                 userParam5.setValue(String.format("%f",proc.getRef_ppm()));
-                 userParam5.setUnitCvRef(cvUnitPpm.getCvRef());
-                 userParam5.setUnitAccession(cvUnitPpm.getAccession());
-                 userParam5.setUnitName(cvUnitPpm.getName());
-                 refParamGroup4.getUserParam().add(userParam5);
-                 refParamGroupList.getReferenceableParamGroup().add(refParamGroup4);
-                 ReferenceableParamGroupRefType ParamGroupRef4 = objFactory.createReferenceableParamGroupRefType();
-                 ParamGroupRef4.setRef(refParamGroup4);
-                 procmethod.getReferenceableParamGroupRef().add(ParamGroupRef4);
-            }
-            dataproc.getProcessingMethod().add(procmethod);
-            dataproc.setId(getNewIdentifier());
-            dataproclist.getDataProcessing().add(dataproc);
-            nmrMLtype.setDataProcessingList(dataproclist);
-            if (refParamGroupList.getReferenceableParamGroup().size()>0) {
-                 nmrMLtype.setReferenceableParamGroupList(refParamGroupList);
-            }
 
        /* ACQUISITION PARAMETERS */
             Acquisition1DType acq1D = nmrMLtype.getAcquisition().getAcquisition1D();
@@ -337,10 +251,9 @@ public class Proc2nmrML {
             double spectralFrequency = Double.parseDouble(acqdimparam.getEffectiveExcitationField().getValue());
 
        /* Spectrum List */
-            SpectrumContainerType spectrumContainer = objFactory.createSpectrumContainerType();
-            spectrumContainer.setDefaultDataProcessingRef(dataproc);
             Spectrum1DType spectrum1D = objFactory.createSpectrum1DType();
             spectrum1D.setNumberOfDataPoints(getBigInteger(proc.getTransformSize()));
+            spectrum1D.setId(getNewIdentifier());
 
        /* Spectrum1D - FirstDimensionProcessingParameterSet object */
             FirstDimensionProcessingParameterSetType ProcParam1D = objFactory.createFirstDimensionProcessingParameterSetType();
@@ -355,7 +268,6 @@ public class Proc2nmrML {
             cvWinParam.setValue(String.format("%f",proc.getLineBroadening()));
             windowFunction.getWindowFunctionParameter().add(cvWinParam);
             ProcParam1D.getWindowFunction().add(windowFunction);
-            ProcParam1D.setNoOfDataPoints(getBigInteger(proc.getTransformSize()));
 
        /* Spectrum1D - Phasing */
             ValueWithUnitType  zeroOrderPhaseCorrection = objFactory.createValueWithUnitType();
@@ -384,12 +296,6 @@ public class Proc2nmrML {
        /* baselineCorrectionMethod */
             ProcParam1D.setBaselineCorrectionMethod(cvLoader.fetchCVTerm("NCIThesaurus","UNDEFINED"));
 
-       /* Spectrum1D - Source File Ref */
-            SourceFileRefType procFileRef = objFactory.createSourceFileRefType();
-            procFileRef.setRef(hSourceFileObj.get("PROCESSING_FILE"));
-            ProcParam1D.setParameterFileRef(procFileRef);
-            spectrum1D.setFirstDimensionProcessingParameterSet(ProcParam1D);
-
        /* SpectrumType - X Axis */
             AxisWithUnitType Xaxis = objFactory.createAxisWithUnitType();
             Xaxis.setUnitCvRef(cvUnitPpm.getCvRef());
@@ -400,11 +306,13 @@ public class Proc2nmrML {
             spectrum1D.setXAxis(Xaxis);
 
        /* SpectrumType - Y Axis */
-            spectrum1D.setYAxisType(cvUnitNone);
+       /*     spectrum1D.setYAxisType(cvUnitNone); */
+
+       /* Spectrum1D - Set FirstDimensionProcessingParameterSet */
+            spectrum1D.setFirstDimensionProcessingParameterSet(ProcParam1D);
 
        /* SpectrumType - Software, Contact Ref List */
-            spectrum1D.getProcessingSoftwareRefList().add(softwareRefList);
-            spectrum1D.setProcessingContactRefList(contactRefList);
+            spectrum1D.setProcessingSoftwareRefList(softwareRefList);
 
        /* SpectrumType - ProcessingParameterSet */
             SpectrumType.ProcessingParameterSet procParamSet = objFactory.createSpectrumTypeProcessingParameterSet();
@@ -419,7 +327,7 @@ public class Proc2nmrML {
                 RealData.setEncodedLength(hBinaryDataObj.get("REAL_DATA_FILE").getEncodedLength());
                 RealData.setByteFormat(hBinaryDataObj.get("REAL_DATA_FILE").getByteFormat());
                 RealData.setCompressed(hBinaryDataObj.get("REAL_DATA_FILE").isCompressed());
-                RealData.setDataProcessingRef(dataproc);
+                /*RealData.setDataProcessingRef(dataproc);*/
 
                 if(this.getIfbinarydata()) {
                     RealData.setValue(hBinaryDataObj.get("REAL_DATA_FILE").getData());
@@ -428,8 +336,8 @@ public class Proc2nmrML {
             }
 
 
-            spectrumContainer.setSpectrum1D(spectrum1D);
-            nmrMLtype.setSpectrum(spectrumContainer);
+            spectrumList.getSpectrum1D().add(spectrum1D);
+            nmrMLtype.setSpectrumList(spectrumList);
 
 
        /* Generate XML */

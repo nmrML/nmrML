@@ -84,8 +84,8 @@ public class nmrMLcreate {
         options.addOption(OptionBuilder
            .withArgName("vendor")
            .hasArg()
-           .withDescription("type")
-           .withLongOpt("vendortype")
+           .withDescription("vendor type")
+           .withLongOpt("type")
            .create("t"));
         options.addOption(OptionBuilder
            .withArgName("file")
