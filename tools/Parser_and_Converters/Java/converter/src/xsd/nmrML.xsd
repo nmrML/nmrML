@@ -548,16 +548,6 @@ Example:
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="ValueWithoutUnitType">
-    <xs:annotation>
-      <xs:documentation>This element holds a unitless value.</xs:documentation>
-    </xs:annotation>
-    <xs:attribute name="value" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation/>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
   <xs:complexType name="UserParamType">
     <xs:annotation>
       <xs:documentation>Uncontrolled user parameters (essentially allowing free text). Before using

@@ -548,16 +548,6 @@ Example:
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="ValueWithoutUnitType">
-    <xs:annotation>
-      <xs:documentation>This element holds a unitless value.</xs:documentation>
-    </xs:annotation>
-    <xs:attribute name="value" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation/>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
   <xs:complexType name="UserParamType">
     <xs:annotation>
       <xs:documentation>Uncontrolled user parameters (essentially allowing free text). Before using
@@ -1126,6 +1116,8 @@ Parsed from Excitation width ?</xs:documentation>
             x-axis intervals or a set of (x,y) pairs.</xs:documentation>
         </xs:annotation>
       </xs:element>
+<!-- Set back the section xAxis ( AxisWithUnitType ) that had been previously removed. We need it to rebuild the ppm scale -->
+      <xs:element name="xAxis" type="AxisWithUnitType"/>
       <xs:element name="processingParameterSet" minOccurs="0">
         <xs:annotation>
           <xs:documentation>Optional information about processing that was used to create the frequency domain spectrum.</xs:documentation>
@@ -1159,6 +1151,23 @@ Parsed from Excitation width ?</xs:documentation>
         <xs:documentation>An ID for the spectrum so that it can be referenced within the file for spectrum annotations.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SpectrumRefType">
+    <xs:attribute name="ref" type="xs:IDREF" use="required">
+      <xs:annotation>
+        <xs:documentation>This attribute must reference the 'id' of the contact node in the
+          spectrumList.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SpectrumRefListType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="spectrumRef" type="SpectrumRefType">
+        <xs:annotation>
+          <xs:documentation>Reference to a previously defined SpectrumType</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Spectrum1DType">
     <xs:complexContent>
