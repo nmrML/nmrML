@@ -3935,6 +3935,81 @@ complex128long</oboInOwl:consider>
     
 
 
+    <!-- http://nmrML.org/nmrCV#NMR:1000358 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000358">
+        <rdfs:label xml:lang="de">variable size bucketing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000359 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000359">
+        <rdfs:label xml:lang="de">uniform bucketing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000360 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000360">
+        <rdfs:label xml:lang="de">intelligent bucketing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000361 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000361">
+        <rdfs:label xml:lang="de">bucket importing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000362 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000362">
+        <rdfs:label xml:lang="de">bucket resetting</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
+        <rdfs:comment>put in as reqired by NMRProcFlow tool</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000363 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000363">
+        <rdfs:label xml:lang="de">global baseline correction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
+        <rdfs:comment>as needed for nmrProcFlow</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000364 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000364">
+        <rdfs:label xml:lang="de">local baseline correction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
+        <rdfs:comment>as needed for nmrProcFlow</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000365 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000365">
+        <rdfs:label xml:lang="de">bucket fusioning</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000362"/>
+    </owl:Class>
+    
+
+
     <!-- http://nmrML.org/nmrCV#NMR:1000408 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000408">
@@ -7333,6 +7408,7 @@ complex128long</oboInOwl:consider>
         <rdfs:comment rdf:datatype="&xsd;string">def: A post-processing method that divides a pre-processed NMR spectrum into a series of buckets (or bins) along the x-axis, and then integrates the spectral intensity within each bucket. 
    altdef: A type of automated integration which occurs across pre-defined regions for a spectrum.</rdfs:comment>
         <oboInOwl:hasExactSynonym>binning</oboInOwl:hasExactSynonym>
+        <rdfs:comment>for bucket parameters see &apos;binned spectrum descriptor&apos;</rdfs:comment>
     </owl:Class>
     
 
