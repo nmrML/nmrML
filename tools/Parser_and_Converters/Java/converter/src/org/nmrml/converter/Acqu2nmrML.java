@@ -285,6 +285,7 @@ public class Acqu2nmrML {
             // Spectral Width (Hz)
             ValueWithUnitType  SweepWidth = objFactory.createValueWithUnitType();
             SweepWidth.setValue(String.format("%f",acq.getSpectralWidthHz()));
+
             SweepWidth.setUnitCvRef(cvUnitHz.getCvRef());
             SweepWidth.setUnitAccession(cvUnitHz.getAccession());
             SweepWidth.setUnitName(cvUnitHz.getName());
