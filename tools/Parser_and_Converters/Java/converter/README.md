@@ -1,4 +1,4 @@
-Java based nmrML converter: development version 1.1b
+Java based nmrML converter: development version 1.2
 ==============
 
 (Only 1D NMR is support today. TODO: 2D NMR)
@@ -18,7 +18,8 @@ usage: nmrMLcreate
     --prop <config.properties>   properties configuration file
  -t,--vendortype <vendor>        type
  -v,--version                    prints the version
- -z,--compress                   compress binary data
+    --xsd-version                prints the nmrML XSD version
+-z,--compress                   compress binary data
 ```
 
 The second one, nmrMLproc allows to add and fill in additional sections corresponding to the data processing step.
@@ -33,6 +34,7 @@ usage: nmrMLproc
     --prop <config.properties>   properties configuration file
  -t,--vendortype <vendor>        type
  -v,--version                    prints the version
+    --xsd-version                prints the nmrML XSD version
  -z,--compress                   compress binary data
 ```
 
@@ -58,7 +60,47 @@ Thus, we can generate the corresponding nmrML file as follow:
 
 To make this converter usable without a local installation, it is implemented as a lightweight and easy to access web application (see [here](http://nmrml.org/converter/))
 
+### NOTE:
+
+### Java-based converter and the versionning
+
+##### 1/ How does the converter manage to catch both versions nmrML & nmrCV ?
+
+* nmrML XSD - directly within its XML header at the compilation time:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dx="http://nmrml.org/schema" 
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://nmrml.org/schema"
+  version="1.0.rc1"                              <---- XSD version
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://nmrml.org/schema">
+```
+At the execution time, the converter retrieves the XSD version from a JAVA Class built at the compilation time.
+
+* nmrCV - In the resources/onto.ini, the nmrCV version has to be defined as follow : :
+
+```
+NMRCV = Nuclear Magnetic Resonance CV;1.0.rc1;http://nmrml.org/cv/v1.0.rc1/nmrCV.owl
+```
+In the execution time, the converter retrieves the nmrCV version:
+* either within the resources/onto.ini file
+* or in the onto.ini file defined in the config.properties if this latter is specifiy in the parameters (the --prop option)
+
+##### 2/ As results, we should have in the header within the output nmrML file
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<nmrML xmlns="http://nmrml.org/schema" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       version="1.0.rc1"
+       xsi:schemaLocation="http://nmrml.org/schema http://nmrml.org/schema/v1.0.rc1/nmrML.xsd">
+```
 
 
-
-
+##### 3/ an new option '--xsd-version' has been added (ver 1.2) to both nmrMLcreate & nmrMLproc commands to get the XSD version on which they were built
+```
+$ ./bin/nmrMLcreate --xsd-version
+nmrML XSD version = 1.0.rc1
+```

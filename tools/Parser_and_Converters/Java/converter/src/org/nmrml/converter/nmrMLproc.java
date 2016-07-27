@@ -38,6 +38,7 @@ import org.apache.commons.cli.PosixParser;
 import java.util.*;
 import java.lang.*;
 
+import org.nmrml.schema.*;
 import org.nmrml.parser.*;
 import org.nmrml.parser.bruker.*;
 
@@ -47,7 +48,8 @@ import org.nmrml.converter.*;
 // From a nmrML file, add processing data
 public class nmrMLproc {
 
-    private static final String Version = "1.1b";
+    private static final String nmrMLVersion = nmrMLversion.value;
+    private static final String Version = "1.2";
 
     private enum Vendor_Type { bruker; }
 
@@ -65,6 +67,10 @@ public class nmrMLproc {
         options.addOption("v", "version", false, "prints the version");
         options.addOption("b","binary-data",false,"include spectrum binary data");
         options.addOption("z","compress",false,"compress binary data");
+        options.addOption(OptionBuilder
+           .withDescription("prints the nmrML XSD version")
+           .withLongOpt("xsd-version")
+           .create());
         options.addOption(OptionBuilder
            .withArgName("config.properties")
            .hasArg()
@@ -178,22 +184,28 @@ public class nmrMLproc {
         } catch(MissingOptionException e){
             boolean help = false;
             boolean version = false;
+            boolean xsdversion = false;
             try{
               Options helpOptions = new Options();
               helpOptions.addOption("h", "help", false, "prints the help content");
               helpOptions.addOption("v", "version", false, "prints the version");
+              helpOptions.addOption(OptionBuilder.withDescription("prints the nmrML XSD version").withLongOpt("xsd-version").create());
               CommandLineParser parser = new PosixParser();
               CommandLine line = parser.parse(helpOptions, args);
               if(line.hasOption("h")) help = true;
               if(line.hasOption("v")) version = true;
+              if(line.hasOption("xsd-version")) xsdversion = true;
             } catch(Exception ex){ }
-            if(!help && !version) System.err.println(e.getMessage());
+            if(!help && !version && !xsdversion) System.err.println(e.getMessage());
             if (help) {
                 HelpFormatter formatter = new HelpFormatter();
-                formatter.printHelp( "nmrMLproc" , options );
+                formatter.printHelp( "nmrMLcreate" , options );
             }
             if (version) {
                 System.out.println("nmrML Proc version = " + Version);
+            }
+            if (xsdversion) {
+                System.out.println("nmrML XSD version = " + nmrMLVersion);
             }
             System.exit(1);
         } catch(MissingArgumentException e){
