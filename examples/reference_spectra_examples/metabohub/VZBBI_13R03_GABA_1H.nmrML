@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.rc1" xsi:schemaLocation="http://nmrml.org/schema http://nmrml.org/schema/v1.0.rc1/nmrML.xsd">
     <cvList>
-        <cv id="NMRCV" fullName="Nuclear Magnetic Resonance CV" version="1.01" URI="http://nmrml.org/cv/v1.01/nmrCV.owl"/>
+        <cv id="NMRCV" fullName="Nuclear Magnetic Resonance CV" version="1.0.rc1" URI="http://nmrml.org/cv/v1.0.rc1/nmrCV.owl"/>
         <cv id="UO" fullName="Unit Ontology" version="3.2.0" URI="http://purl.obolibrary.org/obo/"/>
         <cv id="CHEBI" fullName="Chemical Entities of Biological Interest Ontology" version="105" URI="http://purl.obolibrary.org/obo/"/>
         <cv id="NCIThesaurus" fullName="NCI Thesaurus" version="" URI="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#"/>
@@ -54,7 +54,7 @@
                     <contactRef ref="ID00001"/>
                 </contactRefList>
                 <softwareRef ref="ID00005"/>
-                <sampleContainer cvRef="NMRCV" accession="NMR:1400132" name="Sample-tube"/>
+                <sampleContainer cvRef="NMRCV" accession="NMR:1400132" name="NMR Sample tube"/>
                 <sampleAcquisitionTemperature value="302.700000" unitAccession="UO_0000012" unitName="kelvin" unitCvRef="UO"/>
                 <spinningRate value="0" unitAccession="UO_0000169" unitName="dimensionless" unitCvRef="UO"/>
                 <relaxationDelay value="25.000000" unitAccession="UO_0000010" unitName="second" unitCvRef="UO"/>
