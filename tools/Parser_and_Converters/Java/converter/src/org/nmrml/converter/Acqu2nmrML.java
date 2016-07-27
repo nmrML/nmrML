@@ -45,7 +45,7 @@ import javax.xml.bind.Marshaller;
 
 public class Acqu2nmrML {
 
-    private static final String nmrMLVersion = "1.0.rc1";
+    private static final String nmrMLVersion = nmrMLversion.value;
 
     public static int ID_count;
 
@@ -285,6 +285,7 @@ public class Acqu2nmrML {
             // Spectral Width (Hz)
             ValueWithUnitType  SweepWidth = objFactory.createValueWithUnitType();
             SweepWidth.setValue(String.format("%f",acq.getSpectralWidthHz()));
+
             SweepWidth.setUnitCvRef(cvUnitHz.getCvRef());
             SweepWidth.setUnitAccession(cvUnitHz.getAccession());
             SweepWidth.setUnitName(cvUnitHz.getName());

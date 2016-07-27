@@ -8,6 +8,7 @@ JAVAFLAGS = -cp .
 XJC = $(JAVABIN)/xjc
 XJCFLAGS = -extension -xmlschema -no-header
 XSD = ./xsd/nmrML.xsd
+XSDVER:=$(shell grep 'version' $(XSD) | grep 'targetNamespace' | sed -e "s/.\+version=//")
 
 PKG_XSD    = org/nmrml/schema
 PKG_CV     = org/nmrml/cv
@@ -36,6 +37,7 @@ xjc:
 	@rm -f $(PKG_XSD)/*
 	@$(XJC) $(XJCFLAGS) $(XSD)
 	@sed -i -e 's#^\(import javax.xml.bind.annotation.XmlType;\)#\1\nimport javax.xml.bind.annotation.XmlRootElement;#' -e  's#^\(@XmlAccessorType.*\)#\1\n@XmlRootElement(name = \"$(SCHEMA_NS)\", namespace = \"$(SCHEMA_URI)\")#' $(PKG_XSD)/NmrMLType.java
+	@echo 'package org.nmrml.schema; public class nmrMLversion { public static final String value = $(XSDVER); }' > $(PKG_XSD)/nmrMLversion.java
 
 schema_class:
 	@make install PROG=$(PKG_XSD)/*
