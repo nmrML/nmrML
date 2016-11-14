@@ -2500,7 +2500,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000211 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000211">
-        <rdfs:label xml:lang="de">NMR Format converter</rdfs:label>
+        <rdfs:label xml:lang="en">NMR Format converter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
     </owl:Class>
     
@@ -2851,7 +2851,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000249 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000249">
-        <rdfs:label xml:lang="de">Matlab to nmrML converter</rdfs:label>
+        <rdfs:label xml:lang="en">Matlab to nmrML converter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <rdfs:comment xml:lang="en">By Batman/ Tim Ebbels Group</rdfs:comment>
         <dc:source xml:lang="en">Git: nmrML\tools\Parser_and_Converters\Matlab</dc:source>
@@ -3320,7 +3320,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000299 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000299">
-        <rdfs:label xml:lang="de">nmRIO</rdfs:label>
+        <rdfs:label xml:lang="en">nmRIO</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <dc:source xml:lang="en">Git: nmrML\tools\Parser_and_Converters\R</dc:source>
         <rdfs:comment xml:lang="en">R statistics to nmrML. Developed by Steffen Neumann, IPB-Halle.de</rdfs:comment>
@@ -3331,7 +3331,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000300 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000300">
-        <rdfs:label xml:lang="de">rNMR-IO</rdfs:label>
+        <rdfs:label xml:lang="en">rNMR-IO</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <dc:source xml:lang="en">Git: nmrML\tools\Parser_and_Converters\R\rNMR-IO</dc:source>
     </owl:Class>
@@ -3341,7 +3341,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000301 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000301">
-        <rdfs:label xml:lang="de">Vendor2nmrML_Java</rdfs:label>
+        <rdfs:label xml:lang="en">Vendor2nmrML_Java</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <obo:IAO_0000115 xml:lang="en">Based on both nmrML.xsd (XML Schema Definition) and CV params (such as ontologies nmrCV, UO, CHEBI ...), a converter written in Java was developed that automatically generates nmrML files, from raw files of the major NMR vendors. The choice of Java was guided by i)  the JAXB framework  (Java Architecture for XML Binding), ii) its OS-platform independence and iii) strengthened by the existence of a useful java library (i.e [nmr-fid-tool](https://github.com/LuisFF/nmr-fid-tool)) for further processing and visualisation of the resulting nmrML data. 
 As nmrML intents to gather and integrate several types of data and corresponding metadata in a single file, it is necessary to process each data source separately. Thus, two command tools were developed.
@@ -3478,7 +3478,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000311 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000311">
-        <rdfs:label xml:lang="de">PynmrML</rdfs:label>
+        <rdfs:label xml:lang="en">PynmrML</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <rdfs:comment xml:lang="en">A Python based vendor to nmrML converter developed by MIchael Wilson at TMIC Edmonton.</rdfs:comment>
         <dc:source xml:lang="en">Git: nmrML\tools\Parser_and_Converters\python</dc:source>
@@ -3489,7 +3489,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000312 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000312">
-        <rdfs:label xml:lang="de">MetaboAnalyst software</rdfs:label>
+        <rdfs:label xml:lang="en">MetaboAnalyst software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
         <rdfs:comment xml:lang="en"> Jianguo Xia, Igor V. Sinelnikov, Beomsoo Han and David S. Wishart, MetaboAnalyst 3.0—making metabolomics more meaningful,  Nucl. Acids Res. (1 July 2015) 43 (W1): W251-W257. doi: 10.1093/nar/gkv380 </rdfs:comment>
         <obo:IAO_0000115 xml:lang="en">A web server designed to permit comprehensive metabolomic data analysis, visualization and interpretation. It supports a wide range of complex statistical calculations and high quality graphical rendering functions that require significant computational resources.</obo:IAO_0000115>
@@ -3573,7 +3573,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000321 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000321">
-        <rdfs:label xml:lang="de">XEASY software</rdfs:label>
+        <rdfs:label xml:lang="en">XEASY software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
         <obo:IAO_0000115 xml:lang="en">A new program package, XEASY, was written for interactive computer support of the analysis of NMR spectra for three-dimensional structure determination of biological macromolecules. XEASY was developed for work with 2D, 3D and 4D NMR data sets. It includes all the functions performed by the precursor program EASY, which was designed for the analysis of 2D NMR spectra, i.e., peak picking and support of sequence-specific resonance assignments, cross-peak assignments, cross-peak integration and rate constant determination for dynamic processes.</obo:IAO_0000115>
         <dc:source xml:lang="en">Christian Bartels, Tai-he Xia, Martin Billeter, Peter Güntert, Kurt Wüthrich,  The program XEASY for computer-supported NMR spectral analysis of biological macromolecules, J Biomol NMR (1995) 6: 1. doi:10.1007/BF00417486</dc:source>
@@ -3593,7 +3593,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000323 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000323">
-        <rdfs:label xml:lang="de">JspectraView software</rdfs:label>
+        <rdfs:label xml:lang="en">JspectraView software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000322"/>
         <rdfs:comment xml:lang="en">Used in NMR Assign tool for Baysil</rdfs:comment>
     </owl:Class>
@@ -3654,7 +3654,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000329 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000329">
-        <rdfs:label xml:lang="de">AB multiplet pattern</rdfs:label>
+        <rdfs:label xml:lang="en">AB multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
         <dc:source>http://www.chem.wisc.edu/areas/reich/plt/windnmr.htm</dc:source>
     </owl:Class>
@@ -3776,7 +3776,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000342 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000342">
-        <rdfs:label xml:lang="de">AB2 multiplet pattern</rdfs:label>
+        <rdfs:label xml:lang="en">AB2 multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
         <dc:source>http://www.chem.wisc.edu/areas/reich/plt/windnmr.htm</dc:source>
     </owl:Class>
@@ -3938,7 +3938,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000358 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000358">
-        <rdfs:label xml:lang="de">variable size bucketing</rdfs:label>
+        <rdfs:label xml:lang="en">variable size bucketing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
     </owl:Class>
     
@@ -3947,7 +3947,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000359 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000359">
-        <rdfs:label xml:lang="de">uniform bucketing</rdfs:label>
+        <rdfs:label xml:lang="en">uniform bucketing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
     </owl:Class>
     
@@ -3956,7 +3956,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000360 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000360">
-        <rdfs:label xml:lang="de">intelligent bucketing</rdfs:label>
+        <rdfs:label xml:lang="en">intelligent bucketing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
     </owl:Class>
     
