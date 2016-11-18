@@ -3073,7 +3073,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000273 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000273">
-        <rdfs:label xml:lang="en">JEOL ECS spectrometer</rdfs:label>
+        <rdfs:label xml:lang="en">JEOL ECS magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
     </owl:Class>
     
@@ -3082,7 +3082,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000274 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000274">
-        <rdfs:label xml:lang="en">JEOL ECA spectrometer</rdfs:label>
+        <rdfs:label xml:lang="en">JEOL ECA magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
     </owl:Class>
     
@@ -3091,7 +3091,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000275 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000275">
-        <rdfs:label xml:lang="en">JEOL ECX spectrometer</rdfs:label>
+        <rdfs:label xml:lang="en">JEOL ECX magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
     </owl:Class>
     
@@ -3993,6 +3993,50 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000365">
         <rdfs:label xml:lang="de">bucket fusioning</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000362"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000367 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000367">
+        <rdfs:label xml:lang="de">DRX700</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000368 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000368">
+        <rdfs:label xml:lang="de">JNM-ECX Series FT NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000369 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000369">
+        <rdfs:label xml:lang="de">JNM-ECZR Series FT NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
+        <skos:definition>JNM-ECZR series is a new system that fully incorporates the latest digital and high frequency technologies.
+Improved reliability and a more compact size make possible by incorporating more advanced integrated circuits, it supports even greater expandability options than current models for multi-channel operation, high power amplifiers and other accessories.
+The bus line for control of attachments has been upgraded to high speed and enables highly accurate and rapid control.
+400 MHz - 1 GHz</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000370 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000370">
+        <rdfs:label xml:lang="de">JNM-ECZS Series FT NMR instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
+        <skos:definition>The entry model ECZS spectrometer has the same basic functions, performance and capability of high-end model. The main console is amazingly small, less than 1/2 that of the current ECS series spectrometer.
+Coupling the use of advanced software with highly reliable automation, all routine daily measurements can be automated, while the use of the autotune Supercool probe realizes the world’s highest sensitivity in its class.
+Whatever your application field ECZS can demonstrate its power.
+400 MHz</skos:definition>
     </owl:Class>
     
 
@@ -6544,7 +6588,7 @@ complex128long</oboInOwl:consider>
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400032">
         <rdfs:label rdf:datatype="&xsd;string">calibration compound</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000881"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The compound that produced the peak used to reference a spectrum during data pre-processing.</rdfs:comment>
         <oboInOwl:hasExactSynonym>reference standard</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>reference compound</oboInOwl:hasExactSynonym>
@@ -8193,8 +8237,9 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1400227 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400227">
-        <rdfs:label rdf:datatype="&xsd;string">ECX</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">JNM-ECX Series FT NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
+        <skos:definition>The JNM-ECX series is an FT NMR spectrometer developed making full use of the latest digital and high frequency technology. This high performance, sophisticated spectrometer designed to take advantage of high field magnet development to include 1GHz. Innovative features to support not only the conventional NMR applications such as structural analysis of molecules and evaluation of materials but also future progress of science and technologies including research for development of new drugs, postgenome research and development of new materials.</skos:definition>
     </owl:Class>
     
 
@@ -8202,8 +8247,9 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1400228 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400228">
-        <rdfs:label rdf:datatype="&xsd;string">ECA</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">JNM-ECA Series FT NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
+        <skos:definition>The JNM-ECA series is an FT NMR spectrometer developed making full use of the latest digital and high frequency technology. This high performance, sophisticated spectrometer designed to take advantage of high field magnet development to include 1GHz. Innovative features to support not only the conventional NMR applications such as structural analysis of molecules and evaluation of materials but also future progress of science and technologies including research for development of new drugs, postgenome research and development of new materials.</skos:definition>
     </owl:Class>
     
 
