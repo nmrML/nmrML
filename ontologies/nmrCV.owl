@@ -32,9 +32,9 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://nmrML.org/nmrCV">
-        <oboInOwl:creation_date rdf:datatype="&xsd;dateTime">03.03.2015</oboInOwl:creation_date>
-        <owl:versionInfo rdf:datatype="&xsd;string">1.0.0</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;string">1.1.0</owl:versionInfo>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="&xsd;string">1.2</oboInOwl:hasOBOFormatVersion>
+        <oboInOwl:creation_date rdf:datatype="&xsd;dateTime">18.11.2016</oboInOwl:creation_date>
         <oboInOwl:created_by rdf:datatype="&xsd;string">COSMOS consortium</oboInOwl:created_by>
         <doap:documenter rdf:datatype="&xsd;string">Daniel Schober</doap:documenter>
         <oboInOwl:created_by rdf:datatype="&xsd;string">Daniel Schober</oboInOwl:created_by>
@@ -115,11 +115,11 @@ Reza Salek, EBI, Hinxton, UK
 Philippe Rocca-Serra, University of Oxford, Oxford, UK
 Andrea Porzel, IPB-Halle, Germany
 and the COSMOS WP2 team</dc:contributor>
-        <doap:audience rdf:datatype="&xsd;string">This CV is to be used by metabolomics researchers who apply the  nmrML xml to store their NMR experimental results(primarily raw data) and (limited) basic metadata.</doap:audience>
+        <doap:audience rdf:datatype="&xsd;string">This CV is to be used by metabolomics researchers, or basically any chenomics or proteomics researchers  who apply the  nmrML xml to store their NMRraw data in a vendor agnostic manner. But nmrML can also be used to capture experimental results  and (limited) basic metadata like molecule to spectral feature assignments.</doap:audience>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">This artefact is an MSI approved controlled vocabulary developed under COSMOS WP2 governance. This CV was derived from two predecessors (The NMR CV from the David Wishard Group, developed by Joseph Cruz) and the MSI nmr CV developed by Daniel Schober at the EBI.
  This simple taxonomy of terms (no DL semantics used, for a short overview on the differences of Cv, taxonomy and ontology look at http://infogrid.org/trac/wiki/Reference/PidcockArticle) serves the nuclear magnetic resonance markup language (nmrML) with meaningful descriptors to amend the nmrML xml. Metabolomics scientists are encouraged to use this CV to annotrate their raw and experimental context data. The approach to have an exchange syntax mixed of an xsd and CV stems from the PSI mzML effort. The reason to branch out from an xsd into a CV is, that in areas where the terminology is likely to change faster than the nmrML xsd could be updated and aligned, an externally and possably decentrallised maintained CV can accompensate for such dynamics in a more flexible way. A second reason for this set-up is that semantic validity of CV terms used in a valid nmrML XML instance (allowed CV terms, position/relation to each other, cardinality) can be validated by rule-based proprietary validators:
  By means of cardinality specifications and XPath expressions defined in an XML mapping file (an instances of the CvMappingRules.xsd ), one can define what ontology terms are allowed in a specific location of the data model.</obo:IAO_0000115>
-        <rdfs:comment rdf:datatype="&xsd;string">This version uses the Basic Formal Ontology (BFO) as its top level ontology. All previosous versions used the BiotopLight (btl2) bio upper level ontology. We might close the resulting semantic gap by using OBI and IAO as intermediate bridges later.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">This version uses the Basic Formal Ontology (BFO) as its top level ontology.  We might at some point close the resulting semantic gap by using OBI and IAO as intermediate bridges.</rdfs:comment>
         <oboInOwl:saved-by rdf:datatype="&xsd;string">dschober</oboInOwl:saved-by>
         <protege:defaultLanguage rdf:datatype="&xsd;string">en</protege:defaultLanguage>
         <owl:deprecated rdf:datatype="&xsd;string">http://bioportal.bioontology.org/ontologies/1033</owl:deprecated>
@@ -132,24 +132,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
         <doap:location rdf:datatype="&xsd;string">https://github.com/nmrML/nmrML/tree/master/ontologies</doap:location>
         <doap:mailing-list rdf:datatype="&xsd;string">https://groups.google.com/forum/?hl=en#!forum/nmrml/join</doap:mailing-list>
         <dc:title rdf:datatype="&xsd;string">nuclear magnetic resonance CV</dc:title>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400032</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000531</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400033</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400073</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000011</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400074</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400075</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000014</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000013</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400096</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400128</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1000524</meta:bookmark>
         <dc:rights>Creative Commons Public Domain Mark 1.0</dc:rights>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400062</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400042</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400068</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1400043</meta:bookmark>
-        <meta:bookmark>http://nmrML.org/nmrCV#NMR:1002010</meta:bookmark>
         <owl:imports rdf:resource="&obo;bfo.owl"/>
     </owl:Ontology>
     
