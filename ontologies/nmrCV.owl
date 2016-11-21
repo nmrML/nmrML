@@ -1142,7 +1142,7 @@ extracts the real spectrum and the Im function extracts the imaginary spectrum f
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000068">
         <rdfs:label xml:lang="en">data extrapolation using linear prediction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000067"/>
     </owl:Class>
     
 
@@ -1314,8 +1314,9 @@ extracts the real spectrum and the Im function extracts the imaginary spectrum f
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000086">
         <rdfs:label xml:lang="en">2D J-resolved spectrum</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000118"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002007"/>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400162"/>
+        <oboInOwl:hasExactSynonym>JRES spectrum</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -1622,7 +1623,7 @@ extracts the real spectrum and the Im function extracts the imaginary spectrum f
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000118">
         <rdfs:label xml:lang="en">J-resolved spectrum</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000199"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
         <oboInOwl:hasExactSynonym>JRES spectrum</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -1723,7 +1724,7 @@ extracts the real spectrum and the Im function extracts the imaginary spectrum f
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000128">
         <rdfs:label xml:lang="en">homonuclear J-resolved spectrum</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000118"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000086"/>
     </owl:Class>
     
 
@@ -1732,7 +1733,7 @@ extracts the real spectrum and the Im function extracts the imaginary spectrum f
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000129">
         <rdfs:label xml:lang="en">heteronuclear J-resolved spectrum</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000118"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000086"/>
     </owl:Class>
     
 
@@ -4359,6 +4360,15 @@ Whatever your application field ECZS can demonstrate its power.
     
 
 
+    <!-- http://nmrML.org/nmrCV#NMR:1000405 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000405">
+        <rdfs:label xml:lang="de">BMRB identifier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000022"/>
+    </owl:Class>
+    
+
+
     <!-- http://nmrML.org/nmrCV#NMR:1000408 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000408">
@@ -6956,7 +6966,11 @@ Whatever your application field ECZS can demonstrate its power.
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000190"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A sequence of excitation pulses.</rdfs:comment>
         <dc:source>http://www.bmrb.wisc.edu/tools/choose_pulse_info.php</dc:source>
+        <skos:editorialNote>See also http://www.jcamp-dx.org/protocols/NMR%20Pulse%20Sequences%20PAC%2079(11)%20pp1748-1764%202001.pdf</skos:editorialNote>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/40</doap:bug-database>
+        <skos:editorialNote>May later import from  	
+
+http://purl.obolibrary.org/obo/CHMO_0001841</skos:editorialNote>
     </owl:Class>
     
 
