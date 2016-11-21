@@ -746,6 +746,7 @@ extracts the real spectrum and the Im function extracts the imaginary spectrum f
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000033">
         <rdfs:label xml:lang="en">Chloroform-d1</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000030"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000431"/>
     </owl:Class>
     
 
@@ -3155,7 +3156,8 @@ extracts the real spectrum and the Im function extracts the imaginary spectrum f
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000279">
         <rdfs:label xml:lang="en">NMR spectrum by phase state</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002007"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>specify via sample attribute subclass.</oboInOwl:consider>
     </owl:Class>
     
 
@@ -4195,6 +4197,15 @@ Whatever your application field ECZS can demonstrate its power.
     
 
 
+    <!-- http://nmrML.org/nmrCV#NMR:1000387 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000387">
+        <rdfs:label xml:lang="de">Avance I spectrometer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
+    </owl:Class>
+    
+
+
     <!-- http://nmrML.org/nmrCV#NMR:1000408 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000408">
@@ -4395,7 +4406,8 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000432">
         <rdfs:label xml:lang="en">Chloroform-d1</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000431"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <oboInOwl:consider>Chloroform-d1</oboInOwl:consider>
     </owl:Class>
     
 
@@ -7504,8 +7516,8 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1400126 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400126">
-        <rdfs:label rdf:datatype="&xsd;string">NMR quality check result</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400181"/>
+        <rdfs:label rdf:datatype="&xsd;string">NMR quality check descriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: A result of an NMR quality check.
    synonym: NMR quality check result</rdfs:comment>
     </owl:Class>
@@ -7937,9 +7949,10 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400181">
         <rdfs:label rdf:datatype="&xsd;string">quality check result</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000031"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: A quality check result is the usefull outcome of a quality check.
    defprov: Daniel Schober</rdfs:comment>
+        <oboInOwl:consider>NMR quality check descriptor</oboInOwl:consider>
     </owl:Class>
     
 
