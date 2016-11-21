@@ -465,7 +465,28 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000008">
         <rdfs:label xml:lang="en">quadrature detection</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400048"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
+        <rdfs:comment>see also http://www.chemeddl.org/alfresco/service/api/node/content/workspace/SpacesStore/915d785a-54ec-4259-a8c6-eeb5d4b0c55a/IntroNMR.pdf?guest=true
+
+One of the problems that should be apparent after observing the spectrum and the FID is that it is not possible 
+to determine if the frequency is positive or negative.  Under normal conditions this would not be a problem.  
+After all, what is a negative frequency?  The problem arises in NMR because the signals are at very high 
+frequencies.  In a typical magnet with a 7 Tesla field, protons are observed at approximately 300 MHz.  At such 
+a high frequency it is very difficult and expensive to detect, transmit, amplify and sample the signal.  These 
+acquisition problems are simplified by looking at frequency differences.  The instrument uses a spectrometer 
+frequency and all signal frequencies are measured relative to the spectrometer frequency.  If a molecule 
+produces two signals, one at 300,000,001 Hz and another at 299,999,999 Hz, and the spectrometer frequency 
+is 300,000,000 Hz, the first signal is at +1 Hz and the second is at -1 Hz.  Electronically the lower frequency 
+signals are very easy frequency to detect, transmit, amplify and sample.
+The complication with this rotating frame of reference is that a single detector can not distinguish positive and 
+negative frequencies.  Double check this by changing the sign of the signal above and observing the spectrum.  
+Where is the signal observed in the spectrum? 
+This problem is why quadrature detection is important.  Quadrature detection uses two detector channels 
+separated by 90 degrees.  These are referred to as the real channel and the imaginary channel.  Using these 
+two channels, it is possible to distinguish positive and negative frequencies.  This section shows how the 
+quadrature signal is processed to obtain an NMR spectrum.
+The Fourier transform produces a complex number with a real and an imaginary component.  The Re function 
+extracts the real spectrum and the Im function extracts the imaginary spectrum from the complex number.</rdfs:comment>
     </owl:Class>
     
 
@@ -1119,8 +1140,8 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000068 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000068">
-        <rdfs:label xml:lang="en">scaling by linear prediction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000079"/>
+        <rdfs:label xml:lang="en">data extrapolation using linear prediction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
     </owl:Class>
     
 
@@ -1194,7 +1215,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000076">
         <rdfs:label xml:lang="en">scaling by glog transform optimisation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000083"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
     </owl:Class>
     
 
@@ -1265,7 +1286,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000083">
         <rdfs:label xml:lang="en">scaling by generalized logarithmic transformation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000080"/>
-        <oboInOwl:hasExactSynonym>glog</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>glog scaling</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -6833,9 +6854,9 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1400048 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400048">
-        <rdfs:label rdf:datatype="&xsd;string">encoding</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">data encoding</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A data processing  which compresses a data file for a specific purpose.
+        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A data processing  which alteres a data file for a specific purpose.
    defprov: Daniel Schober</rdfs:comment>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/37</doap:bug-database>
     </owl:Class>
@@ -6890,7 +6911,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400055">
         <rdfs:label rdf:datatype="&xsd;string">radon encoding</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400048"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
         <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
     </owl:Class>
     
