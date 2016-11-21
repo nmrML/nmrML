@@ -335,16 +335,16 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A reference number relevant to the sample under study.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A reference number relevant to the sample under study.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000001"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -388,16 +388,16 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Total mass of sample used.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000004"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000004"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Total mass of sample used.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000004"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -413,16 +413,16 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000005"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Total volume of solution used.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000005"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000005"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -680,7 +680,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000031 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000031">
-        <rdfs:label rdf:datatype="&xsd;string">instrument model</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">NMR instrument model</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000496"/>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">Instrument model name not including the vendor&apos;s name.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
@@ -2322,8 +2322,10 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000193 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000193">
-        <rdfs:label xml:lang="en">ABX feature</rdfs:label>
+        <rdfs:label xml:lang="en">ABX pattern feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400006"/>
+        <skos:definition>AMX, ABX and ABC patterns, and various related spin systems are very common in Proton NMR of organic molecules.When two of the protons of an AMX pattern approach each other to form an ABX pattern, the characteristic changes in intensities of a strongly coupled system (leaning) are seen, and, as the size of J approaches the value of νAB more complicated changes arise, so that the pattern can no longer be analyzed correctly by first order methods.</skos:definition>
+        <foaf:homepage>http://www.chem.wisc.edu/areas/reich/nmr/05-hmr-12-abx.htm</foaf:homepage>
     </owl:Class>
     
 
@@ -2586,9 +2588,10 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000222 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000222">
-        <rdfs:label xml:lang="en">DNP NMR instrument</rdfs:label>
+        <rdfs:label xml:lang="en">dynamic nuclear polarization NMR</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000012"/>
         <oboInOwl:hasExactSynonym>dynamic nuclear polarization enhanced NMR system</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>DNP NMR</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -2671,7 +2674,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000231 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000231">
-        <rdfs:label rdf:datatype="&xsd;string">peak</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">peak feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000231</oboInOwl:id>
@@ -4071,15 +4074,6 @@ Whatever your application field ECZS can demonstrate its power.
     
 
 
-    <!-- http://nmrML.org/nmrCV#NMR:1000375 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000375">
-        <rdfs:label xml:lang="de">Metabolic Profiler instrument</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
-    </owl:Class>
-    
-
-
     <!-- http://nmrML.org/nmrCV#NMR:1000376 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000376">
@@ -4157,6 +4151,25 @@ Whatever your application field ECZS can demonstrate its power.
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000384">
         <rdfs:label xml:lang="de">JEOL Resonance 800MHz magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000385 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000385">
+        <rdfs:label xml:lang="de">single peak feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000231"/>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000386 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000386">
+        <rdfs:label xml:lang="de">NMR instrument vendor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000496"/>
+        <skos:definition>Any organisation ort person that sells NMR instruments to customers.</skos:definition>
     </owl:Class>
     
 
@@ -4629,16 +4642,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">SHA-1 (Secure Hash Algorithm-1) is a cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is also used to verify file integrity.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000569"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000569"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">SHA-1 (Secure Hash Algorithm-1) is a cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is also used to verify file integrity.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000569"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -4741,16 +4754,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000588"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Uniform Resource Locator related to the contact person or organization.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000588"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000588"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4766,16 +4779,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Email address of the contact person or organization.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000589"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000589"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Email address of the contact person or organization.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000589"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -4791,16 +4804,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000590"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Home institution of the contact person.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000590"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000590"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4834,16 +4847,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:date</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:date</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000747"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">The time that a data processing action was finished.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000747"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:date</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000747"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -4897,16 +4910,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the MSI-NMR working group in order to have another CV term added.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000799"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000799"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the MSI-NMR working group in order to have another CV term added.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000799"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5021,16 +5034,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:float</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000863"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:float</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000863"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000863"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -5064,16 +5077,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000865"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical formula which expresses the proportions of the elements present in a substance.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000865"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000865"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5114,16 +5127,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000867"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A chemical formula showing the number of atoms of each element in a molecule, their spatial arrangement, and their linkage to each other.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000867"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000867"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5286,16 +5299,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000885"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Accession number for a specific protein in a database.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000885"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000885"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5476,7 +5489,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000898 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000898">
-        <rdfs:label rdf:datatype="&xsd;string">standard</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">data standard</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;BFO_0000031"/>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1000898</oboInOwl:id>
@@ -5558,16 +5571,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000933"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Encoding of modifications of the protein sequence from the specified accession, written in PEFF notation.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000933"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1000933"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5860,16 +5873,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001757"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Toll-free phone number of the contact person or organization.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001757"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001757"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5910,16 +5923,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001923"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Free text attribute that can enrich the information about an entity.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001923"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001923"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -5985,16 +5998,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword assigned by a data curator.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001926"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001926"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Keyword assigned by a data curator.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:MI</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001926"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -6002,7 +6015,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1001954 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001954">
-        <rdfs:label rdf:datatype="&xsd;string">acquisition parameter</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">NMR acquisition parameter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400101"/>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1001954</oboInOwl:id>
@@ -6010,16 +6023,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Parameters used in the NMR spectrometry acquisition.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Parameters used in the NMR spectrometry acquisition.</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -6035,16 +6048,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:integer</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A unique identifier for a metabolite in the HMDB database (HMDB00001).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:integer</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A unique identifier for a metabolite in the HMDB database (HMDB00001).</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002000"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -6316,16 +6329,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002015"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Bin label.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002015"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002015"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -6391,16 +6404,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:decimal</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin area.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002018"/>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
         <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:decimal</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002018"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">Bin area.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002018"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
     </owl:Axiom>
     
 
@@ -6408,7 +6421,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1002020 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002020">
-        <rdfs:label rdf:datatype="&xsd;string">metabolite name</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">assigned chemical compound name</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002020</oboInOwl:id>
@@ -6416,16 +6429,16 @@ Whatever your application field ECZS can demonstrate its power.
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">value-type:xsd:string</oboInOwl:hasDbXref>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002020"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">MSI:NMR</oboInOwl:hasDbXref>
         <owl:annotatedTarget rdf:datatype="&xsd;string">Name of metabolite.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002020"/>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:label rdf:datatype="&xsd;string">The allowed value-type for this CV term.</rdfs:label>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">value-type:xsd:string</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1002020"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasDbXref"/>
     </owl:Axiom>
     
 
@@ -6433,7 +6446,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1002021 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002021">
-        <rdfs:label rdf:datatype="&xsd;string">metabolite concentration</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">assigned chemical compound concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1002014"/>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">NMR</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="&xsd;string">NMR:1002021</oboInOwl:id>
@@ -6485,7 +6498,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400006">
         <rdfs:label rdf:datatype="&xsd;string">multiplet feature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000172"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000231"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The analysis of one NMR sample at one time by NMR producing one raw dataset (a FID).
    synonym: NMR analysis</rdfs:comment>
         <oboInOwl:hasExactSynonym>multiplicity</oboInOwl:hasExactSynonym>
@@ -6931,9 +6944,11 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400062">
         <rdfs:label rdf:datatype="&xsd;string">instrument configuration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
         <rdfs:comment rdf:datatype="&xsd;string">tempdef: An instrument configuration is the description for the setting of an instrument or a machine in order to archive a certain intended goal or task.
    altdef: An instrument configuration is the process of setting the possible parameters of an instrument in order to archive a certain intended goal.</rdfs:comment>
+        <oboInOwl:consider>NMR instrument parameter set</oboInOwl:consider>
+        <oboInOwl:consider>NMR acquisition parameter</oboInOwl:consider>
     </owl:Class>
     
 
@@ -8087,8 +8102,8 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1400199 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400199">
-        <rdfs:label rdf:datatype="&xsd;string">Metabolic Profiler</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400200"/>
+        <rdfs:label rdf:datatype="&xsd;string">Metabolic Profiler instrument</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
         <rdfs:comment rdf:datatype="&xsd;string">For metabolism studies, and analysis of complex mixtures.</rdfs:comment>
     </owl:Class>
     
@@ -8117,9 +8132,9 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400202">
         <rdfs:label rdf:datatype="&xsd;string">NMR plattform</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000012"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
         <owl:versionInfo rdf:datatype="&xsd;string">TODO: What is the differrence to NMR instrument?</owl:versionInfo>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
+        <obo:IAO_0000232 rdf:datatype="&xsd;string">retired. USE: NMR Instrument.</obo:IAO_0000232>
     </owl:Class>
     
 
@@ -8607,9 +8622,9 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1400255 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400255">
-        <rdfs:label rdf:datatype="&xsd;string">NMR instrument vendor</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001269"/>
-        <rdfs:comment rdf:datatype="&xsd;string">defneed</rdfs:comment>
+        <rdfs:label rdf:datatype="&xsd;string">NMR instrument manufacturer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000496"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A manufacturer that produces (and eventually sells)  NMR instruments.</rdfs:comment>
     </owl:Class>
     
 
@@ -8724,8 +8739,9 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1400276 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400276">
-        <rdfs:label rdf:datatype="&xsd;string">LC-NMR</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">liquid chromatography NMR</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400200"/>
+        <oboInOwl:hasExactSynonym>LC NMR</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -8733,8 +8749,8 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1400277 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400277">
-        <rdfs:label rdf:datatype="&xsd;string">LC-NMR/MS</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400200"/>
+        <rdfs:label rdf:datatype="&xsd;string">LC MS NMR</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400276"/>
         <rdfs:comment rdf:datatype="&xsd;string">Includes the connection to a high-resolution TOF-LC-MS system.</rdfs:comment>
     </owl:Class>
     
@@ -8743,9 +8759,10 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1400278 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400278">
-        <rdfs:label rdf:datatype="&xsd;string">SPE-NMR</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400200"/>
+        <rdfs:label rdf:datatype="&xsd;string">solid phase extraction NMR</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000012"/>
         <rdfs:comment rdf:datatype="&xsd;string">A Solid Phase Extraction (SPE) system provides an interface between liquid chromatography (LC) and NMR. For the process of LC-SPE™ NMR a chromatographic separation is done and the peaks of interest are trapped on an individual SPE cartridge after the column. The peak selection is done either by UV detection or by evaluation of the on-line registered MS or MSn spectra.</rdfs:comment>
+        <oboInOwl:hasExactSynonym>SPE NMR</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -8754,7 +8771,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400279">
         <rdfs:label rdf:datatype="&xsd;string">Capillary LC-NMR</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400200"/>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400276"/>
         <rdfs:comment rdf:datatype="&xsd;string">Capillary LC-NMR is a hyphenated technique coupling capillary liquid chromatography and NMR, which increases sensitivity dramatically through the use of miniaturization of the chromatographic techniques and NMR detection volume.</rdfs:comment>
     </owl:Class>
     
@@ -8781,7 +8798,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1400283 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400283">
-        <rdfs:label rdf:datatype="&xsd;string">continuous wave NMR instrument</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;string">continuous wave NMR</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000012"/>
         <rdfs:comment rdf:datatype="&xsd;string">Continuous wave NMR spectrometers are similar in principle to optical spectrometers. The sample is held in a strong magnetic field, and the frequency of the source is slowly scanned (in some instruments, the source frequency is held constant, and the field is scanned).
    Defprov: http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr3.htm</rdfs:comment>
