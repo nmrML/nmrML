@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:dx="http://nmrml.org/schema" attributeFormDefault="unqualified"
-  elementFormDefault="qualified" targetNamespace="http://nmrml.org/schema" version="0.1.0"
+  elementFormDefault="qualified" targetNamespace="http://nmrml.org/schema" version="1.0.rc1"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://nmrml.org/schema">
   <xs:element name="nmrML" type="nmrMLType">
     <xs:annotation>
@@ -1116,7 +1116,7 @@ Parsed from Excitation width ?</xs:documentation>
             x-axis intervals or a set of (x,y) pairs.</xs:documentation>
         </xs:annotation>
       </xs:element>
-<!-- Set back the section xAxis ( AxisWithUnitType ) that had been previously removed. We need it to rebuild the ppm scale -->
+      <!-- Set back the section xAxis ( AxisWithUnitType ) that had been previously removed. We need it to rebuild the ppm scale -->
       <xs:element name="xAxis" type="AxisWithUnitType"/>
       <xs:element name="processingParameterSet" minOccurs="0">
         <xs:annotation>
@@ -1151,6 +1151,7 @@ Parsed from Excitation width ?</xs:documentation>
         <xs:documentation>An ID for the spectrum so that it can be referenced within the file for spectrum annotations.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="name" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:complexType name="SpectrumRefType">
     <xs:attribute name="ref" type="xs:IDREF" use="required">
