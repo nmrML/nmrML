@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ontology Browser</title>
+<meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+<link rel='stylesheet' href='../css/default.css' type='text/css' />
+</head>
+
+<body>
+
+<div id='tabs'>
+<a href='../ontologies/index.html' class='' >Ontologies</a>
+<a href='index.html' class='' >Classes</a>
+Object Properties
+Data Properties
+<a href='../annotationproperties/index.html' class='' >Annotation Properties</a>
+Individuals
+<a href='../datatypes/index.html' class='' >Datatypes</a>
+<a href='../cloud/' class='' >Clouds</a>
+</div> <!-- tabs -->
+
+
+<div class='summary'><h2>Class: BFO_0000144</h2>
+
+<div id='annotations_(13)'>
+<h4>Annotations (13)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="../annotationproperties/BFO_0000179___-324347505.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/BFO_0000179">BFO_0000179</a> <span class='literal'>"process-profile"</span></li>
+<li class="asserted"><a href="../annotationproperties/BFO_0000180___-324347483.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/BFO_0000180">BFO_0000180</a> <span class='literal'>"ProcessProfile"</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000112___964462202.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000112">IAO_0000112</a> <span class='literal'>"On a somewhat higher level of complexity are what we shall call rate process profiles, which are the targets of selective abstraction focused not on determinate quality magnitudes plotted over time, but rather on certain ratios between these magnitudes and elapsed times. A speed process profile, for example, is represented by a graph plotting against time the ratio of distance covered per unit of time. Since rates may change, and since such changes, too, may have rates of change, we have to deal here with a hierarchy of process profile universals at successive levels"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000112___964462202.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000112">IAO_0000112</a> <span class='literal'>"One important sub-family of rate process profiles is illustrated by the beat or frequency profiles of cyclical processes, illustrated by the 60 beats per minute beating process of John’s heart, or the 120 beats per minute drumming process involved in one of John’s performances in a rock band, and so on. Each such process includes what we shall call a beat process profile instance as part, a subtype of rate process profile in which the salient ratio is not distance covered but rather number of beat cycles per unit of time. Each beat process profile instance instantiates the determinable universal beat process profile. But it also instantiates multiple more specialized universals at lower levels of generality, selected from   rate process profilebeat process profileregular beat process profile3 bpm beat process profile4 bpm beat process profileirregular beat process profileincreasing beat process profileand so on.In the case of a regular beat process profile, a rate can be assigned in the simplest possible fashion by dividing the number of cycles by the length of the temporal region occupied by the beating process profile as a whole. Irregular process profiles of this sort, for example as identified in the clinic, or in the readings on an aircraft instrument panel, are often of diagnostic significance."</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000112___964462202.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000112">IAO_0000112</a> <span class='literal'>"The simplest type of process profiles are what we shall call ‘quality process profiles’, which are the process profiles which serve as the foci of the sort of selective abstraction that is involved when measurements are made of changes in single qualities, as illustrated, for example, by process profiles of mass, temperature, aortic pressure, and so on."</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000115___964462205.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000115">IAO_0000115</a> <span class='literal'>"b is a process_profile =Def. there is some process c such that b process_profile_of c (axiom label in BFO2 Reference: [093-002])"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000600___964466974.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000600">IAO_0000600</a> <span class='literal'>"b process_profile_of c holds when b proper_occurrent_part_of c& there is some proper_occurrent_part d of c which has no parts in common with b & is mutually dependent on b& is such that b, c and d occupy the same temporal region (axiom label in BFO2 Reference: [094-005])"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000602___964466976.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000602">IAO_0000602</a> <span class='literal'>"(forall (x y) (if (processProfileOf x y) (and (properContinuantPartOf x y) (exists (z t) (and (properOccurrentPartOf z y) (TemporalRegion t) (occupiesSpatioTemporalRegion x t) (occupiesSpatioTemporalRegion y t) (occupiesSpatioTemporalRegion z t) (not (exists (w) (and (occurrentPartOf w x) (occurrentPartOf w z))))))))) // axiom label in BFO2 CLIF: [094-005] "</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000602___964466976.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000602">IAO_0000602</a> <span class='literal'>"(iff (ProcessProfile a) (exists (b) (and (Process b) (processProfileOf a b)))) // axiom label in BFO2 CLIF: [093-002] "</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0010000___965384729.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0010000">IAO_0010000</a> http://purl.obolibrary.org/obo/bfo/axiom/093-002 
+<a href='http://purl.obolibrary.org/obo/bfo/axiom/093-002' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fbfo%2Faxiom%2F093-002&redirect=..%2Fclasses%2FBFO_0000144___-324347603.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0010000___965384729.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0010000">IAO_0010000</a> http://purl.obolibrary.org/obo/bfo/axiom/094-005 
+<a href='http://purl.obolibrary.org/obo/bfo/axiom/094-005' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fbfo%2Faxiom%2F094-005&redirect=..%2Fclasses%2FBFO_0000144___-324347603.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/isDefinedBy___449337134.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a> http://purl.obolibrary.org/obo/<b>bfo.owl</b> 
+<a href='http://purl.obolibrary.org/obo/bfo.owl' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a></li>
+<li class="asserted"><a href="../annotationproperties/label___653429740.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a> <span class='literal'>"process profile"</span> <span style='color: black;'>@en</span></li>
+</ul>
+</div>
+</div><!-- annotations (13) -->
+
+
+<div id='superclasses_(1)'>
+<h4>Superclasses (1)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="BFO_0000015___-324348656.html" class='Class' title="http://purl.obolibrary.org/obo/BFO_0000015">BFO_0000015</a></li>
+</ul>
+</div>
+</div><!-- superclasses (1) -->
+
+
+<div id='disjoints_(2)'>
+<h4>Disjoints (2)</h4>
+<div class='codebox'>
+<span class="asserted"><span class='Class active-entity'>BFO_0000144</span></span>,
+<span class="asserted"><a href="BFO_0000182___-324347481.html" class='Class' title="http://purl.obolibrary.org/obo/BFO_0000182">BFO_0000182</a></span></div>
+</div><!-- disjoints (2) -->
+
+</div> <!-- summary -->
+<p class='footer'>
+<a href='http://code.google.com/p/ontology-browser/' target='_blank'>OWL HTML inside</a>
+</p>
+</body>
+</html>

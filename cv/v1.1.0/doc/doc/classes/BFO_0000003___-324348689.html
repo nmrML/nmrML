@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ontology Browser</title>
+<meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+<link rel='stylesheet' href='../css/default.css' type='text/css' />
+</head>
+
+<body>
+
+<div id='tabs'>
+<a href='../ontologies/index.html' class='' >Ontologies</a>
+<a href='index.html' class='' >Classes</a>
+Object Properties
+Data Properties
+<a href='../annotationproperties/index.html' class='' >Annotation Properties</a>
+Individuals
+<a href='../datatypes/index.html' class='' >Datatypes</a>
+<a href='../cloud/' class='' >Clouds</a>
+</div> <!-- tabs -->
+
+
+<div class='summary'><h2>Class: BFO_0000003</h2>
+
+<div id='annotations_(19)'>
+<h4>Annotations (19)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="../annotationproperties/BFO_0000179___-324347505.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/BFO_0000179">BFO_0000179</a> <span class='literal'>"occurrent"</span></li>
+<li class="asserted"><a href="../annotationproperties/BFO_0000180___-324347483.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/BFO_0000180">BFO_0000180</a> <span class='literal'>"Occurrent"</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000116___964462206.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000116">IAO_0000116</a> <span class='literal'>"BFO 2 Reference: every occurrent that is not a temporal or spatiotemporal region is s-dependent on some independent continuant that is not a spatial region"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000116___964462206.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000116">IAO_0000116</a> <span class='literal'>"BFO 2 Reference: s-dependence obtains between every process and its participants in the sense that, as a matter of necessity, this process could not have existed unless these or those participants existed also. A process may have a succession of participants at different phases of its unfolding. Thus there may be different players on the field at different times during the course of a football game; but the process which is the entire game s-depends_on all of these players nonetheless. Some temporal parts of this process will s-depend_on on only some of the players."</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000116___964462206.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000116">IAO_0000116</a> <span class='literal'>"Occurrent doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. An example would be the sum of a process and the process boundary of another process."</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000116___964462206.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000116">IAO_0000116</a> <span class='literal'>"Simons uses different terminology for relations of occurrents to regions: Denote the spatio-temporal location of a given occurrent e by 'spn[e]' and call this region its span. We may say an occurrent is at its span, in any larger region, and covers any smaller region. Now suppose we have fixed a frame of reference so that we can speak not merely of spatio-temporal but also of spatial regions (places) and temporal regions (times). The spread of an occurrent, (relative to a frame of reference) is the space it exactly occupies, and its spell is likewise the time it exactly occupies. We write 'spr[e]' and `spl[e]' respectively for the spread and spell of e, omitting mention of the frame."</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000600___964466974.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000600">IAO_0000600</a> <span class='literal'>"An occurrent is an entity that unfolds itself in time or it is the instantaneous boundary of such an entity (for example a beginning or an ending) or it is a temporal or spatiotemporal region which such an entity occupies_temporal_region or occupies_spatiotemporal_region. (axiom label in BFO2 Reference: [077-002])"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000601___964466975.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000601">IAO_0000601</a> <span class='literal'>"Every occurrent occupies_spatiotemporal_region some spatiotemporal region. (axiom label in BFO2 Reference: [108-001])"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000601___964466975.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000601">IAO_0000601</a> <span class='literal'>"b is an occurrent entity iff b is an entity that has temporal parts. (axiom label in BFO2 Reference: [079-001])"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000602___964466976.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000602">IAO_0000602</a> <span class='literal'>"(forall (x) (if (Occurrent x) (exists (r) (and (SpatioTemporalRegion r) (occupiesSpatioTemporalRegion x r))))) // axiom label in BFO2 CLIF: [108-001] "</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0000602___964466976.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0000602">IAO_0000602</a> <span class='literal'>"(forall (x) (iff (Occurrent x) (and (Entity x) (exists (y) (temporalPartOf y x))))) // axiom label in BFO2 CLIF: [079-001] "</span></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0010000___965384729.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0010000">IAO_0010000</a> http://purl.obolibrary.org/obo/bfo/axiom/0000006 
+<a href='http://purl.obolibrary.org/obo/bfo/axiom/0000006' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fbfo%2Faxiom%2F0000006&redirect=..%2Fclasses%2FBFO_0000003___-324348689.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0010000___965384729.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0010000">IAO_0010000</a> http://purl.obolibrary.org/obo/bfo/axiom/0000012 
+<a href='http://purl.obolibrary.org/obo/bfo/axiom/0000012' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fbfo%2Faxiom%2F0000012&redirect=..%2Fclasses%2FBFO_0000003___-324348689.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0010000___965384729.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0010000">IAO_0010000</a> http://purl.obolibrary.org/obo/bfo/axiom/077-002 
+<a href='http://purl.obolibrary.org/obo/bfo/axiom/077-002' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fbfo%2Faxiom%2F077-002&redirect=..%2Fclasses%2FBFO_0000003___-324348689.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0010000___965384729.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0010000">IAO_0010000</a> http://purl.obolibrary.org/obo/bfo/axiom/079-001 
+<a href='http://purl.obolibrary.org/obo/bfo/axiom/079-001' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fbfo%2Faxiom%2F079-001&redirect=..%2Fclasses%2FBFO_0000003___-324348689.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/IAO_0010000___965384729.html" class='Annotation Property' title="http://purl.obolibrary.org/obo/IAO_0010000">IAO_0010000</a> http://purl.obolibrary.org/obo/bfo/axiom/108-001 
+<a href='http://purl.obolibrary.org/obo/bfo/axiom/108-001' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fbfo%2Faxiom%2F108-001&redirect=..%2Fclasses%2FBFO_0000003___-324348689.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/comment___1501100887.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> <span class='literal'>"per discussion with Barry Smith"</span></li>
+<li class="asserted"><a href="../annotationproperties/isDefinedBy___449337134.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a> http://purl.obolibrary.org/obo/<b>bfo.owl</b> 
+<a href='http://purl.obolibrary.org/obo/bfo.owl' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a></li>
+<li class="asserted"><a href="../annotationproperties/label___653429740.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a> <span class='literal'>"occurrent"</span> <span style='color: black;'>@en</span></li>
+</ul>
+</div>
+</div><!-- annotations (19) -->
+
+
+<div id='superclasses_(1)'>
+<h4>Superclasses (1)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="BFO_0000001___-324348691.html" class='Class' title="http://purl.obolibrary.org/obo/BFO_0000001">BFO_0000001</a></li>
+</ul>
+</div>
+</div><!-- superclasses (1) -->
+
+
+<div id='disjoints_(2)'>
+<h4>Disjoints (2)</h4>
+<div class='codebox'>
+<span class="asserted"><a href="BFO_0000002___-324348690.html" class='Class' title="http://purl.obolibrary.org/obo/BFO_0000002">BFO_0000002</a></span>,
+<span class="asserted"><span class='Class active-entity'>BFO_0000003</span></span></div>
+</div><!-- disjoints (2) -->
+
+</div> <!-- summary -->
+<p class='footer'>
+<a href='http://code.google.com/p/ontology-browser/' target='_blank'>OWL HTML inside</a>
+</p>
+</body>
+</html>
