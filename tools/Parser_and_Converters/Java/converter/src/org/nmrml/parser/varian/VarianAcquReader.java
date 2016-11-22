@@ -61,6 +61,7 @@ public class VarianAcquReader implements AcquReader {
     private final static Pattern REGEXP_PULSEWIDTH = Pattern.compile("^pw "); // pulseWidth90
     private final static Pattern REGEXP_SW = Pattern.compile("^sw "); //spectral width (Hz)
     private final static Pattern REGEXP_NUC1 = Pattern.compile("^tn "); // observed nucleus
+    private final static Pattern REGEXP_NUC2 = Pattern.compile("^dn "); // decoupled nucleus
     private final static Pattern REGEXP_TEMPERATURE = Pattern.compile("^temp "); // temperature in Kelvin
     private final static Pattern REGEXP_SOLVENT = Pattern.compile("^solvent "); // solvent name
     private final static Pattern REGEXP_PROBHD = Pattern.compile("^probe_ "); // probehead
@@ -200,6 +201,18 @@ public class VarianAcquReader implements AcquReader {
                     matcher = REGEXP_STRING.matcher(line);
                     matcher.find();
                     acquisition.setObservedNucleus(matcher.group(1));
+                }
+            }
+            // decoupled nucleus
+            if (REGEXP_NUC2.matcher(line).find()) {
+                line = inputAcqReader.readLine();
+                if (REGEXP_STRING.matcher(line).find()) {
+                    matcher = REGEXP_STRING.matcher(line);
+                    matcher.find();
+                    acquisition.setDecoupledNucleus(matcher.group(1));
+                    if ( acquisition.getDecoupledNucleus().equals("") ) {
+                         acquisition.setDecoupledNucleus("off");
+                    }
                 }
             }
             // probehead

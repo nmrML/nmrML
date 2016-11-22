@@ -9374,38 +9374,49 @@ This is a row operation that is applied to the data from each sample and compris
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
 
-    <owl:Class rdf:about="&obo;BFO_0000015"/>
-    
+    <owl:Class rdf:about="&obo;BFO_0000015">
+        <rdfs:label>process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
 
-    <owl:Class rdf:about="&obo;BFO_0000017"/>
-    
+    <owl:Class rdf:about="&obo;BFO_0000017">
+        <rdfs:label>realizable entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
 
-    <owl:Class rdf:about="&obo;BFO_0000019"/>
-    
+    <owl:Class rdf:about="&obo;BFO_0000019">
+        <rdfs:label>quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
 
-    <owl:Class rdf:about="&obo;BFO_0000030"/>
-    
+    <owl:Class rdf:about="&obo;BFO_0000030">
+        <rdfs:label>object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
 
-    <owl:Class rdf:about="&obo;BFO_0000031"/>
-    
+    <owl:Class rdf:about="&obo;BFO_0000031">
+        <rdfs:label>generically dependent continuant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000040"/>
-    
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#BFO_0000001">
+        <rdfs:label>entity</rdfs:label>
+    </owl:Class>
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
