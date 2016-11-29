@@ -325,7 +325,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000000 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000000">
-        <rdfs:label xml:lang="de">integer32</rdfs:label>
+        <rdfs:label xml:ang="en">integer32</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000336"/>
         <dc:coverage>For 1r/1i spectra and for Bruker, this term describe an array of integers (32bits).</dc:coverage>
     </owl:Class>
@@ -360,7 +360,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     <!-- http://nmrML.org/nmrCV#NMR:1000002 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000002">
-        <rdfs:label xml:lang="de">long64</rdfs:label>
+        <rdfs:label xml:ang="en">long64</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000336"/>
         <dc:coverage>For 1r/1i spectra and for Bruker, this term describe an array of longs (64bits).</dc:coverage>
     </owl:Class>
@@ -848,7 +848,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000043 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000043">
-        <rdfs:label xml:lang="de">post-acquisition solvent suppression</rdfs:label>
+        <rdfs:label xml:ang="en">post-acquisition solvent suppression</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000014"/>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
     </owl:Class>
@@ -1413,7 +1413,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000095 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000095">
-        <rdfs:label xml:lang="de">concentration of chemical compound</rdfs:label>
+        <rdfs:label xml:ang="en">concentration of chemical compound</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000861"/>
     </owl:Class>
     
@@ -1821,7 +1821,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000137 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000137">
-        <rdfs:label xml:lang="de">computed concentration</rdfs:label>
+        <rdfs:label xml:ang="en">computed concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000095"/>
         <skos:editorialNote>request these in UO ?</skos:editorialNote>
     </owl:Class>
@@ -1896,7 +1896,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000145 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000145">
-        <rdfs:label xml:lang="de">library based computed concentration</rdfs:label>
+        <rdfs:label xml:ang="en">library based computed concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000137"/>
     </owl:Class>
     
@@ -1905,7 +1905,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000146 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000146">
-        <rdfs:label xml:lang="de">Lorenzian estimated concentration</rdfs:label>
+        <rdfs:label xml:ang="en">Lorenzian estimated concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000137"/>
         <rdfs:comment>https://docs.google.com/spreadsheets/d/1egsLQWoQuCxAYPr9MIo-F0A5K9RCbJSC8yWZyYq_fiQ/edit?usp=sharing</rdfs:comment>
         <oboInOwl:hasExactSynonym>Lorenzian (-Integration) (Modeled Area) Estimated Concentration</oboInOwl:hasExactSynonym>
@@ -1916,7 +1916,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000147 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000147">
-        <rdfs:label xml:lang="de">measured area based concentration</rdfs:label>
+        <rdfs:label xml:ang="en">measured area based concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000137"/>
         <oboInOwl:hasExactSynonym>Measured Area (Integration) based Concentration</oboInOwl:hasExactSynonym>
     </owl:Class>
@@ -1926,7 +1926,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000148 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000148">
-        <rdfs:label xml:lang="de">time-domain amplitude computed concentration</rdfs:label>
+        <rdfs:label xml:ang="en">time-domain amplitude computed concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000137"/>
     </owl:Class>
     
@@ -1935,7 +1935,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000149 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000149">
-        <rdfs:label xml:lang="de">group time delay compensation</rdfs:label>
+        <rdfs:label xml:ang="en">group time delay compensation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400042"/>
         <rdfs:seeAlso>http://nmr-analysis.blogspot.fr/2008/02/why-arent-bruker-fids-time-corrected.html</rdfs:seeAlso>
         <skos:definition>This is independent of the bruker acquisition parameter named &quot;GRPDLY&quot; (Group Delay), but this is a &quot;shift&quot; applied on the fid to calibrate its zero</skos:definition>
@@ -2018,7 +2018,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000158 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000158">
-        <rdfs:label xml:lang="de">automatic baseline recognition</rdfs:label>
+        <rdfs:label xml:ang="en">automatic baseline recognition</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
         <dc:source>Bao et al. (2013) A new automatic baseline correction method based on iterative method, J. Magn. Res. 218:35-43</dc:source>
         <dc:source>Golotvin &amp; Williams (2000), Improved baseline recognition and modeling of FT NMR spectra, J. Magn. Res. 146:122-125</dc:source>
@@ -2029,7 +2029,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000159 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000159">
-        <rdfs:label xml:lang="de">Trimethylsilyl propionate</rdfs:label>
+        <rdfs:label xml:ang="en">Trimethylsilyl propionate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000026"/>
         <oboInOwl:hasExactSynonym>TSP</oboInOwl:hasExactSynonym>
     </owl:Class>
@@ -2039,7 +2039,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000160 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000160">
-        <rdfs:label xml:lang="de">pulse sequence from Wishart lab library</rdfs:label>
+        <rdfs:label xml:ang="en">pulse sequence from Wishart lab library</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400037"/>
     </owl:Class>
     
@@ -2126,7 +2126,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000169 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000169">
-        <rdfs:label xml:lang="de">CIMR MI standard</rdfs:label>
+        <rdfs:label xml:ang="en">CIMR MI standard</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000900"/>
     </owl:Class>
     
@@ -2240,7 +2240,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000181 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000181">
-        <rdfs:label xml:lang="de">NMRProcFlow software</rdfs:label>
+        <rdfs:label xml:ang="en">NMRProcFlow software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000090"/>
         <obo:IAO_0000115 xml:lang="en">The NMRProcFlow open source software provides a complete set of tools for processing (e.g. Bucketing) and visualization of 1D NMR data, the whole within an interactive interface based on a spectra visualization.</obo:IAO_0000115>
         <foaf:homepage xml:lang="en">http://www.nmrprocflow.org/</foaf:homepage>
@@ -2251,7 +2251,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000182 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000182">
-        <rdfs:label xml:lang="de">Bayesil software</rdfs:label>
+        <rdfs:label xml:ang="en">Bayesil software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000090"/>
         <dc:source>Ravanbakhsh S, Liu P, Bjorndahl TC, Mandal R, Grant JR, Wilson M, Eisner R, Sinelnikov I, Hu X, Luchinat C, Greiner R, Wishart DS. (2015) Accurate, Fully-Automated NMR Spectral Profiling for Metabolomics. PLoS ONE 10(5): e0124219.</dc:source>
         <obo:IAO_0000115 xml:lang="en">Bayesil is a web system that automatically identifies and quantifies metabolites using 1D 1H NMR spectra of ultra-filtered plasma, serum or cerebrospinal fluid. The NMR spectra must be collected in a standardized fashion for Bayesil to perform optimally. Bayesil first performs all spectral processing steps, including Fourier transformation, phasing, solvent filtering, chemical shift referencing, baseline correction and reference line shape convolution automatically. It then deconvolutes the resulting NMR spectrum using a reference spectral library, which here contains the signatures of more than 60 metabolites. This deconvolution process determines both the identity and quantity of the compounds in the biofluid mixture.</obo:IAO_0000115>
@@ -2263,7 +2263,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000183 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000183">
-        <rdfs:label xml:lang="de">nmrML Assign</rdfs:label>
+        <rdfs:label xml:ang="en">nmrML Assign</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000182"/>
         <rdfs:comment xml:lang="en">Uses JspectraView Software</rdfs:comment>
         <foaf:homepage xml:lang="en">http://nmrml.bayesil.ca/</foaf:homepage>
@@ -2524,7 +2524,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000211 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000211">
-        <rdfs:label xml:lang="de">NMR Format converter</rdfs:label>
+        <rdfs:label xml:ang="en">NMR Format converter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
     </owl:Class>
     
@@ -2876,7 +2876,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000249 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000249">
-        <rdfs:label xml:lang="de">Matlab to nmrML converter</rdfs:label>
+        <rdfs:label xml:ang="en">Matlab to nmrML converter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <rdfs:comment xml:lang="en">By Batman/ Tim Ebbels Group</rdfs:comment>
         <dc:source xml:lang="en">Git: nmrML\tools\Parser_and_Converters\Matlab</dc:source>
@@ -3351,7 +3351,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000299 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000299">
-        <rdfs:label xml:lang="de">nmRIO</rdfs:label>
+        <rdfs:label xml:ang="en">nmRIO</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <dc:source xml:lang="en">Git: nmrML\tools\Parser_and_Converters\R</dc:source>
         <rdfs:comment xml:lang="en">R statistics to nmrML. Developed by Steffen Neumann, IPB-Halle.de</rdfs:comment>
@@ -3362,7 +3362,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000300 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000300">
-        <rdfs:label xml:lang="de">rNMR-IO</rdfs:label>
+        <rdfs:label xml:ang="en">rNMR-IO</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <dc:source xml:lang="en">Git: nmrML\tools\Parser_and_Converters\R\rNMR-IO</dc:source>
     </owl:Class>
@@ -3372,7 +3372,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <!-- http://nmrML.org/nmrCV#NMR:1000301 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000301">
-        <rdfs:label xml:lang="de">Vendor2nmrML_Java</rdfs:label>
+        <rdfs:label xml:ang="en">Vendor2nmrML_Java</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <obo:IAO_0000115 xml:lang="en">Based on both nmrML.xsd (XML Schema Definition) and CV params (such as ontologies nmrCV, UO, CHEBI ...), a converter written in Java was developed that automatically generates nmrML files, from raw files of the major NMR vendors. The choice of Java was guided by i)  the JAXB framework  (Java Architecture for XML Binding), ii) its OS-platform independence and iii) strengthened by the existence of a useful java library (i.e [nmr-fid-tool](https://github.com/LuisFF/nmr-fid-tool)) for further processing and visualisation of the resulting nmrML data. 
 As nmrML intents to gather and integrate several types of data and corresponding metadata in a single file, it is necessary to process each data source separately. Thus, two command tools were developed.
@@ -3509,7 +3509,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000311 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000311">
-        <rdfs:label xml:lang="de">PynmrML</rdfs:label>
+        <rdfs:label xml:ang="en">PynmrML</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000211"/>
         <rdfs:comment xml:lang="en">A Python based vendor to nmrML converter developed by MIchael Wilson at TMIC Edmonton.</rdfs:comment>
         <dc:source xml:lang="en">Git: nmrML\tools\Parser_and_Converters\python</dc:source>
@@ -3520,7 +3520,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000312 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000312">
-        <rdfs:label xml:lang="de">MetaboAnalyst software</rdfs:label>
+        <rdfs:label xml:ang="en">MetaboAnalyst software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
         <rdfs:comment xml:lang="en"> Jianguo Xia, Igor V. Sinelnikov, Beomsoo Han and David S. Wishart, MetaboAnalyst 3.0—making metabolomics more meaningful,  Nucl. Acids Res. (1 July 2015) 43 (W1): W251-W257. doi: 10.1093/nar/gkv380 </rdfs:comment>
         <obo:IAO_0000115 xml:lang="en">A web server designed to permit comprehensive metabolomic data analysis, visualization and interpretation. It supports a wide range of complex statistical calculations and high quality graphical rendering functions that require significant computational resources.</obo:IAO_0000115>
@@ -3604,7 +3604,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000321 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000321">
-        <rdfs:label xml:lang="de">XEASY software</rdfs:label>
+        <rdfs:label xml:ang="en">XEASY software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
         <obo:IAO_0000115 xml:lang="en">A new program package, XEASY, was written for interactive computer support of the analysis of NMR spectra for three-dimensional structure determination of biological macromolecules. XEASY was developed for work with 2D, 3D and 4D NMR data sets. It includes all the functions performed by the precursor program EASY, which was designed for the analysis of 2D NMR spectra, i.e., peak picking and support of sequence-specific resonance assignments, cross-peak assignments, cross-peak integration and rate constant determination for dynamic processes.</obo:IAO_0000115>
         <dc:source xml:lang="en">Christian Bartels, Tai-he Xia, Martin Billeter, Peter Güntert, Kurt Wüthrich,  The program XEASY for computer-supported NMR spectral analysis of biological macromolecules, J Biomol NMR (1995) 6: 1. doi:10.1007/BF00417486</dc:source>
@@ -3615,7 +3615,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000322 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000322">
-        <rdfs:label xml:lang="de">NMR spectrum vizualisation software</rdfs:label>
+        <rdfs:label xml:ang="en">NMR spectrum vizualisation software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
     </owl:Class>
     
@@ -3624,7 +3624,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000323 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000323">
-        <rdfs:label xml:lang="de">JspectraView software</rdfs:label>
+        <rdfs:label xml:ang="en">JspectraView software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000322"/>
         <rdfs:comment xml:lang="en">Used in NMR Assign tool for Baysil</rdfs:comment>
     </owl:Class>
@@ -3664,7 +3664,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000327 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000327">
-        <rdfs:label xml:lang="de">NMRViewer software</rdfs:label>
+        <rdfs:label xml:ang="en">NMRViewer software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000322"/>
         <rdfs:comment xml:lang="en">Developed by Daniel Jacob, INRA Bordeaux</rdfs:comment>
         <dc:source xml:lang="en">Git: nmrML\tools\Visualizers\PMB_NMRviewer</dc:source>
@@ -3685,7 +3685,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <!-- http://nmrML.org/nmrCV#NMR:1000329 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000329">
-        <rdfs:label xml:lang="de">AB multiplet pattern</rdfs:label>
+        <rdfs:label xml:ang="en">AB multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
         <dc:source>http://www.chem.wisc.edu/areas/reich/plt/windnmr.htm</dc:source>
     </owl:Class>
@@ -3807,7 +3807,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000342 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000342">
-        <rdfs:label xml:lang="de">AB2 multiplet pattern</rdfs:label>
+        <rdfs:label xml:ang="en">AB2 multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
         <dc:source>http://www.chem.wisc.edu/areas/reich/plt/windnmr.htm</dc:source>
     </owl:Class>
@@ -3903,7 +3903,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000351 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000351">
-        <rdfs:label xml:lang="de">ABX multiplet pattern</rdfs:label>
+        <rdfs:label xml:ang="en">ABX multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
     </owl:Class>
     
@@ -3939,7 +3939,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000355 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000355">
-        <rdfs:label xml:lang="de">ABX3 multiplet pattern</rdfs:label>
+        <rdfs:label xml:ang="en">ABX3 multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
         <dc:source>http://www.chem.wisc.edu/areas/reich/plt/windnmr.htm</dc:source>
     </owl:Class>
@@ -3949,7 +3949,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000356 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000356">
-        <rdfs:label xml:lang="de">AA&apos;BB&apos; multiplet pattern</rdfs:label>
+        <rdfs:label xml:ang="en">AA&apos;BB&apos; multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
         <dc:source>http://www.chem.wisc.edu/areas/reich/plt/windnmr.htm</dc:source>
     </owl:Class>
@@ -3959,7 +3959,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000357 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000357">
-        <rdfs:label xml:lang="de">AA&apos;XX&apos; multiplet pattern</rdfs:label>
+        <rdfs:label xml:ang="en">AA&apos;XX&apos; multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
         <dc:source>http://www.chem.wisc.edu/areas/reich/plt/windnmr.htm</dc:source>
     </owl:Class>
@@ -3969,7 +3969,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000358 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000358">
-        <rdfs:label xml:lang="de">variable size bucketing</rdfs:label>
+        <rdfs:label xml:ang="en">variable size bucketing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
     </owl:Class>
     
@@ -3978,7 +3978,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000359 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000359">
-        <rdfs:label xml:lang="de">uniform bucketing</rdfs:label>
+        <rdfs:label xml:ang="en">uniform bucketing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
     </owl:Class>
     
@@ -3987,7 +3987,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000360 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000360">
-        <rdfs:label xml:lang="de">intelligent bucketing</rdfs:label>
+        <rdfs:label xml:ang="en">intelligent bucketing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
     </owl:Class>
     
@@ -3996,7 +3996,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000361 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000361">
-        <rdfs:label xml:lang="de">bucket importing</rdfs:label>
+        <rdfs:label xml:ang="en">bucket importing</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
     </owl:Class>
     
@@ -4005,7 +4005,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000362 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000362">
-        <rdfs:label xml:lang="de">bucket resetting</rdfs:label>
+        <rdfs:label xml:ang="en">bucket resetting</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
         <rdfs:comment>put in as reqired by NMRProcFlow tool</rdfs:comment>
     </owl:Class>
@@ -4015,7 +4015,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000363 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000363">
-        <rdfs:label xml:lang="de">global baseline correction</rdfs:label>
+        <rdfs:label xml:ang="en">global baseline correction</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
         <rdfs:comment>as needed for nmrProcFlow</rdfs:comment>
     </owl:Class>
@@ -4025,7 +4025,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000364 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000364">
-        <rdfs:label xml:lang="de">local baseline correction</rdfs:label>
+        <rdfs:label xml:ang="en">local baseline correction</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400074"/>
         <rdfs:comment>as needed for nmrProcFlow</rdfs:comment>
     </owl:Class>
@@ -4035,7 +4035,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000365 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000365">
-        <rdfs:label xml:lang="de">bucket fusioning</rdfs:label>
+        <rdfs:label xml:ang="en">bucket fusioning</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000362"/>
     </owl:Class>
     
@@ -4044,7 +4044,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000368 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000368">
-        <rdfs:label xml:lang="de">JNM-ECX Series FT NMR instrument</rdfs:label>
+        <rdfs:label xml:ang="en">JNM-ECX Series FT NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
     </owl:Class>
     
@@ -4053,7 +4053,7 @@ complex128long</oboInOwl:consider>
     <!-- http://nmrML.org/nmrCV#NMR:1000369 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000369">
-        <rdfs:label xml:lang="de">JNM-ECZR Series FT NMR instrument</rdfs:label>
+        <rdfs:label xml:ang="en">JNM-ECZR Series FT NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
         <skos:definition>JNM-ECZR series is a new system that fully incorporates the latest digital and high frequency technologies.
 Improved reliability and a more compact size make possible by incorporating more advanced integrated circuits, it supports even greater expandability options than current models for multi-channel operation, high power amplifiers and other accessories.
@@ -4066,7 +4066,7 @@ The bus line for control of attachments has been upgraded to high speed and enab
     <!-- http://nmrML.org/nmrCV#NMR:1000370 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000370">
-        <rdfs:label xml:lang="de">JNM-ECZS Series FT NMR instrument</rdfs:label>
+        <rdfs:label xml:ang="en">JNM-ECZS Series FT NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
         <skos:definition>The entry model ECZS spectrometer has the same basic functions, performance and capability of high-end model. The main console is amazingly small, less than 1/2 that of the current ECS series spectrometer.
 Coupling the use of advanced software with highly reliable automation, all routine daily measurements can be automated, while the use of the autotune Supercool probe realizes the world’s highest sensitivity in its class.
@@ -4079,7 +4079,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000371 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000371">
-        <rdfs:label xml:lang="de">AVANCE III HD</rdfs:label>
+        <rdfs:label xml:ang="en">AVANCE III HD</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4088,7 +4088,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000372 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000372">
-        <rdfs:label xml:lang="de">NanoBay400 MHz</rdfs:label>
+        <rdfs:label xml:ang="en">NanoBay400 MHz</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4097,7 +4097,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000373 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000373">
-        <rdfs:label xml:lang="de">Fourier 300HD</rdfs:label>
+        <rdfs:label xml:ang="en">Fourier 300HD</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4106,7 +4106,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000374 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000374">
-        <rdfs:label xml:lang="de">DNP-NMR</rdfs:label>
+        <rdfs:label xml:ang="en">DNP-NMR</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4115,7 +4115,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000376 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000376">
-        <rdfs:label xml:lang="de">LC-NMR instrument</rdfs:label>
+        <rdfs:label xml:ang="en">LC-NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4124,7 +4124,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000377 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000377">
-        <rdfs:label xml:lang="de">LC-NMR/MS instrument</rdfs:label>
+        <rdfs:label xml:ang="en">LC-NMR/MS instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4133,7 +4133,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000378 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000378">
-        <rdfs:label xml:lang="de">Food-Screener instrument</rdfs:label>
+        <rdfs:label xml:ang="en">Food-Screener instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4142,7 +4142,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000379 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000379">
-        <rdfs:label xml:lang="de">AVANCE IVDr</rdfs:label>
+        <rdfs:label xml:ang="en">AVANCE IVDr</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4151,7 +4151,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000380 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000380">
-        <rdfs:label xml:lang="de">JEOL Resonance 400MHz YH magnet</rdfs:label>
+        <rdfs:label xml:ang="en">JEOL Resonance 400MHz YH magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
     </owl:Class>
     
@@ -4160,7 +4160,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000381 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000381">
-        <rdfs:label xml:lang="de">JEOL Resonance 500MHz magnet</rdfs:label>
+        <rdfs:label xml:ang="en">JEOL Resonance 500MHz magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
     </owl:Class>
     
@@ -4169,7 +4169,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000382 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000382">
-        <rdfs:label xml:lang="de">JEOL Resonance 600MHz magnet</rdfs:label>
+        <rdfs:label xml:ang="en">JEOL Resonance 600MHz magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
     </owl:Class>
     
@@ -4178,7 +4178,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000383 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000383">
-        <rdfs:label xml:lang="de">JEOL Resonance 700MHz magnet</rdfs:label>
+        <rdfs:label xml:ang="en">JEOL Resonance 700MHz magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
     </owl:Class>
     
@@ -4187,7 +4187,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000384 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000384">
-        <rdfs:label xml:lang="de">JEOL Resonance 800MHz magnet</rdfs:label>
+        <rdfs:label xml:ang="en">JEOL Resonance 800MHz magnet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000272"/>
     </owl:Class>
     
@@ -4196,7 +4196,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000385 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000385">
-        <rdfs:label xml:lang="de">single peak feature</rdfs:label>
+        <rdfs:label xml:ang="en">single peak feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000231"/>
     </owl:Class>
     
@@ -4205,7 +4205,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000386 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000386">
-        <rdfs:label xml:lang="de">NMR instrument vendor</rdfs:label>
+        <rdfs:label xml:ang="en">NMR instrument vendor</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000496"/>
         <skos:definition>Any organisation ort person that sells NMR instruments to customers.</skos:definition>
     </owl:Class>
@@ -4215,7 +4215,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000387 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000387">
-        <rdfs:label xml:lang="de">Avance I spectrometer</rdfs:label>
+        <rdfs:label xml:ang="en">Avance I spectrometer</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
     </owl:Class>
     
@@ -4224,7 +4224,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000388 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000388">
-        <rdfs:label xml:lang="de">Oxford Instruments</rdfs:label>
+        <rdfs:label xml:ang="en">Oxford Instruments</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400255"/>
     </owl:Class>
     
@@ -4233,7 +4233,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000389 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000389">
-        <rdfs:label xml:lang="de">Spinlock SRL</rdfs:label>
+        <rdfs:label xml:ang="en">Spinlock SRL</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400255"/>
     </owl:Class>
     
@@ -4242,7 +4242,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000390 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000390">
-        <rdfs:label xml:lang="de">General Electric</rdfs:label>
+        <rdfs:label xml:ang="en">General Electric</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400255"/>
     </owl:Class>
     
@@ -4251,7 +4251,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000391 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000391">
-        <rdfs:label xml:lang="de">Kimble Chase</rdfs:label>
+        <rdfs:label xml:ang="en">Kimble Chase</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400255"/>
     </owl:Class>
     
@@ -4260,7 +4260,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000392 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000392">
-        <rdfs:label xml:lang="de">Phillips</rdfs:label>
+        <rdfs:label xml:ang="en">Phillips</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400255"/>
     </owl:Class>
     
@@ -4269,7 +4269,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000393 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000393">
-        <rdfs:label xml:lang="de">Siemens AG</rdfs:label>
+        <rdfs:label xml:ang="en">Siemens AG</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400255"/>
     </owl:Class>
     
@@ -4278,7 +4278,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000394 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000394">
-        <rdfs:label xml:lang="de">Varian Inova 500</rdfs:label>
+        <rdfs:label xml:ang="en">Varian Inova 500</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400236"/>
     </owl:Class>
     
@@ -4287,7 +4287,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000395 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000395">
-        <rdfs:label xml:lang="de">Varian VNMRS instrument</rdfs:label>
+        <rdfs:label xml:ang="en">Varian VNMRS instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400234"/>
     </owl:Class>
     
@@ -4296,7 +4296,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000396 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000396">
-        <rdfs:label xml:lang="de">Varian Mercury plus</rdfs:label>
+        <rdfs:label xml:ang="en">Varian Mercury plus</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400235"/>
     </owl:Class>
     
@@ -4305,7 +4305,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000397 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000397">
-        <rdfs:label xml:lang="de">Varian UnityInova instrument</rdfs:label>
+        <rdfs:label xml:ang="en">Varian UnityInova instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400234"/>
     </owl:Class>
     
@@ -4314,7 +4314,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000398 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000398">
-        <rdfs:label xml:lang="de">Varian 400-MR NMR instrument</rdfs:label>
+        <rdfs:label xml:ang="en">Varian 400-MR NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400234"/>
     </owl:Class>
     
@@ -4323,7 +4323,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000399 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000399">
-        <rdfs:label xml:lang="de">Varian DDR2 instrument</rdfs:label>
+        <rdfs:label xml:ang="en">Varian DDR2 instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400234"/>
     </owl:Class>
     
@@ -4332,7 +4332,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000400 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000400">
-        <rdfs:label xml:lang="de">Agilent NMR instrument</rdfs:label>
+        <rdfs:label xml:ang="en">Agilent NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400059"/>
     </owl:Class>
     
@@ -4341,7 +4341,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000401 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000401">
-        <rdfs:label xml:lang="de">Agilent 400-MR NMR instrument</rdfs:label>
+        <rdfs:label xml:ang="en">Agilent 400-MR NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000400"/>
     </owl:Class>
     
@@ -4350,7 +4350,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000402 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000402">
-        <rdfs:label xml:lang="de">Varian Mercury 400</rdfs:label>
+        <rdfs:label xml:ang="en">Varian Mercury 400</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400235"/>
     </owl:Class>
     
@@ -4359,7 +4359,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000403 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000403">
-        <rdfs:label xml:lang="de">Agilent Au 400 (DDR2 Console)</rdfs:label>
+        <rdfs:label xml:ang="en">Agilent Au 400 (DDR2 Console)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000400"/>
     </owl:Class>
     
@@ -4368,7 +4368,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000404 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000404">
-        <rdfs:label xml:lang="de">Agilent DDR 2 w/ HCN cryoprobe</rdfs:label>
+        <rdfs:label xml:ang="en">Agilent DDR 2 w/ HCN cryoprobe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000400"/>
     </owl:Class>
     
@@ -4377,7 +4377,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000405 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000405">
-        <rdfs:label xml:lang="de">BMRB identifier</rdfs:label>
+        <rdfs:label xml:ang="en">BMRB identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000022"/>
     </owl:Class>
     
@@ -4386,7 +4386,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000406 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000406">
-        <rdfs:label xml:lang="de">left trapezoid limit</rdfs:label>
+        <rdfs:label xml:lang="en">left trapezoid limit</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000407"/>
         <rdfs:comment> 0&lt;TM1&lt;1</rdfs:comment>
         <oboInOwl:hasExactSynonym>TM1</oboInOwl:hasExactSynonym>
@@ -4397,7 +4397,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000407 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000407">
-        <rdfs:label xml:lang="de">trapezoid window function parameter</rdfs:label>
+        <rdfs:label xml:lang="en">trapezoid window function parameter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400096"/>
     </owl:Class>
     
@@ -4426,7 +4426,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000410 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000410">
-        <rdfs:label xml:lang="de">right trapezoid limit</rdfs:label>
+        <rdfs:label xml:ang="en">right trapezoid limit</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000407"/>
         <oboInOwl:hasExactSynonym>TM2</oboInOwl:hasExactSynonym>
         <rdfs:comment>0&lt;TM2&lt;1</rdfs:comment>
@@ -4593,7 +4593,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000428 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000428">
-        <rdfs:label xml:lang="de">Gaussian window function parameter</rdfs:label>
+        <rdfs:label xml:ang="en">Gaussian window function parameter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400096"/>
     </owl:Class>
     
@@ -4612,7 +4612,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1000430 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000430">
-        <rdfs:label xml:lang="de">Gaussian maximum position</rdfs:label>
+        <rdfs:label xml:ang="en">Gaussian maximum position</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000428"/>
     </owl:Class>
     
@@ -6722,7 +6722,7 @@ Whatever your application field ECZS can demonstrate its power.
     <!-- http://nmrML.org/nmrCV#NMR:1002032 -->
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1002032">
-        <rdfs:label xml:lang="de">Hilbert transformation based scaling</rdfs:label>
+        <rdfs:label xml:ang="en">Hilbert transformation based scaling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000079"/>
     </owl:Class>
     
