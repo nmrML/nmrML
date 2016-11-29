@@ -38,6 +38,8 @@ public class Proc {
     private double zeroFrequency;           //sf                frequency of 0 ppm
     private double lineBroadening;          //lb                line broadening (in Hz?)
     private double gbFactor;                //gb                GB-factor
+    private double leftTrap;                //TM1               left trapezoid limit
+    private double rightTrap;               //TM2               right trapezoid limit
     private double zeroOrderPhase;          //phc0              zero order phase
     private double firstOrderPhase;         //phc1              first order phase
     private double ssb;                     //ssb               sine bell shift
@@ -176,6 +178,22 @@ public class Proc {
 
     public void setGbFactor(double gbFactor) {
         this.gbFactor = gbFactor;
+    }
+
+    public double getLeftTrap() {
+        return leftTrap;
+    }
+
+    public void setLeftTrap(double leftTrap) {
+        this.leftTrap = leftTrap;
+    }
+
+    public double getRightTrap() {
+        return rightTrap;
+    }
+
+    public void setRightTrap(double rightTrap) {
+        this.rightTrap = rightTrap;
     }
 
     public double getZeroOrderPhase() {

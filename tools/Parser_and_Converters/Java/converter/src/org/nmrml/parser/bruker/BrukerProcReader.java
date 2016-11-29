@@ -49,13 +49,15 @@ public class BrukerProcReader implements ProcReader {
     private final static Pattern REGEXP_OFFSET  = Pattern.compile("\\#\\#\\$OFFSET= (\\d+\\.\\d+)"); //OFFSET
     private final static Pattern REGEXP_SI      = Pattern.compile("\\#\\#\\$SI= (\\d+)"); //transform size (complex)
     private final static Pattern REGEXP_SF      = Pattern.compile("\\#\\#\\$SF= (\\d+\\.\\d+)"); //frequency of 0 ppm (???)
-    private final static Pattern REGEXP_GB      = Pattern.compile("\\#\\#\\$GB= (\\d+\\.\\d+)"); //GB-factor (Gain?)
-    private final static Pattern REGEXP_LB      = Pattern.compile("\\#\\#\\$LB= (\\S+)"); //line broadening
     private final static Pattern REGEXP_WDW     = Pattern.compile("\\#\\#\\$WDW= (\\d+)"); //window function type
+    private final static Pattern REGEXP_LB      = Pattern.compile("\\#\\#\\$LB= (\\S+)"); //line broadening
+    private final static Pattern REGEXP_GB      = Pattern.compile("\\#\\#\\$GB= (\\d+\\.\\d+)"); //GB-factor (Gain?)
+    private final static Pattern REGEXP_SSB     = Pattern.compile("\\#\\#\\$SSB= (-?\\d+\\.\\d+)"); //sine bell shift
+    private final static Pattern REGEXP_TM1     = Pattern.compile("\\#\\#\\$SSB= (-?\\d+\\.\\d+)"); //Left trapezoid
+    private final static Pattern REGEXP_TM2     = Pattern.compile("\\#\\#\\$SSB= (-?\\d+\\.\\d+)"); //Right trapezoid
     private final static Pattern REGEXP_PH_MODE = Pattern.compile("\\#\\#\\$PH\\_mod= (\\d+)"); //phasing type
     private final static Pattern REGEXP_PHC0    = Pattern.compile("\\#\\#\\$PHC0= (-?\\d+\\.\\d+)"); //zero order phase
     private final static Pattern REGEXP_PHC1    = Pattern.compile("\\#\\#\\$PHC1= (-?\\d+\\.\\d+)"); //first order phase
-    private final static Pattern REGEXP_SSB     = Pattern.compile("\\#\\#\\$SSB= (-?\\d+\\.\\d+)"); //sine bell shift
     private final static Pattern REGEXP_MC2     = Pattern.compile("\\#\\#\\$MC2= (\\d+)"); //F1 detection mode
     private final static Pattern REGEXP_BYTORDP = Pattern.compile("\\#\\#\\$BYTORDP= (\\d+)"); //byte order
     private final static Pattern REGEXP_DTYPP   = Pattern.compile("\\#\\#\\$DTYPP= (\\d+)"); //data type (0 -> 32 bit int, 1 -> 64 bit double)
@@ -147,6 +149,18 @@ public class BrukerProcReader implements ProcReader {
                 matcher = REGEXP_GB.matcher(line);
                 matcher.find();
                 processing.setGbFactor(Double.parseDouble(matcher.group(1)));
+            }
+            //left trapezoid limit
+            if (REGEXP_TM1.matcher(line).find()){
+                matcher = REGEXP_TM1.matcher(line);
+                matcher.find();
+                processing.setLeftTrap(Double.parseDouble(matcher.group(1)));
+            }
+            //Right trapezoid limit
+            if (REGEXP_TM2.matcher(line).find()){
+                matcher = REGEXP_TM2.matcher(line);
+                matcher.find();
+                processing.setRightTrap(Double.parseDouble(matcher.group(1)));
             }
             //zero order phase
             if (REGEXP_PHC0.matcher(line).find()){

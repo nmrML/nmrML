@@ -261,12 +261,58 @@ public class Proc2nmrML {
        /* Spectrum1D - WindowFunction */
             FirstDimensionProcessingParameterSetType.WindowFunction windowFunction =
                                                      objFactory.createFirstDimensionProcessingParameterSetTypeWindowFunction();
-
-            CVTermType cvWinFunc = cvLoader.fetchCVTerm("NMRCV",vendorMapper.getTerm("WDW", String.format("%d",proc.getWindowFunctionType())));
+            String WDWFunction = String.format("%d",proc.getWindowFunctionType());
+            CVTermType cvWinFunc = cvLoader.fetchCVTerm("NMRCV",vendorMapper.getTerm("WDW", WDWFunction));
             windowFunction.setWindowFunctionMethod(cvWinFunc);
-            CVParamType cvWinParam = cvLoader.fetchCVParam("NMRCV","LINE_BROADENING");
-            cvWinParam.setValue(String.format("%f",proc.getLineBroadening()));
-            windowFunction.getWindowFunctionParameter().add(cvWinParam);
+            CVParamType cvWinParam = null;
+            switch (WDWFunction) {
+                case "1":
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","LINE_BROADENING");
+                     cvWinParam.setValue(String.format("%f",proc.getLineBroadening()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     break;
+                case "2":
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","LINE_BROADENING");
+                     cvWinParam.setValue(String.format("%f",proc.getLineBroadening()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","GAUSSIAN_BROADENING");
+                     cvWinParam.setValue(String.format("%f",proc.getGbFactor()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     break;
+                case "3":
+                case "4":
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","SSB");
+                     cvWinParam.setValue(String.format("%f",proc.getSsbSine()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     break;
+                case "5":
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","TM1");
+                     cvWinParam.setValue(String.format("%f",proc.getLeftTrap()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","TM2");
+                     cvWinParam.setValue(String.format("%f",proc.getRightTrap()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     break;
+                case "6":
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","SSB");
+                     cvWinParam.setValue(String.format("%f",proc.getSsbSine()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","GAUSSIAN_BROADENING");
+                     cvWinParam.setValue(String.format("%f",proc.getGbFactor()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     break;
+                case "7":
+                case "8":
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","LINE_BROADENING");
+                     cvWinParam.setValue(String.format("%f",proc.getLineBroadening()));
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","TM1");
+                     cvWinParam.setValue(String.format("%f",proc.getLeftTrap()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     cvWinParam = cvLoader.fetchCVParam("NMRCV","TM2");
+                     cvWinParam.setValue(String.format("%f",proc.getRightTrap()));
+                     windowFunction.getWindowFunctionParameter().add(cvWinParam);
+                     break;
+            }
             ProcParam1D.getWindowFunction().add(windowFunction);
 
        /* Spectrum1D - Phasing */
