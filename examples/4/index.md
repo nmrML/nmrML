@@ -5,7 +5,7 @@ nav:
   examples: active
 ---
 
-# 1-Methylhistidine reference spectrum
+# 1-Methylhistidine Reference Spectrum
 
 <a href="/examples/4/HMDB00001.nmrML">Download nmrML file</a>
 
