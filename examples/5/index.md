@@ -12,6 +12,3 @@ nav:
 ### Reference
 
 ### nmrML
-```xml
-{% include examples/5.nmrML %}
-```
