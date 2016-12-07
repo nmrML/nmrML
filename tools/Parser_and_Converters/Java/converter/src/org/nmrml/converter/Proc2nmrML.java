@@ -123,10 +123,12 @@ public class Proc2nmrML {
 
 
         /* Read the Spectrum List - Adjust the range for the identifiers */
+            int procno=1;
             SpectrumListType spectrumList = null;
             if ( nmrMLtype.getSpectrumList() != null ) {
                spectrumList = nmrMLtype.getSpectrumList();
-               ID_count *= ( spectrumList.getSpectrum1D().size() + 1 );
+               procno=spectrumList.getSpectrum1D().size() + 1;
+               ID_count *= procno;
             } else {
                spectrumList = objFactory.createSpectrumListType();
             }
@@ -254,6 +256,7 @@ public class Proc2nmrML {
             Spectrum1DType spectrum1D = objFactory.createSpectrum1DType();
             spectrum1D.setNumberOfDataPoints(getBigInteger(proc.getTransformSize()));
             spectrum1D.setId(getNewIdentifier());
+            spectrum1D.setName(Integer.toString(procno));
 
        /* Spectrum1D - FirstDimensionProcessingParameterSet object */
             FirstDimensionProcessingParameterSetType ProcParam1D = objFactory.createFirstDimensionProcessingParameterSetType();
