@@ -5,7 +5,7 @@ nav:
   examples: active
 ---
 
-# Metabolite Profiling Experiment Example
+# Bayesil and nmrML Results
 
 <a href="/examples/5/biosample_quantification.nmrML">Download nmrML file</a>
 
