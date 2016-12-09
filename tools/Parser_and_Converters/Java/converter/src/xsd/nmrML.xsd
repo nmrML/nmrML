@@ -676,7 +676,6 @@ Example:
       <xs:element maxOccurs="1" minOccurs="1" name="chemicalShiftStandard" type="CVParamType"> </xs:element>
       <xs:element name="solventType" type="CVParamWithUnitType" maxOccurs="unbounded"/>
       <xs:element name="additionalSoluteList" type="AdditionalSoluteListType"/>
-      <xs:element name="solventConcentration" type="ValueWithUnitType"/>
       <xs:element maxOccurs="1" minOccurs="0" name="concentrationStandard">
         <xs:complexType>
           <xs:sequence>
