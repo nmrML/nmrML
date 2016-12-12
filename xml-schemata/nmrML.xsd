@@ -674,9 +674,8 @@ Example:
         </xs:complexType>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="chemicalShiftStandard" type="CVParamType"> </xs:element>
-      <xs:element name="solventType" type="CVTermType"/>
+      <xs:element name="solventType" type="CVParamWithUnitType" maxOccurs="unbounded"/>
       <xs:element name="additionalSoluteList" type="AdditionalSoluteListType"/>
-      <xs:element name="solventConcentration" type="ValueWithUnitType"/>
       <xs:element maxOccurs="1" minOccurs="0" name="concentrationStandard">
         <xs:complexType>
           <xs:sequence>
@@ -1151,7 +1150,11 @@ Parsed from Excitation width ?</xs:documentation>
         <xs:documentation>An ID for the spectrum so that it can be referenced within the file for spectrum annotations.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="name" type="xs:string" use="optional"/>
+    <xs:attribute name="name" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>A (optional) name so that it can be differentiated other than by its rank if multiple spectra are embedded within the file</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SpectrumRefType">
     <xs:attribute name="ref" type="xs:IDREF" use="required">
