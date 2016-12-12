@@ -5,14 +5,11 @@ nav:
   examples: active
 ---
 
-# 1-Methylhistidine Reference Spectrum
+# Bayesil and nmrML Results
 
-<a href="/examples/4/HMDB00001.nmrML">Download nmrML file</a>
+<a href="/examples/4/biosample_quantification.nmrML">Download nmrML file</a>
 
-This spectrum is a a reference spectrum for 1-Methylhistidine (HMDB metabolite HMDB00001). The atom assignments have been done using  <a href="http://nmrml.bayesil.ca" >nmrML-Assign</a>, which is an interactive tool for creating reference spectra and generating nmrML-formatted files. nmrML-Assign first processes the uploaded fid with Bayesil. The user also provides a structure for the compound of interest. Atom assignments to spectral clusters/peaks of interest can be made using this structure.
-
-### Reference
-<a href="http://www.hmdb.ca/spectra/nmr_one_d/1022">HMDB00001</a>
+This biosample spectrum is procceced with Bayesil. The nmrML format of results from <a href="http://bayesil.ca" >Bayesil</a> contains a list of compounds and peak assignments from the quantification process. After running Bayesil on an uploaded fid, the user has the option to download the results displayed on the viewer/interface in the nmrML format.
 
 ### nmrML
 ```xml

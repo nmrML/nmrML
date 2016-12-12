@@ -5,24 +5,23 @@ nav:
   examples: active
 ---
 
-# HMDB Reference Spectrum (Varian instrument)
+# Metabolite Profiling Experiment Example
 
-<a href="/examples/1/HMDB00005.nmrML">Download nmrML file</a> |  <a href="/examples/1/HMDB00005.fid.zip" >Download original FID</a>
+<a href="/examples/1/FAM013_AHTM.PROTON_04.nmrML">Download nmrML file</a> |  <a href="/examples/1/FAM013_AHTM.PROTON_04.fid.zip" >Download original FID</a>
 
-This spectrum is a refererence 1H NMR spectrum of 2-Ketobutyric acid.
-The sample was collected at a concentration of 50 mM at pH 7.0 in
-H<sub>2</sub>O and refereced to DSS and was collected on a Varian 500
-MHz Inova Spectrometer using the first transient of the
-tnnoesy-presaturation pulse sequence. This spectrum is one of the
-reference spectrum created by <a
-href="http://www.hmdb.ca/metabolites/HMDB00005">The Human Metabolome
-Project</a> (<a href="http://ualberta.ca">University of Alberta</a>) as
-part of a project cataloguing all detectable metabolites in the human
-metabolome.
+This spectrum is from a metabolomic profiling experiment <i>Humulus
+lupulus L.</i> The spectrum was recorded on a Varian VNMRS 600 NMR
+spectrometer operating at a proton NMR frequency of 599.83 MHz using a 5
+mm inverse detection cryoprobe. 1H NMR spectra were recorded with the
+following parameters: digital resolution 0.367 Hz/point (32 K complex
+data points); pulse width (pw) = 3 ls (4&deg;C); relaxation delay = 23.7
+s; acquisition time = 2.7 s; number of transients = 160. 
 
-### References
-- [HMDB00005 spectrum at HMDB](http://www.hmdb.ca/spectra/nmr_one_d/1024)
-- [Methods reference](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0073076#pone.0073076.s001)
+### Reference
+Farag, M., Porzel, A., Schmidt, J. & Wessjohann, L. Metabolite profiling
+and fingerprinting of commercial cultivars of <i>Humulus lupulus L.</i> (hop) -
+a comparision of MS and NMR methods in metabolomics Metabolomics 8,
+492-507, (2012)
 
 ### nmrML
 ```xml

@@ -5,23 +5,20 @@ nav:
   examples: active
 ---
 
-# Metabolite Profiling Experiment Example
+# PhenoTom 2013
 
-<a href="/examples/2/FAM013_AHTM.PROTON_04.nmrML">Download nmrML file</a> |  <a href="/examples/2/FAM013_AHTM.PROTON_04.fid.zip" >Download original FID</a>
+<a href="/examples/2/MMBBI_10M12-CE01-1a.nmrML">Download nmrML file</a> |  <a href="/examples/2/MMBBI_10M12-CE01-1a.zip" >Download original Raw Data</a>
 
-This spectrum is from a metabolomic profiling experiment <i>Humulus
-lupulus L.</i> The spectrum was recorded on a Varian VNMRS 600 NMR
-spectrometer operating at a proton NMR frequency of 599.83 MHz using a 5
-mm inverse detection cryoprobe. 1H NMR spectra were recorded with the
-following parameters: digital resolution 0.367 Hz/point (32 K complex
-data points); pulse width (pw) = 3 ls (4&deg;C); relaxation delay = 23.7
-s; acquisition time = 2.7 s; number of transients = 160. 
+High-throughput phenotyping tomato fruit for integration with Omics data. Characterization of tomato fruits to 2 stages of development (expansion and red orange fruit) from 12 contrasting genotypes (8  lines and 4 F1 hybrids).
 
-### Reference
-Farag, M., Porzel, A., Schmidt, J. & Wessjohann, L. Metabolite profiling
-and fingerprinting of commercial cultivars of <i>Humulus lupulus L.</i> (hop) -
-a comparision of MS and NMR methods in metabolomics Metabolomics 8,
-492-507, (2012)
+Metabolome analyses were performed at the Metabolome Facility of Bordeaux, using quantitative proton NMR ( 1H-NMR) profiling of  polar extracts. Polar metabolites were extracted on lyophilized powder (50 mg DW per biological replicate) with an ethanol–water series at 80 °C. The lyophilized extracts were titrated to pH 6 and lyophilized again. Each dried titrated extract was solubilized in 0.5 ml of D O with tri-methylsilyl-propionic-2,2,3,3-d  acid (TSP) sodium salt (0.01% final concentration) for chemical shift calibration and EDTA (5 mM final concentration for the CE and 2 mM for the OR stage). H-NMR spectra were recorded at 500.162 MHz on a Bruker Avance III spectrometer (Bruker, Karlsruhe, Germany) using an ATMA inverse weight basis to be comparable. All the analyses were performed 5 mm probe flushed with nitrogen gas and an electronic reference for quantification (ERETIC2). Sixty-four scans of  32 000 data points each were acquired with a 90 ° pulse angle, a 6000 Hz spectral width, a 2.73 s acquisition time, and a 25 s recycle delay. Two technological replicates were used per biological replicate. Preliminary data processing was conducted with TOPSPIN 3.0 software (Bruker Biospin, Wissembourg, France). The assignments of  metabolites in the H-NMR spectra were made by comparing the proton chemical shifts with values of  the <a href="http://bit.ly/meryb" target="_blank">MeRy-B metabolomic database</a>,by comparison with spectra of  authentic compounds recorded under the same solvent conditions, and/or by spiking the samples. The metabolite concentrations were calculated using AMIX (version 3.9.7, Bruker) software. The 144 H-NMR spectra of  the data set were converted into JCAMP-DX format and deposited with associated metadata into the Metabolomics Repository of  Bordeaux MeRy-B (<a href=" http://www.cbib.u-bordeaux2.fr/MERYB/res/project/T10001" target="_blank">T10001</a>). 
+
+### Reference:
+Deciphering genetic diversity and inheritance of tomato fruit weight and composition through a systems biology approach Laura Pascual; Jiaxin Xu; Benoît Biais; Mickaël Maucourt; Patricia Ballias; Stéphane Bernillon; Catherine Deborde; Daniel Jacob; Aurore Desgroux; Mireille Faurobert; Jean-Paul Bouchet; Yves Gibon; Annick Moing; Mathilde Causse <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3871826/">Journal of Experimental Botany, 2013, 64:5737-5752</a>
+
+### Note:
+the sample nmrML file was generated with the JAVA tool deposit on <a href="https://github.com/nmrML/nmrML/tree/master/tools/Parser_and_Converters/Java/converter" target="_blank">GitHub nmrML<a>
+
 
 ### nmrML
 ```xml
