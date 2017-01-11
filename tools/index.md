@@ -6,6 +6,9 @@ nav:
 ---
 
 ### Tools supporting nmrML
+
+The nmrML development team has also fostered and coordinated the creation of nmrML aware webservices and tools covering a large fraction of a typical NMR data acquisition and processing workflow, i.e. to generate, convert, process, validate and publish nmrML files. Additionally, we have worked closely with open source and commercial tool developers to encourage nmrML format adoption. A summary table of available nmrML compatible tools is available below.
+
 <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=900
  style='width:675.05pt;border-collapse:collapse'>
  <tr>
