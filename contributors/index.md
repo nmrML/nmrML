@@ -40,6 +40,14 @@ London" target="_blank">
   <li><a href="http://www.u-bordeaux.fr/" title="L’université de Bordeaux" target="_blank">
     <img src="/images/other-logos/bordeaux.jpg" />
   </a></li>
+  
+    <li><a href="http://www.bordeaux-aquitaine.inra.fr/" title="INRA - Centre Bordeaux Aquitaine" target="_blank">
+    <img src="/images/other-logos/INRA_logojpeg-2016.jpg" />
+  </a></li>
+
+    <li><a href="http://phenomenal-h2020.eu/home/" title="PhenoMeNal" target="_blank">
+    <img src="/images/other-logos/PhenoMeNal_logo.png" />
+  </a></li>
 
 </ul>
 
