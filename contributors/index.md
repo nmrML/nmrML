@@ -35,8 +35,7 @@ London" target="_blank">
   <li><a href="http://www.ipb-halle.de/en/" title="Leibniz Institute of Plant Biochemistry" target="_blank">
     <img src="/images/other-logos/ipb.jpg" />
   </a></li>
-
-
+  
   <li><a href="http://www.u-bordeaux.fr/" title="L’université de Bordeaux" target="_blank">
     <img src="/images/other-logos/bordeaux.jpg" />
   </a></li>
@@ -47,6 +46,10 @@ London" target="_blank">
 
     <li><a href="http://phenomenal-h2020.eu/home/" title="PhenoMeNal" target="_blank">
     <img src="/images/other-logos/PhenoMeNal_logo.png" />
+  </a></li>
+  
+      <li><a href="www.bmrb.wisc.edu" title="BMRB - Biological Magnetic Resonance Data Bank" target="_blank">
+    <img src="/images/other-logos/ipb.jpg" />
   </a></li>
 
 </ul>
