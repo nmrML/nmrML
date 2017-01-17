@@ -67,6 +67,10 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
   <li><a href="http://www.isa-tools.org/" title="ISA Tools" target="_blank">
     <img src="/images/other-logos/isa.jpg" />
   </a></li>
+  
+  <li><a href="http://www.ens-paris-saclay.fr/" title="EnsParisSaclay" target="_blank">
+    <img src="/images/other-logos/EnsParisSaclay.jpg" />
+  </a></li>
   </ul>
 
 {% include contribute.html %}
