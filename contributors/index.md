@@ -81,6 +81,3 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
   </a></li>
   
   </ul>
-
-{% include contribute.html %}
-
