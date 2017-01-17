@@ -49,7 +49,7 @@ London" target="_blank">
   </a></li>
   
       <li><a href="www.bmrb.wisc.edu" title="BMRB - Biological Magnetic Resonance Data Bank" target="_blank">
-    <img src="/images/other-logos/ipb.jpg" />
+    <img src="/images/other-logos/bmrb_logo.png" />
   </a></li>
 
 </ul>
