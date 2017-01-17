@@ -10,10 +10,6 @@ about: active
 The development of large parts of nmrML was funded by the following EU projects:
 <ul class="contributor-list">
 
-  <li><a href="http://ec.europa.eu/research/fp7/" title="Funding by EU FP7" target="_blank">
-    <img src="/images/other-logos/fp7.jpg" />
-  </a></li>
-  
   <li><a href="http://www.cosmos-fp7.eu/" title="COSMOS - COordination of Standards in MetabOlomicS" target="_blank">
     <img src="/images/other-logos/cosmos.jpg" />
   </a></li>
@@ -56,8 +52,8 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
     <img src="/images/other-logos/INRA_logojpeg-2016.jpg" />
   </a></li>
   
-   <li><a href="www.bmrb.wisc.edu" title="BMRB - Biological Magnetic Resonance Data Bank" target="_blank">
-    <img src="/images/other-logos/bmrb_logo.png" />
+   <li><a href="http://bmrbdep.pdbj.org/index_en.html" title="PDBj-BMRB Home" target="_blank">
+    <img src="/images/other-logos/pdbj-bmrb.png" />
   </a></li>
   
    <li><a href="http://www3.imperial.ac.uk/" title="Imperial College London" target="_blank">
