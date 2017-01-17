@@ -69,7 +69,7 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
   </a></li>
   
   <li><a href="http://www.ens-paris-saclay.fr/" title="EnsParisSaclay" target="_blank">
-    <img src="/images/other-logos/EnsParisSaclay.jpg" />
+    <img src="/images/other-logos/EnsParisSaclay.jpg" width="500" heigth="160" />
   </a></li>
   </ul>
 
