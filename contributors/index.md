@@ -77,7 +77,7 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
   </a></li>
   
    <li><a href="https://www.liverpool.ac.uk/integrative-biology/staff/andrew-jones/" title="UoL- Institute of Integrative Biology" target="_blank">
-    <img src="/images/other-logos/Liverpool-LVP_UNI_LOGO_Pantone.jpg" />
+    <img src="/images/other-logos/Liverpool-LVP_UNI_LOGO_Pantone.jpg"width="500" heigth="160" />
   </a></li>
   
   </ul>
