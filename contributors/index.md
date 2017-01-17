@@ -18,9 +18,10 @@ The development of large parts of nmrML was funded by the following EU projects:
     <img src="/images/other-logos/cosmos.jpg" />
   </a></li>
   
-    <li><a href="http://phenomenal-h2020.eu/home/" title="PhenoMeNal" target="_blank">
+   <li><a href="http://phenomenal-h2020.eu/home/" title="PhenoMeNal" target="_blank">
     <img src="/images/other-logos/PhenoMeNal_logo.png" />
   </a></li>
+  
   </ul>
   
 ### Project Partners
@@ -59,7 +60,7 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
     <img src="/images/other-logos/bmrb_logo.png" />
   </a></li>
   
-    <li><a href="http://www3.imperial.ac.uk/" title="Imperial College London" target="_blank">
+   <li><a href="http://www3.imperial.ac.uk/" title="Imperial College London" target="_blank">
     <img src="/images/other-logos/imperial.jpg" />
   </a></li>
 
