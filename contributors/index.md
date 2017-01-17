@@ -2,7 +2,7 @@
 layout: main
 title: home
 nav:
-  about: active
+about: active
 ---
 
 # Original Project Funders
@@ -22,7 +22,7 @@ The development of large parts of nmrML was funded by the following EU projects:
 ### Project Partners
 
 Several individuals and groups have collaborated to create nmrML. Thanks to all of our contributors who have provided input, written code, debated and used the format. The following Institutions and Databases were involved in generating and supporting nmrML:
-<ul class="contributor-list">
+<ul class="partner-list">
   
   <li><a href="https://www.ebi.ac.uk/" title="The European Bioinformatics Institute" target="_blank">
     <img src="/images/other-logos/embl-ebi.jpg" />
@@ -76,7 +76,7 @@ London" target="_blank">
   <li><a href="http://services.cbib.u-bordeaux2.fr/MERYB/" title="Metabolomic Repository Bordeaux" target="_blank">
     <img src="/images/other-logos/meryb.jpg" />
   </a></li>
-</ul>
+  </ul>
 
 <!--# Industry partners-->
 
