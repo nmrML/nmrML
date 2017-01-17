@@ -75,7 +75,11 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
    <li><a href="http://www.bml-nmr.org/" title="Birmingham Metabolite Library" target="_blank">
     <img src="/images/other-logos/Logo_Helvetica_642_74.png" />
   </a></li>
-   
+  
+   <li><a href="https://www.liverpool.ac.uk/integrative-biology/staff/andrew-jones/" title="UoL- Institute of Integrative Biology" target="_blank">
+    <img src="/images/other-logos/Liverpool-LVP_UNI_LOGO_Pantone.jpg" />
+  </a></li>
+  
   </ul>
 
 {% include contribute.html %}
