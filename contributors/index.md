@@ -49,11 +49,11 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
   </a></li>
   
    <li><a href="http://www.bordeaux-aquitaine.inra.fr/" title="INRA - Centre Bordeaux Aquitaine" target="_blank">
-    <img src="/images/other-logos/INRA_logojpeg-2016.jpg" width="600" heigth="200" />
+    <img src="/images/other-logos/INRA_logojpeg-2016.jpg" width="500" heigth="160" />
   </a></li>
   
    <li><a href="http://bmrbdep.pdbj.org/index_en.html" title="PDBj-BMRB Home" target="_blank">
-    <img src="/images/other-logos/pdbj-bmrb.png" />
+    <img src="/images/other-logos/pdbj-bmrb.png" width="500" heigth="160" />
   </a></li>
   
    <li><a href="http://www3.imperial.ac.uk/" title="Imperial College London" target="_blank">
