@@ -49,7 +49,7 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
   </a></li>
   
    <li><a href="http://www.bordeaux-aquitaine.inra.fr/" title="INRA - Centre Bordeaux Aquitaine" target="_blank">
-    <img src="/images/other-logos/INRA_logojpeg-2016.jpg" />
+    <img src="/images/other-logos/INRA_logojpeg-2016.jpg" width="600" heigth="200" />
   </a></li>
   
    <li><a href="http://bmrbdep.pdbj.org/index_en.html" title="PDBj-BMRB Home" target="_blank">
