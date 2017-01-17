@@ -68,7 +68,6 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
     <img src="/images/other-logos/isa.jpg" />
   </a></li>
   </ul>
-<!--# Industry partners-->
 
 {% include contribute.html %}
 
