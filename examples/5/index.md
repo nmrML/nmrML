@@ -5,7 +5,7 @@ nav:
   examples: active
 ---
 
-# Bayesil and nmrML Results
+# Bayesil and nmrML Results, MTBLS1
 
 <a href="/examples/5/MTBLS1.zip">Download nmrML files</a>
 
