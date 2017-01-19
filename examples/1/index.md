@@ -9,7 +9,7 @@ nav:
 
 <a href="/examples/1/FAM013_AHTM.PROTON_04.nmrML">Download nmrML file</a> |  <a href="/examples/1/FAM013_AHTM.PROTON_04.fid.zip" >Download original FID</a>
 
-Metabolite Profiling Experiment Example. 
+A Metabolite Profiling Experiment Example. 
 This spectrum is from a metabolomic profiling experiment <i>Humulus
 lupulus L.</i> The spectrum was recorded on a Varian VNMRS 600 NMR
 spectrometer operating at a proton NMR frequency of 599.83 MHz using a 5
