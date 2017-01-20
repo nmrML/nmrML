@@ -80,9 +80,7 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
     <img src="/images/other-logos/Liverpool-LVP_UNI_LOGO_Pantone.jpg"width="500" heigth="160" />
   </a></li>
   
-     <li><a href="http://www.bio.ucalgary.ca/" title="Department of Biology - University of Calgary" target="_blank">
+  <li><a href="http://www.bio.ucalgary.ca/" title="Department of Biology - University of Calgary" target="_blank">
     <img src="/images/other-logos/UCalgaryIcon.jpg"width="500" heigth="160" />
-  </a></li>
-  
-  
+  </a></li>  
   </ul>
