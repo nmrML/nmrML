@@ -53,7 +53,7 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
   </a></li>
   
    <li><a href="http://bmrbdep.pdbj.org/index_en.html" title="PDBj-BMRB Home" target="_blank">
-    <img src="/images/other-logos/pdbj-bmrb.png" width="400" heigth="110" />
+    <img src="/images/other-logos/pdbj-bmrb.png" width="300" heigth="90" />
   </a></li>
   
    <li><a href="http://www3.imperial.ac.uk/" title="Imperial College London" target="_blank">
@@ -81,6 +81,6 @@ Several individuals and groups have collaborated to create nmrML. Thanks to all 
   </a></li>
   
   <li><a href="http://www.bio.ucalgary.ca/" title="Department of Biology - University of Calgary" target="_blank">
-    <img src="/images/other-logos/UCalgaryIcon.jpg"width="500" heigth="160" />
+    <img src="/images/other-logos/UCalgaryIcon.jpg"width="400" heigth="100" />
   </a></li>  
   </ul>
