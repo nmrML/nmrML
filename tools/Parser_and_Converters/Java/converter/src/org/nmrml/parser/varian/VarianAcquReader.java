@@ -47,7 +47,7 @@ public class VarianAcquReader implements AcquReader {
 
     // parameter types
     private final static Pattern REGEXP_INTEGER = Pattern.compile("1 (\\d+)"); // Get an intéger
-    private final static Pattern REGEXP_DOUBLE = Pattern.compile("1 (\\d+\\.?\\d?)"); // Get a double
+    private final static Pattern REGEXP_DOUBLE = Pattern.compile("1 (\\d+\\.?\\d*)"); // Get a double
     private final static Pattern REGEXP_STRING = Pattern.compile("1 \"(\\S+)\""); // Get a string
 
     // parameters from procpar
