@@ -153,7 +153,7 @@ If the corresponding atoms are unknown than the list can be blank.</xs:documenta
       <xs:element maxOccurs="unbounded" name="peak" type="PeakType"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AtomAssignmentAnnotationType">
+  <xs:complexType name="AtomAssingmentAnnotationType">
     <xs:sequence>
       <xs:element name="chemicalCompound" type="ChemicalCompoundType"/>
       <xs:element name="atomAssignmentList" type="AtomAssignmentListType" minOccurs="0">
@@ -225,7 +225,7 @@ Example:
   </xs:complexType>
   <xs:complexType name="SpectrumAnnotationListType">
     <xs:sequence>
-      <xs:element name="atomAssignment" minOccurs="0" type="AtomAssignmentAnnotationType">
+      <xs:element name="atomAssignment" minOccurs="0" type="AtomAssingmentAnnotationType">
         <xs:annotation>
           <xs:documentation>An annotation for assigning atoms in a chemical structure to peaks in a spectrum.</xs:documentation>
         </xs:annotation>
