@@ -133,7 +133,7 @@ public class Converter {
             // create a Marshaller and marshal to a file
             Marshaller m = jc.createMarshaller();
             m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, new Boolean(true) );
-            m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, "http://nmrML.org/schema/nmrML.xsd");
+            m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, "http://nmrml.org/schema http://nmrML.org/schema/v1.0.rc1/nmrML.xsd");
             if(cmd.hasOption("s")){
                 m.marshal( nmrML, System.out );
             }
