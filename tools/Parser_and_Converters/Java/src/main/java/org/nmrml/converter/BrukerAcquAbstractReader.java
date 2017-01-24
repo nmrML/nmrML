@@ -453,7 +453,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     if (atom.matches("1H")) {
                         try {
                             // TODO check why one uses cvTermType instead of cvParamType
-                            CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI", "H");
+                            CVParamType cvParamType = cvLoader.fetchCVParam("CHEBI", "1H");
                             CVTermType cvTermType = objectFactory.createCVTermType();
                             cvTermType.setAccession(cvParamType.getAccession());
                             cvTermType.setCvRef(cvParamType.getCvRef());
@@ -690,9 +690,9 @@ public class BrukerAcquAbstractReader implements AcquReader {
             parameterSet.setSampleContainer(cvTerm);
 
             cvTerm = objectFactory.createCVTermType();
-            cvTerm.setCvRef(cvLoader.fetchCVParam("NMRCV", "UNIFORM").getCvRef());
-            cvTerm.setName(cvLoader.fetchCVParam("NMRCV", "UNIFORM").getName());
-            cvTerm.setAccession(cvLoader.fetchCVParam("NMRCV", "UNIFORM").getAccession());
+            cvTerm.setCvRef(cvLoader.fetchCVParam("NMRCV", "UNIFORM_SAMPLING").getCvRef());
+            cvTerm.setName(cvLoader.fetchCVParam("NMRCV", "UNIFORM_SAMPLING").getName());
+            cvTerm.setAccession(cvLoader.fetchCVParam("NMRCV", "UNIFORM_SAMPLING").getAccession());
             acquParameters.setSamplingStrategy(cvTerm);
 
             //////////////////////
