@@ -20,30 +20,30 @@ package org.nmrml.converter;
 
 import org.nmrml.cv.BrukerMapper;
 import org.nmrml.cv.CVLoader;
-import org.nmrml.model.Acquisition1DType;
-import org.nmrml.model.AcquisitionDimensionParameterSetType;
-import org.nmrml.model.AcquisitionParameterSet1DType;
-import org.nmrml.model.AcquisitionType;
-import org.nmrml.model.BinaryDataArrayType;
-import org.nmrml.model.CVListType;
-import org.nmrml.model.CVParamType;
-import org.nmrml.model.CVTermType;
-import org.nmrml.model.ContactListType;
-import org.nmrml.model.ContactType;
-import org.nmrml.model.InstrumentConfigurationListType;
-import org.nmrml.model.InstrumentConfigurationType;
-import org.nmrml.model.NmrMLType;
-import org.nmrml.model.ObjectFactory;
-import org.nmrml.model.PulseSequenceType;
-import org.nmrml.model.SoftwareListType;
-import org.nmrml.model.SoftwareType;
-import org.nmrml.model.SourceFileListType;
-import org.nmrml.model.SourceFileRefListType;
-import org.nmrml.model.SourceFileRefType;
-import org.nmrml.model.SourceFileType;
-import org.nmrml.model.TemperatureType;
-import org.nmrml.model.UserParamType;
-import org.nmrml.model.ValueWithUnitType;
+import org.nmrml.schema.Acquisition1DType;
+import org.nmrml.schema.AcquisitionDimensionParameterSetType;
+import org.nmrml.schema.AcquisitionParameterSet1DType;
+import org.nmrml.schema.AcquisitionType;
+import org.nmrml.schema.BinaryDataArrayType;
+import org.nmrml.schema.CVListType;
+import org.nmrml.schema.CVParamType;
+import org.nmrml.schema.CVTermType;
+import org.nmrml.schema.ContactListType;
+import org.nmrml.schema.ContactType;
+import org.nmrml.schema.InstrumentConfigurationListType;
+import org.nmrml.schema.InstrumentConfigurationType;
+import org.nmrml.schema.NmrMLType;
+import org.nmrml.schema.ObjectFactory;
+import org.nmrml.schema.PulseSequenceType;
+import org.nmrml.schema.SoftwareListType;
+import org.nmrml.schema.SoftwareType;
+import org.nmrml.schema.SourceFileListType;
+import org.nmrml.schema.SourceFileRefListType;
+import org.nmrml.schema.SourceFileRefType;
+import org.nmrml.schema.SourceFileType;
+import org.nmrml.schema.TemperatureType;
+import org.nmrml.schema.UserParamType;
+import org.nmrml.schema.ValueWithUnitType;
 
 import javax.xml.bind.DatatypeConverter;
 import java.io.BufferedReader;
@@ -743,12 +743,12 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
 
-                PulseSequenceType.PulseSequenceFileRefList pulseSequenceFileRefList =
-                        objectFactory.createPulseSequenceTypePulseSequenceFileRefList();
-                pulseSequenceFileRefList.getSourceFileRef().add(sourceFileRefType);
+                PulseSequenceType pulseSequenceFileRefList =
+                        objectFactory.createPulseSequenceType();
+//                pulseSequenceFileRefList.getUserParam().add(sourceFileRefType);
 
-                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().getPulseSequence()
-                        .setPulseSequenceFileRefList(pulseSequenceFileRefList);
+//                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().getPulseSequence()
+//                        .setPulseSequenceFileRefList(pulseSequenceFileRefList);
 
             }
             if (sourceFileType.getId().matches("ACQUISITION_FILE")) {
@@ -758,8 +758,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 SourceFileRefListType sourceFileRefListType = objectFactory.createSourceFileRefListType();
                 sourceFileRefListType.getSourceFileRef().add(sourceFileRefType);
 
-                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet()
-                        .setAcquisitionParameterFileRefList(sourceFileRefListType);
+//                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet()
+//                        .setAcquisitionParameterFileRefList(sourceFileRefListType);
 
             }
             if (sourceFileType.getId().matches("FID_FILE")) {

@@ -2,7 +2,7 @@ package org.nmrml.cv;
 
 import junit.framework.Assert;
 import org.junit.Test;
-import org.nmrml.model.CVParamType;
+import org.nmrml.schema.CVParamType;
 
 /**
  * Created with IntelliJ IDEA.

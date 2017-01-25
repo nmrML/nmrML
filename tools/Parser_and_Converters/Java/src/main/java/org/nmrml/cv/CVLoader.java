@@ -19,9 +19,9 @@ package org.nmrml.cv;
 
 import org.ini4j.Ini;
 import org.ini4j.Wini;
-import org.nmrml.model.CVParamType;
-import org.nmrml.model.CVType;
-import org.nmrml.model.ObjectFactory;
+import org.nmrml.schema.CVParamType;
+import org.nmrml.schema.CVType;
+import org.nmrml.schema.ObjectFactory;
 
 import java.io.IOException;
 import java.io.InputStream;

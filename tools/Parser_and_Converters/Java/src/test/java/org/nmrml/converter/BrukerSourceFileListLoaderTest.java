@@ -20,8 +20,8 @@ package org.nmrml.converter;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.nmrml.cv.BrukerMapper;
-import org.nmrml.model.NmrMLType;
-import org.nmrml.model.ObjectFactory;
+import org.nmrml.schema.NmrMLType;
+import org.nmrml.schema.ObjectFactory;
 
 import java.io.File;
 import java.nio.file.Path;

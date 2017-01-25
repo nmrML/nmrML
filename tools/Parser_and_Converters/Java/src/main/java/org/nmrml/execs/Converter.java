@@ -9,9 +9,9 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.nmrml.converter.BrukerAcquAbstractReader;
-import org.nmrml.model.ContactType;
-import org.nmrml.model.NmrMLType;
-import org.nmrml.model.ObjectFactory;
+import org.nmrml.schema.ContactType;
+import org.nmrml.schema.NmrMLType;
+import org.nmrml.schema.ObjectFactory;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
