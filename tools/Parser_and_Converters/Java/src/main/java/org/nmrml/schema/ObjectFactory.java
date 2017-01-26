@@ -8,6 +8,9 @@
 
 package org.nmrml.schema;
 
+import org.nmrml.cv.Identifier;
+import org.omg.CORBA.Object;
+
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
@@ -32,12 +35,13 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _NmrML_QNAME = new QName("http://nmrml.org/schema", "nmrML");
-
+    private Identifier identifier;
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.nmrml.model
      * 
      */
     public ObjectFactory() {
+        this.identifier = Identifier.getInstance();
     }
 
     /**
@@ -53,7 +57,9 @@ public class ObjectFactory {
      * 
      */
     public SpectrumType createSpectrumType() {
-        return new SpectrumType();
+        SpectrumType spectrumType = new SpectrumType();
+        spectrumType.setId(identifier.nextId());
+        return spectrumType;
     }
 
     /**
@@ -77,7 +83,9 @@ public class ObjectFactory {
      * 
      */
     public NmrMLType createNmrMLType() {
-        return new NmrMLType();
+        NmrMLType nmrMLType = new NmrMLType();
+        nmrMLType.setId(identifier.nextId());
+        return nmrMLType;
     }
 
     /**
@@ -93,7 +101,9 @@ public class ObjectFactory {
      * 
      */
     public ContactType createContactType() {
-        return new ContactType();
+        ContactType contactType = new ContactType();
+        contactType.setId(identifier.nextId());
+        return contactType;
     }
 
     /**
@@ -117,7 +127,9 @@ public class ObjectFactory {
      * 
      */
     public SoftwareType createSoftwareType() {
-        return new SoftwareType();
+        SoftwareType softwareType = new SoftwareType();
+        softwareType.setId(identifier.nextId());
+        return softwareType;
     }
 
     /**
@@ -157,7 +169,9 @@ public class ObjectFactory {
      * 
      */
     public SourceFileType createSourceFileType() {
-        return new SourceFileType();
+        SourceFileType sourceFileType = new SourceFileType();
+        sourceFileType.setId(identifier.nextId());
+        return sourceFileType;
     }
 
     /**
@@ -309,7 +323,9 @@ public class ObjectFactory {
      * 
      */
     public InstrumentConfigurationType createInstrumentConfigurationType() {
-        return new InstrumentConfigurationType();
+        InstrumentConfigurationType instrumentConfigurationType= new InstrumentConfigurationType();
+        instrumentConfigurationType.setId(identifier.nextId());
+        return instrumentConfigurationType;
     }
 
     /**
@@ -453,7 +469,9 @@ public class ObjectFactory {
      * 
      */
     public ReferenceableParamGroupType createReferenceableParamGroupType() {
-        return new ReferenceableParamGroupType();
+        ReferenceableParamGroupType referenceableParamGroupType = new ReferenceableParamGroupType();
+        referenceableParamGroupType.setId(identifier.nextId());
+        return referenceableParamGroupType;
     }
 
     /**
@@ -477,7 +495,9 @@ public class ObjectFactory {
      * 
      */
     public AtomType createAtomType() {
-        return new AtomType();
+        AtomType atomType = new AtomType();
+        atomType.setId(identifier.nextId());
+        return atomType;
     }
 
     /**
@@ -605,7 +625,9 @@ public class ObjectFactory {
      * 
      */
     public CVType createCVType() {
-        return new CVType();
+        CVType cvType = new CVType();
+        cvType.setId(identifier.nextId());
+        return cvType;
     }
 
     /**
