@@ -146,9 +146,10 @@ public class BrukerAcquAbstractReader implements AcquReader {
     private final static Pattern REGEXP_DUMMYSCANS = Pattern.compile("\\#\\#\\$DS= (\\d+)"); //number of dummy (steady state) scans
     private final static Pattern REGEXP_RELAXATIONDELAY = Pattern.compile("\\#\\#\\$RD= (\\d+\\.?\\d?)"); // relaxation delay
     private final static Pattern REGEXP_SPINNINGRATE = Pattern.compile("\\#\\#\\$MASR= (\\d+)"); // spinning rate
+    private final static Pattern REGEXP_PULSE_SEQUENCE = Pattern.compile("\\#\\#\\$P= \\((\\d+)\\.\\.(\\d+)\\)"); // range of defined pulses
     //TODO review REGEXP_PULPROG
     // examples of REGEXP_PULPROG : <zg> <cosydfph> <bs_hsqcetgpsi>; basically a word between < >
-    private final static Pattern REGEXP_PULPROG = Pattern.compile("\\#\\#\\$PULPROG= (.+)"); //pulse program
+    private final static Pattern REGEXP_PULPROG = Pattern.compile("\\#\\#\\$PULPROG= <(.+)>"); //pulse program
     //TODO review REGEXP_NUC1
     // examples of REGEXP_NUC1 : <1H>; basically <isotope number + element>
     private final static Pattern REGEXP_NUC_INDEX = Pattern.compile("\\#\\#\\$NUC(\\d)=.+"); // index of the nucleus
@@ -201,6 +202,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
         this.brukerMapper = brukerMapper;
         this.cvLoader = cvLoader;
         this.nmrMLType = nmrMLType;
+        nmrMLType.setVersion("1.0.rc1");
         this.inputFile = acquFile;
         this.inputAcqReader = new BufferedReader(new FileReader(acquFile));
     }
@@ -277,6 +279,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
         } else { // 64 bit integer
             binaryDataArrayType.setByteFormat(Long.class.toString());
         }
+
         binaryDataArrayType.setValue(buffer.array());
         /* debuging */
 //        FileOutputStream fos = new FileOutputStream(new File("/Users/ldpf/Downloads/fid-out"));
@@ -318,8 +321,8 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
                 sourceFileType.setName(file.getName());
-//                sourceFileListType.setCount(sourceFileListType.getCount().add(BigInteger.ONE));
                 sourceFileListType.getSourceFile().add(sourceFileType);
+
             }
         }
         return sourceFileListType;
@@ -363,6 +366,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
             instrumentConfigurationType.getCvParam().add(cvLoader.fetchCVParam("NMRCV","BRUKER"));
 
             ValueWithUnitType value;
+            ValueWithUnitType pulseWidth = null;
             Matcher matcher;
             String line = inputAcqReader.readLine();
 
@@ -499,11 +503,31 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 if (REGEXP_PULPROG.matcher(line).find()) {
                     matcher = REGEXP_PULPROG.matcher(line);
                     matcher.find();
-                    // TODO probably replace with a CV term
-                    // set a cvTerm
-//                pulseSequence.setName(matcher.group(1).replaceAll("<", "").replaceAll(">", ""));
+                    UserParamType userParamType = objectFactory.createUserParamType();
+                    userParamType.setName("Pulse Program");
+                    userParamType.setValue(matcher.group(1));
+                    PulseSequenceType pulseSequenceType = objectFactory.createPulseSequenceType();
+                    pulseSequenceType.getUserParam().add(userParamType);
+                    parameterSet.setPulseSequence(pulseSequenceType);
                 }
-            /* number of scans */
+                /* pulse sequence */
+                if (REGEXP_PULSE_SEQUENCE.matcher(line).find()) {
+                    matcher = REGEXP_SPINNINGRATE.matcher(line);
+                    matcher.find();
+                    line = inputAcqReader.readLine();
+                    value = objectFactory.createValueWithUnitType();
+                    value.setValue(String.format("%.6f",Double.parseDouble(line.split(" ")[1])));
+                    try {
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "MICROSECOND");
+                        value.setUnitCvRef(cvParamType.getCvRef());
+                        value.setUnitName(cvParamType.getName());
+                        value.setUnitAccession(cvParamType.getAccession());
+                        pulseWidth = value;
+                    } catch (Exception e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                }
+                /* number of scans */
                 if (REGEXP_NUMBEROFSCANS.matcher(line).find()) {
                     matcher = REGEXP_NUMBEROFSCANS.matcher(line);
                     matcher.find();
@@ -665,6 +689,10 @@ public class BrukerAcquAbstractReader implements AcquReader {
             cvTerm.setAccession(cvLoader.fetchCVParam("NMRCV", "UNIFORM_SAMPLING").getAccession());
             acquParameters.setSamplingStrategy(cvTerm);
 
+            if (pulseWidth != null){
+                acquParameters.setPulseWidth(pulseWidth);
+            }
+
             //////////////////////
 
             /* fill in the data */
@@ -679,7 +707,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
             AcquisitionType acquisitionType = objectFactory.createAcquisitionType();
             acquisitionType.setAcquisition1D(acquisition1DType);
 
-//            parameterSet.setPulseSequence(pulseSequence);
 
             /* set contact information */
             ContactListType contactListType = objectFactory.createContactListType();
@@ -718,38 +745,20 @@ public class BrukerAcquAbstractReader implements AcquReader {
 
     private void loadSourceFileRefs() {
         for (SourceFileType sourceFileType : nmrMLType.getSourceFileList().getSourceFile()) {
-            if (sourceFileType.getId().matches("PULSEPROGRAM_FILE")) {
+            if (sourceFileType.getName().equals(brukerMapper.getTerm("FILES", "PULSEPROGRAM_FILE"))) {
                 SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
-
-                PulseSequenceType pulseSequenceType =
-                        objectFactory.createPulseSequenceType();
-                try {
-                    String pulseProgram = new BrukerPulseProgramReader().readPulseProgram(new FileInputStream(sourceFileType.getLocation()));
-                    UserParamType userParamType = objectFactory.createUserParamType();
-                    userParamType.setName("Pulse Program");
-                    userParamType.setValue(pulseProgram);
-                    pulseSequenceType.getUserParam().add(userParamType);
-                    nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().setPulseSequence(pulseSequenceType);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
                 nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().setShapedPulseFile(sourceFileRefType);
-
             }
-            if (sourceFileType.getId().matches("ACQUISITION_FILE")) {
+            if (sourceFileType.getName().equals(brukerMapper.getTerm("FILES", "ACQUISITION_FILE"))) {
                 SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
 
                 SourceFileRefListType sourceFileRefListType = objectFactory.createSourceFileRefListType();
                 sourceFileRefListType.getSourceFileRef().add(sourceFileRefType);
 
-//                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet()
-//                        .setAcquisitionParameterFileRefList(sourceFileRefListType);
-
             }
-            if (sourceFileType.getId().matches("FID_FILE")) {
+            if (sourceFileType.getName().equals(brukerMapper.getTerm("FILES", "FID_FILE"))) {
                 SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
             }
