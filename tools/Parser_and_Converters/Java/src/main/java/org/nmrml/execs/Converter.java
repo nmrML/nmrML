@@ -117,10 +117,12 @@ public class Converter {
 
 
         } else {
-            contactType.setFullname("anonymous");
-            contactType.setEmail("anonymous@net.com");
-            nmrMLElement.getContactList().getContact().add(contactType);
-            System.err.println("No contact provided! Please provide a contact for the nmrML file.");
+            if(nmrMLElement.getContactList().getContact().size() == 0) {
+                contactType.setFullname("anonymous");
+                contactType.setEmail("anonymous@net.com");
+                nmrMLElement.getContactList().getContact().add(contactType);
+                System.err.println("No contact provided! Please provide a contact for the nmrML file.");
+            }
         }
         /* Generate XML */
         try{
@@ -128,7 +130,7 @@ public class Converter {
             JAXBElement<NmrMLType> nmrML = (JAXBElement<NmrMLType>) objFactory.createNmrML(nmrMLElement);
 
             // create a JAXBContext capable of handling classes generated into the org.nmrml.schema package
-            JAXBContext jc = JAXBContext.newInstance( "org.nmrml.model" );
+            JAXBContext jc = JAXBContext.newInstance( "org.nmrml.schema" );
 
             // create a Marshaller and marshal to a file
             Marshaller m = jc.createMarshaller();

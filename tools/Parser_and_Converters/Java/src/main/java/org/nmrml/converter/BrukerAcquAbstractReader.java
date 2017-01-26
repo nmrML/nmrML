@@ -20,38 +20,11 @@ package org.nmrml.converter;
 
 import org.nmrml.cv.BrukerMapper;
 import org.nmrml.cv.CVLoader;
-import org.nmrml.schema.Acquisition1DType;
-import org.nmrml.schema.AcquisitionDimensionParameterSetType;
-import org.nmrml.schema.AcquisitionParameterSet1DType;
-import org.nmrml.schema.AcquisitionType;
-import org.nmrml.schema.BinaryDataArrayType;
-import org.nmrml.schema.CVListType;
-import org.nmrml.schema.CVParamType;
-import org.nmrml.schema.CVTermType;
-import org.nmrml.schema.ContactListType;
-import org.nmrml.schema.ContactType;
-import org.nmrml.schema.InstrumentConfigurationListType;
-import org.nmrml.schema.InstrumentConfigurationType;
-import org.nmrml.schema.NmrMLType;
-import org.nmrml.schema.ObjectFactory;
-import org.nmrml.schema.PulseSequenceType;
-import org.nmrml.schema.SoftwareListType;
-import org.nmrml.schema.SoftwareType;
-import org.nmrml.schema.SourceFileListType;
-import org.nmrml.schema.SourceFileRefListType;
-import org.nmrml.schema.SourceFileRefType;
-import org.nmrml.schema.SourceFileType;
-import org.nmrml.schema.TemperatureType;
-import org.nmrml.schema.UserParamType;
-import org.nmrml.schema.ValueWithUnitType;
+import org.nmrml.schema.*;
 
 import javax.xml.bind.DatatypeConverter;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.lang.ref.SoftReference;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -59,7 +32,6 @@ import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -258,6 +230,13 @@ public class BrukerAcquAbstractReader implements AcquReader {
             cvListType.getCv().add(cvLoader.getCvTypeHashMap().get(keys));
         }
         nmrMLType.setCvList(cvListType);
+
+        FileDescriptionType fileDescriptionType = objectFactory.createFileDescriptionType();
+        ParamGroupType paramGroupType = objectFactory.createParamGroupType();
+        paramGroupType.getCvParam().add(cvLoader.fetchCVParam("NMRCV", "ONE_DIM_NMR"));
+        fileDescriptionType.setFileContent(paramGroupType);
+
+        nmrMLType.setFileDescription(fileDescriptionType);
         loadSourceFileRefs();
         return nmrMLType;
     }
@@ -274,7 +253,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
         /* read fid */
         nmrMLType.getAcquisition().getAcquisition1D().setFidData(readFid(acquisitionReader));
 
-
         //add the reference list
 
 
@@ -283,21 +261,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
 //        parameterSet2DType.setDirectDimensionParameterSet(parameter);
 
 
-        //TODO read contact details
-        //contact parameters
-//        String line = inputAcqReader.readLine();
-//        ContactType contact = new ContactType();
-//        if (REGEXP_ORIGIN.matcher(line).find()) {
-//            matcher = REGEXP_ORIGIN.matcher(line);
-//            matcher.find();
-//            // probably not correct
-//            contact.setOrganization(matcher.group(1));
-//        }
-//        if (REGEXP_OWNER.matcher(line).find()) {
-//            matcher = REGEXP_OWNER.matcher(line);
-//            matcher.find();
-//            contact.setFullname(matcher.group(1));
-//        }
 
     }
 
@@ -337,7 +300,6 @@ public class BrukerAcquAbstractReader implements AcquReader {
             File file = new File(foldername + brukerMapper.getTerm("FILES", key));
             SourceFileType sourceFileType = objectFactory.createSourceFileType();
             if (file.exists()) {
-                sourceFileType.setId(key);
                 /* insert a relative path */
                 sourceFileType.setLocation(inputFile.getParentFile().getParentFile().toURI()
                         .relativize(file.toURI()).toString());
@@ -349,7 +311,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 while ((nread = inputStream.read(dataBytes)) != -1) {
                     messageDigest.update(dataBytes, 0, nread);
                 }
-                sourceFileType.setSha1(DatatypeConverter.printHexBinary(messageDigest.digest()));
+                sourceFileType.setSha1(DatatypeConverter.printHexBinary(messageDigest.digest()).toLowerCase());
                 try {
                     sourceFileType.getCvParam().add(cvLoader.fetchCVParam("NMRCV", key));
                 } catch (Exception e) {
@@ -392,6 +354,10 @@ public class BrukerAcquAbstractReader implements AcquReader {
             SoftwareListType softwareListType = objectFactory.createSoftwareListType();
             TemperatureType temperatureType = objectFactory.createTemperatureType();
             ContactType contactType = objectFactory.createContactType();
+            SoftwareRefType softwareRefType = objectFactory.createSoftwareRefType();
+            ContactRefType contactRefType = objectFactory.createContactRefType();
+            ContactRefListType contactRefListType = objectFactory.createContactRefListType();
+            contactRefListType.getContactRef().add(contactRefType);
 
             InstrumentConfigurationType instrumentConfigurationType = objectFactory.createInstrumentConfigurationType();
             instrumentConfigurationType.getCvParam().add(cvLoader.fetchCVParam("NMRCV","BRUKER"));
@@ -426,7 +392,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     matcher.find();
                     value = objectFactory.createValueWithUnitType();
                     Double sweepWidth = Double.parseDouble(matcher.group(1));
-                    value.setValue(sweepWidth.toString());
+                    value.setValue(String.format("%.6f",sweepWidth));
                     try {
                         CVParamType cvParamType = cvLoader.fetchCVParam("UO", "HERTZ");
                         value.setUnitCvRef(cvParamType.getCvRef());
@@ -514,15 +480,14 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     }
                 }
             /* magnetic field ?? */
-                if (REGEXP_SFO1.matcher(line).find()) {
-                    matcher = REGEXP_SFO1.matcher(line);
+                if (REGEXP_BF1.matcher(line).find()) {
+                    matcher = REGEXP_BF1.matcher(line);
                     matcher.find();
-                    Double transmitterFrequency = Double.parseDouble(matcher.group(1)) / gyromagneticRatio;
-                    // convert from hertz to Tesla
+                    Double transmitterFrequency = Double.parseDouble(matcher.group(1));
                     value = objectFactory.createValueWithUnitType();
-                    value.setValue(new DecimalFormat("###.##").format(transmitterFrequency));
+                    value.setValue(String.format("%.6f",transmitterFrequency));
                     try {
-                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "TESLA");
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "MEGAHERTZ");
                         value.setUnitCvRef(cvParamType.getCvRef());
                         value.setUnitName(cvParamType.getName());
                         value.setUnitAccession(cvParamType.getAccession());
@@ -590,14 +555,14 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     parameterSet.setSpinningRate(value);
                 }
 
-                if (REGEXP_BF1.matcher(line).find()) {
-                    matcher = REGEXP_BF1.matcher(line);
+                if (REGEXP_SFO1.matcher(line).find()) {
+                    matcher = REGEXP_SFO1.matcher(line);
                     matcher.find();
                     value = objectFactory.createValueWithUnitType();
-                    Double irradiationFrequency = Double.parseDouble(matcher.group(1)) * 1e6;
-                    value.setValue(irradiationFrequency.toString());
+                    Double irradiationFrequency = Double.parseDouble(matcher.group(1));
+                    value.setValue(String.format("%.6f", irradiationFrequency));
                     try {
-                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "HERTZ");
+                        CVParamType cvParamType = cvLoader.fetchCVParam("UO", "MEGAHERTZ");
                         value.setUnitCvRef(cvParamType.getCvRef());
                         value.setUnitName(cvParamType.getName());
                         value.setUnitAccession(cvParamType.getAccession());
@@ -623,6 +588,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
                     parameterSet.setSampleAcquisitionTemperature(value);
+
                     //debug
 //                    System.out.println("Temperature: "+matcher.group(1));
                 }
@@ -645,8 +611,11 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     matcher = REGEXP_TITLE.matcher(line);
                     matcher.find();
                     SoftwareType softwareType = objectFactory.createSoftwareType();
-                    softwareType.setName(matcher.group(2));
+                    softwareType.setCvRef(cvLoader.fetchCVParam("NMRCV", matcher.group(2)).getCvRef());
+                    softwareType.setAccession(cvLoader.fetchCVParam("NMRCV", matcher.group(2)).getAccession());
+                    softwareType.setName(cvLoader.fetchCVParam("NMRCV", matcher.group(2)).getName());
                     softwareType.setVersion(matcher.group(3));
+                    softwareRefType.setRef(softwareType);
                     softwareListType.getSoftware().add(softwareType);
                 }
                 /* extract instrument metadata */
@@ -654,7 +623,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     matcher = REGEXP_PROBHD.matcher(line);
                     matcher.find();
                     UserParamType userParamType = objectFactory.createUserParamType();
-                    userParamType.setName("Probehead");
+                    userParamType.setName("ProbeHead");
                     userParamType.setValue(matcher.group(1));
                     instrumentConfigurationType.getUserParam().add(userParamType);
                 }
@@ -663,6 +632,7 @@ public class BrukerAcquAbstractReader implements AcquReader {
                     matcher=REGEXP_OWNER.matcher(line);
                     matcher.find();
                     contactType.setFullname(matcher.group(1));
+                    contactRefType.setRef(contactType);
                 }
                 /* extract email from "metadata" */
                 if(REGEXP_METAINFO.matcher(line).find()){
@@ -701,24 +671,33 @@ public class BrukerAcquAbstractReader implements AcquReader {
             /* set acquisition parameters */
             parameterSet.setDirectDimensionParameterSet(acquParameters);
             Acquisition1DType acquisition1DType = objectFactory.createAcquisition1DType();
+
+            parameterSet.setContactRefList(contactRefListType);
+            parameterSet.setSoftwareRef(softwareRefType);
             acquisition1DType.setAcquisitionParameterSet(parameterSet);
+
             AcquisitionType acquisitionType = objectFactory.createAcquisitionType();
             acquisitionType.setAcquisition1D(acquisition1DType);
-            parameterSet.setPulseSequence(pulseSequence);
 
+//            parameterSet.setPulseSequence(pulseSequence);
 
             /* set contact information */
             ContactListType contactListType = objectFactory.createContactListType();
             contactListType.getContact().add(contactType);
+            contactRefType.setRef(contactType);
+
             nmrMLType.setContactList(contactListType);
 
             /* set other parameters */
+
             nmrMLType.setSoftwareList(softwareListType);
 
             InstrumentConfigurationListType instrumentConfigurationListType =
                     (nmrMLType.getInstrumentConfigurationList()==null)?
                     objectFactory.createInstrumentConfigurationListType():nmrMLType.getInstrumentConfigurationList();
             instrumentConfigurationListType.getInstrumentConfiguration().add(instrumentConfigurationType);
+
+            instrumentConfigurationType.getSoftwareRef().add(softwareRefType);
             nmrMLType.setInstrumentConfigurationList(instrumentConfigurationListType);
 
             nmrMLType.setAcquisition(acquisitionType);
@@ -743,12 +722,20 @@ public class BrukerAcquAbstractReader implements AcquReader {
                 SourceFileRefType sourceFileRefType = objectFactory.createSourceFileRefType();
                 sourceFileRefType.setRef(sourceFileType);
 
-                PulseSequenceType pulseSequenceFileRefList =
+                PulseSequenceType pulseSequenceType =
                         objectFactory.createPulseSequenceType();
-//                pulseSequenceFileRefList.getUserParam().add(sourceFileRefType);
+                try {
+                    String pulseProgram = new BrukerPulseProgramReader().readPulseProgram(new FileInputStream(sourceFileType.getLocation()));
+                    UserParamType userParamType = objectFactory.createUserParamType();
+                    userParamType.setName("Pulse Program");
+                    userParamType.setValue(pulseProgram);
+                    pulseSequenceType.getUserParam().add(userParamType);
+                    nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().setPulseSequence(pulseSequenceType);
 
-//                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().getPulseSequence()
-//                        .setPulseSequenceFileRefList(pulseSequenceFileRefList);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                nmrMLType.getAcquisition().getAcquisition1D().getAcquisitionParameterSet().setShapedPulseFile(sourceFileRefType);
 
             }
             if (sourceFileType.getId().matches("ACQUISITION_FILE")) {
