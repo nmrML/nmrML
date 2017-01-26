@@ -1,72 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nmrML.org/schema/nmrML.xsd">
+<nmrML xmlns="http://nmrml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.rc1" id="ID00001" xsi:schemaLocation="http://nmrml.org/schema http://nmrML.org/schema/v1.0.rc1/nmrML.xsd">
     <cvList>
-        <cv id="UO" fullName="Unit Ontology" version="3.2.0" URI="http://purl.obolibrary.org/obo/"/>
         <cv id="CHEBI" fullName="Chemical Entities of Biological Interest Ontology" version="105" URI="http://purl.obolibrary.org/obo/"/>
-        <cv id="NMRCV" fullName="Nuclear Magnetic Resonance CV" version="1.0.rc1" URI="http://nmrml.org/cv/v1.0.rc1/nmrCV.owl"/>
+        <cv id="NMRCV" fullName="Nuclear Magnetic Resonance CV" version="1.1.0" URI="http://nmrml.org/cv/v1.1.0/nmrCV.owl"/>
+        <cv id="UO" fullName="Unit Ontology" version="3.2.0" URI="http://purl.obolibrary.org/obo/"/>
     </cvList>
+    <fileDescription>
+        <fileContent>
+            <cvParam cvRef="NMRCV" accession="NMR:1400165" name="1D NMR acquisition parameter set"/>
+        </fileContent>
+    </fileDescription>
     <contactList>
-        <contact fullname="Luis F. de Figueiredo" email="Luis.deFigueiredo@ebi.ac.uk"/>
+        <contact id="ID00008" fullname="root" email="cui@kerry"/>
     </contactList>
     <sourceFileList>
-        <sourceFile id="FID_FILE" name="fid" location="1H/fid" sha1="E7926300F0A2413F71C545D0D18E1388648E0A2C">
+        <sourceFile id="ID00002" name="fid" location="1H/fid" sha1="e7926300f0a2413f71c545d0d18e1388648e0a2c">
             <cvParam cvRef="NMRCV" accession="NMR:1400119" name="FID file"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
         </sourceFile>
-        <sourceFile id="PULSEPROGRAM_FILE" name="pulseprogram" location="1H/pulseprogram" sha1="8BA2AC9ADA97A0C1F1644F85739D4BAC2CF36FB9">
+        <sourceFile id="ID00004" name="pulseprogram" location="1H/pulseprogram" sha1="8ba2ac9ada97a0c1f1644f85739d4bac2cf36fb9">
             <cvParam cvRef="NMRCV" accession="NMR:1400122" name="pulse sequence file"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
         </sourceFile>
-        <sourceFile id="ACQUISITION_FILE" name="acqus" location="1H/acqus" sha1="0706DB54984C0788DAAB9D5E34BD00BDC1633797">
+        <sourceFile id="ID00005" name="acqus" location="1H/acqus" sha1="0706db54984c0788daab9d5e34bd00bdc1633797">
             <cvParam cvRef="NMRCV" accession="NMR:1002006" name="acquisition parameter file"/>
-            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
-        </sourceFile>
-        <sourceFile id="PROCESSING_FILE" name="procs" location="1H/pdata/1/procs" sha1="2DDE141F8C3B768F570B756748418E49431E4BEE">
-            <cvParam cvRef="NMRCV" accession="NMR:?" name="processing parameters file"/>
-            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
-        </sourceFile>
-        <sourceFile id="REAL_DATA_FILE" name="1r" location="1H/pdata/1/1r" sha1="B6F7F41F903092C670FCF5A14FEDCC003B7ED021">
-            <cvParam cvRef="NMRCV" accession="NMR:?" name="real processed data points file"/>
-            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
-        </sourceFile>
-        <sourceFile id="IMAGINARY_DATA_FILE" name="1i" location="1H/pdata/1/1i" sha1="9BB4A3D1E9306AF6ED17C0A924851BD7EB16EE83">
-            <cvParam cvRef="NMRCV" accession="NMR:?" name="imaginary processed data points file"/>
-            <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
-        </sourceFile>
-        <sourceFile id="PEAKS_FILE" name="peaks" location="1H/pdata/1/peaks" sha1="2FAA8B2E7E2AE27FE96A9229E9FBBE26FB0B4ED3">
-            <cvParam cvRef="NMRCV" accession="NMR:?" name="peak list file"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
         </sourceFile>
     </sourceFileList>
     <softwareList>
-        <software version="Version 2.6" name="XWIN-NMR"/>
+        <software id="ID00010" version="Version 2.6" cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
     </softwareList>
     <instrumentConfigurationList>
-        <instrumentConfiguration>
+        <instrumentConfiguration id="ID00009">
             <cvParam cvRef="NMRCV" accession="NMR:1400198" name="Bruker NMR instrument"/>
-            <userParam name="Probehead" value="&lt;5mm TXI XYZ-grad long coil Z8281/0125"/>
+            <userParam name="ProbeHead" value="&lt;5mm TXI XYZ-grad long coil Z8281/0125"/>
+            <softwareRef ref="ID00010"/>
         </instrumentConfiguration>
     </instrumentConfigurationList>
     <acquisition>
         <acquisition1D>
             <acquisitionParameterSet numberOfSteadyStateScans="4" numberOfScans="4">
-                <acquisitionParameterFileRefList>
-                    <sourceFileRef ref="ACQUISITION_FILE"/>
-                </acquisitionParameterFileRefList>
-                <sampleContainer cvRef="NMRCV" accession="NMR:400128" name="tube"/>
+                <contactRefList>
+                    <contactRef ref="ID00008"/>
+                </contactRefList>
+                <softwareRef ref="ID00010"/>
+                <sampleContainer cvRef="NMRCV" accession="NMR:1400132" name="NMR Sample tube"/>
                 <sampleAcquisitionTemperature value="300.0" unitAccession="UO_0000012" unitName="kelvin" unitCvRef="UO"/>
                 <spinningRate value="4200.0" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
                 <relaxationDelay value="0" unitAccession="UO_0000010" unitName="second" unitCvRef="UO"/>
                 <pulseSequence>
-                    <pulseSequenceFileRefList>
-                        <sourceFileRef ref="PULSEPROGRAM_FILE"/>
-                    </pulseSequenceFileRefList>
+                    <userParam name="Pulse Program" value="zgpr"/>
                 </pulseSequence>
+                <shapedPulseFile ref="ID00004"/>
                 <DirectDimensionParameterSet decoupled="false" numberOfDataPoints="32768">
                     <acquisitionNucleus cvRef="CHEBI" accession="CHEBI_49637" name="hydrogen atom"/>
-                    <effectiveExcitationField value="11.74" unitAccession="UO_0000228" unitName="tesla" unitCvRef="UO"/>
-                    <sweepWidth value="7002.80112044818" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
-                    <irradiationFrequency value="4.9984E8" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
+                    <effectiveExcitationField value="499.840000" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
+                    <sweepWidth value="7002.801120" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
+                    <pulseWidth value="8.930000" unitAccession="UO_0000029" unitName="microsecond" unitCvRef="UO"/>
+                    <irradiationFrequency value="499.842350" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
                     <samplingStrategy cvRef="NMRCV" accession="NMR:1000349" name="uniform sampling"/>
                 </DirectDimensionParameterSet>
             </acquisitionParameterSet>
