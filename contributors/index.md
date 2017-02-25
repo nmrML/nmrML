@@ -11,7 +11,7 @@ The development of large parts of nmrML was funded by the following EU projects:
 <ul class="contributor-list">
 
    <li><a href="http://phenomenal-h2020.eu/home/" title="PhenoMeNal" target="_blank">
-    <img src="/images/other-logos/PhenoMeNal_logo.png" width="500" height="100"/>
+    <img src="/images/other-logos/PhenoMeNal_logo.png" width="250" height="47"/>
   </a></li>
 
   <li><a href="http://www.cosmos-fp7.eu/" title="COSMOS - COordination of Standards in MetabOlomicS" target="_blank">
@@ -24,7 +24,7 @@ The development of large parts of nmrML was funded by the following EU projects:
 ### Project Partners
 
 Many individuals and groups have collaborated to create nmrML. Thanks to all of our contributors who have provided input, written code, debated and used the format. The following Institutions and Databases were involved in generating and supporting nmrML:
-<ul class="partner-list">
+<ul class="contributor-list">
 
 <li><a href="http://www.ipb-halle.de/en/" title="Leibniz Institute of Plant Biochemistry" target="_blank">
     <img src="/images/other-logos/ipb.jpg" />
