@@ -55,6 +55,7 @@
 				'properties_SampleType_originalBiologicalSampleReference', 
 				'properties_ContactRefType_ref', 
 				'properties_SourceFileRefType_ref', 
+				'properties_AcquisitionParameterFileRefType_ref', 
 				'properties_AcquisitionParameterSetType_numberOfSteadyStateScans', 
 				'properties_AcquisitionParameterSetType_numberOfScans', 
 				'properties_BinaryDataArrayType_compressed', 
@@ -62,6 +63,7 @@
 				'properties_BinaryDataArrayType_byteFormat', 
 				'properties_AcquisitionDimensionParameterSetType_decoupled', 
 				'properties_AcquisitionDimensionParameterSetType_numberOfDataPoints', 
+				'properties_ProcessingParameterFileRefType_ref', 
 				'properties_AxisWithUnitType_unitAccession', 
 				'properties_AxisWithUnitType_unitName', 
 				'properties_AxisWithUnitType_unitCvRef', 
@@ -145,6 +147,7 @@
 				'usedBy_SampleType_originalBiologicalSampleReference', 
 				'usedBy_ContactRefType_ref', 
 				'usedBy_SourceFileRefType_ref', 
+				'usedBy_AcquisitionParameterFileRefType_ref', 
 				'usedBy_AcquisitionParameterSetType_numberOfSteadyStateScans', 
 				'usedBy_AcquisitionParameterSetType_numberOfScans', 
 				'usedBy_BinaryDataArrayType_compressed', 
@@ -152,6 +155,7 @@
 				'usedBy_BinaryDataArrayType_byteFormat', 
 				'usedBy_AcquisitionDimensionParameterSetType_decoupled', 
 				'usedBy_AcquisitionDimensionParameterSetType_numberOfDataPoints', 
+				'usedBy_ProcessingParameterFileRefType_ref', 
 				'usedBy_AxisWithUnitType_unitAccession', 
 				'usedBy_AxisWithUnitType_unitName', 
 				'usedBy_AxisWithUnitType_unitCvRef', 
@@ -242,6 +246,7 @@
 				'source_SampleType_originalBiologicalSampleReference', 
 				'source_ContactRefType_ref', 
 				'source_SourceFileRefType_ref', 
+				'source_AcquisitionParameterFileRefType_ref', 
 				'source_AcquisitionParameterSetType_numberOfSteadyStateScans', 
 				'source_AcquisitionParameterSetType_numberOfScans', 
 				'source_BinaryDataArrayType_compressed', 
@@ -249,6 +254,7 @@
 				'source_BinaryDataArrayType_byteFormat', 
 				'source_AcquisitionDimensionParameterSetType_decoupled', 
 				'source_AcquisitionDimensionParameterSetType_numberOfDataPoints', 
+				'source_ProcessingParameterFileRefType_ref', 
 				'source_AxisWithUnitType_unitAccession', 
 				'source_AxisWithUnitType_unitName', 
 				'source_AxisWithUnitType_unitCvRef', 
@@ -337,11 +343,13 @@
 				'annotations_ValueWithUnitType_unitCvRef', 
 				'annotations_ContactRefType_ref', 
 				'annotations_SourceFileRefType_ref', 
+				'annotations_AcquisitionParameterFileRefType_ref', 
 				'annotations_AcquisitionParameterSetType_numberOfSteadyStateScans', 
 				'annotations_AcquisitionParameterSetType_numberOfScans', 
 				'annotations_BinaryDataArrayType_compressed', 
 				'annotations_BinaryDataArrayType_encodedLength', 
 				'annotations_BinaryDataArrayType_byteFormat', 
+				'annotations_ProcessingParameterFileRefType_ref', 
 				'annotations_AxisWithUnitType_unitAccession', 
 				'annotations_AxisWithUnitType_unitName', 
 				'annotations_AxisWithUnitType_unitCvRef', 
@@ -5582,6 +5590,108 @@
             <td class="rt_lineBottom"></td>
             <td class="rt_cornerBottomRight"></td>
          </tr>
+      </table><a id="AcquisitionParameterFileRefType_ref"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema.html#AcquisitionParameterFileRefType" target="mainFrame" title="http://nmrml.org/schema" onclick="updatePageTitle('Schema documentation for namespace http://nmrml.org/schema')">AcquisitionParameterFileRefType</a></b> / @ref</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_AcquisitionParameterFileRefType_ref" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_AcquisitionParameterFileRefType_ref');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_AcquisitionParameterFileRefType_ref" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This attribute must reference the 'id' of the sourceFile node in the sourceFileList</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:IDREF</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_AcquisitionParameterFileRefType_ref" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_AcquisitionParameterFileRefType_ref');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_AcquisitionParameterFileRefType_ref" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_AcquisitionParameterFileRefType_ref" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_AcquisitionParameterFileRefType_ref');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_AcquisitionParameterFileRefType_ref" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Complex Type </td>
+                                    <td><b><a href="schema.html#AcquisitionParameterFileRefType" target="mainFrame" title="http://nmrml.org/schema" onclick="updatePageTitle('Schema documentation for namespace http://nmrml.org/schema')">AcquisitionParameterFileRefType</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_AcquisitionParameterFileRefType_ref" type="image" src="img/btM.gif" value="-" onclick="switchState('source_AcquisitionParameterFileRefType_ref');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_AcquisitionParameterFileRefType_ref" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"ref"</span><span class="tAN"> type=</span><span class="tAV">"xs:IDREF"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This attribute must reference the 'id' of the sourceFile node in the sourceFileList</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/C:/Workdir/XSD-XML/dev/./xsd/nmrML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
       </table><a id="AcquisitionParameterSetType_numberOfSteadyStateScans"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema.html#AcquisitionParameterSetType" target="mainFrame" title="http://nmrml.org/schema" onclick="updatePageTitle('Schema documentation for namespace http://nmrml.org/schema')">AcquisitionParameterSetType</a></b> / @numberOfSteadyStateScans</span></div>
       <table class="rt">
          <tr>
@@ -6236,6 +6346,108 @@
                               <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                  <tr>
                                     <td width="100%"><pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"numberOfDataPoints"</span><span class="tAN"> type=</span><span class="tAV">"xs:integer"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">/&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/C:/Workdir/XSD-XML/dev/./xsd/nmrML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ProcessingParameterFileRefType_ref"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema.html#ProcessingParameterFileRefType" target="mainFrame" title="http://nmrml.org/schema" onclick="updatePageTitle('Schema documentation for namespace http://nmrml.org/schema')">ProcessingParameterFileRefType</a></b> / @ref</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_ProcessingParameterFileRefType_ref" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_ProcessingParameterFileRefType_ref');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_ProcessingParameterFileRefType_ref" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">This attribute must reference the 'id' of the sourceFile node in the sourceFileList.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:IDREF</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ProcessingParameterFileRefType_ref" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_ProcessingParameterFileRefType_ref');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ProcessingParameterFileRefType_ref" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_ProcessingParameterFileRefType_ref" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_ProcessingParameterFileRefType_ref');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_ProcessingParameterFileRefType_ref" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Complex Type </td>
+                                    <td><b><a href="schema.html#ProcessingParameterFileRefType" target="mainFrame" title="http://nmrml.org/schema" onclick="updatePageTitle('Schema documentation for namespace http://nmrml.org/schema')">ProcessingParameterFileRefType</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ProcessingParameterFileRefType_ref" type="image" src="img/btM.gif" value="-" onclick="switchState('source_ProcessingParameterFileRefType_ref');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ProcessingParameterFileRefType_ref" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"ref"</span><span class="tAN"> type=</span><span class="tAV">"xs:IDREF"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">This attribute must reference the 'id' of the sourceFile node in the sourceFileList.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:attribute&gt;</span></pre></td>
                                  </tr>
                               </table>
                            </div>
