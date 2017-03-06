@@ -147,6 +147,9 @@ public class Acqu2nmrML {
             contactRef.setRef(contact1);
             contactRefList.getContactRef().add(contactRef);
 
+       /* AcquisitionParameter Ref List */
+            AcquisitionParameterFileRefListType acquisitionParameterFileRefList = objFactory.createAcquisitionParameterFileRefListType();
+
        /* SourceFile List */
             int sourceFileCount = 0;
             SourceFileListType srcfilelist = objFactory.createSourceFileListType();
@@ -178,6 +181,9 @@ public class Acqu2nmrML {
                        hBinaryDataObj.put(sourceName, binaryData);
                        if (binaryData.isExists()) { srcfile.setSha1(binaryData.getSha1()); }
                    }
+                   AcquisitionParameterFileRefType acquisitionParameterFileRef = objFactory.createAcquisitionParameterFileRefType();
+                   acquisitionParameterFileRef.setRef(srcfile);
+                   acquisitionParameterFileRefList.getAcquisitionParameterFileRef().add(acquisitionParameterFileRef);
                    srcfilelist.getSourceFile().add(srcfile);
                    sourceFileCount = sourceFileCount + 1;
                }
@@ -237,9 +243,10 @@ public class Acqu2nmrML {
             /* sample container */
             acqparam.setSampleContainer(cvLoader.fetchCVTerm("NMRCV","TUBE"));
 
-            /* Software Ref & Contact Ref List */
-            acqparam.setContactRefList(contactRefList);
+            /* AcquisitionParameterFile Ref List, Software Ref List, Contact Ref List */
+            acqparam.setAcquisitionParameterRefList(acquisitionParameterFileRefList);
             acqparam.setSoftwareRef(softref1);
+            acqparam.setContactRefList(contactRefList);
 
             /* sample temperature */
             ValueWithUnitType  temperature = objFactory.createValueWithUnitType();

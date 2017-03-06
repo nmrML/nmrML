@@ -147,6 +147,9 @@ public class Proc2nmrML {
 
             boolean bstop=false;
 
+       /* ProcessingParameter Ref List */
+            ProcessingParameterFileRefListType processingParameterFileRefList = objFactory.createProcessingParameterFileRefListType();
+
         /* SourceFile List */
             int sourceFileCount = 0;
             SourceFileListType srcfilelist = nmrMLtype.getSourceFileList();
@@ -179,6 +182,9 @@ public class Proc2nmrML {
                        hBinaryDataObj.put(sourceName, binaryData);
                        if (binaryData.isExists()) { srcfile.setSha1(binaryData.getSha1()); }
                    }
+                   ProcessingParameterFileRefType processingParameterFileRef = objFactory.createProcessingParameterFileRefType();
+                   processingParameterFileRef.setRef(srcfile);
+                   processingParameterFileRefList.getProcessingParameterFileRef().add(processingParameterFileRef);
                    srcfilelist.getSourceFile().add(srcfile);
                    sourceFileCount = sourceFileCount + 1;
                }
@@ -360,8 +366,11 @@ public class Proc2nmrML {
        /* Spectrum1D - Set FirstDimensionProcessingParameterSet */
             spectrum1D.setFirstDimensionProcessingParameterSet(ProcParam1D);
 
-       /* SpectrumType - Software, Contact Ref List */
+       /* SpectrumType - Software Ref List */
             spectrum1D.setProcessingSoftwareRefList(softwareRefList);
+
+       /* SpectrumType - ProcessingParameterFile Ref List */
+            spectrum1D.setProcessingParameterFileRefList(processingParameterFileRefList);
 
        /* SpectrumType - ProcessingParameterSet */
             SpectrumType.ProcessingParameterSet procParamSet = objFactory.createSpectrumTypeProcessingParameterSet();

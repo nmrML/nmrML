@@ -49,6 +49,10 @@
                     <userParam name="Pulse Program" value="s2pul"/>
                 </pulseSequence>
                 <shapedPulseFile/>
+                <acquisitionParameterRefList>
+                    <acquisitionParameterFileRef ref="ID00002"/>
+                    <acquisitionParameterFileRef ref="ID00003"/>
+                </acquisitionParameterRefList>
                 <DirectDimensionParameterSet decoupled="false" numberOfDataPoints="65536">
                     <acquisitionNucleus cvRef="CHEBI" accession="CHEBI_49637" name="hydrogen atom"/>
                     <effectiveExcitationField value="599.826355" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>

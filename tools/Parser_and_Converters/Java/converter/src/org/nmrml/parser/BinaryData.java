@@ -44,9 +44,6 @@ import java.util.Map;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
-//import java.util.zip.GZIPInputStream;
-//import java.util.zip.GZIPOutputStream;
-
 import java.util.*;
 import java.lang.*;
 
@@ -163,10 +160,6 @@ public class BinaryData {
         return compressed;
     }
 
-    //public double[] getDataAsDouble() {
-    //    this(ByteOrder.LITTLE_ENDIAN);
-    //}
-
     public double[] getDataAsDouble(ByteOrder... byteOrder) {
         int[] encoded = this.getEncodedSize();
         int encodedSize = encoded[0];
@@ -188,26 +181,6 @@ public class BinaryData {
         return doubles;
     }
 
-/*
-    public static byte[] compress(byte[] data) throws IOException {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        GZIPOutputStream gzipOutputStream = new GZIPOutputStream(byteArrayOutputStream);
-        gzipOutputStream.write(data);
-        gzipOutputStream.close();
-        return byteArrayOutputStream.toByteArray();
-    }
-    public static byte[] decompress(byte[] data) throws IOException {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
-        GZIPInputStream gZIPInputStream = new GZIPInputStream(byteArrayInputStream);
-        byte[] tmpBuffer = new byte[256];
-        int n;
-        while ((n = gZIPInputStream.read(tmpBuffer)) >= 0)
-            byteArrayOutputStream.write(tmpBuffer, 0, n);
-        gZIPInputStream.close();
-        return byteArrayOutputStream.toByteArray();
-    }
-*/
     public int[] toInt(byte buf[], ByteOrder byteOrder) {
        int intArr[] = new int[buf.length / 4];
        int offset = 0;
@@ -325,21 +298,16 @@ public class BinaryData {
            this.setEncodedLength(BigInteger.valueOf(this.getData().length));
            this.setByteFormat(byteFormat);
 
-//System.err.println( String.format( "BinData: byteFormat = %s", byteFormat ) );
-//System.err.println( String.format( "BinData: buf Length = %d", this.getData().length ) );
-
            double [] dataValues = this.getDataAsDouble(acq.getByteOrder());
 
+           // If Bruker FID , then apply the group delay correction 
            if ( acq.getSpectrometer().equals(Acqu.Spectrometer.BRUKER) && isComplex ) {
 
               double GRPDLY = acq.getDspGroupDelay();
 
               if (Double.isNaN(GRPDLY) || GRPDLY<=0 ) {
                   GRPDLY = this.getGroupDelay (acq.getDspDecimation(), acq.getDspFirmware());
-//System.err.println( String.format( "BinData: DECIM = %d", acq.getDspDecimation() ) );
-//System.err.println( String.format( "BinData: DSPFVS = %d", acq.getDspFirmware() ) );
               }
-//System.err.println( String.format( "BinData: GRPDLY = %f", GRPDLY ) );
 
               double [] Spectrum1 = FFTBase.fft2(dataValues, true);
               double [] Spectrum2 = new double[Spectrum1.length];

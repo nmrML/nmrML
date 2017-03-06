@@ -45,7 +45,6 @@ public class BrukerAcquReader implements AcquReader {
 
     private BufferedReader inputAcqReader;
 
-
     // parameters from acqu
     private final static Pattern REGEXP_SFO1 = Pattern.compile("\\#\\#\\$SFO1= (-?\\d+\\.?\\d*)"); //transmitter frequency
     private final static Pattern REGEXP_BF1 = Pattern.compile("\\#\\#\\$BF1= (-?\\d+\\.?\\d*)"); //magnetic field frequency of channel 1

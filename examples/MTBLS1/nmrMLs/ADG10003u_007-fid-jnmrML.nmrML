@@ -53,6 +53,11 @@
                     <userParam name="Pulse Program" value="noesypr1d"/>
                 </pulseSequence>
                 <shapedPulseFile ref="ID00003"/>
+                <acquisitionParameterRefList>
+                    <acquisitionParameterFileRef ref="ID00002"/>
+                    <acquisitionParameterFileRef ref="ID00003"/>
+                    <acquisitionParameterFileRef ref="ID00004"/>
+                </acquisitionParameterRefList>
                 <DirectDimensionParameterSet decoupled="true" numberOfDataPoints="65536">
                     <acquisitionNucleus cvRef="CHEBI" accession="CHEBI_49637" name="hydrogen atom"/>
                     <effectiveExcitationField value="699.870000" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
