@@ -334,16 +334,6 @@ public class Acqu2nmrML {
 
             acqparam.setDirectDimensionParameterSet(acqdimparam);
 
-            /* AcquisitionParameterFileRefList object */
-            /*SourceFileRefListType acqFileRefList = objFactory.createSourceFileRefListType();
-            SourceFileRefType acqFileRef = objFactory.createSourceFileRefType();
-            acqFileRef.setRef(hSourceFileObj.get("ACQUISITION_FILE"));
-            acqFileRefList.getSourceFileRef().add(acqFileRef);
-            SourceFileRefType fidFileRef = objFactory.createSourceFileRefType();
-            fidFileRef.setRef(hSourceFileObj.get("FID_FILE"));
-            acqFileRefList.getSourceFileRef().add(fidFileRef);
-            acqparam.setAcquisitionParameterFileRefList(acqFileRefList);*/
-
             /* Acquisition1D object */
             Acquisition1DType acq1Dtype = objFactory.createAcquisition1DType();
             acq1Dtype.setAcquisitionParameterSet(acqparam);

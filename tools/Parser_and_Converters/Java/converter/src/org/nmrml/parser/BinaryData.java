@@ -47,6 +47,8 @@ import java.util.zip.Inflater;
 import java.util.*;
 import java.lang.*;
 
+import javax.xml.bind.DatatypeConverter;
+
 
 public class BinaryData {
 
@@ -351,7 +353,9 @@ public class BinaryData {
            }
 
            this.compressed=isCompressed;
-           this.setEncodedLength(BigInteger.valueOf(this.getData().length));
+           // Here the Base64 encoding is just for knowing the encoded length
+           String base64String = DatatypeConverter.printBase64Binary(this.getData());
+           this.setEncodedLength(BigInteger.valueOf(base64String.length()));
            this.setByteFormat(byteFormat);
            this.exists = true;
            MessageDigest md = null;

@@ -1003,8 +1003,8 @@ Parsed from Excitation width ?</xs:documentation>
             Bruker acquisition software. Example: gauss</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="acquisitionParameterRefList" type="AcquisitionParameterFileRefListType"
-        minOccurs="0"/>
+      <xs:element minOccurs="0" name="acquisitionParameterRefList"
+        type="AcquisitionParameterFileRefListType"> </xs:element>
     </xs:sequence>
     <xs:attribute name="numberOfSteadyStateScans" type="xs:integer" use="required">
       <xs:annotation>
@@ -1120,7 +1120,8 @@ Parsed from Excitation width ?</xs:documentation>
   </xs:complexType>
   <xs:complexType name="ProcessingParameterFileRefListType">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="processingParameterFileRef"  type="ProcessingParameterFileRefType">
+      <xs:element maxOccurs="unbounded" name="processingParameterFileRef"
+        type="ProcessingParameterFileRefType">
         <xs:annotation>
           <xs:documentation>Reference to a previously defined sourceFile.</xs:documentation>
         </xs:annotation>
@@ -1144,7 +1145,8 @@ Parsed from Excitation width ?</xs:documentation>
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
       <xs:element minOccurs="0" name="processingSoftwareRefList" type="SoftwareRefListType"> </xs:element>
-      <xs:element minOccurs="0" name="processingParameterFileRefList" type="ProcessingParameterFileRefListType" />
+      <xs:element minOccurs="0" name="processingParameterFileRefList"
+        type="ProcessingParameterFileRefListType"> </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="spectrumDataArray" type="BinaryDataArrayType">
         <xs:annotation>
           <xs:documentation>The 1D spectrum is represented as either a set of y-axis values at equal
@@ -1243,7 +1245,8 @@ Parsed from Excitation width ?</xs:documentation>
         spectra.</xs:documentation>
     </xs:annotation>
     <xs:sequence maxOccurs="1" minOccurs="1">
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList" type="SoftwareRefListType"> </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="processingSoftwareRefList"
+        type="SoftwareRefListType"> </xs:element>
       <xs:element name="postAcquisitionSolventSuppressionMethod" type="CVTermType">
         <xs:annotation>
           <xs:documentation>The method used for post acquisition solvent
