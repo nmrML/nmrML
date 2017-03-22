@@ -250,7 +250,7 @@ public class Acqu2nmrML {
 
             /* sample temperature */
             ValueWithUnitType  temperature = objFactory.createValueWithUnitType();
-            temperature.setValue(String.format("%f",acq.getTemperature()));
+            temperature.setValue(String.format("%6.2f",acq.getTemperature()));
             temperature.setUnitCvRef(cvUnitK.getCvRef());
             temperature.setUnitAccession(cvUnitK.getAccession());
             temperature.setUnitName(cvUnitK.getName());
@@ -258,7 +258,7 @@ public class Acqu2nmrML {
 
             /* Relaxation Delay */
             ValueWithUnitType  relaxationDelay = objFactory.createValueWithUnitType();
-            relaxationDelay.setValue(String.format("%f",acq.getRelaxationDelay()));
+            relaxationDelay.setValue(String.format("%18.12f",acq.getRelaxationDelay()));
             relaxationDelay.setUnitCvRef(cvUnitSec.getCvRef());
             relaxationDelay.setUnitAccession(cvUnitSec.getAccession());
             relaxationDelay.setUnitName(cvUnitSec.getName());
@@ -291,7 +291,7 @@ public class Acqu2nmrML {
             acqdimparam.setAcquisitionNucleus(cvLoader.fetchCVTerm("CHEBI",acq.getObservedNucleus()));
             // Spectral Width (Hz)
             ValueWithUnitType  SweepWidth = objFactory.createValueWithUnitType();
-            SweepWidth.setValue(String.format("%f",acq.getSpectralWidthHz()));
+            SweepWidth.setValue(String.format("%18.12f",acq.getSpectralWidthHz()));
 
             SweepWidth.setUnitCvRef(cvUnitHz.getCvRef());
             SweepWidth.setUnitAccession(cvUnitHz.getAccession());
@@ -299,21 +299,21 @@ public class Acqu2nmrML {
             acqdimparam.setSweepWidth(SweepWidth);
             // Irradiation Frequency (Hz)
             ValueWithUnitType  IrradiationFrequency = objFactory.createValueWithUnitType();
-            IrradiationFrequency.setValue(String.format("%f",acq.getTransmiterFreq()));
+            IrradiationFrequency.setValue(String.format("%18.12f",acq.getTransmiterFreq()));
             IrradiationFrequency.setUnitCvRef(cvUnitmHz.getCvRef());
             IrradiationFrequency.setUnitAccession(cvUnitmHz.getAccession());
             IrradiationFrequency.setUnitName(cvUnitmHz.getName());
             acqdimparam.setIrradiationFrequency(IrradiationFrequency);
             // setEffectiveExcitationField (Hz)
             ValueWithUnitType  effectiveExcitationField = objFactory.createValueWithUnitType();
-            effectiveExcitationField.setValue(String.format("%f",acq.getSpectralFrequency()));
+            effectiveExcitationField.setValue(String.format("%18.12f",acq.getSpectralFrequency()));
             effectiveExcitationField.setUnitCvRef(cvUnitmHz.getCvRef());
             effectiveExcitationField.setUnitAccession(cvUnitmHz.getAccession());
             effectiveExcitationField.setUnitName(cvUnitmHz.getName());
             acqdimparam.setEffectiveExcitationField(effectiveExcitationField);
             /* Pulse Width */
             ValueWithUnitType  pulseWidth = objFactory.createValueWithUnitType();
-            pulseWidth.setValue(String.format("%f",acq.getPulseWidth()));
+            pulseWidth.setValue(String.format("%18.12f",acq.getPulseWidth()));
             pulseWidth.setUnitCvRef(cvUnitmSec.getCvRef());
             pulseWidth.setUnitAccession(cvUnitmSec.getAccession());
             pulseWidth.setUnitName(cvUnitmSec.getName());

@@ -42,9 +42,9 @@
                 </contactRefList>
                 <softwareRef ref="ID00004"/>
                 <sampleContainer cvRef="NMRCV" accession="NMR:1400132" name="NMR Sample tube"/>
-                <sampleAcquisitionTemperature value="299.150000" unitAccession="UO_0000012" unitName="kelvin" unitCvRef="UO"/>
+                <sampleAcquisitionTemperature value="299.15" unitAccession="UO_0000012" unitName="kelvin" unitCvRef="UO"/>
                 <spinningRate value="0" unitAccession="UO_0000169" unitName="dimensionless" unitCvRef="UO"/>
-                <relaxationDelay value="22.273702" unitAccession="UO_0000010" unitName="second" unitCvRef="UO"/>
+                <relaxationDelay value="   22.273702400000" unitAccession="UO_0000010" unitName="second" unitCvRef="UO"/>
                 <pulseSequence>
                     <userParam name="Pulse Program" value="s2pul"/>
                 </pulseSequence>
@@ -55,10 +55,10 @@
                 </acquisitionParameterRefList>
                 <DirectDimensionParameterSet decoupled="false" numberOfDataPoints="65536">
                     <acquisitionNucleus cvRef="CHEBI" accession="CHEBI_49637" name="hydrogen atom"/>
-                    <effectiveExcitationField value="599.826356" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
-                    <sweepWidth value="12019.230769" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
-                    <pulseWidth value="3.625000" unitAccession="UO_0000029" unitName="microsecond" unitCvRef="UO"/>
-                    <irradiationFrequency value="599.831162" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
+                    <effectiveExcitationField value="  599.826355794000" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
+                    <sweepWidth value="12019.230769200000" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
+                    <pulseWidth value="    3.625000000000" unitAccession="UO_0000029" unitName="microsecond" unitCvRef="UO"/>
+                    <irradiationFrequency value="  599.831161700000" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
                     <decouplingNucleus cvRef="NMRCV" accession="NMR:1000055" name="off resonance decoupling"/>
                     <samplingStrategy cvRef="NMRCV" accession="NMR:1000349" name="uniform sampling"/>
                 </DirectDimensionParameterSet>

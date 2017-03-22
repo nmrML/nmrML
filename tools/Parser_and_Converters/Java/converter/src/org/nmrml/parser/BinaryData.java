@@ -303,36 +303,36 @@ public class BinaryData {
            double [] dataValues = this.getDataAsDouble(acq.getByteOrder());
 
            // If Bruker FID , then apply the group delay correction 
-           if ( acq.getSpectrometer().equals(Acqu.Spectrometer.BRUKER) && isComplex ) {
-
-              double GRPDLY = acq.getDspGroupDelay();
-
-              if (Double.isNaN(GRPDLY) || GRPDLY<=0 ) {
-                  GRPDLY = this.getGroupDelay (acq.getDspDecimation(), acq.getDspFirmware());
-              }
-
-              double [] Spectrum1 = FFTBase.fft2(dataValues, true);
-              double [] Spectrum2 = new double[Spectrum1.length];
-              int n = Spectrum1.length/2;
-              double ndbl = n;
-              double phi = -(GRPDLY*2*Math.PI)/ndbl;
-              int p = n/2;
-              for (int i=0; i<p; i++) {
-                     Spectrum2[2*i]   = Spectrum1[n+2*i]; Spectrum2[2*i+1]   = Spectrum1[n+2*i+1];
-                     Spectrum2[n+2*i] = Spectrum1[2*i];   Spectrum2[n+2*i+1] = Spectrum1[2*i+1];
-              }
-              for (int i=0; i<n; i++) {
-                     double idbl = i;
-                     double theta = phi*idbl;
-                     Spectrum1[2*i]   = Spectrum2[2*i]*Math.cos(theta)  - Spectrum2[2*i+1]*Math.sin(theta);
-                     Spectrum1[2*i+1] = Spectrum2[2*i]*Math.sin(theta)  + Spectrum2[2*i+1]*Math.cos(theta);
-              }
-              for (int i=0; i<p; i++) {
-                     Spectrum2[2*i]   = Spectrum1[n+2*i]; Spectrum2[2*i+1]   = Spectrum1[n+2*i+1];
-                     Spectrum2[n+2*i] = Spectrum1[2*i];   Spectrum2[n+2*i+1] = Spectrum1[2*i+1];
-              }
-              dataValues = FFTBase.fft2(Spectrum2, false);
-           }
+            if ( acq.getSpectrometer().equals(Acqu.Spectrometer.BRUKER) && isComplex ) {
+ 
+               double GRPDLY = acq.getDspGroupDelay();
+ 
+               if (Double.isNaN(GRPDLY) || GRPDLY<=0 ) {
+                   GRPDLY = this.getGroupDelay (acq.getDspDecimation(), acq.getDspFirmware());
+               }
+ 
+               double [] Spectrum1 = FFTBase.fft2(dataValues, false);
+               double [] Spectrum2 = new double[Spectrum1.length];
+               int n = Spectrum1.length/2;
+               double ndbl = n;
+               double phi = (GRPDLY*2*Math.PI)/ndbl;
+               int p = n/2;
+               for (int i=0; i<p; i++) {
+                      Spectrum2[2*i]   = Spectrum1[n+2*i]; Spectrum2[2*i+1]   = Spectrum1[n+2*i+1];
+                      Spectrum2[n+2*i] = Spectrum1[2*i];   Spectrum2[n+2*i+1] = Spectrum1[2*i+1];
+               }
+               for (int i=0; i<n; i++) {
+                      double idbl = (double) i;
+                      double theta = phi*idbl;
+                      Spectrum1[2*i]   = Spectrum2[2*i]*Math.cos(theta)  - Spectrum2[2*i+1]*Math.sin(theta);
+                      Spectrum1[2*i+1] = Spectrum2[2*i]*Math.sin(theta)  + Spectrum2[2*i+1]*Math.cos(theta);
+               }
+               for (int i=0; i<p; i++) {
+                      Spectrum2[2*i]   = Spectrum1[n+2*i]; Spectrum2[2*i+1]   = Spectrum1[n+2*i+1];
+                      Spectrum2[n+2*i] = Spectrum1[2*i];   Spectrum2[n+2*i+1] = Spectrum1[2*i+1];
+               }
+               dataValues = FFTBase.fft2(Spectrum2, true);
+            }
 
            // Second step: convert doubles to 64bits, LITTLE ENDIAN
            byte[] buf = DoublesToByteArray(dataValues);
