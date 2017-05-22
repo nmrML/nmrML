@@ -104,3 +104,7 @@ In the execution time, the converter retrieves the nmrCV version:
 $ ./bin/nmrMLcreate --xsd-version
 nmrML XSD version = 1.0.rc1
 ```
+
+### License
+
+GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 - See the included LICENSE file.
