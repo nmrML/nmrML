@@ -107,4 +107,4 @@ nmrML XSD version = 1.0.rc1
 
 ### License
 
-GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 - See the included LICENSE file.
+Creative Commons CC-BY Version 4.0 (See https://creativecommons.org/licenses/)
