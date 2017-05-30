@@ -1003,6 +1003,11 @@ Parsed from Excitation width ?</xs:documentation>
             Bruker acquisition software. Example: gauss</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="groupDelay" type="ValueWithUnitType">
+        <xs:annotation>
+          <xs:documentation>In the case of Bruker spectra a dead time or group delay can be observed in the FID: it starts with very small values and then, after some points (usually between 60-80 points) the normal FID starts. It can be a number with decimal value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" name="acquisitionParameterRefList"
         type="AcquisitionParameterFileRefListType"> </xs:element>
     </xs:sequence>

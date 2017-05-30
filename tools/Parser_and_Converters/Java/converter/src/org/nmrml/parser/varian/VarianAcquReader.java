@@ -228,6 +228,9 @@ public class VarianAcquReader implements AcquReader {
         /* sweep width in ppm*/
         acquisition.setSpectralWidth( acquisition.getSpectralWidthHz()/acquisition.getTransmiterFreq());
 
+        /* Group Delay = 0 */
+        acquisition.setDspGroupDelay( 0.0 );
+
         inputAcqReader.close();
         return acquisition;
     }
