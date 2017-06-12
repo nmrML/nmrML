@@ -51,6 +51,7 @@ public class Acqu2nmrML {
     private String  schemaLocation = null;
     private String  inputFolder = null;
     private String  vendorLabel = null;
+    private String  acqIdentifier = null;
     private boolean ifbinarydata = false;
     private boolean compressed = false;
 
@@ -71,6 +72,9 @@ public class Acqu2nmrML {
     }
     public void setVendorLabel(String vendorLabel) {
         this.vendorLabel = vendorLabel;
+    }
+    public void setAcqIdentifier(String acqIdentifier) {
+        this.acqIdentifier = acqIdentifier;
     }
     public boolean getIfbinarydata() {
         return ifbinarydata;
@@ -334,6 +338,10 @@ public class Acqu2nmrML {
             /* Acquisition1D object */
             Acquisition1DType acq1Dtype = objFactory.createAcquisition1DType();
             acq1Dtype.setAcquisitionParameterSet(acqparam);
+            if ( acqIdentifier !=null ) {
+                acq1Dtype.setId(acqIdentifier);
+                // acq1Dtype.setName("");
+            }
 
             /* fidData object */
             if (hBinaryDataObj.containsKey("FID_FILE") && hBinaryDataObj.get("FID_FILE").isExists()) {

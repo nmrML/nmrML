@@ -88,6 +88,12 @@ public class nmrMLcreate {
            .withDescription("output file")
            .withLongOpt("outputfile")
            .create("o"));
+        options.addOption(OptionBuilder
+           .withArgName("string")
+           .hasArg()
+           .withDescription("raw spectrum identifier")
+           .withLongOpt("acqidentifier")
+           .create("a"));
 
         try {
 
@@ -100,7 +106,7 @@ public class nmrMLcreate {
         /* Properties object */
            Properties prop = new Properties();
            if (cmd.hasOption("prop")) {
-           String conffile = cmd.getOptionValue("prop");
+               String conffile = cmd.getOptionValue("prop");
                prop.load(new FileInputStream(conffile));
            } else {
                prop.load(nmrMLpipe.class.getClassLoader().getResourceAsStream("resources/config.properties"));
@@ -126,6 +132,11 @@ public class nmrMLcreate {
                          new SpectrometerMapper(nmrMLpipe.class.getClassLoader().getResourceAsStream("resources/varian.ini")) ;
 
            nmrmlObj.setVendorMapper(vendorMapper);
+
+       /* set Acquisition Identifier if specified */
+           if (cmd.hasOption("acqidentifier")) {
+               nmrmlObj.setAcqIdentifier(cmd.getOptionValue("acqidentifier"));
+           }
 
        /* Get Acquisition Parameters depending on the vendor type */
            File dataFolder = new File(inputFolder);
