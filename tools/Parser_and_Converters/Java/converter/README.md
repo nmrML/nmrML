@@ -11,6 +11,7 @@ The first one, nmrMLcreate allows to create a new nmrML file, based on available
 ```
 $ ./bin/nmrMLcreate -h
 usage: nmrMLcreate
+ -a,--acqidentifier <string>     raw spectrum identifier
  -b,--binary-data                include fid binary data
  -h,--help                       prints the help content
  -i,--inputdir <directory>       input directory
