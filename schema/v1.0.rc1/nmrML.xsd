@@ -1100,6 +1100,16 @@ Parsed from Excitation width ?</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="optional">
+      <xs:annotation>
+        <xs:documentation>An ID for the spectrum so that it can be referenced within the file for spectrum annotations.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="name" type="xs:string" use="optional">
+    <xs:annotation>
+    <xs:documentation>A (optional) name so that it can be differentiated other than by its rank if multiple spectra are embedded within the file</xs:documentation>
+  </xs:annotation>
+</xs:attribute>
   </xs:complexType>
   <xs:complexType name="AcquisitionMultiDType">
     <xs:sequence maxOccurs="1" minOccurs="1">
