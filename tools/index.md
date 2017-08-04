@@ -43,7 +43,7 @@ Leibniz Institute of Plant Biochemistry (IPB), Germany
 
 # Data Validators
 
-# nmrML semantic validator
+## nmrML semantic validator
 XML Schema compliance and rule-based validation of CV usage
 http://nmrml.org/validator/
 Leibniz Institute of Plant Biochemistry (IPB), Germany
