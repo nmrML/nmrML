@@ -16,7 +16,16 @@ The nmrML development team has also fostered and coordinated the creation of nmr
 ## nmrML converter (Java)
 Converts vendor to nmrML format:
 
+<http://nmrml.org/converter/>
+
+Development code on git at:
+
 <https://github.com/nmrML/nmrML/tree/master/tools/Parser_and_Converters/Java>
+
+Table with Vendor format parameter to nmrML element mappings:
+
+<https://docs.google.com/spreadsheets/d/1ZnPmqYZBuI8755UNePRBwVJnLGIQB7D-bO7voA65noU/edit#gid=0>
+
 
 Institut National de la Recherche Agronomique (INRA), France
 
