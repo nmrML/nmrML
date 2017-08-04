@@ -15,7 +15,7 @@ The nmrML development team has also fostered and coordinated the creation of nmr
 
 ## nmrML converter (Java)
 Converts vendor to nmrML format
-https://github.com/nmrML/nmrML/tree/master/tools/Parser_and_Converters/Java
+<https://github.com/nmrML/nmrML/tree/master/tools/Parser_and_Converters/Java>
 Institut National de la Recherche Agronomique (INRA), France
 
 ## nmrML converter (Python)
