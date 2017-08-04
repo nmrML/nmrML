@@ -92,7 +92,9 @@ Institut National de la Recherche Agronomique (INRA), France
 ### Bayesil
 Automated compound identification, quantification and annotation:
 
-<http://bayesil.ca, http://tmic.bayesil.ca>
+<http://bayesil.ca>
+
+<http://tmic.bayesil.ca>>
 
 The Metabolomics Innovation Center (TMIC), Canada
 
