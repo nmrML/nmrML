@@ -69,6 +69,8 @@ XML Schema compliance and rule-based validation of CV usage:
 
 Leibniz Institute of Plant Biochemistry (IPB), Germany
 
+Based on the OpenMS/TOPP code
+
 # Spectrum Viewers
 
 ### JSpectraViewer (JSV)
