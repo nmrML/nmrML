@@ -18,10 +18,9 @@ The development of large parts of nmrML was funded by the following EU projects:
     <img src="/images/other-logos/cosmos.jpg" width="250" height="100" />
   </a></li>
   
-  
   </ul>
   
-### Project Partners
+# Project Partners
 
 Many individuals and groups have collaborated to create nmrML. Thanks to all of our contributors who have provided input, written code, debated and used the format. The following Institutions and Databases were involved in generating and supporting nmrML:
 <ul class="contributor-list">
