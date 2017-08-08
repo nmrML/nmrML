@@ -48,9 +48,12 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 			cvElementPath="/nmrML/sourceFileList/sourceFile/cvParam@accession"
 			requirementLevel="MUST"
 			scopePath="/nmrML/sourceFileList/sourceFile/"
-			cvTermsCombinationLogic="OR">
-			<CvTerm termAccession="NMR:1000577" useTerm="false" termName="NMR raw data file"
+			cvTermsCombinationLogic="AND">
+			<CvTerm termAccession="NMR:1000577" useTerm="false" termName="NMR raw data file format"
 			 isRepeatable="true" allowChildren="true" cvIdentifierRef="NMR"/>	
+			<CvTerm termAccession="NMR:1002006" useTerm="true" termName="acquisition parameter file"
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>	
+			
 		</CvMappingRule>
 
 		<!-- software-->
