@@ -10,6 +10,8 @@ nav:
 If you have any questions you can send an email to the developers at: <script type="text/javascript" language="javascript" src="/js/email.js" >
 </script><noscript>Sorry, you need Javascript on to view our email address.</noscript>
 
+[This option has some problems we are working on. For the time being please use the Git issue tracker to contact us, or contact dschober@ipb-halle.de directly.
+
 If you are an NMR user or standards developer, you can take part in the ongoing discussion at the [nmrML Developers Google
 Group](https://groups.google.com/group/nmrml/subscribe?note=1&hl=en&noredirect=true&pli=1)
 
