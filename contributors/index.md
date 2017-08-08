@@ -77,10 +77,10 @@ Many individuals and groups have collaborated to create nmrML. Thanks to all of 
   </a></li>
   
    <li><a href="https://www.liverpool.ac.uk/integrative-biology/staff/andrew-jones/" title="UoL- Institute of Integrative Biology" target="_blank">
-    <img src="/images/other-logos/Liverpool-LVP_UNI_LOGO_Pantone.jpg"width="500" heigth="160" />
+    <img src="/images/other-logos/Liverpool-LVP_UNI_LOGO_Pantone.jpg" width="500" heigth="160" />
   </a></li>
   
   <li><a href="http://www.bio.ucalgary.ca/" title="Department of Biology - University of Calgary" target="_blank">
-    <img src="/images/other-logos/UCalgaryIcon.jpg"width="400" heigth="100" />
+    <img src="/images/other-logos/UCalgaryIcon.jpg" width="400" heigth="100" />
   </a></li>  
   </ul>
