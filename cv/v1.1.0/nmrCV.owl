@@ -134,7 +134,7 @@ Andrea Porzel, IPB-Halle, Germany
 and the COSMOS WP2 team
 
 The paper was written by 
-Daniel Schober, Michael Wilson, Daniel Jacob, Joseph A. Cruz, Jason R. Grant, Ana Marcu2, Annick Moing, Catherine Deborde, Luis de Figueiredo, Kenneth Haug, Philippe Rocca-Serra, John Easton, Timothy M. D. Ebbels, Jie Hao, Christian Ludwig, Ulrich L Günther, Andrea Porzel, Antonio Rosato, Matthias S. Klein, Ian A. Lewis, Claudio Luchinat, John L. Markeley, Andrew R. Jones, Arturas Grauslys, David S. Wishart, Christoph Steinbeck, Reza M Salek and Steffen Neumann</dc:contributor>
+Daniel Schober, Michael Wilson, Daniel Jacob, Joseph A. Cruz, Jason R. Grant, Ana Marcu2, Annick Moing, Catherine Deborde, Luis de Figueiredo, Kenneth Haug, Philippe Rocca-Serra, John Easton, Timothy M. D. Ebbels, Jie Hao, Christian Ludwig, Ulrich L GÃ¼nther, Andrea Porzel, Antonio Rosato, Matthias S. Klein, Ian A. Lewis, Claudio Luchinat, John L. Markeley, Andrew R. Jones, Arturas Grauslys, David S. Wishart, Christoph Steinbeck, Reza M Salek and Steffen Neumann</dc:contributor>
         <dc:contributor rdf:datatype="&xsd;string">Steffen Neumann</dc:contributor>
         <doap:audience rdf:datatype="&xsd;string">This CV is to be used by metabolomics researchers, or basically any chenomics or proteomics researchers  who apply the  nmrML xml to store their NMRraw data in a vendor agnostic manner. But nmrML can also be used to capture experimental results  and (limited) basic metadata like molecule to spectral feature assignments.</doap:audience>
         <obo:IAO_0000115 rdf:datatype="&xsd;string">This artefact is an MSI-approved controlled vocabulary primarily developed under COSMOS WP2 governance. The nmrCV is supporting the nmrML XML format with standardized terms. Its primaly role is hence analogous to the mzCV for the PSI-approved mzML XML format. It currently uses BFO2.0 as its Top level.
@@ -337,15 +337,7 @@ Please label your CV issues in the git &apos;CVenhancement&apos; or add the &quo
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://nmrML.org/nmrCV#BFO_0000001 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#BFO_0000001">
-        <rdfs:label>entity</rdfs:label>
-    </owl:Class>
-    
+       
 
 
     <!-- http://nmrML.org/nmrCV#NMR:1000000 -->
@@ -1405,7 +1397,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000092">
         <rdfs:label xml:lang="en">NMRLab software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000090"/>
-        <dc:source>Günther U, Ludwig C, Rüterjans H: NMRLAB - advanced NMR data processing in Matlab., J Magn Reson 2000, 145(2):201-208.</dc:source>
+        <dc:source>GÃ¼nther U, Ludwig C, RÃ¼terjans H: NMRLAB - advanced NMR data processing in Matlab., J Magn Reson 2000, 145(2):201-208.</dc:source>
     </owl:Class>
     
 
@@ -1513,7 +1505,7 @@ Apodization is usually performed by applying a window function to the FID</skos:
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400068"/>
         <doap:bug-database>https://github.com/nmrML/nmrML/issues/36</doap:bug-database>
         <dc:source>http://www.sciencedirect.com/science/article/pii/S0003267008000950</dc:source>
-        <oboInOwl:hasExactSynonym>combined sine-bell–exponential window function</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>combined sine-bellâ€“exponential window function</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -2394,7 +2386,7 @@ The first two axis in the plot represent the ppms along the two acquisition nucl
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000193">
         <rdfs:label xml:lang="en">ABX multiplet pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400305"/>
-        <skos:definition>AMX, ABX and ABC patterns, and various related spin systems are very common in Proton NMR of organic molecules.When two of the protons of an AMX pattern approach each other to form an ABX pattern, the characteristic changes in intensities of a strongly coupled system (leaning) are seen, and, as the size of J approaches the value of νAB more complicated changes arise, so that the pattern can no longer be analyzed correctly by first order methods.</skos:definition>
+        <skos:definition>AMX, ABX and ABC patterns, and various related spin systems are very common in Proton NMR of organic molecules.When two of the protons of an AMX pattern approach each other to form an ABX pattern, the characteristic changes in intensities of a strongly coupled system (leaning) are seen, and, as the size of J approaches the value of Î½AB more complicated changes arise, so that the pattern can no longer be analyzed correctly by first order methods.</skos:definition>
         <foaf:homepage>http://www.chem.wisc.edu/areas/reich/nmr/05-hmr-12-abx.htm</foaf:homepage>
     </owl:Class>
     
@@ -3560,7 +3552,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000312">
         <rdfs:label xml:lang="en">MetaboAnalyst software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
-        <rdfs:comment xml:lang="en"> Jianguo Xia, Igor V. Sinelnikov, Beomsoo Han and David S. Wishart, MetaboAnalyst 3.0—making metabolomics more meaningful,  Nucl. Acids Res. (1 July 2015) 43 (W1): W251-W257. doi: 10.1093/nar/gkv380 </rdfs:comment>
+        <rdfs:comment xml:lang="en"> Jianguo Xia, Igor V. Sinelnikov, Beomsoo Han and David S. Wishart, MetaboAnalyst 3.0â€”making metabolomics more meaningful,  Nucl. Acids Res. (1 July 2015) 43 (W1): W251-W257. doi: 10.1093/nar/gkv380 </rdfs:comment>
         <obo:IAO_0000115 xml:lang="en">A web server designed to permit comprehensive metabolomic data analysis, visualization and interpretation. It supports a wide range of complex statistical calculations and high quality graphical rendering functions that require significant computational resources.</obo:IAO_0000115>
         <foaf:homepage xml:lang="en">www.metaboanalyst.ca</foaf:homepage>
     </owl:Class>
@@ -3645,7 +3637,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
         <rdfs:label xml:lang="en">XEASY software</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400213"/>
         <obo:IAO_0000115 xml:lang="en">A new program package, XEASY, was written for interactive computer support of the analysis of NMR spectra for three-dimensional structure determination of biological macromolecules. XEASY was developed for work with 2D, 3D and 4D NMR data sets. It includes all the functions performed by the precursor program EASY, which was designed for the analysis of 2D NMR spectra, i.e., peak picking and support of sequence-specific resonance assignments, cross-peak assignments, cross-peak integration and rate constant determination for dynamic processes.</obo:IAO_0000115>
-        <dc:source xml:lang="en">Christian Bartels, Tai-he Xia, Martin Billeter, Peter Güntert, Kurt Wüthrich,  The program XEASY for computer-supported NMR spectral analysis of biological macromolecules, J Biomol NMR (1995) 6: 1. doi:10.1007/BF00417486</dc:source>
+        <dc:source xml:lang="en">Christian Bartels, Tai-he Xia, Martin Billeter, Peter GÃ¼ntert, Kurt WÃ¼thrich,  The program XEASY for computer-supported NMR spectral analysis of biological macromolecules, J Biomol NMR (1995) 6: 1. doi:10.1007/BF00417486</dc:source>
     </owl:Class>
     
 
@@ -3899,7 +3891,7 @@ complex128long</oboInOwl:consider>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000347">
         <rdfs:label xml:lang="en">group time delay</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001954"/>
-        <obo:IAO_0000115>GRPDLY - is the time delay (in number of points?) between acquiring the analog signal and producing the digital signal (i.e. &quot;The group delay is the time necessary for the digital filter function to “walk into” the raw FID and start generating significant intensity.&quot;)</obo:IAO_0000115>
+        <obo:IAO_0000115>GRPDLY - is the time delay (in number of points?) between acquiring the analog signal and producing the digital signal (i.e. &quot;The group delay is the time necessary for the digital filter function to â€œwalk intoâ€ the raw FID and start generating significant intensity.&quot;)</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>GRPDLY</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -4111,7 +4103,7 @@ The bus line for control of attachments has been upgraded to high speed and enab
         <rdfs:label xml:lang="en">JNM-ECZS Series FT NMR instrument</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400226"/>
         <skos:definition>The entry model ECZS spectrometer has the same basic functions, performance and capability of high-end model. The main console is amazingly small, less than 1/2 that of the current ECS series spectrometer.
-Coupling the use of advanced software with highly reliable automation, all routine daily measurements can be automated, while the use of the autotune Supercool probe realizes the world’s highest sensitivity in its class.
+Coupling the use of advanced software with highly reliable automation, all routine daily measurements can be automated, while the use of the autotune Supercool probe realizes the worldâ€™s highest sensitivity in its class.
 Whatever your application field ECZS can demonstrate its power.
 400 MHz</skos:definition>
     </owl:Class>
@@ -4740,7 +4732,7 @@ Whatever your application field ECZS can demonstrate its power.
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000439">
         <rdfs:label xml:lang="de">BMRB/XML file format</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000438"/>
-        <dc:source>M. Yokochi, N. Kobayashi, E. L. Ulrich, A. R. Kinjo, T. Iwata, Y. E. Ioannidis, M. Livny, J. L. Markley, H. Nakamura, C. Kojima, T. Fujiwara, “Publication of nuclear magnetic resonance experimental data with semantic web technology and the application thereof to biomedical research of proteins,” Journal of Biomedical Semantics, 5:7:16 (2016)</dc:source>
+        <dc:source>M. Yokochi, N. Kobayashi, E. L. Ulrich, A. R. Kinjo, T. Iwata, Y. E. Ioannidis, M. Livny, J. L. Markley, H. Nakamura, C. Kojima, T. Fujiwara, â€œPublication of nuclear magnetic resonance experimental data with semantic web technology and the application thereof to biomedical research of proteins,â€ Journal of Biomedical Semantics, 5:7:16 (2016)</dc:source>
     </owl:Class>
     
 
@@ -6954,7 +6946,7 @@ Whatever your application field ECZS can demonstrate its power.
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400014">
         <rdfs:label rdf:datatype="&xsd;string">NMR probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400011"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: Part of an NMR instrument that detects the signals emitted from a sample. No single probe can perform the full range of experiments, and probes that are designed to perform more than one type of measurement usually suffer from performance compromises. The probe represents a rather fragile “single point of failure” that can render an NMR system completely unusable if the probe is dropped or otherwise damaged. Probes are usually characterised by Sample diameter and Frequency.
+        <rdfs:comment rdf:datatype="&xsd;string">def: Part of an NMR instrument that detects the signals emitted from a sample. No single probe can perform the full range of experiments, and probes that are designed to perform more than one type of measurement usually suffer from performance compromises. The probe represents a rather fragile â€œsingle point of failureâ€ that can render an NMR system completely unusable if the probe is dropped or otherwise damaged. Probes are usually characterised by Sample diameter and Frequency.
    altdef: The instrument that transmits and recieves radiofrequency to and from the NMR sample.</rdfs:comment>
     </owl:Class>
     
@@ -8094,7 +8086,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400149">
         <rdfs:label rdf:datatype="&xsd;string">jump and return 1-1</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400148"/>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A jump and return 1-1 pulse sequence method is a jump and return method that uses one 90 degree pulse and one 90 degree return puls to make fast exchanging protons visible, first described by  Plateau,P. and Gueron,M. (1982) J. Am. Chem. Soc., 104, 7310–7311. Compared to the 1-3-3-1 method it has a lower receiver gain and the dispersive tail of water interferes with the signals of interest.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A jump and return 1-1 pulse sequence method is a jump and return method that uses one 90 degree pulse and one 90 degree return puls to make fast exchanging protons visible, first described by  Plateau,P. and Gueron,M. (1982) J. Am. Chem. Soc., 104, 7310â€“7311. Compared to the 1-3-3-1 method it has a lower receiver gain and the dispersive tail of water interferes with the signals of interest.</rdfs:comment>
     </owl:Class>
     
 
@@ -8255,7 +8247,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400167">
         <rdfs:label rdf:datatype="&xsd;string">carr purcell meiboom gill pulse sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400169"/>
-        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A modification of Carr-Purcell RF pulse sequence with 90° phase shift in the rotating frame of reference between the 90° pulse and the subsequent 180° pulses to reduce accumulating effects of imperfections in the 180° pulses. Suppression of effects of pulse error accumulation can alternatively be achieved by alternating phases of the 180° pulses by 180°.
+        <rdfs:comment rdf:datatype="&xsd;string">tempdef: A modification of Carr-Purcell RF pulse sequence with 90Â° phase shift in the rotating frame of reference between the 90Â° pulse and the subsequent 180Â° pulses to reduce accumulating effects of imperfections in the 180Â° pulses. Suppression of effects of pulse error accumulation can alternatively be achieved by alternating phases of the 180Â° pulses by 180Â°.
    defprov: Daniel Schober
    synonym: 1D CPMG</rdfs:comment>
         <skos:altLabel xml:lang="en">CPMG</skos:altLabel>
@@ -8430,7 +8422,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400192">
         <rdfs:label rdf:datatype="&xsd;string">high resolution magic angle spin probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400223"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: Samples that are neither solid nor liquid, being of biological, chemical, and/or pharmaceutical interest, reveal highly resolved spectra when magic angle spinning is applied. The correct solution is a gradient, such that the field varies along the spinner axis. This so-called Magic Angle Gradient is employed in Bruker’s high resolution Magic Angle Spinning (hr-MAS) probes, and is implemented in such a way that it is compatible with the stator and does not interfere with the sample eject/insert. Bruker BioSpin has developed a series of dedicated probes for standard bore magnets to accommodate the rapidly expanding field of hr-MAS. These probes are available in double (e.g. 1H and 13C) and triple resonance (e.g., 1H, 13C, 15N) modes and come equipped with a deuterium lock channel. The probes have automatic sample ejection and insertion capability, with the availability of an optional sample changer, enabling fully automated sample runs. Probes can be equipped with an optional B0 gradient, directed along the magic angle, so that gradient spectroscopy can be done used.
+        <rdfs:comment rdf:datatype="&xsd;string">def: Samples that are neither solid nor liquid, being of biological, chemical, and/or pharmaceutical interest, reveal highly resolved spectra when magic angle spinning is applied. The correct solution is a gradient, such that the field varies along the spinner axis. This so-called Magic Angle Gradient is employed in Brukerâ€™s high resolution Magic Angle Spinning (hr-MAS) probes, and is implemented in such a way that it is compatible with the stator and does not interfere with the sample eject/insert. Bruker BioSpin has developed a series of dedicated probes for standard bore magnets to accommodate the rapidly expanding field of hr-MAS. These probes are available in double (e.g. 1H and 13C) and triple resonance (e.g., 1H, 13C, 15N) modes and come equipped with a deuterium lock channel. The probes have automatic sample ejection and insertion capability, with the availability of an optional sample changer, enabling fully automated sample runs. Probes can be equipped with an optional B0 gradient, directed along the magic angle, so that gradient spectroscopy can be done used.
    defprov: Bruker website
    altdef: High resolution MAS (hr-MAS) provides an easy means of obtaining high resolution spectra for a variety of samples that would otherwise result in poorly resolved spectra. The addition of an hr-MAS probe and a MAS pneumatic unit to a standard high resolution spectrometer is all that is needed to open the gate to the world of hr-MAS spectroscopy and gain access to a vast amount of highly interesting samples.
    synonyms: High resolution MAS, hr-MAS</rdfs:comment>
@@ -8576,7 +8568,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400205">
         <rdfs:label rdf:datatype="&xsd;string">Bruker AutoClean</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400204"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: In today&apos;s fast-paced research environment, NMR tubes are often used once and discarded, creating needless waste. With the Bruker BioSpin Autoclean™ system you can now recycle 5mm, 3mm, or 5mm/3mm step-down (Wilmad 520-1B) NMR tubes. AutoClean NMR Tube Washing System is a simple way to recoup the substantial investment your organization makes in quality NMR tubes, and cut back on needless waste material.
+        <rdfs:comment rdf:datatype="&xsd;string">def: In today&apos;s fast-paced research environment, NMR tubes are often used once and discarded, creating needless waste. With the Bruker BioSpin Autocleanâ„¢ system you can now recycle 5mm, 3mm, or 5mm/3mm step-down (Wilmad 520-1B) NMR tubes. AutoClean NMR Tube Washing System is a simple way to recoup the substantial investment your organization makes in quality NMR tubes, and cut back on needless waste material.
    defprov: Bruker website</rdfs:comment>
     </owl:Class>
     
@@ -8612,7 +8604,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">SampleJet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400209"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: Bruker BioSpin introduces the SampleJet, a robot for NMR tube automation. The SampleJet has been consciously designed to meet the growing customer demand for simplicity, versatility and higher throughput in NMR sample tube automation.
-   The SampleJet utilizes the modern-day industry standard for sample arrangements—the 96 well plate array. Therefore, the samples may be handled by standard lab automation devices before or after the NMR measurement.
+   The SampleJet utilizes the modern-day industry standard for sample arrangementsâ€”the 96 well plate array. Therefore, the samples may be handled by standard lab automation devices before or after the NMR measurement.
    defprov: Bruker website</rdfs:comment>
     </owl:Class>
     
@@ -8644,7 +8636,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400211">
         <rdfs:label rdf:datatype="&xsd;string">Bruker MATCH</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400212"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The Bruker Multiple Adjustable Tube Clamp Holder MATCH™ system is a holder for 100 mm long NMR sample tubes with diameters ranging from micro tubes up to 5 mm NMR tubes. The MATCH insert fits into a standard 10 mm Bruker spinner and is suitable for all non-spinning applications.
+        <rdfs:comment rdf:datatype="&xsd;string">def: The Bruker Multiple Adjustable Tube Clamp Holder MATCHâ„¢ system is a holder for 100 mm long NMR sample tubes with diameters ranging from micro tubes up to 5 mm NMR tubes. The MATCH insert fits into a standard 10 mm Bruker spinner and is suitable for all non-spinning applications.
    The MATCH system provides an easy and cost efficient means of optimizing the signal-to-noise ratio of each sample. By matching the NMR tube diameter to the size of the sample, most of the sample can be placed in the active column of the NMR coil. This leads to an enhanced signal detection compared to diluting the same sample quantity in a larger tube.
    defprov: Bruker website
    synonym: Bruker Multiple Adjustable Tube Clamp Holder</rdfs:comment>
@@ -8755,7 +8747,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
         <rdfs:label rdf:datatype="&xsd;string">high resolution probe with ATM</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400223"/>
         <rdfs:comment rdf:datatype="&xsd;string">def: The ATM option for AVANCE spectrometers is available for:
-   Double resonance probes in fixed-frequency and broadband tunable configurations with either direct or indirect detection. Thus, for multinuclear operation, as often required for applications in inorganic chemistry, ATM facilitates the accurate setting of 90° pulsewidths on both observe and decoupling channels for each chosen nucleus and each individual sample - even with full automation. Triple resonance probes in fixed-frequency configurations, as typically used for inverse detection with high-field systems.
+   Double resonance probes in fixed-frequency and broadband tunable configurations with either direct or indirect detection. Thus, for multinuclear operation, as often required for applications in inorganic chemistry, ATM facilitates the accurate setting of 90Â° pulsewidths on both observe and decoupling channels for each chosen nucleus and each individual sample - even with full automation. Triple resonance probes in fixed-frequency configurations, as typically used for inverse detection with high-field systems.
    defprov: Bruker website
    synonym: High Resolution Probes with Automatic Tuning and Matching, HR probe with ATM</rdfs:comment>
     </owl:Class>
@@ -8963,7 +8955,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400247">
         <rdfs:label rdf:datatype="&xsd;string">DISCOVERY console</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400246"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The Discovery™ is a Windows XP Professional-based, integrated console designed especially for Solid-State NMR. The console includes everything needed to interface to any magnet and solids probe - from computer to cables to duplexing network
+        <rdfs:comment rdf:datatype="&xsd;string">def: The Discoveryâ„¢ is a Windows XP Professional-based, integrated console designed especially for Solid-State NMR. The console includes everything needed to interface to any magnet and solids probe - from computer to cables to duplexing network
    defprov: tecmag website</rdfs:comment>
     </owl:Class>
     
@@ -8974,7 +8966,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400248">
         <rdfs:label rdf:datatype="&xsd;string">tecmag EAGLE probe</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400243"/>
-        <rdfs:comment rdf:datatype="&xsd;string">def: The Eagle™ is a 4 mm 1H/X solid-state MAS probe with a top spinning speed of 18 kHz. Its simple design is robust, reliable and easy to spin. Configurations are available for 200 to 600 MHz widebore magnets on Tecmag, Bruker, Chemagnetics, JEOL and Varian spectrometers.
+        <rdfs:comment rdf:datatype="&xsd;string">def: The Eagleâ„¢ is a 4 mm 1H/X solid-state MAS probe with a top spinning speed of 18 kHz. Its simple design is robust, reliable and easy to spin. Configurations are available for 200 to 600 MHz widebore magnets on Tecmag, Bruker, Chemagnetics, JEOL and Varian spectrometers.
    defprov: website</rdfs:comment>
     </owl:Class>
     
@@ -9171,7 +9163,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400278">
         <rdfs:label rdf:datatype="&xsd;string">solid phase extraction NMR</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000012"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A Solid Phase Extraction (SPE) system provides an interface between liquid chromatography (LC) and NMR. For the process of LC-SPE™ NMR a chromatographic separation is done and the peaks of interest are trapped on an individual SPE cartridge after the column. The peak selection is done either by UV detection or by evaluation of the on-line registered MS or MSn spectra.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A Solid Phase Extraction (SPE) system provides an interface between liquid chromatography (LC) and NMR. For the process of LC-SPEâ„¢ NMR a chromatographic separation is done and the peaks of interest are trapped on an individual SPE cartridge after the column. The peak selection is done either by UV detection or by evaluation of the on-line registered MS or MSn spectra.</rdfs:comment>
         <oboInOwl:hasExactSynonym>SPE NMR</oboInOwl:hasExactSynonym>
     </owl:Class>
     
@@ -9571,61 +9563,7 @@ Hans J. Reich 2015, University of Wisconsin</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
     </owl:Class>
     
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000015">
-        <rdfs:label>process</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000017">
-        <rdfs:label>realizable entity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000019">
-        <rdfs:label>quality</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000030">
-        <rdfs:label>object</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000031">
-        <rdfs:label>generically dependent continuant</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
-
-    <owl:Class rdf:about="&obo;PATO_0000001">
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000019"/>
-    </owl:Class>
 </rdf:RDF>
 
 
-
 <!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
-
