@@ -422,11 +422,6 @@ if( fprt) System.err.println("------");
         /* Data length into the JDF file from data start  (in octets) */
         acquisition.setDataLength(Data_Length);
 
-        /* Owner & Email */
-        // String undef = new String("undefined");
-        // acquisition.setOwner(undef);
-        // acquisition.setEmail(undef);
-
 if( fprt) System.err.println("------");
 
         in.close();
