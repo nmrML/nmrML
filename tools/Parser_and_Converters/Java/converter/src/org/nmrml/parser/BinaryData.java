@@ -9,7 +9,7 @@ import org.nmrml.parser.Acqu;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileInputStream;
+import java.io.RandomAccessFile;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,6 +44,7 @@ public class BinaryData {
     private String byteFormat;
     private boolean exists = false;
     private boolean compressed = false;
+    private boolean crossvalues = true;
     private String sha1;
 
     private static final int tInteger = 1;
@@ -62,38 +63,6 @@ public class BinaryData {
         hByteFormat.put("complex64", new int[] {4, 2, tFloat });
         hByteFormat.put("complex128", new int[] {8, 2, tDouble });
     }
-
-    // private static final Map<Integer, double[]> hGRPDLY_matrix;
-    // static
-    // {
-    //     hGRPDLY_matrix = new HashMap<Integer, double[]>();
-    //     hGRPDLY_matrix.put(   2, new double[] {44.7500, 46.0000, 46.3110, 2.750});
-    //     hGRPDLY_matrix.put(   3, new double[] {33.5000, 36.5000, 36.5300, 2.833});
-    //     hGRPDLY_matrix.put(   4, new double[] {66.6250, 48.0000, 47.8700, 2.875});
-    //     hGRPDLY_matrix.put(   6, new double[] {59.0833, 50.1667, 50.2290, 2.917});
-    //     hGRPDLY_matrix.put(   8, new double[] {68.5625, 53.2500, 53.2890, 2.938});
-    //     hGRPDLY_matrix.put(  12, new double[] {60.3750, 69.5000, 69.5510, 2.958});
-    //     hGRPDLY_matrix.put(  16, new double[] {69.5313, 72.2500, 71.6000, 2.969});
-    //     hGRPDLY_matrix.put(  24, new double[] {61.0208, 70.1667, 70.1840, 2.979});
-    //     hGRPDLY_matrix.put(  32, new double[] {70.0156, 72.7500, 72.1380, 2.984});
-    //     hGRPDLY_matrix.put(  48, new double[] {61.3438, 70.5000, 70.5280, 2.989});
-    //     hGRPDLY_matrix.put(  64, new double[] {70.2578, 73.0000, 72.3480, 2.992});
-    //     hGRPDLY_matrix.put(  96, new double[] {61.5052, 70.6667, 70.7000, 2.995});
-    //     hGRPDLY_matrix.put( 128, new double[] {70.3789, 72.5000, 72.5240, 0.000});
-    //     hGRPDLY_matrix.put( 192, new double[] {61.5859, 71.3333, 71.3333, 0.000});
-    //     hGRPDLY_matrix.put( 256, new double[] {70.4395, 72.2500, 72.2500, 0.000});
-    //     hGRPDLY_matrix.put( 384, new double[] {61.6263, 71.6667, 71.6667, 0.000});
-    //     hGRPDLY_matrix.put( 512, new double[] {70.4697, 72.1250, 72.1250, 0.000});
-    //     hGRPDLY_matrix.put( 768, new double[] {61.6465, 71.8333, 71.8333, 0.000});
-    //     hGRPDLY_matrix.put(1024, new double[] {70.4849, 72.0625, 72.0625, 0.000});
-    //     hGRPDLY_matrix.put(1536, new double[] {61.6566, 71.9167, 71.9167, 0.000});
-    //     hGRPDLY_matrix.put(2048, new double[] {70.4924, 72.0313, 72.0313, 0.000});
-    // }
-    //
-    // public double getGroupDelay (int DECIM, int DSPFVS) {
-    //    double[] vec = this.hGRPDLY_matrix.get(DECIM);
-    //    return( vec[DSPFVS - 10] );
-    // }
 
     public int[] getEncodedSize () {
        return this.hByteFormat.get(this.getByteFormat());
@@ -149,21 +118,34 @@ public class BinaryData {
         return compressed;
     }
 
+    public void setCrossVallues(boolean crossvalues) {
+        this.crossvalues=crossvalues;
+    }
+    public boolean isCrossVallues() {
+        return crossvalues;
+    }
+
     public double[] getDataAsDouble(ByteOrder... byteOrder) {
         int[] encoded = this.getEncodedSize();
         int encodedSize = encoded[0];
         double[] doubles = new double[this.data.length / encodedSize];
+        int ndatalen = doubles.length / 2;
         for(int i=0;i<doubles.length;i++){
-           ByteBuffer buffer = ByteBuffer.wrap(this.data, i*encodedSize, encodedSize);
+           ByteBuffer buffer = buffer = ByteBuffer.wrap(this.data, i*encodedSize, encodedSize);
+           int j = i;
+           if (! this.isCrossVallues()) {
+              if (i<ndatalen) { j=2*i; }
+              else            { j=2*(i-ndatalen)+1; }
+           }
            buffer.order( byteOrder.length > 0 ? byteOrder[0] : ByteOrder.LITTLE_ENDIAN );
            switch (encoded[2]) {
-                  case tInteger: doubles[i] = (double)buffer.getInt();
+                  case tInteger: doubles[j] = (double)buffer.getInt();
                       break;
-                  case tLong: doubles[i] = (double)buffer.getLong();
+                  case tLong: doubles[j] = (double)buffer.getLong();
                       break;
-                  case tFloat: doubles[i] = (double)buffer.getFloat();
+                  case tFloat: doubles[j] = (double)buffer.getFloat();
                       break;
-                  case tDouble: doubles[i] = (double)buffer.getDouble();
+                  case tDouble: doubles[j] = (double)buffer.getDouble();
                       break;
            }
         }
@@ -241,11 +223,11 @@ public class BinaryData {
     public BinaryData (File inputFileData, Acqu acq, boolean isComplex, boolean isCompressed) throws IOException {
         BinaryData binaryData = new BinaryData();
         if(inputFileData.isFile() && inputFileData.canRead()) {
-           FileInputStream fidInput = new FileInputStream(inputFileData);
+           RandomAccessFile fidInput = new RandomAccessFile(inputFileData,"r");
            FileChannel inChannel = fidInput.getChannel();
-
            int bytes2read = 0;
            boolean floattype=false;
+           boolean crossvalues=true;
            switch (acq.getSpectrometer()){
               case VARIAN :
                   // Read File Header (8*4 bytes + Block Header (7*4 bytes) = 60 bytes
@@ -261,6 +243,11 @@ public class BinaryData {
                   break;
               case BRUKER :
                   bytes2read = (int) inChannel.size();
+                  break;
+              case JEOL :
+                   inChannel.position(acq.getDataOffset());
+                   bytes2read = (int) acq.getDataLength();
+                   if (isComplex) crossvalues=false;
                   break;
               default:
                   break;
@@ -286,40 +273,9 @@ public class BinaryData {
            this.setData(buffer.array());
            this.setEncodedLength(BigInteger.valueOf(this.getData().length));
            this.setByteFormat(byteFormat);
+           this.setCrossVallues(crossvalues);
 
            double [] dataValues = this.getDataAsDouble(acq.getByteOrder());
-
-           // If Bruker FID , then apply the group delay correction 
-           // if ( acq.getSpectrometer().equals(Acqu.Spectrometer.BRUKER) && isComplex ) {
-           // 
-           //    double GRPDLY = acq.getDspGroupDelay();
-           // 
-           //    if (Double.isNaN(GRPDLY) || GRPDLY<=0 ) {
-           //        GRPDLY = this.getGroupDelay (acq.getDspDecimation(), acq.getDspFirmware());
-           //    }
-           // 
-           //    double [] Spectrum1 = FFTBase.fft2(dataValues, false);
-           //    double [] Spectrum2 = new double[Spectrum1.length];
-           //    int n = Spectrum1.length/2;
-           //    double ndbl = n;
-           //    double phi = (GRPDLY*2*Math.PI)/ndbl;
-           //    int p = n/2;
-           //    for (int i=0; i<p; i++) {
-           //           Spectrum2[2*i]   = Spectrum1[n+2*i]; Spectrum2[2*i+1]   = Spectrum1[n+2*i+1];
-           //           Spectrum2[n+2*i] = Spectrum1[2*i];   Spectrum2[n+2*i+1] = Spectrum1[2*i+1];
-           //    }
-           //    for (int i=0; i<n; i++) {
-           //           double idbl = (double) i;
-           //           double theta = phi*idbl;
-           //           Spectrum1[2*i]   = Spectrum2[2*i]*Math.cos(theta)  - Spectrum2[2*i+1]*Math.sin(theta);
-           //           Spectrum1[2*i+1] = Spectrum2[2*i]*Math.sin(theta)  + Spectrum2[2*i+1]*Math.cos(theta);
-           //    }
-           //    for (int i=0; i<p; i++) {
-           //           Spectrum2[2*i]   = Spectrum1[n+2*i]; Spectrum2[2*i+1]   = Spectrum1[n+2*i+1];
-           //           Spectrum2[n+2*i] = Spectrum1[2*i];   Spectrum2[n+2*i+1] = Spectrum1[2*i+1];
-           //    }
-           //    dataValues = FFTBase.fft2(Spectrum2, true);
-           // }
 
            // Second step: convert doubles to 64bits, LITTLE ENDIAN
            byte[] buf = DoublesToByteArray(dataValues);

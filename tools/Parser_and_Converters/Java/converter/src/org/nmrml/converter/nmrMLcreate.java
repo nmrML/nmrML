@@ -33,6 +33,7 @@ import org.nmrml.schema.*;
 import org.nmrml.parser.*;
 import org.nmrml.parser.bruker.*;
 import org.nmrml.parser.varian.*;
+import org.nmrml.parser.jeol.*;
 
 import org.nmrml.cv.*;
 import org.nmrml.converter.*;
@@ -43,7 +44,7 @@ public class nmrMLcreate {
     private static final String nmrMLVersion = nmrMLversion.value;
     private static final String Version = "1.2";
 
-    private enum Vendor_Type { bruker, varian; }
+    private enum Vendor_Type { bruker, varian, jeol; }
 
     public nmrMLcreate( ) { }
 
@@ -99,9 +100,6 @@ public class nmrMLcreate {
 
            CommandLineParser parser = new GnuParser();
            CommandLine cmd = parser.parse(options, args);
-           String inputFolder = cmd.getOptionValue("i");
-           inputFolder = ( inputFolder.lastIndexOf("/") == inputFolder.length() ) ? inputFolder : inputFolder.concat("/");
-           nmrmlObj.setInputFolder(inputFolder);
 
         /* Properties object */
            Properties prop = new Properties();
@@ -119,6 +117,7 @@ public class nmrMLcreate {
                           new CVLoader(nmrMLpipe.class.getClassLoader().getResourceAsStream("resources/onto.ini"));
            nmrmlObj.setCVLoader(cvLoader);
 
+        /* Vendor type */
            if(cmd.hasOption("t")) {
                  Vendor = cmd.getOptionValue("t").toLowerCase();
            }
@@ -127,11 +126,21 @@ public class nmrMLcreate {
 
        /* Vendor terms file */
            SpectrometerMapper vendorMapper = (new File(vendor_ini)).isFile() ? 
-                         new SpectrometerMapper(vendor_ini) : vendor_type == Vendor_Type.bruker ? 
-                         new SpectrometerMapper(nmrMLpipe.class.getClassLoader().getResourceAsStream("resources/bruker.ini")) :
-                         new SpectrometerMapper(nmrMLpipe.class.getClassLoader().getResourceAsStream("resources/varian.ini")) ;
+                         new SpectrometerMapper(vendor_ini) : 
+                         vendor_type == Vendor_Type.bruker ? 
+                               new SpectrometerMapper(nmrMLpipe.class.getClassLoader().getResourceAsStream("resources/bruker.ini")) :
+                         vendor_type == Vendor_Type.varian ? 
+                               new SpectrometerMapper(nmrMLpipe.class.getClassLoader().getResourceAsStream("resources/varian.ini")) :
+                               new SpectrometerMapper(nmrMLpipe.class.getClassLoader().getResourceAsStream("resources/jeol.ini")) ;
 
            nmrmlObj.setVendorMapper(vendorMapper);
+
+        /* Input */
+           String inputFolder = cmd.getOptionValue("i");
+           if (vendor_type != Vendor_Type.jeol) {
+               inputFolder = ( inputFolder.lastIndexOf("/") == inputFolder.length() ) ? inputFolder : inputFolder.concat("/");
+           }
+           nmrmlObj.setInputFolder(inputFolder);
 
        /* set Acquisition Identifier if specified */
            if (cmd.hasOption("acqidentifier")) {
@@ -139,38 +148,48 @@ public class nmrMLcreate {
            }
 
        /* Get Acquisition Parameters depending on the vendor type */
-           File dataFolder = new File(inputFolder);
-           String acqFstr = dataFolder.getAbsolutePath() + "/" + vendorMapper.getTerm("FILES", "ACQUISITION_FILE");
-           File acquFile = new File(acqFstr);
-           if(acquFile.isFile() && acquFile.canRead()) {
-               switch (vendor_type) {
-                  case bruker:
-                       BrukerAcquReader brukerAcqObj = new BrukerAcquReader(acquFile);
-                       nmrmlObj.setAcqu(brukerAcqObj.read());
-                       break;
-                  case varian:
-                       VarianAcquReader varianAcqObj = new VarianAcquReader(acquFile);
-                       Acqu acq = varianAcqObj.read();
-                       acq.setSoftware(vendorMapper.getTerm("SOFTWARE", "SOFTWARE"));
-                       acq.setSoftVersion(vendorMapper.getTerm("SOFTWARE", "VERSION"));
-                       switch (Integer.parseInt(vendorMapper.getTerm("BYTORDA", "ENDIAN"))){
-                            case 0 :
-                                acq.setByteOrder(ByteOrder.LITTLE_ENDIAN);
-                                break;
-                            case 1 :
-                                acq.setByteOrder(ByteOrder.BIG_ENDIAN);
-                                break;
-                            default:
-                                break;
-                       }
-                       acq.setDecoupledNucleus("off");
-                       nmrmlObj.setAcqu(acq);
-                       break;
-               }
+       /* Bruker & Varian */
+           if (vendor_type == Vendor_Type.bruker || vendor_type == Vendor_Type.varian) {
+              File dataFolder = new File(inputFolder);
+              String acqFstr = dataFolder.getAbsolutePath() + "/" + vendorMapper.getTerm("FILES", "ACQUISITION_FILE");
+              File acquFile = new File(acqFstr);
+              if(acquFile.isFile() && acquFile.canRead()) {
+                  switch (vendor_type) {
+                     case bruker:
+                          BrukerAcquReader brukerAcqObj = new BrukerAcquReader(acquFile);
+                          nmrmlObj.setAcqu(brukerAcqObj.read());
+                          break;
+                     case varian:
+                          VarianAcquReader varianAcqObj = new VarianAcquReader(acquFile);
+                          Acqu acq = varianAcqObj.read();
+                          acq.setSoftware(vendorMapper.getTerm("SOFTWARE", "SOFTWARE"));
+                          acq.setSoftVersion(vendorMapper.getTerm("SOFTWARE", "VERSION"));
+                          switch (Integer.parseInt(vendorMapper.getTerm("BYTORDA", "ENDIAN"))){
+                               case 0 :
+                                   acq.setByteOrder(ByteOrder.LITTLE_ENDIAN);
+                                   break;
+                               case 1 :
+                                   acq.setByteOrder(ByteOrder.BIG_ENDIAN);
+                                   break;
+                               default:
+                                   break;
+                          }
+                          acq.setDecoupledNucleus("off");
+                          nmrmlObj.setAcqu(acq);
+                          break;
+                  }
+              }
+              else {
+                  System.err.println("ACQUISITION_FILE not available or readable: " + acqFstr);
+                  System.exit(1);
+              }
            }
-           else {
-               System.err.println("ACQUISITION_FILE not available or readable: " + acqFstr);
-               System.exit(1);
+       /* Jeol */
+           if (vendor_type == Vendor_Type.jeol) {
+               JeolAcquReader jeolAcqObj = new JeolAcquReader(inputFolder);
+               jeolAcqObj.setVendorMapper(vendorMapper);
+               Acqu acq = jeolAcqObj.read();
+               nmrmlObj.setAcqu(acq);
            }
 
            nmrmlObj.setVendorLabel(Vendor.toUpperCase());

@@ -147,7 +147,12 @@ public class Acqu2nmrML {
             int sourceFileCount = 0;
             SourceFileListType srcfilelist = objFactory.createSourceFileListType();
             for (String sourceName : vendorMapper.getSection("FILES").keySet()) {
-               File sourceFile = new File(inputFolder + vendorMapper.getTerm("FILES", sourceName));
+               File sourceFile = null;
+               if (vendorLabel.equals("JEOL")) {
+                  sourceFile = new File(inputFolder);
+               } else {
+                  sourceFile = new File(inputFolder + vendorMapper.getTerm("FILES", sourceName));
+               }
                if (sourceFile.isFile() & sourceFile.canRead()) {
                    SourceFileType srcfile = objFactory.createSourceFileType();
                    srcfile.setId(getNewIdentifier());
@@ -159,6 +164,9 @@ public class Acqu2nmrML {
                             break;
                        case "VARIAN":
                             srcfile.getCvParam().add(cvLoader.fetchCVParam("NMRCV","VARIANFORMAT"));
+                            break;
+                       case "JEOL":
+                            srcfile.getCvParam().add(cvLoader.fetchCVParam("NMRCV","JEOLFORMAT"));
                             break;
                    }
                    srcfile.getCvParam().add(cvLoader.fetchCVParam("NMRCV",sourceName));
@@ -208,6 +216,12 @@ public class Acqu2nmrML {
             instrumentConf.getSoftwareRef().add(softref1);
             instrumentConf.setId(getNewIdentifier());
             instrumentConf.getCvParam().add(cvLoader.fetchCVParam("NMRCV",vendorLabel));
+            if (acq.getInstrumentName()!=null) {
+               UserParamType instrumentName = objFactory.createUserParamType();
+               instrumentName.setName("Instrument Name");
+               instrumentName.setValue(acq.getInstrumentName());
+               instrumentConf.getUserParam().add(instrumentName);
+            }
             UserParamType probeParam = objFactory.createUserParamType();
             probeParam.setName("ProbeHead");
             probeParam.setValue(acq.getProbehead());
@@ -282,10 +296,11 @@ public class Acqu2nmrML {
             acqparam.setPulseSequence(pulse_sequence);
 
             /* ShapedPulseFile object */
-            SourceFileRefType pulseFileRef = objFactory.createSourceFileRefType();
-            pulseFileRef.setRef(hSourceFileObj.get("PULSEPROGRAM_FILE"));
-            acqparam.setShapedPulseFile(pulseFileRef);
-
+            if ( hSourceFileObj.get("PULSEPROGRAM_FILE") != null ) {
+                SourceFileRefType pulseFileRef = objFactory.createSourceFileRefType();
+                pulseFileRef.setRef(hSourceFileObj.get("PULSEPROGRAM_FILE"));
+                acqparam.setShapedPulseFile(pulseFileRef);
+            }
            /* DirectDimensionParameterSet object */
             AcquisitionDimensionParameterSetType acqdimparam = objFactory.createAcquisitionDimensionParameterSetType();
             acqdimparam.setNumberOfDataPoints(getBigInteger(acq.getAquiredPoints()));

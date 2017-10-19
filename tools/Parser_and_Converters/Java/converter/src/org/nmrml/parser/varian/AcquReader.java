@@ -4,6 +4,7 @@
 
 package org.nmrml.parser.varian;
 
+import java.io.IOException;
 import org.nmrml.parser.Acqu;
 
 /**
@@ -17,5 +18,5 @@ import org.nmrml.parser.Acqu;
  *
  */
 public interface AcquReader {
-    Acqu read() throws Exception;
+    Acqu read() throws Exception, IOException;
 }

@@ -20,7 +20,6 @@ import java.math.BigInteger;
  */
 public class Acqu {
 
-
     //TODO use an enum for parameters that have a limited set of options such as aquisition mode
     private double transmiterFreq;               //sfo1
     private double decoupler1Freq;               //sfo2
@@ -57,6 +56,8 @@ public class Acqu {
     private FidData fidType;                     //fid_type      define in class data_par
     private ByteOrder byteOrder;                 //bytorda       byte order (0 -> Little endian, 1 -> Big Endian)
     private int biteSyze;                        //dtypa         data type (0 -> 32 bit int, 1 -> 64 bit double)
+    private long dataOffset;                     //Data_Start    JEOL only: Pointer (offset) into the JDF file where data start  (in octets)
+    private long dataLength;                     //Data_Lenght   JEOL only: Data length into the JDF file from data start  (in octets)
 
     private Spectrometer spectrometer;
 
@@ -158,6 +159,22 @@ public class Acqu {
 
     public int getBiteSyze() {
         return biteSyze;
+    }
+
+    public void setDataOffset(long offset) {
+        this.dataOffset = offset;
+    }
+
+    public long getDataOffset() {
+        return dataOffset;
+    }
+
+    public void setDataLength(long length) {
+        this.dataLength = length;
+    }
+
+    public long getDataLength() {
+        return dataLength;
     }
 
     public void setBiteSyze(int biteSyze) {
