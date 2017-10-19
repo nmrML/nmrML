@@ -48,9 +48,12 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 			cvElementPath="/nmrML/sourceFileList/sourceFile/cvParam@accession"
 			requirementLevel="MUST"
 			scopePath="/nmrML/sourceFileList/sourceFile/"
-			cvTermsCombinationLogic="OR">
-			<CvTerm termAccession="???" useTerm="false" termName="NMR raw data file"
+			cvTermsCombinationLogic="AND">
+			<CvTerm termAccession="NMR:1000577" useTerm="false" termName="NMR raw data file format"
 			 isRepeatable="true" allowChildren="true" cvIdentifierRef="NMR"/>	
+			<CvTerm termAccession="NMR:1002006" useTerm="true" termName="acquisition parameter file"
+				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>	
+			
 		</CvMappingRule>
 
 		<!-- software-->
@@ -74,11 +77,9 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 			cvElementPath="/nmrML/instrumentConfigurationList/instrumentConfiguration/cvParam/@accession"
 			requirementLevel="MUST"
 			scopePath="/nmrML/instrumentConfigurationList/instrumentConfiguration/"
-			cvTermsCombinationLogic="AND">
+			cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="NMR:1400059" useTerm="false" termName="NMR instrument"
 				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/> 
-			<CvTerm termAccession="NMR:1400014" useTerm="false" termName="NMR probe"
-				isRepeatable="false" allowChildren="true" cvIdentifierRef="NMR"/>
 		</CvMappingRule>
 		
 		<!-- Or less restrictive ... -->
