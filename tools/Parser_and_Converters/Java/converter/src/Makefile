@@ -15,6 +15,7 @@ PKG_CV     = org/nmrml/cv
 PKG_PARSER = org/nmrml/parser
 PKG_BRUKER = org/nmrml/parser/bruker
 PKG_VARIAN = org/nmrml/parser/varian
+PKG_JEOL   = org/nmrml/parser/jeol
 PKG_CONV   = org/nmrml/converter
 SCHEMA_NS  = nmrML
 SCHEMA_URI = http://nmrml.org/schema
@@ -27,6 +28,7 @@ parser:
 	@make install PROG=$(PKG_PARSER)/*
 	@make install PROG=$(PKG_BRUKER)/*
 	@make install PROG=$(PKG_VARIAN)/*
+	@make install PROG=$(PKG_JEOL)/*
 
 cv:
 	@make install PROG=$(PKG_CV)/*
