@@ -118,8 +118,16 @@ public class BrukerAcquReader implements AcquReader {
     }
 
     public double getGroupDelay (int DECIM, int DSPFVS) {
-       double[] vec = this.hGRPDLY_matrix.get(DECIM);
-       return( vec[DSPFVS - 10] );
+       double grpdelay = 0;
+       try {
+          double[] vec = this.hGRPDLY_matrix.get(DECIM);
+          grpdelay = vec[DSPFVS - 10];
+       }
+       catch(NullPointerException e)
+       {
+           System.err.print("Warning: GROUP DELAY undefined");
+       }
+       return( grpdelay );
     }
 
     public BrukerAcquReader() {
