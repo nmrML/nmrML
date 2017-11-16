@@ -8,6 +8,7 @@ nav:
 # Example 2: Metabolic profiling of the Tomato plant, PhenoTom 2013 (Bruker)
 
 <a href="/examples/2/MMBBI_10M12-CE01-1a.nmrML">Download nmrML file</a> |  <a href="/examples/2/MMBBI_10M12-CE01-1a.zip" >Download original Raw Data</a>
+This example illustrates how nmrML can include processed data beyond the raw FID data. We here store a 1R NMR spectrum (as another binary blob) and including its metadata. The FT transformed spectrum is stored in the spectrumList/spectrum1D/spectrumDataArrayelement and its processingParameterSets.
 
 High-throughput phenotyping tomato fruit for integration with Omics data (PhenoTom 2013). Characterization of tomato fruits to 2 stages of development (expansion and red orange fruit) from 12 contrasting genotypes (8  lines and 4 F1 hybrids).
 
