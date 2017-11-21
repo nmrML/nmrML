@@ -2,7 +2,7 @@
 \alias{binaryArrayDecode}
 \title{binaryArrayDecode}
 \usage{
-  binaryArrayDecode(b64string, what = "double",
+  binaryArrayDecode(b64string, what = "double", sizeof = 4,
     compression = c("gzip", "bzip2", "xz", "none"))
 }
 \arguments{
@@ -14,6 +14,8 @@
   vector of length one describing the mode: one of
   '"numeric"', '"double"', '"integer"', '"int"',
   '"logical"', '"complex"', '"character"', '"raw"'.}
+
+  \item{sizeof}{the data type.}
 
   \item{compression}{c("gzip", "bzip2", "xz", "none")
   character string, the type of compression.  May be

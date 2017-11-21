@@ -1,3 +1,16 @@
+test.base64roundtrip <- function() {
+  fid <- c(complex(1.37930,2.00010), complex(2.09823, 2.00010), c(3.80324, 2.00010))
+  
+  b64string <- nmRIO:::binaryArrayEncode(fid, byteFormat="complex64", compression="gzip")
+  fidresult <- as.complex(nmRIO:::binaryArrayDecode(b64string, compression="gzip"))
+  
+  checkEqualsNumeric(fidresult, fid, tolerance = .Machine$double.eps^0.1)
+  
+  b64stringresult <- nmRIO:::binaryArrayEncode(fidresult, byteFormat="complex64", compression="gzip")
+  checkEquals(b64string, b64stringresult)
+  
+}
+  
 test.fidvector2complex1D <- function() {
     dfid <- c(1.37930,1.00010,2.09823,2.00010,3.80324,3.00010)
     fidresult <- c(complex(real=1.37930, imaginary=1.00010),
@@ -27,7 +40,7 @@ disabled_test.fidvector2complex3D <- function() {
 
 test.base64todouble <- function() {
     ## b64string <- base64encode(memCompress(writeBin(as.numeric(1:8), con=raw()), type="g"))
-    result <- nmRIO:::binaryArrayDecode("eJxjYACBD/YMEOAAoTigtACUFoHSElBaBkorOAAAeOcDcA==", compression="gzip")
+    result <- nmRIO:::binaryArrayDecode("eJxjYACBD/YMEOAAoTigtACUFoHSElBaBkorOAAAeOcDcA==", sizeof=8, compression="gzip")
     checkEqualsNumeric(result, 1:8)
 }
 

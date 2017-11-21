@@ -1,0 +1,712 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://nmrML.org/nmrCV#"
+     xml:base="http://nmrML.org/nmrCV"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:meta="http://www.co-ode.org/ontologies/meta.owl#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://nmrML.org/nmrCV">
+        <dc:rights>Creative Commons Public Domain Mark 1.0</dc:rights>
+        <doap:maintainer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.metabolomics-msi.org/
+http://phenomenal-h2020.eu/home/
+http://www.cosmos-fp7.eu/WP2</doap:maintainer>
+        <doap:documenter rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Schober</doap:documenter>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-30T11:41:26Z</oboInOwl:creation_date>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1.0</owl:versionInfo>
+        <doap:location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/nmrML/nmrML/tree/master/ontologies</doap:location>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Catherine Deborde</dc:contributor>
+        <doap:mailing-list rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://groups.google.com/forum/?hl=en#!forum/nmrml/join</doap:mailing-list>
+        <oboInOwl:hasOBOFormatVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</oboInOwl:hasOBOFormatVersion>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Jacob</dc:contributor>
+        <dc:coverage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete and purgatory nmr classes</dc:coverage>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reza Salek</dc:contributor>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Michael Wilson</dc:contributor>
+        <oboInOwl:auto-generated-by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBO-Edit 2.2</oboInOwl:auto-generated-by>
+        <oboInOwl:saved-by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dschober</oboInOwl:saved-by>
+        <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://nmrml.org/cv/</foaf:homepage>
+        <doap:audience rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is for the nmrCV delelopers only.</doap:audience>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joseph Cruz</dc:contributor>
+        <dc:format rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL
+
+MIME type  application/rdf+xml
+
+(Rather flat CV in OWL syntax. Taxonomic backbone with few relations used. No OWL DL complexity such as cardinalities, blank nodes, nested class definitions. The Semantic Validator used an OBO converted file format due to historic reasons. The OBO file is auto-generated-by the OWL API (version 3.4.2).)</dc:format>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</dc:contributor>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This owl file contains obsoleted and purgatory classes from earlier versions of the nmrCV which need to be deleted before OLS release, but should not be lost due to its potentially useful metadata and for potential later revival.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Schober</oboInOwl:created_by>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Steffen Neumann</dc:contributor>
+        <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</protege:defaultLanguage>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Schober</dc:contributor>
+        <doap:implements rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/nmrML/nmrML</doap:implements>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Annick Moing</dc:contributor>
+        <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obsolete Classes for nmr CV</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/coverage -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/coverage"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#bug-database -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#bug-database"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#auto-generated-by -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#auto-generated-by"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#consider -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#consider"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#creation_date -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#creation_date"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#date -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#date"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#default-namespace -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#default-namespace"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">database_cross_reference</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_exact_synonym</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_obo_format_version</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBONamespace -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_obo_namespace</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#saved-by -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#saved-by"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000007 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000007">
+        <rdfs:label>_purgatory</rdfs:label>
+        <skos:scopeNote>This administrative helper class contains the classes which might be revived at some point in time or from which the definitions could be harvested these are at the moment not deleted form the release file.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000009 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000009">
+        <rdfs:label xml:lang="en">_obsolete</rdfs:label>
+        <skos:scopeNote>This administrative helper class contains the deleted classes which will be physically deleted form the release file.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000076 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000076">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>scaling by generalized logarithmic transformation</oboInOwl:consider>
+        <rdfs:label xml:lang="en">scaling by glog transform optimisation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000118 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000118">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:hasExactSynonym>JRES spectrum</oboInOwl:hasExactSynonym>
+        <rdfs:label xml:lang="en">J-resolved spectrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000119 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000119">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400007"/>
+        <oboInOwl:hasExactSynonym>FID data set</oboInOwl:hasExactSynonym>
+        <rdfs:label xml:lang="en">FID data set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000125 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000125">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label xml:lang="en">T1 relaxation spectrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000126 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000126">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000125"/>
+        <rdfs:label xml:lang="en">T1rho relaxation spectrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000127 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000127">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label xml:lang="en">T2 relaxation spectrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000187 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000187">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <obo:IAO_0000115>Taking advantage of the concentration variability of each compound in a series of samples, buckets are linked together into clusters based on significant correlations.This is done i.g. in ERVA-based bucketing</obo:IAO_0000115>
+        <oboInOwl:consider>bucketing</oboInOwl:consider>
+        <rdfs:label xml:lang="en">clustering of buckets</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000213 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000213">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label xml:lang="en">15N</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000215 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000215">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label xml:lang="en">14N</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000216 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000216">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label xml:lang="en">10B</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000217 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000217">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label xml:lang="en">12C</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000218 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000218">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label xml:lang="en">23Na</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000219 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000219">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label xml:lang="en">35Cl</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000279 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000279">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>specify via sample attribute subclass.</oboInOwl:consider>
+        <rdfs:label xml:lang="en">NMR spectrum by phase state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000280 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000280">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000279"/>
+        <rdfs:label xml:lang="en">liquid phase NMR spectrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000281 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000281">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000279"/>
+        <rdfs:label xml:lang="en">gas phase NMR spectrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000282 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000282">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000279"/>
+        <rdfs:label xml:lang="en">solid phase NMR spectrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000340 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000340">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <oboInOwl:consider>complex64int
+complex128long</oboInOwl:consider>
+        <rdfs:label xml:lang="en">complexInteger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000351 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000351">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <oboInOwl:consider>NMR:1000193
+ABX multiplet pattern</oboInOwl:consider>
+        <rdfs:label xml:lang="en">ABX multiplet pattern</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1000432 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000432">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <oboInOwl:consider>Chloroform-d1</oboInOwl:consider>
+        <rdfs:label xml:lang="en">Chloroform-d1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1001000 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001000">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collection of terms from the MSI Metabolomics Informatics standards describing the interpretation of spectra.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR:1001000</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spectrum interpretation</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001000"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collection of terms from the MSI Metabolomics Informatics standards describing the interpretation of spectra.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSI:MI</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1001458 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1001458">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vocabularies describing the spectrum generation information.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR:1001458</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spectrum generation information</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://nmrML.org/nmrCV#NMR:1001458"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vocabularies describing the spectrum generation information.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSI:NMR</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400007 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400007">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tempdef: An immanent important, non-obligatory part of any NMR data set.
+   defprov: Daniel Schober
+   synonym: cardinal part of NMR data set</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardinal part of NMR data set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400036 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400036">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">def: A complex datatype (or complex value) is a datatype that is not a primitive one (like string or integer) and that references to more primitive values. Often, these are called reference data types. Complex datatypes can belong to the object data type. Data types that define sets of complex values include Array, Date, Error, Function, and XML and others.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complex datatype</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400044 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400044">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tempdef: An integral data transformation that re-expresses a function in terms of sinusoidal basis functions, i.e. as a sum or integral of sinusoidal functions multiplied by some coefficients (&quot;amplitudes&quot;).
+   defprov: Daniel Schober</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fourier transformation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400055 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400055">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <oboInOwl:consider>radon encoding</oboInOwl:consider>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defneed</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radon encoding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400062 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400062">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>NMR acquisition parameter</oboInOwl:consider>
+        <oboInOwl:consider>NMR instrument parameter set</oboInOwl:consider>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tempdef: An instrument configuration is the description for the setting of an instrument or a machine in order to archive a certain intended goal or task.
+   altdef: An instrument configuration is the process of setting the possible parameters of an instrument in order to archive a certain intended goal.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">instrument configuration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400118 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400118">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>use acquisition parameter file</oboInOwl:consider>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">def: A reference to the file of acquisition parameters produced by a machine.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acquisition parameter set file reference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400144 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400144">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>post-acquisition solvent suppression</oboInOwl:consider>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">def: A specific technique used to suppress the solvent signal in a spectrum. 
+   altdef:: A type of pulse sequence (or part of it) used to suppress a frequency (most commonly solvent).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">excitation sculpting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400151 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400151">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:comment xml:lang="en">def: The nucleus of the element Hydrogen, a proton. 
+   rem1: The nucleus most often studied in NMR metabolomics.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1H</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400152 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400152">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2H</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: Do we need definitions here?</owl:versionInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400153 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400153">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11B</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400154 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400154">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13C</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400155 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400155">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17O</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400156 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400156">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19F</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400157 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400157">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">29Si</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400158 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400158">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31P</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400159 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400159">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000119"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">def: Having been excited by the RF pulse, the nuclei turn back (&quot;relax&quot;) to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
+   synonym: 1D FID</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1D FID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400160 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400160">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000119"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">def: Having been excited by the RF pulse, the nuclei turn back (&quot;relax&quot;) to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
+   synonym: 2D FID</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2D FID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400181 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400181">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>NMR quality check descriptor</oboInOwl:consider>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tempdef: A quality check result is the usefull outcome of a quality check.
+   defprov: Daniel Schober</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality check result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400183 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400183">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000009"/>
+        <oboInOwl:consider>NMR spectrum</oboInOwl:consider>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tempdef: A frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or &apos;lines&apos;.
+   def: A NMR spectrum is a set of chemical shifts representing a chemical analysis.
+   synonym: NMR spectrum</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR spectrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400202 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400202">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>NMR instrument</oboInOwl:consider>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR plattform</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: What is the differrence to NMR instrument?</owl:versionInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400294 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400294">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <oboInOwl:consider>JCAMP-DX format</oboInOwl:consider>
+        <rdfs:comment>This refers to the JEOL DX software, rather than to the JCAMP .dx extension</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JEOL DX format</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nmrML.org/nmrCV#NMR:1400324 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1400324">
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000007"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27Al</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

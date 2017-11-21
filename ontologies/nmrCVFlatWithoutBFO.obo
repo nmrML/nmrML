@@ -1,0 +1,4199 @@
+format-version: 1.2
+date: 12:05:2014 15:11
+saved-by: dschober
+auto-generated-by: The OWL API (version 3.4.2)
+versionInfo: 1.0.0
+location: https://github.com/nmrML/nmrML/tree/master/ontologies
+defaultLanguage: en
+saved-by: dschober
+auto-generated-by: OBO-Edit 2.2
+hasOBOFormatVersion: 1.2
+title: nuclear magnetic resonance CV
+
+! ----------------------  CLASSES  -------------------------
+
+[Term]
+id: NMR:1000001
+name: sample number
+is_a: NMR:1000548
+id: NMR:1000001
+hasDbXref: value-type:xsd:string
+IAO_0000115: A reference number relevant to the sample under study.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000003
+name: sample state information
+is_a: NMR:1000548
+id: NMR:1000003
+IAO_0000115: The chemical phase of a pure sample, or the state of a mixed sample.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000004
+name: sample mass information
+is_a: NMR:1000548
+id: NMR:1000004
+hasDbXref: value-type:xsd:float
+IAO_0000115: Total mass of sample used.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000005
+name: sample volume
+is_a: NMR:1000548
+id: NMR:1000005
+hasDbXref: value-type:xsd:float
+IAO_0000115: Total volume of solution used.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000006
+name: sample concentration
+is_a: NMR:1000548
+id: NMR:1000006
+hasDbXref: value-type:xsd:float
+IAO_0000115: Concentration of sample in picomol/ul, femtomol/ul or attomol/ul solution used.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000008
+name: quadrature detection
+is_a: NMR:1400048
+
+[Term]
+id: NMR:1000009
+name: _obsolete
+is_a: Thing
+scopeNote: This administrative helper class contains the deleted classes which will be physically deleted form the release file.
+
+[Term]
+id: NMR:1000010
+name: contact role
+is_a: NMR:1000585
+
+[Term]
+id: NMR:1000011
+name: data file attribute
+is_a: BFO_0000031
+
+[Term]
+id: NMR:1000012
+name: NMR instrument type
+is_a: NMR:1000496
+
+[Term]
+id: NMR:1000013
+name: 1D spectrum coordinate system descriptor
+is_a: NMR:1000172
+
+[Term]
+id: NMR:1000014
+name: solvent suppression
+is_a: NMR:1400063
+
+[Term]
+id: NMR:1000015
+name: peak processing
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1000016
+name: Hexafluorobenzene
+is_a: NMR:1000330
+
+[Term]
+id: NMR:1000017
+name: Chloroform-d
+is_a: NMR:1000330
+hasExactSynonym: CDCl3
+
+[Term]
+id: NMR:1000018
+name: heavy water
+is_a: NMR:1000330
+hasExactSynonym: D2O
+
+[Term]
+id: NMR:1000019
+name: sample pH
+is_a: NMR:1002011
+
+[Term]
+id: NMR:1000020
+name: post buffer pH
+is_a: NMR:1002011
+
+[Term]
+id: NMR:1000022
+name: metabolomics database identifier
+comment: PRS: rename 'reference' to 'identifier'
+is_a: NMR:1000878
+source: http://www.metabolomicssociety.org/databases
+
+[Term]
+id: NMR:1000023
+name: Metabolights identifier
+is_a: NMR:1000022
+
+[Term]
+id: NMR:1000024
+name: acetonitrile
+is_a: NMR:1000026
+
+[Term]
+id: NMR:1000025
+name: 1,4-Dioxane
+is_a: NMR:1000030
+is_a: NMR:1000026
+
+[Term]
+id: NMR:1000026
+name: 1H spectrum reference compound
+is_a: NMR:1400033
+
+[Term]
+id: NMR:1000027
+name: 2,2-Dimethyl-2-silapentane-5-sulfonate
+is_a: NMR:1000026
+hasExactSynonym: DSS
+
+[Term]
+id: NMR:1000028
+name: sodium acetate
+is_a: NMR:1000026
+
+[Term]
+id: NMR:1000029
+name: tetramethylsilane
+is_a: NMR:1000030
+is_a: NMR:1000026
+hasExactSynonym: TMS
+
+[Term]
+id: NMR:1000030
+name: 13C spectrum reference compound
+is_a: NMR:1400033
+
+[Term]
+id: NMR:1000031
+name: instrument model
+is_a: NMR:1000496
+id: NMR:1000031
+IAO_0000115: Instrument model name not including the vendor's name.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000032
+name: instrument customization
+is_a: NMR:1000496
+id: NMR:1000032
+hasDbXref: value-type:xsd:string
+IAO_0000115: Free text description of a single customization made to the instrument; for several modifications, use several entries.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000033
+name: Chloroform-d1
+is_a: NMR:1000030
+
+[Term]
+id: NMR:1000035
+name: tetramethylammonium bromide
+is_a: NMR:1000030
+is_a: NMR:1000036
+
+[Term]
+id: NMR:1000036
+name: 15N spectrum reference compound
+is_a: NMR:1400033
+
+[Term]
+id: NMR:1000037
+name: ammonia (liquid)
+is_a: NMR:1000036
+
+[Term]
+id: NMR:1000038
+name: ammonium bromide
+is_a: NMR:1000036
+
+[Term]
+id: NMR:1000039
+name: 1,4-morpholine
+is_a: NMR:1000036
+
+[Term]
+id: NMR:1000040
+name: nitromethane
+is_a: NMR:1000036
+
+[Term]
+id: NMR:1000041
+name: pyridine
+is_a: NMR:1000036
+
+[Term]
+id: NMR:1000042
+name: sodium nitrate
+is_a: NMR:1000036
+
+[Term]
+id: NMR:1000044
+name: decoupling method
+is_a: NMR:1001954
+source: http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_decoupling
+IAO_0000115: Nuclear magnetic resonance decoupling (NMR decoupling for short) is a special method used in nuclear magnetic resonance (NMR) spectroscopy where a sample to be analyzed is irradiated at a certain frequency or frequency range to eliminate fully or partially the effect of coupling between certain nuclei. NMR coupling refers to the effect of nuclei on each other in atoms within a couple of bonds distance of each other in molecules. This effect causes NMR signals in a spectrum to be split into multiple peaks which are up to several hertz frequency from each other. Decoupling fully or partially eliminates splitting of the signal between the nuclei irradiated and other nuclei such as the nuclei being analyzed in a certain spectrum. NMR spectroscopy and sometimes decoupling can help determine structures of chemical compounds.
+
+[Term]
+id: NMR:1000045
+name: homonuclear decoupling
+is_a: NMR:1000044
+
+[Term]
+id: NMR:1000046
+name: heteronuclear decoupling
+is_a: NMR:1000044
+
+[Term]
+id: NMR:1000047
+name: emulsion
+is_a: NMR:1000049
+id: NMR:1000047
+IAO_0000115: State if the sample is in emulsion form.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000048
+name: gas
+is_a: NMR:1000003
+id: NMR:1000048
+IAO_0000115: State if the sample is in gaseous form.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000049
+name: liquid
+is_a: NMR:1000003
+id: NMR:1000049
+IAO_0000115: State if the sample is in liquid form.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000050
+name: solid
+is_a: NMR:1000003
+id: NMR:1000050
+IAO_0000115: State if the sample is in solid form.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000051
+name: solution
+is_a: NMR:1000049
+id: NMR:1000051
+IAO_0000115: State if the sample is in solution form.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000052
+name: suspension
+is_a: NMR:1000049
+id: NMR:1000052
+IAO_0000115: State if the sample is in suspension form.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000053
+name: sample batch information
+is_a: NMR:1000548
+id: NMR:1000053
+hasDbXref: value-type:xsd:string
+IAO_0000115: Sample batch lot identifier.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000054
+name: broad band decoupling
+is_a: NMR:1000044
+
+[Term]
+id: NMR:1000055
+name: off resonance decoupling
+is_a: NMR:1000044
+
+[Term]
+id: NMR:1000056
+name: specific decoupling
+is_a: NMR:1000044
+hasExactSynonym: narowband decoupling
+hasExactSynonym: band-selective decoupling
+
+[Term]
+id: NMR:1000057
+name: angle of sinusoid
+is_a: NMR:1400096
+
+[Term]
+id: NMR:1000058
+name: 31P spectrum reference compound
+is_a: NMR:1400033
+
+[Term]
+id: NMR:1000059
+name: phosphoric acid
+is_a: NMR:1000058
+hasExactSynonym: H3PO4
+
+[Term]
+id: NMR:1000060
+name: phosphorus
+is_a: NMR:1000058
+hasExactSynonym: P4
+
+[Term]
+id: NMR:1000061
+name: trimethyl phosphate
+is_a: NMR:1000058
+hasExactSynonym: (CH3O)3PO
+
+[Term]
+id: NMR:1000062
+name: triphenylphosphine
+is_a: NMR:1000058
+hasExactSynonym: P(C6H5)3
+
+[Term]
+id: NMR:1000063
+name: triphenylphosphine oxide
+is_a: NMR:1000058
+hasExactSynonym: O=P(C6H5)3
+
+[Term]
+id: NMR:1000064
+name: co-dissolved internal reference
+is_a: NMR:1002013
+
+[Term]
+id: NMR:1000065
+name: synthetic reference signal
+is_a: NMR:1002013
+
+[Term]
+id: NMR:1000066
+name: residual solvent signal
+is_a: NMR:1002013
+
+[Term]
+id: NMR:1000067
+name: FID zero filling
+is_a: NMR:1400041
+
+[Term]
+id: NMR:1000068
+name: scaling by linear prediction
+is_a: NMR:1000079
+
+[Term]
+id: NMR:1000069
+name: multiplying FID by window function
+is_a: NMR:1400041
+
+[Term]
+id: NMR:1000070
+name: FID fourier transformation
+is_a: NMR:1400042
+
+[Term]
+id: NMR:1000071
+name: phase correction
+is_a: NMR:1400042
+hasExactSynonym: phasing
+hasExactSynonym: spectral phasing
+
+[Term]
+id: NMR:1000072
+name: integration
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1000073
+name: peak alignment
+is_a: NMR:1000015
+
+[Term]
+id: NMR:1000074
+name: peak shape fitting
+is_a: NMR:1000258
+
+[Term]
+id: NMR:1000075
+name: spectral referencing
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1000076
+name: scaling by glog transform optimisation
+is_a: NMR:1000083
+
+[Term]
+id: NMR:1000077
+name: sodium trimethylsilyl-propionate
+is_a: NMR:1000030
+source: Pohl, L.; Eckle, M. (1969). "Sodium 3-(trimethylsilyl)tetradeuteriopropionate, a new water-soluble standard for 1H.N.M.R.". Angewandte Chemie, International Edition in English 8 (5): 381. doi:10.1002/anie.196903811
+hasExactSynonym: TMSP
+hasExactSynonym: trimethylsilyl propanoic acid
+
+[Term]
+id: NMR:1000078
+name: linear scaling
+comment: used to be 'linear scaling algorithm'
+is_a: NMR:1000079
+
+[Term]
+id: NMR:1000079
+name: scaling
+comment: used to be called 'scaling algorithm'
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1000080
+name: non-linear scaling
+comment: used to be postfixed with algorithm
+is_a: NMR:1000079
+
+[Term]
+id: NMR:1000081
+name: total spectral area scaling
+is_a: NMR:1000078
+
+[Term]
+id: NMR:1000082
+name: probabilistic quotient normalization
+is_a: NMR:1000078
+source: Dieterle F, Ross A, Schlotterbeck G, Senn H: Probabilistic quotient normalization as robust method to account for dilution of complex biological mixtures. Application in 1H NMR metabonomics. Anal Chem 2006, 78(13):4281-90.
+
+[Term]
+id: NMR:1000083
+name: scaling by generalized logarithmic transformation
+is_a: NMR:1000080
+hasExactSynonym: glog
+
+[Term]
+id: NMR:1000084
+name: pareto scaling
+is_a: NMR:1000080
+
+[Term]
+id: NMR:1000085
+name: autoscaling
+is_a: NMR:1000080
+
+[Term]
+id: NMR:1000086
+name: 2D J-resolved spectrum
+is_a: NMR:1400162
+is_a: NMR:1000118
+
+[Term]
+id: NMR:1000087
+name: MetaboLab software
+is_a: NMR:1000090
+source: http://www.biomedcentral.com/1471-2105/12/366#B2
+
+[Term]
+id: NMR:1000088
+name: Metaboquant software
+is_a: NMR:1000090
+
+[Term]
+id: NMR:1000089
+name: rNMR software
+is_a: NMR:1000090
+
+[Term]
+id: NMR:1000090
+name: open source NMR software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000091
+name: commercial NMR software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000092
+name: NMRLab software
+is_a: NMR:1000090
+source: Günther U, Ludwig C, Rüterjans H: NMRLAB - advanced NMR data processing in Matlab., J Magn Reson 2000, 145(2):201-208.
+
+[Term]
+id: NMR:1000093
+name: NMRPipe software
+is_a: NMR:1000090
+source: Delaglio F, Grzesiek S, Vuister GW, Zhu G, Pfeifer J, Bax A: NMRPipe: a multidimensional spectral processing system based on UNIX pipes. J Biomol NMR 1995, 6(3):277-293.
+
+[Term]
+id: NMR:1000094
+name: matNMR software
+is_a: NMR:1000090
+source: van Beek JD: matNMR: a flexible toolbox for processing, analyzing and visualizing magnetic resonance data in Matlab. J Magn Reson 2007, 187:19-26. 
+
+[Term]
+id: NMR:1000096
+name: manual phase correction
+is_a: NMR:1000071
+
+[Term]
+id: NMR:1000097
+name: automatic phase correction
+is_a: NMR:1000071
+
+[Term]
+id: NMR:1000098
+name: DC offset correction
+is_a: NMR:1000071
+
+[Term]
+id: NMR:1000099
+name: Gibbs multiplication
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1000100
+name: skyline projection
+is_a: NMR:1400075
+
+[Term]
+id: NMR:1000101
+name: shifted sine window function
+is_a: NMR:1400071
+hasExactSynonym: shifted sine apodization
+
+[Term]
+id: NMR:1000102
+name: square cosine multiplication window function
+is_a: NMR:1400068
+
+[Term]
+id: NMR:1000103
+name: SEM window function
+is_a: NMR:1400068
+source: http://www.sciencedirect.com/science/article/pii/S0003267008000950
+bug-database: https://github.com/nmrML/nmrML/issues/36
+hasExactSynonym: combined sine-bell–exponential window function
+
+[Term]
+id: NMR:1000104
+name: trapezoid window function
+comment: apodization.
+is_a: NMR:1400068
+hasExactSynonym: trapezoid apodization
+
+[Term]
+id: NMR:1000105
+name: shifted gaussian window function
+is_a: NMR:1400070
+
+[Term]
+id: NMR:1000106
+name: baseline correction using spline function
+is_a: NMR:1400074
+
+[Term]
+id: NMR:1000107
+name: heteronuclear single quantum coherence spectrum
+is_a: NMR:1400162
+hasExactSynonym: HSQC NMR spectrum
+
+[Term]
+id: NMR:1000108
+name: Zangger-Sterk pulse sequence
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1000109
+name: pure shift 1D Zangger-Sterk pulse sequence
+is_a: NMR:1000108
+source: http://nmr.chemistry.manchester.ac.uk/?q=node/256
+
+[Term]
+id: NMR:1000110
+name: oneshot pulse sequence
+is_a: NMR:1400037
+source: http://nmr.chemistry.manchester.ac.uk/?q=node/264
+
+[Term]
+id: NMR:1000111
+name: pure shift oneshot pulse sequence
+is_a: NMR:1000110
+source: http://nmr.chemistry.manchester.ac.uk/?q=node/265
+
+[Term]
+id: NMR:1000112
+name: perfect echo watergate pulse sequence
+is_a: NMR:1400037
+source: http://nmr.chemistry.manchester.ac.uk/?q=node/285
+hasExactSynonym: PE Watergate pulse sequence
+
+[Term]
+id: NMR:1000113
+name: NMR Star 3.1 file format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1000114
+name: NMR Star 2.1 file format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1000115
+name: three dimensional spectrum
+is_a: NMR:1000117
+
+[Term]
+id: NMR:1000116
+name: four dimensional spectrum
+is_a: NMR:1000117
+
+[Term]
+id: NMR:1000117
+name: NMR spectrum by dimensionality
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000118
+name: J-resolved spectrum
+is_a: NMR:1000199
+hasExactSynonym: JRES spectrum
+
+[Term]
+id: NMR:1000119
+name: FID data set
+is_a: NMR:1400007
+hasExactSynonym: FID data set
+
+[Term]
+id: NMR:1000120
+name: homonuclear chemical shift spectrum
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000121
+name: heteronuclear chemical shift spectrum
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000122
+name: Bruker instrument model
+is_a: NMR:1000031
+id: NMR:1000122
+IAO_0000115: Bruker instrument model.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000123
+name: homonuclear exchange spectroscopy spectrum
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000124
+name: heteronuclear exchange spectroscopy spectrum
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000125
+name: T1 relaxation spectrum
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000126
+name: T1rho relaxation spectrum
+is_a: NMR:1000125
+
+[Term]
+id: NMR:1000127
+name: T2 relaxation spectrum
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000128
+name: homonuclear J-resolved spectrum
+is_a: NMR:1000118
+
+[Term]
+id: NMR:1000129
+name: heteronuclear J-resolved spectrum
+is_a: NMR:1000118
+
+[Term]
+id: NMR:1000130
+name: calibration test spectrum
+is_a: NMR:1000200
+
+[Term]
+id: NMR:1000131
+name: NMR star software
+is_a: NMR:1000090
+
+[Term]
+id: NMR:1000132
+name: Felix software
+is_a: NMR:1000091
+source: http://www.felixnmr.com/
+
+[Term]
+id: NMR:1000133
+name: PIPP software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000134
+name: TALOS+ software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000135
+name: CYANA software
+is_a: NMR:1000090
+source: http://www.cyana.org/wiki/index.php/Main_Page
+
+[Term]
+id: NMR:1000136
+name: XPLOR-NIH software
+is_a: NMR:1400213
+source: http://nmr.cit.nih.gov/xplor-nih/
+
+[Term]
+id: NMR:1000138
+name: XEASY software
+is_a: NMR:1000090
+source: http://www.bpc.uni-frankfurt.de/guentert/wiki/index.php/XEASY
+
+[Term]
+id: NMR:1000139
+name: sparky software
+is_a: NMR:1000090
+
+[Term]
+id: NMR:1000140
+name: CARA software
+is_a: NMR:1000090
+source: http://nmr-software.blogspot.de/2007/04/cara.html
+
+[Term]
+id: NMR:1000141
+name: Wattos software
+is_a: NMR:1000090
+
+[Term]
+id: NMR:1000142
+name: MADNMR software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000143
+name: Pronto software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000144
+name: TRIAD NMR software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000150
+name: scaling by forward linear prediction
+is_a: NMR:1000068
+
+[Term]
+id: NMR:1000151
+name: back calculation of first points by linear-prediction
+is_a: NMR:1000068
+
+[Term]
+id: NMR:1000152
+name: scaling by mirror image linear prediction
+is_a: NMR:1000068
+
+[Term]
+id: NMR:1000153
+name: digital filtering
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1000154
+name: 3D strip plot generation
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1000155
+name: Batman software
+is_a: NMR:1000090
+
+[Term]
+id: NMR:1000156
+name: JEOL instrument model
+is_a: NMR:1000031
+
+[Term]
+id: NMR:1000157
+name: tecmag instrument model
+is_a: NMR:1000031
+
+[Term]
+id: NMR:1000161
+name: probe gradient strength
+is_a: NMR:1400027
+
+[Term]
+id: NMR:1000162
+name: NMR acquisition computer operating system
+is_a: NMR:1400213
+coverage: e.g. Linux or Windows, ...
+
+[Term]
+id: NMR:1000163
+name: NMR autosampler software
+is_a: NMR:1400213
+coverage: e.g. Bruker Biospin ICON-NMR
+
+[Term]
+id: NMR:1000164
+name: Bruker Biospin ICON-NMR software
+is_a: NMR:1000163
+seeAlso: http://www.bruker.com/products/mr/nmr/nmr-software/software/iconnmr/overview.html
+
+[Term]
+id: NMR:1000165
+name: buffer pH
+is_a: NMR:1002011
+
+[Term]
+id: NMR:1000166
+name: field frequency lock
+is_a: NMR:1000548
+coverage: e.g. heavy water (D2O)
+hasExactSynonym: lock frequency
+
+[Term]
+id: NMR:1000167
+name: concentration standard
+is_a: NMR:1400032
+hasExactSynonym: quantitation standard
+
+[Term]
+id: NMR:1000168
+name: NMR acquisition software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000170
+name: signal line width
+is_a: NMR:1400116
+
+[Term]
+id: NMR:1000171
+name: signal line width at five percent intensity
+is_a: NMR:1000170
+
+[Term]
+id: NMR:1000172
+name: NMR spectrum descriptor
+is_a: BFO_0000031
+
+[Term]
+id: NMR:1000173
+name: pulse width
+is_a: NMR:1000190
+
+[Term]
+id: NMR:1000174
+name: hard pulse width
+is_a: NMR:1000173
+
+[Term]
+id: NMR:1000175
+name: sweep width
+is_a: NMR:1001954
+hasExactSynonym: spectrum width
+
+[Term]
+id: NMR:1000176
+name: number of data points
+is_a: NMR:1000013
+hasExactSynonym: number of data points in spectrum
+hasExactSynonym: number of first dimension data points
+
+[Term]
+id: NMR:1000177
+name: x end value
+is_a: NMR:1000013
+IAO_0000115: tempThe end value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.
+
+[Term]
+id: NMR:1000178
+name: y-axis type
+is_a: NMR:1000013
+
+[Term]
+id: NMR:1000179
+name: center of bin on x-axis
+is_a: NMR:1002014
+hasExactSynonym: bucket x center
+
+[Term]
+id: NMR:1000180
+name: spectral quantitation algorithm
+is_a: NMR:1002014
+hasExactSynonym: NMR spectrum quantification method
+
+[Term]
+id: NMR:1000184
+name: dublet feature
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000185
+name: triplet feature
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000186
+name: quatruplet feature
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000187
+name: clustering of buckets
+is_a: NMR:1000015
+IAO_0000115: Taking advantage of the concentration variability of each compound in a series of samples, buckets are linked together into clusters based on significant correlations.This is done i.g. in ERVA-based bucketing
+
+[Term]
+id: NMR:1000188
+name: cluster of peaks across samples
+is_a: NMR:1000524
+coverage: a feature request by Daniel Jacobs inserted at IBP hackathon
+IAO_0000115: a set of peaks that are highly correlated in a series of samples
+
+[Term]
+id: NMR:1000189
+name: simulated spectrum
+is_a: NMR:1000200
+
+[Term]
+id: NMR:1000190
+name: pulse parameter
+is_a: NMR:1400101
+
+[Term]
+id: NMR:1000191
+name: JEOL FID format
+is_a: NMR:1000767
+
+[Term]
+id: NMR:1000192
+name: doublet of doublets feature
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000193
+name: ABX feature
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000194
+name: singlet feature
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000195
+name: quintet feature
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000196
+name: douplet of triplets
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000197
+name: triplet of douplets
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000198
+name: triplet of triplets
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1000199
+name: NMR spectrum by pulse sequence
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000200
+name: NMR spectrum by processing step
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000201
+name: 2D spectrum coordinate system descriptor
+is_a: NMR:1000172
+
+[Term]
+id: NMR:1000202
+name: y-axis value type
+is_a: NMR:1000201
+seeAlso: the subclasses come from the Rubtsov specification
+
+[Term]
+id: NMR:1000203
+name: power value type
+is_a: NMR:1000202
+
+[Term]
+id: NMR:1000204
+name: magnitude value type
+is_a: NMR:1000202
+
+[Term]
+id: NMR:1000205
+name: real value type
+is_a: NMR:1000202
+
+[Term]
+id: NMR:1000206
+name: imaginary value type
+is_a: NMR:1000202
+
+[Term]
+id: NMR:1000207
+name: complex value types
+is_a: NMR:1000202
+
+[Term]
+id: NMR:1000208
+name: spectral projection axis
+is_a: NMR:1000172
+
+[Term]
+id: NMR:1000209
+name: f1 axis
+is_a: NMR:1000208
+
+[Term]
+id: NMR:1000210
+name: f2 axis
+is_a: NMR:1000208
+
+[Term]
+id: NMR:1000212
+name: BML-NMR identifier
+is_a: NMR:1000022
+
+[Term]
+id: NMR:1000213
+name: 15N
+is_a: _purgatory
+
+[Term]
+id: NMR:1000214
+name: creatinine
+comment: will be further specified via a concentration value
+is_a: NMR:1000167
+
+[Term]
+id: NMR:1000215
+name: 14N
+is_a: _purgatory
+
+[Term]
+id: NMR:1000216
+name: 10B
+is_a: _purgatory
+
+[Term]
+id: NMR:1000217
+name: 12C
+is_a: _purgatory
+
+[Term]
+id: NMR:1000218
+name: 23Na
+is_a: _purgatory
+
+[Term]
+id: NMR:1000219
+name: 35Cl
+is_a: _purgatory
+
+[Term]
+id: NMR:1000220
+name: 2D pulse sequence
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1000221
+name: data simulation
+comment: used to be labeled 'NMR spectrum simulation'
+is_a: NMR:1400063
+
+[Term]
+id: NMR:1000222
+name: DNP NMR instrument
+is_a: NMR:1000012
+hasExactSynonym: dynamic nuclear polarization enhanced NMR system
+
+[Term]
+id: NMR:1000223
+name: chemical shift
+is_a: NMR:1000172
+source: http://en.wikipedia.org/wiki/Chemical_shift
+IAO_0000115: Chemical shift is the resonance frequency of a nucleus related to a chemical shift standard. in ppm along x-axis
+
+[Term]
+id: NMR:1000224
+name: nmr signal intensity
+is_a: NMR:1000172
+IAO_0000115: an information object that describes the strength of the NMR signal
+
+[Term]
+id: NMR:1000225
+name: baseline correction using polynomial function
+is_a: NMR:1400074
+
+[Term]
+id: NMR:1000226
+name: first transient of the tnnoesy-presaturation pulse sequence
+is_a: NMR:1000220
+
+[Term]
+id: NMR:1000227
+name: Varian acquisition parameter file
+is_a: NMR:1002006
+
+[Term]
+id: NMR:1000228
+name: procpar
+is_a: NMR:1000252
+
+[Term]
+id: NMR:1000229
+name: acqus
+is_a: NMR:1000230
+
+[Term]
+id: NMR:1000230
+name: Bruker acquisition parameter file
+is_a: NMR:1002006
+
+[Term]
+id: NMR:1000231
+name: peak
+is_a: NMR:1000172
+id: NMR:1000231
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000232
+name: global
+is_a: NMR:1000227
+
+[Term]
+id: NMR:1000233
+name: Varian autosampler
+is_a: NMR:1400002
+
+[Term]
+id: NMR:1000234
+name: Varian SMS 50
+is_a: NMR:1000233
+
+[Term]
+id: NMR:1000235
+name: Varian probe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1000236
+name: 5mm HCN probe
+is_a: NMR:1000237
+
+[Term]
+id: NMR:1000237
+name: Varian liquid cold probe
+is_a: NMR:1000235
+
+[Term]
+id: NMR:1000238
+name: reference compound NMR spectrum
+comment: e.g as in HMDB
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000239
+name: Mestrelab software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000240
+name: ACD spectrus software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000241
+name: Mat NMR 3 software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000242
+name: NMRLab software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000243
+name: Spinworks NMR software
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1000244
+name: NMR software vendor
+is_a: NMR:1001267
+
+[Term]
+id: NMR:1000245
+name: Spinworks
+is_a: NMR:1000244
+
+[Term]
+id: NMR:1000246
+name: iNMR software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000247
+name: NMR pipe
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000248
+name: cule NMR software
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1000250
+name: Bruker processing parameter file
+is_a: NMR:1400123
+
+[Term]
+id: NMR:1000251
+name: procs
+is_a: NMR:1000250
+
+[Term]
+id: NMR:1000252
+name: Varian processing parameter file
+is_a: NMR:1400123
+
+[Term]
+id: NMR:1000253
+name: Madison Metabolomics Consortium Database MMCD identifier
+comment: PRS: rename 'identifyer' to 'identifier'
+is_a: NMR:1000022
+source: http://mmcd.nmrfam.wisc.edu/
+
+[Term]
+id: NMR:1000254
+name: Bigg metabolomics database identifier
+comment: PRS: rename 'identifyer' to 'identifier'
+is_a: NMR:1000022
+source: http://bigg.ucsd.edu/
+
+[Term]
+id: NMR:1000255
+name: Lorentz Gaussian window function
+is_a: NMR:1400068
+hasExactSynonym: Lorentz-to-Gauss apodization
+
+[Term]
+id: NMR:1000256
+name: traf window function
+is_a: NMR:1000104
+
+[Term]
+id: NMR:1000257
+name: trafs window function
+is_a: NMR:1000104
+
+[Term]
+id: NMR:1000258
+name: peak fitting
+is_a: NMR:1000015
+
+[Term]
+id: NMR:1000259
+name: peak assignment
+is_a: NMR:1000015
+
+[Term]
+id: NMR:1000260
+name: deconvolution
+is_a: NMR:1000015
+
+[Term]
+id: NMR:1000261
+name: chemical shift sorting
+is_a: NMR:1400038
+IAO_0000115: A method of sorting multiple spectra by position of chemical shift peaks. This method is used in Batman and improves the fit for shifted/overlapped peaks.
+
+[Term]
+id: NMR:1000262
+name: fid file
+is_a: NMR:1000264
+
+[Term]
+id: NMR:1000263
+name: Varian FID file
+is_a: NMR:1400119
+
+[Term]
+id: NMR:1000264
+name: Bruker FID file
+is_a: NMR:1400119
+
+[Term]
+id: NMR:1000265
+name: ERVA-based bucketing
+is_a: NMR:1400138
+source: Jacob D. et al (2013) Analytical and Bioanalytical Chemistry, 405, 5049-5061
+
+[Term]
+id: NMR:1000266
+name: cluster of peaks
+is_a: NMR:1002014
+
+[Term]
+id: NMR:1000267
+name: Match NMR tube
+is_a: NMR:1000271
+
+[Term]
+id: NMR:1000268
+name: shaped tube
+is_a: NMR:1000271
+
+[Term]
+id: NMR:1000269
+name: Shigemi tube
+is_a: NMR:1400132
+
+[Term]
+id: NMR:1000270
+name: standard tube
+is_a: NMR:1000271
+
+[Term]
+id: NMR:1000271
+name: Bruker tube
+is_a: NMR:1400132
+
+[Term]
+id: NMR:1000272
+name: JEOL magnet
+is_a: NMR:1400185
+
+[Term]
+id: NMR:1000273
+name: JEOL ECS spectrometer
+is_a: NMR:1000272
+
+[Term]
+id: NMR:1000274
+name: JEOL ECA spectrometer
+is_a: NMR:1000272
+
+[Term]
+id: NMR:1000275
+name: JEOL ECX spectrometer
+is_a: NMR:1000272
+
+[Term]
+id: NMR:1000276
+name: Varian NMR software
+is_a: NMR:1000091
+
+[Term]
+id: NMR:1000277
+name: VnmrJ software
+is_a: NMR:1000276
+
+[Term]
+id: NMR:1000278
+name: Wilmad tube
+is_a: NMR:1400132
+
+[Term]
+id: NMR:1000279
+name: NMR spectrum by phase state
+is_a: NMR:1002007
+
+[Term]
+id: NMR:1000280
+name: liquid phase NMR spectrum
+is_a: NMR:1000279
+
+[Term]
+id: NMR:1000281
+name: gas phase NMR spectrum
+is_a: NMR:1000279
+
+[Term]
+id: NMR:1000282
+name: solid phase NMR spectrum
+is_a: NMR:1000279
+
+[Term]
+id: NMR:1000283
+name: 4mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000284
+name: 2.5mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000285
+name: 3mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000286
+name: 5mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000287
+name: 1mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000288
+name: 1.7mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000289
+name: 2mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000290
+name: 4.25mm Match tube
+is_a: NMR:1000267
+
+[Term]
+id: NMR:1000291
+name: 3mm standard tube
+is_a: NMR:1000270
+
+[Term]
+id: NMR:1000292
+name: 5mm standard tube
+is_a: NMR:1000270
+
+[Term]
+id: NMR:1000293
+name: 1mm standard tube
+is_a: NMR:1000270
+
+[Term]
+id: NMR:1000294
+name: 1.7mm standard tube
+is_a: NMR:1000270
+
+[Term]
+id: NMR:1000295
+name: Wilmad economy tube
+is_a: NMR:1000278
+
+[Term]
+id: NMR:1000296
+name: Wilmad precision tube
+is_a: NMR:1000278
+
+[Term]
+id: NMR:1000297
+name: Norell tube
+is_a: NMR:1400132
+
+[Term]
+id: NMR:1000298
+name: JEOL FID file
+is_a: NMR:1400119
+
+[Term]
+id: NMR:1000302
+name: Varian magnet
+is_a: NMR:1400185
+hasExactSynonym: Agilent magnet
+
+[Term]
+id: NMR:1000303
+name: premium compact narrow bore magnet
+is_a: NMR:1000302
+
+[Term]
+id: NMR:1000304
+name: premium shielded narrow bore magnet
+is_a: NMR:1000302
+
+[Term]
+id: NMR:1000305
+name: premium shielded wide bore magnet
+is_a: NMR:1000302
+
+[Term]
+id: NMR:1000306
+name: modified Gaussian window function
+is_a: NMR:1400070
+hasExactSynonym: modified gaussian apodization
+
+[Term]
+id: NMR:1000307
+name: exponentially damped J-modulation window function
+is_a: NMR:1400068
+hasExactSynonym: exponentially damped J-modulation apodization
+
+[Term]
+id: NMR:1000308
+name: shifted sine bell window function
+is_a: NMR:1400071
+hasExactSynonym: shifted sine-bell apodization
+
+[Term]
+id: NMR:1000309
+name: triangle window function
+is_a: NMR:1400068
+hasExactSynonym: triangle apodization
+
+[Term]
+id: NMR:1000310
+name: acquisition log file
+is_a: NMR:1400267
+IAO_0000115: The acquisition log file is a created during an acquisition and could useful for debugging an acquisition that has gone awry.
+
+[Term]
+id: NMR:1000313
+name: acqu2s
+is_a: NMR:1000230
+
+[Term]
+id: NMR:1000314
+name: acqu3s
+is_a: NMR:1000230
+
+[Term]
+id: NMR:1000315
+name: proc2s
+is_a: NMR:1000250
+
+[Term]
+id: NMR:1000316
+name: proc3s
+is_a: NMR:1000250
+
+[Term]
+id: NMR:1000317
+name: NMR spectrum file
+is_a: NMR:1400267
+
+[Term]
+id: NMR:1000318
+name: Bruker NMR spectrum file
+is_a: NMR:1000317
+
+[Term]
+id: NMR:1000319
+name: 1R file
+is_a: NMR:1000318
+
+[Term]
+id: NMR:1000320
+name: title file
+is_a: NMR:1000250
+
+[Term]
+id: NMR:1000324
+name: cryoprobe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1000325
+name: inverse detection NMR probe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1000326
+name: 5mm inverse detection cryoprobe
+is_a: NMR:1000325
+is_a: NMR:1400243
+is_a: NMR:1000324
+is_a: NMR:1000236
+
+[Term]
+id: NMR:1000328
+name: material processing
+is_a: BFO_0000015
+
+[Term]
+id: NMR:1000330
+name: NMR solvent
+is_a: BFO_0000030
+
+[Term]
+id: NMR:1000331
+name: NMR buffer
+is_a: BFO_0000030
+
+[Term]
+id: NMR:1000332
+name: presat water suppression
+is_a: NMR:1400066
+
+[Term]
+id: NMR:1000333
+name: Varian VNMRS 600
+is_a: NMR:1400234
+
+[Term]
+id: NMR:1000334
+name: data content encoding
+is_a: NMR:1000343
+
+[Term]
+id: NMR:1000335
+name: data compression scheme
+is_a: NMR:1000343
+
+[Term]
+id: NMR:1000336
+name: byte format
+is_a: NMR:1000334
+
+[Term]
+id: NMR:1000337
+name: zlib
+is_a: NMR:1000341
+
+[Term]
+id: NMR:1000338
+name: complex64
+is_a: NMR:1000336
+definition: This byte format uses a consecutive array of two 32bit float numbers to represent the real and imaginary part of the complex values.
+
+[Term]
+id: NMR:1000339
+name: complex128
+is_a: NMR:1000336
+definition: This byte format uses a consecutive array of two 64bit double precision values to represent the real and imaginary part of the complex values.
+
+[Term]
+id: NMR:1000340
+name: complexInteger
+is_a: NMR:1000009
+
+[Term]
+id: NMR:1000341
+name: binary data compression type
+is_a: NMR:1000335
+
+[Term]
+id: NMR:1000343
+name: data encoding parameter
+is_a: NMR:1400101
+
+[Term]
+id: NMR:1000344
+name: uncompressed data
+is_a: NMR:1000341
+
+[Term]
+id: NMR:1000345
+name: digital signal processing firmware version
+is_a: NMR:1000496
+hasExactSynonym: DSPFVS
+IAO_0000115: DSPFVS - DSP (Digital signal processing) firmware version corresponds to the version of the digital filter, a hardware component used by the spectrometer
+
+[Term]
+id: NMR:1000346
+name: decimation factor
+is_a: NMR:1001954
+IAO_0000115: DECIM - decimation factor is a (bruker) acquisition parameter that captures the number of raw analog points that are averaged in order to obtain a digital signal recorded in the fid.
+hasExactSynonym: DECIM
+
+[Term]
+id: NMR:1000347
+name: group time delay
+is_a: NMR:1001954
+hasExactSynonym: GRPDLY
+IAO_0000115: GRPDLY - is the time delay (in number of points?) between acquiring the analog signal and producing the digital signal (i.e. "The group delay is the time necessary for the digital filter function to “walk into” the raw FID and start generating significant intensity.")
+
+[Term]
+id: NMR:1000348
+name: NMR sampling strategy
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1000349
+name: uniform sampling
+is_a: NMR:1000348
+hasExactSynonym: continuous sampling
+
+[Term]
+id: NMR:1000350
+name: non-uniform sampling
+is_a: NMR:1000348
+source: http://link.springer.com/chapter/10.1007%2F1-4020-3910-7_142#page-1
+hasExactSynonym: sparse sampling
+
+[Term]
+id: NMR:1000352
+name: Bruker XWIN-NMR software
+is_a: NMR:1000168
+
+[Term]
+id: NMR:1000353
+name: software attribute
+is_a: BFO_0000031
+
+[Term]
+id: NMR:1000354
+name: NMR software version
+is_a: NMR:1000353
+
+[Term]
+id: NMR:1000408
+name: complex64 Integer
+is_a: NMR:1000336
+definition: This byte format uses a consecutive array of two 32bit integer numbers to represent the real and imaginary part of the complex values.
+
+[Term]
+id: NMR:1000409
+name: complex128 Integer
+is_a: NMR:1000336
+definition: This byte format uses a consecutive array of two 64bit long integer numbers to represent the real and imaginary part of the complex values.
+
+[Term]
+id: NMR:1000411
+name: thirty degree pulse duration
+is_a: NMR:1000190
+definition: The duration of the excitation pulse needed to rotate the magnetisation vector by 30 degrees.
+hasExactSynonym: 30 degree pulse duration
+
+[Term]
+id: NMR:1000452
+name: NMR data conversion
+is_a: NMR:1000530
+id: NMR:1000452
+hasExactSynonym: data processing
+IAO_0000115: Terms used to describe types of data processing.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000457
+name: sample
+is_a: BFO_0000030
+id: NMR:1000457
+IAO_0000115: tempA sample is a role that is played by an object of interest in an investigation used to obtain generalizable information about the sample source.
+   defprov: Daniel Schober
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000463
+name: instrument
+is_a: BFO_0000030
+id: NMR:1000463
+IAO_0000115: Description of the instrument or the mass spectrometer.
+hasExactSynonym: instrument configuration
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000489
+name: Varian instrument model
+is_a: NMR:1000031
+id: NMR:1000489
+IAO_0000115: Varian instrument model.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000496
+name: instrument attribute
+is_a: NMR:1000547
+id: NMR:1000496
+IAO_0000115: Instrument properties that are associated with a value.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000524
+name: data file content
+is_a: NMR:1000011
+id: NMR:1000524
+IAO_0000115: Describes the data content on the file.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000529
+name: instrument serial number
+is_a: NMR:1000496
+id: NMR:1000529
+hasDbXref: value-type:xsd:string
+IAO_0000115: Serial Number of the instrument.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000530
+name: file format conversion
+is_a: NMR:1400063
+id: NMR:1000530
+IAO_0000115: Conversion of one file format to another.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000531
+name: software
+is_a: BFO_0000017
+id: NMR:1000531
+IAO_0000115: Software related to the recording or transformation of spectra.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000547
+name: object attribute
+is_a: BFO_0000031
+id: NMR:1000547
+IAO_0000115: Object Attribute.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000548
+name: sample attribute
+is_a: NMR:1000547
+id: NMR:1000548
+IAO_0000115: Sample properties that are associated with a value.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000561
+name: data file checksum type
+is_a: NMR:1000011
+id: NMR:1000561
+IAO_0000115: Checksum is a form of redundancy check, a simple way to protect the integrity of data by detecting errors in data.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000568
+name: MD5
+is_a: NMR:1000561
+id: NMR:1000568
+hasDbXref: value-type:xsd:string
+IAO_0000115: MD5 (Message-Digest algorithm 5) is a cryptographic hash function with a 128-bit hash value used to check the integrity of files.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000569
+name: SHA-1
+is_a: NMR:1000561
+id: NMR:1000569
+hasDbXref: value-type:xsd:string
+IAO_0000115: SHA-1 (Secure Hash Algorithm-1) is a cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is also used to verify file integrity.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000577
+name: NMR raw data file format
+is_a: NMR:1001459
+id: NMR:1000577
+IAO_0000115: Describes the type of file and its content.
+hasExactSynonym: source file
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000585
+name: contact attribute
+is_a: NMR:1000547
+id: NMR:1000585
+IAO_0000115: Details about a person or organization to contact in case of concern or discussion about the file.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000586
+name: contact name
+is_a: NMR:1000585
+id: NMR:1000586
+hasDbXref: value-type:xsd:string
+IAO_0000115: Name of the contact person or organization.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000587
+name: contact address
+is_a: NMR:1000585
+id: NMR:1000587
+hasDbXref: value-type:xsd:string
+IAO_0000115: Postal address of the contact person or organization.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000588
+name: contact URL
+is_a: NMR:1000585
+id: NMR:1000588
+hasDbXref: value-type:xsd:string
+IAO_0000115: Uniform Resource Locator related to the contact person or organization.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000589
+name: contact email
+is_a: NMR:1000585
+id: NMR:1000589
+hasDbXref: value-type:xsd:string
+IAO_0000115: Email address of the contact person or organization.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000590
+name: contact organization
+is_a: NMR:1000585
+id: NMR:1000590
+hasDbXref: value-type:xsd:string
+IAO_0000115: Home institution of the contact person.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000630
+name: data processing parameter
+is_a: NMR:1400101
+id: NMR:1000630
+IAO_0000115: Data processing parameter used in the data processing performed on the data file.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000747
+name: data processing completion time
+is_a: BFO_0000019
+id: NMR:1000747
+hasDbXref: value-type:xsd:date
+IAO_0000115: The time that a data processing action was finished.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000767
+name: FID format
+is_a: NMR:1000577
+id: NMR:1000767
+IAO_0000115: Describes how the native spectrum identifiers are formated.
+hasExactSynonym: nativeID format
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000773
+name: Bruker FID format
+comment: The nativeID must be the same as the source file ID.
+is_a: NMR:1000767
+id: NMR:1000773
+IAO_0000115: file=xsd:IDREF.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000799
+name: custom unreleased software
+is_a: NMR:1000531
+id: NMR:1000799
+hasDbXref: value-type:xsd:string
+IAO_0000115: A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the MSI-NMR working group in order to have another CV term added.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000831
+name: sample preparation information
+is_a: NMR:1000548
+id: NMR:1000831
+IAO_0000115: Description of the preparation steps which took place before the measurement was performed.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000859
+name: molecule
+is_a: NMR:1000881
+id: NMR:1000859
+IAO_0000115: A molecules is a fundamental component of a chemical compound that is the smallest part of the compound that can participate in a chemical reaction.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000860
+name: peptide
+is_a: NMR:1000881
+id: NMR:1000860
+IAO_0000115: A compound of low molecular weight that is composed of two or more amino acids.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000861
+name: chemical compound attribute
+is_a: NMR:1000547
+id: NMR:1000861
+IAO_0000115: A describable property of a chemical compound.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000862
+name: isoelectric point
+is_a: NMR:1000861
+id: NMR:1000862
+hasDbXref: value-type:xsd:float
+IAO_0000115: The pH of a solution at which a charged molecule does not migrate in an electric field.
+hasExactSynonym: pI
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000863
+name: predicted isoelectric point
+is_a: NMR:1000861
+id: NMR:1000863
+hasDbXref: value-type:xsd:float
+hasExactSynonym: predicted pI
+IAO_0000115: The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000864
+name: chemical compound formula
+is_a: NMR:1000861
+id: NMR:1000864
+IAO_0000115: A combination of symbols used to express the chemical composition of a compound.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000865
+name: empirical formula
+is_a: NMR:1000864
+id: NMR:1000865
+hasDbXref: value-type:xsd:string
+IAO_0000115: A chemical formula which expresses the proportions of the elements present in a substance.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000866
+name: molecular formula
+is_a: NMR:1000864
+id: NMR:1000866
+hasDbXref: value-type:xsd:string
+IAO_0000115: A chemical compound formula expressing the number of atoms of each element present in a compound, without indicating how they are linked.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000867
+name: structural formula
+is_a: NMR:1000864
+id: NMR:1000867
+hasDbXref: value-type:xsd:string
+IAO_0000115: A chemical formula showing the number of atoms of each element in a molecule, their spatial arrangement, and their linkage to each other.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000868
+name: SMILES string
+is_a: NMR:1000864
+id: NMR:1000868
+hasDbXref: value-type:xsd:string
+IAO_0000115: The simplified molecular input line entry specification or SMILES is a specification for unambiguously describing the structure of a chemical compound using a short ASCII string.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000878
+name: external reference identifier
+is_a: NMR:1400117
+id: NMR:1000878
+IAO_0000115: An identifier/accession number to an external reference database.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000879
+name: PubMed identifier
+is_a: NMR:1000878
+id: NMR:1000879
+hasDbXref: value-type:xsd:integer
+IAO_0000115: A unique identifier for a publication in the PubMed database (MIR:00000015).
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000881
+name: chemical compound
+is_a: BFO_0000030
+id: NMR:1000881
+IAO_0000115: A substance formed by chemical union of two or more elements or ingredients in definite proportion by weight.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000882
+name: protein
+is_a: NMR:1000881
+id: NMR:1000882
+IAO_0000115: A compound composed of one or more chains of amino acids in a specific order determined by the base sequence of nucleotides in the DNA coding for the protein.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000883
+name: protein short name
+is_a: NMR:1000884
+id: NMR:1000883
+hasDbXref: value-type:xsd:string
+IAO_0000115: A short name or symbol of a protein (e.g., HSF 1 or HSF1_HUMAN).
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000884
+name: protein attribute
+is_a: NMR:1000547
+id: NMR:1000884
+IAO_0000115: An nonphysical attribute describing a specific protein.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000885
+name: protein accession
+is_a: NMR:1000884
+id: NMR:1000885
+hasDbXref: value-type:xsd:string
+IAO_0000115: Accession number for a specific protein in a database.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000886
+name: protein name
+is_a: NMR:1000884
+id: NMR:1000886
+hasDbXref: value-type:xsd:string
+IAO_0000115: A long name describing the function of the protein.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000887
+name: peptide attribute
+is_a: NMR:1000547
+id: NMR:1000887
+IAO_0000115: An nonphysical attribute that can be used to describe a peptide.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000888
+name: unmodified peptide sequence
+is_a: NMR:1000887
+id: NMR:1000888
+hasDbXref: value-type:xsd:string
+IAO_0000115: A sequence of letter symbols denoting the order of amino acids that compose the peptide, without encoding any amino acid mass modifications that might be present.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000889
+name: modified peptide sequence
+is_a: NMR:1000887
+id: NMR:1000889
+hasDbXref: value-type:xsd:string
+IAO_0000115: A sequence of letter symbols denoting the order of amino acids that compose the peptide plus the encoding any amino acid mass modifications that are present using the notation where the total mass of the modified amino acid is specified in square bracketed numbers following the letter (e.g. R[162.10111] indicates an arginine whose final modified mass is 162.10111 amu).
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000890
+name: peptide labeling state
+is_a: NMR:1000887
+id: NMR:1000890
+IAO_0000115: A state description of how a peptide might be isotopically or isobarically labelled.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000891
+name: heavy labeled peptide
+is_a: NMR:1000887
+id: NMR:1000891
+IAO_0000115: A peptide that has been created or labeled with some heavier-than-usual isotopes.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000892
+name: unlabeled peptide
+is_a: NMR:1000887
+id: NMR:1000892
+IAO_0000115: A peptide that has not been labeled with heavier-than-usual isotopes. This is often referred to as "light" to distinguish from "heavy".
+hasExactSynonym: light labeled peptide
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000893
+name: peptide group label
+is_a: NMR:1000887
+id: NMR:1000893
+hasDbXref: value-type:xsd:string
+IAO_0000115: An arbitrary string label used to mark a set of peptides that belong together in a set, whereby the members are differentiated by different isotopic labels. For example, the heavy and light forms of the same peptide will both be assigned the same peptide group label.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000898
+name: standard
+is_a: BFO_0000031
+id: NMR:1000898
+IAO_0000115: Something, such as a practice or a product, that is widely recognized or employed, especially because of its excellence.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000899
+name: de facto standard
+is_a: NMR:1000898
+id: NMR:1000899
+hasDbXref: MS_1000899
+IAO_0000115: A practice or product that has become a standard not because it has been approved by a standards organization but because it is widely used and recognized by the industry as being standard.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000900
+name: minimum information standard
+is_a: NMR:1000898
+id: NMR:1000900
+hasDbXref: MS_1000899
+IAO_0000115: A specification of a minimum amount of information needed to reproduce or fully interpret a scientific result.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000914
+name: tab delimited text file
+is_a: NMR:1002005
+id: NMR:1000914
+IAO_0000115: A file that has two or more columns of tabular data where each column is separated by a TAB character.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000933
+name: protein modification
+is_a: NMR:1000884
+id: NMR:1000933
+hasDbXref: value-type:xsd:string
+IAO_0000115: Encoding of modifications of the protein sequence from the specified accession, written in PEFF notation.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1000934
+name: gene name
+is_a: NMR:1000884
+id: NMR:1000934
+hasDbXref: value-type:xsd:string
+IAO_0000115: Name of the gene from which the protein is translated.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001000
+name: spectrum interpretation
+is_a: _purgatory
+id: NMR:1001000
+IAO_0000115: Collection of terms from the MSI Metabolomics Informatics standards describing the interpretation of spectra.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001040
+name: intermediate analysis format
+is_a: NMR:1001459
+id: NMR:1001040
+IAO_0000115: Type of the source file, the nmrIdentML was created from.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001107
+name: data stored in database
+is_a: NMR:1001459
+id: NMR:1001107
+IAO_0000115: Source file for this nmrIdentML was a data set in a database.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001267
+name: software vendor
+is_a: NMR:1400254
+id: NMR:1001267
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001268
+name: programmer
+is_a: NMR:1000010
+id: NMR:1001268
+hasDbXref: value-type:xsd:string
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001269
+name: instrument vendor
+is_a: NMR:1400254
+id: NMR:1001269
+hasDbXref: value-type:xsd:string
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001270
+name: lab personnel
+is_a: NMR:1000010
+id: NMR:1001270
+hasDbXref: value-type:xsd:string
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001271
+name: researcher
+is_a: NMR:1000010
+id: NMR:1001271
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001456
+name: analysis software
+is_a: NMR:1000531
+id: NMR:1001456
+IAO_0000115: Analysis software.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001457
+name: data processing software
+is_a: NMR:1000531
+id: NMR:1001457
+IAO_0000115: Conversion software.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001458
+name: spectrum generation information
+is_a: _purgatory
+id: NMR:1001458
+IAO_0000115: Vocabularies describing the spectrum generation information.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001459
+name: data file format
+is_a: NMR:1000011
+id: NMR:1001459
+IAO_0000115: Format of data files.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001755
+name: contact phone number
+is_a: NMR:1000585
+id: NMR:1001755
+hasDbXref: value-type:xsd:string
+IAO_0000115: Phone number of the contact person or organization.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001756
+name: contact fax number
+is_a: NMR:1000585
+id: NMR:1001756
+hasDbXref: value-type:xsd:string
+IAO_0000115: Fax number for the contact person or organization.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001757
+name: contact toll-free phone number
+is_a: NMR:1000585
+id: NMR:1001757
+hasDbXref: value-type:xsd:string
+IAO_0000115: Toll-free phone number of the contact person or organization.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001922
+name: Digital Object Identifier (DOI)
+is_a: NMR:1000878
+id: NMR:1001922
+hasDbXref: value-type:xsd:string
+IAO_0000115: DOI unique identifier.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001923
+name: external reference keyword
+is_a: keyword
+id: NMR:1001923
+hasDbXref: value-type:xsd:string
+IAO_0000115: Free text attribute that can enrich the information about an entity.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001924
+name: journal article keyword
+is_a: keyword
+id: NMR:1001924
+hasDbXref: value-type:xsd:string
+IAO_0000115: Keyword present in a scientific publication.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001925
+name: submitter keyword
+is_a: keyword
+id: NMR:1001925
+hasDbXref: value-type:xsd:string
+IAO_0000115: Keyword assigned by the data submitter.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001926
+name: curator keyword
+is_a: keyword
+id: NMR:1001926
+hasDbXref: value-type:xsd:string
+IAO_0000115: Keyword assigned by a data curator.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1001954
+name: acquisition parameter
+is_a: NMR:1400101
+id: NMR:1001954
+hasDbXref: value-type:xsd:string
+IAO_0000115: Parameters used in the NMR spectrometry acquisition.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002000
+name: HMDB identifier
+is_a: NMR:1000022
+id: NMR:1002000
+hasDbXref: value-type:xsd:integer
+IAO_0000115: A unique identifier for a metabolite in the HMDB database (HMDB00001).
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002001
+name: Chenomx software
+is_a: NMR:1000091
+id: NMR:1002001
+IAO_0000115: Chenomx software for data acquisition and analysis.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002002
+name: Chenomx NMR Suite software
+is_a: NMR:1002001
+id: NMR:1002002
+source: http://www.chenomx.com/software/
+IAO_0000115: Chenomx software for data analysis.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002003
+name: Varian FID format
+comment: The nativeID must be the same as the source file ID.
+is_a: NMR:1000767
+id: NMR:1002003
+IAO_0000115: file=xsd:IDREF.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002004
+name: NMR spectrometer file format
+is_a: NMR:1400285
+id: NMR:1002004
+IAO_0000115: The format of the file being used. This could be a instrument or vendor specific proprietary file format or a converted open file format.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002005
+name: text file
+is_a: NMR:1001459
+id: NMR:1002005
+IAO_0000115: Simple text file of peaks.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002006
+name: acquisition parameter file
+is_a: NMR:1400267
+id: NMR:1002006
+IAO_0000115: Parameter file used to configure the acquisition of raw data on the instrument.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002007
+name: NMR spectrum
+is_a: NMR:1000524
+id: NMR:1002007
+source: as designated Experiment type on http://www.bmrb.wisc.edu/tools/choose_pulse_info.php 
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002008
+name: Conversion to nmrML
+is_a: NMR:1000452
+id: NMR:1002008
+IAO_0000115: Conversion of a file format to Metabolomics Standards Initiative nmrData file format.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002009
+name: Conversion to JCAMP-DX
+is_a: NMR:1000452
+id: NMR:1002009
+IAO_0000115: Conversion of a file format to JCAMP-DX file format.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002010
+name: NMR solvent information
+is_a: NMR:1000548
+id: NMR:1002010
+hasDbXref: value-type:xsd:string
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002011
+name: pH
+is_a: NMR:1000548
+id: NMR:1002011
+hasDbXref: value-type:xsd:string
+IAO_0000115: pH.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002013
+name: chemical shift reference
+is_a: NMR:1400034
+id: NMR:1002013
+bug-database: https://github.com/nmrML/nmrML/issues/29#issue
+hasDbXref: value-type:xsd:string
+IAO_0000115: Chemical shift reference is a run attribute to designate the parts-per-million value of the peak used to reference a spectrum. It points to a fix chemical shift number, for examples 0 ppm for DSS or TSP. It can also have a calculated concentration, for examples 0.1 mM.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002014
+name: binned spectrum descriptor
+is_a: NMR:1000172
+id: NMR:1002014
+hasDbXref: value-type:xsd:string
+hasExactSynonym: bucketed spectrum descriptor
+IAO_0000115: A bin for a spectrum.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002015
+name: bin label
+is_a: NMR:1002014
+id: NMR:1002015
+hasDbXref: value-type:xsd:string
+IAO_0000115: Bin label.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002016
+name: bin start
+is_a: NMR:1002014
+id: NMR:1002016
+hasDbXref: value-type:xsd:decimal
+IAO_0000115: Bin start.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002017
+name: bin end
+is_a: NMR:1002014
+id: NMR:1002017
+hasDbXref: value-type:xsd:decimal
+IAO_0000115: Bin end.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002018
+name: bin area
+is_a: NMR:1002014
+id: NMR:1002018
+hasDbXref: value-type:xsd:decimal
+IAO_0000115: Bin area.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002020
+name: metabolite name
+is_a: NMR:1002014
+id: NMR:1002020
+hasDbXref: value-type:xsd:string
+IAO_0000115: Name of metabolite.
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1002021
+name: metabolite concentration
+is_a: NMR:1002014
+id: NMR:1002021
+hasDbXref: value-type:xsd:decimal
+hasOBONamespace: NMR
+
+[Term]
+id: NMR:1400001
+name: optional part of NMR instrument
+is_a: NMR:1000463
+versionInfo: TODO: Discuss "obligatory_part_of".
+
+[Term]
+id: NMR:1400002
+name: autosampler
+is_a: NMR:1400001
+
+[Term]
+id: NMR:1400006
+name: multiplet feature
+is_a: NMR:1000172
+hasExactSynonym: multiplicity
+
+[Term]
+id: NMR:1400007
+name: cardinal part of NMR data set
+is_a: _purgatory
+
+[Term]
+id: NMR:1400008
+name: projected spectrum
+is_a: NMR:1000200
+
+[Term]
+id: NMR:1400009
+name: bucketed spectrum
+is_a: NMR:1000200
+versionInfo: TODO: has spectral post processing parameter
+hasExactSynonym: binned spectrum
+
+[Term]
+id: NMR:1400010
+name: peak-picked spectrum
+comment: defneed
+is_a: NMR:1000200
+versionInfo: TODO: has spectral post processing parameter.
+
+[Term]
+id: NMR:1400011
+name: cardinal part of NMR instrument
+is_a: NMR:1000463
+
+[Term]
+id: NMR:1400013
+name: acquisition computer
+comment: A Computer used for NMR, can be divided into central processing unit (CPU), consisting of instruction, interpretation and arithmetic unit plus fast access memory, and peripheral devices such as bulk data storage and input and output devices (including, via the interface, the spectrometer). Under software control, the computer controls the RF pulses and gradients necessary to acquire data, and process the data to produce spectra or images. Note that devices such as the spectrometer may themselves incorporate small computers.
+is_a: NMR:1400011
+
+[Term]
+id: NMR:1400014
+name: NMR probe
+is_a: NMR:1400011
+
+[Term]
+id: NMR:1400015
+name: console
+is_a: NMR:1400011
+versionInfo: same as or part of acquisition computer?
+
+[Term]
+id: NMR:1400017
+name: number of acquisition data points
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400019
+name: hadamard frequency
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400020
+name: projection axis
+comment: The axis onto which the spectrum was projected.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400022
+name: ninety degree pulse duration
+is_a: NMR:1000190
+definition: The duration of the excitation pulse needed to rotate the magnetisation vector by 90 degrees.
+hasExactSynonym: 90 degree pulse duration
+
+[Term]
+id: NMR:1400023
+name: dwell time
+comment: A digital sampling interval.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400024
+name: sample temperature in autosampler
+comment: The temperature of an item of analysis material whilst in an autosampler.
+is_a: NMR:1400262
+
+[Term]
+id: NMR:1400025
+name: sample temperature in magnet
+comment: The temperature of an NMR sample whilst in the magnet of an NMR instrument.
+is_a: NMR:1400262
+
+[Term]
+id: NMR:1400026
+name: irradiation frequency
+comment: The frequency of the RF radiation used to irradiate an NMR sample.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400027
+name: field strength
+comment: The intensity of an electric, magnetic, or other field.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400028
+name: spinning rate
+comment: The rate at which an item of analysis material is spun.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400029
+name: decoupled nucleus flag
+comment: An indication of whether the nucleus being studied is the acquitsition nucleus.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400031
+name: buffer information
+comment: A compound added to a sample to alter its pH value.
+is_a: NMR:1000548
+
+[Term]
+id: NMR:1400032
+name: calibration compound
+comment: The compound that produced the peak used to reference a spectrum during data pre-processing.
+is_a: NMR:1000881
+hasExactSynonym: reference standard
+
+[Term]
+id: NMR:1400033
+name: chemical shift standard
+comment: A compound that is added to an NMR sample to enable the alignment of spectra. The power of NMR is that for most nuclei the NMR frequency changes very slightly with different molecular environment or chemical bonding. These shifts are very small, on the order of 1 part in 10+9.  This is referred to as "Chemical Shift." Tables of chemical shifts are tabulated and used to determine molecular structure. Combining NMR chemical shift information with other NMR information such as peak integration, coupling constants and Nuclear Overhauser Enhancement (NOE) can result in complete three-dimensional molecular structures of molecules in solution without using X-ray crystallography.
+is_a: NMR:1000881
+source: http://www.nmrnotes.org/NMRPages/refcomps.html
+bug-database: https://github.com/nmrML/nmrML/issues/33
+hasExactSynonym: chemical shift reference compound
+
+[Term]
+id: NMR:1400034
+name: quality check compound signal
+comment: The compound that produced a peak that is measured to assess the quality of a data set.
+is_a: NMR:1400107
+
+[Term]
+id: NMR:1400036
+name: complex datatype
+comment: A complex datatype (or complex value) is a datatype that is not a primitive one (like string or integer) and that references to more primitive values. Often, these are called reference data types. Complex datatypes can belong to the object data type. Data types that define sets of complex values include Array, Date, Error, Function, and XML and others.
+is_a: _purgatory
+
+[Term]
+id: NMR:1400037
+name: NMR pulse sequence
+comment: A sequence of excitation pulses.
+is_a: NMR:1000190
+source: http://www.bmrb.wisc.edu/tools/choose_pulse_info.php
+bug-database: https://github.com/nmrML/nmrML/issues/40
+
+[Term]
+id: NMR:1400038
+name: frequency domain data processing
+comment: Automatic or manual procedures performed upon pre-processed NMR data sets that aim to summarise them or annotate them with speculative values.
+is_a: NMR:1400042
+hasExactSynonym: post-FT data processing
+
+[Term]
+id: NMR:1400041
+name: time domain data processing
+comment: The post acquisition process of producing or refining a spectrum from raw data.
+   defprov: Daniel Schober
+is_a: NMR:1400042
+hasExactSynonym: pre-FT data processing
+
+[Term]
+id: NMR:1400042
+name: NMR data processing
+comment: A data transformation that converts an NMR input data set into an output data set in a tracable and useful manner.
+is_a: NMR:1400063
+
+[Term]
+id: NMR:1400044
+name: fourier transformation
+comment: tempAn integral data transformation that re-expresses a function in terms of sinusoidal basis functions, i.e. as a sum or integral of sinusoidal functions multiplied by some coefficients ("amplitudes").
+   defprov: Daniel Schober
+is_a: _purgatory
+
+[Term]
+id: NMR:1400045
+name: non-fourier FID transformation
+comment: tempA non FT based method for converting from the time to the frequency domain.
+is_a: NMR:1400042
+versionInfo: TODO:Exclusion guided definition.
+
+[Term]
+id: NMR:1400048
+name: encoding
+comment: tempA data processing  which compresses a data file for a specific purpose.
+   defprov: Daniel Schober
+is_a: NMR:1400042
+bug-database: https://github.com/nmrML/nmrML/issues/37
+
+[Term]
+id: NMR:1400049
+name: G matrix fourier transform projection
+is_a: NMR:1400075
+
+[Term]
+id: NMR:1400051
+name: time proportional phase incrementation
+is_a: NMR:1400048
+
+[Term]
+id: NMR:1400053
+name: states-time proportional phase incrementation
+is_a: NMR:1400048
+
+[Term]
+id: NMR:1400054
+name: Hadamard encoding
+comment: defneed
+is_a: NMR:1400048
+
+[Term]
+id: NMR:1400055
+name: radon encoding
+comment: defneed
+is_a: NMR:1400048
+
+[Term]
+id: NMR:1400056
+name: Frydman encoding
+comment: defneed
+is_a: NMR:1400048
+source: http://www.magnet.fsu.edu/library/publications/NHMFL_Publication-6859.pdf
+
+[Term]
+id: NMR:1400057
+name: echo anti-echo  coherence selection
+comment: defneed
+is_a: NMR:1000008
+
+[Term]
+id: NMR:1400059
+name: NMR instrument
+comment: An Instrument which is used to carry out a NMR analysis of some sample.
+is_a: NMR:1000463
+
+[Term]
+id: NMR:1400061
+name: NMR instrument acquisition parameter set
+comment: The list of parameters that describe the instrument settings used for the acquisition of a spectrum.
+is_a: NMR:1400196
+
+[Term]
+id: NMR:1400062
+name: instrument configuration
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400063
+name: data transformation
+comment: defneed
+is_a: BFO_0000015
+hasBroadSynonym: method
+
+[Term]
+id: NMR:1400064
+name: normalisation
+comment: A strategy for normalising a data set.
+is_a: NMR:1000079
+
+[Term]
+id: NMR:1400066
+name: water suppression
+is_a: NMR:1000014
+
+[Term]
+id: NMR:1400068
+name: window function for apodization
+is_a: NMR:1400096
+source: http://www.uwyo.edu/wheelernmr/nmr/window_functions.pdf
+bug-database: https://github.com/nmrML/nmrML/issues/67
+bug-database: https://github.com/nmrML/nmrML/issues/39
+IAO_0000115: A function applied to a FID to increase the signal-to-noise ratio or the resolution.
+hasExactSynonym: apodization function
+
+[Term]
+id: NMR:1400069
+name: exponential multiplication window function
+is_a: NMR:1400068
+hasExactSynonym: exponential apodization
+IAO_0000115: The exponential function used to multiply a FID by to produce a desitred amount of line broadening.
+
+[Term]
+id: NMR:1400070
+name: Gaussian window function
+comment: defneed
+is_a: NMR:1400068
+hasExactSynonym: gaussian broadening
+
+[Term]
+id: NMR:1400071
+name: sine window function
+comment: defneed
+is_a: NMR:1400068
+hasExactSynonym: sine bell window function
+
+[Term]
+id: NMR:1400072
+name: sine squared window
+comment: defneed
+is_a: NMR:1400071
+
+[Term]
+id: NMR:1400073
+name: spectral denoising
+comment: A method for eliminating or reducing the noise in a spectrum.
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1400074
+name: baseline correction
+comment: A method of flattening the baseline of a spectrum.
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1400075
+name: spectral projection
+comment: A method of spectral projection.
+is_a: NMR:1400048
+
+[Term]
+id: NMR:1400076
+name: maximum intensity projection
+comment: defneed
+is_a: NMR:1400075
+
+[Term]
+id: NMR:1400077
+name: summation projection
+is_a: NMR:1400075
+
+[Term]
+id: NMR:1400079
+name: zero order phase correction
+comment: A parameter used to mix real and imaginary part of an NMR spectrum that the real part of the spectrum is in pure absorption mode. 
+is_a: NMR:1000071
+
+[Term]
+id: NMR:1400080
+name: first order phase correction
+comment: defneed
+is_a: NMR:1000071
+
+[Term]
+id: NMR:1400081
+name: symmetrisation
+comment: defneed
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1400083
+name: acquisition nucleus
+comment: The nucleus of an element or isotope that is being studied during an NMR analysis. Common NMR requirements include direct 1D and 2D proton-only NMR, direct observation of 13C NMR with 1H decoupling, direct observation of other nuclei such as 19F, 31P, 29Si, 31P, 27Al, and 15N (with or without 1H decoupling), triple resonance NMR (especially inverse triple resonance such as 1H observe, 13C and 15N decouple), and inverse 2D and 3D experiments such as HMQC and HMBC.
+is_a: BFO_0000030
+
+[Term]
+id: NMR:1400086
+name: quality check peak feature
+comment: A feature of a peak that is measured to assess the quality of a data set.
+is_a: NMR:1400107
+
+[Term]
+id: NMR:1400087
+name: number of scans
+comment: The number of repeat scans performed and summed to create the data set for an NMR sample.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400088
+name: number of steady state scans
+comment: The number of scans whose data is not summed to create the data set for an NMR sample, but that are carried out to establish the steady-state of relaxation for the nuclei.
+is_a: NMR:1400087
+
+[Term]
+id: NMR:1400089
+name: atom environment encoding
+comment: A scheme for producing a numerical representation of the environment of an atom.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400090
+name: relaxation delay
+comment: The delay between repeat scans to allow nuclei to relax back to their steady state.
+is_a: NMR:1001954
+
+[Term]
+id: NMR:1400091
+name: x-axis unit
+comment: The units of measure for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum. 
+is_a: NMR:1000013
+
+[Term]
+id: NMR:1400092
+name: y-axis unit
+comment: defneed
+is_a: NMR:1000013
+
+[Term]
+id: NMR:1400093
+name: additional axis unit
+comment: The unit of measurement of the second dimension of a 2D NMR dataset.
+is_a: NMR:1400101
+
+[Term]
+id: NMR:1400094
+name: x start value
+comment: The starting value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.
+is_a: NMR:1000013
+
+[Term]
+id: NMR:1400095
+name: x end value
+comment: tempThe end value for the x-axis of a (1D or 2D) FID, (1D or 2D) pre-processed spectrum, 2D projected spectrum, and (1D or 2D) post-processed spectrum.
+is_a: NMR:1400114
+
+[Term]
+id: NMR:1400096
+name: window function parameter
+comment: A parameter to a window function.
+is_a: NMR:1400101
+
+[Term]
+id: NMR:1400097
+name: line broadening
+comment: defneed
+is_a: NMR:1400063
+
+[Term]
+id: NMR:1400098
+name: line sharpening
+comment: defneed
+is_a: NMR:1400063
+
+[Term]
+id: NMR:1400101
+name: parameter
+comment: defneed
+is_a: BFO_0000031
+
+[Term]
+id: NMR:1400105
+name: NMR spectral projection parameter set
+comment: The data processing parameters that describe a method of translating a 2D NMR pre-processed spectrum into a 1D NMR spectrum.
+is_a: NMR:1400106
+
+[Term]
+id: NMR:1400106
+name: NMR data post-processing parameter set
+comment: A description of the post-processing strategy used to convert a pre-processed NMR spectrum into a suitable data format for chemometric analysis.
+is_a: NMR:1000630
+
+[Term]
+id: NMR:1400107
+name: NMR quality check parameter set
+is_a: NMR:1400106
+
+[Term]
+id: NMR:1400108
+name: post-acquisition water suppression
+is_a: NMR:1400066
+is_a: NMR:1400038
+
+[Term]
+id: NMR:1400109
+name: hankel singular value decomposition
+comment: This Method removes the residual water and its side lobes, thereby reducing the baseline for the metabolites of interest and allowing subsequent data analysis using more sophisticated nonlinear least squares algorithms.
+is_a: NMR:1400108
+
+[Term]
+id: NMR:1400110
+name: convolution
+comment: defneed
+is_a: NMR:1400108
+
+[Term]
+id: NMR:1400111
+name: polynomial fitting
+comment: defneed
+is_a: NMR:1400108
+
+[Term]
+id: NMR:1400112
+name: WaveWat
+comment: A computational method that archieves water suppression via wavlet multi resolution analysis.
+is_a: NMR:1400108
+
+[Term]
+id: NMR:1400114
+name: NMR data pre-processing parameter set
+comment: defneed
+is_a: NMR:1000630
+
+[Term]
+id: NMR:1400116
+name: NMR quality check
+comment: The process of ensuring the quality of the raw data that results from an NMR analysis.
+is_a: NMR:1400063
+
+[Term]
+id: NMR:1400117
+name: reference
+comment: A reference is a label which refers to data elsewhere, as opposed to containing the data itself. Accessing the value that a reference refers to is called dereferencing it. References are fundamental in constructing many data structures and in exchanging information between different parts of programs and databases.
+is_a: BFO_0000031
+
+[Term]
+id: NMR:1400118
+name: acquisition parameter set file reference
+comment: A reference to the file of acquisition parameters produced by a machine.
+is_a: _purgatory
+
+[Term]
+id: NMR:1400119
+name: FID file
+comment: A reference to a file containing the raw FID.
+is_a: NMR:1400267
+hasExactSynonym: FID file reference
+
+[Term]
+id: NMR:1400120
+name: pulse sequence literature reference
+comment: A reference to a description of a pulse sequence in the literature.
+is_a: NMR:1000878
+
+[Term]
+id: NMR:1400121
+name: shaped pulse file
+comment: A reference to a file containing a specfication of the shape of an excitation pulse.
+is_a: NMR:1400122
+
+[Term]
+id: NMR:1400122
+name: pulse sequence file
+comment: A reference to a file containing a specification of a pulse sequence.
+is_a: NMR:1400267
+
+[Term]
+id: NMR:1400123
+name: processing parameter file
+comment: A reference to a file of data pre-processing parameters produced by the machine.
+is_a: NMR:1400267
+
+[Term]
+id: NMR:1400124
+name: NMR sample identifier
+comment: A reference to information on the provenance of the NMR sample.
+is_a: NMR:1000878
+
+[Term]
+id: NMR:1400126
+name: NMR quality check result
+comment: A result of an NMR quality check.
+is_a: NMR:1400181
+
+[Term]
+id: NMR:1400128
+name: NMR sample
+comment: A sample that has been prepared for chemical analysis by NMR. NMR samples are usually liquid solutions contained in glass tubes. NMR solution sample volume ranges from 50ul to 5ml depending on the NMR probe. Sample concentrations of solute for 1H NMR are usually in the range of 100ug to 5g, with 10 to 50mg being typical. NMR is not a chemical trace analysis technique. The NMR signal of solids and gases can be recorded but to measure solid-state NMR additional specialized hardware is required.
+is_a: NMR:1000457
+
+[Term]
+id: NMR:1400129
+name: sample introduction parameter
+comment: tempA sample introduction parameter is a parameter that describes the particular method of introducing the sample under investigation into the NMR instrument.
+is_a: NMR:1000548
+
+[Term]
+id: NMR:1400130
+name: magic angle spinning rotor
+comment: defneed
+is_a: NMR:1400129
+
+[Term]
+id: NMR:1400131
+name: flow probe
+comment: defneed
+is_a: NMR:1400129
+
+[Term]
+id: NMR:1400132
+name: NMR sample tube
+comment: sortal dimensions are Vendor, Size (Diameter, length), Material (glass, quarz, pyrex ...), Frequency, Concentricity, OD and ID
+is_a: NMR:1400011
+source: http://en.wikipedia.org/wiki/NMR_tube
+bug-database: https://github.com/nmrML/nmrML/issues/54
+IAO_0000115: The sample-tube holds the NMR sample and sits in the NMR probe. It is usually a glass tube of 5-20mm diameter.
+hasExactSynonym: sample tube
+
+[Term]
+id: NMR:1400134
+name: spectrum pre-processing software
+comment: A software artifact used during data pre-processing.
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1400135
+name: spectrum post-processing software
+comment: A software artifact used during spectral post-processing.
+is_a: NMR:1400213
+
+[Term]
+id: NMR:1400137
+name: peak picking
+comment: defneed
+is_a: NMR:1000015
+
+[Term]
+id: NMR:1400138
+name: bucketing
+comment: A post-processing method that divides a pre-processed NMR spectrum into a series of buckets (or bins) along the x-axis, and then integrates the spectral intensity within each bucket. 
+is_a: NMR:1000015
+hasExactSynonym: binning
+
+[Term]
+id: NMR:1400140
+name: presat
+comment: defneed
+is_a: NMR:1400037
+hasExactSynonym: presaturation of the solvent resonance
+
+[Term]
+id: NMR:1400141
+name: water suppression enhanced through T1 effects
+comment: tempAn improved water-suppression technique called WET (water suppression enhanced through T1 effects), developed from a Bloch equation analysis of the longitudinal magnetization over the T1 and B1 ranges of interest, achieves T1- and B1-insensitive suppression with four RF pulses, each having a numerically optimized flip angle. Once flip angles have been optimized for a given sequence, time-consuming flip-angle adjustments during clinical examinations are eliminated.
+is_a: NMR:1400037
+altLabel: WET
+
+[Term]
+id: NMR:1400142
+name: nuclear overhauser and exchange spectroscopy-presat
+comment: tempThe presat for an nuclear overhauser and exchange spectroscopy experiment. A 2D method used to map NOE correlations between protons within a molecule.  The nuclear Overhauser effect (NOE) causes changes in peak areas, as a secondary effect of decoupling.
+is_a: NMR:1400140
+hasExactSynonym: NOESY presat
+
+[Term]
+id: NMR:1400143
+name: watergate
+comment: defneed
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1400144
+name: excitation sculpting
+comment: A specific technique used to suppress the solvent signal in a spectrum. 
+   altdef:: A type of pulse sequence (or part of it) used to suppress a frequency (most commonly solvent).
+is_a: NMR:1400066
+
+[Term]
+id: NMR:1400146
+name: coherence pathway rejection
+comment: tempA water suppression method which is used to suppress the natural water signal in a gradient selection experiment (e.g. echo/antiecho), where the water coherence is not "refocused" by the refocus gradient (therefore, is not selected).
+is_a: NMR:1400066
+
+[Term]
+id: NMR:1400147
+name: flip-back watergate
+comment: defneed
+is_a: NMR:1400143
+
+[Term]
+id: NMR:1400148
+name: jump and return
+comment: tempA jump and return pulse sequence method is a water suppression method that uses a defined pulse sequences to make fast exchanging protons visible.
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1400149
+name: jump and return 1-1
+comment: tempA jump and return 1-1 pulse sequence method is a jump and return method that uses one 90 degree pulse and one 90 degree return puls to make fast exchanging protons visible, first described by  Plateau,P. and Gueron,M. (1982) J. Am. Chem. Soc., 104, 7310–7311. Compared to the 1-3-3-1 method it has a lower receiver gain and the dispersive tail of water interferes with the signals of interest.
+is_a: NMR:1400148
+
+[Term]
+id: NMR:1400150
+name: jump and return 1-3-3-1
+comment: tempdef:A jump and return 1-3-3-1 pulse sequence method is a jump and return method that uses a 1-3-3-1 pulse sequence to make fast exchanging protons visible. Compared to the 1-1 method it has better water suppression (higher receiver gain) capabilities, but with offset-dependent phase distortion (unsuitable for 2D).
+is_a: NMR:1400148
+
+[Term]
+id: NMR:1400151
+name: 1H
+comment: The nucleus of the element Hydrogen, a proton. 
+is_a: _purgatory
+
+[Term]
+id: NMR:1400152
+name: 2H
+is_a: _purgatory
+versionInfo: TODO: Do we need definitions here?
+
+[Term]
+id: NMR:1400153
+name: 11B
+is_a: _purgatory
+
+[Term]
+id: NMR:1400154
+name: 13C
+is_a: _purgatory
+
+[Term]
+id: NMR:1400155
+name: 17O
+is_a: _purgatory
+
+[Term]
+id: NMR:1400156
+name: 19F
+is_a: _purgatory
+
+[Term]
+id: NMR:1400157
+name: 29Si
+is_a: _purgatory
+
+[Term]
+id: NMR:1400158
+name: 31P
+is_a: _purgatory
+
+[Term]
+id: NMR:1400159
+name: 1D FID
+comment: Having been excited by the RF pulse, the nuclei turn back ("relax") to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
+is_a: NMR:1000119
+
+[Term]
+id: NMR:1400160
+name: 2D FID
+comment: Having been excited by the RF pulse, the nuclei turn back ("relax") to their initial state ( the initial equilibrium population) within usually several seconds when the induced magnetization decays. Since the precession of the nuclei is free and due to the decay of the induced magnetization the whole process is termed Free Induction Decay (FID). Usually, several FIDs are co-added in order to improve the signal-to-noise ratio of a spectrum. The summed up FID is then once subjected to a mathematical operation (Fourier transform) which results in an NMR spectrum.
+is_a: NMR:1000119
+
+[Term]
+id: NMR:1400161
+name: 1D spectrum
+comment: defneed
+is_a: NMR:1000117
+
+[Term]
+id: NMR:1400162
+name: 2D spectrum
+comment: defneed
+is_a: NMR:1000117
+
+[Term]
+id: NMR:1400165
+name: 1D NMR acquisition parameter set
+comment: defneed
+is_a: NMR:1400061
+
+[Term]
+id: NMR:1400166
+name: 2D NMR acquisition parameter set
+comment: defneed
+is_a: NMR:1400061
+
+[Term]
+id: NMR:1400167
+name: 1D carr purcell meiboom gill pulse sequence
+comment: tempA modification of Carr-Purcell RF pulse sequence with 90° phase shift in the rotating frame of reference between the 90° pulse and the subsequent 180° pulses to reduce accumulating effects of imperfections in the 180° pulses. Suppression of effects of pulse error accumulation can alternatively be achieved by alternating phases of the 180° pulses by 180°.
+is_a: NMR:1400037
+altLabel: CPMG
+
+[Term]
+id: NMR:1400168
+name: 2D total correlation spectroscopy pulse sequence
+comment: tempTotal Correlation Spectroscopy. A 2D homonuclear correlation experiment used to analyse scalar (J) coupling networks between protons. TOCSY is able to relay magnetisation between spins, A-B-C-D.., and can therefore show correlations amongst spins that are not directly coupled (eg A-C and A-D) but exist within the same spin system.
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1400169
+name: 1D pulse sequence
+comment: One dimensional (referring to a FID, pre-processed spectrum, or post-processed spectrum).
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1400170
+name: 2D J-resolved pulse sequence
+comment: tempIn 1D NMR, as the multiplets from different chemically shifted nuclei overlap, spectral assignments become too difficult. In order to resolve the chemical shift and spin-spin coupling parameters along the different axis, 2D and 3D J-resolved NMR spectroscopies are used.
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1400171
+name: 2D hadamard total correlation spectroscopy pulse sequence
+comment: defneed
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1400172
+name: 1D diffusion edited pulse sequence
+comment: defneed
+is_a: NMR:1400037
+
+[Term]
+id: NMR:1400181
+name: quality check result
+comment: tempA quality check result is the usefull outcome of a quality check.
+is_a: BFO_0000031
+
+[Term]
+id: NMR:1400183
+name: NMR spectrum
+comment: tempA frequency sorted array of the NMR signal frequency components. Nuclei with different resonance frequencies will show up as peaks at different corresponding frequencies in the spectrum, or 'lines'.
+is_a: _purgatory
+
+[Term]
+id: NMR:1400185
+name: NMR magnet
+comment: A magnet which induces a certain frequency (MHz) and which has a certain bore diameter.altThe NMR signal is a natural physical property of the certain atomic nuclei but it can only be detected with an external magnetic field. A magnet is a fundamental part of an NMR instrument which induces an electromagnetic force field (RF pulse) and by this excites and aligns the spins of the electrons of the NMR acquisition nucleus. It is usually a big (superconducting) electromagnet which is cooled by liquid helium and can be adjusted to a frequency between 200 and 950 MHz. The magnetic field strength is measured in Tesla or Gauss.
+is_a: NMR:1400011
+
+[Term]
+id: NMR:1400186
+name: Bruker NMR magnet
+comment: defneed
+is_a: NMR:1400185
+
+[Term]
+id: NMR:1400187
+name: UltraShield
+comment: defneed
+is_a: NMR:1400186
+
+[Term]
+id: NMR:1400188
+name: Ultrastabilized
+is_a: NMR:1400186
+
+[Term]
+id: NMR:1400189
+name: US 2
+is_a: NMR:1400186
+versionInfo: ??? How to model "hoch 2"?
+
+[Term]
+id: NMR:1400190
+name: UltraShield Plus
+is_a: NMR:1400186
+
+[Term]
+id: NMR:1400191
+name: Bruker CryoProbe
+comment: The Bruker BioSpin CryoProbe is a high-performance cryogenically cooled probe developed for high-resolution applications. It has improved signal/noise (S/N) ratios obtained by reducing the operating temperature of the coil and the pre-amplifier. As a result, the efficiency of the coil is improved and the noise of the coil and the pre-amplifier are reduced.The dramatic increase in the S/N ratio by a factor of 3-4, as compared to conventional probes, leads to a possible reduction in experiment time of up to 16 or a reduction in required sample concentration by a factor of up to 4. The CryoProbes possess key characteristics for NMR analysis
+is_a: NMR:1400231
+is_a: NMR:1000324
+
+[Term]
+id: NMR:1400192
+name: high resolution magic angle spin probe
+comment: Samples that are neither solid nor liquid, being of biological, chemical, and/or pharmaceutical interest, reveal highly resolved spectra when magic angle spinning is applied. The correct solution is a gradient, such that the field varies along the spinner axis. This so-called Magic Angle Gradient is employed in Bruker’s high resolution Magic Angle Spinning (hr-MAS) probes, and is implemented in such a way that it is compatible with the stator and does not interfere with the sample eject/insert. Bruker BioSpin has developed a series of dedicated probes for standard bore magnets to accommodate the rapidly expanding field of hr-MAS. These probes are available in double (e.g. 1H and 13C) and triple resonance (e.g., 1H, 13C, 15N) modes and come equipped with a deuterium lock channel. The probes have automatic sample ejection and insertion capability, with the availability of an optional sample changer, enabling fully automated sample runs. Probes can be equipped with an optional B0 gradient, directed along the magic angle, so that gradient spectroscopy can be done used.
+is_a: NMR:1400223
+
+[Term]
+id: NMR:1400193
+name: solid magic angle spinning probe
+comment: Magic angle spinning, nowadays a routine technique for solids NMR, still offers the capability of innovation. The high mechanical performance of MAS probes in conjunction with efficient rf pulse techniques open new exciting fields in solids NMR of biological samples and in the field of quadrupolar nuclei.
+is_a: NMR:1400231
+
+[Term]
+id: NMR:1400194
+name: 1mm MicroProbe
+comment: Over the past few years there has been a significantly growing demand for miniaturization in all areas ofmodern research and development. Evoked by many exciting applications, there is a need for analytical methods which require less amounts of sample. Bruker BioSpin meets this challenge with a revolutionary NMR probe design: The 1mm MicroProbe. It operates with disposable 1mm capillary sample tubes and the sample volume of 5 microliters enables the use of lowest amounts of sample to run all high resolution NMR experiments with outstanding sensitivity and up to 16 times faster measurements. Due to the TXI-type probe design, the z-gradient coil and the automatic matching and tuning accessory, the 1mm MicroProbe can be used for a wide variety of NMR experiments. The key advantages of this probe include:
+is_a: NMR:1400231
+
+[Term]
+id: NMR:1400195
+name: flow high resolution probe
+comment: Hyphenated analytical techniques combining mass spectrometry and chromatography are well-established laboratory tools. The combination of chromatography and NMR has also made its way into the analytical laboratory. Further developments even combine all three techniques into an LC-NMR/NMR-MS system. The use of solid phase extraction provides an efficient interface between chromatography and NMR with demands for special type of flow probes.
+is_a: NMR:1400223
+
+[Term]
+id: NMR:1400196
+name: NMR instrument parameter set
+comment: defneed
+is_a: NMR:1400101
+
+[Term]
+id: NMR:1400197
+name: AVANCE II spectrometer
+comment: defneed
+is_a: NMR:1400198
+versionInfo: TODO: May need no definition
+
+[Term]
+id: NMR:1400198
+name: Bruker NMR instrument
+comment: defneed
+is_a: NMR:1400059
+
+[Term]
+id: NMR:1400199
+name: Metabolic Profiler
+comment: For metabolism studies, and analysis of complex mixtures.
+is_a: NMR:1400200
+
+[Term]
+id: NMR:1400200
+name: Hyphenated NMR instrument
+comment: NMR Instruments using hyphenated analytical techniques combining mass spectrometry and chromatograph.
+is_a: NMR:1000012
+
+[Term]
+id: NMR:1400201
+name: Capillary LC-NMR
+is_a: NMR:1400198
+
+[Term]
+id: NMR:1400202
+name: NMR plattform
+comment: defneed
+is_a: NMR:1000012
+versionInfo: TODO: What is the differrence to NMR instrument?
+
+[Term]
+id: NMR:1400203
+name: NMR Case
+comment: The NMR Case is an economical NMR sample changer for laboratories with modest automation needs. It expands the maximum number of samples your spectrometer can process during unattended operation to 24. The NMR Case consists of multiple components. The NMR Case exchange module installed atop your cryostat. The two front legs are adjustable, making the NMR Case compatible with many different cryostats.
+is_a: NMR:1400209
+
+[Term]
+id: NMR:1400204
+name: NMR tube washing system
+comment: defneed
+is_a: NMR:1400001
+
+[Term]
+id: NMR:1400205
+name: Bruker AutoClean
+comment: In today's fast-paced research environment, NMR tubes are often used once and discarded, creating needless waste. With the Bruker BioSpin Autoclean™ system you can now recycle 5mm, 3mm, or 5mm/3mm step-down (Wilmad 520-1B) NMR tubes. AutoClean NMR Tube Washing System is a simple way to recoup the substantial investment your organization makes in quality NMR tubes, and cut back on needless waste material.
+is_a: NMR:1400204
+
+[Term]
+id: NMR:1400206
+name: Bruker BEST NMR
+comment: The introduction of biological screening and combinatorial chemistry for chemical synthesis has also introduced new requirements for NMR automation, e.g., the use of well plates for sample input, increased demands on throughput, and the need for quick and simple interpretation of the acquired NMR data.
+is_a: NMR:1400209
+
+[Term]
+id: NMR:1400207
+name: SampleRail
+comment: This system automatically prepares an NMR sample, inserts it into an NMR magnet, performs NMR experiments on the sample, and transports it back to the preparation system.
+is_a: NMR:1400002
+
+[Term]
+id: NMR:1400208
+name: SampleJet
+comment: Bruker BioSpin introduces the SampleJet, a robot for NMR tube automation. The SampleJet has been consciously designed to meet the growing customer demand for simplicity, versatility and higher throughput in NMR sample tube automation.The SampleJet utilizes the modern-day industry standard for sample arrangements—the 96 well plate array. Therefore, the samples may be handled by standard lab automation devices before or after the NMR measurement.
+is_a: NMR:1400209
+
+[Term]
+id: NMR:1400209
+name: Bruker autosampler
+comment: defneed
+is_a: NMR:1400002
+
+[Term]
+id: NMR:1400210
+name: B-ACS
+comment: The Bruker Automatic Sample Changer (B-ACS 60/120), used in conjunction with Bruker DISNMR, UXNMR or XWIN-NMR software, provides dialog-guided facilities which allow the user to easily and effectively perform automatic (continuous) experiments. Features include a 60 or 120 sample capacity, random accessing of samples, positive sample identification with the optional bar code reader, and temperature control of individual samples with the optional sample heater unit.
+is_a: NMR:1400209
+
+[Term]
+id: NMR:1400211
+name: Bruker MATCH
+comment: The Bruker Multiple Adjustable Tube Clamp Holder MATCH™ system is a holder for 100 mm long NMR sample tubes with diameters ranging from micro tubes up to 5 mm NMR tubes. The MATCH insert fits into a standard 10 mm Bruker spinner and is suitable for all non-spinning applications. The MATCH system provides an easy and cost efficient means of optimizing the signal-to-noise ratio of each sample. By matching the NMR tube diameter to the size of the sample, most of the sample can be placed in the active column of the NMR coil. This leads to an enhanced signal detection compared to diluting the same sample quantity in a larger tube.
+is_a: NMR:1400212
+
+[Term]
+id: NMR:1400212
+name: NMR sample holder
+comment: A NMR sample holder is the part of an NMR instrument, which carries the NMR probe,sample  tube and  the NMR sample.
+is_a: NMR:1400011
+
+[Term]
+id: NMR:1400213
+name: NMR software
+comment: defneed
+is_a: NMR:1000531
+
+[Term]
+id: NMR:1400214
+name: Bruker NMR software
+comment: defneed
+is_a: NMR:1000091
+versionInfo: TODO: May need no definition.
+
+[Term]
+id: NMR:1400215
+name: Bruker TopSpin software
+is_a: NMR:1400214
+
+[Term]
+id: NMR:1400217
+name: SampleTrack software
+is_a: NMR:1400214
+
+[Term]
+id: NMR:1400218
+name: Paravision software
+is_a: NMR:1400214
+
+[Term]
+id: NMR:1400219
+name: AURELIA software
+is_a: NMR:1400214
+
+[Term]
+id: NMR:1400220
+name: AUREMOL software
+is_a: NMR:1400214
+
+[Term]
+id: NMR:1400221
+name: AMIX VIEWER & AMIX-TOOLS
+is_a: NMR:1400214
+
+[Term]
+id: NMR:1400223
+name: high resolution probe
+comment: BRUKER BIOSPIN's experienced Research & Development group not only delivers top-performance probes for the more common experiments, but also a wealth of special probes for almost any application. For high resolution (HR) NMR we offer probes with a variety of important characteristics and features.
+is_a: NMR:1400231
+
+[Term]
+id: NMR:1400224
+name: high resolution probe with ATM
+comment: The ATM option for AVANCE spectrometers is available
+is_a: NMR:1400223
+
+[Term]
+id: NMR:1400225
+name: micro imaging probe
+comment: defneed
+is_a: NMR:1400231
+
+[Term]
+id: NMR:1400226
+name: JEOL NMR instrument
+is_a: NMR:1400059
+
+[Term]
+id: NMR:1400227
+name: ECX
+is_a: NMR:1400226
+
+[Term]
+id: NMR:1400228
+name: ECA
+is_a: NMR:1400226
+
+[Term]
+id: NMR:1400229
+name: JEOL NMR software
+is_a: NMR:1000091
+
+[Term]
+id: NMR:1400230
+name: Delta NMR software
+is_a: NMR:1400229
+
+[Term]
+id: NMR:1400231
+name: Bruker NMR probe
+comment: defneed
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1400232
+name: JEOL NMR probe
+comment: defneed
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1400233
+name: CapNMR probe
+is_a: NMR:1400232
+
+[Term]
+id: NMR:1400234
+name: Varian NMR instrument
+is_a: NMR:1400059
+
+[Term]
+id: NMR:1400235
+name: MERCURY
+is_a: NMR:1400234
+
+[Term]
+id: NMR:1400236
+name: INOVA
+is_a: NMR:1400234
+
+[Term]
+id: NMR:1400237
+name: UNITY
+is_a: NMR:1400234
+
+[Term]
+id: NMR:1400238
+name: VXR
+is_a: NMR:1400234
+
+[Term]
+id: NMR:1400239
+name: GEMINI
+is_a: NMR:1400234
+
+[Term]
+id: NMR:1400240
+name: AMX
+is_a: NMR:1400198
+
+[Term]
+id: NMR:1400241
+name: AC
+is_a: NMR:1400198
+
+[Term]
+id: NMR:1400242
+name: liquid NMR probe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1400243
+name: solid NMR probe
+comment: defneed
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1400244
+name: NMR imaging probe
+comment: defneed
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1400246
+name: tecmag console
+is_a: NMR:1400015
+
+[Term]
+id: NMR:1400247
+name: DISCOVERY console
+comment: The Discovery is a Windows XP Professional-based, integrated console designed especially for Solid-State NMR. The console includes everything needed to interface to any magnet and solids probe - from computer to cables to duplexing network
+is_a: NMR:1400246
+
+[Term]
+id: NMR:1400248
+name: tecmag EAGLE probe
+comment: The Eagle is a 4 mm 1H/X solid-state MAS probe with a top spinning speed of 18 kHz. Its simple design is robust, reliable and easy to spin. Configurations are available for 200 to 600 MHz widebore magnets on Tecmag, Bruker, Chemagnetics, JEOL and Varian spectrometers.
+is_a: NMR:1400243
+
+[Term]
+id: NMR:1400249
+name: APOLLO console
+comment: defneed
+is_a: NMR:1400246
+
+[Term]
+id: NMR:1400250
+name: tecmag NMR instrument
+is_a: NMR:1400059
+
+[Term]
+id: NMR:1400251
+name: CAT
+is_a: NMR:1400250
+
+[Term]
+id: NMR:1400253
+name: magnetic field strength
+comment: defneed
+is_a: NMR:1400027
+
+[Term]
+id: NMR:1400254
+name: vendor
+comment: defneed
+is_a: NMR:1000010
+
+[Term]
+id: NMR:1400255
+name: NMR instrument vendor
+comment: defneed
+is_a: NMR:1001269
+
+[Term]
+id: NMR:1400256
+name: Bruker
+comment: defneed
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400257
+name: Varian
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400258
+name: JEOL
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400259
+name: MR Resources
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400260
+name: tecmag
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400262
+name: sample temperature information
+comment: In some cases, it is necessary or advisable to control the temperature of the sample at some value other than ambient. The sample may be only slightly solubility at room temperatures, or it may be desirable to control some aspect of the dynamics of the system. In such cases, a default temperature, or some means of selecting this parameter, can be built into the experiment.
+is_a: NMR:1000548
+
+[Term]
+id: NMR:1400264
+name: Doty Scientific
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400265
+name: Wilmad
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400266
+name: JS Research
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400267
+name: data file
+is_a: BFO_0000031
+definition: Any data file as generated by some acquisition computer or console.
+altLabel: file
+
+[Term]
+id: NMR:1400270
+name: Acorn NMR Inc
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400276
+name: LC-NMR
+is_a: NMR:1400200
+
+[Term]
+id: NMR:1400277
+name: LC-NMR/MS
+comment: Includes the connection to a high-resolution TOF-LC-MS system.
+is_a: NMR:1400200
+
+[Term]
+id: NMR:1400278
+name: SPE-NMR
+comment: A Solid Phase Extraction (SPE) system provides an interface between liquid chromatography (LC) and NMR. For the process of LC-SPE™ NMR a chromatographic separation is done and the peaks of interest are trapped on an individual SPE cartridge after the column. The peak selection is done either by UV detection or by evaluation of the on-line registered MS or MSn spectra.
+is_a: NMR:1400200
+
+[Term]
+id: NMR:1400279
+name: Capillary LC-NMR
+comment: Capillary LC-NMR is a hyphenated technique coupling capillary liquid chromatography and NMR, which increases sensitivity dramatically through the use of miniaturization of the chromatographic techniques and NMR detection volume.
+is_a: NMR:1400200
+
+[Term]
+id: NMR:1400280
+name: direct detection probe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1400281
+name: indirect detection probe
+is_a: NMR:1400014
+
+[Term]
+id: NMR:1400283
+name: continuous wave NMR instrument
+comment: Continuous wave NMR spectrometers are similar in principle to optical spectrometers. The sample is held in a strong magnetic field, and the frequency of the source is slowly scanned (in some instruments, the source frequency is held constant, and the field is scanned).
+is_a: NMR:1000012
+
+[Term]
+id: NMR:1400284
+name: fourier transformation NMR instrument
+comment: In FT-NMR, all frequencies in a spectrum are irradiated simultaneously with a radio frequency pulse. Following the pulse, the nuclei return to thermal equilibrium. A time domain emission signal is recorded by the instrument as the nuclei relax. A frequency domain spectrum is obtained by Fourier transformation.
+is_a: NMR:1000012
+
+[Term]
+id: NMR:1400285
+name: NMR software data format
+is_a: NMR:1001459
+
+[Term]
+id: NMR:1400286
+name: ChemMagnetics format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400287
+name: GE Omega format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400288
+name: JEOL Lambda format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400289
+name: JEOL Alpha format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400290
+name: Jeol Delta format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400291
+name: JEOL generic format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400292
+name: JEOL AL95 format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400294
+name: JEOL DX format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400295
+name: JEOL EX format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400296
+name: TecMag format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400297
+name: Varian VNMR format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400298
+name: Galactic format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400299
+name: Felix format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400300
+name: JCAMP format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400301
+name: Lybrics format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400302
+name: Nuts format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400303
+name: MACNMR format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400304
+name: Nicolet GE/QE-300 format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400305
+name: multiplet feature
+comment: J-coupler
+is_a: NMR:1400006
+
+[Term]
+id: NMR:1400306
+name: ThermoMattson
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400307
+name: FOSS
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400308
+name: Jasco
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400309
+name: Agilent Technologies
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400310
+name: micromass
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400311
+name: Waters
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400312
+name: ThermoNicolet
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400313
+name: Perkin Elmer
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400314
+name: OceanOptics
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400315
+name: ThermoFinnigan
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400316
+name: Applied Biosystems
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400317
+name: TX
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400318
+name: Net CDF format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400319
+name: Bruker DISNMR format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400320
+name: Bruker UXNMR/XWIN-NMR format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400321
+name: Bruker WIN NMR format
+is_a: NMR:1400285
+
+[Term]
+id: NMR:1400322
+name: acdlabs
+is_a: NMR:1400255
+
+[Term]
+id: NMR:1400324
+name: 27Al
+is_a: _purgatory
+
+[Term]
+id: _purgatory
+name: _purgatory
+is_a: Thing
+
+[Term]
+id: apodization
+name: apodization
+comment: apodization
+is_a: NMR:1400041
+
+[Term]
+id: keyword
+name: keyword
+is_a: NMR:1400117
+
+[Term]
+id: BFO_0000015
+name: BFO_0000015
+namespace: obo
+is_a: Thing
+
+[Term]
+id: BFO_0000017
+name: BFO_0000017
+namespace: obo
+is_a: Thing
+
+[Term]
+id: BFO_0000019
+name: BFO_0000019
+namespace: obo
+is_a: Thing
+
+[Term]
+id: BFO_0000030
+name: BFO_0000030
+namespace: obo
+is_a: Thing
+
+[Term]
+id: BFO_0000031
+name: BFO_0000031
+namespace: obo
+is_a: Thing
+
+[Term]
+id: PATO_0000001
+name: PATO_0000001
+namespace: obo
+is_a: BFO_0000019
+
+
+! ----------------------  PROPERTIES  -------------------------
+
+
+! ----------------------  INSTANCES  -------------------------
