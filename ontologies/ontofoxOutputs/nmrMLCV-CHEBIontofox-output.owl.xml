@@ -1,0 +1,532 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&obo;nmrCV-prs/ChEBI_imports.owl#"
+     xml:base="&obo;nmrCV-prs/ChEBI_imports.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&obo;nmrCV-prs/ChEBI_imports.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000111"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000115">
+        <rdfs:label rdf:datatype="&xsd;string">definition</rdfs:label>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">definition</obo:IAO_0000111>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000412">
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="&obo;BFO_0000040"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_15377 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_15377">
+        <rdfs:label rdf:datatype="&xsd;string">water</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An inorganic hydroxy compound that has formula H2O.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">water</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_15956 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_15956">
+        <rdfs:label rdf:datatype="&xsd;string">biotin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An organic heterobicyclic compound that consists of 2-oxohexahydro-1H-thieno[3,4-d]imidazole having a valeric acid substituent attached to the tetrahydrothiophene ring. The parent of the class of biotins.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">biotin</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_16134 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_16134">
+        <rdfs:label rdf:datatype="&xsd;string">ammonia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An azane that consists of a single nitrogen atom covelently bonded to three hydrogen atoms.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">ammonia</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_16227 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_16227">
+        <rdfs:label rdf:datatype="&xsd;string">pyridine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An  azaarene comprising a benzene core in which one -CH group is replaced by a nitrogen atom. It is the parent compound of the class pyridines.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">pyridine</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_16737 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_16737">
+        <rdfs:label rdf:datatype="&xsd;string">creatinine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A lactam obtained by formal cyclocondensation of creatine. It is a metabolite of creatine.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">creatinine</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_16991 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_16991">
+        <rdfs:label rdf:datatype="&xsd;string">deoxyribonucleic acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">High molecular weight, linear polymers, composed of nucleotides containing deoxyribose and linked by phosphodiester bonds; DNA contain the genetic information of organisms.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">deoxyribonucleic acid</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_17137 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_17137">
+        <rdfs:label rdf:datatype="&xsd;string">hydrogensulfite</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sulfur oxoanion that has formula HO3S.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">hydrogensulfite</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23116 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_23116">
+        <rdfs:label rdf:datatype="&xsd;string">chlorine atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A halogen that has formula Cl.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">chlorine atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23367 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_23367">
+        <rdfs:label rdf:datatype="&xsd;string">molecular entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">molecular entity</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26078 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_26078">
+        <rdfs:label rdf:datatype="&xsd;string">phosphoric acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A phosphorus oxoacid that consits of one oxo and three hydroxy groups joined covalently to a central phosphorus atom.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">phosphoric acid</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_28659 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_28659">
+        <rdfs:label rdf:datatype="&xsd;string">phosphorus atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A pnictogen that has formula P.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">phosphorus atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_29236 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_29236">
+        <rdfs:label rdf:datatype="&xsd;string">protium atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of hydrogen with relative atomic mass 1.007825 and a natural abundance of 99.9885 atom percent (from Greek pirhoomegatauomicronsigma, first).</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">protium atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_29237 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_29237">
+        <rdfs:label rdf:datatype="&xsd;string">deuterium atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of hydrogen with relative atomic mass 2.014102 and a natural abundance of 0.0115 atom percent (from Greek deltaepsilonupsilontauepsilonrhoomicronnu, second).</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">deuterium atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_32954 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_32954">
+        <rdfs:label rdf:datatype="&xsd;string">sodium acetate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">An organic sodium salt that has formula C2H3NaO2.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">sodium acetate</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33819 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_33819">
+        <rdfs:label rdf:datatype="&xsd;string">oxygen-17 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of oxygen with relative atomic mass 16.999131. The least abundant (0.038 atom percent) isotope of naturally occurring oxygen.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">oxygen-17 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_34856 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_34856">
+        <rdfs:label rdf:datatype="&xsd;string">morpholine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A saturated organic heteromonocyclic parent that has formula C4H9NO.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">morpholine</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35255 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_35255">
+        <rdfs:label rdf:datatype="&xsd;string">chloroform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A one-carbon compound that is methane in which three of the hydrogens are replaced by chlorines.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">chloroform</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36601 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_36601">
+        <rdfs:label rdf:datatype="&xsd;string">triphenylphosphane oxide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A phosphine oxide in which the substituents on phosphorus are three phenyl groups.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">triphenylphosphane oxide</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36928 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_36928">
+        <rdfs:label rdf:datatype="&xsd;string">carbon-13 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A carbon atom that has formula C.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">carbon-13 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36931 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_36931">
+        <rdfs:label rdf:datatype="&xsd;string">carbon-12 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A carbon atom that has formula C.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">carbon-12 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36934 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_36934">
+        <rdfs:label rdf:datatype="&xsd;string">nitrogen-15 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of nitrogen with relative atomic mass 15.000109. The least abundant (0.368 atom percent) isotope of naturally occurring nitrogen.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">nitrogen-15 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36938 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_36938">
+        <rdfs:label rdf:datatype="&xsd;string">nitrogen-14 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of nitrogen with relative atomic mass 14.003074. The most abundant (99.63 atom percent) isotope of naturally occurring nitrogen.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">nitrogen-14 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36940 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_36940">
+        <rdfs:label rdf:datatype="&xsd;string">fluorine-19 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of fluorine with relative atomic mass 18.998403 and nuclear spin (1)/2.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">fluorine-19 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_37968 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_37968">
+        <rdfs:label rdf:datatype="&xsd;string">aluminium-27 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of aluminium with relative atomic mass 26.98153 and nuclear spin (5)/2.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">aluminium-27 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_37971 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_37971">
+        <rdfs:label rdf:datatype="&xsd;string">phosphorus-31 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_28659"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of phosphorus with relative atomic mass 30.973762 and nuclear spin (1)/2.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">phosphorus-31 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_37974 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_37974">
+        <rdfs:label rdf:datatype="&xsd;string">silicon-29 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of silicon with relative atomic mass 28.9764947, 4.683 atom percent natural abundancy, and nuclear spin (1)/2.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">silicon-29 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_38472 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_38472">
+        <rdfs:label rdf:datatype="&xsd;string">acetonitrile</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A nitrile that is hydrogen cyanide in which the hydrogen has been replaced by a methyl group.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">acetonitrile</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_38589 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_38589">
+        <rdfs:label rdf:datatype="&xsd;string">hexafluorobenzene</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A fluorobenzene that has formula C6F6.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">hexafluorobenzene</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_41981 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_41981">
+        <rdfs:label rdf:datatype="&xsd;string">dideuterium oxide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A water that has formula D2O.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">dideuterium oxide</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_46324 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_46324">
+        <rdfs:label rdf:datatype="&xsd;string">trimethyl phosphate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A trialkyl phosphate that is the trimethyl ester of phosphoric acid.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">trimethyl phosphate</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_47032 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_47032">
+        <rdfs:label rdf:datatype="&xsd;string">1,4-dioxane</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">1,4-dioxane</obo:IAO_0000111>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A dioxane with oxygen atoms at positions 1 and 4.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_4705 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_4705">
+        <rdfs:label rdf:datatype="&xsd;string">double-stranded DNA</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_16991"/>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">double-stranded DNA</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_52451 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_52451">
+        <rdfs:label rdf:datatype="&xsd;string">boron-11</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of boron with relative atomic mass 11.009306, 80.1 atom percent natural abundance and nuclear spin 3/2.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">boron-11</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_52634 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_52634">
+        <rdfs:label rdf:datatype="&xsd;string">sodium-23 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The stable isotope of sodium with relative atomic mass 22.989770, 100 atom percent natural abundance and nuclear spin 3/2.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">sodium-23 atom</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_55317 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_55317">
+        <rdfs:label rdf:datatype="&xsd;string">tetramethylammonium bromide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The bromide salt of tetramethylammonium.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">tetramethylammonium bromide</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_5692 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_5692">
+        <rdfs:label rdf:datatype="&xsd;string">hexachlorobenzene</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A member of the class of chlorobenzenes that is benzene in which all of the hydrogens are replaced by chlorines. An agricultural fungicide introduced in the mid-1940s and formerly used as a seed treatment, its use has been banned since 1984 under the Stockholm Convention on Persistent Organic Pollutants.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">hexachlorobenzene</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_63005 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_63005">
+        <rdfs:label rdf:datatype="&xsd;string">sodium nitrate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">The inorganic nitrate salt of sodium.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">sodium nitrate</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_77701 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_77701">
+        <rdfs:label rdf:datatype="&xsd;string">nitromethane</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_23367"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A C-nitro compound that is methane in which one of the hydrogens is replace by a nitro group. A polar solvent (b.p. 101 degreeC), it is an important starting material in organic synthesis. It is also used as a fuel for rockets and radio-controlled models.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">nitromethane</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;chebi.owl"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
