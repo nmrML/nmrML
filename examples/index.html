@@ -6,9 +6,9 @@ nav:
 ---
 
 <h1>nmrML Example Instances</h1>
-<h5>We here introduce six example nmrML data sets that were selected to show the expressivity of the nmrML format along different application settings such as minimal raw data capture (expl1), processed 1R spectrum inclusion (exp2), single reference compound capture with complete compound peak annotations using NMR Assign (exp3), 
- representing a complex biosample spectrum with quantification information added to many identified molecules with Bayesil (<b>Example 4</b>),
-capturing a dataset that was drawn from the Metabolights repository (exp 5), and an example to illustrate 2D NMR spectrum capture for a HSQC experiment (exp 6).
+<h5>We here introduce six example nmrML data sets that were selected to show the expressivity of the nmrML format along different application settings such as <b>Example 1:</b> minimal raw data capture,<b>Example 2:</b> processed 1R spectrum inclusion, <b>Example 3:</b> single reference compound capture with complete compound peak annotations using NMR Assign, 
+ <b>Example 4:</b> representing a complex biosample spectrum with quantification information added to many identified molecules with Bayesil,
+<b>Example 5:</b> capturing a dataset that was drawn from the Metabolights repository, and <b>Example 6:</b> an example to illustrate 2D NMR spectrum capture for a HSQC experiment.
 With these diverse use cases we hope to illustrate the versatileness of the nmrML data standard.</h5>
 <ul id="examples" >
 
@@ -28,7 +28,7 @@ data points); pulse width (pw) = 3 ls (4&deg;C); relaxation delay = 23.7 s; acqu
   </li>
   
  <li>
-    <h3>Example 2:  Metabolic profiling of the Tomato plant, PhenoTom 2013 (Bruker), including a processed spectrum</h3>
+    <h3><b>Example 2</b>:  Metabolic profiling of the Tomato plant, PhenoTom 2013 (Bruker), including a processed spectrum</h3>
       <p>This spectrum is from a metabolomic profiling experiment on<i>Lycopersicon esculentum</i>. Besides the FID it contains the Bruker 1R spectrum (real part data points) after FT processing.  This example illustrates how nmrML can include processed data beyond the raw FID data. We here store a 1R NMR spectrum (as another binary blob) and including its metadata. The FT transformed spectrum is stored in the spectrumList/spectrum1D/spectrumDataArrayelement and its processingParameterSets. The spectrum was recorded at 500.162 MHz on a Bruker Avance III spectrometer using a 5 mm probe flushed with nitrogen gas and an electronic reference for quantification (ERETIC2). 
       </p>
     <p>
@@ -37,7 +37,7 @@ data points); pulse width (pw) = 3 ls (4&deg;C); relaxation delay = 23.7 s; acqu
   </li>  
 
   <li>
-    <h3>Example 3:  An HMDB reference spectrum for a single identified molecule, created with nmrML-Assign</h3>
+    <h3><b>Example 3</b>:  An HMDB reference spectrum for a single identified molecule, created with nmrML-Assign</h3>
     <p>This spectrum is a reference spectrum for a single substance, 2-Ketobutyric acid (HMDB00005). Here, for each atom environment in the molecule, detailed atom assignments have been made for the spectral peaks using  <a href="http://nmrml.bayesil.ca" >nmrML-Assign</a>, which is an interactive tool for creating reference spectra and generating nmrML-formatted files.
 It is an example that illustrates how identification metadata can be stored along a spectrum in nmrML.</p>
     <p>
@@ -46,7 +46,7 @@ It is an example that illustrates how identification metadata can be stored alon
   </li>
 
   <li>
-    <h3>Example 4:  A complex biosample spectrum (Varian) quantified with Bayesil</h3>
+    <h3><b>Example 4</b>:  A complex biosample spectrum (Varian) quantified with Bayesil</h3>
     <p>This biosample spectrum of a compound mixture (analytical metabolomics setting) was processed with <a href="http://bayesil.ca" >Bayesil</a>. The nmrML format of results from Bayesil contains a list of compounds and peak assignments from the quantification process and exemplifies how nmrML can be used to store quantification metadata alongside a complex spectrum.
 </p>
     <p>
@@ -55,7 +55,7 @@ It is an example that illustrates how identification metadata can be stored alon
   </li>
 
   <li>
-    <h3>Example 5:  Human urine sample spectra from the MTBLS1 study</h3>
+    <h3><b>Example 5</b>:  Human urine sample spectra from the MTBLS1 study</h3>
       <p>These spectra of human urine samples are part of the <a href="http://www.ebi.ac.uk/metabolights/MTBLS1">MTBLS1 study</a> archived in the MetaboLights database. It serves as an example to illustrate the case of an autoconverted file taken from a database.
       </p>
     <p>
@@ -64,7 +64,7 @@ It is an example that illustrates how identification metadata can be stored alon
   </li>
 
   <li>
-    <h3>Example 6:  A example of a 2D nmrML formatted file representing a heteronuclear (HSQC) experiment</h3>
+    <h3><b>Example 6</b>:  A example of a 2D nmrML formatted file representing a heteronuclear (HSQC) experiment</h3>
       <p>nmrML file for a heteronuclear experiment. The data represents the bmse00400-exp06 (HSQC) data set from PDBj-BMRB.
         The substance under investigation is ethanesulfonate (http://bmrbdep.pdbj.org/bms/bmse000400)
    (exp06: 2D [1H,13C]-HSQC)</p>
