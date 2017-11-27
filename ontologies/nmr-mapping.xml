@@ -15,7 +15,7 @@ where xpaath.xsl comes from http://www.stylusstudio.com/xsllist/200105/post50700
 <CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvMapping.xsd"
 	modelName="nmrML.xsd"
-	modelURI="https://raw.github.com/nmrML/nmrML/master/xml-schemata/nmrML.xsd" modelVersion="0.1.0">
+	modelURI="https://raw.github.com/nmrML/nmrML/master/xml-schemata/nmrML.xsd" modelVersion="1.0.0">
 
 	<CvReferenceList>
 		<!-- This node defines the used CV resources that the validator will be aware of and which are needed for the validation. Where are these CV prefixes resolved into URLs? In the XML cvList we specyfy the CV not as NMR but fullName="nmrML Controlled Vocabulary" version="0.0.1" id="NMRCV" URI="http://www.nmrml.org/nmrml-cv.0.0.1.owl"  At the moment these seem not to be verified as no errors are thrown if a term does not come from a specified CV-->
