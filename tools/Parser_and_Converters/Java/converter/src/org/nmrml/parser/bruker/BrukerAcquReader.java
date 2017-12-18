@@ -79,7 +79,7 @@ public class BrukerAcquReader implements AcquReader {
     // examples of REGEXP_PROBHD : <32> <>; basically <digit?>
     private final static Pattern REGEXP_PROBHD = Pattern.compile("\\#\\#\\$PROBHD= <(.+)"); // probehead
     // examples of REGEXP_ORIGIN : Bruker Analytik GmbH; basically a name
-    private final static Pattern REGEXP_TITLE = Pattern.compile("\\#\\#TITLE= (.+), (.+)\t\t(.+)"); // origin
+    private final static Pattern REGEXP_TITLE = Pattern.compile("\\#\\#TITLE= (.+), (\\S+) ?\t?\t?(.+)"); // origin
     //TODO review REGEXP_ORIGIN
     // examples of REGEXP_ORIGIN : Bruker Analytik GmbH; basically a name
     private final static Pattern REGEXP_ORIGIN = Pattern.compile("\\#\\#ORIGIN= (.+)"); // origin
@@ -339,7 +339,7 @@ public class BrukerAcquReader implements AcquReader {
             if(REGEXP_TITLE.matcher(line).find()){
                 matcher = REGEXP_TITLE.matcher(line);
                 matcher.find();
-                acquisition.setSoftware(matcher.group(2));
+                acquisition.setSoftware(matcher.group(2).toUpperCase());
                 acquisition.setSoftVersion(matcher.group(3));
             }
             /* add the file format to the source files*/
