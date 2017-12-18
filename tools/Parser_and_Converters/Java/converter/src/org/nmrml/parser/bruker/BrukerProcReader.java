@@ -32,7 +32,7 @@ public class BrukerProcReader implements ProcReader {
 
     private BufferedReader procFile;
     // parameters from proc
-    private final static Pattern REGEXP_TITLE   = Pattern.compile("\\#\\#TITLE= (.+), (.+)\t\t(.+)"); // origin
+    private final static Pattern REGEXP_TITLE   = Pattern.compile("\\#\\#TITLE= (.+), (\\S+) ?\t?\t?(.+)"); // origin
     private final static Pattern REGEXP_OFFSET  = Pattern.compile("\\#\\#\\$OFFSET= (\\d+\\.\\d+)"); //OFFSET
     private final static Pattern REGEXP_SI      = Pattern.compile("\\#\\#\\$SI= (\\d+)"); //transform size (complex)
     private final static Pattern REGEXP_SF      = Pattern.compile("\\#\\#\\$SF= (\\d+\\.\\d+)"); //frequency of 0 ppm (???)
