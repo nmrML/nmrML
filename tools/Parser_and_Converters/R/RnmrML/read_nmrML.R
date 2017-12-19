@@ -1,5 +1,6 @@
 # This is a simple example of a complete R script 
 # allowing to read fid / 1r data along with the metadata
+# from a nmrML file with both fid and real spectra 
 # 
 # AUTHORS: Daniel Jacob
 #
