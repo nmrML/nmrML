@@ -1,0 +1,8 @@
+#!/bin/bash
+MYDIR=$(dirname $0)
+
+JAVA=java
+CONVERTER="$JAVA -cp ./ -jar $MYDIR/converter.jar"
+$CONVERTER -l create $* 
+
+

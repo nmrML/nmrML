@@ -38,7 +38,7 @@ import org.nmrml.converter.*;
 public class nmrMLproc {
 
     private static final String nmrMLVersion = nmrMLversion.value;
-    private static final String Version = "1.2";
+    private static final String Version = "1.2.2";
 
     private enum Vendor_Type { bruker; }
 

@@ -86,7 +86,7 @@ public class BrukerProcReader implements ProcReader {
             if(REGEXP_TITLE.matcher(line).find()){
                 matcher = REGEXP_TITLE.matcher(line);
                 matcher.find();
-                processing.setSoftware(matcher.group(2));
+                processing.setSoftware(matcher.group(2).toUpperCase());
                 processing.setSoftVersion(matcher.group(3));
             }
             //transform size (complex)
