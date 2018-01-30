@@ -7,7 +7,7 @@ Based on both the nmrML.xsd (XML Schema Definition) and CV term params (such as 
 
 As nmrML intents to gather and integrate several types of raw data (FIDs) and corresponding metadata (processed 1D spectra and annotated spectra with chemical assignments) in a single file, it is necessary to process each data source separately. Thus, two command tools, nmrMLcreate and nmrMLproc, were developed:
 
-nmrMLcreate allows to create a new nmrML file, based on available Bruker, Jeol or Varian/Agilent raw files.
+*nmrMLcreate* allows to create a new nmrML file, based on available Bruker, Jeol or Varian/Agilent raw files.
 ```
 $ ./bin/nmrMLcreate -h
 usage: nmrMLcreate
@@ -22,7 +22,7 @@ usage: nmrMLcreate
 -z,--compress                   compress binary data
 ```
 
-nmrMLproc allows to add and fill in additional sections corresponding to the data processing step. Currently, only frequency spectra coming from Bruker with a TopSpin/Xwinnmr folder structure are taken into account.
+*nmrMLproc* allows to add and fill in additional sections corresponding to the data processing step. Currently, only frequency spectra coming from Bruker with a TopSpin/Xwinnmr folder structure are taken into account.
 
 ```
 $ ./bin/nmrMLproc -h
