@@ -61,6 +61,12 @@ Thus, we can generate the corresponding nmrML file by running these programs suc
 
 To make this converter usable without a local installation, it is implemented as a lightweight and easy to access web application (see [here](http://nmrml.org/converter/))
 
+### How to install the converter on your local computer
+In case you like to use the nmrML converter on a more regular basis and from TopSpin (as format export fct), you need to install the nmrML converter on your local maschine, so that it can be called e.g. from Brukers TopSpin software. Here is what you have to do:
+
+[please put installation guideline here]
+
+
 ### NOTE:
 
 ### Java-based converter and versioning
