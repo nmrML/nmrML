@@ -334,7 +334,11 @@ if( fprt) System.err.println("------");
                  flg = true;
             }
             if ( param_name.equals("x_domain") ) {
-                 acquisition.setObservedNucleus(param.valueString);
+                 String ObservedNucleus = param.valueString;
+                 if (param.valueString.toLowerCase().equals("proton") ) {
+                       ObservedNucleus = "1H";
+                 }
+                 acquisition.setObservedNucleus(ObservedNucleus);
                  acquisition.setDecoupledNucleus("off");
                  flg = true;
             }
