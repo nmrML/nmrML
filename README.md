@@ -2,7 +2,7 @@
 <img src="https://raw.github.com/nmrML/nmrML/master/docs/logo/images/horizontal-logo-500.png" alt="nmrML logo" >
 </p>
 
-[nmrML](http://nmrml.org/) is an open mark-up language for NMR raw and spectral data. It is has recently seen its first proper release, ready for public use. The development of this standard was previously coordinated by the COSMOS - COordination Of Standards In MetabOlomicS Project. It is now maintained within the PhenoMeNal Eu project tasked to disseminate metabolomics data through life science e-infrastructures. The nmrML data standard is approved by the Metabolomics Standards Initiative and was derived from an earlier nmrML that was developed by the Metabolomics Innovation Centre (TMIC). It follows design principles of its role model, the mzML data standard created by PSI for mass spectrometry.
+[nmrML](http://nmrml.org/) is an open mark-up language for NMR raw and spectral data. It has recently seen its first release, ready for public use. The development of this standard was previously coordinated by the COSMOS FP7- COordination Of Standards In MetabOlomicS Project. It is now maintained within the PhenoMeNal H2020 project, setting up metabolomics data analysis e-infrastructures. The nmrML data standard is approved by the Metabolomics Standards Initiative and was derived from an earlier NMR XML format that was developed by the Metabolomics Innovation Centre (TMIC). It follows design principles of its role model, the mzML data standard, created by HUPO-PSI community for mass spectrometry.
 
 ## nmrML links
 
@@ -17,7 +17,7 @@
 [**The Metabolomics Innovation Centre**](http://www.metabolomicscentre.ca/exchangeformats)
 
 The Metabolomics Innovation Centre (TMIC) is a Canadian-funded core facility that has a unique combination of infrastructure and personnel to perform a wide range of cutting-edge metabolomic studies for clinical trials research, biomedical studies, bioproducts studies, nutrient profiling and environmental testing.
-The TMIC platform is led by Dr. David Wishart (University of Alberta), Dr. Christoph Borchers (University of Victoria) and Dr. Liang Li (University of Alberta). This group devivered the nmrML predecessor that is amended and extended in the COSMOS Project.
+The TMIC platform is led by Dr. David Wishart (University of Alberta), Dr. Christoph Borchers (University of Victoria) and Dr. Liang Li (University of Alberta). This group delivered the nmrML predecessor that is amended and extended in the COSMOS Project.
 
 [**Leibniz-Institute of Plant Biochemistry**](http://www.ipb-halle.de/en/)
 
