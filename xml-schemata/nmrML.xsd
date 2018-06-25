@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:dx="http://nmrml.org/schema" attributeFormDefault="unqualified"
-  elementFormDefault="qualified" targetNamespace="http://nmrml.org/schema" version="1.0.0"
+  elementFormDefault="qualified" targetNamespace="http://nmrml.org/schema" version="1.0.rc1"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://nmrml.org/schema">
   <xs:element name="nmrML" type="nmrMLType">
     <xs:annotation>
@@ -911,6 +911,7 @@ Example:
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequency" type="ValueWithUnitType"> </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="irradiationFrequencyOffset" type="ValueWithUnitType"> </xs:element>
       <xs:element name="decouplingNucleus" type="CVTermType" minOccurs="0"/>
       <xs:element name="samplingStrategy" type="CVTermType"/>
       <xs:element name="samplingTimePoints" type="BinaryDataArrayType" minOccurs="0">

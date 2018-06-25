@@ -301,18 +301,20 @@ public class Acqu2nmrML {
                 pulseFileRef.setRef(hSourceFileObj.get("PULSEPROGRAM_FILE"));
                 acqparam.setShapedPulseFile(pulseFileRef);
             }
+
            /* DirectDimensionParameterSet object */
             AcquisitionDimensionParameterSetType acqdimparam = objFactory.createAcquisitionDimensionParameterSetType();
             acqdimparam.setNumberOfDataPoints(getBigInteger(acq.getAquiredPoints()));
             acqdimparam.setAcquisitionNucleus(cvLoader.fetchCVTerm("CHEBI",acq.getObservedNucleus()));
+
             // Spectral Width (Hz)
             ValueWithUnitType  SweepWidth = objFactory.createValueWithUnitType();
             SweepWidth.setValue(String.format("%18.12f",acq.getSpectralWidthHz()).trim());
-
             SweepWidth.setUnitCvRef(cvUnitHz.getCvRef());
             SweepWidth.setUnitAccession(cvUnitHz.getAccession());
             SweepWidth.setUnitName(cvUnitHz.getName());
             acqdimparam.setSweepWidth(SweepWidth);
+
             // Irradiation Frequency (Hz)
             ValueWithUnitType  IrradiationFrequency = objFactory.createValueWithUnitType();
             IrradiationFrequency.setValue(String.format("%18.12f",acq.getTransmiterFreq()).trim());
@@ -320,6 +322,15 @@ public class Acqu2nmrML {
             IrradiationFrequency.setUnitAccession(cvUnitmHz.getAccession());
             IrradiationFrequency.setUnitName(cvUnitmHz.getName());
             acqdimparam.setIrradiationFrequency(IrradiationFrequency);
+
+            // Irradiation Frequency Offset(Hz)
+            ValueWithUnitType  IrradiationFrequencyOffset = objFactory.createValueWithUnitType();
+            IrradiationFrequencyOffset.setValue(String.format("%18.12f",acq.getFreqOffset()).trim());
+            IrradiationFrequencyOffset.setUnitCvRef(cvUnitmHz.getCvRef());
+            IrradiationFrequencyOffset.setUnitAccession(cvUnitmHz.getAccession());
+            IrradiationFrequencyOffset.setUnitName(cvUnitmHz.getName());
+            acqdimparam.setIrradiationFrequencyOffset(IrradiationFrequencyOffset);
+
             // setEffectiveExcitationField (Hz)
             ValueWithUnitType  effectiveExcitationField = objFactory.createValueWithUnitType();
             effectiveExcitationField.setValue(String.format("%18.12f",acq.getSpectralFrequency()).trim());
@@ -327,6 +338,7 @@ public class Acqu2nmrML {
             effectiveExcitationField.setUnitAccession(cvUnitmHz.getAccession());
             effectiveExcitationField.setUnitName(cvUnitmHz.getName());
             acqdimparam.setEffectiveExcitationField(effectiveExcitationField);
+
             /* Pulse Width */
             ValueWithUnitType  pulseWidth = objFactory.createValueWithUnitType();
             pulseWidth.setValue(String.format("%18.12f",acq.getPulseWidth()).trim());
@@ -334,6 +346,7 @@ public class Acqu2nmrML {
             pulseWidth.setUnitAccession(cvUnitmSec.getAccession());
             pulseWidth.setUnitName(cvUnitmSec.getName());
             acqdimparam.setPulseWidth(pulseWidth);
+
             /* decouplingNucleus */
             CVTermType cvDecoupledNucleus = null;
             if ( acq.getDecoupledNucleus().equals("off") ) {

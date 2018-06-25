@@ -131,6 +131,7 @@ public class JeolAcquReader implements AcquReader {
 * acquisition.setDecoupledNucleus
 * acquisition.setSpectralWidthHz()				x_sweep
 * acquisition.setTransmiterFreq()				x_freq / irr_freq ??? (SF01)
+* acquisition.setFreqOffset()					x_offset*Base_Freq
 acquisition.setSpectralFrequency()				???  (BF1)
 * acquisition.setPulseWidth()					x_pulse
 **/
@@ -356,6 +357,7 @@ if( fprt) System.err.println("------");
                  flg = true;
             }
             if ( param_name.equals("x_offset") ) {
+                 acquisition.setFreqOffset(param.valueDouble*Base_Freq);
                  flg = true;
             }
             if ( param_name.equals("x_pulse") ) {

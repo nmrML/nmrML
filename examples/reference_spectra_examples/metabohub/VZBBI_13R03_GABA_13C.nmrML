@@ -15,23 +15,23 @@
         <contact id="ID00001" fullname="mica" email="mica@mhpbf141"/>
     </contactList>
     <sourceFileList>
-        <sourceFile id="ID00002" name="fid" location="file:/C:/Workdir/XSD-XML/dev/./examples/VZBBI_13R03_GABA/13C/fid" sha1="8a5a5a6671ef7f4f1c494458b3fd0e5a83d1526c">
+        <sourceFile id="ID00002" name="fid" location="file:/C:/Workdir/COSMOS/Converter/dev/./examples/VZBBI_13R03_GABA/13C/fid" sha1="8a5a5a6671ef7f4f1c494458b3fd0e5a83d1526c">
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400119" name="FID file"/>
         </sourceFile>
-        <sourceFile id="ID00003" name="pulseprogram" location="file:/C:/Workdir/XSD-XML/dev/./examples/VZBBI_13R03_GABA/13C/pulseprogram">
+        <sourceFile id="ID00003" name="pulseprogram" location="file:/C:/Workdir/COSMOS/Converter/dev/./examples/VZBBI_13R03_GABA/13C/pulseprogram">
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400122" name="pulse sequence file"/>
         </sourceFile>
-        <sourceFile id="ID00004" name="acqus" location="file:/C:/Workdir/XSD-XML/dev/./examples/VZBBI_13R03_GABA/13C/acqus">
+        <sourceFile id="ID00004" name="acqus" location="file:/C:/Workdir/COSMOS/Converter/dev/./examples/VZBBI_13R03_GABA/13C/acqus">
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
             <cvParam cvRef="NMRCV" accession="NMR:1002006" name="acquisition parameter file"/>
         </sourceFile>
-        <sourceFile id="ID00101" name="procs" location="file:/C:/Workdir/XSD-XML/dev/./examples/VZBBI_13R03_GABA/13C/pdata/1/procs">
+        <sourceFile id="ID00101" name="procs" location="file:/C:/Workdir/COSMOS/Converter/dev/./examples/VZBBI_13R03_GABA/13C/pdata/1/procs">
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
             <cvParam cvRef="NMRCV" accession="NMR:1400123" name="processing parameter file"/>
         </sourceFile>
-        <sourceFile id="ID00102" name="1r" location="file:/C:/Workdir/XSD-XML/dev/./examples/VZBBI_13R03_GABA/13C/pdata/1/1r" sha1="932f3121abd9e4d7bc934bcfcc46e59118ef8661">
+        <sourceFile id="ID00102" name="1r" location="file:/C:/Workdir/COSMOS/Converter/dev/./examples/VZBBI_13R03_GABA/13C/pdata/1/1r" sha1="932f3121abd9e4d7bc934bcfcc46e59118ef8661">
             <cvParam cvRef="NMRCV" accession="NMR:1400320" name="Bruker UXNMR/XWIN-NMR format"/>
             <cvParam cvRef="NMRCV" accession="NMR:1000319" name="1R file"/>
         </sourceFile>
@@ -75,6 +75,7 @@
                     <sweepWidth value="27573.529411764700" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
                     <pulseWidth value="14.500000000000" unitAccession="UO_0000029" unitName="microsecond" unitCvRef="UO"/>
                     <irradiationFrequency value="125.776650879000" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
+                    <irradiationFrequencyOffset value="11318.879000000900" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
                     <decouplingNucleus cvRef="CHEBI" accession="CHEBI_49637" name="hydrogen atom"/>
                     <samplingStrategy cvRef="NMRCV" accession="NMR:1000349" name="uniform sampling"/>
                 </DirectDimensionParameterSet>

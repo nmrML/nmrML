@@ -40,6 +40,7 @@ public class VarianAcquReader implements AcquReader {
     // parameters from procpar
     private final static Pattern REGEXP_SFO1 = Pattern.compile("^sfrq "); //irradiation frequency
     private final static Pattern REGEXP_BF1 = Pattern.compile("^reffrq "); //spectral frequency
+    private final static Pattern REGEXP_O1 = Pattern.compile("^tof "); //irradiation frequency offset
     private final static Pattern REGEXP_NUMBEROFSCANS = Pattern.compile("^nt "); //number of scans
     private final static Pattern REGEXP_DUMMYSCANS = Pattern.compile("^ss "); //number of dummy (steady state) scans
     private final static Pattern REGEXP_SPINNINGRATE = Pattern.compile("^spin "); // spinning rate
@@ -98,6 +99,15 @@ public class VarianAcquReader implements AcquReader {
                     matcher = REGEXP_DOUBLE.matcher(line);
                     matcher.find();
                     acquisition.setTransmiterFreq(Double.parseDouble(matcher.group(1)));
+                }
+            }
+            //irradiation_frequency offset
+            if (REGEXP_O1.matcher(line).find()) {
+                line = inputAcqReader.readLine();
+                if (REGEXP_DOUBLE.matcher(line).find()) {
+                    matcher = REGEXP_DOUBLE.matcher(line);
+                    matcher.find();
+                    acquisition.setFreqOffset(Double.parseDouble(matcher.group(1)));
                 }
             }
             /* sweep width in Hertz*/
