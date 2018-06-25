@@ -43,6 +43,7 @@
     <instrumentConfigurationList>
         <instrumentConfiguration id="ID00006">
             <cvParam cvRef="NMRCV" accession="NMR:1400198" name="Bruker NMR instrument"/>
+            <userParam name="Instrument Name" value="spect"/>
             <userParam name="ProbeHead" value="5 mm PABBI 1H/D-BB Z-GRD Z859201/0037"/>
             <softwareRef ref="ID00005"/>
         </instrumentConfiguration>
@@ -74,6 +75,7 @@
                     <sweepWidth value="6002.400960384150" unitAccession="UO_0000106" unitName="hertz" unitCvRef="UO"/>
                     <pulseWidth value="10.430210000000" unitAccession="UO_0000029" unitName="microsecond" unitCvRef="UO"/>
                     <irradiationFrequency value="500.162500800000" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
+                    <irradiationFrequencyOffset value="2500.800000000000" unitAccession="UO_0000325" unitName="megaHertz" unitCvRef="UO"/>
                     <decouplingNucleus cvRef="NMRCV" accession="NMR:1000055" name="off resonance decoupling"/>
                     <samplingStrategy cvRef="NMRCV" accession="NMR:1000349" name="uniform sampling"/>
                 </DirectDimensionParameterSet>
