@@ -18,10 +18,10 @@
 package org.nmrml.converter;
 
 import org.nmrml.cv.BrukerMapper;
-import org.nmrml.model.NmrMLType;
-import org.nmrml.model.ObjectFactory;
-import org.nmrml.model.SourceFileListType;
-import org.nmrml.model.SourceFileType;
+import org.nmrml.schema.NmrMLType;
+import org.nmrml.schema.ObjectFactory;
+import org.nmrml.schema.SourceFileListType;
+import org.nmrml.schema.SourceFileType;
 
 import java.io.File;
 

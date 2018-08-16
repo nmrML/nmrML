@@ -9,9 +9,9 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.nmrml.converter.BrukerAcquAbstractReader;
-import org.nmrml.model.ContactType;
-import org.nmrml.model.NmrMLType;
-import org.nmrml.model.ObjectFactory;
+import org.nmrml.schema.ContactType;
+import org.nmrml.schema.NmrMLType;
+import org.nmrml.schema.ObjectFactory;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -117,10 +117,12 @@ public class Converter {
 
 
         } else {
-            contactType.setFullname("anonymous");
-            contactType.setEmail("anonymous@net.com");
-            nmrMLElement.getContactList().getContact().add(contactType);
-            System.err.println("No contact provided! Please provide a contact for the nmrML file.");
+            if(nmrMLElement.getContactList().getContact().size() == 0) {
+                contactType.setFullname("anonymous");
+                contactType.setEmail("anonymous@net.com");
+                nmrMLElement.getContactList().getContact().add(contactType);
+                System.err.println("No contact provided! Please provide a contact for the nmrML file.");
+            }
         }
         /* Generate XML */
         try{
@@ -128,12 +130,12 @@ public class Converter {
             JAXBElement<NmrMLType> nmrML = (JAXBElement<NmrMLType>) objFactory.createNmrML(nmrMLElement);
 
             // create a JAXBContext capable of handling classes generated into the org.nmrml.schema package
-            JAXBContext jc = JAXBContext.newInstance( "org.nmrml.model" );
+            JAXBContext jc = JAXBContext.newInstance( "org.nmrml.schema" );
 
             // create a Marshaller and marshal to a file
             Marshaller m = jc.createMarshaller();
             m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, new Boolean(true) );
-            m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, "http://nmrML.org/schema/nmrML.xsd");
+            m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, "http://nmrml.org/schema http://nmrML.org/schema/v1.0.rc1/nmrML.xsd");
             if(cmd.hasOption("s")){
                 m.marshal( nmrML, System.out );
             }

@@ -17,8 +17,8 @@
 
 package org.nmrml.converter;
 
-import org.nmrml.model.NmrMLType;
-import org.nmrml.model.ObjectFactory;
+import org.nmrml.schema.NmrMLType;
+import org.nmrml.schema.ObjectFactory;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;

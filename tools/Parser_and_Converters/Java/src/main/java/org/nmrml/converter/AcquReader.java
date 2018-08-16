@@ -17,7 +17,7 @@
 
 package org.nmrml.converter;
 
-import org.nmrml.model.NmrMLType;
+import org.nmrml.schema.NmrMLType;
 
 /**
  * Created with IntelliJ IDEA.
