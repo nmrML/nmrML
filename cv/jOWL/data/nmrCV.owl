@@ -2958,6 +2958,8 @@ The first two axis in the plot represent the ppms along the two acquisition nucl
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400138"/>
         <dc:source>Jacob D. et al (2013) Analytical and Bioanalytical Chemistry, 405, 5049-5061</dc:source>
         <rdfs:label xml:lang="en">ERVA-based bucketing</rdfs:label>
+        <rdfs:comment>Taking advantage of the concentration variability of each compound in a series of samples, buckets are linked together into clusters based on significant correlations.This is done i.g. in ERVA-based bucketing</rdfs:comment>
+
     </owl:Class>
     
 
@@ -3894,7 +3896,7 @@ The second one, nmrMLproc allows to add and fill in additional sections correspo
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000365">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000362"/>
-        <rdfs:label xml:lang="de">bucket fusioning</rdfs:label>
+        <rdfs:label xml:lang="en">bucket fusioning</rdfs:label>
     </owl:Class>
     
 
@@ -4498,7 +4500,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000434">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400198"/>
-        <rdfs:label xml:lang="de">DRX 600 instrument</rdfs:label>
+        <rdfs:label xml:lang="en">DRX 600 instrument</rdfs:label>
     </owl:Class>
     
 
@@ -4507,7 +4509,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000435">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400038"/>
-        <rdfs:label xml:lang="de">plot and graph generation</rdfs:label>
+        <rdfs:label xml:lang="en">plot and graph generation</rdfs:label>
     </owl:Class>
     
 
@@ -4516,7 +4518,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000436">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000260"/>
-        <rdfs:label xml:lang="de">reference deconvolution</rdfs:label>
+        <rdfs:label xml:lang="en">reference deconvolution</rdfs:label>
         <skos:definition>vertical alignment of on and offset of the peak of the reference compound.</skos:definition>
     </owl:Class>
     
@@ -4526,7 +4528,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000437">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1400073"/>
-        <rdfs:label xml:lang="de">spectral smoothing</rdfs:label>
+        <rdfs:label xml:lang="en">spectral smoothing</rdfs:label>
         <skos:definition>the process of removing noisy jitters in a spectral curve to get clearer and more meaningful signals and peaks.</skos:definition>
     </owl:Class>
     
@@ -4536,7 +4538,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000438">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1001459"/>
-        <rdfs:label xml:lang="de">NMR database format</rdfs:label>
+        <rdfs:label xml:lang="en">NMR database format</rdfs:label>
     </owl:Class>
     
 
@@ -4546,7 +4548,7 @@ Whatever your application field ECZS can demonstrate its power.
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000439">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000438"/>
         <dc:source>M. Yokochi, N. Kobayashi, E. L. Ulrich, A. R. Kinjo, T. Iwata, Y. E. Ioannidis, M. Livny, J. L. Markley, H. Nakamura, C. Kojima, T. Fujiwara, “Publication of nuclear magnetic resonance experimental data with semantic web technology and the application thereof to biomedical research of proteins,” Journal of Biomedical Semantics, 5:7:16 (2016)</dc:source>
-        <rdfs:label xml:lang="de">BMRB/XML file format</rdfs:label>
+        <rdfs:label xml:lang="en">BMRB/XML file format</rdfs:label>
     </owl:Class>
     
 
@@ -4555,7 +4557,7 @@ Whatever your application field ECZS can demonstrate its power.
 
     <owl:Class rdf:about="http://nmrML.org/nmrCV#NMR:1000440">
         <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#NMR:1000117"/>
-        <rdfs:label xml:lang="de">nD spectrum</rdfs:label>
+        <rdfs:label xml:lang="en">nD spectrum</rdfs:label>
     </owl:Class>
     
 
@@ -7695,7 +7697,6 @@ Line sharpening can be optimized during data acquisition or performed during dat
    altdef: A type of automated integration which occurs across pre-defined regions for a spectrum.</rdfs:comment>
         <rdfs:comment>for bucket parameters see &apos;binned spectrum descriptor&apos;</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bucketing</rdfs:label>
-        <skos:definition>Taking advantage of the concentration variability of each compound in a series of samples, buckets are linked together into clusters based on significant correlations.This is done i.g. in ERVA-based bucketing</skos:definition>
     </owl:Class>
     
 
