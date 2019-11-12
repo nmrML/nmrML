@@ -315,6 +315,53 @@ A paper describing the overall nmrML data standard and CV has been accepted by A
      -->
 
     
+   <!-- http://nmrML.org/nmrCV#BFO_0000001 -->
+
+    <owl:Class rdf:about="http://nmrML.org/nmrCV#BFO_0000001">
+        <rdfs:label>entity</rdfs:label>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
+        <rdfs:label>process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017">
+        <rdfs:label>realizable entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
+        <rdfs:label>quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030">
+        <rdfs:label>object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031">
+        <rdfs:label>generically dependent continuant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
+    </owl:Class>
+
+
 
 
     <!-- http://nmrML.org/nmrCV#NMR:1000000 -->
@@ -9061,64 +9108,6 @@ Line sharpening can be optimized during data acquisition or performed during dat
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acdlabs</rdfs:label>
     </owl:Class>
     
-        <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000015">
-        <rdfs:label>process</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000017">
-        <rdfs:label>realizable entity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000019">
-        <rdfs:label>quality</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000030">
-        <rdfs:label>object</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
-
-    <owl:Class rdf:about="&obo;BFO_0000031">
-        <rdfs:label>generically dependent continuant</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://nmrML.org/nmrCV#BFO_0000001"/>
-    </owl:Class>
-
-
-
-   <!-- http://nmrML.org/nmrCV#BFO_0000001 -->
-
-    <owl:Class rdf:about="http://nmrML.org/nmrCV#BFO_0000001">
-        <rdfs:label>entity</rdfs:label>
-    </owl:Class>
-
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
-
-    <owl:Class rdf:about="&obo;PATO_0000001">
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000019"/>
-    </owl:Class>
-
 </rdf:RDF>
 
 
