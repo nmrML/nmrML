@@ -55,8 +55,6 @@ Follow these intructions to create release a tagged version:
 * [docs](https://github.com/nmrML/nmrML/tree/master/docs) 
 	* [SchemaDocumentation](https://github.com/nmrML/nmrML/tree/master/docs/SchemaDocumentation) - The docs generated from the schema and ontology files
 * [examples](https://github.com/nmrML/nmrML/tree/master/examples)
-    * [vendor](https://github.com/nmrML/nmrML/tree/master/examples/vendor) - Useful example files from other software and data formats
-    * [nmrML](https://github.com/nmrML/nmrML/tree/master/examples/nmrML) - Example files for different use cases of nmrML
 * [lib](https://github.com/nmrML/nmrML/tree/master/lib) - Scripts/code used for generating docs, etc.
 * [mappings](https://github.com/nmrML/nmrML/tree/master/mappings) - Files that map variable names in other formats to variable names
 in nmrML. Used by conversion software.
