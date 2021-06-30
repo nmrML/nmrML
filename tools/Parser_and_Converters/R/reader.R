@@ -13,7 +13,7 @@
 # To run the example, launch R from the root NMR-ML directory then
 # run 
 # 
-# 	source("tools/R/reader.R")
+# 	source("tools/Parser_and_Converters/R/reader.R")
 # 
 library(XML)
 
@@ -110,9 +110,9 @@ ppm <- seq(from=14.77180,
            to= 14.77180 - (7200.07200072 / 599.4094446),
            length=65536)
 
-ppm <- seq(offset or delay =14.77180,
-           to= offset or delay =14.77180, - (sweepWidth  value="7200.07200072" / irradiationFrequency  value="599.4094446")
-           length=numberOfDataPoints="57804")
+ppm <- seq(from=14.77180,
+           to=14.77180, - (sweepWidth_value="7200.07200072" / irradiationFrequency_value="599.4094446"),
+           length="57804")
 
 intensities <- memDecompress(base64decode(stringfromnmrml, "raw"), type="gzip")
 
@@ -121,7 +121,7 @@ require(caTools)
 
 readNMRML <- function (filename) {
 delayTime <- 1.0
-ppmOffset <- delayTime / 599.4094446,
+ppmOffset <- delayTime / 599.4094446
 irradiationFrequency <- 500
 sweepWidth <- "7200.07200072"
 numberOfDataPoints <- "57804"
