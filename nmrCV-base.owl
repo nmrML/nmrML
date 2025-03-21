@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://nmrML.org/nmrCV/nmrCV-base.owl#"
+     xml:base="http://nmrML.org/nmrCV/nmrCV-base.owl"
+     xmlns:dce="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="http://nmrML.org/nmrCV/nmrCV-base.owl">
+        <owl:versionIRI rdf:resource="http://nmrml.org/cv/2025-03-20/nmrCV-base.owl"/>
+        <dce:contributor>Chris Taylor</dce:contributor>
+        <dce:contributor>Dennis Rubtsov</dce:contributor>
+        <dce:contributor>Helen Jenkins</dce:contributor>
+        <dce:contributor>Irena Spasic</dce:contributor>
+        <dce:contributor>Joseph Cruz</dce:contributor>
+        <dce:contributor>Larissa Soldatova</dce:contributor>
+        <dce:contributor>Michael Wilson</dce:contributor>
+        <dce:coverage>Nuclear magnetic resonance (NMR) data annotation as required by the msi sanctioned open
+access nmrML XML format developed by the COSMOS EU project.</dce:coverage>
+        <dce:creator>COSMOS - COordination Of Standards In MetabOlomicS Project - WP2 team</dce:creator>
+        <dce:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
+        <dcterms:abstract xml:lang="en">With this artifact, the Nuclear Magnetic Resonance Controlled Vocabulary (nmrCV) is undergoing a significant evolution to become an ontology designed to describe NMR spectroscopy experiments and their outputs in detail, supporting FAIR research data management. Initially, nmrCV v1.1.0 was deliberately designed as a controlled vocabulary, not a formal ontology with Description Logic (DL) semantics. It was approved by th Metabolomics Standards Initiative (MSI) and serves to provide descriptors for the nuclear magnetic resonance markup language (nmrML), enabling vendor-agnostic NMR data sharing, particularly within NMR metabolomics. Since version 1.1.0, nmrCV had not been updated nor actively maintained.
+
+Recognizing the need for a DL-enabled NMR spectroscopy ontology suitable for use independently of nmrML within a larger ontology framework, and addressing the limitations of the original controlled vocabulary, Germany&apos;s National Research Data Infrastructure project for Chemistry (NFDI4Chem) took on the responsibility for nmrCV&apos;s further development and maintenance. This decision was made after a discussion about its optimal integration within the broader ontology landscape at the third Ontologies4Chem workshop in fall 2023.
+
+The decision to build upon nmrCV v1.1.0 was based on its existing definition of essential concepts, its BFO alignment, and its planned integration with ontologies like the Ontology for Biomedical Investigations (OBI) and the Chemical Entities of Biological Interest (ChEBI). Improvements in the present version include replacing out-of-scope and placeholder terms with more suitable equivalents from established ontologies like OBI and ChEBI, adhering to the OBO Foundry principles, corrections regarding the BFO subsumption and other established ontology design patterns, as well as the introduction of DL semantics.
+
+⚠️ Compatibility Note: Due to these significant changes, which prioritize ontology rigor over nmrML alignment, this and future versions of nmrCV may introduce breaking changes for nmrML users. Therefore, nmrML users are strongly advised to thoroughly test new nmrCV versions before production deployment. Alternatively, users may choose to continue using nmrCV v1.1.0, which was specifically designed for nmrML compatibility.</dcterms:abstract>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0001-5306-5690"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0001-5687-9059"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0001-8604-1732"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-3207-2434"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-6687-7169"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-7899-7192"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-8148-6895"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0003-1144-3600"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0009-0001-5998-5030"/>
+        <dcterms:created>2025-03-20</dcterms:created>
+        <dcterms:license rdf:resource="https://creativecommons.org/publicdomain/mark/1.0/"/>
+        <dcterms:references>https://doi.org/10.1021/acs.analchem.7b02795</dcterms:references>
+        <dcterms:title>nuclear magnetic resonance CV</dcterms:title>
+        <vann:preferredNamespacePrefix>nmrCV</vann:preferredNamespacePrefix>
+        <doap:audience>This CV is to be used by metabolomics researchers, or basically any chenomics or proteomics researchers  who apply the  nmrML xml to store their NMRraw data in a vendor agnostic manner. But nmrML can also be used to capture experimental results  and (limited) basic metadata like molecule to spectral feature assignments.</doap:audience>
+        <doap:bug-database>https://github.com/nmrML/nmrCV/issues</doap:bug-database>
+        <doap:implements>https://github.com/nmrML/nmrML</doap:implements>
+        <doap:location>https://github.com/nmrML/nmrCV</doap:location>
+        <doap:maintainer rdf:resource="https://www.wikidata.org/wiki/Q96678459"/>
+        <owl:priorVersion rdf:resource="https://nmrml.org/cv/v1.1.0/nmrCV.owl"/>
+        <owl:versionInfo>2.0_alpha</owl:versionInfo>
+        <owl:versionInfo>2025-03-20</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/coverage -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/coverage"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/type -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/references -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/references"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#audience -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#audience"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#bug-database -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#bug-database"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#implements -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#implements"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#location -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#location"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#maintainer -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#maintainer"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
+
