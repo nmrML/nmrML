@@ -1,0 +1,45 @@
+format-version: 1.2
+data-version: http://nmrml.org/cv/2025-03-20/nmrCV-base.owl
+idspace: dce http://purl.org/dc/elements/1.1/ 
+idspace: dcterms http://purl.org/dc/terms/ 
+idspace: doap http://usefulinc.com/ns/doap# 
+idspace: foaf http://xmlns.com/foaf/0.1/ 
+idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
+idspace: skos http://www.w3.org/2004/02/skos/core# 
+idspace: vann http://purl.org/vocab/vann/ 
+ontology: http://nmrML.org/nmrCV/nmrCV-base.owl
+property_value: dce:contributor "Chris Taylor" xsd:string
+property_value: dce:contributor "Dennis Rubtsov" xsd:string
+property_value: dce:contributor "Helen Jenkins" xsd:string
+property_value: dce:contributor "Irena Spasic" xsd:string
+property_value: dce:contributor "Joseph Cruz" xsd:string
+property_value: dce:contributor "Larissa Soldatova" xsd:string
+property_value: dce:contributor "Michael Wilson" xsd:string
+property_value: dce:coverage "Nuclear magnetic resonance (NMR) data annotation as required by the msi sanctioned open\naccess nmrML XML format developed by the COSMOS EU project." xsd:string
+property_value: dce:creator "COSMOS - COordination Of Standards In MetabOlomicS Project - WP2 team" xsd:string
+property_value: dce:type IAO:8000001
+property_value: dcterms:abstract "With this artifact, the Nuclear Magnetic Resonance Controlled Vocabulary (nmrCV) is undergoing a significant evolution to become an ontology designed to describe NMR spectroscopy experiments and their outputs in detail, supporting FAIR research data management. Initially, nmrCV v1.1.0 was deliberately designed as a controlled vocabulary, not a formal ontology with Description Logic (DL) semantics. It was approved by th Metabolomics Standards Initiative (MSI) and serves to provide descriptors for the nuclear magnetic resonance markup language (nmrML), enabling vendor-agnostic NMR data sharing, particularly within NMR metabolomics. Since version 1.1.0, nmrCV had not been updated nor actively maintained.\n\nRecognizing the need for a DL-enabled NMR spectroscopy ontology suitable for use independently of nmrML within a larger ontology framework, and addressing the limitations of the original controlled vocabulary, Germany's National Research Data Infrastructure project for Chemistry (NFDI4Chem) took on the responsibility for nmrCV's further development and maintenance. This decision was made after a discussion about its optimal integration within the broader ontology landscape at the third Ontologies4Chem workshop in fall 2023.\n\nThe decision to build upon nmrCV v1.1.0 was based on its existing definition of essential concepts, its BFO alignment, and its planned integration with ontologies like the Ontology for Biomedical Investigations (OBI) and the Chemical Entities of Biological Interest (ChEBI). Improvements in the present version include replacing out-of-scope and placeholder terms with more suitable equivalents from established ontologies like OBI and ChEBI, adhering to the OBO Foundry principles, corrections regarding the BFO subsumption and other established ontology design patterns, as well as the introduction of DL semantics.\n\n⚠️ Compatibility Note: Due to these significant changes, which prioritize ontology rigor over nmrML alignment, this and future versions of nmrCV may introduce breaking changes for nmrML users. Therefore, nmrML users are strongly advised to thoroughly test new nmrCV versions before production deployment. Alternatively, users may choose to continue using nmrCV v1.1.0, which was specifically designed for nmrML compatibility." xsd:string
+property_value: dcterms:contributor https://orcid.org/0000-0001-5306-5690
+property_value: dcterms:contributor https://orcid.org/0000-0001-5687-9059
+property_value: dcterms:contributor https://orcid.org/0000-0001-8604-1732
+property_value: dcterms:contributor https://orcid.org/0000-0002-1595-3213
+property_value: dcterms:contributor https://orcid.org/0000-0002-3207-2434
+property_value: dcterms:contributor https://orcid.org/0000-0002-6687-7169
+property_value: dcterms:contributor https://orcid.org/0000-0002-7899-7192
+property_value: dcterms:contributor https://orcid.org/0000-0002-8148-6895
+property_value: dcterms:contributor https://orcid.org/0000-0003-1144-3600
+property_value: dcterms:contributor https://orcid.org/0009-0001-5998-5030
+property_value: dcterms:created "2025-03-20" xsd:string
+property_value: dcterms:license https://creativecommons.org/publicdomain/mark/1.0/
+property_value: dcterms:references "https://doi.org/10.1021/acs.analchem.7b02795" xsd:string
+property_value: dcterms:title "nuclear magnetic resonance CV" xsd:string
+property_value: doap:audience "This CV is to be used by metabolomics researchers, or basically any chenomics or proteomics researchers  who apply the  nmrML xml to store their NMRraw data in a vendor agnostic manner. But nmrML can also be used to capture experimental results  and (limited) basic metadata like molecule to spectral feature assignments." xsd:string
+property_value: doap:bug-database "https://github.com/nmrML/nmrCV/issues" xsd:string
+property_value: doap:implements "https://github.com/nmrML/nmrML" xsd:string
+property_value: doap:location "https://github.com/nmrML/nmrCV" xsd:string
+property_value: doap:maintainer https://www.wikidata.org/wiki/Q96678459
+property_value: owl:priorVersion https://nmrml.org/cv/v1.1.0/nmrCV.owl
+property_value: owl:versionInfo "2.0_alpha" xsd:string
+property_value: owl:versionInfo "2025-03-20" xsd:string
+property_value: vann:preferredNamespacePrefix "nmrCV" xsd:string
+
