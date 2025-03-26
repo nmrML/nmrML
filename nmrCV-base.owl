@@ -46,13 +46,13 @@ The decision to build upon nmrCV v1.1.0 was based on its existing definition of 
         <dcterms:contributor rdf:resource="https://orcid.org/0009-0001-5998-5030"/>
         <dcterms:created>2025-03-20</dcterms:created>
         <dcterms:license rdf:resource="https://creativecommons.org/publicdomain/mark/1.0/"/>
-        <dcterms:references>https://doi.org/10.1021/acs.analchem.7b02795</dcterms:references>
+        <dcterms:references rdf:resource="https://doi.org/10.1021/acs.analchem.7b02795"/>
         <dcterms:title>nuclear magnetic resonance CV</dcterms:title>
-        <vann:preferredNamespacePrefix>nmrCV</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>nmrCV2025</vann:preferredNamespacePrefix>
         <doap:audience>This CV is to be used by metabolomics researchers, or basically any chenomics or proteomics researchers  who apply the  nmrML xml to store their NMRraw data in a vendor agnostic manner. But nmrML can also be used to capture experimental results  and (limited) basic metadata like molecule to spectral feature assignments.</doap:audience>
-        <doap:bug-database>https://github.com/nmrML/nmrCV/issues</doap:bug-database>
-        <doap:implements>https://github.com/nmrML/nmrML</doap:implements>
-        <doap:location>https://github.com/nmrML/nmrCV</doap:location>
+        <doap:bug-database rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/nmrML/nmrCV/issues</doap:bug-database>
+        <doap:implements rdf:resource="https://github.com/nmrML/nmrML"/>
+        <doap:location rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/nmrML/nmrCV</doap:location>
         <doap:maintainer rdf:resource="https://www.wikidata.org/wiki/Q96678459"/>
         <owl:priorVersion rdf:resource="https://nmrml.org/cv/v1.1.0/nmrCV.owl"/>
         <owl:versionInfo>2.0_alpha</owl:versionInfo>
